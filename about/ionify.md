@@ -1,5 +1,6 @@
-# [ionify](http://ionify.org)
+# [ionify](http://ionify.net)
 
-**ionify: [implicit object notification invented for you](https://github.com/ionify/ionify)**,
-  is a set of [**ions**](ion.md) that create an environment + vocabulary for simplified
-  [object observation, notification + interaction](eon.md).
+**ionify: [implicit object notification invented for you](https://github.com/ionify/about/README.md)**,
+  is a set of [**ions**](https://github.com/ionify/about/ion.md)
+  that create an environment + vocabulary for simplified object
+  [interaction, observation + notification](https://github.com/ionify/about/eon.md).
