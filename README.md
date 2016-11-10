@@ -5,7 +5,7 @@
 +
 { re:
     { id: "ionify",
-      is: "implicit object notification invented for you",
+      is: "implicit object notation invented for you",
       by: "mike.lee@iskitz",
 
       at:
