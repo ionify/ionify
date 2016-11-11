@@ -3,7 +3,7 @@
 +
 {  re:
     { id: "ionify"
-    , is: "implicit object notation interpreted for you"
+    , is: "implicit object notation invented for you"
     , by: {"Michael Lee": ["iskitz.net", "@iskitz"]}
     , at: "2007.09-05...2016.08.07-07"
     , in:

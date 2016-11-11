@@ -4,7 +4,7 @@
 +
 {  re:
     { id: "web@ionify.net"
-    , is: "web-based implicit object notation interpreted for you"
+    , is: "web-based implicit object notation invented for you"
     , by: {"Michael Lee": ["iskitz.net", "@iskitz"]}
     , at: "2007.09...2016.08.19-07.00"
     , in:
