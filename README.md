@@ -1,4 +1,6 @@
-## [+['• ؈ •']  <  "ionify: implicit object notation invented for you"](about/ionify.md)
+## [ionify](about/ionify.md)
+
+**ionify** is **implicit object notation invented for you**
 
 ```javascript
 ;
@@ -9,17 +11,16 @@
       by: "mike.lee@iskitz",
 
       at:
-        { "2016.11-08":   "san-jose.california.usa.earth"
-        , "2007.09-04": "forest-hills.new-york.usa.earth"
-        },
+        { "2016.11.11-08":   "san-jose.california.usa.earth"
+        , "2007.09.15-04": "forest-hills.new-york.usa.earth"
+        }
+    },
 
-      it:
-        [ "Is a fun new way to interact with data + code via simplified"
-        + " object observation + notification."
+  go:
+    +['• ؈ •']  < "It's a fun new way to interact with data + code via "
+                + "simplified object observation + notification."
 
-              +['• ؈ •'] < "let's play!"
-        ]
-    }
+    +['Ø ؈ Ø']  < "let's play!"
 }
 ;
 ```
