@@ -23,7 +23,7 @@
       ;  web.check.web = web
       ;  delete web.valueOf
       ;  web.check()
-      ;  web.get ({get: "https://rawgit.com/ionify/ionify/master/ionify.js", got:web})
+      ;  web.get ({get: "https://rawgit.com/ionify/ionify/public/ionify.js", got:web})
       },
 
   on: ["get", "log"] ||
