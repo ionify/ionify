@@ -1,4 +1,4 @@
-## [ionify](about/ionify.md)
+## [ionify](learn/ionify.md)
 
 **ionify** is **implicit object notation invented for you**
 
@@ -6,14 +6,18 @@
 ;
 +
 { re:
-    { id: "ionify",
-      is: "implicit object notation invented for you",
-      by: "mike.lee@ionify",
-
-      at:
-        { "2016.11.12-08":   "san-jose.california.usa.earth"
-        , "2007.09.15-04": "forest-hills.new-york.usa.earth"
-        }
+    { id: "ionify.0.1.2016.11.20-08"
+    , is: "implicit object notation invented for you"
+    , by:
+        [ {creator: "mike.lee@iskitz"
+          ,     at: "2007.09-04"
+          ,     in: "forest-hills.new-york.usa.earth"
+          }
+        , {authors: "team@ionify"
+          ,     at: "2016.11.20-08"
+          ,     in: "san-jose.california.usa.earth"
+          }
+        ]
     },
 
   go:
