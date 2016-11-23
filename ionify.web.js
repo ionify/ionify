@@ -81,17 +81,17 @@
           , ""        : "./"
           }
     , TYPE: ".js"
-	,  EXT: (/(\.\D*$)/)    // matches file extensions
+    ,  EXT: (/(\.\D*$)/)    // matches file extensions
     ,  URL:
         function getURL (match, name, space, file, version, offset, string)
           {   var th1s  = getURL.this
-		  ,       ext   = th1s.EXT.exec (match)
+          ,       ext   = th1s.EXT.exec (match)
           ;   name      = name  && ( name.match (th1s.NAME) || [, name])[1]
           ;   space     = space && (space.match (th1s.NAME) || [,space])[1]
           ;   file      = file  && ( file.match (th1s.NAME) || [, file])[1]
 
           ;   return th1s.PATH [space] + (name || file) + (version || "")
-			                           + /*(ext ? ext [1] :*/(th1s.TYPE)
+                                       + /*(ext ? ext [1] :*/(th1s.TYPE)
           }
     },
   get:
