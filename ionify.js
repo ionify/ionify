@@ -1,73 +1,77 @@
 ;
-+ {0:0}
+
+['• . •']
+
 +
 {  re:
-    { id: "ionify"
+    { id: "ionify.0.1.2016.11.22-08"
     , is: "implicit object notation invented for you"
-    , by: {"Michael Lee": ["iskitz.net", "@iskitz"]}
-    , at: "2007.09-05...2016.08.07-07"
-    , in:
-        [ "forest-hills.new-york.usa.earth"
-        ,   "san-jose.california.usa.earth"
+    , by:
+        [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
+        , {authors:     "team@ionify", at: "2016.11.22-08"}
         ],
-
-      todo:
-        [ "..."
-        ]
     },
 
+  senseTodo:
+    [/ no: Fix + re-enable /
+    ],
+  sense :
+    { '• . •' : "activate"
+    , '• . -' : "disable"
+    , '- . •' : "disable"
+    , '- . -' : "deactivate"
+    , "on do" : "on"
+    ,  on     : "on"
+  //,  no     : "no"
+    },
+
+  valueOfTodo:
+ 	[/ 34: Move *.prototype.valueOf = this.eon* to an eons ion /
+	,/ 44: Sense "this.this" && "\+\*", find ion.this or sense\.*"+ set it /
+	,/ ##: ... /
+	],
   valueOf:
-    function activate ()
-      {  this.link()
-      ;  this.ionify()
-      ;  delete this.valueOf
-      ;  this.valueOf = function disabled () {}
+    function ionify ()
+      {   Object  .prototype.valueOf = this.eonObject
+      ;   Function.prototype.valueOf = this.eonFunction
+      ;   Array   .prototype.valueOf = this.eonArray
+      ;   Error   .prototype.valueOf = this.eonError
+
+      ;   this.link (this)	// (this.link.this = this).link
+
+      +   { on: "get"
+		  , do:
+		      { get: ["next.id@ionify", "do@ionify", "ions"]
+			  ,  no:  "this.this"
+			  }
+		  }
       },
 
   link:
     function link (ion)
-      { !ion && (ion = this);
+      { ion || (ion = link.this) || (link == this.link) && (ion = this);
 
         var property
           , thing
-          , id = (ion.re ? ion.re.id : ion.id) || "my"
-          ; id = id.replace (/(.+)@.*/, "$1")
+          , id = /*(ion.re ? ion.re.id : ion.id) ||*/ "this"
+        //; id = id.replace (/(.+)@.*/, "$1")
           ;
         for (property in ion)
-          {  thing = ion [property]
-          ;  (typeof thing == "function") && (thing [id] = ion)
+          { thing = ion [property]
+          ; if (!thing || property == id)                               continue
+          ; if (typeof thing != "function" && typeof thing != "object") continue
+          ; if (!ion.hasOwnProperty (property))                         continue
+          ; thing [id] = ion
+        //; +{debug:"linked "+property}
           }
+        return true
       },
-
-  ionify:
-    function ion1fy ()
-      { var ionify                     = ion1fy.ionify
-          , sense                      = ionify.senses || ionify.sense
-          ; sense.on                   = ionify.on
-          ; Object  .prototype.valueOf = ionify.onObject
-          ; Function.prototype.valueOf = ionify.onFunction
-          ; Array   .prototype.valueOf = ionify.onArray
-          ; Error   .prototype.valueOf = ionify.onError
-          ;
-
-        + [ {on:   0    ,   0   :ionify.activate  }
-          , {on:  '.'   ,  '.'  :ionify.deactivate}
-          , {on: '-.-'  , '-.-' :ionify.disable   }
-          ]
-      },
-
-  senses: null,
-  sense : {} ||
-    {   0   :   0
-    ,  '.'  :  '.'
-    , '-.-' : '-.-'
-    },
 
   activate:
     function activate (ion)
-      {  if (ion [0] !== 0) return
-      ;  var ionify = activate.ionify
-      ;  ionify.senses && (ionify.senses != ionify.sense) && ionify.ionify()
+      {  if (ion [0] !== '• . •') return
+      ;  var th1s = activate.this
+      ;  th1s.senses && (th1s.senses != th1s.sense) && +th1s
       },
 
   deactivate:
@@ -77,25 +81,24 @@
       ;  delete Array   .prototype.valueOf
       ;  delete Error   .prototype.valueOf
       ;
-      ;  var ionify = deactivate.ionify
-      ;  ionify.free()
+      ;  deactivate.this.free()
       },
 
   disable:
     function disable (ion)
-      { var ionify        = disable.ionify
-          ; ionify.senses = ionify.sense
-          ; ionify.sense  = {0:ionify.activate}
+      { var th1s        = disable.this
+          ; th1s.senses = th1s.sense
+          ; th1s.sense  = {'• . •':th1s.activate}
       },
 
   free:
     function free (ion)
-      { !ion && (ion = this);
+      { ion || (free == this.free) && (ion = this);
 
         var property
           , thing
-          , id = (ion.re ? ion.re.id : ion.id) || "my"
-          ; id = id.replace (/(.+)@.*/, "$1")
+          , id = /*(ion.re ? ion.re.id : ion.id) ||*/ "this"
+        //; id = id.replace (/(.+)@.*/, "$1")
           ;
         for (property in ion)
           {  thing = ion [property]
@@ -103,90 +106,156 @@
           }
       },
 
-  on:
-    function on (ion)
-      { var ionify        = on.ionify
-          , sense         = ionify.sense
-          , thing         = ion.on
+  getId:
+    function getId (ion)
+      { var     id = ion.re ? ion.re.id : (ion.re = {id: ion.id}).id
+      ; !id && (id = ion.re.id  = "sensor."
+                                + (getId.nextId ? ++getId.nextId
+                                                :  (getId.nextId = 1)))
+      ; return id
+      },
+
+  ionMethod:
+ 	{ re:
+	 	{ notes:[/   125: Do ion.ionMethod = ion.ionMethod.is /]
+		, todos:[/ line#: ... /]
+		},
+	  get:
+	    { data: 7
+		},
+	  is:
+	    function ionMethod ()
+	      {  this.get.data
+		  }
+	},
+
+  noTodo:
+ 	[/ 133: resolve +{no:"this.this"} /
+	,/ 134: why check nion.on instead of nion.no? /
+	,/ 137: future bug if multiple actions for same term /
+	],
+  no:
+    function no (ion)
+      { if (!ion.no && !("no" in ion)) return ion;
+
+        var ions = ion.no
+          ; !Array.isArray (ions) && (ions = [ions])
           ;
-
-        !Array.isArray (thing) && (thing = [thing]);
-
-        var act
-          , next = -1
-          , last = thing.length
+        var id
+          , act
+          , nion //next ion
+          , term
+          , next  = -1
+          , last  = ions.length
+          , sense = no.this.sense
           ;
         while (++next < last)
-          {  act = thing [next]
-          ;  sense [act] = ion [act]
+          { nion  = ions [next]
+          ; term  = nion.on
+          ; id    = nion.re.id
+          ; act   = sense [term]
+          ; act  && act.this && (act.this.re.id == id) && delete sense [term]
           }
       },
 
-  onArray:
-    function onArray (ion)
-      { !ion && (ion = this);
+  on:
+    function on (ion)
+      { if (!ion || !ion.on && !("on" in ion)) return ion;
 
-        var ionify  = onArray.ionify
-          , sense   = ionify.sense
-          , next    = -1
-          , last    = ion.length
+         (ion.re && ion.re.id) || +{next:"sensor", id:ion}
+		!(ion.re && ion.re.id) && on.this.getId (ion)
+
+        var grammars  = ion.on
+          ; !Array.isArray (grammars) && (grammars = [grammars])
+          ;
+        var grammar
+          , action
+          , todo
+          , todos = 0
+          , next  = -1
+          , last  = grammars.length
+          , th1s  = on.this
+          , sense = th1s.sense
+          ;
+        while (++next < last)
+          { grammar = grammars [next]
+          ; Array.isArray (grammar) && (grammar = grammar.join (" "))
+          ; action = ion [grammar]
+          ; action ? (sense [grammar] = action) : !sense [grammar] && ++todos     //for +{on:["..."], do:()}, track the missin "on's"
+          } !todos && +ion.do                                                     //for +{on:["..."], do:()} do "do" if no "on's" are missing
+          ;
+        for
+          ( next = -1, todo = on.todo || (on.todo = []), last = todo.length
+          ; ++next < last
+          ; th1s.on (todo.shift())
+          );todos && todo.push (ion)
+      },
+
+  eonArray:
+    function eonArray (ion)
+      { ion || (ion = this);
+
+        var th1s  = eonArray.this
+          , sense = th1s.sense
+          , next  = -1
+          , last  = ion.length
           , thing
           ;
         while (++next < last)
-          { thing = ion [next];
-            typeof thing == "string"
-              ?  sense [thing] && sense [thing] (thing)
+          { thing = ion [next]
+          ; typeof thing == "string"
+              ?  +sense [thing] //&& sense [thing] (thing)
               :  +thing
           }
 
         return this
       },
 
-  onError:
-    function onError ()
-      {  throw this
+  eonError:
+    function eonError (ion)
+      {  throw ion || this
       },
 
-  onFunction:
-    function onFunction()
-      {  this()
-      ;  return this
+  eonFunction:
+    function eonFunction (ion)
+      {  ion || (ion = this)
+      ;  ion.apply (this) // ion()
+      +  {debug: '+' +ion.name+ '()'}
+      ;  return ion
       },
 
-  onObject:
-    function onObject (ion)
-      { !ion && (ion = this);
+  eonObjectTodo:
+ 	[/ 221: make sense an ArrayMap to preserve order + fast lookup /
+	,/ 235: log all matched actions + their results /
+	],
+  eonObject:
+    function eonObject (ion)
+      { ion || (ion = this)
+	  ; (eonObject.caller != eonObject) && +{debug: ion.re && ion.re.id}
 
-        var ionify  = onObject.ionify
-          , sense   = ionify.sense
-          ; ionify.link (ion)
+        var th1s    = eonObject.this
+          , sense   = th1s.sense
+          , skip    = {this:1}
+          , grammar , terms
+          , next    , last
           ;
-        for (var thing in sense)
-          (ion [thing] || thing in ion)
-            &&  Object.prototype [thing] !== ion [thing]
-            &&  sense [thing] (ion)
-            ;
+  next: for (grammar in sense)
+          { if (skip [grammar]) continue
+		  ; terms = grammar.split (" ")
+          ; for (next=-1, last=terms.length; ++next < last;)
+              {  grammar = terms [next]
+              ;  if (!(ion [grammar] || grammar in ion)) continue next
+              }  grammar = terms.join (" ")
+              ;
 
+            (   "function" == typeof sense [grammar]
+            ||  (sense [grammar]  =   th1s [grammar])
+            &&  "function" == typeof sense [grammar]
+            )   &&   th1s.link (ion)
+                &&  (sense [grammar].this != ion)
+                &&   sense [grammar]      (ion)
+          }
         return this
       }
 } //+ionify
-
-+
-{ id: "go@ionify.net",
-  on: "go",
-  go:
-    function go (ion)
-      {  var action = ion.go
-      ;  (typeof action == "string") ? +ion [action] : +ion.go
-      }
-}  //+go@ionify.net
-
-|| //+go@ionify.net alternate
-{ on:
-    { go:
-        function go (ion)
-          { +ion.go
-}   }     }
-
 ;
-
