@@ -1,11 +1,11 @@
 ;
 +
 { re:
-    { id: "web@ionify.0.1.2016.11.22-08"
+    { id: "web@ionify.0.1"
     , is: "web-based implicit object notation invented for you"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2016.11.22-08"}
+        , {authors:     "team@ionify", at: "2016.12.01-08"}
         ],
 
       todo:
@@ -164,7 +164,7 @@
       { var th1s      = log.this
           , id        = th1s.re.id
           , level     = ion.as || "log"
-          , iOSPath   = (/^file:\/\/\/var\/mobile\//)
+          , iOSPath   = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole = document.URL.match (iOSPath)
           ;
 
