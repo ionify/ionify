@@ -168,12 +168,19 @@
           , noConsole = document.URL.match (iOSPath)
           ;
 
+        function adjust (ion)
+          { level = ion.as || "log"
+          ; return ion [level] || !(level in ion)
+          }
+
         function cons0le (ion)
-          { console [level] (id + ": " + String (ion.log))
+          {  adjust (ion)
+          && console [level] (id + ": " + String (ion.log))
           }
 
         function popup (ion)
-          { alert (id + ": " + level + ":" + String (ion.log))
+          {  adjust (ion)
+          && alert (id + ": " + level + ":" + String (ion.log))
           }
 
       ; (th1s.log = noConsole ? popup : cons0le)(ion)
