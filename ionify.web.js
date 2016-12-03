@@ -1,11 +1,12 @@
 ;
+
 +
 { re:
     { id: "web@ionify.0.1"
     , is: "web-based implicit object notation invented for you"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2016.12.01-08"}
+        , {authors:     "team@ionify", at: "2016.12.03-08"}
         ],
 
       todo:
@@ -16,11 +17,10 @@
 
   valueOf:
     function ionifyWeb ()
-      {   var ionify = this
-      ;   delete ionify.valueOf                           // remove ionify's valueOf() so this [web@ionify] module can be ionified
-      ;   ionify.works ()
-      ;   ionify.locate()
-      ;   ionify.get ({get:"ionify@ionify", do:ionify})   // get ionify.js then activate this [web@ionify] ion
+      {   delete this.valueOf
+      ;   this.works  ()
+      ;   this.locate ()
+      ;   this.get    ({get:"ionify@ionify", do:this})
       },
 
   works:
@@ -122,6 +122,7 @@
               ; script.async  = !(ion.now === true)
               ; script.src    = path
               ; document.head.appendChild (script)
+              ; +{debug:"getting: "+path}
           }
       },
 
@@ -147,50 +148,67 @@
 
   debug:
     function debug (ion)
-      {   ion.as  = "debug"
-      ;   ion.log = ion.debug
-      ;   debug.this.log (ion)
+      { ion.as  = "debug"
+      ; ion.log = ion.debug
+      ; debug.this.log (ion)
       },
 
   error:
     function error (ion)
-      {   ion.as  = "error"
-      ;   ion.log = ion.error
-      ;   throw ion.error
+      { ion.as  = "error"
+      ; ion.log = ion.error
+      ; throw ion.error
       },
 
   log:
-    function log (ion)                                                          // for +{log:"anything"}
-      { var th1s      = log.this
-          , id        = th1s.re.id
-          , level     = ion.as || "log"
-          , iOSPath   = (/^file:\/\/.*\/var\/mobile\//)
-          , noConsole = document.URL.match (iOSPath)
-          ;
+    function log (ion)
+      {/* Causes an infinite loop log...onObject...debug...log
+          Maybe move logging to own flow | queue | thread so it
+          won't interupt other ion handling...
 
-        function adjust (ion)
-          { level = ion.as || "log"
-          ; return ion [level] || !(level in ion)
-          }
+        +/ ion: +{log:thing} logs some thing    /
+        +/ ion: +{log: true} enables  logging   /
+        +/ ion: +{log:false} disables logging   /
+        +/ ion: +{debug:...} same as +{log:...} /
+        +/ ion: +{error:...} same as +{log:...} /
+        +/ ion: +{ warn:...} same as +{log:...} /
+       */
 
         function cons0le (ion)
-          {  adjust (ion)
-          && console [level] (id + ": " + String (ion.log))
+          {  sense (ion)
+          && console [level] (id + String (ion.log))
           }
 
         function popup (ion)
-          {  adjust (ion)
-          && alert (id + ": " + level + ":" + String (ion.log))
+          {  sense (ion)
+          && alert (id + level + ": " + String (ion.log))
           }
 
-      ; (th1s.log = noConsole ? popup : cons0le)(ion)
+        function sense (ion)
+          { id         = (ion.from || th1s.re.id) + ": "
+          ; level      = ion.as    || "log"
+          ; ("boolean" == typeof ion [level]) && (sense [level] = ion [level])
+          ; return sense [level]
+          }
+
+        var id
+          , level
+          , th1s        = log.this
+          , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
+          , noConsole   = document.URL.match (iOSPath)
+          ; sense.debug = false
+          ; sense.error = true
+          ; sense.log   = true
+          ; sense.warn  = true
+          ; (th1s.log   = noConsole ? popup : cons0le) (ion)
       },
 
   warn:
     function warn (ion)
-      {   ion.as = "warn"
-      ;   ion.log = ion.warn
-      ;   warn.this.log (ion)
+      { ion.as = "warn"
+      ; ion.log = ion.warn
+      ; warn.this.log (ion)
       }
-}
-; //+web@ionify
+} //+web@ionify
+
+;

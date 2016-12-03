@@ -4,11 +4,11 @@
 
 +
 {  re:
-    { id: "ionify.0.1.2016.11.22-08"
+    { id: "ionify.0.1"
     , is: "implicit object notation invented for you"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2016.11.22-08"}
+        , {authors:     "team@ionify", at: "2016.12.03-08"}
         ],
     },
 
@@ -32,19 +32,22 @@
 	],
   valueOf:
     function ionify ()
-      {   Object  .prototype.valueOf = this.eonObject
-      ;   Function.prototype.valueOf = this.eonFunction
-      ;   Array   .prototype.valueOf = this.eonArray
-      ;   Error   .prototype.valueOf = this.eonError
+      {   Object  .prototype.valueOf = this.onObject
+      ;   Function.prototype.valueOf = this.onFunction
+      ;   Array   .prototype.valueOf = this.onArray
+      ;   Error   .prototype.valueOf = this.onError
+    //;   RegExp  .prototype.valueOf = this.onStorie
 
       ;   this.link (this)	// (this.link.this = this).link
 
       +   { on: "get"
-		  , do:
-		      { get: ["next.id@ionify", "do@ionify", "ions"]
-			  ,  no:  "this.this"
-			  }
-		  }
+          , do:
+              { get: ["next.id@ionify", "do@ionify", "ions"]
+              ,  no:  "this.this"
+              }
+          }
+
+        return ""
       },
 
   link:
@@ -191,11 +194,11 @@
           );todos && todo.push (ion)
       },
 
-  eonArray:
-    function eonArray (ion)
+  onArray:
+    function onArray (ion)
       { ion || (ion = this);
 
-        var th1s  = eonArray.this
+        var th1s  = onArray.this
           , sense = th1s.sense
           , next  = -1
           , last  = ion.length
@@ -211,29 +214,31 @@
         return this
       },
 
-  eonError:
-    function eonError (ion)
+  onError:
+    function onError (ion)
       {  throw ion || this
       },
 
-  eonFunction:
-    function eonFunction (ion)
+  onFunction:
+    function onFunction (ion)
       {  ion || (ion = this)
       ;  ion.apply (this) // ion()
       +  {debug: '+' +ion.name+ '()'}
       ;  return ion
       },
 
-  eonObjectTodo:
+  onObjectTodo:
  	[/ 221: make sense an ArrayMap to preserve order + fast lookup /
 	,/ 235: log all matched actions + their results /
 	],
-  eonObject:
-    function eonObject (ion)
+  onObject:
+    function onObject (ion)
       { ion || (ion = this)
-	  ; (eonObject.caller != eonObject) && +{debug: ion.re && ion.re.id}
+      ; var from = onObject.caller
+      ; ion.from || (ion.from = from && from.this && from.this.re.id)
+	  ; (from != onObject) && +{debug: ion.re && ion.re.id}
 
-        var th1s    = eonObject.this
+        var th1s    = onObject.this
           , sense   = th1s.sense
           , skip    = {this:1}
           , grammar , terms
@@ -258,4 +263,5 @@
         return this
       }
 } //+ionify
+
 ;
