@@ -138,7 +138,6 @@
         for (var last=url.length, next=-1; ++next < last;)
           { function got ()
               {  var then = got.then
-alert(["got",path])
               ~  {debug: ["got ",path," doing ",then,"..."]}
               ;  typeof then === "string" ? ~ion[then] : ~then
               }
@@ -153,15 +152,14 @@ alert(["got",path])
               ; script.async  = !(ion.now === true)
               ; script.src    = path
               ; document.head.appendChild (script)
-alert(["get",path])
               ~ {debug: ["get",path,"..."]}
           }
       },
 
 
   "get then":
-    function getDo (ion)                                                       // for +{get: "script.js", then: "action"}
-      { return getDo.this.get (ion)
+    function getThen (ion)                                                       // for +{get: "script.js", then: "action"}
+      { return getThen.this.get (ion)
       },
 
 
