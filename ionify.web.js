@@ -1,10 +1,12 @@
-~
+~['• . •']+
+
+
 { re:
     { id: "web@ionify.0.1"
-    , is: "web-based implicit object notation invented for you"
+    , is: "implicit object notation invented for your web"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.03.21-07"}
+        , {authors:     "team@ionify", at: "2017.03.22-07"}
         ],
 
       todo:
@@ -25,23 +27,24 @@
   valueOf:
     function ionifyWeb ()
       {   delete this.valueOf
-      ;   this.track  ()
+
+      ;   this.watch  ()
       ;   this.works  ()
       ;   this.locate ()
 
-      ;   var initialized =
+      ;   var initialize =
             [ this
-            , {debug:!true}
-            , {log: "やた！アイオニファイログわばちり！"}
-            , {hosted:true}
+            , { debug: !true}
+            , {   log: "やた！アイオニファイログわばちり！"}
+            , {hosted:  true}
             ]
 
-      ;   this.get ({get: "ionify@ionify", then: [initialized]})
+      ;   this.get ({get:"ionify@ionify", then:[initialize]})
       },
 
 
-  track:
-    function track ()
+  watch:
+    function watch ()
       { onerror =
            function onUncaughtError (message, url, line, column, error)
              { ~{warn : [message, error.stack]}
