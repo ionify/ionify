@@ -32,7 +32,7 @@
 { do: "hey"
 , hey:
     function hi ()
-      { +{log: hi.this.do + " did log"}
+      { +{log: String(hi.this.do) + " did log"}
       }
 }
 
@@ -84,8 +84,8 @@
   do:
     [ ,
       function onLoadExample ()
-      {  com.iskitz.ajile.examples.LoadExample()
-      }
+        {  com.iskitz.ajile.examples.LoadExample()
+        }
     ]
 }
 

@@ -8,7 +8,7 @@
     , is: "implicit object notation invented for you"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2016.12.03-08"}
+        , {authors:     "team@ionify", at: "2016.12.11-08"}
         ],
     },
 
@@ -56,15 +56,15 @@
 
         var property
           , thing
-          , id = /*(ion.re ? ion.re.id : ion.id) ||*/ "this"
-        //; id = id.replace (/(.+)@.*/, "$1")
+          , id = (ion.re ? ion.re.id : ion.$id) || "ion"
+          ; id = id.replace (/(.+)@.*/, "$1")
           ;
         for (property in ion)
           { thing = ion [property]
           ; if (!thing || property == id)                               continue
           ; if (typeof thing != "function" && typeof thing != "object") continue
           ; if (!ion.hasOwnProperty (property))                         continue
-          ; thing [id] = ion
+          ; thing.this = thing.ion = thing [id] = ion
         //; +{debug:"linked "+property}
           }
         return true
@@ -161,14 +161,18 @@
           }
       },
 
+  id:
+    function id (ion)
+      {  (ion.re && ion.re.id) || (id.caller != id.ion.onObject) && +{next:"sensor", id:ion}
+		!(ion.re && ion.re.id) && id.ion.getId (ion)
+	  },
+
   on:
     function on (ion)
-      { if (!ion || !ion.on && !("on" in ion)) return ion;
+      { if (!ion || !ion.on && !("on" in ion)) return ion
+	  ; on.ion.id (ion)
 
-         (ion.re && ion.re.id) || +{next:"sensor", id:ion}
-		!(ion.re && ion.re.id) && on.this.getId (ion)
-
-        var grammars  = ion.on
+	    var grammars  = ion.on
           ; !Array.isArray (grammars) && (grammars = [grammars])
           ;
         var grammar
@@ -234,6 +238,8 @@
   onObject:
     function onObject (ion)
       { ion || (ion = this)
+	  ; onObject.ion.id (ion)
+
       ; var from = onObject.caller
       ; ion.from || (ion.from = from && from.this && from.this.re.id)
 	  ; (from != onObject) && +{debug: ion.re && ion.re.id}
