@@ -1,12 +1,12 @@
 ;
 
-+
+~
 { re:
-    { id: "web.log@ionify.0.1"
+    { id: "web.log.0.1@ionify"
     , is: "web-based logging for ionify"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2016.12.06-08"}
+        , {authors:     "team@ionify", at: "2017.03.27-07"}
         ],
 
       todo:
@@ -31,8 +31,9 @@
     },
 
   on:
-    [ "log", "debug", "error", "warn"
+    [ "debug", "error", "info", "log", "warn"
     ],
+
 
   debug:
     function debug (ion)
@@ -41,10 +42,23 @@
       ; debug.this.log (ion)
       },
 
+
   error:
-    function error (ion)
-      { throw ion.error
+    function logError (ion)
+      { ion.as  = "error"
+      ; ion.log = ion.error
+      ; logError.this.log (ion)
+      ~ new Error (ion.error)
       },
+
+
+  info:
+    function logInfo (ion)
+      { ion.as  = "info"
+      ; ion.log = ion.info
+      ; logInfo.this.log (ion)
+      },
+
 
   log:
     function log (ion)
@@ -71,30 +85,32 @@
           }
 
         function sense (ion)
-          { id         = (ion.from || th1s.re.id) + ": "
-          ; level      = ion.as    || "log"
+          { id         = (ion.re.from || web.re.id) + ": "
+          ; level      = ion.as       || "log"
           ; ("boolean" == typeof ion [level]) && (sense [level] = ion [level])
           ; return sense [level]
           }
 
         var id
           , level
-          , th1s        = log.this
+          , web         = log.this
           , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole   = document.URL.match (iOSPath)
-          ; sense.debug = false
+          ; sense.debug = true
           ; sense.error = true
           ; sense.log   = true
           ; sense.warn  = true
-          ; (th1s.log   = noConsole ? popup : cons0le) (ion)
+          ; (web.log    = noConsole ? popup : cons0le) (ion)
       },
 
+
   warn:
-    function warn (ion)
-      { ion.as = "warn"
+    function logWarn (ion)
+      { ion.as  = "warn"
       ; ion.log = ion.warn
-      ; warn.this.log (ion)
+      ; logWarn.this.log (ion)
       }
+
 } //+web.log@ionify
 
 ;

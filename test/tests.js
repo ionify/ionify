@@ -1,13 +1,11 @@
-;
+~ ['• . •'] +
 
-['• . •']
 
-+
 { re:
     { id: "tests@ionify"
     , it: "Tests ionify"
     , by: "Mike.Lee@iskitz"
-    , at: "2016.11.13-08...2016.05.18-07"
+    , at: "2017.03.21-07...2016.05.18-07"
     , in: "san-jose.california.usa.earth"
     }
 }
@@ -20,11 +18,11 @@
         }
 };
 
-           hey            +
-{hi:     "iamai"      }   +
-{hi: "ひろことマイケル"  }   +
-{hi:   "['• . •']"    }   +
-           hey            ;
+              hey               +
+{hi:        "iamai"         }   +
+{hi: "かいととひろことマイケル"  }   +
+{hi:      "['• . •']"       }   +
+              hey               ;
 
 
 
@@ -38,7 +36,7 @@
 
 +
 { get: "http://ionify.net/ions/test/log.js"
-, do:
+, then:
     function hi ()
       { +{log: "did " + hi.this.get}
       }
@@ -49,19 +47,19 @@
 + {do:"went", went:{log:'¡hey! "do" works!'}}
 
 
-; +[':'] ;    ///*
+;~['- . •'];    ///*
 
 +
 { re:
     ["playing with syntax for getting non-ion scripts in order"],
 
   do:
-    [ { get: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
-      , now: true
+    [ {  get: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
+      ,  now:  true
       },
-      { get: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
-      , now: true
-      ,  do: "doIt"
+      {  get: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
+      ,  now:  true
+      , then: "doIt"
       }
     ],
   doIt:
@@ -70,9 +68,10 @@
       }
 }
 
-; +{O:0} ;
 
-+
+~['• . •']+
+
+
 { re:
     ["playing with syntax for getting multiple non-ion scripts in order"],
 
@@ -81,7 +80,7 @@
     , "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
     ],
   now: true,
-  do:
+  then:
     [ ,
       function onLoadExample ()
         {  com.iskitz.ajile.examples.LoadExample()
@@ -89,16 +88,17 @@
     ]
 }
 
-; +['-:-'] ;
 
-+
+~['• . -']+
+
+
 { re:
     ["playing with syntax for getting non-ion scripts in order"],
 
-  getoff:
-    [ { now: true, js: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"},
-      { now: true, js: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
-      , do: "doIt"
+  get:
+    [ {  now:  true, js: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff" },
+      {  now:  true, js: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
+      , then: "doIt"
       }
     ],
   now: true,
