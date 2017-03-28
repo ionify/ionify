@@ -1,4 +1,7 @@
+;
+
 ~['• . •']+
+
 
 {  re:
     { id: "ionify.0.1"
@@ -6,7 +9,7 @@
 
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.03.21-07"}
+        , {authors:     "team@ionify", at: "2017.03.28-07"}
         ]
 
     , stories:
@@ -286,9 +289,9 @@
   onFunction:
     function onFunction (ion)
       {  ion || (ion = this)
-      ;  ion.apply (this) // ion()
-      ~  {debug: ['+',ion.name,'()']}
-      ;  return ion
+      ;  var got = ion.apply (this)
+      ~  {debug: ['+', ion.name || "anonymous", '() : ', got]}
+      ;  return got
       },
 
 
