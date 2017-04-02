@@ -6,7 +6,7 @@
 ;
 +
 { re:
-    { id: "ionify.0.1.2016.11.20-08"
+    { id: "ionify.0.1.2016.11.22-08"
     , is: "implicit object notation invented for you"
     , by:
         [ {creator: "mike.lee@iskitz"
@@ -14,7 +14,7 @@
           ,     in: "forest-hills.new-york.usa.earth"
           }
         , {authors: "team@ionify"
-          ,     at: "2016.11.20-08"
+          ,     at: "2016.11.22-08"
           ,     in: "san-jose.california.usa.earth"
           }
         ]

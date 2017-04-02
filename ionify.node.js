@@ -1,11 +1,11 @@
-;
-+ {0:0}
-+
+~['• . •']+
+
+
 {  re:
     { id: "node@ionify.net"
-    , is: "node-based implicit object notation invented for you"
+    , is: "implicit object notation invented for your node"
     , by: {"Michael Lee": ["iskitz.net", "@iskitz"]}
-    , at: "2007.09...2016.07.24-07"
+    , at: "2007.09...2017.03.22-07"
     , in:
         [ "forest-hills.new-york.usa.earth"
         ,   "san-jose.california.usa.earth"
@@ -13,7 +13,7 @@
     },
 
   valueOf:
-    function nionify ()
+    function ionifyNode ()
       {  var node        = this
       ;  node.check.node = node
       ;  node.get  .node = node
