@@ -6,7 +6,7 @@
     , is: "web-based logging for ionify"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.03.27-07"}
+        , {authors:     "team@ionify", at: "2017.04.04-07"}
         ],
 
       todo:
@@ -15,7 +15,17 @@
         ]
     },
 
-  do: "works",
+
+  on:
+    [ "error", "warn", "log", "info", "debug"
+    ],
+
+
+  do:
+    [ {debug:true}
+    , "works"
+    ],
+
 
   works:
     function works ()
@@ -29,10 +39,6 @@
     { noAlert   : new Error ("web@ionify.net needs the window.alert() API")
     , noConsole : new Error ("web@ionify.net needs the console.log() API")
     },
-
-  on:
-    [ "debug", "error", "info", "log", "warn"
-    ],
 
 
   debug:
@@ -96,7 +102,7 @@
           , web         = log.this
           , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole   = document.URL.match (iOSPath)
-          ; sense.debug = true
+          ; sense.debug = false
           ; sense.error = true
           ; sense.log   = true
           ; sense.warn  = true

@@ -1,12 +1,15 @@
 ;
 
-+
+   ~   ~
++['0 . 0']+
+     -
+
 { re:
     { id: "web@ionify.0.1"
-    , is: "web-based implicit object notification invented for you"
+    , is: "implicit object notation invented for your web"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2016.03.27-07"}
+        , {authors:     "team@ionify", at: "2017.04.04-07"}
         ],
 
       todo:
@@ -16,6 +19,10 @@
     },
 
 
+  debug: false,
+    log: "やた！アイオニファイウェブログわばちり！"
+    ,
+
   on:
     [ ["get", "then"]
     , ["get", "use" ]
@@ -23,22 +30,18 @@
     ],
 
 
+  hosted: true,
+
+
   valueOf:
     function ionifyWeb ()
-      {   delete this.valueOf
+      {   var web = this
+      ;   delete web.valueOf
 
-      ;   this.watch  ()
-      ;   this.works  ()
-      ;   this.locate ()
-
-      ;   var initialize =
-            [ this
-            , { debug: !true}
-            , {   log: "やた！アイオニファイログわばちり！"}
-            , {hosted:  true}
-            ]
-
-      ;   this.get ({get: ["on@ionify", "web.log@ionify"], then: [initialize]})
+      ;   web.watch  ()
+      ;   web.works  ()
+      ;   web.locate ()
+      ;   web.get    ({get:["on@ionify", "web.log@ionify"], then:web})
       },
 
 
@@ -66,18 +69,26 @@
     },
 
 
+  locateStories:
+    [ " todo: Sense /ions/ path, don't hardcode it "
+    , / ... /
+    ],
+
   locate:
     function locate ()
       { var script  =[  document.currentScript ,,]
                     ||  document.scripts
                     ||  document.head.getElementsByTagName ("script")
           , path    =   script && script [script.length - 2].src
-          ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+\/).+$/, "$1"))
+          ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+\/).+$/, "$1/ions/"))
       },
 
 
   getStories:
-    [ /2016.11.16-08/
+    [ / 2017.04.05-07 /
+    , / todo: Update get$.PATH with @domains + their paths /
+
+    , /2016.11.16-08/
     , /ionify: todos: Enable inline + referrable via ion.methodStorie:[storie(s)]/
     , /ionify: todos: Disable eon during todo evaluations to allow sample code/
     , /   get: Handle URLs with existing file extension(s)/
@@ -118,7 +129,7 @@
           ;   file      = file  && ( file.match (web.NAME) || [, file])[1]
 
           ;   return web.PATH [space] + (name || file) + (version || "")
-                                       + /*(ext ? ext [1] :*/(web.TYPE)
+                                      + /*(ext ? ext [1] :*/(web.TYPE)
           }
     },
 

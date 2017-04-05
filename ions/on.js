@@ -1,4 +1,8 @@
-~['• . •']+
+;
+
+   ~   ~
++['0 . 0']+
+     -
 
 {  re:
     { id: "ionify.0.1"
@@ -6,7 +10,7 @@
 
     , by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.03.21-07"}
+        , {authors:     "team@ionify", at: "2017.04.04-07"}
         ]
 
     , stories:
@@ -52,12 +56,11 @@
     //; RegExp  .prototype.valueOf = this.onStorie
       ; this.link ()
 
-      ~ {     on: "hosted"
-        , hosted:
-            { get: ["next.id@ionify", "do@ionify", "ions"]
-            , no :  "hosted"
-            }
-        }
+      ; var initialize = {get: ["next.id@ionify", "do@ionify", "ions"]}
+      ; initialize.on  = "hosted"
+      ; initialize.no  =  initialize
+
+      ~ {on:"hosted", hosted:initialize}
 
         return ""
       },
@@ -117,10 +120,10 @@
     ],
 
   sense :
-    { '• . •'  : "activate"
-    , '• . -'  : "deactivate"
-    , '- . •'  : "deactivate"
-    , '- . -'  : "disable"
+    { '0 . 0'  : "activate"
+    , '0 . -'  : "disable"
+    , '- . 0'  : "disable"
+    , '- . -'  : "deactivate"
   //, ionified : "ionified"
   //, "on do"  : "on"
     ,  on      : "on"
@@ -130,7 +133,7 @@
 
   activate:
     function activate (ion)
-      {  if (ion [0] !== '• . •') return
+      {  if (ion [0] !== '0 . 0') return
       ;  var ionify = activate.this
       ;  ionify.senses && (ionify.senses != ionify.sense) && +ionify
       },
@@ -138,20 +141,20 @@
 
   deactivate:
     function deactivate (ion)
-      { var ionify        = deactivate.this
-          ; ionify.senses = ionify.sense
-          ; ionify.sense  = {'• . •':ionify.activate}
-      },
-
-
-  disable:
-    function disable (ion)
       {  delete Object  .prototype.valueOf
       ;  delete Function.prototype.valueOf
       ;  delete Array   .prototype.valueOf
       ;  delete Error   .prototype.valueOf
     //;  delete RegExp  .prototype.valueOf
-      ;  disable.this.unlink()
+      ;  deactivate.this.unlink()
+      },
+
+
+  disable:
+    function disable (ion)
+      { var ionify        = disable.this
+          ; ionify.senses = ionify.sense
+          ; ionify.sense  = {'0 . 0':ionify.activate}
       },
 
 
@@ -231,7 +234,7 @@
     [/ note: aesop: array-embedded sentence or phrase                       /
     ,/ todo: find known words in each sentence                              /
     ,/ todo: interpret via sentence(s), paragraph(s), chapter(s) + book(s)  /
-    ,/ todo: handle ['• . •'] via sense [thing] && sense [thing] (thing)    /
+    ,/ todo: handle ['0 . 0'] via sense [thing] && sense [thing] (thing)    /
     ,/ todo: use tbd name-to-ion resolver                                   /
     ],
 
@@ -363,3 +366,5 @@
         }
     }
 } //+ionify
+
+;
