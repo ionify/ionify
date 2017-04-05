@@ -288,9 +288,9 @@
   onFunction:
     function onFunction (ion)
       {  ion || (ion = this)
-      ;  ion.apply (this) // ion()
-      ~  {debug: ['+',ion.name,'()']}
-      ;  return ion
+      ;  var got = ion.apply (this)
+      ~  {debug: ['+', ion.name || "anonymous", '() : ', got]}
+      ;  return got
       },
 
 
