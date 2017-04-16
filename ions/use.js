@@ -1,0 +1,147 @@
+;
+/use@ionify activating.../
++
+
+{ re:
+    { id: "use.0.1@ionify"
+    , is: "An action enabling the use of an ion's thing(s)"
+    , by: "mike.lee@ionify"
+    , at: "2017.04.15-07...2007.09-04"
+
+        ,
+      stories:
+        [ /note: usage:/
+                  +{use:"+wakatta.view.show", in:"+wakatta.game"}
+                  +{use:"+view.thing", as:"+game.view.thing"}
+                  +{use:"+view.show", as:"show", in:"+game"}
+        , /todo: Use +on for each used thing to sense that thing/
+        , /todo: Maybe support a "from" parameter?/
+                  +{use:"show", from:"wakatta.view", in:"game"}
+        ]
+    }
+
+
+    ,
+  on:
+    [ ["use", "as", "in"]
+  //, ["use", "in"]
+  //,  "use"
+    ]
+
+
+    ,
+  errors:
+    { badAs: "Too many 'as' aliases. Use only one."
+    , badIn: "Can't use within non-object 'in'"
+    }
+
+
+    ,
+  getOnUseStories:
+    [ /note: A helper function for using ready-for-use things/
+    , /todo: .../
+    ]
+    ,
+  getOnUse:
+    function getOnUse (use)
+      { return function onUse (ion)
+          { use.in [use.as] = ion [use.use]
+          }
+      }
+
+
+    ,
+  okIn:
+    { function: true
+    , object  : true
+    }
+
+
+    ,
+  "use as in stories":
+    [ /note: Enables using things within an ion via aliases/
+    , /todo: Enable +{use: "thing" || ["..."], in: [{}]} /
+    , /todo: Enable +{use: "thing", as:["alias", "..."], in:{}} /
+    , /todo: Handle +{use: thing(s), from:ion}/
+    ]
+    ,
+  "use as in":
+    function useAsIn (ion)
+      { var USE     = useAsIn.ion
+          , errors  = USE.errors
+          , okIn    = USE.okIn
+          , onUse   = USE.getOnUse
+          , isArray = Array.isArray
+
+        isArray (ion.as) && isArray (ion.use) && ~errors.badAs
+        okIn    [typeof ion.in]               || ~errors.badIn
+
+        var use    = isArray (ion.use) ? ion.use : (ion.use = [ion.use])
+          , as     = isArray (ion.as)  ? ion.as  : (ion.as  = [ion.as])
+          , within = isArray (ion.in)  ? ion.in  : (ion.in  = [ion.in])
+          , next   = within
+          , last   = next.length
+          , on
+
+        for (var inThing = -1; ++inThing < last;)
+          { within  = next [inThing]
+            okIn [typeof within] || ~errors.badIn
+            asThing = -1
+
+                for (var aliases=as.length; ++asThing < aliases;)
+              { for (var    uses=use.length
+                    ,      thing=-1
+                    ,       name
+                    ;     ++thing < uses;
+                    )
+                    { name        = use [thing]
+                      on          = {on:name}
+                      on  [name]  = onUse ({use:name,as:as[asThing]||name,in:within})
+                      use [thing] = on
+                    }
+                ~use
+              }
+          }
+
+        //; ("from" in use) || (use.from = from)
+        return true
+      }
+
+
+    ,
+  "use in stories":
+    [ /note: Enables using things within a specific object/
+    ]
+    ,
+  "use in":
+    function useIn (ion)
+      { var use    = useIn.ion["use as in"]
+          , next   = Array.isArray (ion.use) ? ion.use : [ion.use]
+          , last   = next.length
+          , thing  = -1
+          , within = ion.in || ion
+          , name
+        while (++thing < last)
+          { name        = next[thing]
+          ; next[thing] = {use:name, as:name, in:within}
+          ; use (next[thing])
+          }
+      }
+
+
+    ,
+  useStories:
+    [ /note: Enables using things within the current ion/
+    , /todo: .../
+    ]
+    ,
+  use:
+    function onUse (ion)
+      { ion.in = ion
+      ; onUse.this["use in"](ion)
+      }
+}
+
++
+/use@ionify activated!/
+;
