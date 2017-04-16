@@ -1,46 +1,52 @@
 ;
+/web.log activating.../
++
 
-~
 { re:
-    { id: "web.log.0.1@ionify"
+    { id: "log.0.1.2017.04.15-07@ionify"
     , is: "web-based logging for ionify"
-    , by:
+
+        ,
+      by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.04.04-07"}
-        ],
-
-      todo:
-        [ "on: Update ionify.js to handle action grammar"
-        , "qa: Add tests for web@ionify + its actions"
+        , {authors:     "team@ionify", at: "2017.04.14-07"}
         ]
-    },
 
+        ,
+      stories:
+        [ /todo: Create log@ + move console + all +logging there/
+        , /todo: Update to only use alert() on iOS/
+        , /todo: works(): only throw noConsole if no alert() /
+        ]
+    }
 
+    ,
   on:
     [ "error", "warn", "log", "info", "debug"
-    ],
+    ]
 
+    ,
+  errors:
+    { noAlert   : "log@ionify needs the window.alert() API"
+    , noConsole : "log@ionify needs the console.log() API"
+    }
 
+    ,
   do:
     [ {debug:true}
     , "works"
-    ],
+    ]
 
-
+    ,
   works:
     function works ()
       {   var error = works.this.errors
-      ;   if (typeof  console == "undefined") throw error.noConsole
-      ;   if (typeof    alert == "undefined") throw error.noAlert
+      ;   (typeof  console == "undefined") && ~error.noConsole
+      ;   (typeof    alert == "undefined") && ~error.noAlert
       ;   return true
-      },
+      }
 
-  errors:
-    { noAlert   : new Error ("web@ionify.net needs the window.alert() API")
-    , noConsole : new Error ("web@ionify.net needs the console.log() API")
-    },
-
-
+    ,
   debug:
     function debug (ion)
       { ion.as  = "debug"
@@ -82,20 +88,28 @@
 
         function cons0le (ion)
           {  sense (ion)
-          && console [level] (id + String (ion.log))
+          && console [level] (id + ": " + String (ion.log))
           }
 
         function popup (ion)
           {  sense (ion)
-          && alert (id + level + ": " + String (ion.log))
+          && alert (id + icon[level] + String (ion.log))
           }
 
         function sense (ion)
-          { id         = (ion.re.from || web.re.id) + ": "
-          ; level      = ion.as       || "log"
+          { id         =  ion.re.from || web.re.id
+          ; level      =  ion.as      || "log"
           ; ("boolean" == typeof ion [level]) && (sense [level] = ion [level])
           ; return sense [level]
           }
+
+        var icon =
+            { debug: "🐛"
+            , error: "❌"
+            ,  info: "💡"
+            ,   log: "📋"
+            ,  warn: "⚠️"
+            }
 
         var id
           , level
@@ -117,6 +131,8 @@
       ; logWarn.this.log (ion)
       }
 
-} //+web.log@ionify
+}
 
++
+/web.log@ionify activated!/
 ;
