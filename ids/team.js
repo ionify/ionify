@@ -1,29 +1,28 @@
 ;
 
 ~
-{ id: "team@ionify"
+{ id: "team.0.1.2017.04.09-07@ionify"
 , is:
-    [ {creator: "mike.lee@iskitz"
+    [ {creator: "mike.lee@ionify"
       ,     at: "2007.09-04"
       ,     in: "forest-hills.new-york.usa.earth"
       },
 
       { author: "earliest.team.member@domain"
-      ,     at: "YEAR.MM.DD-Timezone.offset"
-      ,     in: "[town.]city[.state].country.planet"
+      ,     at: "YEAR[.MM[.DD]][+|-TimezoneHour.MinuteOffset]"
+      ,     in: "[town.][city.][state.][country.]planet"
       },
 
-      { author: "other.ascending.order.team.members@domain"
-      ,     at: "YEAR.MM.DD-Timezone.offset"
-      ,     in: "[town.]city[.state].country.planet"
+      { tester: "other.ascending.order.team.members@domain"
+      ,     at: "YEAR[.MM[.DD]][+|-TimezoneHour.MinuteOffset]"
+      ,     in: "[town.][city.][state.][country.]planet"
       },
 
-      { author: "newest.team.member@domain"
-      ,     at: "2017.04.04-07"
+      { writer: "newest.team.member@domain"
+      ,     at: "2017.04.09-07"
       ,     in: "san-jose.california.usa.earth"
       }
     ]
-
 }
 
 ;
