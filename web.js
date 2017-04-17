@@ -39,7 +39,7 @@
             , {hosted:  true}
             ]
 
-      ;   this.get ({get:"ionify@ionify", then:[initialize]})
+      ;   this.get ({get:"on@ionify", then:[initialize]})
       },
 
 
