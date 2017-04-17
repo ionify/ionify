@@ -6,20 +6,24 @@
     { id: "use.0.1@ionify"
     , is: "An action enabling the use of an ion's thing(s)"
     , by: "mike.lee@ionify"
-    , at: "2017.04.15-07...2007.09-04"
-
+    , at: "2017.04.16-07...2007.09-04"
         ,
       stories:
-        [ /note: usage:/
+        [ /note: +get.use.in.as: helps wakatta + is like ajile/
+                  +
+                  { use: "thing"    || ["thing", "...", "other.thing"]
+                  ,  in:  this.item || "ion.id"
+                  ,  as: "alias"
+                  }
+        , /todo: Confirm ion id for each +on:use before acting/
+        , /todo: Maybe support a "from" parameter?/
+                  +{use:"show", from:"wakatta.view", in:"game"}
+        , /todo: Enable using with ion ids/
                   +{use:"+wakatta.view.show", in:"+wakatta.game"}
                   +{use:"+view.thing", as:"+game.view.thing"}
                   +{use:"+view.show", as:"show", in:"+game"}
-        , /todo: Use +on for each used thing to sense that thing/
-        , /todo: Maybe support a "from" parameter?/
-                  +{use:"show", from:"wakatta.view", in:"game"}
         ]
     }
-
 
     ,
   on:
@@ -28,13 +32,11 @@
   //,  "use"
     ]
 
-
     ,
   errors:
-    { badAs: "Too many 'as' aliases. Use only one."
-    , badIn: "Can't use within non-object 'in'"
+    { badAs: "Can't use 'as' with more than 1 'use'"
+    , badIn: "Can only use 'in' with objects"
     }
-
 
     ,
   getOnUseStories:
@@ -49,17 +51,16 @@
           }
       }
 
-
     ,
   okIn:
     { function: true
     , object  : true
     }
 
-
     ,
   "use as in stories":
-    [ /note: Enables using things within an ion via aliases/
+    [ /note: Enables using ion things within objects via aliases/
+    , /todo: Switch "use" + "as" loops? Might not have an "as"/
     , /todo: Enable +{use: "thing" || ["..."], in: [{}]} /
     , /todo: Enable +{use: "thing", as:["alias", "..."], in:{}} /
     , /todo: Handle +{use: thing(s), from:ion}/
@@ -69,12 +70,12 @@
     function useAsIn (ion)
       { var USE     = useAsIn.ion
           , errors  = USE.errors
-          , okIn    = USE.okIn
           , onUse   = USE.getOnUse
+          , validIn = USE.okIn
           , isArray = Array.isArray
 
         isArray (ion.as) && isArray (ion.use) && ~errors.badAs
-        okIn    [typeof ion.in]               || ~errors.badIn
+        validIn [typeof ion.in]               || ~errors.badIn
 
         var use    = isArray (ion.use) ? ion.use : (ion.use = [ion.use])
           , as     = isArray (ion.as)  ? ion.as  : (ion.as  = [ion.as])
@@ -85,18 +86,18 @@
 
         for (var inThing = -1; ++inThing < last;)
           { within  = next [inThing]
-            okIn [typeof within] || ~errors.badIn
+            validIn [typeof within] || ~errors.badIn
             asThing = -1
 
-                for (var aliases=as.length; ++asThing < aliases;)
-              { for (var    uses=use.length
-                    ,      thing=-1
-                    ,       name
+                for (var  aliases = as.length; ++asThing < aliases;)
+              { for (var     uses = use.length
+                    ,       thing = -1
+                    ,        name
                     ;     ++thing < uses;
                     )
                     { name        = use [thing]
                       on          = {on:name}
-                      on  [name]  = onUse ({use:name,as:as[asThing]||name,in:within})
+                      on  [name]  = onUse ({use:name, as:as[asThing] || name, in:within})
                       use [thing] = on
                     }
                 ~use
@@ -115,17 +116,7 @@
     ,
   "use in":
     function useIn (ion)
-      { var use    = useIn.ion["use as in"]
-          , next   = Array.isArray (ion.use) ? ion.use : [ion.use]
-          , last   = next.length
-          , thing  = -1
-          , within = ion.in || ion
-          , name
-        while (++thing < last)
-          { name        = next[thing]
-          ; next[thing] = {use:name, as:name, in:within}
-          ; use (next[thing])
-          }
+      { return useIn.ion ["use as in"] (ion);
       }
 
 
@@ -138,7 +129,7 @@
   use:
     function onUse (ion)
       { ion.in = ion
-      ; onUse.this["use in"](ion)
+      ; onUse.ion ["use as in"] (ion)
       }
 }
 
