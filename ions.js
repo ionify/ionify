@@ -16,7 +16,7 @@
       stories:
         [ /note: ions@ settings define ion domains, paths + more/
         , /note: domain lists are backup + performance options/
-        , "todo: move this ions@ to ionify's main directory: /"
+        , "todo: ..."
         ]
     }
 
