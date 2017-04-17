@@ -75,7 +75,7 @@
                     ||  document.scripts
                     ||  document.head.getElementsByTagName ("script")
           , path    =   script && script [script.length - 2].src
-          ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+\/).+$/, "$1"))
+          ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+)\/.+$/, "$1/ions/"))
       },
 
 
@@ -141,7 +141,7 @@
         for (var last=url.length, next=-1; ++next < last;)
           { function got ()
               {  var then = got.then
-              ~  {debug: ["got ",path," doing ",then,"..."]}
+              ~  {debug: ["got ",got.path," doing ",then,"..."]}
               ;  typeof then === "string" ? ~ion[then] : ~then
               }
 
@@ -152,8 +152,8 @@
                         : url [next].replace (get$.ID, get$.URL)
               ; then && (got.then = then) && (script.onload = got)
               ; script.type   = "text/javascript"
-              ; script.async  = !(ion.now === true)
-              ; script.src    = path
+              ; script.async  = ion.now !== true
+              ; script.src    = got.path  = path
               ; document.head.appendChild (script)
               ~ {debug: ["get",path,"..."]}
           }
