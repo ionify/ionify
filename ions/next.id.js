@@ -1,15 +1,16 @@
 ;
 +
 { re:
-    { id: "next.id@ionify.0.1.2016.11.22"
+    { id: "next.id.0.1.2017.04.07-07@ionify"
     , is: "An ion that generates sequential ids on-demand"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2016.09.10-07"}
-        , {authors:     "team@ionify", at: "2016.11.22-08"}
+        , {authors:     "team@ionify", at: "2017.04.07-07"}
         ],
     },
 
-  on:  [["next", "id"]],
+  debug : false,
+  on    : [["next", "id"]],
 
   MAX: Number.MAX_SAFE_INTEGER ||  9007199254740991,
   MIN: Number.MIN_SAFE_INTEGER || -9007199254740991,
