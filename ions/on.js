@@ -15,7 +15,7 @@
         ,
       by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.04.13-07"}
+        , {authors:     "team@ionify", at: "2017.04.29-07"}
         ]
 
         ,
@@ -47,7 +47,8 @@
                   , "on.error@ionify", "on.function@ionify"
                   ,  "on.aeon@ionify",          "do@ionify"
                   ,      "use@ionify",               "ions"
-                  ]
+                  ],
+                now: true
               }
 
       ; initialize.on  = "hosted"
