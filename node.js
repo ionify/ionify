@@ -1,11 +1,13 @@
-~['• . •']+
-
+;
+   ~   ~
++['0 . 0']+
+     -
 
 {  re:
     { id: "node@ionify.net"
     , is: "implicit object notation invented for your node"
     , by: {"Michael Lee": ["iskitz.net", "@iskitz"]}
-    , at: "2007.09...2017.03.22-07"
+    , at: "2007.09...2017.04.04-07"
     , in:
         [ "forest-hills.new-york.usa.earth"
         ,   "san-jose.california.usa.earth"

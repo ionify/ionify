@@ -1,53 +1,27 @@
-~ ['• . •'] +
-
-
-{ re:
-    { id: "tests@ionify"
-    , it: "Tests ionify"
-    , by: "Mike.Lee@iskitz"
-    , at: "2017.03.21-07...2016.05.18-07"
-    , in: "san-jose.california.usa.earth"
-    }
-}
-
-
-                            var hey =
-{ on: "hi"
-, hi: function onHi (ion)
-        { +{log:"hi " + ion.hi + "!"}
-        }
-};
-
-              hey               +
-{hi:        "iamai"         }   +
-{hi: "かいととひろことマイケル"  }   +
-{hi:      "['• . •']"       }   +
-              hey               ;
-
-
+;
+/get.test@ionify activating.../
 
 +
-{ do: "hey"
-, hey:
-    function hi ()
-      { +{log: hi.this.do + " did log"}
-      }
+{ re:
+    { id: "get.test.0.1.2017.04.15@ionify"
+    , is: "A suite of tests for ionify's +get actions"
+    , by: "mike.lee@ionify"
+    , at: "2007.09-04"
+    }
 }
 
 +
 { get: "http://ionify.net/ions/test/log.js"
+, now: true
 , then:
     function hi ()
       { +{log: "did " + hi.this.get}
       }
 }
 
-+ {do: {log: "¡hey!  do  works!"}}
 
-+ {do:"went", went:{log:'¡hey! "do" works!'}}
-
-
-;~['- . •'];    ///*
+/* immediately disables ionify
+   even before previous get.then's activate
 
 +
 { re:
@@ -64,14 +38,12 @@
     ],
   doIt:
       function onLoadExample ()
-      {  com.iskitz.ajile.examples.LoadExample()
+      {  ~com.iskitz.ajile.examples.LoadExample
       }
 }
+*/
 
-
-~['• . •']+
-
-
++
 { re:
     ["playing with syntax for getting multiple non-ion scripts in order"],
 
@@ -83,14 +55,13 @@
   then:
     [ ,
       function onLoadExample ()
-      {  com.iskitz.ajile.examples.LoadExample()
-      }
+        {  ~com.iskitz.ajile.examples.LoadExample
+        }
     ]
 }
 
-
-~['• . -']+
-
+/* immediately disables ionify
+   even before previous get.then's activate
 
 { re:
     ["playing with syntax for getting non-ion scripts in order"],
@@ -104,9 +75,11 @@
   now: true,
   doIt:
       function onLoadExample ()
-      {  com.iskitz.ajile.examples.LoadExample()
+      {  ~com.iskitz.ajile.examples.LoadExample
       }
 }
+*/
 
-//*/
++
+/get.test@ionify activated!/
 ;
