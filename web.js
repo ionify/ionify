@@ -84,7 +84,7 @@
                     ||  document.scripts
                     ||  document.head.getElementsByTagName ("script")
           , path    =   script && script [script.length - 2].src
-          ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+\/).+$/, "$1/ions/"))
+          ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+)\/.+$/, "$1/ions/"))
       },
 
 
@@ -138,7 +138,7 @@
           { function got ()
               {  var then = got.then
               ~  {debug: ["got ",got.path," doing ",then,"..."]}
-              ;  typeof then === "string" ? +ion[then] : +then
+              ;  typeof then === "string" ? ~ion[then] : ~then
               }
 
             var script  = document.createElement ("script")
