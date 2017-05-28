@@ -37,11 +37,11 @@ And because, it's awesome to find & share beautiful capabilities that have long 
 
 In 2003, Michael created **ajile**: **[a]synchronous javascript importing & loading extension**, to bring a browser-compatible, Java-like, module system to the web. **ajile** achieved this via dynamic script insertion which enabled fetching scripts across domains 👏🏾🤓
 
-In 2007, [```JSON```](http://wikipedia.org/JSON) was becoming a popular alternative to [```XML```](http://wikipedia.org/XML) for web-based data interchange. Michael was determined to enable fetching & interacting with ```JSON``` via [**ajile**](http://ajile.net) to benefit from its cross-domain fetching capability, an advantage over ```XMLHttpRequest```, the popular but cross-domain-policy-limited alternative available at the time 🤔
+In 2007, [```JSON```](https://en.wikipedia.org/wiki/JSON) was becoming a popular alternative to [```XML```](https://en.wikipedia.org/wiki/XML) for web-based data interchange. Michael was determined to enable fetching & interacting with ```JSON``` via [**ajile**](http://ajile.net) to benefit from its cross-domain fetching capability, an advantage over [```XMLHttpRequest```](https://en.wikipedia.org/wiki/XMLHttpRequest), the popular but [same-origin-policy](https://en.wikipedia.org/wiki/Same-origin_policy)-limited alternative available at the time 🤔
 
 Unfortunately, ```JSON``` fetched via **ajile** was programmatically inaccessible & its object literal form generated syntax errors for any ```JSON``` that contained 2 or more name-value pairs 😞
 
-A workaround existed in [```JSONP```](http://wikipedia.org/JSONP), but it required wrapping ```JSON``` in a ```function``` call or padding it with a ```var``` assignment 👎🏾
+A workaround existed in [```JSONP```](https://en.wikipedia.org/wiki/JSONP), but it required wrapping ```JSON``` in a ```function``` call or padding it with a ```var``` assignment 👎🏾
 
 Fortunately, Michael truly believed **impossible is nothing** & diligently worked to find a solution 👨🏽‍💻 Success came when he discovered via experimentation that it was possible to interface with anonymous objects via interaction with & activating of their type conversion! 👏🏾🤓
 
