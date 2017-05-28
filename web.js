@@ -11,7 +11,7 @@
     { id:  "web.0.1@ionify"
     , is:  "implicit object notation invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.04.17-07...2007.09-04"
+    , at:  "2017.04.29-07...2007.09-04"
         ,
       stories:
         [ /note: .../
@@ -53,7 +53,7 @@
     function watch ()
       { onerror =
            function onUncaughtError (message, url, line, column, error)
-             { ~{warn : [message, error.stack]}
+             { ~{warn : [message, error && error.stack]}
                ~{debug: [message, "errorstack", url, line, column, error]}
                return true
              }
@@ -143,7 +143,7 @@
 
             var script  = document.createElement ("script")
               , then    = act [next] //|| (((then = {})[url [next]] = ion), then)
-              
+
               , path    = url [next].match   (get$.HTTP)
                         ? url [next]
                         : url [next].replace (get$.ID, get$.URL)
