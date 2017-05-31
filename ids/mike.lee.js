@@ -1,7 +1,7 @@
 ;
 
 ~
-{ id: "mike.lee.0.1.2017.04.09-07@ionify"
+{ id: "mike.lee.0.1.2017.05.30-07@ionify"
 
     ,
   is:
@@ -24,7 +24,7 @@
 
     ,
   author:
-    [ "webOS", "Authorized Send", "Sybase Enterpise Portal"
+    [ "webOS", "Canon Authorized Send", "Sybase Enterpise Portal"
     ]
 
     ,
