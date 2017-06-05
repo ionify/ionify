@@ -14,7 +14,7 @@ In **1997**, [JavaScript's](https://web.archive.org/web/20070916144913/http://wp
 
 In **2007**, I, [Michael Lee](http://twitter.com/iskitz), discovered a capability within JavaScript that I named [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange): **json cross-domain** 👨🏽‍💻
 
-In **2017**, I named & shared **jsonXD's** core concepts as **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md):implicit object notation** & **[ionify](https://github.com/ionify/ionify/): ions interpreted for you** 🎉
+In **2017**, I named & shared **jsonXD's** core concepts as **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md):implicit object notation** & **[ionify](https://github.com/ionify/ionify/): ions invented for you** 🎉
 
 
 ## details
@@ -36,7 +36,7 @@ In 2003, I created **[ajile](http://ajile.net): [a]synchronous javascript import
 ;
 ```
 
-In 2007, [JSON](https://en.wikipedia.org/wiki/JSON) was becoming a popular web-based data interchange alternative to [XML](https://en.wikipedia.org/wiki/XML). I recognized this & was determined to enable fetching & interacting with it via **ajile** to benefit from **ajile's** cross-domain fetching capability, a capability lacking in [`XMLHttpRequest`](https://en.wikipedia.org/wiki/XMLHttpRequest), a popular but [same-origin-policy-limited](https://en.wikipedia.org/wiki/Same-origin_policy) API available at the time 💡
+In 2007, [JSON](https://en.wikipedia.org/wiki/JSON) was becoming a popular web-based data interchange alternative to [XML](https://en.wikipedia.org/wiki/XML). I recognized this & was determined to enable fetching & interacting with it via **ajile** to benefit from **ajile's** cross-domain fetching capability, a key limitation in [`XMLHttpRequest`](https://en.wikipedia.org/wiki/XMLHttpRequest), a popular but [same-origin-policy-limited](https://en.wikipedia.org/wiki/Same-origin_policy) API available at the time 💡
 
 Unfortunately, JSON fetched via **ajile**, was programmatically inaccessible & its object literal form generated syntax errors for all JSON containing two or more name-value pairs 😞
 
@@ -85,7 +85,7 @@ The breakthrough came in 2007 when I discovered, via diligent experimentation �
 ```javascript
 ;
 Object.prototype.valueOf          // 1: interface
-  = function onObject ()         // 3: interact
+  = function onObject ()          // 3: interact
       { this.id == "anonymous"    // true!
       ; this.is == "data"         // true!
       }
@@ -94,18 +94,18 @@ Object.prototype.valueOf          // 1: interface
 ;
 ```
 
-**A single-character prefix of `~`, `+`, or `-` was key** and as close to JSON as I could hope to get 👌🏾 **impossible is nothing** 🤓
+**impossible is nothing 🤓 A single-character prefix of `~`, `+`, or `-` was key** and as close to JSON as I could hope to get 👌🏾
 
 
 ## development
 
-After two more years of experimentation & implementation, I publicly introduced this cross-domain JSON-fetching solution as [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange) at the 2009 [Ajaxian](http://web.archive.org/web/20090916010056/http://ajaxexperience.techtarget.com:80/conference/html/speakers.html#MLee) web developer conference 🎉
+After an additional two years of experimentation & implementation, I publicly introduced this cross-domain JSON-fetching solution as [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange) at the [2009 Ajaxian](http://web.archive.org/web/20090916010056/http://ajaxexperience.techtarget.com:80/conference/html/speakers.html#MLee) web developer conference 🎉
 
 Over the next eight years I continued to experiment with, prototype, refine & describe this discovery, defining & announcing the concept of **[jems](https://github.com/ionify/jems/blob/public/about/jem.md): json-expressed modules** in [2015](https://github.com/ionify/jems/blob/24ab93d910334e3bbe05b72869cbb4fd81639e10/about/jems.md) and **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md): implicit object notations** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md): ions invented for you** in 2016 & 2017 👨🏽‍💻
 
 ## distribution
 
-Today, **jsonXD**'s become **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jem.md)** are one of many types of **ions**. All freely available to learn from, apply & extend.
+Today, **jsonXD**'s become **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jem.md)** are one of many types of **ions**; all freely available to learn from, apply & extend.
 
 🤓🖤
 [Michael {aka:"🇬🇾Mike"} Lee](http://twitter.com/iskitz)
