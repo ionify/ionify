@@ -94,7 +94,7 @@ Object.prototype.valueOf          // 1: interface
 ;
 ```
 
-**impossible is nothing 🤓 A single-character prefix of `~`, `+`, or `-` was key** and as close to JSON as I could hope to get 👌🏾
+**Impossible is Nothing 🤓 A single-character prefix of `~`, `+`, or `-` was key** and as close to JSON as I could hope to get 👌🏾
 
 
 ## development
@@ -105,7 +105,7 @@ Over the next eight years I continued to experiment with, prototype, refine & de
 
 ## distribution
 
-Today, **jsonXD**'s become **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jem.md)** are one of many types of **ions**; all freely available to learn from, apply & extend.
+Today, **jsonXD**'s become **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jem.md)** are one of [many types](https://github.com/ionify/ionify/tree/public/info/ions) of **ions**; all freely available to learn from, apply & extend.
 
 🤓🖤
 [Michael {aka:"🇬🇾Mike"} Lee](http://twitter.com/iskitz)
