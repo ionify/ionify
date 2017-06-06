@@ -1,6 +1,6 @@
 # ionify
 
-**implicit object notations invented for you**, is an [API](https://en.wikipedia.org/wiki/API) for interacting with ions.
+**implicit object notations invented for you**, is an [API](https://en.wikipedia.org/wiki/API) for interacting with [ions](https://github.com/ionify/ionify/blob/public/info/ion.md).
 
 ```javascript
 ~ /example/
@@ -22,7 +22,7 @@
 
 ## why
 
-Because it's awesome to find & share beautiful, undiscovered, capabilities that've long been possible; **ions** & **ionify** are exactly that 🤓 They were discovered & developed by [Michael Lee](http://twitter.com/iskitz) in [2007](https://github.com/ionify/ionify/blob/public/info/story.md) & publicly shared in [2009](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange), but were possible via [JavaScript](https://en.wikipedia.org/wiki/JavaScript) since [1997](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) & possibly since [1995](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html).
+Because it's awesome to find & share beautiful, undiscovered, capabilities that've long been possible; **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/)** are exactly that 🤓 They were discovered & developed by [Michael Lee](http://twitter.com/iskitz) in [2007](https://github.com/ionify/ionify/blob/public/info/story.md) & publicly shared in [2009](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange), but were possible via [JavaScript](https://en.wikipedia.org/wiki/JavaScript) since [1997](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) & possibly since [1995](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html).
 
 
 ## use
