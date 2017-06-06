@@ -13,9 +13,10 @@
 **implicit object notations**, are [expressions](https://en.wikipedia.org/wiki/Expression_(computer_science)) that activate [objects](https://en.wikipedia.org/wiki/Object_(computer_science)) via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion).
 
 ```javascript
-~ /examples/
+~ /example/ - /punctuation/
 ^ ["aesop"] * /  stories  /  >> {are:"ions"}
-& ["these"] + /expressions/  -  {are:"too" }
+& ["these"] + /expressions/  << {are:"too" }
+/ ["write"] % /them as you/  |  {see:"fit" }
 ;
 ```
 
