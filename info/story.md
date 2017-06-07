@@ -41,8 +41,8 @@ Load ("http://some.static.remo.te/json.data.js");
 
 // JSON response
 
-  { "remote"     : "request"
-  , "responds"   : "with this"
+  { "remote"      : "request"
+  , "responds"    : "with this"
   , "inaccessible": "JSON which"
   , "generates"   : "a Syntax Error when"
   , "loaded"      : "as JavaScript"
@@ -103,7 +103,7 @@ Over the next eight years I continued to experiment with, prototype, refine & de
 
 ## distribution
 
-Today, **jsonXD**'s become **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jem.md)** are one of [many types](https://github.com/ionify/ionify/tree/public/info/ions) of **ions**; all freely available to learn from, apply & extend.
+Today, **jsonXD's** become **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jem.md)** are one of [many types](https://github.com/ionify/ionify/tree/public/info/ions) of **ions**; all freely available to learn from, apply & extend.
 
 🖤
 [Michael {aka:"🇬🇾Mike"} Lee](http://twitter.com/iskitz)
