@@ -13,10 +13,10 @@
 **implicit object notations**, are [expressions](https://en.wikipedia.org/wiki/Expression_(computer_science)) that activate [objects](https://en.wikipedia.org/wiki/Object_(computer_science)) via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion).
 
 ```javascript
-~ /example/ - /   ions    /
-^ ["aesop"] * /  stories  /  >> {are:"ions"}
-& ["these"] + /expressions/  << {are:"too" }
-/ ["write"] % /them as you/  |  {see:"fit" }
+~  /example/  -  /    ions   /
+^  ["aesop"]  *  /  stories  /  >>  {are:"ions"}
+&  ["these"]  +  /expressions/  <<  {are:"too" }
+/  ["write"]  %  /them as you/  |   {see:"fit" }
 ;
 ```
 
@@ -31,7 +31,7 @@ Because it's awesome to find & share beautiful, undiscovered, capabilities that'
 **ions** & **ionify** enable
 
 + [collision-free](https://en.wikipedia.org/wiki/Name_collision) [modules](https://en.wikipedia.org/wiki/Modular_programming)
-    + **ions** are observable & encapsulate their content & identifiers which makes them ideal modules. [Literal **ions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form), e.g. `~/ / + [] & {}`, are externally anonymous which enables them to simultaneously coexist within the same [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) while remaining individually accessible.
+    + **ions** are observable & encapsulate their content & identifiers which makes them ideal modules. [Literal **ions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form), i.e. `~/ / + [ ] & { }`, are externally anonymous which enables them to simultaneously coexist within the same [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) while remaining individually accessible.
 + [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
     + JavaScript's prototypal inheritance & ability to interface with objects during their automatic type conversion enables observing **ions** without directly referencing them. This enables highly decoupled ion observation & interaction.
 + [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
@@ -62,13 +62,13 @@ for everyone.
 
 We hope to see **ionify** implemented in more languages that enable interfacing with objects during type conversion. Java & Python are two we've already experimented with & confirmed capable.
 
-Looking ahead, **ionify**'s JavaScript API will be developed to enable
+Looking ahead, **ionify's** API will be developed to enable
 
-+ fetching in all host environments
++ fetching in all JavaScript host environments
 + authenticating ions
 + automating ion discovery, assessment & substitution
 + & programming via natural language
 
-We hope these developments increase software development's accessibility for every being capable of expressing ideas.
+We hope these improvements increase software development's accessibility for every being capable of expressing ideas.
 
 ❤️ [team ionify](https://github.com/orgs/ionify/people)

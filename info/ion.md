@@ -1,10 +1,8 @@
 # ions
 
-**implicit object notations**, are [expressions](https://en.wikipedia.org/wiki/Expression_(computer_science)) that activate [objects](https://en.wikipedia.org/wiki/Object_(computer_science)) via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion).
-
-They enable writing [data](https://en.wikipedia.org/wiki/Data_(computing)) &
+**implicit object notations**, are [expressions](https://en.wikipedia.org/wiki/Expression_(computer_science)) that activate [objects](https://en.wikipedia.org/wiki/Object_(computer_science)) via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion) which enables writing [data](https://en.wikipedia.org/wiki/Data_(computing)) &
 [code](https://en.wikipedia.org/wiki/Source_code)
-as independent, observable, objects, called **ions**.
+as independent, observable, objects.
 
 
 ## form
@@ -45,10 +43,10 @@ and **orion**, object reference ions:
 This example combines eleven **lions** with the ten bitwise & arithmetic punctuation operators available to all **ions**.
 
 ```javascript
-~ /example/ - /punctuation/
-^ ["aesop"] * /  stories  /  >> {are:"ions"}
-& ["these"] + /expressions/  << {are:"too" }
-/ ["write"] % /them as you/  |  {see:"fit" }
+~  /example/  -  /punctuation/
+^  ["aesop"]  *  /  stories  /  >>  {are:"ions"}
+&  ["these"]  +  /expressions/  <<  {are:"too" }
+/  ["write"]  %  /them as you/  |   {see:"fit" }
 ;
 ```
 
@@ -74,7 +72,7 @@ As shown, arithmetic punctuation can be any of the
 [JavaScript](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-overview) runtimes interpret & evaluate **ions** as expressions.
 
 During evaluation, an **ion's** operator
-[attempts to convert its object operand to a number](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive). During that conversion, an attempt is made to call the object's `valueOf()` method. If an **ion** doesn't define a `valueOf()` method, JavaScript traverses the **ion**'s [prototype chain](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects) in search of one. For **lions** that search begins & ends at the object's `prototype`; i.e. `Object.prototype`, `Array.prototype` or `RegExp.prototype`. This only differs for **orion**, object reference ions, if they inherit from custom objects.
+[attempts to convert its object operand to a number](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive). During that conversion, an attempt is made to call the object's `valueOf()` method. If an **ion** doesn't define that method, JavaScript traverses the **ion's** [prototype chain](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects) in search of it. For **lions** that search begins & ends at the object's `prototype`; i.e. `Object.prototype`, `Array.prototype` or `RegExp.prototype`. This can differ for **orion** if they inherit from other objects.
 
 By default, `Object`, `Array` & `RegExp` all define `prototype.valueOf()`, so for each **ion** of those types, its operator calls the relevant `prototype.valueOf()` to obtain a [primitive value](https://en.m.wikipedia.org/wiki/Primitive_value) that's then converted to a number.
 
@@ -121,30 +119,26 @@ In [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-26
   ;
 ```
 
-and **hip hop**, alternating between the two.
+& **hip hop**, **ions** that alternate between the two.
 
 
-**hip**, **hop** & **hip hop ions** enable object observation by implementing
-the **```valueOf()```** method that javascript calls during an object's
+All three styles enable object observation by implementing the `valueOf()` method that javascript calls during an object's
 [type conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive).
-With **hip ions** that method is **held** __in-place__ within an
-object. With **hop ions** it's **held** __on__ an object's **```prototype```**.
+With **hip ions** that method is **held** __in-place__ within an object. With **hop ions** it's **held** __on__ an object's `prototype`.
 And with **hip hop ions** it's held via both styles, alternated at runtime.
 
-The difference between **hip** & **hop ions** is that **hip ions** observe a
-single object's conversion, while **hop ions** observe conversions for all
-objects of a specific type.
+The difference between **hip** & **hop ions** is that **hip ions** observe a single object's conversion, while **hop ions** observe conversions for all objects of a specific type.
 
-**hip**, **hop** & **hip hop ions** are simple, reliable & compatible patterns for observing & interacting with objects. They can be implemented
+**hip**, **hop**, and **hip hop** ions are simple, reliable & compatible patterns for observing & interacting with objects. They can be implemented
 manually, as shown, or via
-[**ionify: implicit object notation invented for you**](http://github.com/ionify/ionify/), an
+[**ionify: implicit object notations invented for you**](http://github.com/ionify/ionify/), an
 [API](https://en.wikipedia.org/wiki/Application_programming_interface)
 that simplifies **ion** interaction & observation.
 
 
 ## compatibility
 
-**hip, hop & hip hop ions & orion** are compatible with all JavaScript environments. **lion**
+**hip, hop**, and **hip hop** ions & **orion** are compatible with all JavaScript environments. **lion**
 are compatible with all environments implementing
 [any edition of the ECMAScript Specification](http://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)
 since [1999](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf).
