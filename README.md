@@ -13,7 +13,7 @@
 **implicit object notations**, are [expressions](https://en.wikipedia.org/wiki/Expression_(computer_science)) that activate [objects](https://en.wikipedia.org/wiki/Object_(computer_science)) via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion).
 
 ```javascript
-~ /example/ - /punctuation/
+~ /example/ - /   ions    /
 ^ ["aesop"] * /  stories  /  >> {are:"ions"}
 & ["these"] + /expressions/  << {are:"too" }
 / ["write"] % /them as you/  |  {see:"fit" }
@@ -31,9 +31,9 @@ Because it's awesome to find & share beautiful, undiscovered, capabilities that'
 **ions** & **ionify** enable
 
 + [collision-free](https://en.wikipedia.org/wiki/Name_collision) [modules](https://en.wikipedia.org/wiki/Modular_programming)
-    + **ions** are observable & encapsulate their content & identifiers which makes them ideal modules. Literal **ions**, e.g. `~/ / + [] & {}`, are externally anonymous which enables them to simultaneously coexist within the same [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) while remaining individually accessible.
+    + **ions** are observable & encapsulate their content & identifiers which makes them ideal modules. [Literal **ions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form), e.g. `~/ / + [] & {}`, are externally anonymous which enables them to simultaneously coexist within the same [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) while remaining individually accessible.
 + [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
-    + JavaScript's prototypal inheritance & ability to interface with objects during their automatic type conversion enables observing **ions** without directly referencing them. This enables highly decoupled ion interaction.
+    + JavaScript's prototypal inheritance & ability to interface with objects during their automatic type conversion enables observing **ions** without directly referencing them. This enables highly decoupled ion observation & interaction.
 + [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 + [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 + [literate programming](https://en.wikipedia.org/wiki/Literate_programming)

@@ -10,11 +10,7 @@ This is the story of **ionify**, one such capability's journey through time.
 
 One to discover, another to embrace.
 
-In **1997**, [JavaScript's](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html) first language specification was [published](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) 🙌🏾
-
-In **2007**, I, [Michael Lee](http://twitter.com/iskitz), discovered a capability within JavaScript that I named [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange): **json cross-domain** 👨🏽‍💻
-
-In **2017**, I named & shared **jsonXD's** core concepts as **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md):implicit object notation** & **[ionify](https://github.com/ionify/ionify/): ions invented for you** 🎉
+In **1997**, [JavaScript's](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html) first language specification was [published](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) 👏🏾 In **2007**, I, [Michael Lee](http://twitter.com/iskitz), discovered a capability within JavaScript that I named [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange): **json cross-domain** 👨🏽‍💻 In **2017**, I named & shared **jsonXD's** core concepts as **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md): implicit object notation** & **[ionify](https://github.com/ionify/ionify/): ions invented for you** 🎉
 
 
 ## details
@@ -42,6 +38,8 @@ Unfortunately, JSON fetched via **ajile**, was programmatically inaccessible & i
 
 ```javascript
 Load ("http://some.static.remo.te/json.data.js");
+
+// JSON response
 
   { "remote"     : "request"
   , "responds"   : "with this"
@@ -80,7 +78,7 @@ Load ("http://some.static.remo.te/jsonp");
 
 ## discovery
 
-The breakthrough came in 2007 when I discovered, via diligent experimentation 👨🏽‍💻, that it was possible to interface with anonymous objects via interaction with & implicit activation of their type conversion! 🙌🏾
+The breakthrough came in 2007 when I discovered, via diligent experimentation 👨🏽‍💻, that it was possible to interface with anonymous objects via interaction with & implicit activation of their automatic type conversion! **Impossible is Nothing** 🙌🏾
 
 ```javascript
 ;
@@ -94,7 +92,7 @@ Object.prototype.valueOf          // 1: interface
 ;
 ```
 
-**Impossible is Nothing 🤓 A single-character prefix of `~`, `+`, or `-` was key** and as close to JSON as I could hope to get 👌🏾
+**A single-character prefix of `~`, `+`, or `-` was key** & as close to JSON as I could hope to get 👌🏾
 
 
 ## development
@@ -107,5 +105,5 @@ Over the next eight years I continued to experiment with, prototype, refine & de
 
 Today, **jsonXD**'s become **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jem.md)** are one of [many types](https://github.com/ionify/ionify/tree/public/info/ions) of **ions**; all freely available to learn from, apply & extend.
 
-🤓🖤
+🖤
 [Michael {aka:"🇬🇾Mike"} Lee](http://twitter.com/iskitz)

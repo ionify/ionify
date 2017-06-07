@@ -1,4 +1,4 @@
-# ion
+# ions
 
 **implicit object notations**, are [expressions](https://en.wikipedia.org/wiki/Expression_(computer_science)) that activate [objects](https://en.wikipedia.org/wiki/Object_(computer_science)) via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion).
 
@@ -73,12 +73,12 @@ As shown, arithmetic punctuation can be any of the
 
 [JavaScript](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-overview) runtimes interpret & evaluate **ions** as expressions.
 
-During **ion** evaluation, its operator
-[attempts to convert its object operand to a number](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive). During that conversion, an attempt is made to call the object's `valueOf()` method. If an **ion** doesn't define a `valueOf()` method, JavaScript runtimes traverse the **ion**'s [prototype chain](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects) in search of one. For **lions** that search begins & ends at the object's `prototype`; i.e. `Object.prototype`, `Array.prototype` or `RegExp.prototype`. This only differs for **orion**, object reference ions, if they inherit from custom objects.
+During evaluation, an **ion's** operator
+[attempts to convert its object operand to a number](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive). During that conversion, an attempt is made to call the object's `valueOf()` method. If an **ion** doesn't define a `valueOf()` method, JavaScript traverses the **ion**'s [prototype chain](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects) in search of one. For **lions** that search begins & ends at the object's `prototype`; i.e. `Object.prototype`, `Array.prototype` or `RegExp.prototype`. This only differs for **orion**, object reference ions, if they inherit from custom objects.
 
-By default, `Object`, `Array` & `RegExp` all define `prototype.valueOf()`, so each **ion** type's operator calls the relevant `prototype.valueOf()` to obtain a [primitive value](https://en.m.wikipedia.org/wiki/Primitive_value) that's then converted to a number.
+By default, `Object`, `Array` & `RegExp` all define `prototype.valueOf()`, so for each **ion** of those types, its operator calls the relevant `prototype.valueOf()` to obtain a [primitive value](https://en.m.wikipedia.org/wiki/Primitive_value) that's then converted to a number.
 
-Defining custom `Object.prototype.valueOf()`, `Array.prototype.valueOf()` & `RegExp.prototype.valueOf()` methods enables using JavaScript's [implicit type conversion](https://en.m.wikipedia.org/wiki/Type_conversion) behavior to interact with all **ions** without needing an identifier 🤓
+Defining custom `Object.prototype.valueOf()`, `Array.prototype.valueOf()` & `RegExp.prototype.valueOf()` methods enables using JavaScript's [implicit type conversion](https://en.m.wikipedia.org/wiki/Type_conversion) behavior to interact with all **lions** without needing an identifier 🤓
 
 ```javascript
 ;
