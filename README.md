@@ -23,21 +23,81 @@
 
 ## why
 
-Because it's awesome to find & share beautiful, undiscovered, capabilities that've long been possible; **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/)** are exactly that 🤓 They were discovered & developed by [Michael Lee](http://twitter.com/iskitz) in [2007](https://github.com/ionify/ionify/blob/public/info/story.md) & publicly shared in [2009](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange), but were possible via [JavaScript](https://en.wikipedia.org/wiki/JavaScript) since [1997](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) & possibly since [1995](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html).
+Because it's awesome to find & share beautiful, undiscovered, capabilities that've long been possible. The capabilities that enable **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** & **[ionify](https://github.com/ionify/ionify/)** were discovered by [Michael Lee](http://twitter.com/iskitz) in [2007](https://github.com/ionify/ionify/blob/public/info/story.md) but have existed within [JavaScript](https://en.wikipedia.org/wiki/JavaScript) since [1997](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) & possibly since [1995](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html).
+
+Also...
 
 
-## use
+### modules
 
-**ions** & **ionify** enable
+**ions** can define [modules](https://en.wikipedia.org/wiki/Modular_programming):
 
-+ [collision-free](https://en.wikipedia.org/wiki/Name_collision) [modules](https://en.wikipedia.org/wiki/Modular_programming)
-    + **ions** are observable & encapsulate their content & identifiers which makes them ideal modules. [Literal **ions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form), i.e. `~/ / + [ ] & { }`, are externally anonymous which enables them to simultaneously coexist within the same [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) while remaining individually accessible.
-+ [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
-    + JavaScript's prototypal inheritance & ability to interface with objects during their automatic type conversion enables observing **ions** without directly referencing them. This enables highly decoupled ion observation & interaction.
-+ [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
-+ [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
-+ [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
-+ & more
+```javascript
+~
+{ re:
+    { id: "my.ion.module"
+    , by: "a.developer"
+    , is: "a simple module example"
+    }
+    ,
+  do:
+    function something ()
+      { ~/do something when this ion's evaluated/
+      }
+}
+;
+```
+
+As shown, **ion** modules encapsulate their content & [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages) which enables...
+
+### collision-free ids
+
+By encapsulating their identifiers, **ions** avoid [name collisions](https://en.wikipedia.org/wiki/Name_collision). [**literal ions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form), i.e. `~/ / + [ ] & { }`, are anonymous objects which enables them to simultaneously coexist within a single [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) while remaining individually accessible via listeners.
+
+```javascript
+~
+{ on: "my.ion@"
+, do:
+    function confirm (ion)
+      { if (ion.re.by != "a.developer") return
+      ~ / ion confirmed to be as expected so... /
+      ~ / do something with it /
+      }
+}
+
+~
+{ re:
+    { id: "my.ion"
+    , by: "a.developer"
+    }
+    ,
+  data: "a very simple example"
+}
+
+~
+{ re:
+    { id: "my.ion"
+    , by: "a.different.developer"
+    }
+    ,
+  data: "another very simple example"
+}
+;
+```
+
+### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
+
+JavaScript's prototypal inheritance & ability to interface with objects during their automatic type conversion enables observing **ions** without directly referencing them. This enables highly decoupled ion observation & interaction.
+
+
+### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
+
+
+### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
+
+### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
+
+### & much more
 
 
 ## who
