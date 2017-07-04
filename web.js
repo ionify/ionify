@@ -41,7 +41,6 @@
     function ionifyWeb ()
       {   var web = this
       ;   delete web.valueOf
-
       ;   web.watch  ()
       ;   web.works  ()
       ;   web.locate ()
