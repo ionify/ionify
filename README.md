@@ -48,11 +48,34 @@ Also...
 ;
 ```
 
-As shown, **ion** modules encapsulate their content & [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages) which enables...
+
+### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
+
+JavaScript's prototypal inheritance & ability to interface with objects during their automatic type conversion enables observing **ions** without directly referencing them. This enables highly decoupled ion observation & interaction.
+
+```javascript
+~
+{ on: "hi"
+, hi:
+    function hello (ion)
+      { /This method's called for each ion with   /
+      + /a "hi" property. It then logs hi's value./
+      
+      + {log: ion.hi}
+      }
+}
++
+{ hi: "I'm an ion!" }
+;
+```
+
 
 ### collision-free ids
 
-By encapsulating their identifiers, **ions** avoid [name collisions](https://en.wikipedia.org/wiki/Name_collision). [**literal ions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form), i.e. `~/ / + [ ] & { }`, are anonymous objects which enables them to simultaneously coexist within a single [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) while remaining individually accessible via listeners.
+Literal ions, [**lions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form), i.e. `~/ / + [ ] & { }`, avoid [name collisions](https://en.wikipedia.org/wiki/Name_collision) by encapsulating their [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
+
+Multiple **lions** with exact internal identifiers can simultaneously coexist within a single [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts) because they're anonymous objects that can be individually observed & inspected.
+
 
 ```javascript
 ~
@@ -85,11 +108,6 @@ By encapsulating their identifiers, **ions** avoid [name collisions](https://en.
 }
 ;
 ```
-
-### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
-
-JavaScript's prototypal inheritance & ability to interface with objects during their automatic type conversion enables observing **ions** without directly referencing them. This enables highly decoupled ion observation & interaction.
-
 
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
