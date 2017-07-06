@@ -59,28 +59,29 @@ By encapsulating their identifiers, **ions** avoid [name collisions](https://en.
 { on: "my.ion@"
 , do:
     function confirm (ion)
-      { if (ion.re.by != "a.developer") return
-      ~ / ion confirmed to be as expected so... /
-      ~ / do something with it /
+      { /This method's called for each ion with/
+      + /an id matching "my.ion". It then      /
+      + /confirms the ion's developer...       /
+      
+      ; if (ion.re.by != "a.developer") return
+      
+      ~ /...before using it/
+      + {log: ion.re.is}
       }
 }
-
-~
++
 { re:
     { id: "my.ion"
     , by: "a.developer"
+    , is: "a very simple module"
     }
-    ,
-  data: "a very simple example"
 }
-
-~
++
 { re:
     { id: "my.ion"
     , by: "a.different.developer"
+    , is: "another very simple module"
     }
-    ,
-  data: "another very simple example"
 }
 ;
 ```
