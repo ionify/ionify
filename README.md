@@ -83,12 +83,12 @@ Multiple **lions** with exact internal identifiers can simultaneously coexist wi
 , do:
     function confirm (ion)
       { /This method's called for each ion with/
-      + /an id matching "my.ion". It then      /
-      + /confirms the ion's developer...       /
+      + /an id matching "my.ion". It confirms  /
+      + /the ion's developer before...         /
       
       ; if (ion.re.by != "a.developer") return
       
-      ~ /...before using it/
+      ~ /...using it./
       + {log: ion.re.is}
       }
 }
@@ -116,7 +116,7 @@ Multiple **lions** with exact internal identifiers can simultaneously coexist wi
 
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 
-### & much more
+### & much more.
 
 
 ## how
