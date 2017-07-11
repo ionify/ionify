@@ -1,5 +1,4 @@
 ;
-
    ~   ~
 +['0 . 0']+
      -
@@ -11,7 +10,7 @@
     { id:  "web.0.1@ionify"
     , is:  "implicit object notation invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.04.29-07...2007.09-04"
+    , at:  "2017.07.10-07...2007.09-04"
         ,
       stories:
         [ /note: .../
@@ -41,7 +40,7 @@
     function ionifyWeb ()
       {   var web = this
       ;   delete web.valueOf
-      ;   web.watch  ()
+    //;   web.watch  ()
       ;   web.works  ()
       ;   web.locate ()
       ;   web.get    ({get:"on@ionify", then:web})

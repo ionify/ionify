@@ -6,7 +6,7 @@
     { id: "use.test.0.1@ionify"
     , is: "A suite of tests for ionify's +use actions"
     , by: "mike.lee@ionify"
-    , at: "2017.04.17-07...2017.04.13-07"
+    , at: "2017.07.11-07...2017.04.13-07"
     }
 }
 
@@ -27,8 +27,8 @@
 
 ~ /test +{use:"thing", in:someObject}/
 + (game = {id:"wakatta.game@ionified"})
-+ {use:"show", in:game}
-+ {id:"wakatta.view@ionified", show:function show(){+{log:"わかった"}}}
++ {use:"show", as:"show", in:game}   <-   /todo: update +use to handle "use in"/
+~ {id:"wakatta.view@ionified", show:function show(){+{log:"わかった"}}}
 + game.show
 + delete game
 

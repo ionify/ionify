@@ -1,32 +1,43 @@
 ;
-
    ~   ~
 +['0 . 0']+
      -
 
-+
 /on@ionify activating.../
+
 +
 
 {  re:
     { id: "ionify.0.1"
     , is: "implicit object notation invented for you"
 
-        ,
-      by:
-        [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.04.29-07"}
-        ]
+    , by:["mike.lee@iskitz", "team@ionify"]
+    , at: "2017.07.11-07...2007.09-04"
 
-        ,
-      stories:
+    , it:
         [ /note: .../
         , /todo: Move .onAEON to on.aeon@ionify/
         , /todo: Make .resolve to convert ids to ions: e.g. ionified references/
         , /todo: Make a way to undo all +on:Type's/
         ]
-    }
 
+    , im: `Adding a link() call to onAEON & think I should for all onType's to
+           ensure that they all have a .ion reference to their containing ion.
+           That'll support subsequent operations that depend on an ion's
+           context.
+
+           It may be more sensible to create an ion Type sensor delegator that
+           ensures all ions have an id & that they & their ionified content have
+           a reference to their host ion.
+
+           It may then also make sense to have an ion Type cleanup that removes
+           those ion references for memory performance. May be good enough to
+           only note this for now & revisit if performance needs to be improved.
+
+           The delegator would do common actions for all ion types then delegate
+           to the relevant ion's Type sensor.
+          `
+    }
 
     ,
   valueOfStories:
@@ -45,7 +56,7 @@
                   [   "errors@ionify",   "on.storie@ionify"
                   ,  "next.id@ionify",     "web.log@ionify"
                   , "on.error@ionify", "on.function@ionify"
-                  ,  "on.aeon@ionify",          "do@ionify"
+                  ,/*"on.aeon@ionify",*/        "do@ionify"
                   ,      "use@ionify",               "ions"
                   ],
                 now: true
@@ -68,18 +79,21 @@
     ,
   link:
     function link (ion)
-      { ion || (ion = link.this) || (link == this.link) && (ion = this);
+      { ion || (ion = link.this) || (link == this.link) && (ion = this)
 
         var property
           , thing
           , id = (ion.re ? ion.re.id : ion.id) || "this"
           ; id = id.replace (/(.+)(@|\.\d\.).*/, "$1")
-          ;
+
+        !ion.ion  && (ion.ion   = ion)
+        !ion.this && (ion.this  = ion)
 
         for (property in ion)
           { thing = ion [property]
-          ; if (!thing || typeof thing != "function") continue
-          ; if (!ion.hasOwnProperty (property))       continue
+          ; if (!thing)                                               continue
+          ; if (typeof thing != "function" && !Array.isArray (thing)) continue
+          ; if (!ion.hasOwnProperty (property))                       continue
           ; /* thing [id] = */ thing.this = thing.ion = ion
 
         //;(id!="this")&&alert("linking "+id+"."+property);
@@ -113,7 +127,7 @@
 
     ,
   senseStories:
-    [ /todo: +no: Fix + re-enable/
+    [ /todo: .../
     ]
     ,
   sense:
@@ -124,7 +138,7 @@
   //, ionified : "ionified"
   //, "on do"  : "on"         // see web.get.use@ionify
     ,  on      : "on"
-  //,  no      : "no"
+    ,  no      : "no"
     },
 
 
@@ -163,9 +177,8 @@
 
     ,
   noStories:
-    [ /133: resolve +{no:"this.this"}?                   /
-    , /134: why check nion.on instead of nion.no?        /
-    , /137: future bug if multiple actions for same term /
+    [ /todo: resolve +{no:"this.this"}?                  /
+    , /bugs: future bug if multiple actions use same term/
     ]
     ,
   no:
@@ -258,16 +271,17 @@
     function aesop (ion)
       { ion || (aesop == this.aesop) && (ion = this)
 
-      ; var phrase = ion [ion.aesop]
-      ; phrase && ~{debug: ["+[",phrase,"]"]}
+        var phrase = ion [ion.aesop]
+        phrase && ~{debug: ["+[",phrase,"]"]}
 
-      ; var ionify    = aesop.ion
+        var host      = ion.ion
+          , sense     = host [phrase]
+          , ionify    = aesop.ion
           , ionified  = ionify.ionified
-          , sense     = ionify.sense
-          ; sense     = sense [phrase]
 
-      ; !ionified [typeof sense] && (sense = ionify [sense])
-      ; typeof sense == "function" ? sense (ion) : ~sense
+        !sense && (host = ionify) && (sense = ionify.sense [phrase])
+        !ionified [typeof sense]  && (sense =  host [sense])
+        typeof sense == "function" ?  sense (ion) : ~sense
       }
 
 
@@ -276,7 +290,7 @@
     function onArray (ion)
       { ion || (ion = this)
 
-      ~ {debug: ["+[",ion,"]"]}
+      ~ {debug: ["~[",ion,"]"]}
 
         var ionify   = onArray.this
           , ionified = ionify.ionified
@@ -285,14 +299,17 @@
           , last     = ion.length
           , thing
           , type
-          ;
+
+        ionify.id   (ion)
+        ionify.link (ion)
+
         while (++next < last)
           { thing = ion [next]
           ; type  = typeof thing
           ; ionified [type] ? +thing : ((ion.aesop = next) , ionify.aesop (ion))
-          }
+          } delete ion.aesop
 
-        return this
+        return next / ion.length
       }
 
 
@@ -316,10 +333,10 @@
           , grammar , terms, term
           , next    , last
 
-      ; ionify.id   (ion)
-      ; ionify.link (ion)
+        ionify.id   (ion)
+        ionify.link (ion)
 
-      ; debug.push(["onION:",ion.re.id])
+        debug.push(["onION:",ion.re.id])
 
         var from = onObject.caller;
         ion.re.from || (ion.re.from = from && from.this && from.this.re.id);
@@ -352,7 +369,6 @@
         return this
       }
 
-
     ,
   onType$:
     { core: {Function:"function", Object:"object"}
@@ -375,11 +391,10 @@
           ; Type.prototype.valueOf =  ion [type]
           ; known [type]           =  true
           ; known [core [type]]    =  !!core [type]
-          ~ {debug: ["onType",type,JSON.stringify(known)]}
-          ; return true
+
+      ~ {debug: ["onType",type,JSON.stringify(known)]}
+      ; return true
       }
-
-
 }
 
 +

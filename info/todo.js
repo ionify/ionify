@@ -17,7 +17,25 @@
     ],
 
   todo:
-    [ {20161119:
+    [ {syntax:
+        {20170711:
+          [ /aesop/
+          , "   as api docs use functionName.re =  /documentation.../"
+          , "   as comment, can use as          <- /comment.../ ['~ . ~']"
+          ]
+          ,
+         20170710:
+          [ /logic statements can be confusing when mapping to english, e.g./
+          + /   if thing doesn't exist or is not an array or function/
+          + /no if (!thing || !Array.isArray (thing) || typeof thing != "function")/
+          + /ok if (!thing || !Array.isArray (thing) && typeof thing != "function")/
+
+          , /Support ECMAScript 3- via minimal pollyfill for things like/
+          + / Array.pop/
+          ]
+        }
+      }
+    , {20161119:
         [/ api: Make 0.1 branch/
         ,/ api: Move code in public branch to 0.1 branch/
         ,/ api: Delete code in public branch/
