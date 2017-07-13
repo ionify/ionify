@@ -1,11 +1,11 @@
 ;
 +
 { re:
-    { id: "next.id.0.1.2017.04.07-07@ionify"
+    { id: "next.id.0.1@ionify"
     , is: "An ion that generates sequential ids on-demand"
     , by:
         [ {creator: "mike.lee@iskitz", at: "2016.09.10-07"}
-        , {authors:     "team@ionify", at: "2017.04.07-07"}
+        , {authors:     "team@ionify", at: "2017.07.13-07"}
         ],
     },
 
@@ -18,7 +18,7 @@
 
   "next id":
     function onNextId (ion)
-      {  var th1s = onNextId.this
+      {  var th1s = onNextId.ion
            , ids  = th1s.ids
            , name = ion.next
            , f0r  = ion.id.re || (ion.id.re = {})

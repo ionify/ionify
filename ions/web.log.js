@@ -3,13 +3,13 @@
 +
 
 { re:
-    { id: "log.0.1.2017.04.15-07@ionify"
+    { id: "log.0.1@ionify"
     , is: "web-based logging for ionify"
 
         ,
       by:
         [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.04.14-07"}
+        , {authors:     "team@ionify", at: "2017.07.13-07"}
         ]
 
         ,
@@ -40,7 +40,7 @@
     ,
   works:
     function works ()
-      {   var error = works.this.errors
+      {   var error = works.ion.errors
       ;   (typeof  console == "undefined") && ~error.noConsole
       ;   (typeof    alert == "undefined") && ~error.noAlert
       ;   return true
@@ -51,7 +51,7 @@
     function debug (ion)
       { ion.as  = "debug"
       ; ion.log = ion.debug
-      ; debug.this.log (ion)
+      ; debug.ion.log (ion)
       },
 
 
@@ -59,7 +59,7 @@
     function logError (ion)
       { ion.as  = "error"
       ; ion.log = ion.error
-      ; logError.this.log (ion)
+      ; logError.ion.log (ion)
       ~ new Error (ion.error)
       },
 
@@ -68,7 +68,7 @@
     function logInfo (ion)
       { ion.as  = "info"
       ; ion.log = ion.info
-      ; logInfo.this.log (ion)
+      ; logInfo.ion.log (ion)
       },
 
 
@@ -113,7 +113,7 @@
 
         var id
           , level
-          , web         = log.this
+          , web         = log.ion
           , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole   = document.URL.match (iOSPath)
           ; sense.debug = false
@@ -128,7 +128,7 @@
     function logWarn (ion)
       { ion.as  = "warn"
       ; ion.log = ion.warn
-      ; logWarn.this.log (ion)
+      ; logWarn.ion.log (ion)
       }
 
 }

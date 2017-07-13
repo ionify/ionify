@@ -12,7 +12,7 @@
     , is: "implicit object notation invented for you"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.11-07...2007.09-04"
+    , at: "2017.07.13-07...2007.09-04"
 
     , it:
         [ /note: .../
@@ -41,7 +41,7 @@
 
     ,
   valueOfStories:
-    [ 'todo: Sense "this.*" + "+*" + set to ion reference'
+    [ 'idea: Sense "this.*" + "+*" + set to ion reference'
     , /note: .../
     ]
     ,
@@ -79,25 +79,24 @@
     ,
   link:
     function link (ion)
-      { ion || (ion = link.this) || (link == this.link) && (ion = this)
+      { ion || (ion = link.ion) || (link == this.link) && (ion = this)
 
         var property
           , thing
-          , id = (ion.re ? ion.re.id : ion.id) || "this"
+          , id = (ion.re ? ion.re.id : ion.id) || "ion"
           ; id = id.replace (/(.+)(@|\.\d\.).*/, "$1")
 
-        !ion.ion  && (ion.ion   = ion)
-        !ion.this && (ion.this  = ion)
+        !ion.ion && (ion.ion = ion)
 
         for (property in ion)
           { thing = ion [property]
           ; if (!thing)                                               continue
           ; if (typeof thing != "function" && !Array.isArray (thing)) continue
           ; if (!ion.hasOwnProperty (property))                       continue
-          ; /* thing [id] = */ thing.this = thing.ion = ion
+          ; /* thing [id] = */ thing.ion = ion
 
-        //;(id!="this")&&alert("linking "+id+"."+property);
-        //;(id != "this") && +{debug:"linked "+id+'.'+property}
+        //;(id != "ion") &&   alert("linked "+id+"."+property);
+        //;(id != "ion") && +{debug:"linked "+id+'.'+property}
           }
 
         return true
@@ -145,7 +144,7 @@
   activate:
     function activate (ion)
       {  if (ion [0] !== '0 . 0') return
-      ;  var ionify = activate.this
+      ;  var ionify = activate.ion
       ;  ionify.senses && (ionify.senses != ionify.sense) && ~ionify
       },
 
@@ -154,13 +153,13 @@
     function deactivate (ion)
       {  delete Array .prototype.valueOf
       ;  delete Object.prototype.valueOf
-      ;  deactivate.this.unlink()
+      ;  deactivate.ion.unlink()
       },
 
 
   disable:
     function disable (ion)
-      { var ionify        = disable.this
+      { var ionify        = disable.ion
           ; ionify.senses = ionify.sense
           ; ionify.sense  = {'0 . 0':ionify.activate}
       },
@@ -177,7 +176,7 @@
 
     ,
   noStories:
-    [ /todo: resolve +{no:"this.this"}?                  /
+    [ /todo: resolve +{no:"this.ion"}?                  /
     , /bugs: future bug if multiple actions use same term/
     ]
     ,
@@ -212,7 +211,7 @@
       { if (!ion || !ion.on && !("on" in ion)) return ion
 
       ; (ion.re && ion.re.id) || ~{next:"ion", id:ion}
-      ; (ion.re && ion.re.id) || on.this.id (ion)
+      ; (ion.re && ion.re.id) || on.ion.id (ion)
 
       ~ {debug: [ion.re.id,"on:",ion.on,JSON.stringify(ion.on)]}
 
@@ -228,7 +227,7 @@
           , todos  = 0
           , next   = -1
           , last   = grammars.length
-          , ionify = on.this
+          , ionify = on.ion
           , sense  = ionify.sense
           , id     = ion.re.id
           ~ {debug: Object.keys (sense)}
@@ -292,7 +291,7 @@
 
       ~ {debug: ["~[",ion,"]"]}
 
-        var ionify   = onArray.this
+        var ionify   = onArray.ion
           , ionified = ionify.ionified
           , sense    = ionify.sense
           , next     = -1
@@ -326,7 +325,7 @@
     function onObject (ion)
       { ion || (ion = this);
 
-        var ionify   = onObject.this
+        var ionify   = onObject.ion
           , ionified = ionify.ionified
           , sense    = ionify.sense
           , debug    = []
@@ -339,7 +338,7 @@
         debug.push(["onION:",ion.re.id])
 
         var from = onObject.caller;
-        ion.re.from || (ion.re.from = from && from.this && from.this.re.id);
+        ion.re.from || (ion.re.from = from && from.ion && from.ion.re.id);
 	    from && (from != onObject) && debug.push ([ion.re.from, ion.re.id])
 
   next: for (grammar in sense)

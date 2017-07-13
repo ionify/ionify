@@ -3,10 +3,10 @@
 
 +
 { re:
-    { id: "get.test.0.1.2017.04.15@ionify"
+    { id: "get.test.0.1@ionify"
     , is: "A suite of tests for ionify's +get actions"
     , by: "mike.lee@ionify"
-    , at: "2007.09-04"
+    , at: "2017.07.13...2007.09-04"
     }
 }
 
@@ -15,7 +15,7 @@
 , now: true
 , then:
     function hi ()
-      { +{log: "did " + hi.this.get}
+      { +{log: "did " + hi.ion.get}
       }
 }
 

@@ -1,12 +1,10 @@
 ;
 +
 { re:
-    { id: "todo@ionify.2016.11.20-08"
+    { id: "todo@ionify"
     , is: "ionify's list of things To Do"
-    , by:
-        [ {creator: "mike.lee@iskitz",  at: "2007.09-04",     in: "forest-hills.new-york.usa.earth"}
-        , {authors: "team@ionify",      at: "2016.11.20-08",  in:   "san-jose.california.usa.earth"}
-        ]
+    , by:["mike.lee@iskitz", "team@ionify"]
+    , at: "2017.07.13-07...2007.09-04"
     },
 
   bugs:
@@ -18,7 +16,25 @@
 
   todo:
     [ {syntax:
-        {20170711:
+        {20170713:
+          ["Thinking of how to enable non-NaN ion return values for"
+
+                 +{random:10} <= 7
+
+            ||" ionify doesn't currently do this in its +{} sensor because it"
+            + " senses & activates as many of all known actions as found within"
+            + " each which means multiple possible return values but ions evaluate"
+            + " as single-value numeric expressions."
+
+            + "I'll sense when an ion has only one matching action then return that"
+            + " singluar value. Multi-action ions can have all results saved in an"
+            + " ion.got property that maps actions to their results; initial idea:"
+
+                +{ get:"ion@domain", use:"member", as:"mine", in:"wrong.id@domain"
+                 , got: {get:"yes", "use as in": {no:"no known ion with wrong.id"}}
+                 }
+          ]
+        ,20170711:
           [ /aesop/
           , "   as api docs use functionName.re =  /documentation.../"
           , "   as comment, can use as          <- /comment.../ ['~ . ~']"
@@ -32,6 +48,24 @@
 
           , /Support ECMAScript 3- via minimal pollyfill for things like/
           + / Array.pop/
+          ]
+        }
+
+      ,structure:
+        {20170711:
+          [ `ion Type sensor delegator
+
+             It may be more sensible to create an ion Type sensor delegator that
+             ensures all ions have an id & that they & their ionified content have
+             a reference to their host ion.
+
+             It may then also make sense to have an ion Type cleanup that removes
+             those ion references for memory performance. May be good enough to
+             only note this for now & revisit if performance needs to be improved.
+
+             The delegator would do common actions for all ion types then delegate
+             to the relevant ion's Type sensor.
+            `
           ]
         }
       }
@@ -52,12 +86,12 @@
                 ,
             do: [ "1orMoreActions", oneOrMoreReferences]
                 + "ions that do things must have a do: that lists all actions"
-                + "do will have a .this = ion property to maintain scope. All "
+                + "do will have a .ion = ion property to maintain scope. All "
                 +   "ion actions that're objects will have this property."
-                +   "?.this will be cleared after actions complete"
+                +   "?.ion will be cleared after actions complete"
                 + "do will contain the public actions to do with this ion"
                 + "Each action will be converted to:"
-                +     {action:"name", this:ion, doing:false|true, done:false|true}
+                +     {action:"name", ion:this, doing:false|true, done:false|true}
                 +     "doing is false until set to true once the act begins."
                 +     "done  is false until set to true once the act completes."
           }
