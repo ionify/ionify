@@ -12,13 +12,14 @@
     , is: "implicit object notation invented for you"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.13-07...2007.09-04"
+    , at: "2017.07.15-07...2007.09-04"
 
     , it:
         [ /note: .../
         , /todo: Move .onAEON to on.aeon@ionify/
         , /todo: Make .resolve to convert ids to ions: e.g. ionified references/
         , /todo: Make a way to undo all +on:Type's/
+        , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
         ]
 
     , im: `Adding a link() call to onAEON & think I should for all onType's to
@@ -323,14 +324,15 @@
     ,
   onION:
     function onObject (ion)
-      { ion || (ion = this);
+      { ion || (ion = this)
 
-        var ionify   = onObject.ion
-          , ionified = ionify.ionified
-          , sense    = ionify.sense
-          , debug    = []
-          , grammar , terms, term
-          , next    , last
+        var ionify    = onObject.ion
+          , ionified  = ionify.ionified
+          , sense     = ionify.sense
+          , debug     = []
+          , grammar   , terms , term
+          , next      , last  , result
+          , results   = 0
 
         ionify.id   (ion)
         ionify.link (ion)
@@ -355,17 +357,21 @@
             )                                        &&
             (  sense [grammar]  =  ionify [grammar])
 
-            debug.push (["using",grammar,typeof sense [grammar]]);
+            debug.push (["using",grammar,typeof sense [grammar]])
 
-            typeof  sense [grammar] == "function"
-              ?  (  sense [grammar].ion != ion)
-                 && sense [grammar]       (ion)
-              :  ~  sense [grammar]
+            results += 1
+            ion.did || (ion.did = {})
+            ion.did [grammar]
+                  = result
+                  = typeof  sense [grammar] == "function"
+                      ?  (  sense [grammar].ion != ion)
+                         && sense [grammar]       (ion)
+                      :  +  sense [grammar]
           }
 
         !ion.debug && ~{debug:debug}
 
-        return this
+        return results == 1 ? result : this
       }
 
     ,
