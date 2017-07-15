@@ -1,16 +1,10 @@
 ;
-   ~   ~
-+['0 . 0']+
-     -
-
-/on.function@ionify activating.../
-
 ~
 { re:
     { id: "on.function.0.1@ionify"
     , is: "An ion that handles activated functions; i.e. +go()"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.11-07...2007.09-04"
+    , at: "2017.07.15-07...2007.09-04"
         ,
       stories:
         [ /note: .../
@@ -24,18 +18,13 @@
         ]
     }
     ,
-  on: Function
-    ,
-  Function:
-    function onFunction (ion)
-      {  ion || (ion = this)
-      ;  var result = ion()
-      ~  {debug: ['+', ion.name || "anonymous", '() : ', result]}
-      ;  return result
-      }
-
+  on: Function,
+      Function:
+        function onFunction (ion)
+          {  ion || (ion = this)
+             var result = ion()
+          ~  {debug: ['+', ion.name || "anonymous", '() : ', result]}
+             return result
+          }
 }
-
-+
-/on.function@ionify activated!/
 ;

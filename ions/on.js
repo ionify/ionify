@@ -16,15 +16,15 @@
 
     , it:
         [ /note: .../
-        , /todo: Move .onAEON to on.aeon@ionify/
+        , /todo: Move .onArray to on.array@ionify/
         , /todo: Make .resolve to convert ids to ions: e.g. ionified references/
         , /todo: Make a way to undo all +on:Type's/
         , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
         ]
 
-    , im: `Adding a link() call to onAEON & think I should for all onType's to
-           ensure that they all have a .ion reference to their containing ion.
-           That'll support subsequent operations that depend on an ion's
+    , im: `Adding a link() call to onArray & think I should for all onSensor's
+           to ensure that they all have a .ion reference to their containing
+           ion. That'll support subsequent operations that depend on an ion's
            context.
 
            It may be more sensible to create an ion Type sensor delegator that
@@ -49,8 +49,8 @@
   valueOf:
     function ionify ()
       { this.link   ()
-      ; this.onType ({on: Object, Object: this.onION })
-      ; this.onType ({on: Array , Array : this.onAEON})
+      ; this.onSensor ({on: Object, Object: this.onObject })
+      ; this.onSensor ({on: Array , Array : this.onArray  })
 
         var initialize =
               { get:
@@ -216,7 +216,7 @@
 
       ~ {debug: [ion.re.id,"on:",ion.on,JSON.stringify(ion.on)]}
 
-      ; if ("function" == typeof ion.on) return on.ion.onType (ion)
+      ; if ("function" == typeof ion.on) return on.ion.onSensor (ion)
       ;
 
         var grammars  = ion.on
@@ -259,7 +259,7 @@
 
 
     ,
-  aesopStories:
+  onAESOPStories:
     [ /note: aesop: array-embedded storie or phrase/
     , /todo: find known words in each sentence/
     , /todo: interpret via sentence(s), paragraph(s), chapter(s) + book(s)/
@@ -267,36 +267,34 @@
     , /todo: use tbd name-to-ion resolver/
     ]
     ,
-  aesop:
-    function aesop (ion)
-      { ion || (aesop == this.aesop) && (ion = this)
+  onAESOP:
+    function onAESOP (ion)
+      { ion || (onAESOP == this.onAESOP) && (ion = this)
 
         var phrase = ion [ion.aesop]
         phrase && ~{debug: ["+[",phrase,"]"]}
 
         var host      = ion.ion
           , sense     = host [phrase]
-          , ionify    = aesop.ion
+          , ionify    = onAESOP.ion
           , ionified  = ionify.ionified
 
         !sense && (host = ionify) && (sense = ionify.sense [phrase])
-        !ionified [typeof sense]  && (sense =  host [sense])
+        !ionified [typeof sense]  && (sense = host  [sense])
         typeof sense == "function" ?  sense (ion) : ~sense
       }
 
 
     ,
-  onAEON:
-    function onArray (ion)
+  onArray:
+    function onAEON (ion)
       { ion || (ion = this)
 
       ~ {debug: ["~[",ion,"]"]}
 
-        var ionify   = onArray.ion
-          , ionified = ionify.ionified
-          , sense    = ionify.sense
-          , next     = -1
-          , last     = ion.length
+        var ionify  = onAEON.ion
+          , next    = -1
+          , last    = ion.length
           , thing
           , type
 
@@ -305,8 +303,10 @@
 
         while (++next < last)
           { thing = ion [next]
-          ; type  = typeof thing
-          ; ionified [type] ? +thing : ((ion.aesop = next) , ionify.aesop (ion))
+            if (!thing)               continue
+            if (+thing && thing.did)  continue
+            ion.aesop = next
+            ionify.onAESOP (ion)
           } delete ion.aesop
 
         return next / ion.length
@@ -314,7 +314,7 @@
 
 
     ,
-  onIONStories:
+  onObjectStories:
     [ /todo: sense => ArrayMap to preserve order + fast lookup./
     , /todo: log all matched actions + their results?          /
     , /todo: disable activated words, enable after all matches /
@@ -322,11 +322,11 @@
     , /todo: Ignore similar actions after match: +get +get.then/
     ]
     ,
-  onION:
-    function onObject (ion)
+  onObject:
+    function onION (ion)
       { ion || (ion = this)
 
-        var ionify    = onObject.ion
+        var ionify    = onION.ion
           , ionified  = ionify.ionified
           , sense     = ionify.sense
           , debug     = []
@@ -337,11 +337,11 @@
         ionify.id   (ion)
         ionify.link (ion)
 
-        debug.push(["onION:",ion.re.id])
+        debug.push("onION:", ion.re.id)
 
-        var from = onObject.caller;
+        var from = onION.caller;
         ion.re.from || (ion.re.from = from && from.ion && from.ion.re.id);
-	    from && (from != onObject) && debug.push ([ion.re.from, ion.re.id])
+	    from && (from != onION) && debug.push ("from", ion.re.from)
 
   next: for (grammar in sense)
           { terms = grammar.split (" ");
@@ -357,7 +357,7 @@
             )                                        &&
             (  sense [grammar]  =  ionify [grammar])
 
-            debug.push (["using",grammar,typeof sense [grammar]])
+            debug.push ("using", grammar, typeof sense [grammar])
 
             results += 1
             ion.did || (ion.did = {})
@@ -370,35 +370,34 @@
           }
 
         !ion.debug && ~{debug:debug}
-
         return results == 1 ? result : this
       }
 
     ,
-  onType$:
+  onSensor$:
     { core: {Function:"function", Object:"object"}
     , name: (/function\s+(.*)\s*\(/)
     , undo: {}
     }
 
     ,
-  onType:
-    function onType (ion)
-      { var on      = onType.ion
-          , known   = on.ionified
-          , onType$ = on.onType$
-          , core    = onType$.core
-          , name    = onType$.name
-          , undo    = onType$.undo
-          , Type    = ion.on
-          , type    = Type.name    || String(Type).match(name)[1]
+  onSensor:
+    function onSensor (ion)
+      { var on        = onSensor.ion
+          , known     = on.ionified
+          , onSensor$ = on.onSensor$
+          , core      = onSensor$.core
+          , name      = onSensor$.name
+          , undo      = onSensor$.undo
+          , Type      = ion.on
+          , type      = Type.name    || String(Type).match(name)[1]
           ; undo [type]            =  Type.prototype.valueOf
           ; Type.prototype.valueOf =  ion [type]
           ; known [type]           =  true
           ; known [core [type]]    =  !!core [type]
 
-      ~ {debug: ["onType",type,JSON.stringify(known)]}
-      ; return true
+      ~ {debug: ["onSensor",type,JSON.stringify(known)]}
+        return true
       }
 }
 

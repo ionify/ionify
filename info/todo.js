@@ -4,7 +4,22 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.13-07...2007.09-04"
+    , at: "2017.07.15-07...2007.09-04"
+
+    , im:`trying to figure what to do next. I want to continue modularizing
+          ionify so that it's easier to create new parts. Currently it's still
+          more complicated than I'd like to share functionality between sensors
+          like on.ion, on.aeon, and on.aesop. Maybe by figuring out how to
+          make each it's own module I'll solve this sharing problem. My current
+          focus is solving the ionify.sense & ionified dependency shared by
+          on.ion, on.sensor, on.aeon & on.aesop.
+
+          Maybe my past idea of creating a shared namespace for ions with the
+          same @domain is what I need here but I want to protect against ions
+          that falsely claim @domain membership. I don't want to focus too much
+          on that but also don't want to create a solution that can't be easily
+          extended with that protection.
+          `
     },
 
   bugs:
