@@ -114,6 +114,32 @@ Multiple **lions** with exact internal identifiers can simultaneously coexist wi
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
+Create your own language(s). **ions** can define and map terms to any behavior. This means
+being able to define your own vocabulary and language to perform one or more actions. **ionify** provides an API to simplify doing this:
+
+```javascript
+~
+{ on: ["ask", "say"]
+    ,
+  ask:
+    function ask (question)
+      { ask.ion.answer = confirm (question)
+      }
+    ,
+  say:
+    function say (something)
+      { alert (something.replace (/\[answer]\]/g, say.ion.answer)
+      }
+}
++
+{ ask: "Hi! What's your name?"
+, say: "Hi [answer]!"
+, ask: "How come?"
+, say: "..."
+}
+;
+```
+
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 
 ### & much more.
