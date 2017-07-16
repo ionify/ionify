@@ -4,7 +4,7 @@
      -
 
 {  re:
-    { id: "node@ionify.net"
+    { id: "node@ionify"
     , is: "implicit object notation invented for your node"
     , by: {"Michael Lee": ["iskitz.net", "@iskitz"]}
     , at: "2007.09...2017.04.04-07"
@@ -75,8 +75,8 @@
       },
 
   errors:
-    { noConsole: new Error ("node@ionify.net needs the console() API")
-    , noRequire: new Error ("node@ionify.net needs the require() API")
+    { noConsole: new Error ("node@ionify needs the console() API")
+    , noRequire: new Error ("node@ionify needs the require() API")
     }
 
 } //+ionify.node

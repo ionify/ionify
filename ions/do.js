@@ -1,7 +1,7 @@
 ;
 +
 { re:
-    { id: "do.0.1@ionify.net"
+    { id: "do.0.1@ionify"
     , is: "ionify's do action: activates ions, functions + methods"
     , by:
         [ {creator: "mike.lee@iskitz",  at: "2007.09-04",     in: "forest-hills.new-york.usa.earth"}
