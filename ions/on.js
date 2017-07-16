@@ -3,12 +3,8 @@
 +['0 . 0']+
      -
 
-/on@ionify activating.../
-
-+
-
-{  re:
-    { id: "ionify.0.1"
+{ re:
+    { id: "on.0.1@ionify"
     , is: "implicit object notation invented for you"
 
     , by:["mike.lee@iskitz", "team@ionify"]
@@ -22,7 +18,11 @@
         , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
         ]
 
-    , im: `Adding a link() call to onArray & think I should for all onSensor's
+    , im: `Refactoring onArray & onAESOP into their own ions now that I've
+           created domain spaces. They'll be part of the ionify.net space which
+           shares the senses & ionified types maps.
+
+           Adding a link() call to onArray & think I should for all onSensor's
            to ensure that they all have a .ion reference to their containing
            ion. That'll support subsequent operations that depend on an ion's
            context.
@@ -48,29 +48,37 @@
     ,
   valueOf:
     function ionify ()
-      { this.link   ()
-      ; this.onSensor ({on: Object, Object: this.onObject })
-      ; this.onSensor ({on: Array , Array : this.onArray  })
+      { var ion   = this
+          , space =
+              { id      : ion.id
+              , ionified: ion.ionified
+              , link    : ion.link
+              , sense   : ion.sense
+              }
 
-        var initialize =
-              { get:
+        ion.link     ()
+        ion.share    ({share : space , with  : ion.re.id    })
+        ion.onSensor ({on    : Object, Object: ion.onObject })
+        ion.onSensor ({on    : Array , Array : ion.onArray  })
+
+        var initialize
+          =   { get:
                   [   "errors@ionify",   "on.storie@ionify"
                   ,  "next.id@ionify",     "web.log@ionify"
                   , "on.error@ionify", "on.function@ionify"
                   ,/*"on.aeon@ionify",*/        "do@ionify"
                   ,      "use@ionify",               "ions"
-                  ],
+                  ]
+                  ,
                 now: true
               }
 
-      ; initialize.on  = "hosted"
-      ; initialize.no  =  initialize
+        initialize.on = "hosted"
+        initialize.no = initialize
 
       ~ {on:"hosted", hosted:initialize}
-
         return true
       }
-
 
     ,
   linkStories:
@@ -84,8 +92,9 @@
 
         var property
           , thing
-          , id = (ion.re ? ion.re.id : ion.id) || "ion"
-          ; id = id.replace (/(.+)(@|\.\d\.).*/, "$1")
+          , id    = (ion.re ? ion.re.id : ion.id) || "ion"
+          , space = (link.ion || this).getSpace (id)
+          ; id    = id.replace (/(.+)(@|\.\d\.).*/, "$1")
 
         !ion.ion && (ion.ion = ion)
 
@@ -95,6 +104,7 @@
           ; if (typeof thing != "function" && !Array.isArray (thing)) continue
           ; if (!ion.hasOwnProperty (property))                       continue
           ; /* thing [id] = */ thing.ion = ion
+          ; thing.get = space
 
         //;(id != "ion") &&   alert("linked "+id+"."+property);
         //;(id != "ion") && +{debug:"linked "+id+'.'+property}
@@ -115,7 +125,7 @@
 
         var property
           , thing
-          , id = (ion.re ? ion.re.id : ion.id) || "this"
+          , id = (ion.re ? ion.re.id : ion.id) || "ion"
           ; id = id.replace (/(.+)(@|\.\d\.).*/, "$1")
           ;
         for (property in ion)
@@ -124,6 +134,51 @@
           }
       }
 
+    ,
+  getSpaceStories:
+    [ /note: Returns & if needed, creates a space based on id's @domain/
+    , /todo: .../
+    ]
+    ,
+  getSpace:
+    function getSpace (id)
+      { var spaces = (getSpace.ion || this).spaces
+          , domain = id.match (/@(.*)/)
+          ; domain = domain && domain [1]
+
+        return spaces [domain] || (spaces [domain] = {})
+      }
+
+    ,
+  shareStories:
+    [ /note: .../
+    , /todo: create +{share: {thing:..., other:...}, with:[ion.ids]}/
+    ]
+    ,
+  share:
+    function share (ion)
+      { var space
+          , spaces = share.ion.spaces
+          , things = ion.share
+          , domain = ion.with.match (/@(.*)/)
+          ; domain = domain && domain [1]
+
+        space = spaces [domain] || (spaces [domain] = {})
+
+        for (var thing in things)
+          { space [thing] = things [thing]
+          }
+      }
+
+    ,
+  spacesStories:
+    [ /note: Keeps shared spaces for all domains/
+    , /todo: .../
+    ]
+    ,
+  spaces:
+    { null: {}
+    }
 
     ,
   senseStories:
@@ -131,14 +186,15 @@
     ]
     ,
   sense:
-    { '0 . 0'  : "activate"
-    , '0 . -'  : "disable"
-    , '- . 0'  : "disable"
-    , '- . -'  : "deactivate"
-  //, ionified : "ionified"
-  //, "on do"  : "on"         // see web.get.use@ionify
-    ,  on      : "on"
-    ,  no      : "no"
+    { '0 . 0'       : "activate"
+    , '0 . -'       : "disable"
+    , '- . 0'       : "disable"
+    , '- . -'       : "deactivate"
+  //, ionified      : "ionified"
+  //, "on do"       : "on"         // see web.get.use@ionify
+    ,  on           : "on"
+    ,  no           : "no"
+    , "share with"  : "share"
     },
 
 
@@ -169,9 +225,11 @@
   id:
     function getId (ion)
       { var    id =   ion.re ? ion.re.id : (ion.re = {id: ion.id}).id
-      ; return id || (ion.re.id = "ion."
-                                + (getId.nextId ? ++getId.nextId
-                                                :  (getId.nextId = 1)))
+      ; return typeof id == "string"
+                    ? id
+                    : (ion.re.id = "ion."
+                      + (getId.nextId ? ++getId.nextId
+                                      :  (getId.nextId = 1)))
       }
 
 
@@ -214,10 +272,9 @@
       ; (ion.re && ion.re.id) || ~{next:"ion", id:ion}
       ; (ion.re && ion.re.id) || on.ion.id (ion)
 
-      ~ {debug: [ion.re.id,"on:",ion.on,JSON.stringify(ion.on)]}
+      ~ {debug: [ion.re.id, "on:", ion.on, JSON.stringify (ion.on)]}
 
-      ; if ("function" == typeof ion.on) return on.ion.onSensor (ion)
-      ;
+        if ("function" == typeof ion.on) return on.ion.onSensor (ion)
 
         var grammars  = ion.on
           ; !Array.isArray (grammars) && (grammars = [grammars])
@@ -225,23 +282,24 @@
         var grammar
           , action
           , todo
-          , todos  = 0
+          , todos  =  0
           , next   = -1
           , last   = grammars.length
           , ionify = on.ion
           , sense  = ionify.sense
           , id     = ion.re.id
-          ~ {debug: Object.keys (sense)}
+
+      ~ {debug: Object.keys (sense)}
 
         while (++next < last)
-          { grammar = grammars [next]
-          ; Array.isArray (grammar) && (grammar = grammar.join (" "))
-          ; action  =    ion [grammar]
-          ; action && (sense [grammar] = action)
-          ~ {debug:["knows?",id, grammar, grammar in sense]}
+          { grammar =         grammars [next]
+            Array.isArray    (grammar) && (grammar = grammar.join (" "))
+            action  =    ion [grammar]
+            action && (sense [grammar] = action)
+          ~ {debug: ["knows?", id, grammar, grammar in sense]}
           }
 
-        ~{debug: [id, grammars]}
+      ~ {debug: [id, grammars]}
         return ion
       }
 
@@ -292,21 +350,23 @@
 
       ~ {debug: ["~[",ion,"]"]}
 
-        var ionify  = onAEON.ion
-          , next    = -1
-          , last    = ion.length
+        var aesop = onAEON.ion.onAESOP
+          , get   = onAEON.get
+          , next  = -1
+          , last  = ion.length
           , thing
           , type
 
-        ionify.id   (ion)
-        ionify.link (ion)
+    //~ {next:"ion", id:ion}
+        get.id   (ion)
+        get.link (ion)
 
         while (++next < last)
           { thing = ion [next]
             if (!thing)               continue
             if (+thing && thing.did)  continue
             ion.aesop = next
-            ionify.onAESOP (ion)
+            aesop (ion)
           } delete ion.aesop
 
         return next / ion.length
@@ -316,9 +376,9 @@
     ,
   onObjectStories:
     [ /todo: sense => ArrayMap to preserve order + fast lookup./
-    , /todo: log all matched actions + their results?          /
-    , /todo: disable activated words, enable after all matches /
-    , /todo: loop through ion's terms instead of known?        /
+    , /idea: log all matched actions + their results?          /
+    , /idea: disable activated words, enable after all matches /
+    , /idea: loop through ion's terms instead of known?        /
     , /todo: Ignore similar actions after match: +get +get.then/
     ]
     ,
@@ -334,10 +394,10 @@
           , next      , last  , result
           , results   = 0
 
-        ionify.id   (ion)
+      ; (!ion.debug && !ion.next && +{next:"ion", id:ion}) || ionify.id (ion)
         ionify.link (ion)
 
-        debug.push("onION:", ion.re.id)
+        debug.push ("onION:", ion.re.id)
 
         var from = onION.caller;
         ion.re.from || (ion.re.from = from && from.ion && from.ion.re.id);
@@ -400,7 +460,4 @@
         return true
       }
 }
-
-+
-/on@ionify activated!/
 ;

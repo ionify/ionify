@@ -68,18 +68,26 @@
 
       ,structure:
         {20170711:
-          [ `ion Type sensor delegator
+          [ `
+            ion Type sensor delegator:
 
-             It may be more sensible to create an ion Type sensor delegator that
-             ensures all ions have an id & that they & their ionified content have
-             a reference to their host ion.
+            It may be more sensible to create an ion Type sensor delegator that
+            ensures all ions have an id & that they & their ionified content have
+            a reference to their host ion.
 
-             It may then also make sense to have an ion Type cleanup that removes
-             those ion references for memory performance. May be good enough to
-             only note this for now & revisit if performance needs to be improved.
+            It may then also make sense to have an ion Type cleanup that removes
+            those ion references for memory performance. May be good enough to
+            only note this for now & revisit if performance needs to be improved.
 
-             The delegator would do common actions for all ion types then delegate
-             to the relevant ion's Type sensor.
+            The delegator would do common actions for all ion types then delegate
+            to the relevant ion's Type sensor.
+
+            onSensor > normalize [id & link] > onType:
+
+            When a sensor's defined, set its handler as a generated method that
+            ensures each of the sensor's ions have an id, have their methods &
+            array members linked to that ion, and then call the sensor's defined
+            handler.
             `
           ]
         }

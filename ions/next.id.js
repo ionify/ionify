@@ -22,10 +22,10 @@
           , f0r  = ion.id.re || (ion.id.re = {})
           , id   = ids [name]
 
-          ; (id >= th1s.MAX)  && (id = ids [name] = null)
-            isNaN (id)        && (id = ids [name] = th1s.MIN)
-            f0r.id = name + '.' + id
-            return ids [name]++
+      ; (id >= th1s.MAX)  && (id = ids [name] = null)
+      ; isNaN (id)        && (id = ids [name] = th1s.MIN)
+      ; f0r.id = name + '.' + id
+      ; return ids [name]++
       }
 }
 ;
