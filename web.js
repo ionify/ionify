@@ -1,11 +1,7 @@
-;
    ~   ~
 +['0 . 0']+
      -
 
-/web@ionify activating.../
-
-+
 { re:
     { id:  "web.0.1@ionify"
     , is:  "implicit object notations invented for your web"
@@ -167,7 +163,4 @@
       { return getThen.ion.get (ion)
       }
 }
-
-+
-/web@ionify activated!/
 ;
