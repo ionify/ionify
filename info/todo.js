@@ -67,7 +67,21 @@
         }
 
       ,structure:
-        {20170711:
+        {20170717:
+          ` ion debugging: disable for ions @ ionify
+
+            Provide a configuration option to enable|disable debugging ionify's
+            ions. false: don't log from ions @ionify & maybe don't generate ids
+            for them either. Basically make it so anyone debugging their own ion
+            won't have to see ionify's core steps unless they want to.
+
+            domain spaces
+
+            Enable ions to set a share property that contains things to share
+            within its domain. ionify will combine those things with all others
+            already being shared within the ion's domain.
+          `
+        ,20170711:
           [ `
             ion Type sensor delegator:
 
