@@ -1,43 +1,38 @@
-;
    ~   ~
 +['0 . 0']+
      -
 
 { re:
-    { id: "on.0.1@ionify"
-    , is: "implicit object notation invented for you"
+    { id: "on.object.0.1@ionify"
+    , is: "implicit object notations invented for you"
+        + "bios: basic ionified object sensor"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.15-07...2007.09-04"
+    , at: "2017.07.17-07...2007.09-04"
 
     , it:
         [ /note: .../
-        , /todo: Move .onArray to on.array@ionify/
         , /todo: Make .resolve to convert ids to ions: e.g. ionified references/
         , /todo: Make a way to undo all +on:Type's/
         , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
         ]
 
-    , im: `Refactoring onArray & onAESOP into their own ions now that I've
-           created domain spaces. They'll be part of the ionify.net space which
-           shares the senses & ionified types maps.
+    , im: "Adding a link() call to onArray & think I should for all onSensor's"
+        + " to ensure that they all have a .ion reference to their containing"
+        + " ion. That'll support subsequent operations that depend on an ion's"
+        + " context."
 
-           Adding a link() call to onArray & think I should for all onSensor's
-           to ensure that they all have a .ion reference to their containing
-           ion. That'll support subsequent operations that depend on an ion's
-           context.
+        + " It may be more sensible to create an ion Type sensor delegator that"
+        + " ensures all ions have an id & that they & their ionified content"
+        + " have a reference to their host ion."
 
-           It may be more sensible to create an ion Type sensor delegator that
-           ensures all ions have an id & that they & their ionified content have
-           a reference to their host ion.
+        + " It may then also make sense to have an ion Type cleanup that"
+        + " removes those ion references for memory performance. May be good"
+        + " enough to only note this for now & revisit if performance needs to"
+        + " be improved."
 
-           It may then also make sense to have an ion Type cleanup that removes
-           those ion references for memory performance. May be good enough to
-           only note this for now & revisit if performance needs to be improved.
-
-           The delegator would do common actions for all ion types then delegate
-           to the relevant ion's Type sensor.
-          `
+        + "The delegator would do common actions for all ion types then"
+        + " delegate to the relevant ion's Type sensor."
     }
 
     ,
@@ -49,34 +44,36 @@
   valueOf:
     function ionify ()
       { var ion   = this
-          , space =
-              { id      : ion.id
-              , ionified: ion.ionified
-              , link    : ion.link
-              , sense   : ion.sense
+          , share =
+              { id        : ion.id
+              , ionified  : ion.ionified
+              , link      : ion.link
+              , sense     : ion.sense
+              , activate  : ion.activate
+              , deactivate: ion.deactivate
+              , disable   : ion.disable
               }
 
-        ion.link     ()
-        ion.share    ({share : space , with  : ion.re.id    })
-        ion.onSensor ({on    : Object, Object: ion.onObject })
-        ion.onSensor ({on    : Array , Array : ion.onArray  })
+        ion.link      ()
+        ion.shareWith ({share : share , with  : ion.re.id    })
+        ion.onSensor  ({on    : Object, Object: ion.onObject })
 
         var initialize
           =   { get:
                   [   "errors@ionify",   "on.storie@ionify"
                   ,  "next.id@ionify",     "web.log@ionify"
                   , "on.error@ionify", "on.function@ionify"
-                  ,/*"on.aeon@ionify",*/        "do@ionify"
+                  , "on.array@ionify",          "do@ionify"
                   ,      "use@ionify",               "ions"
                   ]
                   ,
                 now: true
               }
 
-        initialize.on = "hosted"
+        initialize.on = "host"
         initialize.no = initialize
 
-      ~ {on:"hosted", hosted:initialize}
+      ~ {on:"host", host:initialize}
         return true
       }
 
@@ -155,7 +152,7 @@
     , /todo: create +{share: {thing:..., other:...}, with:[ion.ids]}/
     ]
     ,
-  share:
+  shareWith:
     function share (ion)
       { var space
           , spaces = share.ion.spaces
@@ -172,7 +169,7 @@
 
     ,
   spacesStories:
-    [ /note: Keeps shared spaces for all domains/
+    [ /note: Domain Spaces/
     , /todo: .../
     ]
     ,
@@ -186,15 +183,10 @@
     ]
     ,
   sense:
-    { '0 . 0'       : "activate"
-    , '0 . -'       : "disable"
-    , '- . 0'       : "disable"
-    , '- . -'       : "deactivate"
-  //, ionified      : "ionified"
+    {  on           : "on"
   //, "on do"       : "on"         // see web.get.use@ionify
-    ,  on           : "on"
     ,  no           : "no"
-    , "share with"  : "share"
+    , "share with"  : "shareWith"
     },
 
 
@@ -317,63 +309,6 @@
 
 
     ,
-  onAESOPStories:
-    [ /note: aesop: array-embedded storie or phrase/
-    , /todo: find known words in each sentence/
-    , /todo: interpret via sentence(s), paragraph(s), chapter(s) + book(s)/
-    , /todo: handle ['0 . 0'] via sense [thing] && sense [thing] (thing)/
-    , /todo: use tbd name-to-ion resolver/
-    ]
-    ,
-  onAESOP:
-    function onAESOP (ion)
-      { ion || (onAESOP == this.onAESOP) && (ion = this)
-
-        var phrase = ion [ion.aesop]
-        phrase && ~{debug: ["+[",phrase,"]"]}
-
-        var host      = ion.ion
-          , sense     = host [phrase]
-          , ionify    = onAESOP.ion
-          , ionified  = ionify.ionified
-
-        !sense && (host = ionify) && (sense = ionify.sense [phrase])
-        !ionified [typeof sense]  && (sense = host  [sense])
-        typeof sense == "function" ?  sense (ion) : ~sense
-      }
-
-
-    ,
-  onArray:
-    function onAEON (ion)
-      { ion || (ion = this)
-
-      ~ {debug: ["~[",ion,"]"]}
-
-        var aesop = onAEON.ion.onAESOP
-          , get   = onAEON.get
-          , next  = -1
-          , last  = ion.length
-          , thing
-          , type
-
-    //~ {next:"ion", id:ion}
-        get.id   (ion)
-        get.link (ion)
-
-        while (++next < last)
-          { thing = ion [next]
-            if (!thing)               continue
-            if (+thing && thing.did)  continue
-            ion.aesop = next
-            aesop (ion)
-          } delete ion.aesop
-
-        return next / ion.length
-      }
-
-
-    ,
   onObjectStories:
     [ /todo: sense => ArrayMap to preserve order + fast lookup./
     , /idea: log all matched actions + their results?          /
@@ -394,7 +329,8 @@
           , next      , last  , result
           , results   = 0
 
-      ; (!ion.debug && !ion.next && +{next:"ion", id:ion}) || ionify.id (ion)
+//    ; (!ion.debug && !ion.next && +{next:"ion", id:ion}) ||
+        ionify.id (ion)
         ionify.link (ion)
 
         debug.push ("onION:", ion.re.id)
