@@ -8,9 +8,9 @@
 +
 { re:
     { id:  "web.0.1@ionify"
-    , is:  "implicit object notation invented for your web"
+    , is:  "implicit object notations invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.07.13-07...2007.09-04"
+    , at:  "2017.07.17-07...2007.09-04"
         ,
       stories:
         [ /note: .../
@@ -31,7 +31,7 @@
     ],
 
 
-  hosted
+  host
     : true
     ,
 
@@ -43,7 +43,7 @@
     //;   web.watch  ()
       ;   web.works  ()
       ;   web.locate ()
-      ;   web.get    ({get:"on@ionify", then:web})
+      ;   web.get    ({get:"on.object@ionify", then:web})
       },
 
 
