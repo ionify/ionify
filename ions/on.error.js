@@ -1,37 +1,20 @@
-
 ;
-
-   ~   ~
-+['0 . 0']+    / on.error@ionify activating... /
-     -
-
+~
 { re:
-    { id: "on.error.0.1.2017.04.07-07@ionify"
-    , is: "An ion that handles activated errors; i.e. +Error"
-
-    , by:
-        [ {creator: "mike.lee@iskitz", at: "2007.09-04"   }
-        , {authors:     "team@ionify", at: "2017.04.07-07"}
+    { id: "on.error.0.1@ionify"
+    , by:["mike.lee@iskitz", "team@ionify"]
+    , at: "2017.07.15-07...2007.09-04"
+        ,
+      stories:
+        [ /note: .../
+        , /todo: .../
         ]
-
-    , stories:
-        [/note: .../
-        ,/todo: .../
-        ]
-    },
-
-
-  on:
-    Error
+    }
     ,
-
-
-  Error:
-    function onError (ion)
-      {  throw ion || this
-      }
-
-
-} +/ on.error@ionify activated! /
-
+  on: Error,
+      Error:
+        function onError (ion)
+          {  throw ion || this
+          }
+}
 ;

@@ -1,31 +1,23 @@
-;
-/on.test@ionify activating.../
-
-+
+~
 { re:
-    { id: "on.test.0.1.2017.04.15@ionify"
+    { id: "on.test.0.1@ionify"
     , is: "A suite of tests for ionify's +on actions"
     , by: "mike.lee@ionify"
-    , at: "2007.09-04"
+    , at: "2017.07.17-07...2007.09-04"
     }
 }
 
 +
-(this.hey =
-    { on: "hi"
-    , hi:
-        function onHi (ion)
-          { +{log:"hi " + String (ion.hi) + "!"}
-          }
-    }
-)
-
-+             hey               +
-{hi:        "iamai"         }   +
-{hi: "かいととひろことマイケル" }   +
-{hi:      "['0 . 0']"       }
-+             hey
+{ on: "hi"
+, hi:
+    function onHi (ion)
+      { +{log:"hi " + String (ion.hi) + "!"}
+      }
+}
 
 +
-/on.test@ionify activated!/
+[ {hi:        "iamai"         }
+, {hi: "かいととひろことマイケル" }
+, {hi:      "['0 . 0']"       }
+]
 ;

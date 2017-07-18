@@ -6,7 +6,7 @@
     { id: "use.0.1@ionify"
     , is: "An action enabling the use of an ion's thing(s)"
     , by: "mike.lee@ionify"
-    , at: "2017.04.16-07...2007.09-04"
+    , at: "2017.07.11-07...2007.09-04"
         ,
       stories:
         [ /note: +get.use.in.as: helps wakatta + is like ajile/
@@ -47,7 +47,9 @@
   getOnUse:
     function getOnUse (use)
       { return function onUse (ion)
-          { use.in [use.as] = ion [use.use]
+          { var name        = use.use
+          ; use.in [use.as] = ion [name]
+          ~ {no:use.no}
           }
       }
 
@@ -97,7 +99,7 @@
                     )
                     { name        = use [thing]
                       on          = {on:name}
-                      on  [name]  = onUse ({use:name, as:as[asThing] || name, in:within})
+                      on  [name]  = onUse ({use:name, as:as[asThing] || name, in:within, no:on})
                       use [thing] = on
                     }
                 ~use

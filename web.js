@@ -1,17 +1,12 @@
-;
-
    ~   ~
 +['0 . 0']+
      -
 
-/web@ionify activating.../
-
-+
 { re:
     { id:  "web.0.1@ionify"
-    , is:  "implicit object notation invented for your web"
+    , is:  "implicit object notations invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.04.29-07...2007.09-04"
+    , at:  "2017.07.17-07...2007.09-04"
         ,
       stories:
         [ /note: .../
@@ -32,7 +27,7 @@
     ],
 
 
-  hosted
+  host
     : true
     ,
 
@@ -41,10 +36,10 @@
     function ionifyWeb ()
       {   var web = this
       ;   delete web.valueOf
-      ;   web.watch  ()
+    //;   web.watch  ()
       ;   web.works  ()
       ;   web.locate ()
-      ;   web.get    ({get:"on@ionify", then:web})
+      ;   web.get    ({get:"on.object@ionify", then:web})
       },
 
 
@@ -111,7 +106,7 @@
     ,  EXT: (/(\.\D*$)/)    // matches file extensions
     ,  URL:
         function getURL (match, name, space, file, version, offset, string)
-          {   var get$  = getURL.this
+          {   var get$  = getURL.ion
           ,       ext   = get$.EXT.exec (match)
           ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
           ;       space = space && (space.match (get$.NAME) || [,space])[1]
@@ -124,10 +119,10 @@
     ,
   get:
     function get (ion)
-      { var get$          = (get.this || (get.this = this)).get$
+      { var get$          = (get.ion || (get.ion = this)).get$
           , url           = ion.get
           , act           = ion.then
-          ; get$.URL.this = get$
+          ; get$.URL.ion  = get$
           ; get$.PATH           || (get$.PATH = this.path.ionify)
           ; Array.isArray (url) || (      url = [url])
           ; Array.isArray (act) || (      act = [act])
@@ -165,10 +160,7 @@
     ,
   "get then":
     function getThen (ion)
-      { return getThen.this.get (ion)
+      { return getThen.ion.get (ion)
       }
 }
-
-+
-/web@ionify activated!/
 ;
