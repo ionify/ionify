@@ -4,7 +4,7 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.15-07...2007.09-04"
+    , at: "2017.07.20-07...2007.09-04"
 
     , im:`trying to figure what to do next. I want to continue modularizing
           ionify so that it's easier to create new parts. Currently it's still
@@ -31,7 +31,26 @@
 
   todo:
     [ {syntax:
-        {20170713:
+        {20170720:
+          ["Documentation"
+          
+            +    /re: method@ion@domain/
+            +    /...details.../
+            
+            || [ /re: method@ion@domain/
+               , /...details.../
+               ]
+               
+            || [ "re: method@ion@domain"
+               + "...details..."
+               ]
+               
+          ,"Using arrays allows knowing when multiple comments are part of the same"
+          +" group. Without arrays, +storie groups are more challenging to recognize."
+          +" +aesop are already arrays so no additional work to enable."
+          ]
+          
+        ,20170713:
           ["Thinking of how to enable non-NaN ion return values for"
 
                  +{random:10} <= 7
@@ -255,4 +274,4 @@
         ]
     }
 }
-; //+todo@ionify
+;
