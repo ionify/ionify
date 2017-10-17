@@ -15,8 +15,8 @@
 ~ /example: A doSomething expression/
 
 + { doSomething: "fun"
-  , some : function() {/do some thing/}
-  , thing: function() {/do some thing else/}
+  , some : function() { ~/do some thing/      }
+  , thing: function() { ~/do some thing else/ }
   }
 ;
 ```
