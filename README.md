@@ -172,7 +172,9 @@ with objects during their automatic type conversion. Learn more
 **[team ionify](https://github.com/orgs/ionify/people)** has developed &
 distributed **ions** & **ionify** ever since their initial
 [discovery, definition & development](https://github.com/ionify/ionify/blob/public/info/story.md)
-by [Michael Lee](http://twitter.com/iskitz) in 2007. We **invent optimized,
+by [Michael Lee](http://twitter.com/iskitz) in 2007.
+
+We **invent optimized,
 natural interfaces, for you** & **aspire** to create **accessible,
 [simple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
 performant,
@@ -182,8 +184,8 @@ performant,
 
 ## now
 
-**ion** is a defined & [demonstrated](http://ionified.net/) software design
-pattern & **ionify** is an implemented pre-release JavaScript API that enables
+**ion** is a defined and [demonstrated](http://ionified.net/) software design
+pattern and **ionify** is an implemented pre-release JavaScript API that enables
 
 + fetching, observing & interacting with **ions**
 + event-driven programming
@@ -194,7 +196,11 @@ pattern & **ionify** is an implemented pre-release JavaScript API that enables
 ## next
 
 We hope to see **ionify** implemented in more languages that enable interfacing
-with objects during type conversion. Java & Python are two we've already
+with objects during type conversion.
+[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java)
+&
+[Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
+are two we've already
 experimented with & confirmed capable.
 
 Looking ahead, **ionify's** API will be developed to enable
