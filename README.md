@@ -1,6 +1,6 @@
 # ionify
 
-**implicit object notations invented for you**, enables extending a language's vocabulary and grammar via
+**implicit object notation invented for you**, enables extending a language's vocabulary and grammar via
 [ion](https://github.com/ionify/ionify/blob/public/info/ion.md) expressions.
 
 
