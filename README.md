@@ -1,47 +1,35 @@
 # ionify
 
-**implicit object notations invented for you**, is an
-[API](https://en.wikipedia.org/wiki/API) for interacting with
-[ions](https://github.com/ionify/ionify/blob/public/info/ion.md).
+**implicit object notations invented for you**, enables extending a language's vocabulary and grammar via
+[ion](https://github.com/ionify/ionify/blob/public/info/ion.md) expressions.
+
 
 ```javascript
-~ /example/
-+ {on:"ion@domain", do:["some", "things"]}
-;
-```
+~ / example: Defining a doSomething expression /
++ / that'll locate and do two things named     /
++ / "some" and "thing" if found within a       /
++ / doSomething expression's ion.              /
 
-## ions
++ {on:"doSomething", do:["some", "thing"]}
 
-**implicit object notations**, are
-[expressions](https://en.wikipedia.org/wiki/Expression_(computer_science))
-that activate
-[objects](https://en.wikipedia.org/wiki/Object_(computer_science)) via implicit
-[type conversion](https://en.wikipedia.org/wiki/Type_conversion).
+~ /example: A doSomething expression/
 
-```javascript
-~  /example/  -  /    ions   /
-^  ["aesop"]  *  /  stories  /  >>  {are:"ions"}
-&  ["these"]  +  /expressions/  <<  {are:"too" }
-/  ["write"]  %  /them as you/  |   {see:"fit" }
++ { doSomething: "fun"
+  , some : function() {/do some thing/}
+  , thing: function() {/do some thing else/}
+  }
 ;
 ```
 
 
 ## why
 
-Because it's awesome to find & share beautiful, undiscovered, capabilities
-that've long been possible. The capabilities that enable
-**[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)** &
-**[ionify](https://github.com/ionify/ionify/)** were discovered by
-[Michael Lee](http://twitter.com/iskitz) in
-[2007](https://github.com/ionify/ionify/blob/public/info/story.md) but have
-existed within [JavaScript](https://en.wikipedia.org/wiki/JavaScript) since
+**To make digital communication via programming more expressive and accessible** . . . and . . . because it's awesome to find and share undiscovered capabilities that enable incredible things. **[ionify's](https://github.com/ionify/ionify/)**
+enabled by [JavaScript](https://en.wikipedia.org/wiki/JavaScript) capabilities existent since
 [1997](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf)
-& possibly since
-[1995](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html)
-.
-
-Also...
+(possibly
+[1995](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html)) though undiscovered until [2007](https://github.com/ionify/ionify/blob/public/info/story.md) by
+[Michael Lee](http://twitter.com/iskitz).
 
 
 ### modules
