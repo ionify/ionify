@@ -1,40 +1,20 @@
 # ionify
 
-**implicit object notation invented for you**, enables extending a language's vocabulary and grammar via
-[ion](https://github.com/ionify/ionify/blob/public/info/ion.md) expressions.
+**implicit object notations invented for you** is a flexible, unobtrusive & new way to create expressive code.
 
 
 ```javascript
-~ / example: Defining a doSomething expression /
-+ / that'll locate and do two things named     /
-+ / "some" and "thing" if found within a       /
-+ / doSomething expression's ion.              /
-
-+ {on:"doSomething", do:["some", "thing"]}
-
-~ /example: A doSomething expression/
-
-+ { doSomething: "fun"
-  , some : function() { ~/do some thing/      }
-  , thing: function() { ~/do some thing else/ }
-  }
-;
+~{say:"hi!"}  + /outputs "hi!"/;
 ```
 
+**ionify**, and everything it enables, is supported by **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md): implicit object notation**, an incredibly versatile capability [discovered](https://github.com/ionify/ionify/blob/public/info/story.md) by
+[Michael Lee](http://twitter.com/iskitz) in 2007.
 
-## why
-
-**To make digital communication via programming more expressive and accessible** . . . and . . . because it's awesome to find and share undiscovered capabilities that enable incredible things. **[ionify's](https://github.com/ionify/ionify/)**
-enabled by [JavaScript](https://en.wikipedia.org/wiki/JavaScript) capabilities existent since
-[1997](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf)
-(possibly
-[1995](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html)) though undiscovered until [2007](https://github.com/ionify/ionify/blob/public/info/story.md) by
-[Michael Lee](http://twitter.com/iskitz).
-
+## what
 
 ### modules
 
-**ions** can define [modules](https://en.wikipedia.org/wiki/Modular_programming)
+**ionify** can define [modules](https://en.wikipedia.org/wiki/Modular_programming)
 :
 
 ```javascript
@@ -77,7 +57,7 @@ referencing them. This enables highly decoupled ion observation & interaction.
 ```
 
 
-### collision-free ids
+### no name-collisions
 
 Literal ions,
 [**lions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form),
@@ -126,6 +106,19 @@ because they're anonymous objects that can be individually observed & inspected.
 
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
+```javascript
+~
+{ on: "event"
+, do:
+    function someAction (ion)
+      { ~{log: ion.event}       + /logs "it happened!"/
+      }
+}
++
+{ event: "it happened!" }       + /activates an event/
+;
+```
+
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
@@ -157,20 +150,17 @@ being able to define your own vocabulary and language to perform one or more act
 
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 
+See [this example](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js).
+
+
 ### & much more.
 
-
-## how
-
-**ions** & **ionify** exist in languages that offer  the ability to interface
-with objects during their automatic type conversion. Learn more
-[here](https://github.com/ionify/ionify/blob/public/info/ion.md).
 
 
 ## who
 
 **[team ionify](https://github.com/orgs/ionify/people)** has developed &
-distributed **ions** & **ionify** ever since their initial
+distributed **ions** & **ionify** since their initial
 [discovery, definition & development](https://github.com/ionify/ionify/blob/public/info/story.md)
 by [Michael Lee](http://twitter.com/iskitz) in 2007.
 
