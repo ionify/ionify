@@ -4,9 +4,15 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.20-07...2007.09-04"
+    , at: "2017.11.05-08...2007.09-04"
 
-    , im:`trying to figure what to do next. I want to continue modularizing
+    , im:
+        [`planning to implement better 'on' action handling as defined below.
+          This should free me to move faster & experiment with more constructs with simpler
+          code, less special cases and complexity.
+         `
+        
+        ,`trying to figure what to do next. I want to continue modularizing
           ionify so that it's easier to create new parts. Currently it's still
           more complicated than I'd like to share functionality between sensors
           like on.ion, on.aeon, and on.aesop. Maybe by figuring out how to
@@ -20,6 +26,7 @@
           on that but also don't want to create a solution that can't be easily
           extended with that protection.
           `
+         ]
     },
 
   bugs:
@@ -198,6 +205,43 @@
 
     , "+[] +{do:[]} +etc : should all pass themselves as the context for all sub-actions"
 
+    , "on:"
+    
+    , "on:knowing:"
+    + "save all term patterns to action set"
+    +      {actions:
+              { on    : {onaction:1}
+              ,"on do": {onaction:1}
+              , do    : {doaction:1}
+              , re    : {reaction:1}
+              }
+           }
+    + "find & save all unique terms"
+    + "for each term, keep a list of term patterns"
+    +      {terms:
+              {on:
+                [ "type"        <- /on:aside: string means match a known type/
+                , ["on"]        <- /use array, even for 1 term, to match terms/
+                , ["on", "do"]
+                ]
+              ,do:
+                [ ["do"]
+                ]
+              }
+           }
+    + "for each 'on' action, update each term's pattern list"
+    + "sort patterns list in descending length order"
+    
+    , "on:matching:"
+    + "compare # of on action's terms to # of all known terms, choose the lesser"
+    + "for each term, find its longest pattern that matches the on action"
+    + "if multiple patterns of the same length match, handle them all"
+    + "get the action that matches the pattern and do it"
+    + "if the action errors or returns false find next longest matching pattern & do it"
+    + "if the action returns true or undefined, success, stop handling that term"
+    + "for subsequent terms, skip all patterns found in previously matched terms"
+    
+    
     , "on: performance: Find the most unique + fewest terms per grammar"
     + "    Track frequency of terms within a grammar + other grammars"
     +         {       id: 'web@ionify'
