@@ -1,10 +1,10 @@
 # ionify
 
-**implicit object notations invented for you** is a flexible, unobtrusive & new way to create expressive code.
+**implicit object notations invented for you** is a flexible, unobtrusive & novel way to create expressive code.
 
 
 ```javascript
-~{say:"hi!"}  + /outputs "hi!"/;
+~{log:"hi!"}  + /outputs "hi!"/;
 ```
 
 **ionify**, and everything it enables, is supported by **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md): implicit object notation**, an incredibly versatile capability [discovered](https://github.com/ionify/ionify/blob/public/info/story.md) by
@@ -33,6 +33,8 @@
 ;
 ```
 
+_fyi: Syntax highlighting issues are due to a [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488) not **ionify** or its syntax._
+
 
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
 
@@ -56,6 +58,7 @@ referencing them. This enables highly decoupled ion observation & interaction.
 ;
 ```
 
+_fyi: Syntax highlighting issues are due to a [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488) not **ionify** or its syntax._
 
 ### no name-collisions
 
@@ -79,11 +82,11 @@ because they're anonymous objects that can be individually observed & inspected.
     function confirm (ion)
       { /This method's called for each ion with/
       + /an id matching "my.ion". It confirms  /
-      + /the ion's developer before...         /
+      + /the ion's developer...                /
 
       ; if (ion.re.by != "a.developer") return
 
-      ~ /...using it./
+      ~ /...before using it./
       + {log: ion.re.is}
       }
 }
@@ -103,6 +106,9 @@ because they're anonymous objects that can be individually observed & inspected.
 }
 ;
 ```
+
+_fyi: Syntax highlighting issues are due to a [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488) not **ionify** or its syntax._
+
 
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
@@ -142,6 +148,7 @@ being able to define your own vocabulary and language to perform one or more act
 +
 { ask: "Hi! What's your name?"
 , say: "Hi [answer]!"
+, ask: "How are you?"
 , ask: "How come?"
 , say: "..."
 }
