@@ -20,12 +20,10 @@
     : false
     ,
 
-
   on:
     [ ["get", "then"]
     ,  "get"
     ],
-
 
   host
     : true
@@ -37,7 +35,7 @@
       {   var web = this
       ;   delete web.valueOf
     //;   web.watch  ()
-      ;   web.works  ()
+      ;   web.ready  ()
       ;   web.locate ()
       ;   web.get    ({get:"on.object@ionify", then:web})
       },
@@ -54,8 +52,8 @@
       },
 
 
-  works:
-    function works ()
+  ready:
+    function ready ()
       {   var error = this.errors
       ;   if (typeof document == "undefined") throw new Error (error.noDOM)
       ;   return true
