@@ -8,7 +8,7 @@
         + "bios: basic ionified object sensor"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.17-07...2007.09-04"
+    , at: "2017.11.08-08...2007.09-04"
 
     , it:
         [ /note: .../
@@ -257,6 +257,10 @@
 
 
     ,
+  known:
+    {}
+
+    ,
   on:
     function on (ion)
       { if (!ion || !ion.on && !("on" in ion)) return ion
@@ -268,30 +272,51 @@
 
         if ("function" == typeof ion.on) return on.ion.onSensor (ion)
 
-        var grammars  = ion.on
-          ; !Array.isArray (grammars) && (grammars = [grammars])
-          ;
-        var grammar
-          , action
-          , todo
-          , todos  =  0
+        var groups  = ion.on
+          ; !Array.isArray (groups) && (groups = [groups])
+          
+          
+        var action
+          , group
+          , test
+          , unknown
+          , word
+          , words
           , next   = -1
-          , last   = grammars.length
+          , last   = groups.length
           , ionify = on.ion
+          , known  = ionify.known
           , sense  = ionify.sense
           , id     = ion.re.id
 
       ~ {debug: Object.keys (sense)}
 
         while (++next < last)
-          { grammar =         grammars [next]
-            Array.isArray    (grammar) && (grammar = grammar.join (" "))
-            action  =    ion [grammar]
-            action && (sense [grammar] = action)
-          ~ {debug: ["knows?", id, grammar, grammar in sense]}
+          { words = group = groups [next]
+            !Array.isArray  (group) && (words = group = [group])
+            group = group.join (" ")
+            
+            unknown = !sense [group]
+            action  =    ion [group]
+            action && (sense [group] = action)
+            
+          ~ {debug: ["knows?", id, group, group in sense]}
+          
+            if (!unknown) continue
+            test  = 'return !!(ion ["'+ words.join ('"] && ion ["')+'"]);'
+            test  = new Function ("ion", test)
+            group = {group:group, test:test}
+            
+            for (var w=0, lastw=words.length; w < lastw; w++)
+              {  word = words [w]
+                !known [word] && (known [word] = [])
+                 known [word].push (group)
+              }
           }
 
-      ~ {debug: [id, grammars]}
+      ~ /td: sort new & updated words' groups in descending count order/
+      
+      ~ {debug: [id, groups]}
         return ion
       }
 
