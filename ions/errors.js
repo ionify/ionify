@@ -1,12 +1,10 @@
 ;
-/errors@ionify activating.../
-+
-
+~
 { re:
     { id: "errors.0.1.2017.04.14-07@ionify"
     , is: "An action that converts messages to Error objects"
     , by: "mike.lee@ionify"
-    , at: "2017.04.14-07...2007.09-04"
+    , at: "2017.11.09-08...2007.09-04"
 
         ,
       stories:
@@ -32,7 +30,4 @@
           next [error] = new Error (next [error])
       }
 }
-
-~
-/errors@ionify activated!/
 ;

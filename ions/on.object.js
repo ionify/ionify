@@ -8,16 +8,18 @@
         + "bios: basic ionified object sensor"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.08-08...2007.09-04"
+    , at: "2017.11.09-08...2007.09-04"
 
     , it:
         [ /note: .../
         , /todo: Make .resolve to convert ids to ions: e.g. ionified references/
-        , /todo: Make a way to undo all +on:Type's/
+        ,(/todo: Make a way to undo all +on:Type's/)
         , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
         ]
 
-    , im: "Adding a link() call to onArray & think I should for all onSensor's"
+    , im: "Reimplementing word recognition via onObject..."
+
+        + "Adding a link() call to onArray & think I should for all onSensor's"
         + " to ensure that they all have a .ion reference to their containing"
         + " ion. That'll support subsequent operations that depend on an ion's"
         + " context."
@@ -44,6 +46,7 @@
   valueOf:
     function ionify ()
       { var ion   = this
+          , sense = ion.sense
           , share =
               { id        : ion.id
               , ionified  : ion.ionified
@@ -53,6 +56,8 @@
               , deactivate: ion.deactivate
               , disable   : ion.disable
               }
+
+        for (var act in sense) sense [act] = ion [sense [act]]
 
         ion.link      ()
         ion.shareWith ({share : share , with  : ion.re.id    })
@@ -258,7 +263,37 @@
 
     ,
   known:
-    {}
+    { on:
+        [ { group :  "on"
+          , words : ["on"]
+          , within: function within (ion)
+                      { return "on" in ion
+                      }
+          }
+        ]
+    , no:
+        [ { group :  "no"
+          , words : ["no"]
+          , within: function within (ion)
+                      { return "no" in ion
+                      }
+          }
+        ]
+    , share:
+        [ { group :  "share with"
+          , words : ["share", "with"]
+          , within: function within (ion)
+                      { return "share" in ion && "with" in ion
+                      }
+          }
+        , { group :  "share"
+          , words : ["share"]
+          , within: function within (ion)
+                      { return "share" in ion
+                      }
+          }
+        ]
+    }
 
     ,
   on:
@@ -274,20 +309,22 @@
 
         var groups  = ion.on
           ; !Array.isArray (groups) && (groups = [groups])
-          
-          
+
+
         var action
           , group
           , test
           , unknown
+          , updated
           , word
           , words
-          , next   = -1
-          , last   = groups.length
-          , ionify = on.ion
-          , known  = ionify.known
-          , sense  = ionify.sense
-          , id     = ion.re.id
+          , next    = -1
+          , last    = groups.length
+          , ionify  = on.ion
+          , known   = ionify.known
+          , sense   = ionify.sense
+          , id      = ion.re.id
+          , updated = {}
 
       ~ {debug: Object.keys (sense)}
 
@@ -295,28 +332,40 @@
           { words = group = groups [next]
             !Array.isArray  (group) && (words = group = [group])
             group = group.join (" ")
-            
+
             unknown = !sense [group]
             action  =    ion [group]
             action && (sense [group] = action)
-            
+
           ~ {debug: ["knows?", id, group, group in sense]}
-          
+
             if (!unknown) continue
-            test  = 'return !!(ion ["'+ words.join ('"] && ion ["')+'"]);'
+          //test  = 'return !!(ion ["'+ words.join ('"] && ion ["')+'"]);'
+            test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
             test  = new Function ("ion", test)
-            group = {group:group, test:test}
-            
+            group = {group:group, words:words, within:test}
+
             for (var w=0, lastw=words.length; w < lastw; w++)
               {  word = words [w]
                 !known [word] && (known [word] = [])
                  known [word].push (group)
               }
+
+            updated [word] = true
           }
 
-      ~ /td: sort new & updated words' groups in descending count order/
-      
-      ~ {debug: [id, groups]}
+    ~(/sort new & updated words' groups in descending word count order/)
+
+      for (word in updated)
+        { known [word].sort
+            ( function (dis, dat)
+                { return dat.words.length - dis.words.length
+                }
+            )
+        }
+
+      ~ {debug: [id, groups         ]}
+
         return ion
       }
 
@@ -338,7 +387,7 @@
     [ /todo: sense => ArrayMap to preserve order + fast lookup./
     , /idea: log all matched actions + their results?          /
     , /idea: disable activated words, enable after all matches /
-    , /idea: loop through ion's terms instead of known?        /
+    ,(/idea: loop through ion's terms instead of known?        /)
     , /todo: Ignore similar actions after match: +get +get.then/
     ]
     ,
@@ -361,37 +410,35 @@
         debug.push ("onION:", ion.re.id)
 
         var from = onION.caller;
-        ion.re.from || (ion.re.from = from && from.ion && from.ion.re.id);
-	    from && (from != onION) && debug.push ("from", ion.re.from)
+        ion.re.from || (ion.re.from = from && from.ion && from.ion.re.id)
+        from && (from != onION) && debug.push ("from", ion.re.from)
 
-  next: for (grammar in sense)
-          { terms = grammar.split (" ");
+        var known = ionify.known
+          , skip  = {}
+          , group , groups
+          , word  , words
 
-            for (next=-1, last=terms.length; ++next < last;)
-              {  term = terms [next]
-              ;  if (!(ion [term] || term in ion)) continue next
+        for (word in known)
+          { if (word in skip || !(word in ion)) continue
+            groups = known [word]
+
+            for (var g=0, glast=groups.length; g < glast; g++)
+              { group = groups [g]
+                if (!group.within (ion)) continue
+                words   =  group.group
+              //result  =+ sense [words]
+                result  =  typeof  sense [words] == "function"
+                             ?  (  sense [words].ion != ion)
+                                && sense [words]       (ion)
+                             :  +  sense [words]
+                results += 1
+                words   =  group.words//.split (" ")
+                for (var w=0, lastw=words.length; w < lastw; skip [words [w++]] = true);
+                break
               }
-
-            !  ionified    [typeof sense  [grammar]] &&
-            (  ionified    [typeof ionify [grammar]] ||
-              "function" == typeof ionify [grammar]
-            )                                        &&
-            (  sense [grammar]  =  ionify [grammar])
-
-            debug.push ("using", grammar, typeof sense [grammar])
-
-            results += 1
-            ion.did || (ion.did = {})
-            ion.did [grammar]
-                  = result
-                  = typeof  sense [grammar] == "function"
-                      ?  (  sense [grammar].ion != ion)
-                         && sense [grammar]       (ion)
-                      :  +  sense [grammar]
           }
 
-        !ion.debug && ~{debug:debug}
-        return results == 1 ? result : this
+          return results == 1 ? result : this//true
       }
 
     ,
