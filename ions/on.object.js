@@ -45,9 +45,31 @@
     ,
   valueOf:
     function ionify ()
-      { var ion   = this
-          , sense = ion.sense
-          , share =
+      { var ion       = this
+        ion.sense.on  = ion.on
+        ion.link ()
+
+        ion.on
+          ({ on:
+              [ ["on", "do"]
+              , ["on", "no"]
+              ]
+//         ,"on do": ion.on
+           ,"on no": ion.no     //idea: {no:{word:action}} vs {on:"word",no:action}
+          })
+
+        ion.on
+          ({ on:
+              [ ["share", "with"]
+              , ["share"]
+              ]
+           , share      : ion.share
+           ,"share with": ion.share
+          })
+
+        ion.share
+          ({ with         : ion.re.id
+           , share        :
               { id        : ion.id
               , ionified  : ion.ionified
               , link      : ion.link
@@ -55,13 +77,9 @@
               , activate  : ion.activate
               , deactivate: ion.deactivate
               , disable   : ion.disable
-              }
+          }}  )
 
-        for (var act in sense) sense [act] = ion [sense [act]]
-
-        ion.link      ()
-        ion.shareWith ({share : share , with  : ion.re.id    })
-        ion.onSensor  ({on    : Object, Object: ion.onObject })
+        ion.onSensor ({on:Object, Object:ion.onObject})
 
         var initialize
           =   { get:
@@ -77,8 +95,8 @@
 
         initialize.on = "host"
         initialize.no = initialize
-
       ~ {on:"host", host:initialize}
+
         return true
       }
 
@@ -157,12 +175,13 @@
     , /todo: create +{share: {thing:..., other:...}, with:[ion.ids]}/
     ]
     ,
-  shareWith:
+  share:
     function share (ion)
       { var space
           , spaces = share.ion.spaces
           , things = ion.share
-          , domain = ion.with.match (/@(.*)/)
+          , wyth   = ion.with || ""
+          , domain = wyth.match (/@(.*)/)
           ; domain = domain && domain [1]
 
         space = spaces [domain] || (spaces [domain] = {})
@@ -188,11 +207,8 @@
     ]
     ,
   sense:
-    {  on           : "on"
-  //, "on do"       : "on"         // see web.get.use@ionify
-    ,  no           : "no"
-    , "share with"  : "shareWith"
-    },
+    {}
+    ,
 
 
   activate:
@@ -271,28 +287,6 @@
                       }
           }
         ]
-    , no:
-        [ { group :  "no"
-          , words : ["no"]
-          , within: function within (ion)
-                      { return "no" in ion
-                      }
-          }
-        ]
-    , share:
-        [ { group :  "share with"
-          , words : ["share", "with"]
-          , within: function within (ion)
-                      { return "share" in ion && "with" in ion
-                      }
-          }
-        , { group :  "share"
-          , words : ["share"]
-          , within: function within (ion)
-                      { return "share" in ion
-                      }
-          }
-        ]
     }
 
     ,
@@ -307,9 +301,8 @@
 
         if ("function" == typeof ion.on) return on.ion.onSensor (ion)
 
-        var groups  = ion.on
-          ; !Array.isArray (groups) && (groups = [groups])
-
+        var groups = ion.on
+        !Array.isArray (groups) && (groups = [groups])
 
         var action
           , group
@@ -339,32 +332,31 @@
 
           ~ {debug: ["knows?", id, group, group in sense]}
 
-            if (!unknown) continue
+            if (!action || !unknown) continue
           //test  = 'return !!(ion ["'+ words.join ('"] && ion ["')+'"]);'
             test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
             test  = new Function ("ion", test)
             group = {group:group, words:words, within:test}
 
             for (var w=0, lastw=words.length; w < lastw; w++)
-              {  word = words [w]
-                !known [word] && (known [word] = [])
-                 known [word].push (group)
+              { word  =  words [w]
+               !known   [word] && (known [word] = [])
+                known   [word].push (group)
+                updated [word] = true
               }
-
-            updated [word] = true
           }
 
     ~(/sort new & updated words' groups in descending word count order/)
 
       for (word in updated)
         { known [word].sort
-            ( function (dis, dat)
+            ( function descending (dis, dat)
                 { return dat.words.length - dis.words.length
                 }
             )
         }
 
-      ~ {debug: [id, groups         ]}
+      ~ {debug: [id, groups]}
 
         return ion
       }
@@ -432,7 +424,7 @@
                                 && sense [words]       (ion)
                              :  +  sense [words]
                 results += 1
-                words   =  group.words//.split (" ")
+                words   =  group.words
                 for (var w=0, lastw=words.length; w < lastw; skip [words [w++]] = true);
                 break
               }
