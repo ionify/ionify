@@ -8,7 +8,7 @@
         + "bios: basic ionified object sensor"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.09-08...2007.09-04"
+    , at: "2017.11.10-08...2007.09-04"
 
     , it:
         [ /note: .../
@@ -263,16 +263,19 @@
           , act
           , nion //next ion
           , term
+          , known = no.ion.known
           , next  = -1
           , last  = ions.length
           , sense = no.ion.sense
           ;
         while (++next < last)
           { nion  = ions [next]
-          ; term  = nion.on
+          ; term  = ion.on
           ; id    = nion.re && nion.re.id
           ; act   = sense [term]
-          ; act  && act.ion && (id && id == act.ion.re.id) && delete sense [term]
+          ; act  && act.ion && (id && id == act.ion.re.id)
+                 && delete sense [term]
+                 && delete known [term]
           }
       }
 
@@ -280,9 +283,9 @@
     ,
   known:
     { on:
-        [ { group :  "on"
-          , words : ["on"]
-          , within: function within (ion)
+        [ { act:  "on"
+          , set: ["on"]
+          , in : function within (ion)
                       { return "on" in ion
                       }
           }
@@ -336,7 +339,7 @@
           //test  = 'return !!(ion ["'+ words.join ('"] && ion ["')+'"]);'
             test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
             test  = new Function ("ion", test)
-            group = {group:group, words:words, within:test}
+            group = {act:group, set:words, in:test}
 
             for (var w=0, lastw=words.length; w < lastw; w++)
               { word  =  words [w]
@@ -351,7 +354,7 @@
       for (word in updated)
         { known [word].sort
             ( function descending (dis, dat)
-                { return dat.words.length - dis.words.length
+                { return dat.set.length - dis.set.length
                 }
             )
         }
@@ -416,15 +419,15 @@
 
             for (var g=0, glast=groups.length; g < glast; g++)
               { group = groups [g]
-                if (!group.within (ion)) continue
-                words   =  group.group
+                if (!group.in (ion)) continue
+                words   =  group.act
               //result  =+ sense [words]
                 result  =  typeof  sense [words] == "function"
                              ?  (  sense [words].ion != ion)
                                 && sense [words]       (ion)
                              :  +  sense [words]
                 results += 1
-                words   =  group.words
+                words   =  group.set
                 for (var w=0, lastw=words.length; w < lastw; skip [words [w++]] = true);
                 break
               }
