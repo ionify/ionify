@@ -4,12 +4,12 @@
     { id: "log.0.1@ionify"
     , is: "web-based logging for ionify"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.15-07...2007.09-04"
+    , at: "2017.11.10-08...2007.09-04"
         ,
       stories:
         [ /todo: Create log@ + move console + all +logging there/
         , /todo: Update to only use alert() on iOS/
-        , /todo: works(): only throw noConsole if no alert() /
+        , /todo: ready(): only throw noConsole if no alert() /
         ]
     }
 
@@ -27,13 +27,13 @@
     ,
   do:
     [ {debug:true}
-    , "works"
+    , "ready"
     ]
 
     ,
-  works:
-    function works ()
-      {   var error = works.ion.errors
+  ready:
+    function ready ()
+      {   var error = ready.ion.errors
       ;   (typeof  console == "undefined") && ~error.noConsole
       ;   (typeof    alert == "undefined") && ~error.noAlert
       ;   return true
@@ -67,9 +67,10 @@
 
   log:
     function log (ion)
-      {/* Causes an infinite loop log...onObject...debug...log
+      {/* Uncommenting the following stories causes an infinite
+          loop log...onObject...debug...log
           Maybe move logging to own flow | queue | thread so it
-          won't interupt other ion handling...
+          won't interupt other ion handling? Needs debugging.
 
         +/ ion: +{log:thing} logs some thing    /
         +/ ion: +{log: true} enables  logging   /
@@ -126,7 +127,4 @@
       }
 
 }
-
-+
-/web.log@ionify activated!/
 ;

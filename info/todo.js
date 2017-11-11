@@ -4,7 +4,7 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.05-08...2007.09-04"
+    , at: "2017.11.07-08...2007.09-04"
 
     , im:
         [`planning to implement better 'on' action handling as defined below.
@@ -205,7 +205,7 @@
 
     , "+[] +{do:[]} +etc : should all pass themselves as the context for all sub-actions"
 
-    , "on:"
+    , "on: 2017.11.05"
     
     , "on:knowing:"
     + "save all term patterns to action set"
@@ -241,7 +241,18 @@
     + "if the action returns true or undefined, success, stop handling that term"
     + "for subsequent terms, skip all patterns found in previously matched terms"
     
-    
+
+    ,`on: 2017.11.06
+
+        get on's sets of terms
+        for each set
+          remember it & its handler
+          for each term
+              if it's unique, remember it & its set
+        for each new or updated term
+          sort its sets in descending length order 
+     `
+     
     , "on: performance: Find the most unique + fewest terms per grammar"
     + "    Track frequency of terms within a grammar + other grammars"
     +         {       id: 'web@ionify'

@@ -1,12 +1,10 @@
 ;
-/use@ionify activating.../
-+
-
+~
 { re:
     { id: "use.0.1@ionify"
     , is: "An action enabling the use of an ion's thing(s)"
     , by: "mike.lee@ionify"
-    , at: "2017.07.11-07...2007.09-04"
+    , at: "2017.11.09-08...2007.09-04"
         ,
       stories:
         [ /note: +get.use.in.as: helps wakatta + is like ajile/
@@ -134,7 +132,4 @@
       ; onUse.ion ["use as in"] (ion)
       }
 }
-
-+
-/use@ionify activated!/
 ;
