@@ -5,10 +5,9 @@
 { re:
     { id: "on.object.0.1@ionify"
     , is: "implicit object notations invented for you"
-        + "bios: basic ionified object sensor"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.10-08...2007.09-04"
+    , at: "2017.11.12-08...2007.09-04"
 
     , it:
         [ /note: .../
@@ -17,7 +16,7 @@
         , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
         ]
 
-    , im: "Reimplementing word recognition via onObject..."
+    , im: /Implementing ~on.do.                                                /
 
         + "Adding a link() call to onArray & think I should for all onSensor's"
         + " to ensure that they all have a .ion reference to their containing"
@@ -112,7 +111,7 @@
 
         var property
           , thing
-          , id    = (ion.re ? ion.re.id : ion.id) || "ion"
+          , id    = (ion.re ? ion.re.id : ion.id && String (ion.id)) || "ion"
           , space = (link.ion || this).getSpace (id)
           ; id    = id.replace (/(.+)(@|\.\d\.).*/, "$1")
 
@@ -145,7 +144,7 @@
 
         var property
           , thing
-          , id = (ion.re ? ion.re.id : ion.id) || "ion"
+          , id = (ion.re ? ion.re.id : ion.id && String (ion.id)) || "ion"
           ; id = id.replace (/(.+)(@|\.\d\.).*/, "$1")
           ;
         for (property in ion)
@@ -236,13 +235,32 @@
 
 
   id:
-    function getId (ion)
-      { var    id =   ion.re ? ion.re.id : (ion.re = {id: ion.id}).id
-      ; return typeof id == "string"
-                    ? id
-                    : (ion.re.id = "ion."
-                      + (getId.nextId ? ++getId.nextId
-                                      :  (getId.nextId = 1)))
+    function setId (ion)
+      { var id = ion.re ?  ion.re.id
+                        : (ion.re = {id: ion.id && String (ion.id)}).id
+
+        if (id || isFinite (id))
+          return ion [id] ? id : (ion [id] = ion.re).id
+
+        for (var word in ion)
+          if (~word.search(/@/))
+            {     id = ion .re.id = word
+              var re = ion [id]
+              typeof re == "object"
+                &&  (ion .re = re)
+                && !("id"  in  re)
+                &&  (re  .id = id)
+              return id
+            }
+
+        !ion.re.id && !ion.next && !ion.id && ~{next:"ion", id:ion}
+
+        !   ion.re.id
+        && (ion.re.id = "ion." + (setId.nextId ? ++setId.nextId
+                                               :  (setId.nextId = 1)))
+        id = ion.re.id
+        !ion [id] && (ion [id] = ion.re)
+        return id
       }
 
 
@@ -286,8 +304,8 @@
         [ { act:  "on"
           , set: ["on"]
           , in : function within (ion)
-                      { return "on" in ion
-                      }
+                    { return "on" in ion
+                    }
           }
         ]
     }
@@ -297,8 +315,7 @@
     function on (ion)
       { if (!ion || !ion.on && !("on" in ion)) return ion
 
-      ; (ion.re && ion.re.id) || ~{next:"ion", id:ion}
-      ; (ion.re && ion.re.id) || on.ion.id (ion)
+        on.ion.id (ion)
 
       ~ {debug: [ion.re.id, "on:", ion.on, JSON.stringify (ion.on)]}
 
@@ -336,7 +353,7 @@
           ~ {debug: ["knows?", id, group, group in sense]}
 
             if (!action || !unknown) continue
-          //test  = 'return !!(ion ["'+ words.join ('"] && ion ["')+'"]);'
+
             test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
             test  = new Function ("ion", test)
             group = {act:group, set:words, in:test}
@@ -360,7 +377,6 @@
         }
 
       ~ {debug: [id, groups]}
-
         return ion
       }
 
@@ -398,8 +414,8 @@
           , next      , last  , result
           , results   = 0
 
-//    ; (!ion.debug && !ion.next && +{next:"ion", id:ion}) ||
-        ionify.id (ion)
+//     !ion.debug     &&
+        ionify.id   (ion)
         ionify.link (ion)
 
         debug.push ("onION:", ion.re.id)
@@ -421,7 +437,6 @@
               { group = groups [g]
                 if (!group.in (ion)) continue
                 words   =  group.act
-              //result  =+ sense [words]
                 result  =  typeof  sense [words] == "function"
                              ?  (  sense [words].ion != ion)
                                 && sense [words]       (ion)
@@ -433,7 +448,8 @@
               }
           }
 
-          return results == 1 ? result : this//true
+//        !ion.debug && ~{debug:debug}
+          return results == 1 ? result : this // true
       }
 
     ,

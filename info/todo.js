@@ -4,15 +4,14 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.07-08...2007.09-04"
+    , at: "2017.11.11-08...2007.09-04"
 
     , im:
-        [`planning to implement better 'on' action handling as defined below.
-          This should free me to move faster & experiment with more constructs with simpler
-          code, less special cases and complexity.
-         `
-        
-        ,`trying to figure what to do next. I want to continue modularizing
+        [`implementing ~on+do.
+
+          I was previously...
+
+          trying to figure what to do next. I want to continue modularizing
           ionify so that it's easier to create new parts. Currently it's still
           more complicated than I'd like to share functionality between sensors
           like on.ion, on.aeon, and on.aesop. Maybe by figuring out how to
@@ -37,26 +36,32 @@
     ],
 
   todo:
-    [ {syntax:
+    [ { "2017.11.__-08":
+          [
+          ]
+      }
+      ,
+
+      {syntax:
         {20170720:
           ["Documentation"
-          
+
             +    /re: method@ion@domain/
             +    /...details.../
-            
+
             || [ /re: method@ion@domain/
                , /...details.../
                ]
-               
+
             || [ "re: method@ion@domain"
                + "...details..."
                ]
-               
+
           ,"Using arrays allows knowing when multiple comments are part of the same"
           +" group. Without arrays, +storie groups are more challenging to recognize."
           +" +aesop are already arrays so no additional work to enable."
           ]
-          
+
         ,20170713:
           ["Thinking of how to enable non-NaN ion return values for"
 
@@ -133,14 +138,9 @@
         }
       }
     , {20161119:
-        [/ api: Make 0.1 branch/
-        ,/ api: Move code in public branch to 0.1 branch/
-        ,/ api: Delete code in public branch/
-        ,/ api: Add recent changes to 0.1 branch/
-        ,/ dox: Create ions sub-directory + move to it/
+        [/dox: Create ions sub-directory + move to it/
         ]
       }
-    , {20161117: "Move re.in to mike.lee@ionify.net + team@ionify.net ions"}
     , {20161116: "ionify guarantees that each ion will have this content:"}
           +
           { re: {id: "name[@domain|ip].api", at:"moment"}
@@ -205,33 +205,6 @@
 
     , "+[] +{do:[]} +etc : should all pass themselves as the context for all sub-actions"
 
-    , "on: 2017.11.05"
-    
-    , "on:knowing:"
-    + "save all term patterns to action set"
-    +      {actions:
-              { on    : {onaction:1}
-              ,"on do": {onaction:1}
-              , do    : {doaction:1}
-              , re    : {reaction:1}
-              }
-           }
-    + "find & save all unique terms"
-    + "for each term, keep a list of term patterns"
-    +      {terms:
-              {on:
-                [ "type"        <- /on:aside: string means match a known type/
-                , ["on"]        <- /use array, even for 1 term, to match terms/
-                , ["on", "do"]
-                ]
-              ,do:
-                [ ["do"]
-                ]
-              }
-           }
-    + "for each 'on' action, update each term's pattern list"
-    + "sort patterns list in descending length order"
-    
     , "on:matching:"
     + "compare # of on action's terms to # of all known terms, choose the lesser"
     + "for each term, find its longest pattern that matches the on action"
@@ -240,19 +213,7 @@
     + "if the action errors or returns false find next longest matching pattern & do it"
     + "if the action returns true or undefined, success, stop handling that term"
     + "for subsequent terms, skip all patterns found in previously matched terms"
-    
 
-    ,`on: 2017.11.06
-
-        get on's sets of terms
-        for each set
-          remember it & its handler
-          for each term
-              if it's unique, remember it & its set
-        for each new or updated term
-          sort its sets in descending length order 
-     `
-     
     , "on: performance: Find the most unique + fewest terms per grammar"
     + "    Track frequency of terms within a grammar + other grammars"
     +         {       id: 'web@ionify'
@@ -273,25 +234,12 @@
     , "on: Match each ion's members' names with grammars in syntaxgram"
     , "on: Activate grammars matching ion member names, sensormap + actiongram"
 
-    , "no: Make sensor to disable + enable other sensors; useful for skipping"
-    +     "re's within functions in production code. Could create for use with"
-    +     "any action."
-
     , "re: Make sensor for this action that generates API documents"
 
     , "do: start action(s): ion's start method"
     , "no:   end action(s): ion's stop  method"
     , "get: do: action(s) done after get completes"
     , "get: Resolve ids to urls + file paths"
-
-    , "on: update to handle word patterns"
-        +
-        { on:
-           [ ['get','do']
-           , ['get','use']
-           ,  'get'
-           ]
-        },
 
     + ["string +template with +namespaced.values"]
     + { fill: "+template's +values"   , from:["..."]}
@@ -311,17 +259,136 @@
       }
     ],  //+ionify.re.todo
 
-  done:
+
+  DONE:
     { "year[.month.day.hour.minute.second][+-]timezoneHours[.minutesOffset]":
         [
         ],
 
+      "2017.11.11-08":
+        [ `on: id: ion@domain
+          `
+          +/ ~on: enables sensing ions by their ids. It can currently/
+              +
+              { on          : "ion@doma.in"
+              ,"ion@doma.in": "some action" | Array | Function | Object
+              }
+
+          +/...sense ions with their id as a top-level property name but /
+          +/ we want to maintain consistent & fast .id access via .re.id,/
+          +/ so we'll augment these ions with a .re composed of the same /
+          +/ data + a .id field containing the ion's id.                 /
+              +
+              { "ion@doma.in"
+              :   { is: "An ion id'd without having an re.id or id field"
+                  , by: "mike.lee@iskitz"
+                  , at: "2017.11.11-08"
+                  , in: "san-jose.california.usa.earth"
+                  }
+              }
+
+          +/...but needs to be updated to sense ionify's with re.id or id/
+              +
+              { re
+              :   { id: "ion@doma.in"
+                  , is: "An ion id'd without having an re.id or id field"
+                  , by: "mike.lee@iskitz"
+                  , at: "2017.11.11-08"
+                  , in: "san-jose.california.usa.earth"
+                  }
+              }
+
+          + / It may be best to support ions defining their ids using multiple /
+          + / techniques. ionify can convert each to the expected format to    /
+          + / support ~on.id & ion.re.id & ion.id access.                      /
+
+        ]
+        ,
+
+     "2017.11.11-08":
+        [`planning to implement better 'on' action handling as defined below.
+          This should free me to move faster & experiment with more constructs with simpler
+          code, less special cases and complexity.
+
+          on: 2017.11.06
+
+          get on's sets of terms
+          for each set
+            remember it & its handler
+            for each term
+                if it's unique, remember it & its set
+          for each new or updated term
+            sort its sets in descending length order
+         `
+        , "on: 2017.11.05"
+
+        , "on:knowing:"
+        + "save all term patterns to action set"
+        +      {actions:
+                  { on    : {onaction:1}
+                  ,"on do": {onaction:1}
+                  , do    : {doaction:1}
+                  , re    : {reaction:1}
+                  }
+               }
+        + "find & save all unique terms"
+        + "for each term, keep a list of term patterns"
+        +      {terms:
+                  {on:
+                    [ "type"        <- /on:aside: string means match a known type/
+                    , ["on"]        <- /use array, even for 1 term, to match terms/
+                    , ["on", "do"]
+                    ]
+                  ,do:
+                    [ ["do"]
+                    ]
+                  }
+               }
+        + "for each 'on' action, update each term's pattern list"
+        + "sort patterns list in descending length order"
+        ]
+        ,
+
+      "2016.11.19-08":
+        [/ api: Make 0.1 branch/
+        ,/ api: Move code in public branch to 0.1 branch/
+        ,/ api: Delete code in public branch/
+        ,/ api: Add recent changes to 0.1 branch/
+        ]
+        ,
+
+      "2016.11.17-08":
+        /Move re.in to mike.lee@ionify.net + team@ionify.net ions/
+        ,
+
+      "2016.__.__-0_":
+        `no: Make sensor to disable + enable other sensors; useful for skipping
+         re-actions within functions in production code. Could create for use with
+         any action.
+        `
+        ,
+
+      "2016.__.__-0_":
+        [/on: update to handle word patterns/
+            +
+            { on:
+               [ ['get','do']
+               , ['get','use']
+               ,  'get'
+               ]
+            }
+        ]
+        ,
+
       "2016.09.14-07":
         [ "onObject: Ignores "
-        ],
+        ]
+        ,
+
       "2016.09.10-07":
         [ "on: Generate an id for each sensor (sensing ion) that has none"
-        ],
+        ]
+        ,
 
       "2016.09.09-07":
         [ "get: Design its grammars: get [+do] [+use]"
