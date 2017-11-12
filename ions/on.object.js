@@ -111,7 +111,7 @@
 
         var property
           , thing
-          , id    = (ion.re ? ion.re.id : ion.id && String (ion.id)) || "ion"
+          , id    = (ion.re ? ion.re.id : void 0) || "ion"
           , space = (link.ion || this).getSpace (id)
           ; id    = id.replace (/(.+)(@|\.\d\.).*/, "$1")
 
@@ -144,7 +144,7 @@
 
         var property
           , thing
-          , id = (ion.re ? ion.re.id : ion.id && String (ion.id)) || "ion"
+          , id = (ion.re ? ion.re.id : void 0) || "ion"
           ; id = id.replace (/(.+)(@|\.\d\.).*/, "$1")
           ;
         for (property in ion)
@@ -237,7 +237,7 @@
   id:
     function setId (ion)
       { var id = ion.re ?  ion.re.id
-                        : (ion.re = {id: ion.id && String (ion.id)}).id
+                        : (ion.re = {id: void 0}).id
 
         if (id || isFinite (id))
           return ion [id] ? id : (ion [id] = ion.re).id
@@ -253,7 +253,7 @@
               return id
             }
 
-        !ion.re.id && !ion.next && !ion.id && ~{next:"ion", id:ion}
+        !ion.re.id && !ion.next && ~{next:"ion", id:ion}
 
         !   ion.re.id
         && (ion.re.id = "ion." + (setId.nextId ? ++setId.nextId
@@ -416,7 +416,7 @@
 
 //     !ion.debug     &&
         ionify.id   (ion)
-        ionify.link (ion)
+       !ion.next && ionify.link (ion)
 
         debug.push ("onION:", ion.re.id)
 

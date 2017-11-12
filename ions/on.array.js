@@ -4,7 +4,7 @@
     , is: "bias: basic ionified array sensor"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.17-07...2007.09-04"
+    , at: "2017.11.12-08...2007.09-04"
 
     , it: "Senses all array-expressed ions like:"
         + " ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
@@ -37,7 +37,6 @@
               , thing
               , type
 
-        //~ {next:"ion", id:ion}
             get.id   (ion)
             get.link (ion)
 
