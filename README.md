@@ -22,7 +22,7 @@ and programming language capability
 
 ## why
 
-**ionify** enables exploring and experimenting with digital communication via
+**ionify** enables exploring and experimenting with:
 
 + [modular](https://en.wikipedia.org/wiki/Modular_programming),
   [event-driven](https://en.wikipedia.org/wiki/Event-driven_programming),

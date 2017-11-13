@@ -146,8 +146,8 @@ In [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-26
 
 ```javascript
   ~
-  { valueOf:
-      function hip ()
+  { valueOf
+  :   function hip ()
         { console.log ("hip: held-in-place ion")
         }
   }
@@ -157,11 +157,10 @@ In [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-26
 **hop**, held-on-prototype:
 
 ```javascript
-  ;
   Object.prototype.valueOf
-    = function hop ()
-        { console.log ("hop: held-on-prototype ion")
-        }
+  = function hop ()
+      { console.log ("hop: held-on-prototype ion")
+      }
   ;
 ```
 
