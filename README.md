@@ -7,9 +7,7 @@ novel
 for expressing ideas and intent via code:
 
 ```javascript
-;
-~ {log: "hi!"}  <= /shows "hi!"/
-;
+~ {log: "hi!"}  <= /shows "hi!"/;
 ```
 
 ## how
