@@ -22,7 +22,7 @@ and programming language capability
 
 ## why
 
-**ionify** enables exploring and experimenting with:
+**ionify** enables exploring and experimenting with
 
 + [modular](https://en.wikipedia.org/wiki/Modular_programming),
   [event-driven](https://en.wikipedia.org/wiki/Event-driven_programming),
@@ -36,7 +36,7 @@ and programming language capability
   data & code
 
 + creating [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
-+ & [more](https://github.com/ionify/ideas/)
++ & [more](https://github.com/ionify/ideas/).
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
 
