@@ -84,16 +84,16 @@ internal identifiers, within a single
       + / with an id matching "my.ion@doma.in"./
       + / It confirms the ion's developer...   /
 
-      ; if (ion.re.by != "a.developer") return
+      ; if (ion.re.by != "a.🇬🇾.developer") return
 
-      ~ /...before using it./
+      ~ /...before using it/
       + {log: ion.re.is}
       }
 }
 +
 { re:
     { id: "my.ion@doma.in"
-    , by: "a.developer"
+    , by: "a.🇬🇾.developer"
     , in: "georgetown.guyana.south-america.earth"
     , is: "a simple module"
     }
@@ -101,7 +101,7 @@ internal identifiers, within a single
 +
 { re:
     { id: "my.ion@doma.in"
-    , by: "another.developer"
+    , by: "a.🇬🇾-🇺🇸.developer"
     , at: "2009.12-04...2007.09-04"
     , in: "forest-hills.new-york.usa.earth"
     , is: "an identically id'd module"
@@ -109,7 +109,7 @@ internal identifiers, within a single
 }
 +
 { "my.ion@doma.in"
-:   { by: "yet.another.developer"
+:   { by: "a.🇯🇵-🇺🇸.developer"
     , at: "2017.11.12-08...2009.12-08"
     , in: "san-jose.california.usa.earth"
     , is: "also an identically id'd module"
