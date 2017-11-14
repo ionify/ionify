@@ -1,7 +1,7 @@
 # jess
 
-**jess** are **json-embedded statements**.
+**jess** are **json-expressed statements**.
 
 ```javascript
-  +{"say":"Hi!"};
+  ~ {"say":"Hi!"} ;
 ```

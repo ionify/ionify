@@ -1,7 +1,7 @@
 # aeons
 
-**aeons** are **array-embedded object notations**.
+**aeons** are **array-expressed object notations**.
 
 ```javascript
-  +[{say:"Hi!"}];
+  ~ [ {say:"Hi!"} ] ;
 ```

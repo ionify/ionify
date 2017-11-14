@@ -140,8 +140,7 @@ Object.prototype.valueOf
 
 ### interact
 
-In [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm),
-**ion** interaction has three styles, **hip**, held-in-place:
+In JavaScript, **ion** interaction has three styles, **hip**, held-in-place:
 
 ```javascript
   ~

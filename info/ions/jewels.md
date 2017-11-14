@@ -1,10 +1,9 @@
 # jewels
 
-**jewels** are **json-embedded web expression languages**.
+**jewels** are **json-expressed web-enabled languages**:
 
 ```javascript
-  ;
-  + {as: "html",   body : "Hi!"}
-  + {as: "css" , "#body": {color: "#212CD9"} }
+  ~ {"as":"html",  "body": "Hi!"}
+  & {"as":"css" , "#body": {"color":"#212CD9"}}
   ;
 ```
