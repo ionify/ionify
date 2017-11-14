@@ -32,7 +32,7 @@ and programming language capability
   programming
 
 + fetching, [observing](https://en.wikipedia.org/wiki/Observer_pattern),
-  and interacting with
+  and interacting with highly
   [decoupled](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
   data & code
 
@@ -67,8 +67,7 @@ not **ionify** or its syntax._
 **ionify** enables observing and distinguishing between identically
 identified **ions**.
 
-Anonymous [**lions**](https://github.com/ionify/ionify/blob/public/info/ion.md#form):
-literal ions, i.e. `~/ / + [ ] & { }`, are anonymous objects that eliminate
+Anonymous [**lions**: literal ions](https://github.com/ionify/ionify/blob/public/info/ion.md#form), i.e. `~/ / + [ ] & { }`, are anonymous objects that eliminate
 name collisions by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 **ionify** enables individually accessing and inspecting anonymous **lions**,
