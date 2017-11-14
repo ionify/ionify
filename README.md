@@ -44,9 +44,10 @@ and programming language capability
 ```javascript
 ~
 { re:
-    { id: "my.ion.module"
-    , by: "a.developer"
+    { id: "my.ion.module@doma.in"
     , is: "a simple module example"
+    , by: "a.developer@doma.in"
+    , at: "2017.11.14-07...2007.09-04"
     }
     ,
   do:
@@ -73,9 +74,7 @@ name collisions by encapsulating their
 **ionify** enables individually accessing and inspecting anonymous **lions**,
 which enables the simultaneous coexistence of multiple **lions**, with exact
 internal identifiers, within a single
-[execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts).
-
-
+[execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts):
 
 ```javascript
 ~
@@ -149,8 +148,9 @@ See our
 
 **ionify** uses JavaScript's
 [prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
-and ability to interface with objects during their automatic type conversion to
-enable observing **ions** without a direct reference:
+and ability to interface with objects during their
+[automatic type conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
+to enable observing **ions** without a direct reference:
 
 ```javascript
 ~
