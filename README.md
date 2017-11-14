@@ -109,7 +109,7 @@ internal identifiers, within a single
 }
 +
 { "my.ion@doma.in"
-:   { by: "a.🇯🇵-🇺🇸.developer"
+:   { by: "a.🇬🇾+🇯🇵-🇺🇸.developer"
     , at: "2017.11.12-08...2009.12-08"
     , in: "san-jose.california.usa.earth"
     , is: "also an identically id'd module"
