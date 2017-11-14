@@ -68,7 +68,7 @@ and relational punctuation operators available to all **ions**:
 ^  ["aesop"]  *  /  stories  /  >>  {are:"ions"}
 &  ["these"]  +  /expressions/  <<  {are:"too" }
 /  ["write"]  %  /them as you/  |   {see:"fit" }
->  ["using"]  >= /only/ < /15/  <=  {ops:";-)" }
+>  ["using"]  >=  /15/ < /ion/  <=  /operators!/
 ;
 ```
 
@@ -106,10 +106,10 @@ runtimes interpret & evaluate **ions** as expressions.
 During evaluation, an **ion's** operator
 [attempts to convert its object operand to a number](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive).
 During that conversion, an attempt is made to call the object's `valueOf()`
-method. If an **ion** doesn't define that method, JavaScript traverses the
-**ion's**
-[prototype chain](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
-in search of it. For **lions** that search begins & ends at the object's
+method. If an **ion** doesn't define that method, JavaScript searches for
+it in the **ion's**
+[prototype chain](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects).
+For **lions** that search begins & ends at the object's
 `prototype`; i.e. `Object.prototype`, `Array.prototype` or `RegExp.prototype`.
 This can differ for **orion** if they inherit from other objects.
 
@@ -122,20 +122,19 @@ that's then converted to a number.
 Defining custom `Object.prototype.valueOf()`, `Array.prototype.valueOf()` &
 `RegExp.prototype.valueOf()` methods enables using JavaScript's
 [implicit type conversion](https://en.m.wikipedia.org/wiki/Type_conversion)
-behavior to interact with all **lions** without needing an identifier 🤓
+behavior to interact with all **lions** without direct access to them 🤓
 
 ```javascript
-;
 Object.prototype.valueOf
-  = function onObject ()
-      { this.ion == "some data" // true on 1st ion!
-      ; this.ion == "more data" // true on 2nd ion!
-      ; this.any == "data kind" // true on 3rd ion!
-      }
+= function onObject ()
+    { this.ion == "some data" // true on 1st ion!
+    ; this.ion == "more data" // true on 2nd ion!
+    ; this.any == "data kind" // true on 3rd ion!
+    }
 
-~{ion:"some data"}  // 1st ion
-+{ion:"more data"}  // 2nd ion
--{any:"data kind"}  // 3rd ion
+~ {ion:"some data"}  // 1st ion
++ {ion:"more data"}  // 2nd ion
+- {any:"data kind"}  // 3rd ion
 ;
 ```
 

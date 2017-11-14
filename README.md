@@ -1,10 +1,10 @@
 # [ionify](http://ionified.net/)
 
-**implicit object notations invented for you**, is a flexible, unobtrusive and
+**implicit object notations invented for you**, is a flexible, unobtrusive, and
 novel
-[javascript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-[api](https://en.wikipedia.org/wiki/Application_programming_interface)
-for expressing ideas and intent via code:
+[JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+[API](https://en.wikipedia.org/wiki/Application_programming_interface)
+for expressing ideas through code:
 
 ```javascript
 ~ {log: "hi!"}  <= /shows "hi!"/;
@@ -210,13 +210,13 @@ has developed and distributed **ions** & **ionify** since their initial
 [discovery, definition, and development](https://github.com/ionify/ionify/blob/public/info/story.md)
 by [Michael Lee](http://twitter.com/iskitz) in 2007.
 
-We **i**nvent **o**ptimized, **n**atural **i**nterfaces, **f**or **y**ou, and
-**aspire** to create **a**ccessible,
-[**s**imple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
-**p**erformant,
-[**i**ntuitive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
-& **r**eliable
-[**e**xperiences](http://ionified.net) for all.
+We invent optimized, natural interfaces, for you, and
+**aspire** to create accessible,
+[simple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
+performant,
+[intuitive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
+& reliable
+[experiences](http://ionified.net) for all.
 
 
 ## next
@@ -235,6 +235,6 @@ Looking ahead, **ionify's** API will be developed to enable
 + & programming via natural language.
 
 We hope these improvements increase software development's accessibility for
-every being capable of expressing ideas and intent.
+every being capable of expressing ideas.
 
 ❤️ [team ionify](https://github.com/orgs/ionify/people)
