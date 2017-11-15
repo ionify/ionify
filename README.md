@@ -4,15 +4,19 @@
 novel
 [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
 [API](https://en.wikipedia.org/wiki/Application_programming_interface)
-for expressing ideas as code:
+for expressing ideas:
 
 ```javascript
 ~ {log: "hi!"}  <= /shows "hi!"/;
 ```
 
+## why
+
+Because digital expression can and should be as simple as speech and text and **ionify** makes exploring what's possible fun.
+
 ## how
 
-**ionify** is enabled by
+**ionify's** enabled by
 [**ion**: implicit object notation](https://github.com/ionify/ionify/blob/public/info/ion.md),
 an incredibly versatile
 [software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
@@ -20,9 +24,7 @@ and programming language capability
 [discovered](https://github.com/ionify/ionify/blob/public/info/story.md) by
 [Michael Lee](http://twitter.com/iskitz) in 2007.
 
-## why
-
-**ionify** enables exploring and experimenting with
+**ions** enable exploring and experimenting with
 
 + [modular](https://en.wikipedia.org/wiki/Modular_programming),
   [name-collision-free](https://en.wikipedia.org/wiki/Name_collision),
@@ -37,7 +39,7 @@ and programming language capability
   data & code
 
 + creating [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
-+ & much [more](https://github.com/ionify/ideas/).
++ & [more](https://github.com/ionify/ideas/).
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
 
@@ -209,7 +211,7 @@ or more actions. **ionify's** API simplifies doing this:
 
 **[team ionify](https://github.com/orgs/ionify/people)**
 has developed and distributed **ions** & **ionify** since their initial
-[discovery, definition, and development](https://github.com/ionify/ionify/blob/public/info/story.md)
+[discovery, definition & development](https://github.com/ionify/ionify/blob/public/info/story.md)
 by [Michael Lee](http://twitter.com/iskitz) in 2007.
 
 We invent optimized, natural interfaces, for you, and
@@ -221,7 +223,7 @@ performant,
 [experiences](http://ionified.net) for all.
 
 
-## next
+## vision
 
 We hope to see **ionify** implemented in more languages that enable interfacing
 with objects during type conversion.
