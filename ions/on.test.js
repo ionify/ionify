@@ -22,14 +22,17 @@
 , {hi:      "['0 . 0']"       }
 ]
 
-~
+~/... Test on:id ...................../
++
 { on:"ion@doma.in"
 , "ion@doma.in":
     function onIonId (ion)
       { ~{log: ["on:id:", ion.re.is, "with", ion.data, "works!"]}
       }
 }
-~
+
+~/... with a standard re.id ion ....../
++
 {re
 : { id: "ion@doma.in"
   , is: "an re.id ion"
@@ -39,7 +42,9 @@
   }
 , data:"some data"
 }
-~
+
+~/... and a top-level-id ion ........./
++
 {"ion@doma.in"
 :   { is: "a top-level-id ion"
     , by: "mike.lee@iskitz"
@@ -47,5 +52,18 @@
     , in: "san-jose.california.usa.earth"
     }
 , data:"some other data"
+}
+
+
+~/... Test ~on:id,do ................./
++
+{ on:
+    [          "kana@ions.iskitz.net"
+    , ["wakatta.view@ions.iskitz.net", "show"]
+    , ["wakatta.game@ions.iskitz.net", "start", "stop", "guess", "next"]
+    ]
+, do:
+    [ ""
+    ]
 }
 ;
