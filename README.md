@@ -12,7 +12,7 @@ for expressing ideas:
 
 ## why
 
-Because digital expression can and should be as natural as speech and text, and **ionify** makes exploring what's possible fun.
+Because digital expression can and should be as natural as speech and text, and **ionify** makes exploring that possibility fun.
 
 ## how
 
@@ -24,7 +24,7 @@ and programming language capability
 [discovered](https://github.com/ionify/ionify/blob/public/info/story.md) by
 [Michael Lee](http://twitter.com/iskitz) in 2007.
 
-**ions** enable exploring and experimenting with
+**ion** enables exploring and experimenting with
 
 + [modular](https://en.wikipedia.org/wiki/Modular_programming),
   [name-collision-free](https://en.wikipedia.org/wiki/Name_collision),
@@ -39,7 +39,7 @@ and programming language capability
   data & code
 
 + creating [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
-+ & [more](https://github.com/ionify/ideas/).
++ & [more](https://github.com/ionify/ideas/)
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
 
@@ -49,7 +49,7 @@ and programming language capability
     { id: "my.ion.module@doma.in"
     , is: "a simple module example"
     , by: "a.developer@doma.in"
-    , at: "2017.11.14-07...2007.09-04"
+    , at: "2017.11.14-08...2007.09-04"
     }
     ,
   do:
@@ -92,6 +92,11 @@ internal identifiers, within a single
       + {log: ion.re.is}
       }
 }
+
+~/ Each of the following modules /
++/ could be in a separate file   /
++/ fetched locally or remotely.  /
+
 +
 { re:
     { id: "my.ion@doma.in"
@@ -104,14 +109,15 @@ internal identifiers, within a single
 { re:
     { id: "my.ion@doma.in"
     , by: "a.🇬🇾+🇺🇸.developer"
-    , at: "2009.12-04...2007.09-04"
+    , at: "2009.12-05...2007.09-04"
     , in: "forest-hills.new-york.usa.earth"
     , is: "an identically id'd module"
     }
 }
 +
-{ "my.ion@doma.in"
-:   { by: "a.🇬🇾+🇯🇵+🇺🇸.developer"
+{ re:
+    { id: "my.ion@doma.in"
+    , by: "a.🇬🇾+🇯🇵+🇺🇸.developer"
     , at: "2017.11.12-08...2009.12-08"
     , in: "san-jose.california.usa.earth"
     , is: "also an identically id'd module"
@@ -196,8 +202,8 @@ or more actions. **ionify's** API simplifies doing this:
       }
 }
 
-~/This can be a separate file/
-+/fetched locally or remotely/
+~/ This ion can be in a separate file/
++/ fetched either locally or remotely/
 +
 { ask: "Hi! What's your name?"
 , say: "Hi [answer]!"
