@@ -1,6 +1,6 @@
 # [ionify](http://ionified.net/)
 
-**implicit object notations invented for you**, is a flexible, unobtrusive, and
+**ions invented for you**, is a flexible, unobtrusive, and
 novel
 [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
 [API](https://en.wikipedia.org/wiki/Application_programming_interface)
@@ -12,7 +12,7 @@ for expressing ideas:
 
 ## why
 
-Because digital expression can and should be as simple as speech and text and **ionify** makes exploring what's possible fun.
+Because digital expression can and should be as natural as speech and text, and **ionify** makes exploring what's possible fun.
 
 ## how
 
@@ -103,7 +103,7 @@ internal identifiers, within a single
 +
 { re:
     { id: "my.ion@doma.in"
-    , by: "a.🇬🇾-🇺🇸.developer"
+    , by: "a.🇬🇾+🇺🇸.developer"
     , at: "2009.12-04...2007.09-04"
     , in: "forest-hills.new-york.usa.earth"
     , is: "an identically id'd module"
@@ -111,7 +111,7 @@ internal identifiers, within a single
 }
 +
 { "my.ion@doma.in"
-:   { by: "a.🇬🇾+🇯🇵-🇺🇸.developer"
+:   { by: "a.🇬🇾+🇯🇵+🇺🇸.developer"
     , at: "2017.11.12-08...2009.12-08"
     , in: "san-jose.california.usa.earth"
     , is: "also an identically id'd module"
@@ -165,7 +165,9 @@ to enable observing **ions** without a direct reference:
       + {log: ion.hi}
       }
 }
-+ {hi: "I'm an ion!"} <= /can be in another file/
+
+~ { hi : "I'm an ion!"} <= /can be in a separate/
++ {"hi": "I'm a JSON!"} <= /file loaded remotely/
 ;
 ```
 
@@ -182,8 +184,7 @@ or more actions. **ionify's** API simplifies doing this:
 
 ```javascript
 ~
-{ on
-:   ["ask", "say"]
+{ on: ["ask", "say"]
 
 , ask
 :   function ask (question)
@@ -196,6 +197,7 @@ or more actions. **ionify's** API simplifies doing this:
 }
 
 ~/This can be a separate file/
++/fetched locally or remotely/
 +
 { ask: "Hi! What's your name?"
 , say: "Hi [answer]!"
@@ -214,7 +216,7 @@ has developed and distributed **ions** & **ionify** since their initial
 [discovery, definition & development](https://github.com/ionify/ionify/blob/public/info/story.md)
 by [Michael Lee](http://twitter.com/iskitz) in 2007.
 
-We invent optimized, natural interfaces, for you, and
+We invent optimized, natural, interfaces, for you, and
 **aspire** to create accessible,
 [simple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
 performant,

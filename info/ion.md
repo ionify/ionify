@@ -61,7 +61,7 @@ and
 operator punctuation.
 
 This example combines fifteen **lions** with the fifteen bitwise, arithmetic,
-and relational punctuation operators available to all **ions**:
+and relational punctuation operators available to **ions**:
 
 ```javascript
 ~  /example/  -  /punctuation/
@@ -95,13 +95,13 @@ operators.
 **ions** activate the
 [implicit numeric conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
 of their object operands. That implicit object conversion is the **implicit
-object** portion of **implicit object notation** & the key to activating &
+object** portion of **implicit object notation** and the key to activating and
 interacting with **ions**.
 
 ### activate
 
 [JavaScript](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-overview)
-runtimes interpret & evaluate **ions** as expressions.
+runtimes interpret and evaluate **ions** as expressions.
 
 During evaluation, an **ion's** operator
 [attempts to convert its object operand to a number](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive).
@@ -109,20 +109,20 @@ During that conversion, an attempt is made to call the object's `valueOf()`
 method. If an **ion** doesn't define that method, JavaScript searches for
 it in the **ion's**
 [prototype chain](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects).
-For **lions** that search begins & ends at the object's
+For **lions** that search begins and ends at the object's
 `prototype`; i.e. `Object.prototype`, `Array.prototype` or `RegExp.prototype`.
 This can differ for **orion** if they inherit from other objects.
 
-By default, `Object`, `Array` & `RegExp` all define `prototype.valueOf()`, so
+By default, `Object`, `Array` and `RegExp` all define `prototype.valueOf()`, so
 for each **ion** of those types, its operator calls the relevant
 `prototype.valueOf()` to obtain a
 [primitive value](https://en.m.wikipedia.org/wiki/Primitive_value)
 that's then converted to a number.
 
-Defining custom `Object.prototype.valueOf()`, `Array.prototype.valueOf()` &
-`RegExp.prototype.valueOf()` methods enables using JavaScript's
-[implicit type conversion](https://en.m.wikipedia.org/wiki/Type_conversion)
-behavior to interact with all **lions** without direct access to them 🤓
+Defining custom `Object`, `Array`, and
+`RegExp` `prototype.valueOf()` methods enables using JavaScript's
+[implicit type conversion](https://en.wikipedia.org/wiki/Type_conversion)
+behavior to interact with all **lions** without requiring direct access to any of them 🤓
 
 ```javascript
 Object.prototype.valueOf
@@ -143,45 +143,45 @@ Object.prototype.valueOf
 In JavaScript, **ion** interaction has three styles, **hip**, held-in-place:
 
 ```javascript
-  ~
-  { valueOf
-  :   function hip ()
-        { console.log ("hip: held-in-place ion")
-        }
-  }
-  ;
+~
+{ valueOf
+:   function hip ()
+      { console.log ("hip: held-in-place ion")
+      }
+}
+;
 ```
 
 **hop**, held-on-prototype:
 
 ```javascript
-  Object.prototype.valueOf
-  = function hop ()
-      { console.log ("hop: held-on-prototype ion")
-      }
-  ;
+Object.prototype.valueOf
+= function hop ()
+    { console.log ("hop: held-on-prototype ion")
+    }
+;
 ```
 
-& **hip hop**, **ions** that alternate between the two.
+and **hip hop**, **ions** that alternate between the two.
 
 
 All three styles enable object observation by implementing the `valueOf()`
 method that javascript calls during an object's
 [type conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive).
 With **hip ions** that method is **held** __in-place__ within an object. With
-**hop ions** it's **held** __on__ an object's `prototype`.
-And with **hip hop ions** it's held via both styles, alternated at runtime.
+**hop ions** it's **held** __on__ an object's `prototype`. And with
+**hip hop ions**, it's held both ways, alternated at runtime.
 
 The difference between **hip** & **hop ions** is that **hip ions** observe a
-single object's conversion, while **hop ions** observe conversions for all
-objects of a specific type.
+single object's conversion, while **hop ions** observe all object conversions
+of a specific object type.
 
-**hip**, **hop**, and **hip hop** ions are simple, reliable & compatible
-patterns for observing & interacting with objects. They can be implemented
+**hip**, **hop**, and **hip hop** ions are simple, reliable and compatible
+patterns for observing and interacting with objects. They can be implemented
 manually, as shown, or via
 [**ionify: implicit object notations invented for you**](http://github.com/ionify/ionify/),
 an [API](https://en.wikipedia.org/wiki/Application_programming_interface)
-that simplifies **ion** interaction & observation.
+that simplifies **ion** interaction and observation.
 
 
 ## compatibility
