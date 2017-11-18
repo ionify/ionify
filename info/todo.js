@@ -1,10 +1,10 @@
 ;
-+
+~
 { re:
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.11-08...2007.09-04"
+    , at: "2017.11.13-08...2007.09-04"
 
     , im:
         [`implementing ~on+do.
@@ -36,8 +36,30 @@
     ],
 
   todo:
-    [ { "2017.11.__-08":
-          [
+    [ { "2017.__.__-08"
+      :   [
+          ]
+
+      , "2017.11.13-08"
+      :   [ /Load Performance & Modularity/
+          +   / Try to always define ions as independent with clear input &   /
+          +   / output actions. This enables loading them all at once because /
+          +   / they or another ion can use those actions to coordinate their /
+          +   / behavior. This may need ajile's act-on-past-actions capability/
+          +   / As an example, ionify's flow could be:                        /
+          +   /   host...ions...object.sensor + rest                          /
+          +   / where object.sensor & rest are loaded @ the same time with    /
+          +   / object.sensor explicitly first to enable ion observation.     /
+
+          , /~on.do.../
+              +
+              { on : "" | [] | Function | Object
+              , do : "" | [] | Function | Object | / /
+              , all: Boolean ||"all even with errors?"
+              , any: Boolean ||"as many as or 1st success?"
+              , "#": Number  ||"times or array index?"
+              , prior: Boolean ||"earlier occurrence"
+              }
           ]
       }
       ,
