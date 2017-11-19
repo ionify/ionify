@@ -22,7 +22,7 @@ an incredibly versatile
 [software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
 and programming language capability
 [discovered](https://github.com/ionify/ionify/blob/public/info/story.md) by
-[Michael Lee](http://twitter.com/iskitz) in 2007.
+[Michael Lee](https://github.com/iskitz) in 2007.
 
 **ion** enables exploring and experimenting with
 
@@ -220,7 +220,7 @@ or more actions. **ionify's** API simplifies doing this:
 **[team ionify](https://github.com/orgs/ionify/people)**
 has developed and distributed **ions** & **ionify** since their initial
 [discovery, definition & development](https://github.com/ionify/ionify/blob/public/info/story.md)
-by [Michael Lee](http://twitter.com/iskitz) in 2007.
+by [Michael Lee](https://github.com/iskitz) in 2007.
 
 We invent optimized, natural, interfaces, for you, and
 **aspire** to create accessible,
