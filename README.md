@@ -1,13 +1,13 @@
 # [ionify](http://ionified.net/)
 
-**ions invented for you**, is a flexible, unobtrusive, and
-novel
+**implicit object notations invented for you**, is a flexible, unobtrusive & novel
 [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
 [API](https://en.wikipedia.org/wiki/Application_programming_interface)
-for expressing ideas:
+for expressing ideas via simple object interaction, observation & notification:
+
 
 ```javascript
-~ {log: "hi!"}  <= /shows "hi!"/;
+~ {log: "hi!"}  <= /shows hi!/;
 ```
 
 ## why
@@ -86,7 +86,7 @@ internal identifiers, within a single
       + / with an id matching "my.ion@doma.in"./
       + / It confirms the ion's developer...   /
 
-      ; if (ion.re.by != "a.🇬🇾.developer") return
+        if (ion.re.by != "a.🇬🇾.developer") return
 
       ~ /...before using it/
       + {log: ion.re.is}
@@ -95,9 +95,17 @@ internal identifiers, within a single
 
 ~/ Each of the following modules /
 +/ could be in a separate file   /
-+/ fetched locally or remotely.  /
-
-+
+&/ fetched locally or remotely.  /
+~
+{ re:
+    { id: "my.ion@doma.in"
+    , by: "a.🇬🇾+🇯🇵+🇺🇸.developer"
+    , at: "2017.11.20-08...2009.12-08"
+    , in: "san-jose.california.usa.earth"
+    , is: "an identically id'd module"
+    }
+}
+~
 { re:
     { id: "my.ion@doma.in"
     , by: "a.🇬🇾.developer"
@@ -105,21 +113,12 @@ internal identifiers, within a single
     , is: "a simple module"
     }
 }
-+
+~
 { re:
     { id: "my.ion@doma.in"
     , by: "a.🇬🇾+🇺🇸.developer"
     , at: "2009.12-05...2007.09-04"
     , in: "forest-hills.new-york.usa.earth"
-    , is: "an identically id'd module"
-    }
-}
-+
-{ re:
-    { id: "my.ion@doma.in"
-    , by: "a.🇬🇾+🇯🇵+🇺🇸.developer"
-    , at: "2017.11.12-08...2009.12-08"
-    , in: "san-jose.california.usa.earth"
     , is: "also an identically id'd module"
     }
 }
@@ -141,7 +140,10 @@ not **ionify** or its syntax._
       { ~{log: ion.event} <= /logs "it happened!"/
       }
 }
-+ {event: "it happened!"} <= /activates an event /
+
+~
+/ This event ion can be in a separate file . . . /
+& {event: "it happened!"} <= /activates an event /
 ;
 ```
 
@@ -203,7 +205,7 @@ or more actions. **ionify's** API simplifies doing this:
 }
 
 ~/ This ion can be in a separate file/
-+/ fetched either locally or remotely/
+&/ fetched either locally or remotely/
 +
 { ask: "Hi! What's your name?"
 , say: "Hi [answer]!"

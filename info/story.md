@@ -1,7 +1,7 @@
 # ionify's tale
 
 
-Finding beautiful capabilities hidden in plain sight is thrilling 🎉 Realizing they've existed across decades is humbling 🙇🏾 Sharing them is enlightening ❤️
+Finding beautiful capabilities hidden in plain sight is thrilling 🎉 Realizing they've existed for decades is humbling 🙇🏾 Sharing them is enlightening 🖤
 
 This is the story of **ionify**, one such capability's journey through time.
 
@@ -19,12 +19,12 @@ In 2003, Michael created **[ajile](http://ajile.net): [a]synchronous javascript 
 
 ```javascript
 ;
-Namespace ("my.own.space")
+Namespace ("my.space")
 Import    ("some.needed.Thing")
 ImportAs  ("some.useful.Thing", "Thing2")
 Load      ("http://some.remo.te/script.js")
 
-my.own.space.Module
+my.space.Module
 = function Module ()
     { var thing1 = new Thing ()
         , thing2 = new Thing2()
@@ -48,8 +48,8 @@ Load ("http://some.static.remo.te/json.data.js");
   { "remote"      : "request"
   , "responds"    : "with this"
   , "inaccessible": "JSON which"
-  , "generates"   : "a Syntax Error when"
-  , "loaded"      : "as JavaScript"
+  , "generates"   : "a Syntax Error"
+  , "when loaded" : "as JavaScript"
   }
 ```
 
@@ -66,7 +66,7 @@ Load ("http://some.dynamic.remo.te/json?call=on");
        , "responds"      : "with this"
        , "evaluated"     : "JSON"
        , "passed as a"   : "JavaScript Object"
-       , "to a possibly" : "missing on() method"
+       , "to a possibly" : "missing on() function"
       });
 
 Load ("http://some.static.remo.te/jsonp");
@@ -104,11 +104,11 @@ Object.prototype.valueOf           // 1: interface
 
 After an additional two years of experimentation and implementation, Michael publicly introduced this cross-domain JSON-fetching solution as [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange): json cross-domain in 2009 at [The Ajax Experience](http://web.archive.org/web/20090916010056/http://ajaxexperience.techtarget.com:80/conference/html/speakers.html#MLee) web developer conference 🎉
 
-Over the next eight years he continued to experiment with, prototype, refine and describe this discovery, 👨🏾‍💻 defining and announcing the concept of [**jems**](https://github.com/ionify/jems/blob/public/about/jems.md): **json-expressed modules** in [2015](https://github.com/ionify/jems/blob/24ab93d910334e3bbe05b72869cbb4fd81639e10/about/jems.md), and [**ions**](https://github.com/ionify/ionify/blob/public/info/ion.md): **implicit object notations** & [**ionify**](https://github.com/ionify/ionify/blob/public/README.md): **ions invented for you** in 2016 and 2017.
+Over the next eight years he continued to experiment with, prototype, refine and describe this discovery, 👨🏾‍💻 defining and announcing the concept of [**jems**](https://github.com/ionify/jems/blob/public/about/jems.md): **json-expressed modules** in [2015](https://github.com/ionify/jems/blob/24ab93d910334e3bbe05b72869cbb4fd81639e10/about/jems.md), and [**ion**](https://github.com/ionify/ionify/blob/public/info/ion.md): **implicit object notations** & [**ionify**](https://github.com/ionify/ionify/blob/public/README.md): **ions invented for you** in 2016 and 2017.
 
 ## delivery
 
-Today, **[ions](https://github.com/ionify/ionify/blob/public/info/ion.md)**, **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jems.md)** are **jsonXD's** direct descendants and the basis of the [many kinds](https://github.com/ionify/ionify/tree/public/info/ions) of **ions** now freely available to learn from, apply, and extend.
+Today, **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md)**, **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jems.md)** are **jsonXD's** direct descendants and the basis of the [many kinds](https://github.com/ionify/ionify/tree/public/info/ions) of **ions** now freely available to learn from, apply, and extend.
 
 🖤
 [Michael {aka:"🇬🇾Mike"} Lee](https://github.com/iskitz)

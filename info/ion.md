@@ -98,12 +98,8 @@ of their object operands. That implicit object conversion is the **implicit
 object** portion of **implicit object notation** and the key to activating and
 interacting with **ions**.
 
-### activate
-
 [JavaScript](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-overview)
-runtimes interpret and evaluate **ions** as expressions.
-
-During evaluation, an **ion's** operator
+runtimes interpret and evaluate **ions** as expressions. During evaluation, an **ion's** operator
 [attempts to convert its object operand to a number](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-toprimitive).
 During that conversion, an attempt is made to call the object's `valueOf()`
 method. If an **ion** doesn't define that method, JavaScript searches for
