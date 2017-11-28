@@ -7,7 +7,7 @@
     , is: "implicit object notations invented for you"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.12-08...2007.09-04"
+    , at: "2017.11.28-08...2007.09-04"
 
     , it:
         [ /note: .../
@@ -67,15 +67,17 @@
           })
 
         ion.share
-          ({ with         : ion.re.id
-           , share        :
-              { id        : ion.id
-              , ionified  : ion.ionified
-              , link      : ion.link
-              , sense     : ion.sense
-              , activate  : ion.activate
-              , deactivate: ion.deactivate
-              , disable   : ion.disable
+          ({ with              : ion.re.id
+           , share             :
+              { activate       : ion.activate
+              , deactivate     : ion.deactivate
+              , disable        : ion.disable
+              , id             : ion.id
+              , ionified       : ion.ionified
+              , known          : ion.known
+              , link           : ion.link
+              , sense          : ion.sense
+              , sortKnownWords : ion.sortKnownWords
           }}  )
 
         ion.onSensor ({on:Object, Object:ion.onObject})
@@ -248,8 +250,8 @@
               var re = ion [id]
               typeof re == "object"
                 &&  (ion .re = re)
-                && !("id"  in  re)
-                &&  (re  .id = id)
+                && !("id" in   re)
+                &&  ( re .id = id)
               return id
             }
 
@@ -264,13 +266,11 @@
       }
 
 
-    ,
-  noStories:
-    [ /todo: resolve +{no:"this.ion"}?                  /
+, noStories
+:   [ /todo: resolve +{no:"this.ion"}?                  /
     , /bugs: future bug if multiple actions use same term/
     ]
-    ,
-  no:
+, no:
     function no (ion)
       { if (!ion.no && !("no" in ion)) return ion;
 
@@ -298,9 +298,8 @@
       }
 
 
-    ,
-  known:
-    { on:
+, known
+:   { on:
         [ { act:  "on"
           , set: ["on"]
           , in : function within (ion)
@@ -310,8 +309,8 @@
         ]
     }
 
-    ,
-  on:
+ 
+, on:
     function on (ion)
       { if (!ion || !ion.on && !("on" in ion)) return ion
 
@@ -324,20 +323,19 @@
         var groups = ion.on
         !Array.isArray (groups) && (groups = [groups])
 
-        var action
-          , group
-          , test
-          , unknown
-          , updated
-          , word
-          , words
-          , next    = -1
-          , last    = groups.length
-          , ionify  = on.ion
+        var ionify  = on.ion
           , known   = ionify.known
           , sense   = ionify.sense
           , id      = ion.re.id
+          , next    = -1
+          , last    = groups.length
           , updated = {}
+          , action
+          , group
+          , test
+          , unknown
+          , word
+          , words
 
       ~ {debug: Object.keys (sense)}
 
@@ -366,44 +364,51 @@
               }
           }
 
-    ~(/sort new & updated words' groups in descending word count order/)
-
-      for (word in updated)
-        { known [word].sort
-            ( function descending (dis, dat)
-                { return dat.set.length - dis.set.length
-                }
-            )
-        }
-
+        ionify.sortKnownWords (updated)
       ~ {debug: [id, groups]}
         return ion
       }
 
+, sortKnownWords
+:   function sortKnownWords (updated)
+      { var ionify     = sortKnownWords.ion
+          , known      = ionify.known
+          , descending = ionify.sortKnownWordsDescending
+          , word
 
-    ,
-  ionifiedStories:
-    [ /note: Use with typeof ion + ion.constructor.name/
+        !updated && (updated = known)
+
+        for (word in updated)
+          known [word].sort (descending)
+      }
+      
+, sortKnownWordsDescending
+:   function descending (known, nextKnown)
+      { return nextKnown.set.length - known.set.length
+      }
+
+
+, ionifiedStories
+:   [ /note: Use with typeof ion + ion.constructor.name/
     , /todo: Auto-update as types are deactivated/
     , /todo: Enable +{ionified: typeof thing} = 1:true|0:false/
     ]
-    ,
-  ionified:
-    {
+    
+, ionified
+:   {
     }
 
 
-    ,
-  onObjectStories:
-    [ /todo: sense => ArrayMap to preserve order + fast lookup./
+, onObjectStories
+:   [ /todo: sense => ArrayMap to preserve order + fast lookup./
     , /idea: log all matched actions + their results?          /
     , /idea: disable activated words, enable after all matches /
     ,(/idea: loop through ion's terms instead of known?        /)
     , /todo: Ignore similar actions after match: +get +get.then/
     ]
-    ,
-  onObject:
-    function onION (ion)
+    
+, onObject
+:   function onION (ion)
       { ion || (ion = this)
 
         var ionify    = onION.ion
@@ -452,16 +457,15 @@
           return results == 1 ? result : this // true
       }
 
-    ,
-  onSensor$:
-    { core: {Function:"function", Object:"object"}
+
+, onSensor$
+:   { core: {Function:"function", Object:"object"}
     , name: (/function\s+(.*)\s*\(/)
     , undo: {}
     }
 
-    ,
-  onSensor:
-    function onSensor (ion)
+, onSensor
+:   function onSensor (ion)
       { var on        = onSensor.ion
           , known     = on.ionified
           , onSensor$ = on.onSensor$
