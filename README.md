@@ -7,7 +7,7 @@ for expressing ideas via simple object interaction, observation & notification:
 
 
 ```javascript
-~ {log: "hi!"}  <= /shows hi!/;
+~ {log: "hi!"}  <=  /shows hi!/;
 ```
 
 ## why
