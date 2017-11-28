@@ -56,19 +56,21 @@ and
 
 **ions** can be combined to form larger expressions using
 [arithmetic](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic_operators),
-[bitwise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise_operators), and
-[relational](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Relational_operators)
-operator punctuation.
+[bitwise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise_operators),
+[relational](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Relational_operators),
+and
+[equality](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality_operators)
+punctuation.
 
-This example combines fifteen **lions** with the fifteen bitwise, arithmetic,
-and relational punctuation operators available to **ions**:
+This example combines fifteen **lions** with the seventeen **ion**-compatible bitwise, arithmetic, relational, and equality punctuation operators:
 
 ```javascript
 ~  /example/  -  /punctuation/
-^  ["aesop"]  *  /  stories  /  >>  {are:"ions"}
-&  ["these"]  +  /expressions/  <<  {are:"too" }
+^  ["aesop"]  &  /  stories  /  >>  {are:"ions"}
+*  ["these"]  +  /expressions/  <<  {are:"too" }
 /  ["write"]  %  /them as you/  |   {see:"fit" }
->  ["using"]  >=  /15/ < /ion/  <=  /operators!/
+>  ["using"]  >= /  any of   /  <=  [  "these" ]
+<     17      == / compatible/  !=  "operators!"
 ;
 ```
 
@@ -85,9 +87,13 @@ operators, bitwise punctuation can be any of the
 [^](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_XOR),
 [<<](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-left-shift-operator), or
 [\>>](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-signed-right-shift-operator)
-operators, and relational punctuation can be any of the
+operators, relational punctuation can be any of the
 [&gt;, &gt;=, <, or <=](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-relational-operators-runtime-semantics-evaluation)
-operators.
+operators, and equality punctuation can be the
+[== or !=](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-equality-operators-runtime-semantics-evaluation)
+equality operators but only when pairing **ions** with
+[primitive](https://en.m.wikipedia.org/wiki/Primitive_value)
+values.
 
 
 ## function
@@ -111,9 +117,7 @@ This can differ for **orion** if they inherit from other objects.
 
 By default, `Object`, `Array` and `RegExp` all define `prototype.valueOf()`, so
 for each **ion** of those types, its operator calls the relevant
-`prototype.valueOf()` to obtain a
-[primitive value](https://en.m.wikipedia.org/wiki/Primitive_value)
-that's then converted to a number.
+`prototype.valueOf()` to obtain a primitive value that's then converted to a number.
 
 Defining custom `Object`, `Array`, and
 `RegExp` `prototype.valueOf()` methods enables using JavaScript's
