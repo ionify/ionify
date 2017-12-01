@@ -4,7 +4,7 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.13-08...2007.09-04"
+    , at: "2017.11.30-08...2007.09-04"
 
     , im:
         [`implementing ~on+do.
@@ -26,19 +26,27 @@
           extended with that protection.
           `
          ]
-    },
+    }
 
-  bugs:
-    [ "getId: future: Generates 1st ids in middle of nextid@'s sequence."
+, bugs
+:   [ "getId: future: Generates 1st ids in middle of nextid@'s sequence."
     + "       Will lead to those ids being reused twice sooner than necessary."
     , "link : Relinks ions. Update to track linked ions"
     , "   do: Find's itself doing +window.do..."
-    ],
+    ]
 
-  todo:
-    [ { "2017.__.__-08"
+, todo
+:   [ { "2017.__.__-08"
       :   [
           ]
+
+      , "2017.11.30-08"
+      :   { hosts
+          :   [ / vert.x: implement as another host/
+              , /nashorn: implement as another host/
+              , / jxcore: implement as another host/
+              ]
+          }
 
       , "2017.11.13-08"
       :   [ /Load Performance & Modularity/
@@ -279,11 +287,11 @@
               }
          }
       }
-    ],  //+ionify.re.todo
+    ] //+ionify.re.todo
 
 
-  DONE:
-    { "year[.month.day.hour.minute.second][+-]timezoneHours[.minutesOffset]":
+, DONE
+:   { "year[.month.day.hour.minute.second][+-]timezoneHours[.minutesOffset]":
         [
         ],
 
