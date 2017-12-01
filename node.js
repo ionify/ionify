@@ -6,38 +6,38 @@
     { id: "node@ionify"
     , is: "implicit object notations invented for your node"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.17-07...2007.09-04"
+    , at: "2017.11.30-08...2009.05-04"
     }
-    ,
-  debug
-    : false
-    ,
-  on:
+
+, debug
+:   false
+    
+, on:
     [ ["get", "then"]
     ,  "get"
     ]
-    ,
-  host
-    : true
-    ,
-  errors:
-    { noConsole: "node@ionify needs the console() API"
+
+, host
+:   true
+
+, errors
+:   { noConsole: "node@ionify needs the console() API"
     , noRequire: "node@ionify needs the require() API"
     }
-    ,
-  valueOf:
-    function ionifyNode ()
+
+, valueOf
+:   function ionifyNode ()
       { var node        = this
-        node.check.ion  = node
-        node.get  .ion  = node
-        delete node.valueOf
-        node.check ()
-        node.get   ({get:"./ions/on.object.js", then:node})
+      ; node.ready.ion  = node
+      ; node.get  .ion  = node
+      ; delete node.valueOf
+      ; node.ready ()
+      ; node.get   ({get:"./ions/on.object.js", then:node})
       }
-      ,
-  check:
-    function check ()
-      { var errors = check.ion.errors
+
+, ready
+:   function ready ()
+      { var errors = ready.ion.errors
           , error  =
              (   (typeof require == "undefined") && errors.noRequire
              ||  (typeof console == "undefined") && errors.noConsole
@@ -45,39 +45,38 @@
         if (error) throw new Error (error)
         return true
       }
-      ,
-  get:
-    function get (ion)
+
+, get
+:  function get (ion)
       { var http          = get.ion.http
         || (get.ion.http  = require ("http"))
          , path           = String (ion.get)
          , isLocal        = path.match (/^[\.\/\\]+/)
-         , thing          = ""
+         , data           = ""
 
-        function then ()
-          {+{log: path + "\n\n" + String (thing)}
-            eval (thing)
-          ~ ion.then
-          }
-
-        function remote (res)
-          { res.on ("data", got)
-          ; res.on ("end" , then)
+        function from (response)
+          { response.on ("data", got)
+          ; response.on ("end" , then)
           }
 
         function got (part)
-          { thing += String (part)
+          { data += String (part)
+          }
+
+        function then ()
+          {~{log: path + "\n\n" + String (data)}
+          ; eval (data) & ion.then
           }
 
         isLocal
           ? require  (path, then)
-          : http.get (path, remote)
+          : http.get (path, from)
       }
-      ,
-  log:
-    function log (thing)
+
+, log
+:   function log (thing)
       {  thing = String (thing.log)
-      ;  console.log (log.ion.re.id + ": " + thing);
+      ;  console.log (log.ion.re.id + ": " + thing)
       }
 }
 ;
