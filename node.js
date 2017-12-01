@@ -6,7 +6,7 @@
     { id: "node@ionify"
     , is: "implicit object notations invented for your node"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.30-08...2009.05-04"
+    , at: "2017.12.01-08...2009.05-04"
     }
 
 , debug
@@ -65,7 +65,8 @@
 
         function then ()
           {~{log: path + "\n\n" + String (data)}
-          ; eval (data) & ion.then
+          ; eval (data)
+          ~ ion.then
           }
 
         isLocal
