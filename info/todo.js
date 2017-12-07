@@ -4,12 +4,13 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.30-08...2007.09-04"
+    , at: "2017.12.05-08...2007.09-04"
 
     , im:
-        [`implementing ~on+do.
-
-          I was previously...
+        [`Exploring improving ionify's launch flow
+        & Exploring implementing ~on+do
+        
+        . I was previously...
 
           trying to figure what to do next. I want to continue modularizing
           ionify so that it's easier to create new parts. Currently it's still
@@ -39,6 +40,15 @@
 :   [ { "2017.__.__-08"
       :   [
           ]
+
+      , "2017.12.04-08"
+      :   {"+get,in"
+          :      { get: "ion"  || ["ion","script","other","resource"]
+                 ,  in: "order"||  "parallel"
+                 }
+          +  /Each host, e.g. web, node, implements +get sensor optionally/
+          +  / supporting .in modifier for concurrent or consecutive fetch/
+          }
 
       , "2017.11.30-08"
       :   { hosts
@@ -86,45 +96,57 @@
             || [ "re: method@ion@domain"
                + "...details..."
                ]
+               
+            || [`re: method@ion@domain
+                 ... details
+                `
+               ]
 
           ,"Using arrays allows knowing when multiple comments are part of the same"
           +" group. Without arrays, +storie groups are more challenging to recognize."
           +" +aesop are already arrays so no additional work to enable."
           ]
 
-        ,20170713:
-          ["Thinking of how to enable non-NaN ion return values for"
+        , 20170713
+        : { returns
+          :   `Thinking of how to enable non-NaN ion return values for`
 
-                 +{random:10} <= 7
+          +      {random:10} <= 7
 
-            ||" ionify doesn't currently do this in its +{} sensor because it"
-            + " senses & activates as many of all known actions as found within"
-            + " each which means multiple possible return values but ions evaluate"
-            + " as single-value numeric expressions."
+          +   ` ionify doesn't currently do this in its +{} sensor because it     
+                senses & activates as many of all known actions as found within   
+                each which means multiple possible return values but ions evaluate
+                as single-value numeric expressions.
 
-            + "I'll sense when an ion has only one matching action then return that"
-            + " singluar value. Multi-action ions can have all results saved in an"
-            + " ion.got property that maps actions to their results; initial idea:"
+                I'll sense when an ion has only one matching action then return that
+                singluar value. Multi-action ions can have all results saved in an
+                ion.got property that maps actions to their results; initial idea:
+              `
+          +       { get:"ion@domain", then: {use:"member", as:"mine", in:"wrong.id@domain"}
+                  , got: {"get then":"yes", "use as in": {no:"no known ion with wrong.id"}}
+                  }
+          }
+          
+        , 20170711
+        : { aesop
+          :   "as api docs use functionName.re =  /documentation.../"
+          ,   "as comment, can use as          <- /commented inline/  ['~ . ~']"
+          }
+          
+        , 20170710
+        : { logic
+          :   /logic statements can be confusing when mapping to english, e.g./
+          +   /    if thing doesn't exist or is not an array or function/
+          +   / no if (!thing || !Array.isArray (thing) || typeof thing != "function")/
+          +   / ok if (!thing || !Array.isArray (thing) && typeof thing != "function")/
 
-                +{ get:"ion@domain", use:"member", as:"mine", in:"wrong.id@domain"
-                 , got: {get:"yes", "use as in": {no:"no known ion with wrong.id"}}
-                 }
-          ]
-        ,20170711:
-          [ /aesop/
-          , "   as api docs use functionName.re =  /documentation.../"
-          , "   as comment, can use as          <- /comment.../ ['~ . ~']"
-          ]
-          ,
-         20170710:
-          [ /logic statements can be confusing when mapping to english, e.g./
-          + /   if thing doesn't exist or is not an array or function/
-          + /no if (!thing || !Array.isArray (thing) || typeof thing != "function")/
-          + /ok if (!thing || !Array.isArray (thing) && typeof thing != "function")/
-
-          , /Support ECMAScript 3- via minimal pollyfill for things like/
-          + / Array.pop/
-          ]
+          , compatibility
+          :   /Support ECMAScript (ES) 3- via minimal pollyfill for things like/
+          +   / Array.pop/
+          +   /ES3 was 1st standard implemented by browsers so earlier/
+          +   / is more academic or enabling ionify compatibility with/
+          +   / ES runtimes implementing earlier, simpler ES specs./
+          }
         }
 
       ,structure:
