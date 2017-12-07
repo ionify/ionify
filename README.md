@@ -12,7 +12,7 @@ for expressing ideas via simple object interaction, observation & notification:
 
 ## why
 
-Because digital expression can and should be as natural as speech and text, and **ionify** makes exploring that possibility fun.
+Because digital expression can and should be as natural as speech and text, and **ionify** makes exploring what's possible fun.
 
 ## how
 
@@ -26,20 +26,60 @@ and programming language capability
 
 **ion** enables exploring and experimenting with
 
-+ [modular](https://en.wikipedia.org/wiki/Modular_programming),
-  [name-collision-free](https://en.wikipedia.org/wiki/Name_collision),
++ creating [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
+
++ [literate](https://en.wikipedia.org/wiki/Literate_programming),
+  [modular](https://en.wikipedia.org/wiki/Modular_programming),
   [event-driven](https://en.wikipedia.org/wiki/Event-driven_programming),
   and
-  [literate](https://en.wikipedia.org/wiki/Literate_programming)
+  [name-collision-free](https://en.wikipedia.org/wiki/Name_collision)
   programming
 
 + fetching, [observing](https://en.wikipedia.org/wiki/Observer_pattern),
   and interacting with highly
   [decoupled](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
-  data & code
-
-+ creating [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
+  data and code
+  
 + & [more](https://github.com/ionify/ideas/)
+
+
+### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
+
+**ionify** simplifies creating your own language(s). **ions** can define and map terms to any behavior.
+They enable defining your own vocabulary and language to perform one
+or more actions:
+
+```javascript
+~
+{ on: ["ask", "say"]
+
+, ask
+:   function ask (question)
+      { ask.ion.answer = confirm (question)
+      }
+, say
+:   function say (something)
+      { alert (something.replace (/\[answer]\]/g, say.ion.answer)
+      }
+}
+
+~/ This ion can be in a separate file/
+&/ fetched either locally or remotely/
++
+{ ask: "Hi! What's your name?"
+, say: "Hi [answer]!"
+, ask: "How are you?"
+, ask: "How come?"
+, say: "..."
+}
+;
+```
+
+### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
+
+See our
+[anemojii](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
+ example.
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
 
@@ -63,6 +103,23 @@ and programming language capability
 _fyi: Syntax highlighting issues are due to a
 [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
 not **ionify** or its syntax._
+
+### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
+
+```javascript
+~
+{ on: "event"
+, do:
+    function someAction (ion)
+      { ~{log: ion.event} <= /logs "it happened!"/
+      }
+}
+
+~
+/ This event ion can be in a separate file . . . /
+& {event: "it happened!"} <= /activates an event /
+;
+```
 
 ### [no name collisions](https://en.wikipedia.org/wiki/Name_collision)
 
@@ -129,30 +186,6 @@ _fyi: Syntax highlighting issues are due to a
 [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
 not **ionify** or its syntax._
 
-
-### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
-
-```javascript
-~
-{ on: "event"
-, do:
-    function someAction (ion)
-      { ~{log: ion.event} <= /logs "it happened!"/
-      }
-}
-
-~
-/ This event ion can be in a separate file . . . /
-& {event: "it happened!"} <= /activates an event /
-;
-```
-
-### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
-
-See our
-[anemojii](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
- example.
-
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
 
 **ionify** uses JavaScript's
@@ -182,39 +215,6 @@ to enable observing **ions** without a direct reference:
 _fyi: Syntax highlighting issues are due to a
 [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
 not **ionify** or its syntax._
-
-
-### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
-
-Create your own language(s). **ions** can define and map terms to any behavior.
-This means being able to define your own vocabulary and language to perform one
-or more actions. **ionify's** API simplifies doing this:
-
-```javascript
-~
-{ on: ["ask", "say"]
-
-, ask
-:   function ask (question)
-      { ask.ion.answer = confirm (question)
-      }
-, say
-:   function say (something)
-      { alert (something.replace (/\[answer]\]/g, say.ion.answer)
-      }
-}
-
-~/ This ion can be in a separate file/
-&/ fetched either locally or remotely/
-+
-{ ask: "Hi! What's your name?"
-, say: "Hi [answer]!"
-, ask: "How are you?"
-, ask: "How come?"
-, say: "..."
-}
-;
-```
 
 
 ## who
