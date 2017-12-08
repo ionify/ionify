@@ -6,12 +6,12 @@
     { id:  "web.0.1@ionify"
     , is:  "implicit object notations invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.07.17-07...2007.09-04"
+    , at:  "2017.12.05-07...2007.09-04"
         ,
       stories:
         [ /note: .../
         , /todo: Add tests for web@ionify + its actions/
-        , /todo: .../
+        , /todo: Implement ~get,in,then/
         ]
     },
 
@@ -21,7 +21,9 @@
     ,
 
   on:
-    [ ["get", "then"]
+    [ ["get", "in", "then"]
+    , ["get", "in"]
+    , ["get", "then"]
     ,  "get"
     ],
 

@@ -4,7 +4,7 @@
     { id: "todo@ionify"
     , is: "ionify's list of things To Do"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.12.05-08...2007.09-04"
+    , at: "2017.12.08-08...2007.09-04"
 
     , im:
         [`Exploring improving ionify's launch flow
@@ -38,13 +38,18 @@
 
 , todo
 :   [ { "2017.__.__-08"
-      :   [
-          ]
+      :   { 
+          }
+
+      , "2017.12.08-08"
+      :   { launch
+          :   `host-->ion+host-->ions-->preferred`
+          }
 
       , "2017.12.04-08"
-      :   {"+get,in"
+      :   {"~get,in"
           :      { get: "ion"  || ["ion","script","other","resource"]
-                 ,  in: "order"||  "parallel"
+                 ,  in: "order"||  "parallel" || "synonyms"
                  }
           +  /Each host, e.g. web, node, implements +get sensor optionally/
           +  / supporting .in modifier for concurrent or consecutive fetch/
