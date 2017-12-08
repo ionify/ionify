@@ -24,9 +24,9 @@ and programming language capability
 [discovered](https://github.com/ionify/ionify/blob/public/info/story.md) by
 [Michael Lee](https://github.com/iskitz) in 2007.
 
-**ion** enables exploring and experimenting with
+**ion** and **ionify** enable exploring and experimenting with
 
-+ creating [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
++ [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
 + [literate](https://en.wikipedia.org/wiki/Literate_programming),
   [modular](https://en.wikipedia.org/wiki/Modular_programming),
@@ -45,9 +45,7 @@ and programming language capability
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
-**ionify** simplifies creating your own language(s). **ions** can define and map terms to any behavior.
-They enable defining your own vocabulary and language to perform one
-or more actions:
+**ionify** enables creating language(s) via **ions** that define and map terms to behaviors:
 
 ```javascript
 ~
@@ -63,25 +61,65 @@ or more actions:
       }
 }
 
-~/ This ion can be in a separate file/
-&/ fetched either locally or remotely/
-+
-{ ask: "Hi! What's your name?"
-, say: "Hi [answer]!"
-, ask: "How are you?"
-, ask: "How come?"
-, say: "..."
-}
+~/ These ions can be in a separate file/
+-/ fetched either locally or remotely. /
+
+| {ask: "Hi! What's your name?"}
+| {say: "Hi [answer]!"         }
+| {ask: "How are you?"         }
+| {ask: "How come?"            }
+| {say: "..."                  }
 ;
 ```
 
+See [jeni](https://github.com/ionified/jeni-ions.iskitz.net?files=1)
+for an
+[in-depth](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.aeons.js)
+[exploration](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
+of ions and natural language.
+
+
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 
-See our
-[anemojii](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
- example.
+*"...a program is best thought of as a web...of simple parts and simple relations between those parts; the programmer's task is to state those parts and those relationships, in whatever order is best for human comprehension" -
+[Donald E. Knuth](https://en.m.wikipedia.org/wiki/Donald_Knuth)*
+
+```javascript
+~
+{ re:
+    { id: "frendlee@ionified.net"
+    , is: "an exploration of literate programming"
+    , by: "mike.lee@iskitz"
+    , at: "2017.12.08-08"
+    , in: "san-jose.california.usa.earth"
+    }
+ 
+, do:
+    [ "say hello"
+    , "ask their name"
+    , "invite them to play"
+    ]
+    
+,"say hello"
+:   {say: "Hi! I'm Frend Lee!"}   
+
+,"ask their name"
+:   {ask: "What's your name?"}
+
+,"invite them to play"
+:   {ask: "Hi [answer]! Wanna play?!"}
+}
+;
+
+```
+
+See [anemojii](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js),
+our more in-depth exploration of literate programming.
+
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
+
+*"...a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality." - Wikipedia*
 
 ```javascript
 ~
@@ -106,6 +144,8 @@ not **ionify** or its syntax._
 
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
+*"...a programming paradigm in which the flow of the program is determined by events such as user actions..., sensor outputs, or messages from other programs/threads." - Wikipedia*
+
 ```javascript
 ~
 { on: "event"
@@ -115,9 +155,8 @@ not **ionify** or its syntax._
       }
 }
 
-~
-/ This event ion can be in a separate file . . . /
-& {event: "it happened!"} <= /activates an event /
+/ This event ion can be in a separate file. It.../
+| {event: "it happened!"} <= /activates an event./
 ;
 ```
 
@@ -139,20 +178,19 @@ internal identifiers, within a single
 { on: "my.ion@doma.in"
 , do:
     function confirm (ion)
-      { / This method's called for each ion    /
-      + / with an id matching "my.ion@doma.in"./
-      + / It confirms the ion's developer...   /
+      {/ This method's called for each ion    /
+      // with an id matching "my.ion@doma.in"./
+      // It confirms the ion's developer...   /
 
         if (ion.re.by != "a.🇬🇾.developer") return
 
-      ~ /...before using it/
-      + {log: ion.re.is}
+      ~/ before using it/
+      -{ log: ion.re.is }
       }
 }
 
-~/ Each of the following modules /
-+/ could be in a separate file   /
-&/ fetched locally or remotely.  /
+~/ Each of the following modules could be in a/
+-/ separate file fetched locally or remotely! /
 ~
 { re:
     { id: "my.ion@doma.in"
@@ -167,7 +205,7 @@ internal identifiers, within a single
     { id: "my.ion@doma.in"
     , by: "a.🇬🇾.developer"
     , in: "georgetown.guyana.south-america.earth"
-    , is: "a simple module"
+    , is: "the intended module"
     }
 }
 ~
@@ -176,7 +214,7 @@ internal identifiers, within a single
     , by: "a.🇬🇾+🇺🇸.developer"
     , at: "2009.12-05...2007.09-04"
     , in: "forest-hills.new-york.usa.earth"
-    , is: "also an identically id'd module"
+    , is: "another identically id'd module"
     }
 }
 ;
@@ -199,11 +237,11 @@ to enable observing **ions** without a direct reference:
 { on: "hi"
 , hi:
     function hello (ion)
-      { / This method's called for each ion with/
-      + / a "hi" property. It then logs the "hi"/
-      + / property's value.                     /
+      {/ This method's called for each ion with/
+      +/ a "hi" property. It then logs the "hi"/
+      +/ property's value.                     /
 
-      + {log: ion.hi}
+      ~{ log: ion.hi }
       }
 }
 
