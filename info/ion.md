@@ -266,7 +266,7 @@ that simplifies **ion** interaction and observation.
 
 ### [webi](ions/webi.md)
 
-**web ion**, describes any **ion** or set of ions created for the
+**web ion**, any **ion** or set of ions created for the
 [web](https://en.wikipedia.org/wiki/World_Wide_Web). For example, all
 [jewels: json-expressed, web-enabled languages](jewels.md), are **webi**.
 
