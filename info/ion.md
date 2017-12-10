@@ -3,7 +3,7 @@
 **implicit object notations**, are
 [expressions](https://en.wikipedia.org/wiki/Expression_(computer_science))
 that activate [objects](https://en.wikipedia.org/wiki/Object_(computer_science))
-via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion)
+via implicit [type conversion](https://en.wikipedia.org/wiki/Type_conversion),
 which enables writing [data](https://en.wikipedia.org/wiki/Data_(computing)) &
 [code](https://en.wikipedia.org/wiki/Source_code)
 as independently observable & notifiable objects.
@@ -25,7 +25,7 @@ or
 [regular expression](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-literals-regular-expression-literals)
 literals.
 
-They can be written as **lion**, literal ions:
+They can be written as **lions**, literal ions:
 
 ```javascript
     ~{ }      +{ }      -{ }     // 3 object lions
@@ -184,7 +184,7 @@ an [API](https://en.wikipedia.org/wiki/Application_programming_interface)
 that simplifies **ion** interaction and observation.
 
 
-## kind
+## kinds
 
 ### [aeons](ions/aeons.md)
 
