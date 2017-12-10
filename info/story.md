@@ -10,7 +10,7 @@ This is the story of **ionify**, one such capability's journey through time.
 
 One to discover, another to embrace.
 
-In **1997**, [JavaScript's](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html) first language specification was [published](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) 👏🏾 In **2007**, [Michael Lee](https://github.com/iskitz), discovered a capability within JavaScript that he named [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange): **json cross-domain** 👨🏾‍💻 In **2017**, Michael named & shared **jsonXD's** core concepts as **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md): implicit object notation** & **[ionify](https://github.com/ionify/ionify/): ions invented for you** 🎉
+In **1997**, [JavaScript's](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html) first language specification was [published](http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf) 👏🏾 In **2007**, [Michael Lee](https://github.com/iskitz), discovered a capability within JavaScript he named [**jsonXD**](http://www.slideshare.net/iskitz/using-jsonxd-for-crossdomain-json-exchange): **json cross-domain** 👨🏾‍💻 In **2017**, Michael named & shared **jsonXD's** core concepts as **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md): implicit object notation** & **[ionify](https://github.com/ionify/ionify/): ions invented for you** 🎉
 
 
 ## details
@@ -88,7 +88,7 @@ The breakthrough came in 2007 when Michael discovered, via diligent experimentat
 
 ```javascript
 Object.prototype.valueOf           // 1: interface
-= function onObject ()            // 3: interact
+= function onObject ()             // 3: interact
     { this.id == "anonymous"       // true!
     ; this.is == "data"            // true!
     }
@@ -108,7 +108,7 @@ Over the next eight years he continued to experiment with, prototype, refine and
 
 ## delivery
 
-Today, **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md)**, **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jems.md)** are **jsonXD's** direct descendants and the basis of the [many kinds](https://github.com/ionify/ionify/tree/public/info/ions) of **ions** now freely available to learn from, apply, and extend.
+Today, **[ion](https://github.com/ionify/ionify/blob/public/info/ion.md)**, **[ionify](https://github.com/ionify/ionify/blob/public/README.md)**, and **[jems](https://github.com/ionify/jems/blob/public/about/jems.md)** are **jsonXD's** direct descendants and the basis of the [many kinds](https://github.com/ionify/ionify/blob/public/info/ion.md#kinds) of **ions** now freely available to learn from, apply, and extend.
 
 🖤
 [Michael {aka:"🇬🇾Mike"} Lee](https://github.com/iskitz)
