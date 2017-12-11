@@ -28,14 +28,14 @@ literals.
 They can be written as **lions**, literal ions:
 
 ```javascript
-    ~{ }      +{ }      -{ }     // 3 object lions
-    ~[ ]      +[ ]      -[ ]     // 3 array  lions
-    ~/ /      +/ /      -/ /     // 3 regular-expression lions
+~{ }      +{ }      -{ }     // 3 object lions
+~[ ]      +[ ]      -[ ]     // 3 array  lions
+~/ /      +/ /      -/ /     // 3 regular-expression lions
 ```
 and **orion**, object reference ions:
 
 ```javascript
-    ~obj      +obj      -obj     // 3 prefixed orion
+~obj      +obj      -obj     // 3 prefixed orion
 ```
 
 **orion** can also be written using the
@@ -48,8 +48,8 @@ and
 [-- postfix operators](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-postfix-decrement-operator):
 
 ```javascript
-             ++obj,    --obj     // 2 prefixed  orion
-               obj++,    obj--   // 2 postfixed orion
+         ++obj,    --obj     // 2 prefixed  orion
+           obj++,    obj--   // 2 postfixed orion
 ```
 
 ### punctuation
@@ -138,7 +138,7 @@ Object.prototype.valueOf
 ;
 ```
 
-### interact
+### interaction
 
 In JavaScript, **ion** interaction has three styles, **hip**, held-in-place:
 
@@ -214,7 +214,7 @@ that simplifies **ion** interaction and observation.
       { "id": "jem@doma.in"
       , "is": "a json-expressed module"
       , "by": "mike.lee@iskitz"
-      , "at": "2017.11.13-08...2007.09-04"
+      , "at": "2017.12.11-08...2007.09-04"
       , "in":
             [   "san-jose.california.usa.earth"
             , "forest-hills.new-york.usa.earth"
@@ -223,15 +223,11 @@ that simplifies **ion** interaction and observation.
         
 , "do":
       [ "an aesop action"
-      , /a storie action/
       , {"if":"do.times", "<":7, "do":"do"}
       ]
     
 , "an aesop action"
 :     "log Hi! #do.times@"
-  
-, "a storie action"
-:     /log Hi! #do.times@/
 }
 ;
 ```
