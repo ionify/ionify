@@ -17,11 +17,11 @@ Because digital expression can and should be as natural as speech and text, and 
 ## how
 
 **ionify's** enabled by
-[**ion**: implicit object notation](https://github.com/ionify/ionify/blob/public/info/ion.md),
+[**ion**: implicit object notation](https://github.com/ionify/about/blob/public/ions/ion.md),
 an incredibly versatile
 [software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
 and programming language capability
-[discovered](https://github.com/ionify/ionify/blob/public/info/story.md) by
+[discovered](https://github.com/ionify/about/blob/public/story.md) by
 [Michael Lee](https://github.com/iskitz) in 2007.
 
 **ion** and **ionify** enable exploring and experimenting with
@@ -165,7 +165,7 @@ not **ionify** or its syntax._
 **ionify** enables observing and distinguishing between identically
 identified **ions**.
 
-Anonymous [**lions**: literal ions](https://github.com/ionify/ionify/blob/public/info/ion.md#form), i.e. `~/ / + [ ] & { }`, are anonymous objects that eliminate
+Anonymous [**lions**: literal ions](https://github.com/ionify/about/blob/public/ions/ion.md#form), i.e. `~/ / + [ ] & { }`, are anonymous objects that eliminate
 name collisions by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 **ionify** enables individually accessing and inspecting anonymous **lions**,
@@ -259,7 +259,7 @@ not **ionify** or its syntax._
 
 **[team ionify](https://github.com/orgs/ionify/people)**
 has developed and distributed **ions** & **ionify** since their initial
-[discovery, definition & development](https://github.com/ionify/ionify/blob/public/info/story.md)
+[discovery, definition & development](https://github.com/ionify/about/blob/public/story.md)
 by [Michael Lee](https://github.com/iskitz) in 2007.
 
 We invent optimized, natural, interfaces, for you, and
