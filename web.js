@@ -6,12 +6,12 @@
     { id:  "web.0.1@ionify"
     , is:  "implicit object notations invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.12.05-07...2007.09-04"
+    , at:  "2017.12.13-08...2007.09-04"
         ,
       stories:
         [ /note: .../
-        , /todo: Add tests for web@ionify + its actions/
         , /todo: Implement ~get,in,then/
+        , /todo: Add tests for web@ionify + its actions/
         ]
     },
 
@@ -40,6 +40,17 @@
       ;   web.ready  ()
       ;   web.locate ()
       ;   web.get    ({get:"on.object@ionify", then:web})
+
+      ;   var and_activate_ion_aeon_self_and_ions
+              = { get
+                :   ["ion@ionify", "aeon@ionify"]
+                , in
+                :    "order"
+                , then
+                :   [ web, {get:"ions"}]
+                }
+
+    //;   web.get (and_activate_ion_aeon_self_and_ions)
       },
 
 
@@ -154,13 +165,140 @@
 
   "get then stories":
     [ 'note: +{get: ["ion.id" || "./script.js"], then: ["actions"]}'
-    , /todo: Move +get's code here + update +get to use this/
+    ,(/todo: Move +get's code here + update +get to use this/)
     , /todo: Do +on:ion.id; faster than .onload/
     ]
-    ,
-  "get then":
-    function getThen (ion)
+
+, "get then"
+:   function getThen (ion)
       { return getThen.ion.get (ion)
       }
+
+, "get in then"
+:   function getInThen (ion)
+      { var  get = ion.get
+          ,  how = ion.in
+          , then = ion.then
+          
+      }
+
+
+, getContainer
+:   function getContainer (element)
+      { if (!element           ) return window.document
+      ; if ( element.write     ) return element
+      ; if ( element.document  ) return element.document
+      ; if ( element.parentNode) return getContainer (element.parentNode)
+      ; return window.document
+      }
+
+
+, loadScript
+:   function loadScript (ion)
+      { var code = ion.code
+          ,  url = ion.url
+          
+          ~/todo: use ajile.test.inlineLoader to load inline code!/
+          
+        if (!url && !code) return ~{warn:"No inline or external script specified"}
+        
+        var   then = ion.then
+          ,  async = ion.async
+          , script = document.createElement ("script")
+          ,   path = url [next].match   (get$.HTTP)
+                   ? url [next]
+                   : url [next].replace (get$.ID, get$.URL)
+
+          ; then && (got.then = then) && (script.onload = got)
+          ; script.type   = "text/javascript"
+          ; script.async  = ion.async !== true
+          ; script.src    = url
+          ; document.head.appendChild (script)
+      }
+      
+, loadScriptAJILE
+:   function Load (url, container, code, defer, title, type, language)
+   {
+      if (!(container = getContainer (container)))
+         { log ("ERROR :: Container not found. Unable to load:\n\n[" + url + "]", arguments)
+         ; return false
+         }
+
+      if (url)
+         {  modulePaths.add  (unescape     (url))
+         ;  REFRESH && (url = setRefresher (url))
+         }
+
+      if ( !language || !type)
+         {  language = "JavaScript"
+         ;  type     = "text/javascript"
+         }
+
+      (defer == undefined) && (defer = false);
+
+      var script;
+
+      isDOM && !isICab && (script = container.createElement("script"));
+
+      if (!script)
+         {  code    && (code = "setTimeout ('"+code+"', 0);")  //¿bug: runs before script@url, use inlineLoader?
+         ;  LoadSimple (url, container, code, defer, title, type, language)
+         ;  return false
+         }
+
+      true      && (script.async    = !!defer   ); //HACK.API: async and defer have different purposes!
+      defer     && (script.defer    =   defer   );
+      language  && (script.language =   language);
+      title     && (script.title    =   title   );
+      type      && (script.type     =   type    );
+
+      if (url)
+         {  log ((url +"..."), arguments)
+         ;  ( isWebKit || !(isIE || isOpera))   && (script.src = url)
+         ;  getMainLoader  (container).appendChild (script)
+         ;  (!isWebKit ||   isIE || isOpera)    && (script.src = url)
+         ;  log ((url +"...DONE"), arguments)
+         }
+
+      if (!code) return true;
+
+      if (url)
+         { Load (undefined, container, code, defer, title, type, language)
+         ; return true
+         }
+
+      (typeof script.canHaveChildren == "undefined" || script.canHaveChildren)
+         ?    script.appendChild     (container.createTextNode (code))
+         :  (!script.canHaveChildren && (script.text         =  code))
+         ;
+
+      getMainLoader (container).appendChild (script);
+      return false;
+   }
+
+, loadScriptDOM0
+:   function LoadSimple (src, container, code, defer, title, type, language)
+   {
+      if (!(container = getContainer (container || window)))
+         return;
+
+      src && log ("...\t:: LoadSimple [ " + src + " ]", arguments)
+
+      var scriptTag = '<'+"script"
+                    + (defer   ?  ' defer="defer"'                   : '' )
+                    + (language? (' language="'  + language + '"' )  : '' )
+                    + (title   ? (' title="'     + title    + '"' )  : '' )
+                    + (type    ? (' type="'      + type     + '"' )  : '' )
+                    + (src     ? (' src="'       + src      + '">')  : '>')
+                    + (code    ? (  src?''       : code     + ';' )  : '' )
+                    + "<\/script>\n"
+                    ;
+
+      container.write     (scriptTag);
+      var load;
+      src  &&  log        ("DONE\t:: LoadSimple [ " + src + " ]", arguments);
+      code && (load     =  LoadSimple.code = !LoadSimple.code);
+      load &&  LoadSimple (null, container, code, defer, title, type, language);
+   }
 }
 ;
