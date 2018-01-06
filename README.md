@@ -52,24 +52,29 @@ and programming language capability
 { on: ["ask", "say"]
 
 , ask
-:   function ask (question)
-      { ask.ion.answer = prompt (question.ask)
+:   function quest (ion)
+      { quest.ion.answer = prompt (quest.ion.prepare (ion.ask))
       }
 
 , say
-:   function say (something)
-      { alert (something.say.replace (/\[answer\]/g, say.ion.answer))
+:   function say (ion)
+      { alert (say.ion.prepare (ion.say))
+      }
+
+, prepare
+:   function prepare (thing)
+      { return thing.replace (/\[answer\]/g, prepare.ion.answer)
       }
 }
 
-~/ These ions can be in a separate file/
-+/ fetched either locally or remotely. /
+~ / These ions can be in a separate file/
++ / fetched either locally or remotely. /
 |
-+{ ask: "Hi! What's your name?"        }
-|{ say: "Hi [answer]!"                 }
-|{ ask: "How are you?"                 }
-|{ ask: "How come?"                    }
-|{ say: "..."                          }
++ { ask: "Hi! What's your name?"        }
+| { say: "Hi [answer]!"                 }
+| { ask: "How are you?"                 }
+| { ask: "How come?"                    }
+| { say: "..."                          }
 ;
 ```
 
@@ -89,9 +94,9 @@ of ions and natural language.
 ~
 { re:
     { id: "frendlee@ionified.net"
-    , is: "an exploration of literate programming"
+    , is: "an exploration of literate & natural language programming"
     , by: "mike.lee@iskitz"
-    , at: "2017.12.08-08"
+    , at: "2018.01.06-08"
     , in: "san-jose.california.usa.earth"
     }
 
