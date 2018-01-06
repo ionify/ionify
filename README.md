@@ -96,7 +96,7 @@ of ions and natural language.
     { id: "frendlee@ionified.net"
     , is: "an exploration of literate & natural language programming"
     , by: "mike.lee@iskitz"
-    , at: "2018.01.06-08"
+    , at: "2018.01.06-08...2017.12.08-08"
     , in: "san-jose.california.usa.earth"
     }
 
@@ -130,23 +130,20 @@ our more in-depth exploration of literate programming.
 ```javascript
 ~
 { re:
-    { id: "my.ion.module@doma.in"
-    , is: "a simple module example"
+    { id: "an.ionified.module@doma.in"
+    , is: "a basic ion module example"
     , by: "a.developer@doma.in"
-    , at: "2017.11.14-08...2007.09-04"
+    , at: "2018.01.06-08...2007.09-04"
     }
     ,
   do:
     function something ()
-      { ~/do something when this ion's evaluated/
+      { ~/do something when evaluating this ion/
       }
 }
 ;
 ```
 
-_fyi: Syntax highlighting issues are due to a
-[Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
-not **ionify** or its syntax._
 
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
@@ -166,12 +163,45 @@ not **ionify** or its syntax._
 ;
 ```
 
-### [no name collisions](https://en.wikipedia.org/wiki/Name_collision)
+
+### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
+
+**ionify** uses JavaScript's
+[prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
+and
+[interactive type conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
+to enable observing objects without a direct reference. This enables observing JSON and other anonymous & named objects:
+
+```javascript
+~
+{ on: "hi"
+, hi:
+    function hello (ion)
+      { / This method's called for each ion with/
+      | / a "hi" property. It then logs the "hi"/
+      | / property's value.                     /
+      |
+      + { log: ion.hi }
+      }
+}
+
+~ { hi : "I'm an ion!"} <= /can be in a separate/
++ {"hi": "I'm a JSON!"} <= /file loaded remotely/
+;
+```
+
+_fyi: Syntax highlighting issues are due to a
+[Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
+not **ionify** or its syntax._
+
+
+### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
 
 **ionify** enables observing and distinguishing between identically
 identified **ions**.
 
-Anonymous [**lions**: literal ions](https://github.com/ionify/about/blob/public/ions/ion.md#form), i.e. `~/ / + [ ] & { }`, are anonymous objects that eliminate
+Anonymous **[lions](https://github.com/ionify/about/blob/public/ions/ion.md#form):
+literal ions**, i.e. `~/ / + [ ] & { }`, are anonymous objects that eliminate
 name collisions by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 **ionify** enables individually accessing and inspecting anonymous **lions**,
@@ -184,19 +214,19 @@ internal identifiers, within a single
 { on: "my.ion@doma.in"
 , do:
     function confirm (ion)
-      {/ This method's called for each ion    /
-      // with an id matching "my.ion@doma.in"./
-      // It confirms the ion's developer...   /
+      { / This method's called for each ion    /
+      | / with an id matching "my.ion@doma.in"./
+      | / It confirms the ion's developer . . ./
 
         if (ion.re.by != "a.🇬🇾.developer") return
 
-      ~/ before using it/
-      -{ log: ion.re.is }
+      ~ / before using it /
+      + { log: ion.re.is  }
       }
 }
 
 ~/ Each of the following modules could be in a/
--/ separate file fetched locally or remotely! /
++/ separate file fetched locally or remotely! /
 ~
 { re:
     { id: "my.ion@doma.in"
@@ -230,45 +260,14 @@ _fyi: Syntax highlighting issues are due to a
 [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
 not **ionify** or its syntax._
 
-### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
-
-**ionify** uses JavaScript's
-[prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
-and ability to interface with objects during their
-[automatic type conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
-to enable observing **ions** without a direct reference:
-
-```javascript
-~
-{ on: "hi"
-, hi:
-    function hello (ion)
-      {/ This method's called for each ion with/
-      +/ a "hi" property. It then logs the "hi"/
-      +/ property's value.                     /
-
-      ~{ log: ion.hi }
-      }
-}
-
-~ { hi : "I'm an ion!"} <= /can be in a separate/
-+ {"hi": "I'm a JSON!"} <= /file loaded remotely/
-;
-```
-
-_fyi: Syntax highlighting issues are due to a
-[Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
-not **ionify** or its syntax._
-
 
 ## who
 
 **[team ionify](https://github.com/orgs/ionify/people)**
 has developed and distributed **ions** & **ionify** since their initial
 [discovery, definition & development](https://github.com/ionify/about/blob/public/story.md)
-by [Michael Lee](https://github.com/iskitz) in 2007.
-
-We invent optimized, natural, interfaces, for you, and
+by [Michael Lee](https://github.com/iskitz)
+in 2007. We invent optimized, natural, interfaces for you, and
 **aspire** to create accessible,
 [simple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
 performant,
@@ -279,7 +278,7 @@ performant,
 
 ## vision
 
-We hope to see **ionify** implemented in more languages that enable interfacing
+We hope to see **ionify** implemented in more languages that enable interacting
 with objects during type conversion.
 [Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
 [Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
@@ -289,8 +288,8 @@ Looking ahead, **ionify's** API will be developed to enable
 
 + fetching in all JavaScript host environments
 + authenticating ions
-+ automating ion discovery, assessment, and substitution
-+ & programming via natural language.
++ automating ion discovery, assessment & substitution
++ and programming via natural language.
 
 We hope these improvements increase software development's accessibility for
 every being capable of expressing ideas.
