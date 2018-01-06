@@ -39,7 +39,7 @@ and programming language capability
   and interacting with highly
   [decoupled](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
   data and code
-  
+
 + & [more](https://github.com/ionify/ideas/)
 
 
@@ -55,7 +55,7 @@ and programming language capability
 :   function ask (question)
       { ask.ion.answer = prompt (question.ask)
       }
-      
+
 , say
 :   function say (something)
       { alert (something.say.replace (/\[answer\]/g, say.ion.answer))
@@ -63,13 +63,13 @@ and programming language capability
 }
 
 ~/ These ions can be in a separate file/
-&/ fetched either locally or remotely. /
-
-&{ ask: "Hi! What's your name?"        }
-&{ say: "Hi [answer]!"                 }
-&{ ask: "How are you?"                 }
-&{ ask: "How come?"                    }
-&{ say: "..."                          }
++/ fetched either locally or remotely. /
+|
++{ ask: "Hi! What's your name?"        }
+|{ say: "Hi [answer]!"                 }
+|{ ask: "How are you?"                 }
+|{ ask: "How come?"                    }
+|{ say: "..."                          }
 ;
 ```
 
@@ -94,15 +94,15 @@ of ions and natural language.
     , at: "2017.12.08-08"
     , in: "san-jose.california.usa.earth"
     }
- 
+
 , do:
     [ "say hello"
     , "ask their name"
     , "invite them to play"
     ]
-    
+
 , "say hello"
-:   {say: "Hi! I'm Frend Lee!"}   
+:   {say: "Hi! I'm Frend Lee!"}
 
 , "ask their name"
 :   {ask: "What's your name?"}
