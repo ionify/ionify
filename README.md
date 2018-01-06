@@ -24,6 +24,8 @@ and programming language capability
 [discovered](https://github.com/ionify/about/blob/public/story.md) by
 [Michael Lee](https://github.com/iskitz) in 2007.
 
+## what
+
 **ion** and **ionify** enable exploring and experimenting with
 
 + [domain-specific languages](#domain-specific-languages)
