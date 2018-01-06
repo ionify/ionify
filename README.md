@@ -55,20 +55,21 @@ and programming language capability
 :   function ask (question)
       { ask.ion.answer = confirm (question)
       }
+      
 , say
 :   function say (something)
-      { alert (something.replace (/\[answer]\]/g, say.ion.answer)
+      { alert (something.replace (/\[answer\]/g, say.ion.answer)
       }
 }
 
 ~/ These ions can be in a separate file/
--/ fetched either locally or remotely. /
+&/ fetched either locally or remotely. /
 
-| {ask: "Hi! What's your name?"}
-| {say: "Hi [answer]!"         }
-| {ask: "How are you?"         }
-| {ask: "How come?"            }
-| {say: "..."                  }
+&{ ask: "Hi! What's your name?"        }
+&{ say: "Hi [answer]!"                 }
+&{ ask: "How are you?"                 }
+&{ ask: "How come?"                    }
+&{ say: "..."                          }
 ;
 ```
 
@@ -100,13 +101,13 @@ of ions and natural language.
     , "invite them to play"
     ]
     
-,"say hello"
+, "say hello"
 :   {say: "Hi! I'm Frend Lee!"}   
 
-,"ask their name"
+, "ask their name"
 :   {ask: "What's your name?"}
 
-,"invite them to play"
+, "invite them to play"
 :   {ask: "Hi [answer]! Wanna play?!"}
 }
 ;
