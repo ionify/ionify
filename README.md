@@ -26,18 +26,18 @@ and programming language capability
 
 **ion** and **ionify** enable exploring and experimenting with
 
-+ [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
++ [domain-specific languages](#domain-specific-languages)
 
-+ [literate](https://en.wikipedia.org/wiki/Literate_programming),
-  [modular](https://en.wikipedia.org/wiki/Modular_programming),
-  [event-driven](https://en.wikipedia.org/wiki/Event-driven_programming),
++ [literate](#literate-programming),
+  [modular](#modular-programming),
+  [event-driven](#event-driven-programming),
   and
-  [name-collision-free](https://en.wikipedia.org/wiki/Name_collision)
+  [name-collision-free](#name-collision-freedom)
   programming
 
-+ fetching, [observing](https://en.wikipedia.org/wiki/Observer_pattern),
++ fetching, [observing](#decoupled-observation),
   and interacting with highly
-  [decoupled](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
+  [decoupled](#decoupled-observation)
   data and code
 
 + & [more](https://github.com/ionify/ideas/)
@@ -164,7 +164,7 @@ our more in-depth exploration of literate programming.
 ```
 
 
-### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern)
+### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
 
 **ionify** uses JavaScript's
 [prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
