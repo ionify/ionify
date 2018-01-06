@@ -53,7 +53,7 @@ and programming language capability
 
 , ask
 :   function ask (question)
-      { ask.ion.answer = confirm (question.ask)
+      { ask.ion.answer = prompt (question.ask)
       }
       
 , say
