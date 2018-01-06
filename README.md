@@ -96,7 +96,7 @@ of ions and natural language.
 ~
 { re:
     { id: "frendlee@ionified.net"
-    , is: "an exploration of literate & natural language programming"
+    , is: "a literate & natural language programming exploration"
     , by: "mike.lee@iskitz"
     , at: "2018.01.06-08...2017.12.08-08"
     , in: "san-jose.california.usa.earth"
