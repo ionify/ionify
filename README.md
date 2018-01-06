@@ -53,12 +53,12 @@ and programming language capability
 
 , ask
 :   function ask (question)
-      { ask.ion.answer = confirm (question)
+      { ask.ion.answer = confirm (question.ask)
       }
       
 , say
 :   function say (something)
-      { alert (something.replace (/\[answer\]/g, say.ion.answer))
+      { alert (something.say.replace (/\[answer\]/g, say.ion.answer))
       }
 }
 
