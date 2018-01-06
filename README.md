@@ -58,7 +58,7 @@ and programming language capability
       
 , say
 :   function say (something)
-      { alert (something.replace (/\[answer\]/g, say.ion.answer)
+      { alert (something.replace (/\[answer\]/g, say.ion.answer))
       }
 }
 
