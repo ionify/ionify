@@ -4,7 +4,7 @@
     { id: "punctuation.test.0.1@ionify"
     , is: "A suite of tests for ion punctuation"
     , by: "mike.lee@ionify"
-    , at: "2017.11.29-08...2017.11.11-08"
+    , at: "2018.04.01-07...2017.11.11-08"
     }
 
 , do:
@@ -20,7 +20,7 @@
         = Object.prototype.valueOf
         = function ion ()
             { !ion.count && (ion.count = 1)
-            ; console.log ("ion", ion.count++, typeOf.apply (this))
+            ; console.log ("ion", ion.count++, " ", typeOf.apply (this))
             ; return 7
             }
 

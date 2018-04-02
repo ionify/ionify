@@ -445,7 +445,7 @@
                 result  =  typeof  sense [words] == "function"
                              ?  (  sense [words].ion != ion)
                                 && sense [words]       (ion)
-                             :  +  sense [words]
+                             :   ~ sense [words]
                 results += 1
                 words   =  group.set
                 for (var w=0, lastw=words.length; w < lastw; skip [words [w++]] = true);
