@@ -6,85 +6,79 @@
     { id:  "web.0.1@ionify"
     , is:  "implicit object notations invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.12.13-08...2007.09-04"
-        ,
-      stories:
+    , at:  "2018.04.01-07...2007.09-04"
+    , it:
         [ /note: .../
         , /todo: Implement ~get,in,then/
-        , /todo: Add tests for web@ionify + its actions/
+        , /todo: Add tests for web@ionify & its actions/
         ]
-    },
+    }
 
 
-  debug
-    : false
-    ,
+, debug
+:   false
+ 
 
-  on:
+, on:
     [ ["get", "in", "then"]
     , ["get", "in"]
     , ["get", "then"]
     ,  "get"
-    ],
-
-  host
-    : true
-    ,
+    ]
 
 
-  valueOf:
-    function ionifyWeb ()
-      {   var web = this
-      ;   delete web.valueOf
-    //;   web.watch  ()
-      ;   web.ready  ()
-      ;   web.locate ()
-      ;   web.get    ({get:"on.object@ionify", then:web})
-
-      ;   var and_activate_ion_aeon_self_and_ions
-              = { get
-                :   ["ion@ionify", "aeon@ionify"]
-                , in
-                :    "order"
-                , then
-                :   [ web, {get:"ions"}]
-                }
-
-    //;   web.get (and_activate_ion_aeon_self_and_ions)
-      },
+, host
+:   true
 
 
-  watch:
-    function watch ()
+, valueOf
+:   function ionifyWeb ()
+      { var    web = this
+        delete web . valueOf
+
+    //  web.watch  ()
+        web.ready  ()
+        web.locate ()
+        web.get    ({get:"on.object@ionify", then:web})
+
+        web.get  /*
+          ({  get: [ "ion", "aeon", "do"]
+           ,   in: "order"
+           , then: [ { do: web  }
+                   , {get:"ions"}
+                   ]
+           })    */
+      }
+
+, watch
+:   function watch ()
       { onerror =
            function onUncaughtError (message, url, line, column, error)
              { ~{warn : [message, error && error.stack]}
                ~{debug: [message, "errorstack", url, line, column, error]}
                return true
              }
-      },
+      }
 
-
-  ready:
-    function ready ()
+, ready
+:   function ready ()
       {   var error = this.errors
       ;   if (typeof document == "undefined") throw new Error (error.noDOM)
       ;   return true
-      },
+      }
+
+, errors
+:   { noDOM: "web@ionify needs the DOM: Document Object Module API"
+    }
 
 
-  errors:
-    { noDOM: "web@ionify needs the DOM: Document Object Module API"
-    },
-
-
-  locateStories:
-    [ "todo: Sense /ions/ path, don't hardcode it"
+, locateStories
+:   [ "todo: Sense /ions/ path, don't hardcode it"
     , /.../
     ]
-    ,
-  locate:
-    function locate ()
+
+, locate
+:   function locate ()
       { var script  =[  document.currentScript ,,]
                     ||  document.scripts
                     ||  document.head.getElementsByTagName ("script")
@@ -153,18 +147,18 @@
                         ? url [next]
                         : url [next].replace (get$.ID, get$.URL)
 
-              ; then && (got.then = then) && (script.onload = got)
-              ; script.type   = "text/javascript"
-              ; script.async  = ion.now !== true
-              ; script.src    = got.path  = path
-              ; document.head.appendChild (script)
-              ~ {debug: ["get",path,"..."]}
+            then && (got.then = then) && (script.onload = got)
+            script.type   = "text/javascript"
+            script.async  = ion.now !== true
+            script.src    = got.path  = path
+            document.head.appendChild (script)
+          ~ {debug: ["get",path,"..."]}
           }
-      },
+      }
 
 
-  "get then stories":
-    [ 'note: +{get: ["ion.id" || "./script.js"], then: ["actions"]}'
+, "get then stories"
+:   [ 'note: +{get: ["ion.id" || "./script.js"], then: ["actions"]}'
     ,(/todo: Move +get's code here + update +get to use this/)
     , /todo: Do +on:ion.id; faster than .onload/
     ]
@@ -176,10 +170,96 @@
 
 , "get in then"
 :   function getInThen (ion)
-      { var  get = ion.get
-          ,  how = ion.in
-          , then = ion.then
+      { / get: Ensure it's an array         /
+      | /  in: Ensure it's an expected value/
+      | /then: Create beacon  function      /
+      | / get: Create scripts with in & then/
+      | / get: Attach scripts to webi       /
+      
+        var ions = ion.get
+
+        !Array.isArray (ions) && (ions = ion.get = [ions])
+
+        var  web = getInThen.ion
+          , mode = web.asyncMode [ion.in]
+          , more = ion.then && web.getBeaconFor (ion)
+          , load = web.getScript
+          , last = ions.length
+          , next = -1
           
+      ~ {   on: ions, /*after:"all",*/ do:more}
+    //~ {after: ions,    do:more}
+
+        while (++next < last) load ({script:ions[next], async:mode, then:more})
+      }
+
+, getBeaconFor
+:   function on (ion)
+      { /Create a function that does something/
+      | /based on a get action's after mode   /
+      | /and sensed ions.                     /
+        
+        var   d0 = ion.then
+          , ions = ion.get
+          , last = ions.length
+          , next = -1
+          ,  got = {}
+
+        while (++next < last) got [ions [next]] = false
+          
+        function afterAllIons (ion)
+          { if  (afterAllIons.done)  return
+          ; got [ion.re.id] = true
+          ; for (var id in got) if (!got[id]) return
+          ; afterAllIons.done = true
+          ~ d0
+          }
+ 
+        function afterAnyIon (ion)
+          {
+          ~ {on:ion.re.id, no:afterAnyIon}
+          ; if (afterAnyIon.done)  return
+          ;     afterAnyIon.done = true
+          ~ d0
+          }
+ 
+        function afterEachIon (ion)
+          { ~ d0
+          ~ /todo: remove duplicate d0 from script.onload/
+          }
+ 
+        return {   all: afterAllIons
+               ,   any: afterAnyIon
+               ,  each: afterEachIon
+               } [ion.after || "all"]
+      }
+      
+, asyncMode
+:   {        "": true
+    ,      null: true
+    ,     order: false
+    ,  sequence: false
+    ,  parallel: true
+    , undefined: true
+    }
+
+, getScript
+:   function getScript (ion)
+      { var code = ion.code
+          ,  url = ion.script
+          
+        ~/todo: use ajile.test.inlineLoader to load inline code!/
+          
+        if (!url && !code) return ~{warn:"No inline or external script specified"}
+        
+        var script = document.createElement ("script")
+          ; ion.then && (script.onload = ion.then)
+   
+        script.type  = "text/javascript"
+        script.async = ion.async !== true
+        script.src   = url.match (get$.HTTP) ? url : url.replace (get$.ID, get$.URL)
+
+        document.head.appendChild (script)
       }
 
 
@@ -192,30 +272,6 @@
       ; return window.document
       }
 
-
-, loadScript
-:   function loadScript (ion)
-      { var code = ion.code
-          ,  url = ion.url
-          
-          ~/todo: use ajile.test.inlineLoader to load inline code!/
-          
-        if (!url && !code) return ~{warn:"No inline or external script specified"}
-        
-        var   then = ion.then
-          ,  async = ion.async
-          , script = document.createElement ("script")
-          ,   path = url [next].match   (get$.HTTP)
-                   ? url [next]
-                   : url [next].replace (get$.ID, get$.URL)
-
-          ; then && (got.then = then) && (script.onload = got)
-          ; script.type   = "text/javascript"
-          ; script.async  = ion.async !== true
-          ; script.src    = url
-          ; document.head.appendChild (script)
-      }
-      
 , loadScriptAJILE
 :   function Load (url, container, code, defer, title, type, language)
    {
