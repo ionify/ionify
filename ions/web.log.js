@@ -26,7 +26,7 @@
 
     ,
   do:
-    [ {debug:true}
+    [ {debug:!true}
     , "ready"
     ]
 

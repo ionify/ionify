@@ -1,16 +1,23 @@
 ;
-/get.test@ionify activating.../
-
-+
+~
 { re:
     { id: "get.test.0.1@ionify"
     , is: "A suite of tests for ionify's +get actions"
     , by: "mike.lee@ionify"
-    , at: "2017.07.13...2007.09-04"
+    , at: "2018.04.02-07...2007.09-04"
     }
 }
 
 +
+{debug:true}
++
+{get:""} <- /test getting the .js file/
++
+{get:"@ionify"}
++
+{debug:false}
+
+~
 { get: "http://ionify.net/ions/test/log.js"
 , now: true
 , then:
@@ -80,6 +87,4 @@
 }
 */
 
-+
-/get.test@ionify activated!/
 ;
