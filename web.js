@@ -6,18 +6,21 @@
     { id:  "web.0.1@ionify"
     , is:  "implicit object notations invented for your web"
     , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2018.04.01-07...2007.09-04"
+    , at:  "2018.04.22-07...2007.09-04"
     , it:
         [ /note: .../
         , /todo: Implement ~get,in,then/
         , /todo: Add tests for web@ionify & its actions/
         ]
+    , im:
+        ` implementing ionify's launch without script.onload via hop ion sensing!
+        `
     }
 
 
 , debug
 :   false
- 
+
 
 , on:
     [ ["get", "in", "then"]
@@ -27,28 +30,38 @@
     ]
 
 
-, host
-:   true
-
-
 , valueOf
 :   function ionifyWeb ()
-      { var    web = this
-        delete web . valueOf
+      { var                  web = this
+      ; web   .ionify   .    ion = web
+      ; Object.prototype.valueOf = web.ionify
 
-    //  web.watch  ()
-        web.ready  ()
-        web.locate ()
-        web.get    ({get:"on.object@ionify", then:web})
+    //; web.watch  ()
+      ; web.ready  ()
+      ; web.locate ()
+      ; web.get    ({get:"on.object@ionify"})
 
-        web.get  /*
-          ({  get: [ "ion", "aeon", "do"]
+    /*; web ["get in then"]  /*
+    //    ({  get: [ "ion", "aeon", "do"]
+          ({  get: [ "on.object@ionify", "on.array@ionify", "do@ionify"]  || /why get aeon & do now?/
            ,   in: "order"
            , then: [ { do: web  }
-                   , {get:"ions"}
+                   , {get:"ions@ionify"}
                    ]
-           })    */
+           })    //*/
       }
+
+
+, ionify
+:   function ionified ()
+      { var ion = this
+      ; if (typeof ion.ionify != "function") return
+      ; var    web = ionified.ion
+      ; delete web.valueOf
+      ; Object.prototype.valueOf = ion.ionify
+      ~ web
+      }
+
 
 , watch
 :   function watch ()
@@ -175,22 +188,27 @@
       | /then: Create beacon  function      /
       | / get: Create scripts with in & then/
       | / get: Attach scripts to webi       /
-      
+
         var ions = ion.get
 
         !Array.isArray (ions) && (ions = ion.get = [ions])
 
-        var  web = getInThen.ion
+        var  web = getInThen.ion || (getInThen.ion = this)
           , mode = web.asyncMode [ion.in]
           , more = ion.then && web.getBeaconFor (ion)
           , load = web.getScript
           , last = ions.length
           , next = -1
-          
-      ~ {   on: ions, /*after:"all",*/ do:more}
+
+      ~ {   on: ions, /*after:"all",*/ do:more
+        ,  "on.array":more
+        , "on.object":more
+        } <= /ignored because ~on hasn't been activated via on.object@ionify!/
+
     //~ {after: ions,    do:more}
 
-        while (++next < last) load ({script:ions[next], async:mode, then:more})
+        this.get$.URL.ion = this.get$
+        while (++next < last) web.getScript ({script:ions[next], async:mode, then:more})
       }
 
 , getBeaconFor
@@ -198,7 +216,7 @@
       { /Create a function that does something/
       | /based on a get action's after mode   /
       | /and sensed ions.                     /
-        
+
         var   d0 = ion.then
           , ions = ion.get
           , last = ions.length
@@ -206,15 +224,16 @@
           ,  got = {}
 
         while (++next < last) got [ions [next]] = false
-          
+
         function afterAllIons (ion)
-          { if  (afterAllIons.done)  return
+          { if  (afterAllIons.done || ion instanceof Event)  return
           ; got [ion.re.id] = true
           ; for (var id in got) if (!got[id]) return
           ; afterAllIons.done = true
+          ~ {on:ions, no:more}
           ~ d0
           }
- 
+
         function afterAnyIon (ion)
           {
           ~ {on:ion.re.id, no:afterAnyIon}
@@ -222,18 +241,18 @@
           ;     afterAnyIon.done = true
           ~ d0
           }
- 
+
         function afterEachIon (ion)
           { ~ d0
           ~ /todo: remove duplicate d0 from script.onload/
           }
- 
+
         return {   all: afterAllIons
                ,   any: afterAnyIon
                ,  each: afterEachIon
                } [ion.after || "all"]
       }
-      
+
 , asyncMode
 :   {        "": true
     ,      null: true
@@ -247,16 +266,17 @@
 :   function getScript (ion)
       { var code = ion.code
           ,  url = ion.script
-          
+          , get$ = this.get$
+
         ~/todo: use ajile.test.inlineLoader to load inline code!/
-          
+
         if (!url && !code) return ~{warn:"No inline or external script specified"}
-        
+
         var script = document.createElement ("script")
           ; ion.then && (script.onload = ion.then)
-   
+
         script.type  = "text/javascript"
-        script.async = ion.async !== true
+        script.async = ion.async !== false
         script.src   = url.match (get$.HTTP) ? url : url.replace (get$.ID, get$.URL)
 
         document.head.appendChild (script)

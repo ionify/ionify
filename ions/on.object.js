@@ -1,13 +1,15 @@
+;
+
    ~   ~
 +['0 . 0']+
      -
 
 { re:
-    { id: "on.object.0.1@ionify"
+    { id: "on.object@ionify"
     , is: "implicit object notations invented for you"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.28-08...2007.09-04"
+    , at: "2018.04.22-07...2007.09-04"
 
     , it:
         [ /note: .../
@@ -16,24 +18,24 @@
         , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
         ]
 
-    , im: /Implementing ~on.do.                                                /
+//     , im: /Implementing ~on.do.                                                /
 
-        + "Adding a link() call to onArray & think I should for all onSensor's"
-        + " to ensure that they all have a .ion reference to their containing"
-        + " ion. That'll support subsequent operations that depend on an ion's"
-        + " context."
+//         + "Adding a link() call to onArray & think I should for all onSensor's"
+//         + " to ensure that they all have a .ion reference to their containing"
+//         + " ion. That'll support subsequent operations that depend on an ion's"
+//         + " context."
 
-        + " It may be more sensible to create an ion Type sensor delegator that"
-        + " ensures all ions have an id & that they & their ionified content"
-        + " have a reference to their host ion."
+//         + " It may be more sensible to create an ion Type sensor delegator that"
+//         + " ensures all ions have an id & that they & their ionified content"
+//         + " have a reference to their host ion."
 
-        + " It may then also make sense to have an ion Type cleanup that"
-        + " removes those ion references for memory performance. May be good"
-        + " enough to only note this for now & revisit if performance needs to"
-        + " be improved."
+//         + " It may then also make sense to have an ion Type cleanup that"
+//         + " removes those ion references for memory performance. May be good"
+//         + " enough to only note this for now & revisit if performance needs to"
+//         + " be improved."
 
-        + "The delegator would do common actions for all ion types then"
-        + " delegate to the relevant ion's Type sensor."
+//         + "The delegator would do common actions for all ion types then"
+//         + " delegate to the relevant ion's Type sensor."
     }
 
     ,
@@ -80,23 +82,27 @@
               , sortKnownWords : ion.sortKnownWords
           }}  )
 
-        ion.onSensor ({on:Object, Object:ion.onObject})
+//      ion.onSensor ({on:Object, Object:ion.onObject})
 
-        var initialize
-          =   { get:
-                  [   "errors@ionify",   "on.storie@ionify"
-                  ,  "next.id@ionify",     "web.log@ionify"
-                  , "on.error@ionify", "on.function@ionify"
-                  , "on.array@ionify",          "do@ionify"
-                  ,      "use@ionify",               "ions"
-                  ]
-                  ,
-                now: true
-              }
+        ~ {re:ion.re, ionify:ion.onObject}
 
-        initialize.on = "host"
-        initialize.no = initialize
-      ~ {on:"host", host:initialize}
+//      var initialize
+        ~ { get:
+              [   "errors@ionify",   "on.storie@ionify"
+              ,  "next.id@ionify",     "web.log@ionify"
+              , "on.error@ionify", "on.function@ionify"
+              , "on.array@ionify",          "do@ionify"
+              ,      "use@ionify",               "ions"
+              ]
+              ,
+            now: true
+          }
+//
+//      initialize.on = "host"
+//      initialize.no = initialize
+//    ~ {on:"host", host:initialize}
+
+//    ~ {re:this.re} <= /self-announce so host [web] can confirm/
 
         return true
       }
@@ -309,7 +315,7 @@
         ]
     }
 
- 
+
 , on:
     function on (ion)
       { if (!ion || !ion.on && !("on" in ion)) return ion
@@ -381,7 +387,7 @@
         for (word in updated)
           known [word].sort (descending)
       }
-      
+
 , sortKnownWordsDescending
 :   function descending (known, nextKnown)
       { return nextKnown.set.length - known.set.length
@@ -393,7 +399,7 @@
     , /todo: Auto-update as types are deactivated/
     , /todo: Enable +{ionified: typeof thing} = 1:true|0:false/
     ]
-    
+
 , ionified
 :   {
     }
@@ -406,7 +412,7 @@
     ,(/idea: loop through ion's terms instead of known?        /)
     , /todo: Ignore similar actions after match: +get +get.then/
     ]
-    
+
 , onObject
 :   function onION (ion)
       { ion || (ion = this)
@@ -483,4 +489,5 @@
         return true
       }
 }
+
 ;
