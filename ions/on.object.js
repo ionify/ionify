@@ -10,6 +10,7 @@
 
     , it:
         [ /note: ...                                                            /
+        , /todo: ~{are: we, really: 'ionified?'} = web's ~{on:'is'}             /
         , /todo: Rename to ionify                                               /
         , /todo: Make .resolve to convert ids to ions: e.g. ionified references /
         ,(/todo: Make a way to undo all +on:Type's                              /)
@@ -408,10 +409,10 @@
     ]
 
 , onObject
-:   function onION (ion)
+:   function onion (ion)
       { ion || (ion = this)
 
-        var ionify    = onION.ion
+        var ionify    = onion.ion
           , ionified  = ionify.ionified
           , sense     = ionify.sense
           , debug     = []
@@ -425,9 +426,9 @@
 
         debug.push ("onION:", ion.re.id)
 
-        var from = onION.caller;
+        var from = onion.caller;
         ion.re.from || (ion.re.from = from && from.ion && from.ion.re.id)
-        from && (from != onION) && debug.push ("from", ion.re.from)
+        from && (from != onion) && debug.push ("from", ion.re.from)
 
         var known = ionify.known
           , skip  = {}

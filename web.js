@@ -8,8 +8,9 @@
     , at:  '2018.04.23-07...2007.09-04'
     , it:
         [ /note: .../
-        , /todo: Implement ~get_in_then/
-        , /todo: Add tests for web@ionify & its actions/
+        , /todo: {are: we, really: 'ionified?'} = {on:'is'} => on.object.js    /
+        , /todo: Implement ~get_in_then                                        /
+        , /todo: Add tests for web@ionify & its actions                        /
         ]
     , im: `implementing ~get_in_then
           `
@@ -54,6 +55,7 @@
             }
         }
       + {is:'web ionified?'}
+//    + {get: 'ionified@ionify', then: {are: we, really: 'ionified?'}}
       }
 
 
