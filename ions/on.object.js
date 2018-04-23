@@ -1,46 +1,45 @@
 ;
 
-   ~   ~
-+['0 . 0']+
-     -
-
+~
 { re:
-    { id: "on.object@ionify"
-    , is: "implicit object notations invented for you"
+    { id: 'on.object.0.1@ionify'
+    , is: "implicit object notations implemented for you"
 
-    , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2018.04.22-07...2007.09-04"
+    , by:['mike.lee@iskitz', 'team@ionify']
+    , at: '2018.04.23-07...2007.09-04'
 
     , it:
-        [ /note: .../
-        , /todo: Make .resolve to convert ids to ions: e.g. ionified references/
-        ,(/todo: Make a way to undo all +on:Type's/)
-        , /todo: Make +{is:thing, type:"ion"} to test if a type is ionified/
+        [ /note: ...                                                            /
+        , /todo: Rename to ionify                                               /
+        , /todo: Make .resolve to convert ids to ions: e.g. ionified references /
+        ,(/todo: Make a way to undo all +on:Type's                              /)
+        , /todo: Make +{is:thing, type:'ion'} to test if a type is ionified     /
+        , /idea: {on:'term',dont:act} or {no:{term:act} vs {on:'term',no:act}   /
         ]
 
-//     , im: /Implementing ~on.do.                                                /
+     , im: /Implementing ~on.do.                                                /
 
-//         + "Adding a link() call to onArray & think I should for all onSensor's"
-//         + " to ensure that they all have a .ion reference to their containing"
-//         + " ion. That'll support subsequent operations that depend on an ion's"
-//         + " context."
+         + "Adding a link() call to onArray & think I should for all onSensor's"
+         + " to ensure that they all have a .ion reference to their containing"
+         + " ion. That'll support subsequent operations that depend on an ion's"
+         + " context."
 
-//         + " It may be more sensible to create an ion Type sensor delegator that"
-//         + " ensures all ions have an id & that they & their ionified content"
-//         + " have a reference to their host ion."
+         + " It may be more sensible to create an ion Type sensor delegator that"
+         + " ensures all ions have an id & that they & their ionified content"
+         + " have a reference to their host ion."
 
-//         + " It may then also make sense to have an ion Type cleanup that"
-//         + " removes those ion references for memory performance. May be good"
-//         + " enough to only note this for now & revisit if performance needs to"
-//         + " be improved."
+         + " It may then also make sense to have an ion Type cleanup that"
+         + " removes those ion references for memory performance. May be good"
+         + " enough to only note this for now & revisit if performance needs to"
+         + " be improved."
 
-//         + "The delegator would do common actions for all ion types then"
-//         + " delegate to the relevant ion's Type sensor."
+         + "The delegator would do common actions for all ion types then"
+         + " delegate to the relevant ion's Type sensor."
     }
 
     ,
   valueOfStories:
-    [ 'idea: Sense "this.*" + "+*" + set to ion reference'
+    [ 'idea: Sense this.* and +* then set to ion reference'
     , /note: .../
     ]
     ,
@@ -56,7 +55,7 @@
               , ["on", "no"]
               ]
 //         ,"on do": ion.on
-           ,"on no": ion.no     //idea: {no:{word:action}} vs {on:"word",no:action}
+           ,"on no": ion.no
           })
 
         ion.on
@@ -82,27 +81,22 @@
               , sortKnownWords : ion.sortKnownWords
           }}  )
 
-//      ion.onSensor ({on:Object, Object:ion.onObject})
+        ion.onSensor ({on:Object, Object:ion.onObject})
 
-        ~ {re:ion.re, ionify:ion.onObject}
+          ~   ~
+       +['0 . 0']+
+            -
 
-//      var initialize
-        ~ { get:
-              [   "errors@ionify",   "on.storie@ionify"
-              ,  "next.id@ionify",     "web.log@ionify"
-              , "on.error@ionify", "on.function@ionify"
-              , "on.array@ionify",          "do@ionify"
-              ,      "use@ionify",               "ions"
-              ]
-              ,
-            now: true
-          }
-//
-//      initialize.on = "host"
-//      initialize.no = initialize
-//    ~ {on:"host", host:initialize}
-
-//    ~ {re:this.re} <= /self-announce so host [web] can confirm/
+        { get:
+            [   'errors@ionify',   'on.storie@ionify'
+            ,  'next.id@ionify',     'web.log@ionify'
+            , 'on.error@ionify', 'on.function@ionify'
+            , 'on.array@ionify',          'do@ionify'
+            ,      'use@ionify',               'ions'
+            ]
+//      , in: 'order'
+        , now: true
+        }
 
         return true
       }

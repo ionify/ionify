@@ -1,82 +1,76 @@
-   ~   ~
-+['0 . 0']+
-     -
+;
 
+~
 { re:
-    { id:  "web.0.1@ionify"
+    { id:  'web.0.1@ionify'
     , is:  "implicit object notations invented for your web"
-    , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2018.04.22-07...2007.09-04"
+    , by: ['mike.lee@ionify', 'team@ionify']
+    , at:  '2018.04.23-07...2007.09-04'
     , it:
         [ /note: .../
-        , /todo: Implement ~get,in,then/
+        , /todo: Implement ~get_in_then/
         , /todo: Add tests for web@ionify & its actions/
         ]
-    , im:
-        ` implementing ionify's launch without script.onload via hop ion sensing!
-        `
+    , im: `implementing ~get_in_then
+          `
     }
 
-
 , debug
-:   false
-
+    : false
 
 , on:
-    [ ["get", "in", "then"]
-    , ["get", "in"]
-    , ["get", "then"]
-    ,  "get"
+    [ ['get', 'in', 'then']
+    , ['get', 'in']
+    , ['get', 'then']
+    ,  'get'
     ]
 
 
 , valueOf
 :   function ionifyWeb ()
-      { var                  web = this
-      ; web   .ionify   .    ion = web
-      ; Object.prototype.valueOf = web.ionify
-
-    //; web.watch  ()
+      { var web                   = this
+      ;     web.   ionify.ion     = web
+      ;   Array.prototype.valueOf = web.ionify
+      ;
+//    ; web.watch  ()
       ; web.ready  ()
       ; web.locate ()
-      ; web.get    ({get:"on.object@ionify"})
-
-    /*; web ["get in then"]  /*
-    //    ({  get: [ "ion", "aeon", "do"]
-          ({  get: [ "on.object@ionify", "on.array@ionify", "do@ionify"]  || /why get aeon & do now?/
-           ,   in: "order"
-           , then: [ { do: web  }
-                   , {get:"ions@ionify"}
-                   ]
-           })    //*/
+      ; web.get    ({get:'on.object@ionify'})
       }
 
 
 , ionify
-:   function ionified ()
-      { var ion = this
-      ; if (typeof ion.ionify != "function") return
-      ; var    web = ionified.ion
-      ; delete web.valueOf
-      ; Object.prototype.valueOf = ion.ionify
-      ~ web
+:   function ionify ()
+      { if (this [0] != '0 . 0' || this.length != 1) return
+
+      ~ { on:'is'
+        , is: function
+          ionified (ion)
+            { ~ {on:'is',no:ionified}
+            ;   delete Array.prototype.valueOf
+            ;   var    web = ionify.ion
+            ;   delete web . valueOf
+            ;        ~ web
+            }
+        }
+      + {is:'web ionified?'}
       }
 
 
 , watch
 :   function watch ()
       { onerror =
-           function onUncaughtError (message, url, line, column, error)
-             { ~{warn : [message, error && error.stack]}
-               ~{debug: [message, "errorstack", url, line, column, error]}
-               return true
-             }
+          function onUncaughtError (message, url, line, column, error)
+           { ~{warn : [message, error && error.stack]}
+           ; ~{debug: [message, 'errorstack', url, line, column, error]}
+           ;  return true
+           }
       }
 
 , ready
 :   function ready ()
       {   var error = this.errors
-      ;   if (typeof document == "undefined") throw new Error (error.noDOM)
+      ;   if (typeof document == 'undefined') throw new Error (error.noDOM)
       ;   return true
       }
 
@@ -200,11 +194,7 @@
           , last = ions.length
           , next = -1
 
-      ~ {   on: ions, /*after:"all",*/ do:more
-        ,  "on.array":more
-        , "on.object":more
-        } <= /ignored because ~on hasn't been activated via on.object@ionify!/
-
+      ~ {   on: ions, /*after:"all",*/ do:more}
     //~ {after: ions,    do:more}
 
         this.get$.URL.ion = this.get$
@@ -377,4 +367,5 @@
       load &&  LoadSimple (null, container, code, defer, title, type, language);
    }
 }
+
 ;
