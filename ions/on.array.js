@@ -2,11 +2,11 @@
 
 ~
 { re:
-    { id: "on.array@ionify"
-    , is: "bias: basic ionified array sensor"
+    { id: 'on.array.0.1@ionify'
+    , is: 'bias: basic ionified array sensor'
 
-    , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2018.04.22-07...2007.09-04"
+    , by:['mike.lee@iskitz', 'team@ionify']
+    , at: '2018.04.23-07...2007.09-04'
 
     , it: "Senses all array-expressed ions like:"
         + " ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
@@ -19,10 +19,10 @@
     }
     ,
   share:
-    { '0 . 0': "activate"
-    , '0 . -': "disable"
-    , '- . 0': "disable"
-    , '- . -': "deactivate"
+    { '0 . 0': 'activate'
+    , '0 . -': 'disable'
+    , '- . 0': 'disable'
+    , '- . -': 'deactivate'
     }
     ,
   on: Array,
