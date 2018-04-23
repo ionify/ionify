@@ -1,10 +1,12 @@
+;
+
 ~
 { re:
-    { id: "on.array.0.1@ionify"
+    { id: "on.array@ionify"
     , is: "bias: basic ionified array sensor"
 
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.12-08...2007.09-04"
+    , at: "2018.04.22-07...2007.09-04"
 
     , it: "Senses all array-expressed ions like:"
         + " ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
@@ -76,4 +78,5 @@
         typeof sense == "function"  ?   sense  (ion) : ~sense
       }
 }
+
 ;

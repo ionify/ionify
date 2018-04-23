@@ -1,12 +1,11 @@
 ;
-/ions@ionify activating.../
-+
 
+~
 { re:
-    { id: "ions.0.1@ionify"
+    { id: "ions@ionify"
     , is: "ionify's ion settings"
     , by: "mike.lee@iskitz"
-    , at: "2017.04.16-07...2007.09-04"
+    , at: "2018.04.22-07...2007.09-04"
         ,
       in:
         [   "san-jose.california.usa.earth"
@@ -47,6 +46,4 @@
 , verify: true
 }
 
-+
-/ions@ionify activated!/
 ;
