@@ -8,7 +8,6 @@
     , at:  '2018.04.23-07...2007.09-04'
     , it:
         [ /note: .../
-        , /todo: {are: we, really: 'ionified?'} = {on:'is'} => on.object.js    /
         , /todo: Implement ~get_in_then                                        /
         , /todo: Add tests for web@ionify & its actions                        /
         ]
@@ -26,12 +25,12 @@
     ,  'get'
     ]
 
-
 , valueOf
 :   function ionifyWeb ()
-      { var web                   = this
-      ;     web.   ionify.ion     = web
-      ;   Array.prototype.valueOf = web.ionify
+      { var web             = this
+      ;     web.ionify.ion  = web
+      ;     web.hop         = Array.prototype
+      ;     web.hop.valueOf = web.ionify
       ;
 //    ; web.watch  ()
       ; web.ready  ()
@@ -42,20 +41,9 @@
 
 , ionify
 :   function ionify ()
-      { if (this [0] != '0 . 0' || this.length != 1) return
-
-      ~ { on:'is'
-        , is: function
-          ionified (ion)
-            { ~ {on:'is',no:ionified}
-            ;   delete Array.prototype.valueOf
-            ;   var    web = ionify.ion
-            ;   delete web . valueOf
-            ;        ~ web
-            }
-        }
-      + {is:'web ionified?'}
-//    + {get: 'ionified@ionify', then: {are: we, really: 'ionified?'}}
+      {   if (this [0] != '0 . 0' || this.length != 1) return
+      ;   var      web = ionify.ion
+      ; ~ {ionify: web}
       }
 
 

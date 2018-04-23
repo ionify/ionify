@@ -10,8 +10,8 @@
 
     , it:
         [ /note: ...                                                            /
-        , /todo: ~{are: we, really: 'ionified?'} = web's ~{on:'is'}             /
         , /todo: Rename to ionify                                               /
+        , /todo: Add logging for unknown terms like ~get with a hostless ionify /
         , /todo: Make .resolve to convert ids to ions: e.g. ionified references /
         ,(/todo: Make a way to undo all +on:Type's                              /)
         , /todo: Make +{is:thing, type:'ion'} to test if a type is ionified     /
@@ -83,6 +83,17 @@
           }}  )
 
         ion.onSensor ({on:Object, Object:ion.onObject})
+
+      ~ {     on:'ionify'
+        , ionify: function
+          ionified (ion)
+            { ~ {on:'ionify', no:ionified}
+            ;   var    host = ion.ionify
+            ;   delete host . hop.valueOf
+            ;   delete host . valueOf
+            ;        ~ host
+            }
+        }
 
           ~   ~
        +['0 . 0']+
@@ -275,8 +286,8 @@
     function no (ion)
       { if (!ion.no && !("no" in ion)) return ion;
 
-        var ions = ion.no
-          ; !Array.isArray (ions) && (ions = [ions])
+        var acts = ion.no
+          ; !Array.isArray (acts) && (acts = [acts])
           ;
         var id
           , act
@@ -284,13 +295,13 @@
           , term
           , known = no.ion.known
           , next  = -1
-          , last  = ions.length
+          , last  = acts.length
           , sense = no.ion.sense
           ;
         while (++next < last)
-          { nion  = ions [next]
+          { nion  = acts [next].ion
           ; term  = ion.on
-          ; id    = nion.re && nion.re.id
+          ; id    = nion && nion.re && nion.re.id
           ; act   = sense [term]
           ; act  && act.ion && (id && id == act.ion.re.id)
                  && delete sense [term]
