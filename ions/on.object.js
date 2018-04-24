@@ -4,7 +4,7 @@
 
 { re:
     { id: "on.object.0.1@ionify"
-    , is: "implicit object notations invented for you"
+    , is: "implicit object notation implemented for you"
 
     , by:["mike.lee@iskitz", "team@ionify"]
     , at: "2017.11.28-08...2007.09-04"
