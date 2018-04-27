@@ -1,9 +1,8 @@
 # [ionify](http://ionified.net/)
 
-**implicit object notation implemented for you**, is a flexible, unobtrusive & novel
-[JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-[API](https://en.wikipedia.org/wiki/Application_programming_interface)
-for expressing ideas via simple interaction, observation & notification of object attributes:
+**invoked object notations interpreted for you**, is a flexible, unobtrusive, natural-language
+[api](https://en.wikipedia.org/wiki/Application_programming_interface)
+for expressing ideas via **invoked object notations**:
 
 
 ```javascript
@@ -17,7 +16,7 @@ Because digital expression can and should be as natural as speech and text, and 
 ## how
 
 **ionify's** enabled by
-[**ion**: implicit object notation](https://github.com/ionify/about/blob/public/ions/ion.md),
+[**ion**: invoked object notation](https://github.com/ionify/about/blob/public/ions/ion.md),
 an incredibly versatile
 [software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
 and programming language capability

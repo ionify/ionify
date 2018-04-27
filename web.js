@@ -3,10 +3,10 @@
      -
 
 { re:
-    { id:  "web.0.1@ionify"
-    , is:  "implicit object notation implemented for your web"
-    , by: ["mike.lee@ionify", "team@ionify"]
-    , at:  "2017.07.17-07...2007.09-04"
+    { id:  'web.0.1@ionify'
+    , is:  "invoked object notations interpreted for your web"
+    , by: ['mike.lee@ionify', 'team@ionify']
+    , at:  '2018.04.27-07...2007.09-04'
         ,
       stories:
         [ /note: .../
@@ -21,8 +21,8 @@
     ,
 
   on:
-    [ ["get", "then"]
-    ,  "get"
+    [ ['get', 'then']
+    ,  'get'
     ],
 
   host
