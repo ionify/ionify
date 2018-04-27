@@ -3,10 +3,11 @@
 ~
 { re:
     { id:  'web.0.1@ionify'
-    , is:  "implicit object notations invented for your web"
+    , is:  "implicit object notation interpreted for your web"
     , by: ['mike.lee@ionify', 'team@ionify']
-    , at:  '2018.04.23-07...2007.09-04'
-    , it:
+    , at:  '2018.04.27-07...2007.09-04'
+        ,
+      stories:
         [ /note: .../
         , /todo: Implement ~get_in_then                                        /
         , /todo: Add tests for web@ionify & its actions                        /

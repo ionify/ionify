@@ -1,6 +1,6 @@
 # [ionify](http://ionified.net/)
 
-**implicit object notations invented for you**, is a flexible, unobtrusive & novel
+**implicit object notation interpreted for you**, is a flexible, unobtrusive & novel
 [JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
 [API](https://en.wikipedia.org/wiki/Application_programming_interface)
 for expressing ideas via simple interaction, observation & notification of object attributes:
