@@ -129,7 +129,7 @@ performant,
 ~ /These ions can be in a separate file fetched/
 & /either locally or remotely...               /
 |
-+ { say: "👋 🏾Hi!"                              }
++ { say: "👋🏾 Hi!"                              }
 | { ask: "What's your name?"                   }
 | { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
 | { ask: "[answer], what's 2 x 2?"             }
