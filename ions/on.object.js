@@ -3,7 +3,7 @@
 ~
 { re:
     { id: 'on.object.0.1@ionify'
-    , is: "implicit object notation interpreted for you"
+    , is: "invoked object notations interpreted for you"
 
     , by:['mike.lee@iskitz', 'team@ionify']
     , at: '2018.04.27-07...2007.09-04'

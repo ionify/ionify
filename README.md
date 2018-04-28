@@ -1,10 +1,10 @@
-# [ionify](http://ionified.net/)
+# [ionify](http://about.ionify.net/)
 
-**implicit object notation interpreted for you**, is a flexible, unobtrusive & novel
-[JavaScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-[API](https://en.wikipedia.org/wiki/Application_programming_interface)
-for expressing ideas via simple interaction, observation & notification of object attributes:
-
+**ions interpreted for you**, is a flexible, unobtrusive,
+natural-language
+[api](https://en.wikipedia.org/wiki/Application_programming_interface)
+for expressing ideas via
+[**ions: invoked object notations**](https://github.com/ionify/about/blob/public/ions/ion.md):
 
 ```javascript
 ~ {log: "hi!"}  <=  /logs hi!/;
@@ -12,17 +12,73 @@ for expressing ideas via simple interaction, observation & notification of objec
 
 ## why
 
-Because digital expression can and should be as natural as speech and text, and **ionify** makes exploring what's possible fun.
+Because digital expression can and should be as natural as speech and text, and
+**ionify's** flexible natural-language api makes exploring what's possible fun.
 
 ## how
 
 **ionify's** enabled by
-[**ion**: implicit object notation](https://github.com/ionify/about/blob/public/ions/ion.md),
-an incredibly versatile
+[**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md)
+which activates and is enabled by
+[**itc: interactive type conversion**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-conversion).
+
+**ion** is a language-independent
+[syntax](https://en.wikipedia.org/wiki/Syntax_(programming_languages))
+that enables writing
+[data](https://en.wikipedia.org/wiki/Data_(computing)) &
+[code](https://en.wikipedia.org/wiki/Source_code)
+as independently observable & notifiable
+[objects](https://en.wikipedia.org/wiki/Object_(computer_science)).
+
+**itc** is a
+[programming language](https://en.wikipedia.org/wiki/Programming_language)
+capability &
 [software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
-and programming language capability
-[discovered](https://github.com/ionify/about/blob/public/story.md) by
-[Michael Lee](https://github.com/iskitz) in 2007.
+that enables interacting with objects during their
+[type conversion](https://en.wikipedia.org/wiki/Type_conversion)
+flow.
+
+**ion** & **itc** enable interacting with **ions** in infinite ways which
+creates infinite possibilities.
+
+## vision
+
+**ionify** will be implemented in all languages that enable interacting
+with objects during type conversion;
+[java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
+[python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
+are two we've already experimented with and confirmed capable.
+
+**ionify's** api will enable
+
++ fetching in all JavaScript host environments
++ authenticating ions
++ automating ion discovery, assessment & substitution
++ and programming via natural language
+
+**ionify** will facilitate the creation of many natural-language
+[dsls](https://en.wikipedia.org/wiki/Domain-specific_language) &
+interfaces, and will make software development accessible to every being capable
+of expressing ideas via language.
+
+## who
+
+**[team ionify](https://github.com/orgs/ionify/people)**
+has developed and published
+[**ion**](https://github.com/ionify/about/blob/public/ions/ion.md),
+[**itc**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-conversion) &
+[**ionify**](https://github.com/ionify/ionify)
+since their initial
+[discovery, definition, and development](story.md)
+by [Michael Lee](https://github.com/iskitz)
+in 2007. We invent optimized, natural, interfaces for you, and aspire to
+create accessible,
+[simple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
+performant,
+[intuitive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
+& reliable
+[experiences](http://ionified.net) for all ❤️
+
 
 ## what
 
@@ -53,32 +109,35 @@ and programming language capability
 
 ```javascript
 ~
-{ on: ["ask", "say"]
+{ on
+:   ['ask', 'say']
 
 , ask
 :   function quest (ion)
-      { quest.ion.answer = prompt (quest.ion.prepare (ion.ask))
+      { quest.ion.answer = prompt (quest.ion.prepare (ion.ask)) || ''
       }
 
 , say
-:   function say (ion)
-      { alert (say.ion.prepare (ion.say))
+:   function verbalizat (ion)
+      { alert (verbalizat.ion.prepare (ion.say))
       }
 
 , prepare
-:   function prepare (thing)
-      { return thing.replace (/\[answer\]/g, prepare.ion.answer)
+:   function prepared (quote)
+      { return quote.replace (/\[answer\]/g, prepared.ion.answer)
       }
 }
 
-~ / These ions can be in a separate file/
-+ / fetched either locally or remotely. /
+~ /These ions can be in a separate file fetched/
+& /either locally or remotely...               /
 |
-+ { ask: "Hi! What's your name?"        }
-| { say: "Hi [answer]!"                 }
-| { ask: "How are you?"                 }
-| { ask: "How come?"                    }
-| { say: "..."                          }
++ { say: "👋🏾 Hi!"                              }
+| { ask: "What's your name?"                   }
+| { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
+| { ask: "[answer], what's 2 x 2?"             }
+| { say: "[answer]? Really? 🤔"                }
+| { ask: "Can I ask you another question?"     }
+| { say: 'I thought you\'d say "[answer]" 😉'  }
 ;
 ```
 
@@ -97,11 +156,11 @@ of ions and natural language.
 ```javascript
 ~
 { re:
-    { id: "frendlee@ionified.net"
+    { id: 'frendlee@ionified.net'
     , is: "a literate & natural language programming exploration"
-    , by: "mike.lee@iskitz"
-    , at: "2018.01.06-08...2017.12.08-08"
-    , in: "san-jose.california.usa.earth"
+    , by: 'mike.lee@iskitz'
+    , at: '2018.04.28-07...2017.12.08-08'
+    , in: 'san-jose.california.usa.earth'
     }
 
 , do:
@@ -134,10 +193,10 @@ our more in-depth exploration of literate programming.
 ```javascript
 ~
 { re:
-    { id: "an.ionified.module@doma.in"
+    { id: 'an.ionified.module@doma.in'
     , is: "a basic ion module example"
-    , by: "a.developer@doma.in"
-    , at: "2018.01.06-08...2007.09-04"
+    , by: 'a.developer@doma.in'
+    , at: '2018.04.28-07...2007.09-04'
     }
     ,
   do:
@@ -155,7 +214,7 @@ our more in-depth exploration of literate programming.
 
 ```javascript
 ~
-{ on: "event"
+{ on: 'event'
 , do:
     function someAction (ion)
       { ~{log: ion.event} <= /logs "it happened!"/
@@ -174,11 +233,11 @@ our more in-depth exploration of literate programming.
 [prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
 and
 [interactive type conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
-to enable observing objects without a direct reference. This enables observing JSON and other anonymous & named objects:
+to enable observing objects without a direct reference. This enables observing json and other anonymous & named objects:
 
 ```javascript
 ~
-{ on: "hi"
+{ on: 'hi'
 , hi:
     function hello (ion)
       { / This method's called for each ion with/
@@ -190,7 +249,7 @@ to enable observing objects without a direct reference. This enables observing J
 }
 
 ~ { hi : "I'm an ion!"} <= /can be in a separate/
-+ {"hi": "I'm a JSON!"} <= /file loaded remotely/
++ {"hi": "I'm a json!"} <= /file loaded remotely/
 ;
 ```
 
@@ -215,7 +274,7 @@ internal identifiers, within a single
 
 ```javascript
 ~
-{ on: "my.ion@doma.in"
+{ on: 'my.ion@doma.in'
 , do:
     function confirm (ion)
       { / This method's called for each ion    /
@@ -233,27 +292,27 @@ internal identifiers, within a single
 +/ separate file fetched locally or remotely! /
 ~
 { re:
-    { id: "my.ion@doma.in"
-    , by: "a.🇬🇾+🇯🇵+🇺🇸.developer"
-    , at: "2017.11.20-08...2009.12-08"
-    , in: "san-jose.california.usa.earth"
+    { id: 'my.ion@doma.in'
+    , by: 'a.🇬🇾+🇯🇵+🇺🇸.developer'
+    , at: '2018.04.28-07...2009.12-08'
+    , in: 'san-jose.california.usa.earth'
     , is: "an identically id'd module"
     }
 }
 ~
 { re:
-    { id: "my.ion@doma.in"
-    , by: "a.🇬🇾.developer"
-    , in: "georgetown.guyana.south-america.earth"
+    { id: 'my.ion@doma.in'
+    , by: 'a.🇬🇾.developer'
+    , in: 'georgetown.guyana.south-america.earth'
     , is: "the intended module"
     }
 }
 ~
 { re:
-    { id: "my.ion@doma.in"
-    , by: "a.🇬🇾+🇺🇸.developer"
-    , at: "2009.12-05...2007.09-04"
-    , in: "forest-hills.new-york.usa.earth"
+    { id: 'my.ion@doma.in'
+    , by: 'a.🇬🇾+🇺🇸.developer'
+    , at: '2009.12-05...2007.09-04'
+    , in: 'forest-hills.new-york.usa.earth'
     , is: "another identically id'd module"
     }
 }
@@ -263,39 +322,3 @@ internal identifiers, within a single
 _fyi: Syntax highlighting issues are due to a
 [Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
 not **ionify** or its syntax._
-
-
-## who
-
-**[team ionify](https://github.com/orgs/ionify/people)**
-has developed and distributed **ions** & **ionify** since their initial
-[discovery, definition & development](https://github.com/ionify/about/blob/public/story.md)
-by [Michael Lee](https://github.com/iskitz)
-in 2007. We invent optimized, natural, interfaces for you, and
-**aspire** to create accessible,
-[simple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
-performant,
-[intuitive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
-& reliable
-[experiences](http://ionified.net) for all.
-
-
-## vision
-
-We hope to see **ionify** implemented in more languages that enable interacting
-with objects during type conversion.
-[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
-[Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
-are two we've already experimented with and confirmed capable.
-
-Looking ahead, **ionify's** API will be developed to enable
-
-+ fetching in all JavaScript host environments
-+ authenticating ions
-+ automating ion discovery, assessment & substitution
-+ and programming via natural language.
-
-We hope these improvements increase software development's accessibility for
-every being capable of expressing ideas.
-
-❤️ [team ionify](https://github.com/orgs/ionify/people)

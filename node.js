@@ -4,7 +4,7 @@
 
 { re:
     { id: 'node@ionify'
-    , is: "implicit object notation interpreted for your node"
+    , is: "invoked object notations interpreted for your node"
     , by:['mike.lee@iskitz', 'team@ionify']
     , at: '2018.04.27-07...2009.05-04'
     }
@@ -13,8 +13,8 @@
 :   false
     
 , on:
-    [ ["get", "then"]
-    ,  "get"
+    [ ['get', 'then']
+    ,  'get'
     ]
 
 , host
