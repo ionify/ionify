@@ -129,7 +129,7 @@ performant,
 }
 
 ~ /These ions can be in a separate file fetched/
-& /either locally or remotely...               /
+| /either locally or remotely...               /
 |
 + { say: "👋🏾 Hi!"                              }
 | { ask: "What's your name?"                   }
