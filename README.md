@@ -12,8 +12,27 @@ for expressing ideas via
 
 ## why
 
-Because digital expression can and should be as natural as speech and text, and
-**ionify's** flexible natural-language api makes exploring what's possible fun.
+Because digital expression can and should be as natural as speech & text, and
+**ionify** makes exploring what's possible fun.
+
+**ionify** will be implemented in all languages that enable interacting
+with objects during type conversion;
+[java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
+[python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
+are two we've already experimented with and confirmed capable.
+
+**ionify's** api will enable
+
++ defining languages
++ programming via natural language
++ authenticating ions
++ automating ion discovery, assessment & substitution
++ and fetching in all host environments
+
+**ionify** will facilitate the creation of many
+[domain-specific-languages](https://en.wikipedia.org/wiki/Domain-specific_language) &
+interfaces, and will make software development accessible to every being capable
+of expressing ideas via language.
 
 ## how
 
@@ -29,7 +48,6 @@ that enables writing
 [code](https://en.wikipedia.org/wiki/Source_code)
 as independently observable & notifiable
 [objects](https://en.wikipedia.org/wiki/Object_(computer_science)).
-
 **itc** is a
 [programming language](https://en.wikipedia.org/wiki/Programming_language)
 capability &
@@ -38,28 +56,8 @@ that enables interacting with objects during their
 [type conversion](https://en.wikipedia.org/wiki/Type_conversion)
 flow.
 
-**ion** & **itc** enable interacting with **ions** in infinite ways which
-creates infinite possibilities.
-
-## vision
-
-**ionify** will be implemented in all languages that enable interacting
-with objects during type conversion;
-[java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
-[python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
-are two we've already experimented with and confirmed capable.
-
-**ionify's** api will enable
-
-+ fetching in all JavaScript host environments
-+ authenticating ions
-+ automating ion discovery, assessment & substitution
-+ and programming via natural language
-
-**ionify** will facilitate the creation of many natural-language
-[dsls](https://en.wikipedia.org/wiki/Domain-specific_language) &
-interfaces, and will make software development accessible to every being capable
-of expressing ideas via language.
+**ion** & **itc** together enable infinite definitions, interpretations,
+observations & modifications of language.
 
 ## who
 

@@ -5,12 +5,16 @@
     { id:  'web.0.1@ionify'
     , is:  "invoked object notations interpreted for your web"
     , by: ['mike.lee@ionify', 'team@ionify']
-    , at:  '2018.04.27-07...2007.09-04'
-        ,
-      stories:
+    , at:  '2018.04.29-07...2007.09-04'
+    , my:
         [ /note: .../
-        , /todo: Implement ~get_in_then                                        /
-        , /todo: Add tests for web@ionify & its actions                        /
+        , /todo: ~get_then: then = itc & script.onload; 1st called cancels 2nd /
+        , /todo: ~get_then: delete script.onload after calling for memory perf /
+        , "idea: ~/0 . 0/ = ionify - onload & this.test ('0 . 0') confirms"
+        , /todo: ~   debug: enable {member:true|false} = ion member to debug   /
+        , /todo: ~     ion: return ~re = re.toString if re-api-docs is enabled /
+        , /todo: Add tests for web@ionify & its actions/
+        , /todo: .../
         ]
     , im: `implementing ~get_in_then
           `
