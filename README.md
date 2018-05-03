@@ -32,7 +32,7 @@ interfaces that best suit an individual or group's needs.
 **ionify's** enabled by
 [**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md)
 which activates and is enabled by
-[**itc: interactive type conversion**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-conversion).
+[**itc: interactive type computation**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-computation).
 
 **ion** is a language-independent
 [syntax](https://en.wikipedia.org/wiki/Syntax_(programming_languages))
@@ -43,11 +43,12 @@ as independently observable & notifiable
 [objects](https://en.wikipedia.org/wiki/Object_(computer_science)).
 **itc** is a
 [software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
-supported by
+that applies various
 [programming language](https://en.wikipedia.org/wiki/Programming_language)
-capabilities that enable interacting with objects during their
-[type conversion](https://en.wikipedia.org/wiki/Type_conversion)
-flow.
+capabilities to enable interacting with objects during their type's
+[conversion](https://en.wikipedia.org/wiki/Type_conversion) &
+[operator overloading](https://en.wikipedia.org/wiki/Operator_overloading)
+computations.
 
 **ion** & **itc** together enable infinite definitions, interpretations,
 observations & modifications of language. **ionify** will be implemented in all
