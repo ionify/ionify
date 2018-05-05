@@ -15,31 +15,24 @@ for expressing ideas via
 Because digital expression can and should be as natural as speech & text, and
 **ionify** makes exploring what's possible fun.
 
-**ionify** will be implemented in all languages that enable interacting
-with objects during type conversion;
-[java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
-[python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
-are two we've already experimented with and confirmed capable.
+**ionify** facilitates digitally expressing ideas by enabling the creation of
+[domain-specific-languages](https://en.wikipedia.org/wiki/Domain-specific_language) &
+interfaces that best suit an individual or group's needs.
 
-**ionify's** api will enable
+**ionify** enables [or will enable]
 
 + defining languages
 + programming via natural language
 + authenticating ions
-+ automating ion discovery, assessment & substitution
-+ and fetching in all host environments
-
-**ionify** will facilitate the creation of many
-[domain-specific-languages](https://en.wikipedia.org/wiki/Domain-specific_language) &
-interfaces, and will make software development accessible to every being capable
-of expressing ideas via language.
++ fetching them & more in all host environments
++ and automating their discovery, assessment & substitution
 
 ## how
 
 **ionify's** enabled by
 [**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md)
 which activates and is enabled by
-[**itc: interactive type conversion**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-conversion).
+[**itc: interactive type computation**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-computation).
 
 **ion** is a language-independent
 [syntax](https://en.wikipedia.org/wiki/Syntax_(programming_languages))
@@ -49,15 +42,21 @@ that enables writing
 as independently observable & notifiable
 [objects](https://en.wikipedia.org/wiki/Object_(computer_science)).
 **itc** is a
-[programming language](https://en.wikipedia.org/wiki/Programming_language)
-capability &
 [software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
-that enables interacting with objects during their
-[type conversion](https://en.wikipedia.org/wiki/Type_conversion)
-flow.
+that applies various
+[programming language](https://en.wikipedia.org/wiki/Programming_language)
+capabilities to enable interacting with objects during their type's
+[conversion](https://en.wikipedia.org/wiki/Type_conversion) &
+[operator overloading](https://en.wikipedia.org/wiki/Operator_overloading)
+computations.
 
 **ion** & **itc** together enable infinite definitions, interpretations,
-observations & modifications of language.
+observations & modifications of language. **ionify** will be implemented in all
+programming languages that're **ion** & **itc**-capable to facilitate this.
+[JavaScript](https://github.com/ionify/ionify/),
+[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
+[Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
+are three we've already experimented with & confirmed capable.
 
 ## who
 
