@@ -17,7 +17,7 @@ in 2007:
 
 ## how
 
-**ion** & **ionify** are enabled by, and can be implemented in languages that support,
+**ion** & **ionify** are enabled by, and can be implemented in, languages that support
 [operator & operation overloading](https://en.wikipedia.org/wiki/Operator_overloading).
 [JavaScript](https://github.com/ionify/ionify/),
 [Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
