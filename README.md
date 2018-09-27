@@ -5,7 +5,7 @@
 for expressing ideas via
 [**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md).
 It was
-[discovered, defined & developed](story.md),
+[discovered, defined & developed](https://github.com/ionify/about/blob/public/story.md),
 alongside **ion**, by
 [Michael Lee](https://github.com/iskitz)
 in 2007:
