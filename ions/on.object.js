@@ -2,11 +2,12 @@
 
 ~
 { re:
-    { id: 'on.object.0.1@ionify'
-    , is: "invoked object notations interpreted for you"
-
-    , by:['mike.lee@iskitz', 'team@ionify']
-    , at: '2018.04.27-07...2007.09-04'
+    { id: 'on.object@ionify'
+    , is: "invoked object notation implemented for you"
+    , by: ['mike.lee@iskitz', 'team@ionify']
+    , on: -4.200709
+    , to: -8.201811172330
+    , at: -0.1
 
     , it:
         [ /note: ...                                                            /
@@ -38,14 +39,12 @@
          + " delegate to the relevant ion's Type sensor."
     }
 
-    ,
-  valueOfStories:
-    [ 'idea: Sense this.* and +* then set to ion reference'
+, valueOfStories
+:   [ 'idea: Sense this.* and +* then set to ion reference'
     , /note: .../
     ]
-    ,
-  valueOf:
-    function ionify ()
+, valueOf
+:   function ionify ()
       { var ion       = this
         ion.sense.on  = ion.on
         ion.link ()
@@ -82,45 +81,44 @@
               , sortKnownWords : ion.sortKnownWords
           }}  )
 
-        ion.onSensor ({on:Object, Object:ion.onObject})
+        var ionified  = Object.prototype.valueOf.ionified
+          ;   delete    Object.prototype.valueOf.ionified
+          ; ionified && delete  ionified.valueOf
+          ; ion.onSensor ({on:Object, Object:ion.onObject})
+          ~ ionified <=  /todo: via ionifi3d()/
 
-      ~ {     on:'ionify'
-        , ionify: function
-          ionified (ion)
-            { ~ {on:'ionify', no:ionified}
-            ;   var    host = ion.ionify
-            ;   delete host . hop.valueOf
-            ;   delete host . valueOf
-            ;        ~ host
-            }
-        }
-
-          ~   ~
-       +['0 . 0']+
-            -
-
+        ~
         { get:
             [   'errors@ionify',   'on.storie@ionify'
             ,  'next.id@ionify',     'web.log@ionify'
             , 'on.error@ionify', 'on.function@ionify'
             , 'on.array@ionify',          'do@ionify'
-            ,      'use@ionify',               'ions'
+            ,      'use@ionify',           'i@ionify'
+            ,          'ions'
             ]
-//      , in: 'order'
+      //, in: 'order'
         , now: true
         }
 
         return true
       }
 
-    ,
-  linkStories:
-    [ /todo: ion.this => ion.ionId + ion.ion/
+, ionifi3d
+:   function ionified ()
+      { / sense if ionified via any known sensor's .prototype.valueOf.ionified /
+      | / isolate & confirm at least 1 provides ~get         /
+      | / save & remove sensor's .prototype.valueOf.ionified /
+      | / remove   ionified's .valueOf /
+      | / activate sensor(s)           /
+      | / activate ionified            /
+      }
+      
+, linkStories
+:   [ /todo: ion.this  --> ion.ionId + ion.ion/
     , /todo: enable +{link:ion, to:thing}/
     ]
-    ,
-  link:
-    function link (ion)
+, link
+:   function link (ion)
       { ion || (ion = link.ion) || (link == this.link) && (ion = this)
 
         var property
@@ -129,6 +127,8 @@
           , space = (link.ion || this).getSpace (id)
           ; id    = id.replace (/(.+)(@|\.\d\.).*/, "$1")
 
+      //**/Object.setPrototypeOf (space, ion.__proto__)//prototype)
+      //**/Object.setPrototypeOf (  ion, space)
         !ion.ion && (ion.ion = ion)
 
         for (property in ion)
@@ -136,8 +136,9 @@
           ; if (!thing)                                               continue
           ; if (typeof thing != "function" && !Array.isArray (thing)) continue
           ; if (!ion.hasOwnProperty (property))                       continue
-          ; /* thing [id] = */ thing.ion = ion
-          ; thing.get = space
+          ! thing.ion && (/* thing [id] = */ thing.ion = ion)
+          ! thing.get && (thing.get = /*|| ion ||*/ space)
+        //; ('function' == typeof thing) && Object.setPrototypeOf (thing, ion)
 
         //;(id != "ion") &&   alert("linked "+id+"."+property);
         //;(id != "ion") && +{debug:"linked "+id+'.'+property}
@@ -250,7 +251,7 @@
 
   id:
     function setId (ion)
-      { var id = ion.re ?  ion.re.id
+      { var id = ion.hasOwnProperty ('re') ?  ion.re.id
                         : (ion.re = {id: void 0}).id
 
         if (id || isFinite (id))
@@ -336,6 +337,7 @@
         !Array.isArray (groups) && (groups = [groups])
 
         var ionify  = on.ion
+          , has     = ionify.hasKnownWord
           , known   = ionify.known
           , sense   = ionify.sense
           , id      = ion.re.id
@@ -366,7 +368,7 @@
 
             test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
             test  = new Function ("ion", test)
-            group = {act:group, set:words, in:test}
+            group = {act:group, set:words, in:test||has}
 
             for (var w=0, lastw=words.length; w < lastw; w++)
               { word  =  words [w]
@@ -379,6 +381,14 @@
         ionify.sortKnownWords (updated)
       ~ {debug: [id, groups]}
         return ion
+      }
+
+, hasKnownWord
+:   function hasKnownWord (ion)
+      { var ws = this.act
+          , w  = ws.length
+      ; while (w --> 0 && ws [w] in ion)
+      ; return w <=- 1
       }
 
 , sortKnownWords
@@ -430,10 +440,11 @@
           , grammar   , terms , term
           , next      , last  , result
           , results   = 0
+          ;
 
-//     !ion.debug     &&
-        ionify.id   (ion)
-       !ion.next && ionify.link (ion)
+//     !ion.debug &&
+        ionify.id (ion);
+       !ion.next && onion.get.link (ion)
 
         debug.push ("onION:", ion.re.id)
 
@@ -485,7 +496,7 @@
           , name      = onSensor$.name
           , undo      = onSensor$.undo
           , Type      = ion.on
-          , type      = Type.name    || String(Type).match(name)[1]
+          , type      = Type.name ||  String (Type).match (name)[1]
           ; undo [type]            =  Type.prototype.valueOf
           ; Type.prototype.valueOf =  ion [type]
           ; known [type]           =  true

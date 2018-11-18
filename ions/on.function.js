@@ -22,7 +22,7 @@
       Function:
         function onFunction (ion)
           {  ion || (ion = this)
-             var result = ion()
+             var result = ion() //ion.call (ion.ion)
           ~  {debug: ['+', ion.name || "anonymous", '() : ', result]}
              return result
           }

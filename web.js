@@ -1,11 +1,13 @@
 ;
-
 ~
 { re:
-    { id:  'web.0.1@ionify'
-    , is:  "invoked object notations interpreted for your web"
+    { id:  'web@ionify'
+    , is:  "invoked object notation implemented for your web"
     , by: ['mike.lee@ionify', 'team@ionify']
-    , at:  '2018.04.29-07...2007.09-04'
+    , on:  -4.200709
+    , to:  -8.20181118
+    , at:  -0.16
+
     , my:
         [ /note: .../
         , /todo: ~get_then: then = itc & script.onload; 1st called cancels 2nd /
@@ -31,26 +33,19 @@
     ]
 
 , valueOf
+:   function go ()
+      { this.ionify ()
+      }
+
+, ionify
 :   function ionifyWeb ()
-      { var web             = this
-      ;     web.ionify.ion  = web
-      ;     web.hop         = Array.prototype
-      ;     web.hop.valueOf = web.ionify
-      ;
-//    ; web.watch  ()
+      { Object.prototype.valueOf.ionified = this
+      ; var web = this
+    //; web.watch  ()
       ; web.ready  ()
       ; web.locate ()
       ; web.get    ({get:'on.object@ionify'})
       }
-
-
-, ionify
-:   function ionify ()
-      {   if (this [0] != '0 . 0' || this.length != 1) return
-      ;   var      web = ionify.ion
-      ; ~ {ionify: web}
-      }
-
 
 , watch
 :   function watch ()
@@ -267,5 +262,4 @@
         document.head.appendChild (script)
       }
 }
-
 ;
