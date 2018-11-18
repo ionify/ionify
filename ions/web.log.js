@@ -1,13 +1,14 @@
 ;
 ~
 { re:
-    { id: "log.0.1@ionify"
+    { id: 'log@ionify'
     , is: "web-based logging for ionify"
-    , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.10-08...2007.09-04"
-        ,
-      stories:
-        [ /todo: Create log@ + move console + all +logging there/
+    , by:['mike.lee@iskitz', 'team@ionify']
+    , on: -4.200709
+    , to: -8.20171110
+    , at: -0.1
+    , stories
+    :   [ /todo: Create log@ + move console + all +logging there/
         , /todo: Update to only use alert() on iOS/
         , /todo: ready(): only throw noConsole if no alert() /
         ]

@@ -2,12 +2,15 @@
 
 ~
 { re:
-    { id: 'do.0.1@ionify'
+    { id: 'do@ionify'
     , is: "ionify's do action: activates ions, functions + methods"
-    , by:
-        [ {creator: 'mike.lee@iskitz',  at: '2007.09-04',     in: 'forest-hills.new-york.usa.earth'}
-        , {authors:     'team@ionify',  at: '2018.04.23-07',  in:   'san-jose.california.usa.earth'}
-        ]
+    , by:['mike.lee@iskitz','team@ionify']
+    , in:['forest-hills.new-york.usa.earth'
+         ,  'san-jose.california.usa.earth'
+         ]
+    , on: -4.200709
+    , to: -7.20180423
+    , at: -0.1
     }
 
     ,

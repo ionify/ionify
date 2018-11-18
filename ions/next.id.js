@@ -1,10 +1,12 @@
 ;
 ~
 { re:
-    { id: "next.id.0.1@ionify"
+    { id: "next.id@ionify"
     , is: "An ion that generates sequential ids on-demand"
     , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.15-07...2016.09.10-07"
+    , on: -7.20160910
+    , to: -7.20170715
+    , at: +0.1
     }
 
 , debug : false

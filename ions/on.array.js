@@ -2,11 +2,12 @@
 
 ~
 { re:
-    { id: 'on.array.0.1@ionify'
+    { id: 'on.array@ionify'
     , is: 'bias: basic ionified array sensor'
-
     , by:['mike.lee@iskitz', 'team@ionify']
-    , at: '2018.04.23-07...2007.09-04'
+    , on: -4.200709
+    , to: -7.20180423
+    , at: -0.1
 
     , it: "Senses all array-expressed ions like:"
         + " ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
