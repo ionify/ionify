@@ -1,85 +1,32 @@
 # [ionify](http://about.ionify.net/)
 
-**ions interpreted for you**, is a flexible, unobtrusive,
-natural-language
+**ion implemented for you**, is a flexible, unobtrusive & novel
 [api](https://en.wikipedia.org/wiki/Application_programming_interface)
 for expressing ideas via
-[**ions: invoked object notations**](https://github.com/ionify/about/blob/public/ions/ion.md):
+[**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md).
+It was
+[created](https://github.com/ionify/about/blob/public/story.md)
+by
+[Michael Lee](https://github.com/iskitz) in 2007:
 
 ```javascript
 ~ {log: "hi!"}  <=  /logs hi!/;
 ```
 
-## why
-
-Because digital expression can and should be as natural as speech & text, and
-**ionify** makes exploring what's possible fun.
-
-**ionify** facilitates digitally expressing ideas by enabling the creation of
-[domain-specific-languages](https://en.wikipedia.org/wiki/Domain-specific_language) &
-interfaces that best suit an individual or group's needs.
-
-**ionify** enables [or will enable]
-
-+ defining languages
-+ programming via natural language
-+ authenticating ions
-+ fetching them & more in all host environments
-+ and automating their discovery, assessment & substitution
 
 ## how
 
-**ionify's** enabled by
-[**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md)
-which activates and is enabled by
-[**itc: interactive type computation**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-computation).
-
-**ion** is a language-independent
-[syntax](https://en.wikipedia.org/wiki/Syntax_(programming_languages))
-that enables writing
-[data](https://en.wikipedia.org/wiki/Data_(computing)) &
-[code](https://en.wikipedia.org/wiki/Source_code)
-as independently observable & notifiable
-[objects](https://en.wikipedia.org/wiki/Object_(computer_science)).
-**itc** is a
-[software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
-that applies various
-[programming language](https://en.wikipedia.org/wiki/Programming_language)
-capabilities to enable interacting with objects during their type's
-[conversion](https://en.wikipedia.org/wiki/Type_conversion) &
-[operator overloading](https://en.wikipedia.org/wiki/Operator_overloading)
-computations.
-
-**ion** & **itc** together enable infinite definitions, interpretations,
-observations & modifications of language. **ionify** will be implemented in all
-programming languages that're **ion** & **itc**-capable to facilitate this.
+**ion** & **ionify** are enabled by, and can be implemented in, languages that support
+[operator & operation overloading](https://en.wikipedia.org/wiki/Operator_overloading).
 [JavaScript](https://github.com/ionify/ionify/),
 [Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
 [Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
-are three we've already experimented with & confirmed capable.
-
-## who
-
-**[team ionify](https://github.com/orgs/ionify/people)**
-has developed and published
-[**ion**](https://github.com/ionify/about/blob/public/ions/ion.md),
-[**itc**](https://github.com/ionify/about/blob/public/ions/ion.md#interactive-type-conversion) &
-[**ionify**](https://github.com/ionify/ionify)
-since their initial
-[discovery, definition, and development](story.md)
-by [Michael Lee](https://github.com/iskitz)
-in 2007. We invent optimized, natural, interfaces for you, and aspire to
-create accessible,
-[simple](https://rawgit.com/ionified/anemojii-ions.iskitz.net/public/),
-performant,
-[intuitive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
-& reliable
-[experiences](http://ionified.net) for all ❤️
+are three we've explored & confirmed capable.
 
 
-## what
+## why
 
-**ion** and **ionify** enable exploring and experimenting with
+**ion** & **ionify** enable exploring and experimenting with
 
 + [domain-specific languages](#domain-specific-languages)
 
@@ -95,14 +42,14 @@ performant,
   [decoupled](#decoupled-observation)
   data and code
 
-+ & [more](https://github.com/ionify/ideas/)
++ and [more](https://github.com/ionify/ideas/)
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
-**ionify** enables creating language(s) via **ions** that define and map terms to behaviors:
+*"...creating a domain-specific language...can be worthwhile if the language allows a particular type of problem or solution to be expressed more clearly than an existing language would allow..." - Wikipedia*
 
-*"...a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality." - Wikipedia*
+**ionify** enables creating language(s) via **ions** that define and map terms to behaviors:
 
 ```javascript
 ~
@@ -213,13 +160,13 @@ our more in-depth exploration of literate programming.
 ~
 { on: 'event'
 , do:
-    function someAction (ion)
+    function someAct (ion)
       { ~{log: ion.event} <= /logs "it happened!"/
       }
 }
 
-/ This event ion can be in a separate file. It.../
-| {event: "it happened!"} <= /activates an event./
+/ This event  ion can exist within another file /
+| {event: "it happened!"} <= /activates an event/
 ;
 ```
 
@@ -280,8 +227,7 @@ internal identifiers, within a single
 
         if (ion.re.by != "a.🇬🇾.developer") return
 
-      ~ / before using it /
-      + { log: ion.re.is  }
+      ~ {log:ion.re.is} <= /before using it/
       }
 }
 
