@@ -99,7 +99,7 @@
     ,   ID: (/(?:(.*)@(\D*)|(\D*))(\d+.*)*/)    // matches ((api)@(host.) | (api.)) version#
     , NAME: (/(.*)\.$/)                         // matches (api).         | (host).
     , PATH:
-          { ionify    : "https://rawgit.com/ionify/ionify/public/"
+          { ionify    : "http://ionify.glitch.me/"
           , undefined : "./"
           , null      : "./"
           , ""        : "./"
