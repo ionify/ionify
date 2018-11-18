@@ -5,9 +5,10 @@
 for expressing ideas via
 [**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md).
 It was
-[created](https://github.com/ionify/about/blob/public/story.md)
-by
-[Michael Lee](https://github.com/iskitz) in 2007:
+[defined & developed](https://github.com/ionify/about/blob/public/story.md),
+alongside **ion**, by
+[Michael Lee](https://github.com/iskitz)
+in 2007:
 
 ```javascript
 ~ {log: "hi!"}  <=  /logs hi!/;
@@ -176,7 +177,7 @@ our more in-depth exploration of literate programming.
 **ionify** uses JavaScript's
 [prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
 and
-[interactive type conversion](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
+[operation overloading](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
 to enable observing objects without a direct reference. This enables observing json and other anonymous & named objects:
 
 ```javascript
