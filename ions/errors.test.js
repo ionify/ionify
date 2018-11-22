@@ -1,15 +1,14 @@
 ;
-/errors.test@ionify activating/
-
-+
+~
 { re:
-    { id: "errors.test.0.1.2017.04.15@ionify"
+    { id: 'errors.test@ionify'
     , is: "A suite of tests for ionify's +errors action"
-    , by: "mike.lee@ionify"
-    , at: "2017.04.14-07"
+    , by: 'mike.lee@ionify'
+    , at: -7.20170414
+    , to: -7.20170415
+    , at: -0.1
     }
 }
-
 +
 function testErrors ()
   { var errors=
@@ -24,7 +23,4 @@ function testErrors ()
     ,  errors.error2
     ]
   }
-
-+
-/errors.test@ionify activated!/
 ;

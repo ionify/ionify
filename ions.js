@@ -4,10 +4,11 @@
 { re:
     { id: 'ions.0.1@ionify'
     , is: "ionify's ion settings"
-    , by: 'mike.lee@iskitz'
-    , at: '2018.04.23-07...2007.09-04'
-        ,
-      in:
+    , by: 'mike.lee@ionify'
+    , on: -4.200709
+    , to: -8.20181122
+    , at: -0.1
+    , in:
         [   'san-jose.california.usa.earth'
         , 'forest-hills.new-york.usa.earth'
         ]
@@ -42,8 +43,8 @@
     , tools: './tools/'
     }
 
-,  debug: false
-, verify: true
+,  debug: !true
+, verify:  true
 }
 
 ;

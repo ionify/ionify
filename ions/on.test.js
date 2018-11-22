@@ -3,8 +3,10 @@
 { re:
     { id: "on.test.0.1@ionify"
     , is: "A suite of tests for ionify's +on actions"
-    , by: "mike.lee@ionify"
-    , at: "2017.11.12-08...2007.09-04"
+    , by: 'mike.lee@ionify'
+    , on: -4.200709
+    , to: -8.20181122
+    , at: -0.1
     }
 }
 
@@ -62,7 +64,7 @@
     , ["wakatta.view@ions.iskitz.net", "show"]
     , ["wakatta.game@ions.iskitz.net", "start", "stop", "guess", "next"]
     ]
-, do:
+, dont:
     [ ""
     ]
 }
