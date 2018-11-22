@@ -1,8 +1,7 @@
 ;
-
 ~
 { re:
-    { id: 'ions.0.1@ionify'
+    { id: 'ions@ionify'
     , is: "ionify's ion settings"
     , by: 'mike.lee@ionify'
     , on: -4.200709

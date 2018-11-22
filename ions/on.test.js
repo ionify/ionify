@@ -1,7 +1,7 @@
 ;
 ~
 { re:
-    { id: "on.test.0.1@ionify"
+    { id: 'on.test@ionify'
     , is: "A suite of tests for ionify's +on actions"
     , by: 'mike.lee@ionify'
     , on: -4.200709
