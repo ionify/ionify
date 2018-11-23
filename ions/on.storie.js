@@ -1,25 +1,31 @@
 ;
 ~
 { re:
-    { id: "on.storie.0.1@ionify"
-    , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.15-07...2016.11.16-08"
-        ,
-      is: "An ion that handles activated stories: "
-        + "string template or regular ion expressions; "
-        + "i.e. +/.../"
-        ,
-      stories:
-        [ /todo: Enable inline + referrable notes + todos via ion.methodStories:[storie(s)]/
-        , /todo: Disable eon during storie evaluations to enable stories with sample code!/
-        , /todo: .../
+    { id:  'on.storie@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -8.20161116
+    , to:  -8.20181123
+    , is:  -0.1
+    , it:
+        [/ senses activated stories: string template or regular ion expressions like /
+        ,"              ~/.../                                                       "
+        ,/ currently logs storie content.                                            /
         ]
+    , we:
+        [/ will enable inline & referrable notes & todos via ion.methodInfo:[/.../]! /
+        ,/ want to disable ion during storie evaluations to enable code stories!     /
+        ,/ will ... /
+        ," wish we could ~{on:/.../, as:'storie@ionify', $1:Function, $2:Function}   "
+        ," wish we could ~{on:/.../, as: 'aesop@ionify', $1:Function, $2:Function}   "
+      ]
     }
-    ,
-  on: RegExp,
-      RegExp:
-        function onStorie (ion)
-          {  return this;//true
+
+, on: RegExp
+,     RegExp
+:       function onStorie (ion)
+          {~ {log:this.source}
+          ;  return this //true
           }
 }
 ;
