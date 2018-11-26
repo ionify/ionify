@@ -1,45 +1,48 @@
 ;
 ~
 { re:
-    { id: "get.test.0.1@ionify"
-    , is: "A suite of tests for ionify's +get actions"
-    , by: "mike.lee@ionify"
-    , at: "2018.04.02-07...2007.09-04"
+    { id:  'get.test@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20181126
+    , is:  -0.1
+    , it:  "Tests ionify's ~get api"
     }
 }
 
-+
+~
 {debug:true}
-+
-{get:""} <- /test getting the .js file/
-+
-{get:"@ionify"}
+~
+{get:''} <- /test getting the .js file/
+~
+{get:'@ionify'}
 +
 {debug:false}
 
 ~
-{ get: "http://ionify.net/ions/test/log.js"
-, now: true
+{ get : "http://ionify.net/ions/test/log.js"
+, in  : 'order'
 , then:
     function hi ()
-      { +{log: "did " + hi.ion.get}
+      {~{log: "did " + hi.ion.get}
       }
 }
 
 
-/* immediately disables ionify
-   even before previous get.then's activate
+/* emoji test disables ionify before
+   this test's get.then activates
 
-+
+~
 { re:
     ["playing with syntax for getting non-ion scripts in order"],
 
   do:
     [ {  get: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
-      ,  now:  true
+      ,   in: 'order'
       },
       {  get: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
-      ,  now:  true
+      ,   in: 'order'
       , then: "doIt"
       }
     ],
@@ -50,21 +53,17 @@
 }
 */
 
-+
-{ re:
-    ["playing with syntax for getting multiple non-ion scripts in order"],
-
-  get:
-    [ "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
+~
+{ re: "playing with syntax for getting multiple non-ion scripts in order"
+, get
+:   [ "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
     , "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
-    ],
-  now: true,
-  then:
-    [ ,
-      function onLoadExample ()
-        {  ~com.iskitz.ajile.examples.LoadExample
-        }
     ]
+, in: 'order'
+, then
+:   function onLoadExample ()
+      {  ~com.iskitz.ajile.examples.LoadExample
+      }
 }
 
 /* immediately disables ionify
