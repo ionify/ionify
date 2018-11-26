@@ -2,33 +2,35 @@
 
 ~
 { re:
-    { id: 'on.array@ionify'
-    , is: 'bias: basic ionified array sensor'
-    , by:['mike.lee@iskitz', 'team@ionify']
-    , on: -4.200709
-    , to: -7.20180423
-    , at: -0.1
+    { id:  'on.array@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20181124
+    , is:  -0.1
+    , it:
+        [/ Senses all array-expressed ions like:                   /
+        +"   ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0] "
+        ]
+    , we:
+        [" were refactoring onArray & onAESOP into their own ion(s) now that we've   "
+        +" created domain spaces. They'll be part of the @ionify domain space which  "
+        +" shares the sense & ionified types maps.                                   "
 
-    , it: "Senses all array-expressed ions like:"
-        + " ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
-
-    , im: "Refactoring onArray & onAESOP into their own ion(s) now that I've"
-        + " created domain spaces. They'll be part of the @ionify domain space"
-        + " which shares the sense & ionified types maps."
-
-        + "Shared emojii actions will be resolved: 1:on.array --> 2:@ionify"
+        ,/ want shared emojii actions to resolve via: 1:on.array --> 2:@ionify-space /
+        ]
     }
-    ,
-  share:
-    { '0 . 0': 'activate'
+
+, share
+:   { '0 . 0': 'activate'
     , '0 . -': 'disable'
     , '- . 0': 'disable'
     , '- . -': 'deactivate'
     }
-    ,
-  on: Array,
-      Array:
-        function onArray (ion)
+
+, on: Array
+,     Array
+:       function onArray (ion)
           { ion || (ion = this)
 
           ~ {debug: ["~[",ion,"]"]}
@@ -40,7 +42,7 @@
               , thing
               , type
 
-            get.id   (ion)
+          //get.id   (ion)
             get.link (ion)
 
             while (++next < last)
@@ -53,23 +55,23 @@
 
             return next / ion.length
           }
-          ,
-  onAESOPStories:
-    [ /note: aesop: array-embedded statement|sentence|storie or phrase|pattern/
+
+
+, onAESOPInfo
+:   [ /note: aesop: array-embedded statement|sentence|storie or phrase|pattern/
     , /todo: find known words in each sentence/
     , /todo: interpret via sentence(s), paragraph(s), chapter(s) + book(s)/
     , /todo: handle ['0 . 0'] via sense [thing] && sense [thing] (thing)/
     , /todo: use tbd name-to-ion resolver/
     ]
-    ,
-  onAESOP:
-    function onAESOP (ion)
+, onAESOP
+:   function onAESOP (ion)
       { ion || (onAESOP == this.onAESOP) && (ion = this)
 
         var phrase = ion [ion.aesop]
         phrase && ~{debug: ["+[",phrase,"]"]}
 
-        var sense     = ion.ion [phrase]
+        var sense     = ion.ion && ion.ion [phrase]
           , shared    = onAESOP.get
           , aesop     = onAESOP.ion
           , ionified  = shared.ionified
