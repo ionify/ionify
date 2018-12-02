@@ -203,7 +203,7 @@
 
         if (!ion || !('on' in ion)) return ion
         on.ion || (on == this.on) && (on.ion = this)
-    //; on.get &&  on.get/*ion*/.id (ion)
+    //; on.our &&  on.our/*ion*/.id (ion)
       ; debug.push ([ion.re && ion.re.id, 'on:', ion.on, JSON.stringify (ion.on)])
       ; if ("function" == typeof ion.on) return on.ion.onSensor (ion)
 
@@ -311,12 +311,12 @@
         //, ionified    = ionify.ionified
           , sense       = ionify.sense
           , debug       = []
-          , get         = onion.get
+          , our         = onion.our
           ; ion || (ion = this)
 
-      //; get && get/*ionify*/.id  (ion)
-        !(ion.next && ion.id) && !(  'id' in ion) && (ion.id   = id   = true) ///*get && get*/ionify.link (ion)
-        !(ion.next && ion.id) && !('link' in ion) && (ion.link = link = true) ///*get && get*/ionify.link (ion)
+      //; our && our/*ionify*/.id  (ion)
+        !(ion.next && ion.id) && !(  'id' in ion) && (ion.id   = id   = true) ///*our && our*/ionify.link (ion)
+        !(ion.next && ion.id) && !('link' in ion) && (ion.link = link = true) ///*our && our*/ionify.link (ion)
         ; debug.push ("onION:", ion.re ? ion.re.id : 'anonymous')
 
         var from = onion.caller;

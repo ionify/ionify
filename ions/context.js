@@ -81,7 +81,7 @@
           ; if (!ion.hasOwnProperty (property))                       continue
           ! thing.this &&           (thing.this = ion)
           ! thing.ion  &&        (/* thing [id] = */  thing.ion = ion)
-          ! thing.get  && space  && (thing.get  = /*|| ion ||*/ space)
+          ! thing.our  && space  && (thing.our  = /*|| ion ||*/ space)
         //; ('function' == typeof thing) && Object.setPrototypeOf (thing, ion)
         //; (id != 'ion') &&   alert ("linked "+ id +"."+ property)
         //; (id != 'ion') && ~{debug: "linked "+ id +'.'+ property}

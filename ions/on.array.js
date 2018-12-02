@@ -6,7 +6,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181124
+    , to:  -8.20181201
     , is:  -0.1
     , it:
         [/ Senses all array-expressed ions like:                   /
@@ -36,14 +36,14 @@
           ~ {debug: ["~[",ion,"]"]}
 
             var aesop = onArray.ion.onAESOP
-              , get   = onArray.get
+              , our   = onArray.our
               , next  = -1
               , last  = ion.length
               , thing
               , type
 
-          //get.id   (ion)
-            get.link (ion)
+          //our.id   (ion)
+            our.link (ion)
 
             while (++next < last)
               { thing = ion [next]
@@ -72,7 +72,7 @@
         phrase && ~{debug: ["+[",phrase,"]"]}
 
         var sense     = ion.ion && ion.ion [phrase]
-          , shared    = onAESOP.get
+          , shared    = onAESOP.our
           , aesop     = onAESOP.ion
           , ionified  = shared.ionified
 
