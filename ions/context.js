@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181125
+    , to:  -8.20181203
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -61,7 +61,6 @@
 , link
 :   function link (ion)
       { ion || (ion = link.ion || (link.ion = (link == this.link) && this))
-      ; if  (!  ion . link) return
 
         var property
           , thing
