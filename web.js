@@ -5,17 +5,16 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181126
+    , to:  -8.20181204
     , is:  -0.1
-    , it:/ provides ionify: invoked object notation implemented for your web.      /
+    , it:/ provides ionify: invoked object notation implemented for your web.        /
     , we:
-        [/ will add tests for web@ionify & its actions	                           /
-        ," will apply current ion's domain to all ionid@ references.               "
-        ,/ will ~get.then: then = ~on:ion & script.onload; 1st called cancels 2nd. /
-        ,/ will ~get.then: delete script.onload after calling for memory perf?     /
-        ,/ will make ~debug:{member:true|false} = ion member to debug.             /
-        ,/ will make ~ion do ~re = re.toString if api.docs config is set true.     /
-        ," like that ~/0 . 0/ = ionify - onload & this.test ('0 . 0') confirms.    "
+        [/ will set ~get.then to do ~on:ion & script.onload; 1st called cancels 2nd. /
+        ,/ will add tests for web@ionify & its actions	                             /
+        ," will set all ~get actions' ionid@ domains to the current ion's.           "
+        ,/ will set ~debug:{member:true|false} = ion member to debug.                /
+        ,/ will use ajile.test.inlineLoader to load inline code!                     /
+        ,/ want all ~get.then to delete script.onload after ~then for memory perf?   /
         ,/ wish ... /
         ,/ want ... /
         ]
@@ -40,10 +39,7 @@
       { Object.prototype.valueOf.ionified = this
       ; var  web                          = this
       ; web. get$.URL           .ion      = web.get$
-      ; web. get                .ion
-      = web["get then after"   ].ion
-      = web["get in then after"].ion
-      = web
+      ; web["get in then after"].ion      = web
     //; web.watch     ()
       ; web.ready     ()
       ; web.locate    ()
@@ -88,9 +84,7 @@
 
 , getScript
 :   function getScript (ion)
-      {~/todo: use ajile.test.inlineLoader to load inline code!/
-
-        var  web = getScript.ion || (getScript == this.getScript ? this : null)
+      { var  web = getScript.ion || (getScript == this.getScript ? this : null)
           , code = ion.code
           ,  url = ion.at
           , get$ = web.get$
@@ -101,13 +95,13 @@
           return ~{warn: [web.errors.noScript, JSON.stringify (ion)]}
 
         var script = document.createElement ('script')
-          ; ion.then               && (script.onload = ion.then)
-          ; ion.at.match (get$.ID) && (script.id     = ion.at)
           ; script.type  = 'text/javascript'
+          ; ion.at.match (get$.ID) && (script.id     = ion.at)
+          ; ion.then               && (script.onload = ion.then)
           ; script.async =  web . asyncMode   [ion.in]
           ; script.src   =  url = url.match   (get$.HTTP)
                          ?  url : url.replace (get$.ID, get$.URL)
-                         ;
+          ;
         document.head.appendChild (script)
       ~ {debug: ["getting",url,"..."]}
       }
@@ -150,13 +144,13 @@
           ;       space = space && (space.match (get$.NAME) || [,space])[1]
           ;       file  = file  && ( file.match (get$.NAME) || [, file])[1]
 
-          ;   return get$.PATH [space] + (name || file) + (version || '')
+          ;   return get$.PATH [space] + (name || file || '') + (version || '')
                                        + /*(ext ? ext [1] :*/(get$.TYPE)
           }
     }
 , get
 :   function get (ion)
-      { var web           = get.ion || (get.ion = get == this.get ? this : null)
+      { var web           = get.ion
           , get$          = web.get$
           , url           = ion.get
           , act           = ion.then
@@ -189,7 +183,7 @@
 : "get then after"
 , "get then after"
 :   function getThen (ion)
-      { return getThen.ion ["get in then"] (ion)
+      { return getThen.ion ["get in then after"] (ion)
       }
 
 , "get in"
@@ -205,7 +199,7 @@
       //  get: Create scripts with in & then /
       //  get: Attach scripts to webi        /
 
-        var  web = getInThen.ion || (getInThen.ion = getInThen == this.getInThen ? this : null)
+        var  web = getInThen.ion
           , ions = Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , last = ions.length
           , next = -1
@@ -230,17 +224,14 @@
         var   d0 = ion.then
           , ions = ion.get
           , last = ions.length
-          , next = -1
           ,  got = {}
-          ;
-        while (++next < last) got [ions [next]] = false
           ;
         function afterAllIons (ion)
           { if  (afterAllIons.done) return
           ; var  id  = ion instanceof Event ? this.id : ion.re.id
           ; got [id] = true
-console.log (`get: ${ions}\ngot: ${Object.keys (got)}`)
-          ; for (id in got) if (!got[id]) return
+          ~ {log: `\nget: ${ions}\ngot: ${Object.keys (got)}`}
+          ; for (var next=-1; ++next < last;) if (! got [ions [next]]) return
           ; afterAllIons.done = true
           ~ {on:ions, no:afterAllIons}
           ~ d0
