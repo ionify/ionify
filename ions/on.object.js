@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181124
+    , to:  -8.20181204
     , is:  -0.1
     , it:
         [/ is the core of ionify: invoked object notation implemented for you.        /
@@ -17,7 +17,8 @@
         ,/ ... /
         ]
     , we:
-        [/ were implementing ~on.do...                                                /
+        [/ were examining if .onion() is the source of ions' lost 'this' reference.   /
+        ,/ were implementing ~on.do...                                                /
         ,/ will rename on.object to on.ion; more purposeful & cross-platform name.    /
         ,/ will make .resolve() to convert ids to ions: e.g. ionified references.     /
         ,/ will .resolve this.* & ~* in strings & stories to actual ion references.   /
@@ -55,48 +56,46 @@
           ;    delete    Object.prototype.valueOf.ionified
           ;  ionified && delete  ionified.valueOf
 
-        var  ion           = this
-          ;  ion.sense. on = ion.on
-          ;  ion.onion.ion = ion.on.ion = ion.no.ion = ion.onSensor.ion = ion
-        //;  ion.link ()
-        //;  ion.  on ({on:'on'   ,     on: ion.on   })
-          ;  ion.  on ({on: Object, Object: ion.onion})
+        var  onion           = this
+          ;  onion.sense. on = onion.on
+          ;  onion.onion.ion = onion.on.ion = onion.no.ion = onion.onSensor.ion
+          =  onion
+        //;  onion.  on ({on:'on'   ,     on: onion.on   })
+          ;  onion.  on ({on: Object, Object: onion.onion})
 
         ~
         { on:
-            [ ["on", "do"]
-            , ["on", "no"]
+            [ ['on', 'do']
+            , ['on', 'no']
             ]
-      //,"on do": ion.on
-        ,"on no": ion.no
+      //,"on do": onion.on
+        ,"on no": onion.no
         }
 
         ~
         { on
         :  'context@ionify'      //need: sensing by id because ~on:[] overrides previous sensors
         ,  'context@ionify'      //      which causes this sensor to be lost on ~context.
-        :   function cando (share)
+        :   function cando (context)
               {~{ no:cando, on:'context@ionify'}
-               ~{ with               :(~/will be ion.re.domain/, ion.re.id)
+               ~{ with               :(~/will be onion.re.domain/, onion.re.id)
                 , share              :
-                    { activate       : ion.activate
-                    , deactivate     : ion.deactivate
-                    , disable        : ion.disable
-                  //, id             : ion.id
-                    , ionified       : ion.ionified
-                    , known          : ion.known
-                  //, link           : ion.link
-                    , sense          : ion.sense
-                    , sortKnownWords : ion.sortKnownWords
+                    { activate       : onion.activate
+                    , deactivate     : onion.deactivate
+                    , disable        : onion.disable
+                  //, id             : onion.id
+                    , ionified       : onion.ionified
+                    , known          : onion.known
+                  //, link           : onion.link
+                    , sense          : onion.sense
+                    , sortKnownWords : onion.sortKnownWords
                 }   }
-              //ion.link ([ion, share, ionified])
-              //~  {link: [ion, share, ionified]}
-              //~  {link:ion} & {link:ionified}
-                share.link (ion), share.link (ionified)
-              //ion.link ()
-              //ion.link (share)
-              //ion.link (ionified)
-                ion   =   ionified = null //performance? memory release?
+              //context.link ([onion, ionified])
+              //~  {link: [onion, ionified]}
+              //~  {link:onion} & {link:ionified}
+              ; context.link (onion)
+              ; context.link (ionified)
+              ; context = onion = ionified = null //performance? memory release?
               }
         }
 
@@ -154,12 +153,12 @@
       }
 
 , noInfo
-:   [ /todo: resolve +{no:"this.ion"}?                  /
-    , /bugs: future bug if multiple actions use same term/
+:   [/ todo: resolve ~ {no: 'this.ion'} ?                 /
+    ,/ bugs: future bug if multiple actions use same term /
     ]
 , no:
     function no (ion)
-      { if (!ion.no && !("no" in ion)) return ion;
+      { if (!ion.no && !('no' in ion)) return ion;
 
         var acts = ion.no
           ; !Array.isArray (acts) && (acts = [acts])
@@ -188,10 +187,10 @@
 :   { id  : []
     , link: []
     , on:
-        [ { act:  "on"
-          , set: ["on"]
+        [ { act:  'on'
+          , set: ['on']
           , in : function within (ion)
-                    { return "on" in ion
+                    { return 'on' in ion
                     }
           }
         ]
@@ -199,15 +198,15 @@
 
 , on:
     function on (ion)
-      { var debug = []
+      { if ( !ion  ||  !('on' in ion)  ) return    ion
+      ; if ('function' == typeof ion.on) return on.ion.onSensor (ion)
 
-        if (!ion || !('on' in ion)) return ion
-        on.ion || (on == this.on) && (on.ion = this)
     //; on.our &&  on.our/*ion*/.id (ion)
-      ; debug.push ([ion.re && ion.re.id, 'on:', ion.on, JSON.stringify (ion.on)])
-      ; if ("function" == typeof ion.on) return on.ion.onSensor (ion)
 
-        var groups  = ion.on
+      ; var debug = []
+      ; debug.push ([ion.re && ion.re.id, "on:", ion.on, JSON.stringify (ion.on)])
+
+      ; var groups  = ion.on
       ! Array.isArray (groups) && (groups = [groups])
       ; var ionify  = on.ion
           , has     = ionify.hasKnownWord
@@ -295,7 +294,7 @@
 
 
 , onionInfo
-:   [ /todo: enable ionify's ions to set sensed order of action terms	/
+:   [ /todo: enable ionify's ions to set sensed order of action terms /
     , /todo: sense => ArrayMap to preserve order & fast lookup.       /
     , /idea: log all matched actions & their results?                 /
     , /idea: disable activated words, enable after all matches        /
@@ -307,7 +306,7 @@
 :   function onion (ion)
       { var id
           , link
-          , ionify      = onion.ion || (onion.ion = onion == this.onion ? this : null)
+          , ionify      = onion.ion
         //, ionified    = ionify.ionified
           , sense       = ionify.sense
           , debug       = []
@@ -317,7 +316,7 @@
       //; our && our/*ionify*/.id  (ion)
         !(ion.next && ion.id) && !(  'id' in ion) && (ion.id   = id   = true) ///*our && our*/ionify.link (ion)
         !(ion.next && ion.id) && !('link' in ion) && (ion.link = link = true) ///*our && our*/ionify.link (ion)
-        ; debug.push ("onION:", ion.re ? ion.re.id : 'anonymous')
+        ; debug.push ("onION:", ion.re ? ion.re.id : "anonymous")
 
         var from = onion.caller;
         ion.re && (ion.re.from || (ion.re.from = from && from.ion && from.ion.re && from.ion.re.id))
@@ -339,7 +338,7 @@
               { group = groups [g]
                 if (!group.in (ion)) continue
                 words   =  group.act
-                result  =  typeof  sense [words] == "function"
+                result  =  typeof  sense [words] == 'function'
                              ?  (  sense [words].ion  !=  ion) //bug?: don't self-activate sensor
                                 && sense [words]         (ion)
                              :     sense [sense [words]] (ion) //todo: resolve (sense [words]) to function or act ion
@@ -354,12 +353,12 @@
           link && delete ion.link
 
         ! ion.debug && !(ion.next && ion.id) && ~{debug:debug} //bug! causes stack overflow
-          return results == 1 ? result : this // true
+          return results == 1 ? result : ion
       }
 
 
 , onSensor$
-:   { core: {Function:"function", Object:"object"}
+:   { core: {Function:'function', Object:'object'}
     , name: (/function\s+(.*)\s*\(/)
     , undo: {}
     }
@@ -379,7 +378,7 @@
           ; known [type]           =  true
           ; known [core [type]]    =  !!core [type]
 
-      ~ {debug: ["onSensor",type,JSON.stringify(known)]}
+      ~ {debug: ["onSensor", type, JSON.stringify (known)] }
         return true
       }
 }
