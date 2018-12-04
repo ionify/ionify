@@ -5,8 +5,8 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -8.20161116
-    , to:  -8.20181123
-    , is:  -0.1
+    , to:  -8.20181203
+    , is:  +0.1
     , it:
         [/ senses activated stories: string template or regular ion expressions like /
         ,"              ~/.../                                                       "
