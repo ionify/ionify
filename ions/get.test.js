@@ -5,27 +5,21 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181126
+    , to:  -8.20181203
     , is:  -0.1
     , it:  "Tests ionify's ~get api"
     }
 }
 
-~
-{debug:true}
-~
-{get:''} <- /test getting the .js file/
-~
-{get:'@ionify'}
-+
-{debug:false}
+~ {get:''}         <-  /testing getting the .js file/
+~ {get:'@ionify'}  <-  /testing getting the @domain's .js file/
 
 ~
 { get : "http://ionify.net/ions/test/log.js"
 , in  : 'order'
 , then:
     function hi ()
-      {~{log: "did " + hi.ion.get}
+      {~{log: ["did ", hi.ion.get]}
       }
 }
 
