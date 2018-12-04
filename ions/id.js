@@ -5,28 +5,25 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181126
+    , to:  -8.20181203
     , is:  -0.1
     , it:
         [/ ensures that all ionified objects have an re.id                  /
         ," sets an object's re.id value as a member mapped to its object re "
         ,/ sets missing re & re.id on an object with a domain-named member  /
         ,/ sets missing re on a object                                      /
-        ,/ sets missing re.id via ~next.id when possible	                  /
+        ,/ sets missing re.id via ~next.id when possible	                /
         ]
     , we:
-        [/ ... /
+        [/ will link this ion's although it doesn't currently rely on it.   /
         ]
     }
 
-, share
-:  {id:'id'}
+, on:
+    ['id']
 
-, on
-:  ['id']
-
-, id
-:  function setID (ion)
+, id:
+    function setID (ion)
       { if (!ion.id || typeof ion.id != 'boolean') return
 
         var id =  ion.hasOwnProperty ('re')
