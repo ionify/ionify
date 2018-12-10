@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181203
+    , to:  -8.20181210
     , is:  -0.1
     , it:  "Tests ionify's ~get api"
     }
@@ -24,10 +24,8 @@
 }
 
 
-/* emoji test disables ionify before
-   this test's get.then activates
-
-~
+~/ testing ~get.then with ~then lookup /
++
 { re:
     ["playing with syntax for getting non-ion scripts in order"],
 
@@ -35,17 +33,17 @@
     [ {  get: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
       ,   in: 'order'
       },
-      {  get: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
+      {  get: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.IncludeExample.js"
       ,   in: 'order'
       , then: "doIt"
       }
     ],
   doIt:
-      function onLoadExample ()
-      {  ~com.iskitz.ajile.examples.LoadExample
+      function onIncludeExample ()
+      {  ~com.iskitz.ajile.examples.IncludeExample
       }
 }
-*/
+//*/
 
 ~
 { re: "playing with syntax for getting multiple non-ion scripts in order"
