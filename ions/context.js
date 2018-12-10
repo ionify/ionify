@@ -5,17 +5,16 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181203
+    , to:  -8.20181210
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
-        ,/ access their containing ion & ~share for sharing via domains, optionally /
-        ,/ aliased data and-or functionality.                                       /
+        ,/ access their containing ion, ~share for sharing things via domains,      /
+        ,/ optionally aliased data and-or functionality, and ~find.in for resolving /
+        ,/ names to ions.                                                           /
         ]
     , we:
-        [/ were migrating ~on.object.link & ~on.object.share.with here.             /
-        ,/ will update share() to use getSpace().                                   /
-        ,/ will implement & share .resolve() for resolving things to references.    /
+        [/ will update share() to use getSpace().                                   /
         ,/ will implement ~link.as & ~link.to.                                      /
         ,/ will apply unlink when ~link.to is falsey.                               /
         ,/ want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    /
@@ -26,7 +25,8 @@
     }
 
 , on
-:   [ ['link', 'to']
+:   [ ['find', 'in']
+    , ['link', 'to']
     , ['link', 'as']
     , ['link']
     , ['share', 'with']
@@ -34,22 +34,38 @@
     ]
 
 , valueOf
-:   function hiphop ()
-      { this.start ()
+:   function hip    ()
+      { this.ionify ()
       ; delete this.valueOf
       ~ this
       }
 
-, start
-:   function start ()
+, ionify
+:   function ionify ()
       { this . link ()
       ; this ["share with"]
-            ({  with:    this. re   . id       // <= 👨🏾‍💻re.at:domain auto-populated from re.id
-             , share: {  find: this . resolve  // will resolve things to actual references
+            ({  with: this.re.id                  // <= 👨🏾‍💻re.at:domain auto-populated from re.id
+             , share: {  find: this ["find in"]   // will resolve things to actual references
                       ,  link: this . link
                       , share: this ["share with"]
                       , space: this . getSpace
       }     })        }
+
+, "find in"
+:   function resolving (ion)
+      { var name      = ion.find
+          , to        = ion.in
+          , ionified  = resolving.our.ionified
+          , found	    , last
+          ;
+        while (last != to)    // bug? might infinitely loop on circular .ion's | .our's
+          { last = to
+          ; if ( to.ion && ionified [typeof (found = to.ion [name]) ] ) break
+          ; if ( to.our && ionified [typeof (found = to.our [name]) ] ) break
+          ; to = to.ion
+          }
+        return (ion.in [name] = found)
+      }
 
 , linkInfo
 :   [{note:/ ~{link: true, false} is auto-enabled-true /}
