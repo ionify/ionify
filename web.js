@@ -5,11 +5,13 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181204
+    , to:  -8.20181210
     , is:  -0.1
     , it:/ provides ionify: invoked object notation implemented for your web.        /
     , we:
-        [/ will set ~get.then to do ~on:ion & script.onload; 1st called cancels 2nd. /
+        [/ will use .then() as ~on.do where ~{on:''|[], do:ion, after:all|any|each}  /
+        ,/ will set .then() to ~on.do.after                                          /
+        ,/ will set ~get.then to do ~on:ion & script.onload; 1st called cancels 2nd. /
         ,/ will add tests for web@ionify & its actions	                             /
         ," will set all ~get actions' ionid@ domains to the current ion's.           "
         ,/ will set ~debug:{member:true|false} = ion member to debug.                /
@@ -30,16 +32,15 @@
     ]
 
 , valueOf
-:   function hip ()
+:   function hip    ()
       { this.ionify ()
       }
 
 , ionify
 :   function ionifyWeb ()
-      { Object.prototype.valueOf.ionified = this
-      ; var  web                          = this
-      ; web. get$.URL           .ion      = web.get$
-      ; web["get in then after"].ion      = web
+      { Object.prototype.valueOf .ionified = this
+      ; var web                            = this
+      ; web ["get in then after"].ion      = web
     //; web.watch     ()
       ; web.ready     ()
       ; web.locate    ()
@@ -98,22 +99,13 @@
           ; script.type  = 'text/javascript'
           ; ion.at.match (get$.ID) && (script.id     = ion.at)
           ; ion.then               && (script.onload = ion.then)
-          ; script.async =  web . asyncMode   [ion.in]
+          ; script.async =  get$. ASYNC       [ion.in]
           ; script.src   =  url = url.match   (get$.HTTP)
                          ?  url : url.replace (get$.ID, get$.URL)
           ;
         document.head.appendChild (script)
       ~ {debug: ["getting",url,"..."]}
       }
-
-, asyncMode
-:   {        '': true
-    ,      null: true
-    ,     order: false
-    ,  sequence: false
-    ,  parallel: true
-    , undefined: true
-    }
 
 , getInfo
 :   [" note: ~{get: 'ion.id' || './script.js'}                   "
@@ -125,28 +117,36 @@
     ,/ todo: ... /
     ]
 , get$
-:   { HTTP: (/^\w+:\/\//)                       // matches URL protocols
-    ,   ID: (/(?:(.*)@(\D*)|(\D*))(\d+.*)*/)    // matches ((api)@(host.) | (api.)) version#
-    , NAME: (/(.*)\.$/)                         // matches  (api).        | (host).
-    , PATH:
-          { ionify    : "//ionify.glitch.me/ions/"
-          , undefined : "./"
-          , null      : "./"
-          , ''        : "./"
-          }
-    , TYPE: ".js"
-    ,  EXT: (/(\.\D*$)/)    // matches file extensions
-    ,  URL:
-        function getURL (match, name, space, file, version, offset, string)
-          {   var get$  = getURL.ion
-          ,       ext   = get$.EXT.exec (match)
-          ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
-          ;       space = space && (space.match (get$.NAME) || [,space])[1]
-          ;       file  = file  && ( file.match (get$.NAME) || [, file])[1]
+:   { ASYNC:
+           {  parallel: true
+           ,  sequence: false
+           ,     order: false
+           ,        '': true
+           ,      null: true
+           , undefined: true
+           }
+    ,    ID: (/(?:(.*)@(\D*)|(\D*))(\d+.*)*/)    // matches ((api)@(space.) | (api.)) version#
+    ,  HTTP: (/^\w+:\/\//)                       // matches URL protocols
+    ,  PATH:
+           { ionify    : "//ionify.glitch.me/ions/"
+           , undefined : "./"
+           , null      : "./"
+           , ''        : "./"
+           }
+    ,  NAME: (/(.*)\.$/)                         // matches  (api). | (host).
+    ,  TYPE: ".js"
+    ,   EXT: (/(\.\D*$)/)    // matches file extensions
+    ,   URL:
+          function getURL (match, name, space, file, version, offset, string)
+            {   var get$  = getURL.ion
+            ,       ext   = get$.EXT.exec (match)
+            ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
+            ;       space = space && (space.match (get$.NAME) || [,space])[1]
+            ;       file  = file  && ( file.match (get$.NAME) || [, file])[1]
 
-          ;   return get$.PATH [space] + (name || file || '') + (version || '')
-                                       + /*(ext ? ext [1] :*/(get$.TYPE)
-          }
+            ;   return get$.PATH [space] + (name || file || '') + (version || '')
+                                         + /*(ext ? ext [1] :*/(get$.TYPE)
+            }
     }
 , get
 :   function get (ion)
@@ -180,12 +180,9 @@
     ,/ todo: Do ~on:ion.id; it should be faster than .onload	      /
     ]
 , "get then"
-: "get then after"
+: "get in then after"
 , "get then after"
-:   function getThen (ion)
-      { return getThen.ion ["get in then after"] (ion)
-      }
-
+: "get in then after"
 , "get in"
 : "get in then after"
 , "get in then"
@@ -203,7 +200,7 @@
           , ions = Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , last = ions.length
           , next = -1
-          , then = ion.then && web.sense (ion)
+          , then = ion.then && web.then (ion)
           ;
 
         if (then)
@@ -216,16 +213,18 @@
         while (++next < last) web.getScript ({at:ions[next], in:ion.in, then:then})
       }
 
-, sense
-:   function sense (ion)
+, then
+:   function then (ion)
       {/ Create a function that does something  /
       // based on ~get.then.after & sensed ions /
 
-        var   d0 = ion.then
-          , ions = ion.get
+        var ions = ion.get
           , last = ions.length
           ,  got = {}
-          ;
+          ,   d0 = then.our.ionified [typeof ion.then]
+                 ?   ion.then
+                 :   ~{find: ion.then, in: ion} && ion [ion.then]
+                 ;
         function afterAllIons (ion)
           { if  (afterAllIons.done) return
           ; var  id  = ion instanceof Event ? this.id : ion.re.id
