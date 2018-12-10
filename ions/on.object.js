@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181204
+    , to:  -8.20181210
     , is:  -0.1
     , it:
         [/ is the core of ionify: invoked object notation implemented for you.        /
@@ -303,14 +303,14 @@
     ]
 
 , onion
-:   function onion (ion)
+:   function hop (ion)
       { var id
           , link
-          , ionify      = onion.ion
+          , ionify      = hop.ion
         //, ionified    = ionify.ionified
           , sense       = ionify.sense
           , debug       = []
-          , our         = onion.our
+          , our         = hop.our
           ; ion || (ion = this)
 
       //; our && our/*ionify*/.id  (ion)
@@ -318,9 +318,9 @@
         !(ion.next && ion.id) && !('link' in ion) && (ion.link = link = true) ///*our && our*/ionify.link (ion)
         ; debug.push ("onION:", ion.re ? ion.re.id : "anonymous")
 
-        var from = onion.caller;
+        var from = hop.caller;
         ion.re && (ion.re.from || (ion.re.from = from && from.ion && from.ion.re && from.ion.re.id))
-        from && (from != onion) && debug.push ("from", ion.re && ion.re.from)
+        from && (from != hop) && debug.push ("from", ion.re && ion.re.from)
 
         var results = 0
           , known   = ionify.known
