@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181210
+    , to:  -8.20181214
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -25,7 +25,8 @@
     }
 
 , on
-:   [ ['find', 'in']
+:   [ ['find', 'in', 'as']
+    , ['find', 'in']
     , ['link', 'to']
     , ['link', 'as']
     , ['link']
@@ -34,7 +35,7 @@
     ]
 
 , valueOf
-:   function hip    ()
+:   function hiphop ()
       { this.ionify ()
       ; delete this.valueOf
       ~ this
@@ -44,27 +45,30 @@
 :   function ionify ()
       { this . link ()
       ; this ["share with"]
-            ({  with: this.re.id                  // <= 👨🏾‍💻re.at:domain auto-populated from re.id
-             , share: {  find: this ["find in"]   // will resolve things to actual references
+            ({  with: this.re.id                     // 👨🏾‍💻re.at:domain auto-populated from re.id
+             , share: {  find: this ["find in as"]   // will resolve things to actual references
                       ,  link: this . link
                       , share: this ["share with"]
                       , space: this . getSpace
       }     })        }
 
 , "find in"
-:   function resolving (ion)
+: "find in as"
+, "find in as"
+:   function find (ion)
       { var name      = ion.find
           , to        = ion.in
-          , ionified  = resolving.our.ionified
+          , as        = ('as' in ion) ? ion.as : name
+          , ionified  = find.our.ionified
           , found	    , last
           ;
         while (last != to)    // bug? might infinitely loop on circular .ion's | .our's
           { last = to
           ; if ( to.ion && ionified [typeof (found = to.ion [name]) ] ) break
           ; if ( to.our && ionified [typeof (found = to.our [name]) ] ) break
-          ; to = to.ion
+          ; if ( to.ion ){ to = to.ion } else break
           }
-        return (ion.in [name] = found)
+        return (ion.in [as] = found)
       }
 
 , linkInfo
