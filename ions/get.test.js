@@ -5,14 +5,16 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181210
+    , to:  -8.20181214
     , is:  -0.1
     , it:  "Tests ionify's ~get api"
     }
 }
 
+
 ~ {get:''}         <-  /testing getting the .js file/
 ~ {get:'@ionify'}  <-  /testing getting the @domain's .js file/
+
 
 ~
 { get : "http://ionify.net/ions/test/log.js"
@@ -43,7 +45,7 @@
       {  ~com.iskitz.ajile.examples.IncludeExample
       }
 }
-//*/
+
 
 ~
 { re: "playing with syntax for getting multiple non-ion scripts in order"
@@ -58,7 +60,7 @@
       }
 }
 
-/* immediately disables ionify
+/* emoji tests immediately disable ionify,
    even before previous get.then's activate
 
 { re:
