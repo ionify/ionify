@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181210
+    , to:  -8.20181214
     , is:  -0.1
     , it:/ provides ionify: invoked object notation implemented for your web.        /
     , we:
@@ -188,7 +188,7 @@
 , "get in then"
 : "get in then after"
 , "get in then after"
-:   function getInThen (ion)
+:   function get (ion)
       {/ todo: implement ~on.do              /
       //  get: Ensure it's an array          /
       //   in: Ensure it's an expected value /
@@ -196,21 +196,21 @@
       //  get: Create scripts with in & then /
       //  get: Attach scripts to webi        /
 
-        var  web = getInThen.ion
+        var  web = get.ion
           , ions = Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , last = ions.length
           , next = -1
-          , then = ion.then && web.then (ion)
+          , todo = ion.then && web.then (ion)
           ;
 
-        if (then)
+        if (todo)
             {~/todo: implement ~on.do to avoid this manual per-get sensor workaround/
-            ; var get = {on:ions, after:'all'/*, do:then*/}
-          //,     get = {after:ions, do:then}
-            ; for (var i=-1, I=ions.length; ++i < I; get[ions[i]] = then){}
+            ; var on = {on:ions, after:'all'/*, do:todo*/}
+          //,     on = {after:ions, do:todo}
+            ; for (var i = -1, I = ions.length; ++i < I; on[ions[i]] = todo){}
             }
 
-        while (++next < last) web.getScript ({at:ions[next], in:ion.in, then:then})
+        while (++next < last) web.getScript ({at: ions[next], in: ion.in, then: todo})
       }
 
 , then
@@ -221,9 +221,9 @@
         var ions = ion.get
           , last = ions.length
           ,  got = {}
-          ,   d0 = then.our.ionified [typeof ion.then]
+          , todo = then.our.ionified [typeof ion.then]
                  ?   ion.then
-                 :   ~{find: ion.then, in: ion} && ion [ion.then]
+                 : ~{find: ion.then, in: ion} && ion [ion.then]
                  ;
         function afterAllIons (ion)
           { if  (afterAllIons.done) return
@@ -233,7 +233,7 @@
           ; for (var next=-1; ++next < last;) if (! got [ions [next]]) return
           ; afterAllIons.done = true
           ~ {on:ions, no:afterAllIons}
-          ~ d0
+          ~ todo
           }
 
         function afterAnyIon (ion)
@@ -241,12 +241,11 @@
           ~ {on:ion.re.id, no:afterAnyIon}
           ; if (afterAnyIon.done)  return
           ;     afterAnyIon.done = true
-          ~ d0
+          ~ todo
           }
 
         function afterEachIon (ion)
-          { ion ? d0 : 0+
-          / todo? remove duplicate d0 from script.onload /
+          { ion && ~todo <= / todo? remove duplicate todo from script.onload /
           }
 
         return {   all: afterAllIons
