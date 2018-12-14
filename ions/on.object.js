@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181210
+    , to:  -8.20181214
     , is:  -0.1
     , it:
         [/ is the core of ionify: invoked object notation implemented for you.        /
@@ -47,7 +47,7 @@
 
 , valueOf
 :   function hip ()
-      { this.ionify()
+      { this.ionify ()
       }
 
 , ionify
@@ -303,24 +303,24 @@
     ]
 
 , onion
-:   function hop (ion)
+:   function ion (object)
       { var id
           , link
-          , ionify      = hop.ion
+          , ionify      = ion.ion //.this
         //, ionified    = ionify.ionified
           , sense       = ionify.sense
           , debug       = []
-          , our         = hop.our
-          ; ion || (ion = this)
+          , our         = ion.our
+          ; object || (object = this)
 
-      //; our && our/*ionify*/.id  (ion)
-        !(ion.next && ion.id) && !(  'id' in ion) && (ion.id   = id   = true) ///*our && our*/ionify.link (ion)
-        !(ion.next && ion.id) && !('link' in ion) && (ion.link = link = true) ///*our && our*/ionify.link (ion)
-        ; debug.push ("onION:", ion.re ? ion.re.id : "anonymous")
+      //; our && our/*ionify*/.id  (object)
+        !(object.next && object.id) && !(  'id' in object) && (object.id   = id   = true) ///*our && our*/ionify.link (object)
+        !(object.next && object.id) && !('link' in object) && (object.link = link = true) ///*our && our*/ionify.link (object)
+        ; debug.push ("onION:", object.re ? object.re.id : "anonymous")
 
-        var from = hop.caller;
-        ion.re && (ion.re.from || (ion.re.from = from && from.ion && from.ion.re && from.ion.re.id))
-        from && (from != hop) && debug.push ("from", ion.re && ion.re.from)
+        var from = ion.caller;
+        object.re && (object.re.from || (object.re.from = from && from.ion && from.ion.re && from.ion.re.id))
+        from && (from != ion) && debug.push ("from", object.re && object.re.from)
 
         var results = 0
           , known   = ionify.known
@@ -331,17 +331,17 @@
           ;
 
         for (word in known)
-          { if (word in skip || !(word in ion)) continue
+          { if (word in skip || !(word in object)) continue
             groups = known [word]
 
             for (var g=0, G=groups.length; g < G; g++)
               { group = groups [g]
-                if (!group.in (ion)) continue
+                if (!group.in (object)) continue
                 words   =  group.act
                 result  =  typeof  sense [words] == 'function'
-                             ?  (  sense [words].ion  !=  ion) //bug?: don't self-activate sensor
-                                && sense [words]         (ion)
-                             :     sense [sense [words]] (ion) //todo: resolve (sense [words]) to function or act ion
+                             ?  (  sense [words].ion  !=  object) //bug?: don't self-activate sensor
+                                && sense [words]         (object)
+                             :     sense [sense [words]] (object) //todo: resolve (sense [words]) to function or act ion
                 results += 1
                 words   =  group.set
                 for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
@@ -349,11 +349,11 @@
               }
           }
 
-          id   && delete ion.id
-          link && delete ion.link
+          id   && delete object.id
+          link && delete object.link
 
-        ! ion.debug && !(ion.next && ion.id) && ~{debug:debug} //bug! causes stack overflow
-          return results == 1 ? result : ion
+        ! object.debug && !(object.next && object.id) && ~{debug:debug} //bug! causes stack overflow
+          return results == 1 ? result : object
       }
 
 
