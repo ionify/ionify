@@ -8,22 +8,22 @@
           ,  'san-jose.california.usa.earth'
           ]
     , on:  -4.200709
-    , to:  -7.20181205
+    , to:  -8.20181214
     , is:  -0.1
-    , it: "implements ~do, which activates ions, functions & methods"
+    , it: "implements ~do, which activates aeons, functions, ions & pions"
     }
 
 , on: 'do'
 
 , doInfo
-:   [/ will Enable +{on: '' || [], do: ...}                       /
-    ,/ like ionified [typeof todo] --> ~{is:todo, not:'ionified'} /
+:   [/ will Enable +{on: '' || [], do: ...}                         /
+    ,/ like ionified [typeof todo] --> ~ {is:todo, not:'ionified'}  /
     ]
 , do:
-    function onDo (ion)
-      { ion  || ~onDo.ion.errors.ionExpected
-      ; var todo    = ion.do
-      ; todo && !onDo.our.ionified [typeof todo] && (todo = ion [todo])
+    function doing (ion)
+      { ion   || ~ doing.ion.errors.ionExpected
+      ; var todo = ion.do
+      ; todo  && ! doing.our.ionified [typeof todo] && (todo = ion [todo])
       ~ todo
       ; return true
       }
