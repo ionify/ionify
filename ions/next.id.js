@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -7.20160910
-    , to:  -8.20181126
+    , to:  -8.20181215
     , is:  -0.1
     , it: "generates sequential ids on-demand"
     }
@@ -14,7 +14,6 @@
 , share : { 'nextID' : "next id"}
 , MAX   : Number.MAX_SAFE_INTEGER ||  9007199254740991
 , MIN   : Number.MIN_SAFE_INTEGER || -9007199254740991
-, debug : false
 , ids   : {}
 
 , "next id"
