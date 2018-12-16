@@ -1,21 +1,23 @@
 ;
 ~
 { re:
-    { id: 'ions@ionify'
-    , is: "ionify's ion settings"
-    , by: 'mike.lee@ionify'
-    , on: -4.200709
-    , to: -8.20181122
-    , at: -0.1
+    { id: 'ions'
+    , by: 'mike.lee'
+    , at: 'ionify.net'
     , in:
-        [   'san-jose.california.usa.earth'
-        , 'forest-hills.new-york.usa.earth'
+        [ 'forest-hills.new-york.usa.earth'
+        ,   'san-jose.california.usa.earth'
         ]
-        ,
-      stories:
-        [ /note: ions@ settings define ion domains, paths + more/
-        , /note: domain lists are backup + performance options/
-        , "todo: ..."
+    , on: -4.200709
+    , to: -8.20181215
+    , is: -0.1
+    , it:
+        [" configures ionify "
+        ," defines ion domains, paths & more "
+        ," provides domain lists as backup & performance options "
+        ]
+    , we:
+        [" will ... "
         ]
     }
 
@@ -42,8 +44,8 @@
     , tools: './tools/'
     }
 
-,  debug: !true
-, verify:  true
+,  debug:!true
+, verify: true
 }
 
 ;
