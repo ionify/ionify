@@ -5,33 +5,34 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181214
+    , to:  -8.20181217
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
-        ,/ access their containing ion, ~share for sharing things via domains,      /
-        ,/ optionally aliased data and-or functionality, and ~find.in for resolving /
-        ,/ names to ions.                                                           /
+        ," access their containing ion, ~share for sharing things via domains,      "
+        ," optionally aliased data and-or functionality, and ~find.in for resolving "
+        ," names to ions.                                                           "
         ]
     , we:
-        [/ will update share() to use getSpace().                                   /
-        ,/ will implement ~link.as & ~link.to.                                      /
-        ,/ will apply unlink when ~link.to is falsey.                               /
-        ,/ want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    /
-        ,/ want all hip & hiphop ions did valueOf:hiphop --> start --> valueOf:hop. /
-        ,/ like renaming link.share@ to context@ but want names to match content... /
-        ,/ like exploring how prototypes enable automatic context sharing.          /
+        [" like idea of queing ~find's then doing once ~find's available            "
+        ," will update share() to use getSpace().                                   "
+        ," will implement ~link.as & ~link.to.                                      "
+        ," will apply unlink when ~link.to is falsey.                               "
+        ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
+        ," want all hip & hiphop ions did valueOf:hiphop --> start --> valueOf:hop. "
+        ," like renaming link.share@ to context@ but want names to match content... "
+        ," like exploring how prototypes enable automatic context sharing.          "
         ]
     }
 
 , on
-:   [ ['find', 'in', 'as']
-    , ['find', 'in']
-    , ['link', 'to']
-    , ['link', 'as']
-    , ['link']
-    , ['share', 'with']
-    , ['share']
+:   [ [ 'link',   'to'      ]
+    , [ 'link',   'as'      ]
+    , [ 'link'              ]
+    , [ 'find',   'in', 'as']
+    , [ 'find',   'in'      ]
+    , ['share', 'with'      ]
+    , ['share'              ]
     ]
 
 , valueOf
@@ -43,24 +44,24 @@
 
 , ionify
 :   function ionify ()
-      { this . link ()
-      ; this ["share with"]
-            ({  with: this.re.id                     // 👨🏾‍💻re.at:domain auto-populated from re.id
-             , share: {  find: this ["find in as"]   // will resolve things to actual references
-                      ,  link: this . link
-                      , share: this ["share with"]
-                      , space: this . getSpace
+      { this.link   ()
+      ; this.share
+            ({  with: this.re.id // 👨🏾‍💻re.at:domain auto-populated from re.id
+             , share: {  find: this.find
+                      ,  link: this.link
+                      , share: this.share
+                      , space: this.getSpace
       }     })        }
 
-, "find in"
-: "find in as"
-, "find in as"
+,"find in as":"find"
+,"find in"   :"find"
+, find
 :   function find (ion)
       { var name      = ion.find
           , to        = ion.in
           , as        = ('as' in ion) ? ion.as : name
           , ionified  = find.our.ionified
-          , found	    , last
+          , found     , last
           ;
         while (last != to)    // bug? might infinitely loop on circular .ion's | .our's
           { last = to
@@ -68,16 +69,18 @@
           ; if ( to.our && ionified [typeof (found = to.our [name]) ] ) break
           ; if ( to.ion ){ to = to.ion } else break
           }
-        return (ion.in [as] = found)
+        return found ? (ion.in [as] = found) : ion.in [as]
       }
 
 , linkInfo
-:   [{note:/ ~{link: true, false} is auto-enabled-true /}
-    ,{todo:/ enable batch link ([ion, object, more])   /}
-    ,{todo:/ enable +{link:ion, to:thing}              /}
-    ,{todo:/ enable ~{link:ion, as:{member:thing}}     /}
-    ,{idea:/ ion.this  --> ion.ionId & ion.ion         /}
+:   [{note:" ~{link: true, false} is auto-enabled-true "}
+    ,{todo:" enable batch link ([ion, object, more])   "}
+    ,{todo:" enable +{link:ion, to:thing}              "}
+    ,{todo:" enable ~{link:ion, as:{member:thing}}     "}
+    ,{idea:" ion.this  --> ion.ionId & ion.ion         "}
     ]
+,"link to":"link"
+,"link as":"link"
 , link
 :   function link (ion)
       { ion || (ion = link.ion || (link.ion = (link == this.link) && this))
@@ -111,9 +114,8 @@
         return true
       }
 
-
 , unlinkInfo
-:   [ /todo: enable +{unlink: ion, from: thing}/
+:   [ "todo: enable +{unlink: ion, from: thing}"
     ]
 , unlink
 :   function unlink (ion)
@@ -131,12 +133,11 @@
         }
 
 , shareInfo
-:   [ /note: .../
-    , /todo: create +{share: {thing:..., other:...}, with:[ion.ids]}/
+:   [ "note: ..."
+    , "todo: create +{share: {thing:..., other:...}, with:[ion.ids]}"
     ]
+,"share with":"share"
 , share
-:"share with"
-,"share with"
 :   function share (ion)
       { var thi$   = share.ion || (share == this.share ? this : null)
           , spaces = thi$.spaces
@@ -157,16 +158,16 @@
       }
 
 , spacesInfo
-:   [ /note: ion-domain-based spaces/
-    , /todo: .../
+:   [ "note: ion-domain-based spaces"
+    , "todo: ..."
     ]
 , spaces
 :   { null: {}
     }
 
 , getSpaceInfo
-:   [ /note: Returns & if needed, creates a space based on id's @domain/
-    , /todo: .../
+:   [ "note: Returns & if needed, creates a space based on id's @domain"
+    , "todo: ..."
     ]
 , getSpace
 :   function getSpace (id)
