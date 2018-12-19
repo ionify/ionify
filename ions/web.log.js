@@ -15,21 +15,22 @@
         ]
     },
 
-  do:
-    [ {on:['error', 'warn', 'debug', 'log', 'info']}
-    , {errors
-      :   { noAlert   : "log@ionify needs the window.alert () API"
-          , noConsole : "log@ionify needs the console.log  () API"
-      }   }
-    , 'ready'
+  on:
+    [ 'error', 'warn', 'debug', 'log', 'info'
     ],
 
-  ready:
-    function ready ()
-      {   var    error    =  ready.ion.errors
-      ;  (typeof console == 'undefined') && ~error.noConsole
-      ;  (typeof alert   == 'undefined') && ~error.noAlert
-      ;   return true
+  errors:
+    { noAlert   : "log@ionify needs the window.alert () API"
+    , noConsole : "log@ionify needs the console.log  () API"
+    },
+
+  valueOf:
+    function hiphop ()
+      {   var log   = this
+            , error = log.errors
+      ;  (typeof console == 'undefined') && error + error.noConsole
+      ;  (typeof alert   == 'undefined') && error + error.noAlert
+      ;   delete log.valueOf && ~log
       },
 
   debug:
