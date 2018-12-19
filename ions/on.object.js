@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181214
+    , to:  -8.20181218
     , is:  -0.1
     , it:
         [/ is the core of ionify: invoked object notation implemented for you.        /
@@ -58,41 +58,37 @@
 
         var  onion           = this
           ;  onion.sense. on = onion.on
-          ;  onion.onion.ion = onion.on.ion = onion.no.ion = onion.onSensor.ion
+          ;  onion.onion.ion = onion.on.ion = onion.onSensor.ion
           =  onion
         //;  onion.  on ({on:'on'   ,     on: onion.on   })
           ;  onion.  on ({on: Object, Object: onion.onion})
 
         ~
         { on:
-            [ ['on', 'do']
-            , ['on', 'no']
+            [ ['on', 'as', 'do']
+            , ['on',       'do']
             ]
       //,"on do": onion.on
-        ,"on no": onion.no
         }
 
         ~
         { on
-        :  'context@ionify'      //need: sensing by id because ~on:[] overrides previous sensors
-        ,  'context@ionify'      //      which causes this sensor to be lost on ~context.
-        :   function cando (context)
-              {~{ no:cando, on:'context@ionify'}
-               ~{ with               :(~/will be onion.re.domain/, onion.re.id)
-                , share              :
-                    { activate       : onion.activate
-                    , deactivate     : onion.deactivate
-                    , disable        : onion.disable
-                  //, id             : onion.id
-                    , ionified       : onion.ionified
-                    , known          : onion.known
-                  //, link           : onion.link
-                    , sense          : onion.sense
-                    , sortKnownWords : onion.sortKnownWords
-                }   }
-              //context.link ([onion, ionified])
-              //~  {link: [onion, ionified]}
-              //~  {link:onion} & {link:ionified}
+        :  'on.no@ionify'      //must: sense by id because ~on:[] overrides previous sensors
+        ,  'on.no@ionify'      //      which causes this sensor to be lost on ~context.
+        :   function on (no)
+              { context = this || on.our //must: use this=onion.sense since on.our isn't linked.
+              ; context.share
+                  ({ with              : (~/will be onion.re.domain/, onion.re.id)
+                   , share             :
+                      { activate       : onion.activate
+                      , deactivate     : onion.deactivate
+                      , disable        : onion.disable
+                      , ionified       : onion.ionified
+                      , known          : onion.known
+                      , sense          : onion.sense
+                      , sortKnownWords : onion.sortKnownWords
+                  }}  )
+              ; no.no ({on:'on.no@ionify', no:on})
               ; context.link (onion)
               ; context.link (ionified)
               ; context = onion = ionified = null //performance? memory release?
@@ -103,11 +99,11 @@
 
         ~
         { get
-        :   [         'id@ionify',     'context@ionify',   'errors@ionify'
-            ,  'on.storie@ionify',     'next.id@ionify',  'web.log@ionify'
-            ,   'on.error@ionify', 'on.function@ionify', 'on.array@ionify'
-            ,         'do@ionify',         'use@ionify',        'i@ionify'//i@ions.iskitz.net
-            ,            'ions'
+        :   [        'id@ionify', 'context@ionify', 'on.no@ionify',      'errors@ionify'
+            ,  'on.error@ionify',      'do@ionify', 'on.function@ionify'
+            ,  'on.array@ionify', 'web.log@ionify',     'next.id@ionify'
+            , 'on.storie@ionify',     'use@ionify'
+            ,           'ions'
             ]
         , in: 'sequence'||'order'
         }
@@ -135,7 +131,7 @@
 
 , activate
 :   function activate (ion)
-      {  if (ion [0] !== '0 . 0') return
+      {//if (ion [0] !== '0 . 0') return
       ;  var ionify = activate.ion
       ;  ionify.senses && (ionify.senses != ionify.sense) && ~ionify
       }
@@ -150,37 +146,6 @@
       { var ionify        = disable.ion
           ; ionify.senses = ionify.sense
           ; ionify.sense  = {'0 . 0':ionify.activate}
-      }
-
-, noInfo
-:   [/ todo: resolve ~ {no: 'this.ion'} ?                 /
-    ,/ bugs: future bug if multiple actions use same term /
-    ]
-, no:
-    function no (ion)
-      { if (!ion.no && !('no' in ion)) return ion;
-
-        var acts = ion.no
-          ; !Array.isArray (acts) && (acts = [acts])
-          ;
-        var id
-          , act
-          , nion //next ion
-          , term
-          , known = no.ion.known
-          , next  = -1
-          , last  = acts.length
-          , sense = no.ion.sense
-          ;
-        while (++next < last)
-          { nion  = acts [next].ion
-          ; term  = ion.on
-          ; id    = nion && nion.re && nion.re.id
-          ; act   = sense [term]
-          ; act  && act.ion && (id && id == act.ion.re.id)
-                 && delete sense [term]
-                 && delete known [term]
-          }
       }
 
 , known
@@ -232,7 +197,15 @@
 
             unknown = !sense [group]
             action  =    ion [group]
-            action && (sense [group] = action)
+            action
+              && ( sense [group] = action )
+              && ! ionify.ionified [typeof action]
+              && ( on.our
+                 ? on.our.find ({find:action, in:ion, as:group})
+                       && ( sense [group] = ion [group ])
+                 :(action = sense [group] = ion [action])
+                 )
+                 ;
 
             debug.push (["knows?", id, group, group in sense])
 
@@ -251,7 +224,7 @@
           }
 
         ionify.sortKnownWords (updated)
-      ~ {debug: debug.push ([id, groups]), debug}
+      ~ {debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
         return ion
       }
 
@@ -289,7 +262,7 @@
     ]
 
 , ionified
-:   {
+:   { function: true
     }
 
 
@@ -338,10 +311,18 @@
               { group = groups [g]
                 if (!group.in (object)) continue
                 words   =  group.act
-                result  =  typeof  sense [words] == 'function'
-                             ?  (  sense [words].ion  !=  object) //bug?: don't self-activate sensor
-                                && sense [words]         (object)
-                             :     sense [sense [words]] (object) //todo: resolve (sense [words]) to function or act ion
+                result  =  typeof  sense [words]     == 'function'
+                             ?  (  sense [words].ion !=  object) //bug?: don't self-activate sensor
+                                && sense [words]        (object)
+                           //:  ~{find:words=sense[words], in:sense} && sense [words] (object)
+                           //:  sense [sense [words]] (object)
+                             :  (  our && our.ionified [typeof [sense [words] ]])
+                                    ? ~ sense [words]
+                                    : ( our && our.find &&  our.find ({find:sense[words], in:sense, as:words}))
+                                          ?   sense [words] (object) //todo: resolve (sense [words]) to function or act ion
+                                          :   console.log ("missing sensor: ", words, ":", sense[words])
+                                          ||  sense [sense [words]] (object)
+                                          ;
                 results += 1
                 words   =  group.set
                 for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
