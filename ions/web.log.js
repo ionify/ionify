@@ -1,7 +1,7 @@
 ;
 ~
 { re:
-    { id: 'log@ionify'
+    { id: 'web.log@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
