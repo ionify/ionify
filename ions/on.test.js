@@ -1,12 +1,13 @@
 ;
 ~
 { re:
-    { id: 'on.test@ionify'
-    , is: "A suite of tests for ionify's +on actions"
-    , by: 'mike.lee@ionify'
-    , on: -4.200709
-    , to: -8.20181122
-    , at: -0.1
+    { id:  'on.test@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20181219
+    , is:  -0.1
+    , it: "tests ionify's ~on api"
     }
 }
 
@@ -14,7 +15,7 @@
 { on: "hi"
 , hi:
     function onHi (ion)
-      { +{log:"hi " + String (ion.hi) + "!"}
+      { ~{log:"hi " + String (ion.hi) + "!"}
       }
 }
 
