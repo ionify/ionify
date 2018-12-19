@@ -99,10 +99,10 @@
 
         ~
         { get
-        :   [        'id@ionify', 'context@ionify', 'on.no@ionify',      'errors@ionify'
-            ,  'on.error@ionify',      'do@ionify', 'on.function@ionify'
-            ,  'on.array@ionify', 'web.log@ionify',     'next.id@ionify'
-            , 'on.storie@ionify',     'use@ionify'
+        :   [        'id@ionify',   'context@ionify',     'next.id@ionify'
+            ,     'on.no@ionify',    'errors@ionify',    'on.error@ionify'
+            ,   'web.log@ionify',        'do@ionify', 'on.function@ionify'
+            ,  'on.array@ionify', 'on.storie@ionify',         'use@ionify'
             ,           'ions'
             ]
         , in: 'sequence'||'order'
