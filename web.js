@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181214
+    , to:  -8.20181216
     , is:  -0.1
     , it:/ provides ionify: invoked object notation implemented for your web.        /
     , we:
@@ -28,7 +28,7 @@
     , ['get', 'in', 'then']
     , ['get'      , 'then']
     , ['get', 'in']
-    ,  'get'
+    , ['get']
     ]
 
 , valueOf
@@ -38,9 +38,9 @@
 
 , ionify
 :   function ionifyWeb ()
-      { Object.prototype.valueOf .ionified = this
-      ; var web                            = this
-      ; web ["get in then after"].ion      = web
+      { Object.prototype.valueOf.ionified = this
+      ; var web        = this
+      ; web.get.ion    = web
     //; web.watch     ()
       ; web.ready     ()
       ; web.locate    ()
@@ -86,8 +86,8 @@
 , getScript
 :   function getScript (ion)
       { var  web = getScript.ion || (getScript == this.getScript ? this : null)
-          , code = ion.code
-          ,  url = ion.at
+          , code = String (ion.code)
+          ,  url = String (ion.at)
           , get$ = web.get$
           ; get$.URL.ion = get$
           ;
@@ -97,14 +97,18 @@
 
         var script = document.createElement ('script')
           ; script.type  = 'text/javascript'
-          ; ion.at.match (get$.ID) && (script.id     = ion.at)
-          ; ion.then               && (script.onload = ion.then)
-          ; script.async =  get$. ASYNC       [ion.in]
-          ; script.src   =  url = url.match   (get$.HTTP)
-                         ?  url : url.replace (get$.ID, get$.URL)
+          ; ion   .then && (script.onload = ion.then)
+          ; script.async =  get$.ASYNC [ion.in]
           ;
-        document.head.appendChild (script)
-      ~ {debug: ["getting",url,"..."]}
+
+        if (url)
+          { url.match (get$.ID) && (script.id = url)
+          ; script.src =  url = url.match   (get$.HTTP)
+                       ?  url : url.replace (get$.ID, get$.URL)
+          }
+
+      ; document.head.appendChild (script)
+      ~{debug:["getting", url, "..."]}
       }
 
 , getInfo
@@ -148,46 +152,16 @@
                                          + /*(ext ? ext [1] :*/(get$.TYPE)
             }
     }
-, get
-:   function get (ion)
-      { var web           = get.ion
-          , get$          = web.get$
-          , url           = ion.get
-          , act           = ion.then
-          , then          = ion.then
-          , debug         = []
-          ; get$.URL.ion  = get$
-          ; get$.PATH           || (get$.PATH = this.path.ionify)
-          ; Array.isArray (url) || (      url = [url])
-          ; Array.isArray (act) || (      act = [act])
-          ;
-
-        for (var last=url.length, next=-1; ++next < last;)
-          { function got ()
-              {  var then = got.then
-              ;  debug.push (["got ",got.path," doing ",then,"..."])
-              ;  typeof then === 'string' ? ~ion[then] : ~then
-              }
-            then ? (got.then = then) : (got = void 0)
-            web  .  getScript ({at:url[next], in:ion.in, then:got})
-          }
-      ~ {debug:debug}
-      }
-
-, "get then info"
+,"get then info"
 :   [" note: ~{get: ['ion.id' || './script.js'], then: ['actions']} "
-    ," todo: Move ~get's code here & update ~get to use this        "
-    ,/ todo: Do ~on:ion.id; it should be faster than .onload	      /
+    ," will do ~on:ion.id; it should be faster than .onload        "
     ]
-, "get then"
-: "get in then after"
-, "get then after"
-: "get in then after"
-, "get in"
-: "get in then after"
-, "get in then"
-: "get in then after"
-, "get in then after"
+,"get then"         :"get"
+,"get then after"   :"get"
+,"get in"           :"get"
+,"get in then"      :"get"
+,"get in then after":"get"
+, get
 :   function get (ion)
       {/ todo: implement ~on.do              /
       //  get: Ensure it's an array          /
