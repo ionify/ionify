@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -8.20161116
-    , to:  -8.20181203
+    , to:  -8.20181216
     , is:  +0.1
     , it:
         [/ senses activated stories: string template or regular ion expressions like /
@@ -24,7 +24,7 @@
 , on: RegExp
 ,     RegExp
 :       function onStorie (ion)
-          {~ {log:this.source}
+          {~ {info:this.source}
           ;  return this //true
           }
 }
