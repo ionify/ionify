@@ -2,69 +2,57 @@
 ~
 { re:
     { id: 'log@ionify'
-    , is: "web-based logging for ionify"
-    , by:['mike.lee@iskitz', 'team@ionify']
-    , on: -4.200709
-    , to: -8.20171110
-    , at: -0.1
-    , stories
-    :   [ /todo: Create log@ + move console + all +logging there/
-        , /todo: Update to only use alert() on iOS/
-        , /todo: ready(): only throw noConsole if no alert() /
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20181218
+    , is:  -0.1
+    , it:" enables ionify web logging "
+    , we:
+        [" will create log@ & move console & all ~logging there     "
+        ," will update to only use alert() on mobile (e.g. iOS)     "
+        ," will set .ready() to only throw noConsole if no alert()  "
         ]
-    }
+    },
 
-    ,
-  on:
-    [ "error", "warn", "log", "info", "debug"
-    ]
-
-    ,
-  errors:
-    { noAlert   : "log@ionify needs the window.alert() API"
-    , noConsole : "log@ionify needs the console.log() API"
-    }
-
-    ,
   do:
-    [ {debug:!true}
-    , "ready"
-    ]
+    [ {on:['error', 'warn', 'debug', 'log', 'info']}
+    , {errors
+      :   { noAlert   : "log@ionify needs the window.alert () API"
+          , noConsole : "log@ionify needs the console.log  () API"
+      }   }
+    , 'ready'
+    ],
 
-    ,
   ready:
     function ready ()
-      {   var error = ready.ion.errors
-      ;   (typeof  console == "undefined") && ~error.noConsole
-      ;   (typeof    alert == "undefined") && ~error.noAlert
+      {   var    error    =  ready.ion.errors
+      ;  (typeof console == 'undefined') && ~error.noConsole
+      ;  (typeof alert   == 'undefined') && ~error.noAlert
       ;   return true
-      }
+      },
 
-    ,
   debug:
     function debug (ion)
-      { ion.as  = "debug"
+      { ion.as  = 'debug'
       ; ion.log = ion.debug
       ; debug.ion.log (ion)
       },
 
-
   error:
-    function logError (ion)
-      { ion.as  = "error"
+    function error (ion)
+      { ion.as  = 'error'
       ; ion.log = ion.error
-      ; logError.ion.log (ion)
+      ; error.ion.log (ion)
       ~ new Error (ion.error)
       },
 
-
   info:
-    function logInfo (ion)
-      { ion.as  = "info"
+    function info (ion)
+      { ion.as  = 'info'
       ; ion.log = ion.info
-      ; logInfo.ion.log (ion)
+      ; info.ion.log (ion)
       },
-
 
   log:
     function log (ion)
@@ -88,15 +76,17 @@
 
         function popup (ion)
           {  sense (ion)
-          && alert (id + icon[level] + String (ion.log))
+          && alert (id + icon [level] + String (ion.log))
           }
 
         function sense (ion)
-          { Array.isArray (ion.log) && (ion.log = ion.log.join (" "))
-            id         =  ion.re.from || web.re.id
-            level      =  ion.as      || "log"
-          ; ("boolean" == typeof ion [level]) && (sense [level] = ion [level])
-            return sense [level]
+          {   id          = ion.re.from || web.re.id
+          ;   level       = ion.as      || 'log'
+          ; ('boolean'   == typeof  ion [level])
+              && ( on     = sense [level] = ion [level])
+              && (ion.log = level + ": "  + ion [level])
+          ;   on && Array.isArray (ion.log) && (ion.log = ion.log.join (" "))
+          ;   return on
           }
 
         var icon =
@@ -107,25 +97,23 @@
             ,  warn: "⚠️"
             }
 
-        var id
-          , level
+        var id, level, on
           , web         = log.ion
           , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole   = document.URL.match (iOSPath)
           ; sense.debug = false
           ; sense.error = true
-          ; sense.log   = true
+          ; sense.info  = false
+          ; sense.log   = false
           ; sense.warn  = true
           ; (web.log    = noConsole ? popup : cons0le) (ion)
       },
 
-
   warn:
-    function logWarn (ion)
-      { ion.as  = "warn"
+    function warn (ion)
+      { ion.as  = 'warn'
       ; ion.log = ion.warn
-      ; logWarn.ion.log (ion)
+      ; warn.ion.log (ion)
       }
-
 }
 ;
