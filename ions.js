@@ -9,7 +9,7 @@
         ,   'san-jose.california.usa.earth'
         ]
     , on: -4.200709
-    , to: -8.20181215
+    , to: -8.20181222
     , is: -0.1
     , it:
         [" configures ionify "
@@ -27,11 +27,11 @@
     , '@'            : '@ionify'
     , '@(.+)\.ionify': '@ionify/$1'
     , '@ionify':
-          [ 'ionify.github.io/ionify/'
-          , 'cdn.rawgit.com/ionify/'
+          [ 'cdn.jsdelivr.net/gh/ionify/ionify@public/'
+          , 'ionify.glitch.me/'
           , 'ionify.net/'
-          , 'ionify.com/'
           , 'ionify.org/'
+          , 'ionify.github.io/ionify/'
           ]
     }
 
@@ -44,8 +44,12 @@
     , tools: './tools/'
     }
 
-,  debug:!true
-, verify: true
+, debug   : false
+, error   : true
+, info    : false
+, log     : false
+, warn    : true
+, verify  : true
 }
 
 ;
