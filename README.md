@@ -222,18 +222,20 @@ internal identifiers, within a single
 { on: 'my.ion@doma.in'
 , do:
     function confirm (ion)
-      { / This method's called for each ion    /
-      | / with an id matching "my.ion@doma.in"./
-      | / It confirms the ion's developer . . ./
+      {/ This method is called for each ion    /
+      ^/ with an id matching "my.ion@doma.in"  /
+      ^/ It confirms the ion developer before  /
+      ^/ describing what the ion is.           /
 
-        if (ion.re.by != "a.🇬🇾.developer") return
-
-      ~ {log:ion.re.is} <= /before using it/
+         if (ion.re.by == "a.🇬🇾.developer")
+          ~ {log:ion.re.is}
       }
 }
 
-~/ Each of the following modules could be in a/
-+/ separate file fetched locally or remotely! /
+
+~/ Each of the following modules could be in a /
++/ separate file fetched locally or remotely!  /
+
 ~
 { re:
     { id: 'my.ion@doma.in'
