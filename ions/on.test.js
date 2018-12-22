@@ -5,13 +5,13 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181219
+    , to:  -8.20181222
     , is:  -0.1
     , it: "tests ionify's ~on api"
     }
 }
 
-+
+~
 { on: "hi"
 , hi:
     function onHi (ion)
@@ -19,7 +19,7 @@
       }
 }
 
-+
+~
 [ {hi:        "iamai"         }
 , {hi: "かいととひろことマイケル" }
 , {hi:      "['0 . 0']"       }
