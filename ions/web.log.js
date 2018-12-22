@@ -5,9 +5,10 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181218
+    , to:  -8.20181222
     , is:  -0.1
-    , it:" enables ionify web logging "
+    , it:" implements ionify logging via    "
+        +" ~debug ~error ~info ~log & ~warn "
     , we:
         [" will create log@ & move console & all ~logging there     "
         ," will update to only use alert() on mobile (e.g. iOS)     "
@@ -26,25 +27,27 @@
 
   valueOf:
     function hiphop ()
-      {   var log   = this
-            , error = log.errors
-      ;  (typeof console == 'undefined') && error + error.noConsole
-      ;  (typeof alert   == 'undefined') && error + error.noAlert
-      ;   delete log.valueOf && ~log
+      {   var errors = this.errors
+      ;  (typeof console == 'undefined') && errors & errors.noConsole
+      ;  (typeof alert   == 'undefined') && errors & errors.noAlert
+      ;   this . log()
+      ;   delete this.valueOf
+      ~   this
       },
 
   debug:
     function debug (ion)
       { ion.as  = 'debug'
       ; ion.log = ion.debug
-      ; debug.ion.log (ion)
+      ; return debug.ion.log (ion)
       },
 
   error:
     function error (ion)
-      { ion.as  = 'error'
-      ; ion.log = ion.error
-      ; error.ion.log (ion)
+      { ion.as    = 'error'
+      ; ion.log   = ion.error
+      ; var state = error.ion.log (ion)
+      ; if (typeof ion.error == 'boolean') return state
       ~ new Error (ion.error)
       },
 
@@ -52,7 +55,14 @@
     function info (ion)
       { ion.as  = 'info'
       ; ion.log = ion.info
-      ; info.ion.log (ion)
+      ; return info.ion.log (ion)
+      },
+
+  warn:
+    function warn (ion)
+      { ion.as  = 'warn'
+      ; ion.log = ion.warn
+      ; return warn.ion.log (ion)
       },
 
   log:
@@ -71,50 +81,47 @@
        */
 
         function cons0le (ion)
-          {  sense (ion)
-          && console [level] (id + ": " + String (ion.log))
+          {  prepare (ion)
+          && console [level] (icon [level] + id + ": " + String (ion.log))
+          ;  return  state
           }
 
         function popup (ion)
-          {  sense (ion)
-          && alert (id + icon [level] + String (ion.log))
+          { prepare (ion) && alert (icon [level] + id + String (ion.log))
+          ; return state
           }
 
-        function sense (ion)
-          {   id          = ion.re.from || web.re.id
-          ;   level       = ion.as      || 'log'
-          ; ('boolean'   == typeof  ion [level])
-              && ( on     = sense [level] = ion [level])
-              && (ion.log = level + ": "  + ion [level])
-          ;   on && Array.isArray (ion.log) && (ion.log = ion.log.join (" "))
-          ;   return on
+        function prepare (ion)
+          {   id    =   ion.re.from || web.re.id
+          ;   level =   ion.as      || 'log'
+          ;   state =   prepare [level]
+          ; ('boolean'  == typeof ion     [level])
+                    && (state   = prepare [level] = ion [level])
+                    && (ion.log = level +   ": "  + state)
+          ;   state &&  Array.isArray (ion.log) && (ion.log = ion.log.join (" "))
+          ;   return state
           }
 
         var icon =
             { debug: "🐛"
-            , error: "❌"
+            , error: "🚫"
             ,  info: "💡"
             ,   log: "📋"
             ,  warn: "⚠️"
             }
 
-        var id, level, on
-          , web         = log.ion
-          , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
-          , noConsole   = document.URL.match (iOSPath)
-          ; sense.debug = false
-          ; sense.error = true
-          ; sense.info  = false
-          ; sense.log   = false
-          ; sense.warn  = true
-          ; (web.log    = noConsole ? popup : cons0le) (ion)
-      },
-
-  warn:
-    function warn (ion)
-      { ion.as  = 'warn'
-      ; ion.log = ion.warn
-      ; warn.ion.log (ion)
+        var id
+          , level
+          , state
+          , web           = this
+          , iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
+          , noConsole     = document.URL.match (iOSPath)
+          ; prepare.debug = false
+          ; prepare.error = false
+          ; prepare.info  = false
+          ; prepare.log   = false
+          ; prepare.warn  = false
+          ; web.log       = noConsole ? popup : cons0le
       }
 }
 ;
