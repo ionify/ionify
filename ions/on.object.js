@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181218
+    , to:  -8.20181222
     , is:  -0.1
     , it:
         [/ is the core of ionify: invoked object notation implemented for you.        /
@@ -76,8 +76,8 @@
         :  'on.no@ionify'      //must: sense by id because ~on:[] overrides previous sensors
         ,  'on.no@ionify'      //      which causes this sensor to be lost on ~context.
         :   function on (no)
-              { context = this || on.our //must: use this=onion.sense since on.our isn't linked.
-              ; context.share
+              { var space = this || on.our //must: use this=onion.sense since on.our isn't linked.
+              ; space.share
                   ({ with              : (~/will be onion.re.domain/, onion.re.id)
                    , share             :
                       { activate       : onion.activate
@@ -89,9 +89,9 @@
                       , sortKnownWords : onion.sortKnownWords
                   }}  )
               ; no.no ({on:'on.no@ionify', no:on})
-              ; context.link (onion)
-              ; context.link (ionified)
-              ; context = onion = ionified = null //performance? memory release?
+              ; space.link (onion)
+              ; space.link (ionified)
+              ; space = onion = ionified = null //performance? memory release?
               }
         }
 
