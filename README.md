@@ -185,11 +185,11 @@ to enable observing objects without a direct reference. This enables observing j
 { on: 'hi'
 , hi:
     function hello (ion)
-      { / This method's called for each ion with/
-      | / a "hi" property. It then logs the "hi"/
-      | / property's value.                     /
-      |
-      + { log: ion.hi }
+      {/ This method is called for each ion /
+      ^/ with a "hi" property. It logs the  /
+      ^/ value of that "hi" property.       /
+      ^
+      ^ {log: ion.hi}
       }
 }
 
