@@ -8,14 +8,14 @@
           ,  'san-jose.california.usa.earth'
           ]
     , on:  -4.200709
-    , to:  -8.20181222
+    , to:  -8.20181230
     , is:  -0.1
     , it:" configures ionify's test ions "
     }
 
 ,  debug :  !true
 ,  error :   true
-,  info  :   true
+,  info  :  !true
 ,  log   :   true
 ,  warn  :   true
 ,  get   : ['tests']
