@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id: 'web.log@ionify'
+    { id: 'log@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181222
+    , to:  -8.20190101
     , is:  -0.1
     , it:" implements ionify logging via    "
         +" ~debug ~error ~info ~log & ~warn "
@@ -13,6 +13,7 @@
         [" will create log@ & move console & all ~logging there     "
         ," will update to only use alert() on mobile (e.g. iOS)     "
         ," will set .ready() to only throw noConsole if no alert()  "
+        ," like moving display logic to host, e.g. alert vs console "
         ]
     },
 
@@ -30,76 +31,89 @@
       {   var errors = this.errors
       ;  (typeof console == 'undefined') && errors & errors.noConsole
       ;  (typeof alert   == 'undefined') && errors & errors.noAlert
-      ;   this . log()
+      ;   this . logged ()
       ;   delete this.valueOf
       ~   this
       },
 
   debug:
     function debug (ion)
-      { ion.as  = 'debug'
-      ; ion.log = ion.debug
-      ; return debug.ion.log (ion)
+      { var    logger       =  debug.ion
+      ;        logger.level = 'debug'
+      ; return logger.logged  (ion)
       },
 
   error:
     function error (ion)
-      { ion.as    = 'error'
-      ; ion.log   = ion.error
-      ; var state = error.ion.log (ion)
+      { var logger       =  error.ion
+      ;     logger.level = 'error'
+      ; var state        =  logger.logged (ion)
       ; if (typeof ion.error == 'boolean') return state
       ~ new Error (ion.error)
       },
 
   info:
     function info (ion)
-      { ion.as  = 'info'
-      ; ion.log = ion.info
-      ; return info.ion.log (ion)
-      },
-
-  warn:
-    function warn (ion)
-      { ion.as  = 'warn'
-      ; ion.log = ion.warn
-      ; return warn.ion.log (ion)
+      { var    logger       =  info.ion
+      ;        logger.level = 'info'
+      ; return logger.logged  (ion)
       },
 
   log:
     function log (ion)
-      {/* Uncommenting the following stories causes an infinite
-          loop log...onObject...debug...log
-          Maybe move logging to own flow | queue | thread so it
-          won't interupt other ion handling? Needs debugging.
+      { var    logger       =  log.ion
+      ;        logger.level = 'log'
+      ; return logger.logged  (ion)
+      },
 
-        +/ ion: +{log:thing} logs some thing    /
-        +/ ion: +{log: true} enables  logging   /
-        +/ ion: +{log:false} disables logging   /
-        +/ ion: +{debug:...} same as +{log:...} /
-        +/ ion: +{error:...} same as +{log:...} /
-        +/ ion: +{ warn:...} same as +{log:...} /
-       */
+  warn:
+    function warn (ion)
+      { var logger   =  warn.ion
+      ; logger.level = 'warn'
+      ; return logger.logged (ion)
+      },
 
-        function cons0le (ion)
+  prepare:
+    function prepare (ion)
+      { var logger       = prepare. ion
+          , level        = logger . level
+          , message      = ion     [level]
+          , state        = prepare [level]
+          ; logger.state = state
+          ; logger.id    = ion.re.from || logger.re.id
+
+        if('boolean'    == typeof message)
+          { logger.state = prepare [level] = message
+          ; message      = "~" + level + (logger.state ? " on" : " off")
+          ; state        = true
+          }
+
+      ; logger.state && Array.isArray (message) && (message = message.join (" "))
+      ; logger.message = String (message)
+      ; return state
+      },
+
+  loggedInfo:
+    [" ion: +{log:thing} logs some thing  "
+    ," ion: +{log: true} enables  logging "
+    ," ion: +{log:false} disables logging "
+    ," ion: +{debug:...} is +{log:...} with debug level "
+    ," ion: +{error:...} is +{log:...} with error level "
+    ," ion: +{ info:...} is +{log:...} with  info level "
+    ," ion: +{ warn:...} is +{log:...} woth  warn level "
+    ],
+
+  logged:
+    function logging (ion)
+      { function cons0le (ion)
           {  prepare (ion)
-          && console [level] (icon [level] + id + ": " + String (ion.log))
-          ;  return  state
+          && console [logger.level] (logger.id + ": " + logger.message)
+          ;  return   logger.state
           }
 
         function popup (ion)
-          { prepare (ion) && alert (icon [level] + id + String (ion.log))
-          ; return state
-          }
-
-        function prepare (ion)
-          {   id    =   ion.re.from || web.re.id
-          ;   level =   ion.as      || 'log'
-          ;   state =   prepare [level]
-          ; ('boolean'  == typeof ion     [level])
-                    && (state   = prepare [level] = ion [level])
-                    && (ion.log = level +   ": "  + state)
-          ;   state &&  Array.isArray (ion.log) && (ion.log = ion.log.join (" "))
-          ;   return state
+          { prepare (ion) && alert (icon [logger.level] + logger.id + logger.message)
+          ; return logger.state
           }
 
         var icon =
@@ -110,10 +124,8 @@
             ,  warn: "⚠️"
             }
 
-        var id
-          , level
-          , state
-          , web           = this
+        var logger        = this
+          , prepare       = logger.prepare
           , iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole     = document.URL.match (iOSPath)
           ; prepare.debug = false
@@ -121,7 +133,7 @@
           ; prepare.info  = false
           ; prepare.log   = false
           ; prepare.warn  = false
-          ; web.log       = noConsole ? popup : cons0le
+          ; logger.logged = noConsole ? popup : cons0le
       }
 }
 ;
