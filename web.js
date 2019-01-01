@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181216
+    , to:  -8.20181230
     , is:  -0.1
     , it:/ provides ionify: invoked object notation implemented for your web.        /
     , we:
@@ -203,7 +203,7 @@
           { if  (afterAllIons.done) return
           ; var  id  = ion instanceof Event ? this.id : ion.re.id
           ; got [id] = true
-          ~ {log: `\nget: ${ions}\ngot: ${Object.keys (got)}`}
+          ~ {debug: `\nget: ${ions}\ngot: ${Object.keys (got)}`}
           ; for (var next=-1; ++next < last;) if (! got [ions [next]]) return
           ; afterAllIons.done = true
           ~ {on:ions, no:afterAllIons}
