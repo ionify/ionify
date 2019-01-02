@@ -1,14 +1,13 @@
 # [ionify](http://about.ionify.net/)
 
-**ion implemented for you**, is a flexible, unobtrusive & novel
-[api](https://en.wikipedia.org/wiki/Application_programming_interface)
-for expressing ideas via
+**ion implemented for you**, is a flexible, unobtrusive & novel api for expressing ideas via
 [**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md).
 It was
-[defined & developed](https://github.com/ionify/about/blob/public/story.md),
-alongside **ion**, by
-[Michael Lee](https://github.com/iskitz)
-in 2007:
+[created](https://github.com/ionify/about/blob/public/story.md)
+by
+[**Michael Lee**](https://github.com/iskitz)
+in 2007 and is maintained by
+[**team ionify**](https://github.com/ionify/about/blob/public/README.md#team).
 
 ```javascript
 ~ {log: "hi!"}  <=  /logs hi!/;
@@ -74,15 +73,15 @@ are three we've explored & confirmed capable.
 }
 
 ~ /These ions can be in a separate file fetched/
-| /either locally or remotely...               /
-|
+^ /either locally or remotely...               /
+^
 + { say: "👋🏾 Hi!"                              }
-| { ask: "What's your name?"                   }
-| { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
-| { ask: "[answer], what's 2 x 2?"             }
-| { say: "[answer]? Really? 🤔"                }
-| { ask: "Can I ask you another question?"     }
-| { say: 'I thought you\'d say "[answer]" 😉'  }
+^ { ask: "What's your name?"                   }
+^ { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
+^ { ask: "[answer], what's 2 x 2?"             }
+^ { say: "[answer]? Really? 🤔"                }
+^ { ask: "Can I ask you another question?"     }
+^ { say: 'I thought you\'d say "[answer]" 😉'  }
 ;
 ```
 
@@ -167,7 +166,7 @@ our more in-depth exploration of literate programming.
 }
 
 / This event  ion can exist within another file /
-| {event: "it happened!"} <= /activates an event/
+^ {event: "it happened!"} <= /activates an event/
 ;
 ```
 
