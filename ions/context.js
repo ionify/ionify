@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181217
+    , to:  -8.20190102
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -65,6 +65,7 @@
           ;
         while (last != to)    // bug? might infinitely loop on circular .ion's | .our's
           { last = to
+          ; if (           ionified [typeof (found = to     [name]) ] ) break
           ; if ( to.ion && ionified [typeof (found = to.ion [name]) ] ) break
           ; if ( to.our && ionified [typeof (found = to.our [name]) ] ) break
           ; if ( to.ion ){ to = to.ion } else break
