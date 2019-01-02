@@ -76,12 +76,12 @@ are three we've explored & confirmed capable.
 + / are fetched either locally or remotely ...  /
 |
 + { say: "👋🏾 Hi!"                              }
-| { ask: "What's your name?"                   }
-| { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
-| { ask: "[answer], what's 2 x 2?"             }
-| { say: "[answer]? Really? 🤔"                }
-| { ask: "Can I ask you another question?"     }
-| { say: 'I thought you\'d say "[answer]" 😉'  }
+^ { ask: "What's your name?"                   }
+^ { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
+^ { ask: "[answer], what's 2 x 2?"             }
+^ { say: "[answer]? Really? 🤔"                }
+^ { ask: "Can I ask you another question?"     }
+^ { say: 'I thought you\'d say "[answer]" 😉'  }
 ;
 ```
 
