@@ -1,2 +1,2 @@
-; console.log (".js loaded!")
+; console.error ("~get failed: .js loaded!")
 ;
