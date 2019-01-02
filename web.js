@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181230
+    , to:  -8.20190101
     , is:  -0.1
     , it:/ provides ionify: invoked object notation implemented for your web.        /
     , we:
@@ -85,9 +85,9 @@
 
 , getScript
 :   function getScript (ion)
-      { var  web = getScript.ion || (getScript == this.getScript ? this : null)
-          , code = String (ion.code)
-          ,  url = String (ion.at)
+      { var  web = getScript.ion    || (getScript == this.getScript ? this : null)
+          , code = String (ion.code || '')
+          ,  url = String (ion.at   || '')
           , get$ = web.get$
           ; get$.URL.ion = get$
           ;
