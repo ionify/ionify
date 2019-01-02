@@ -14,16 +14,6 @@ in 2007 and is maintained by
 ```
 
 
-## how
-
-**ion** & **ionify** are enabled by, and can be implemented in, languages that support
-[operator & operation overloading](https://en.wikipedia.org/wiki/Operator_overloading).
-[JavaScript](https://github.com/ionify/ionify/),
-[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
-[Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
-are three we've explored & confirmed capable.
-
-
 ## why
 
 **ion** & **ionify** enable exploring and experimenting with
@@ -43,6 +33,16 @@ are three we've explored & confirmed capable.
   data and code
 
 + and [more](https://github.com/ionify/ideas/)
+
+
+## how
+
+**ion** & **ionify** are enabled by, and can be implemented in, languages that support
+[operator & operation overloading](https://en.wikipedia.org/wiki/Operator_overloading).
+[JavaScript](https://github.com/ionify/ionify/),
+[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
+[Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
+are three we've explored & confirmed capable.
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
