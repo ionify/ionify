@@ -132,7 +132,7 @@
     ,    ID: (/(?:(.*)@(\D*)|(\D*))(\d+.*)*/)    // matches ((api)@(space.) | (api.)) version#
     ,  HTTP: (/^\w+:\/\//)                       // matches URL protocols
     ,  PATH:
-           { ionify    : "//ionify.glitch.me/ions/"
+           { ionify    : "//cdn.jsdelivr.net/gh/ionify/ionify@public/ions/"
            , undefined : "./"
            , null      : "./"
            , ''        : "./"
@@ -154,6 +154,12 @@
     }
 ,"get then info"
 :   [" note: ~{get: ['ion.id' || './script.js'], then: ['actions']} "
+    ,"  get: Ensure it's an array          "
+    ,"   in: Ensure it's an expected value "
+    ," then: Create beacon  function       "
+    ,"  get: Create scripts with in & then "
+    ,"  get: Attach scripts to webi        "
+    ," will implement ~on.do               "
     ," will do ~on:ion.id; it should be faster than .onload        "
     ]
 ,"get then"         :"get"
@@ -163,14 +169,7 @@
 ,"get in then after":"get"
 , get
 :   function get (ion)
-      {/ todo: implement ~on.do              /
-      //  get: Ensure it's an array          /
-      //   in: Ensure it's an expected value /
-      // then: Create beacon  function       /
-      //  get: Create scripts with in & then /
-      //  get: Attach scripts to webi        /
-
-        var  web = get.ion
+      { var  web = get.ion
           , ions = Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , last = ions.length
           , next = -1
@@ -187,12 +186,13 @@
         while (++next < last) web.getScript ({at: ions[next], in: ion.in, then: todo})
       }
 
+, thenInfo
+:   [" Create a function that does something  "
+    +" based on ~get.then.after & sensed ions "
+    ]
 , then
 :   function then (ion)
-      {/ Create a function that does something  /
-      // based on ~get.then.after & sensed ions /
-
-        var ions = ion.get
+      { var ions = ion.get
           , last = ions.length
           ,  got = {}
           , todo = then.our.ionified [typeof ion.then]
