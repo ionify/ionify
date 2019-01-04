@@ -5,28 +5,34 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -7.20160910
-    , to:  -8.20181215
+    , to:  -8.20190104
     , is:  -0.1
     , it: "generates sequential ids on-demand"
     }
 
-, on    : [['next'   ,      'id']]
-, share : { 'nextID' : "next id"}
+, on    : [['next', 'id']]
 , MAX   : Number.MAX_SAFE_INTEGER ||  9007199254740991
 , MIN   : Number.MIN_SAFE_INTEGER || -9007199254740991
 , ids   : {}
 
+, valueOf
+:   function hiphop ()
+      { this ["next id"].ion = this
+      ; delete this.valueOf
+      ~ this
+      }
+
 , "next id"
-:   function onNextId (ion)
-      { var thi$ = onNextId.ion || (onNextId.ion = onNextId == this["next id"] ? this : null)
-          , ids  = thi$.ids
+:   function nextId (ion)
+      { var my   = nextId.ion
+          , ids  = my.ids
           , name = ion.next
           , f0r  = ion.id.re || (ion.id.re = {})
           , id   = ids [name]
 
-      ; (id >= thi$.MAX)  && (id = ids [name] = null)
-      ; isNaN (id)        && (id = ids [name] = thi$.MIN)
-      ; f0r.id = name + '.' + id
+      ; (id >= my.MAX)  && (id = ids [name] = null)
+      ; isNaN (id)      && (id = ids [name] = my.MIN)
+      ;    f0r.id = name + '.' + id
       ; return ids [name]++
       }
 }
