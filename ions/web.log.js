@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190101
+    , to:  -8.20190104
     , is:  -0.1
     , it:" implements ionify logging via    "
         +" ~debug ~error ~info ~log & ~warn "
@@ -33,7 +33,7 @@
       ;  (typeof alert   == 'undefined') && errors & errors.noAlert
       ;   this . logged ()
       ;   delete this.valueOf
-      ~   this
+      ~   this & this.prepare.our.logging
       },
 
   debug:
@@ -76,6 +76,7 @@
   prepare:
     function prepare (ion)
       { var logger       = prepare. ion
+          , logging      = prepare. our . logging
           , level        = logger . level
           , message      = ion     [level]
           , state        = prepare [level]
@@ -88,8 +89,9 @@
           ; state        = true
           }
 
-      ; logger.state && Array.isArray (message) && (message = message.join (" "))
-      ; logger.message = String (message)
+      ; logger.state   && Array.isArray (message) && (message = message.join (" "))
+      ; logger.message  = String        (message)
+      ; logging [level] = logger.state
       ; return state
       },
 
@@ -128,11 +130,6 @@
           , prepare       = logger.prepare
           , iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole     = document.URL.match (iOSPath)
-          ; prepare.debug = false
-          ; prepare.error = false
-          ; prepare.info  = false
-          ; prepare.log   = false
-          ; prepare.warn  = false
           ; logger.logged = noConsole ? popup : cons0le
       }
 }
