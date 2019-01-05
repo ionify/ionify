@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190102
+    , to:  -8.20190104
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -14,10 +14,10 @@
         ," names to ions.                                                           "
         ]
     , we:
-        [" like idea of queing ~find's then doing once ~find's available            "
-        ," will update share() to use getSpace().                                   "
-        ," will implement ~link.as & ~link.to.                                      "
-        ," will apply unlink when ~link.to is falsey.                               "
+        [" will set ~find.in.as to resolve aliased aliases. "
+        ," like idea of queueing ~find's then doing once ~find's available          "
+        ," will implement ~link.as & ~link.to.              "
+        ," will apply unlink when ~link.to is falsey.       "
         ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
         ," want all hip & hiphop ions did valueOf:hiphop --> start --> valueOf:hop. "
         ," like renaming link.share@ to context@ but want names to match content... "
@@ -66,6 +66,7 @@
         while (last != to)    // bug? might infinitely loop on circular .ion's | .our's
           { last = to
           ; if (           ionified [typeof (found = to     [name]) ] ) break
+        //; else {name = found; last = null; continue}
           ; if ( to.ion && ionified [typeof (found = to.ion [name]) ] ) break
           ; if ( to.our && ionified [typeof (found = to.our [name]) ] ) break
           ; if ( to.ion ){ to = to.ion } else break
@@ -99,9 +100,9 @@
 
         for (property in ion)
           { thing = ion [property]
-          ; if (!thing)                                               continue
-          ; if (typeof thing != 'function' && !Array.isArray (thing)) continue
-          ; if (!ion.hasOwnProperty (property))                       continue
+          ; if (!thing)                                                 continue
+          ; if ((typeof thing != 'function') && !Array.isArray (thing)) continue
+          ; if (!ion.hasOwnProperty (property))                         continue
           ! thing.this &&           (thing.this = ion)
           ! thing.ion  &&        (/* thing [id] = */  thing.ion = ion)
           ! thing.our  && space  && (thing.our  = /*|| ion ||*/ space)
@@ -131,30 +132,30 @@
             {  thing = ion [property]
             ;  (typeof thing == "function") && (thing [id] == ion) && (delete thing [id])
             }
-        }
+        },
 
-, shareInfo
-:   [ "note: ..."
-    , "todo: create +{share: {thing:..., other:...}, with:[ion.ids]}"
-    ]
-,"share with":"share"
-, share
-:   function share (ion)
+  shareInfo
+  : [" ... "
+    ," will fix ~share:'*' to resolve shared things; now assumes ~do:[{share:'*'}] "
+    ," will create +{share: {thing:..., other:...}, with:[ion.ids]} "
+    ],
+ "share with":"share",
+  share
+  : function share (ion)
       { var thi$   = share.ion || (share == this.share ? this : null)
           , spaces = thi$.spaces
-          , things = ion.share
+          , things = ion.share == '*' ? ion.ion.ion || ion.ion || ion : ion.share
           , wyth   = ion.with || (ion.re && ion.re.id) || ''
           , space  = thi$.getSpace (wyth)
-        //, domain = wyth.match (/@(.*)/)
-        //; domain = domain && domain [1]
-//console.log (ion, wyth, domain, thi$, spaces)
-        //; space  = spaces [domain] || (spaces [domain] = {})
           ;
         for (var thing in things)
-          {  space  [thing]
-          =  typeof (thing = things [thing]) == 'string'
-          ?  ion    [thing]
-          :          thing
+          { if ((('boolean' == typeof ion [thing]) && !ion [thing])
+            ||  ((thing == 're') && !ion.re))
+            continue
+          ; space [thing]
+              = typeof (thing = things [thing]) == 'string'
+              ? ion    [thing]
+              :         thing
           }
       }
 
