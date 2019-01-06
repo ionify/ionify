@@ -5,43 +5,43 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190104
+    , to:  -8.20190105
     , is:  -0.1
     , it:
-        [/ is the core of ionify: invoked object notation implemented for you.        /
-        ,/ senses ions as activated Objects; i.e. ~{} & ~objectReference.             /
-        ,/ senses ~on.                                                                /
-        ," activates ionify's host environment ion; e.g. web@ionify & node@ionify.    "
-        ," gets all of ionify's supporting ions using its host-provided ~get.         "
+        [" implements ionify: invoked object notation implemented for you.            "
+        ," senses ions as activated Objects; i.e. ~{} & ~objectReference.             "
+        ," senses ~on actions.                                                        "
+        ," activates ionify's host environment ion; e.g. web@ionify | node@ionify.    "
+        ," gets all of ionify's supporting ions using its host-provided ~get action.  "
         ," starts its host application by ~get'ing its launch config [via ions.js].   "
-        ,/ ... /
+        ," ... "
         ]
     , we:
-        [/ were examining if .onion() is the source of ions' lost 'this' reference.   /
-        ,/ were implementing ~on.do...                                                /
-        ,/ will rename on.object to on.ion; more purposeful & cross-platform name.    /
-        ,/ will make .resolve() to convert ids to ions: e.g. ionified references.     /
-        ,/ will .resolve this.* & ~* in strings & stories to actual ion references.   /
-        ,/ will add logging for unknown terms like ~get with a hostless ionify.       /
+        [" were examining if .onion() is the source of ions' lost 'this' reference.   "
+        ," were implementing ~on.do...                                                "
+        ," will rename on.object to on.ion; more purposeful & cross-language name.    "
+        ," will make .resolve() to convert ids to ions: e.g. ionified references.     "
+        ," will .resolve this.* & ~* in strings & stories to actual ion references.   "
+        ," will add logging for unknown terms like ~get with a hostless ionify.       "
         ," will make a way to undo all ~on:Type's.                                    "
-        ,/ like making ~on & ~no their own ions.                                      /
+        ," like making ~on & ~no their own ions.                                      "
         ," like that ~{is:thing, type:'ion'} could test if a type is ionified.        "
         ," like ~{on:'term',dont:act} or {no:{term:act} vs {on:'term',no:act} ? 👎🏾    "
 
-        ,/ were adding .link() call to onArray & think we should for all onSensors to /
-        +/ ensure that they all have a .ion reference to their containing ion.        /
-        +/ That'll support subsequent operations that depend on an ion's context.     /
+        ," were adding .link() call to onArray & think we should for all onSensors to "
+        +" ensure that they all have a .ion reference to their containing ion.        "
+        +" That'll support subsequent operations that depend on an ion's context.     "
 
-        ,/ like that it may be more sensible to create an ion Type sensor delegator   /
-        +/ that ensures all ions have an id & that they & their ionified content have /
-        +/ a reference to their host ion.                                             /
+        ," like that it may be more sensible to create an ion Type sensor delegator   "
+        +" that ensures all ions have an id & that they & their ionified content have "
+        +" a reference to their host ion.                                             "
 
-        ,/ like that the delegator would do common actions for all ion types then     /
-        +/ delegate to the relevant ion's Type sensor.                                /
+        ," like that the delegator would do common actions for all ion types then     "
+        +" delegate to the relevant ion's Type sensor.                                "
 
-        ,/ like that it may then also make sense to have an ion Type cleanup that     /
-        +/ removes those ion references for memory performance. May be good enough to /
-        +/ only note this for now & revisit if performance needs to be improved.      /
+        ," like that it may then also make sense to have an ion Type cleanup that     "
+        +" removes those ion references for memory performance. May be good enough to "
+        +" only note this for now & revisit if performance needs to be improved.      "
         ]
     }
 
@@ -166,8 +166,6 @@
     function on (ion)
       { if ( !ion  ||  !('on' in ion)  ) return    ion
       ; if ('function' == typeof ion.on) return on.ion.onSensor (ion)
-
-    //; on.our &&  on.our/*ion*/.id (ion)
 
       ; var debug = []
       ; debug.push ([ion.re && ion.re.id, "on:", ion.on, JSON.stringify (ion.on)])
