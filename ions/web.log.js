@@ -10,10 +10,11 @@
     , it:" implements ionify logging via    "
         +" ~debug ~error ~info ~log & ~warn "
     , we:
-        [" will create log@ & move console & all ~logging there     "
-        ," will update to only use alert() on mobile (e.g. iOS)     "
-        ," will set .ready() to only throw noConsole if no alert()  "
-        ," like moving display logic to host, e.g. alert vs console "
+        [" must understand why initial ~debug state isn't logged.    "
+        ," will create log@ & move console & all ~logging there.     "
+        ," will update to only use alert() on mobile (e.g. iOS).     "
+        ," will set .ready() to only throw noConsole if no alert().  "
+        ," like moving display logic to host, e.g. alert vs console. "
         ]
     },
 
