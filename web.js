@@ -7,15 +7,17 @@
     , on:  -4.200709
     , to:  -8.20190105
     , is:  -0.1
-    , it:/ provides ionify: invoked object notation implemented for your web.        /
+    , it:" implements ionify: invoked object notation implemented for your web.      "
     , we:
-        [/ will add tests for web@ionify & its actions	                             /
+        [" will add tests for web@ionify & its actions	                             "
         ," will set all ~get actions' ionid@ domains to the current ion's.           "
-        ,/ will set ~debug:{member:true|false} = ion member to debug.                /
-        ,/ will use ajile.test.inlineLoader to load inline code!                     /
-        ,/ want all ~get.then to delete script.onload after ~then for memory perf?   /
-        ,/ wish ... /
-        ,/ want ... /
+        ," will set ~debug:{member:true|false} = ion member to debug.                "
+        ," want to adopt ajile.test.inlineLoader to load inline code!                "
+        ," want all ~get.then to delete script.onload after ~then for memory perf?   "
+        ," like ~get to be the first ion sensor that queues ions for ~on sensing     "
+        +" it enables getting ions like ions@ before sensors activate.               "
+        ," wish ... "
+        ," want ... "
         ]
     }
 
