@@ -5,14 +5,11 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190101
+    , to:  -8.20190105
     , is:  -0.1
     , it:/ provides ionify: invoked object notation implemented for your web.        /
     , we:
-        [/ will use .then() as ~on.do where ~{on:''|[], do:ion, after:all|any|each}  /
-        ,/ will set .then() to ~on.do.after                                          /
-        ,/ will set ~get.then to do ~on:ion & script.onload; 1st called cancels 2nd. /
-        ,/ will add tests for web@ionify & its actions	                             /
+        [/ will add tests for web@ionify & its actions	                             /
         ," will set all ~get actions' ionid@ domains to the current ion's.           "
         ,/ will set ~debug:{member:true|false} = ion member to debug.                /
         ,/ will use ajile.test.inlineLoader to load inline code!                     /
@@ -112,13 +109,15 @@
       }
 
 , getInfo
-:   [" note: ~{get: 'ion.id' || './script.js'}                   "
-    ,/ todo: Keep updating get$.PATH with @domains & their paths /
-    ,/ todo: Handle URLs with existing file extension(s)         /
-    ,/ todo: Move got() & .then code to ~get.then                /
-    ," todo: Sense ion ids vs. script paths: ./script.js         "
-    ,/ idea: Create ~method@ionify to define ~get & its context	 /
-    ,/ todo: ... /
+:   [" does ~{get: ['ion.id' || './script.js'], then: ['actions']} "
+    ," will update get$.PATH with new @domains & their paths.      "
+    ," will handle URLs with existing file extension(s).           "
+    ," will move got() & .then code to ~get.then                   "
+    ," will sense ion ids vs. script paths: ./script.js            "
+    ," will use .then() as ~on.do where ~{on:''|[], do:ion, after:all|any|each}     "
+    ," will set .then() to ~on.do.after                            "
+    ," will set ~get.then to do ~on:ion.id & script.onload; 1st called cancels 2nd. "
+    ," ... "
     ]
 , get$
 :   { ASYNC:
@@ -153,14 +152,11 @@
             }
     }
 ,"get then info"
-:   [" note: ~{get: ['ion.id' || './script.js'], then: ['actions']} "
-    ,"  get: Ensure it's an array          "
+:   ["  get: Ensure it's an array          "
     ,"   in: Ensure it's an expected value "
     ," then: Create beacon  function       "
     ,"  get: Create scripts with in & then "
     ,"  get: Attach scripts to webi        "
-    ," will implement ~on.do               "
-    ," will do ~on:ion.id; it should be faster than .onload        "
     ]
 ,"get then"         :"get"
 ,"get then after"   :"get"
