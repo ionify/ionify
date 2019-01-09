@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190104
+    , to:  -8.20190109
     , is:  -0.1
     , it:" implements ionify logging via    "
         +" ~debug ~error ~info ~log & ~warn "
@@ -84,11 +84,11 @@
           ; logger.state = state
           ; logger.id    = ion.re.from || logger.re.id
 
-        if('boolean'    == typeof message)
-          { logger.state = prepare [level] = message
-          ; message      = "~" + level + (logger.state ? " on" : " off")
-          ; state        = true
-          }
+        if('boolean' == typeof message)
+          if( state = message != state)
+            { logger.state = prepare [level] = message
+            ; message      = "~" + level + (logger.state ? " on" : " off")
+            }
 
       ; logger.state   && Array.isArray (message) && (message = message.join (" "))
       ; logger.message  = String        (message)
