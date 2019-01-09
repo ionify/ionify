@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , in:  'san-jose.california.usa.earth'
     , on:  -7.20160518
-    , to:  -8.20181216
+    , to:  -8.20190107
     , is:  -0.1
     , it:  "tests ionify"
     , we:
@@ -19,6 +19,7 @@
     ,   'get.test@ionify',         'log.test@ionify'
     ,   'use.test@ionify', 'punctuation.test@ionify'
     , 'emoji.test@ionify',      'errors.test@ionify'
+    , 'context.find.test@ionify'
     ]
 }
 ;
