@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190104
+    , to:  -8.20190109
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -14,8 +14,7 @@
         ," names to ions.                                                           "
         ]
     , we:
-        [" will set ~find.in.as to resolve aliased aliases. "
-        ," like idea of queueing ~find's then doing once ~find's available          "
+        [" like idea of queueing ~find's then doing once ~find's available          "
         ," will implement ~link.as & ~link.to.              "
         ," will apply unlink when ~link.to is falsey.       "
         ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
@@ -58,20 +57,40 @@
 , find
 :   function find (ion)
       { var name      = ion.find
-          , to        = ion.in
-          , as        = ('as' in ion) ? ion.as : name
-          , ionified  = find.our.ionified
-          , found     , last
-          ;
-        while (last != to)    // bug? might infinitely loop on circular .ion's | .our's
-          { last = to
-          ; if (           ionified [typeof (found = to     [name]) ] ) break
-        //; else {name = found; last = null; continue}
+      ,     to        = ion.in
+      ,     as        = ('as' in ion) ? ion.as : name
+      ,     ionified  = find.our.ionified
+      ,     context   = find.ion
+      ,     found
+      ,     last
+
+      ; while
+          ( last != to)    // bug? might infinitely loop on circular .ion's | .our's
+          { last  = to
+          ; if ( found   = context.findName ({find:name, in:to})      ) break
           ; if ( to.ion && ionified [typeof (found = to.ion [name]) ] ) break
           ; if ( to.our && ionified [typeof (found = to.our [name]) ] ) break
           ; if ( to.ion ){ to = to.ion } else break
           }
-        return found ? (ion.in [as] = found) : ion.in [as]
+
+      ; found  && (ion.in [as] = found)
+      ; return !! found
+      }
+
+, findName
+:   function name (ion)
+      { var thing    = ion.find
+      ,     place    = ion.in
+      ,     ionified = name.our.ionified
+      ,     tried    = {}
+      ; while
+          (!tried [thing] && thing in place)
+          { tried [thing]  = true
+        //; console.log (`~find ${thing} ...`)
+          ; thing = place [thing]
+          ; if (ionified  [typeof thing]) return thing
+          }
+      ; return false
       }
 
 , linkInfo
