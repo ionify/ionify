@@ -76,12 +76,12 @@ are three we've explored & confirmed capable.
 + / are fetched either locally or remotely ...  /
 |
 + { say: "👋🏾 Hi!"                              }
-^ { ask: "What's your name?"                   }
-^ { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
-^ { ask: "[answer], what's 2 x 2?"             }
-^ { say: "[answer]? Really? 🤔"                }
-^ { ask: "Can I ask you another question?"     }
-^ { say: 'I thought you\'d say "[answer]" 😉'  }
+| { ask: "What's your name?"                   }
+| { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
+| { ask: "[answer], what's 2 x 2?"             }
+| { say: "[answer]? Really? 🤔"                }
+| { ask: "Can I ask you another question?"     }
+| { say: 'I thought you\'d say "[answer]" 😉'  }
 ;
 ```
 
@@ -166,7 +166,7 @@ our more in-depth exploration of literate programming.
 }
 
 / This event  ion can exist within another file /
-^ {event: "it happened!"} <= /activates an event/
+| {event: "it happened!"} <= /activates an event/
 ;
 ```
 
@@ -185,10 +185,10 @@ to enable observing objects without a direct reference. This enables observing j
 , hi:
     function hello (ion)
       {/ This method is called for each ion /
-      ^/ with a "hi" property. It logs the  /
-      ^/ value of that "hi" property.       /
-      ^
-      ^ {log: ion.hi}
+      |/ with a "hi" property. It logs the  /
+      |/ value of that "hi" property.       /
+      |
+      | {log: ion.hi}
       }
 }
 
@@ -222,9 +222,9 @@ internal identifiers, within a single
 , do:
     function confirm (ion)
       {/ This method is called for each ion    /
-      ^/ with an id matching "my.ion@doma.in"  /
-      ^/ It confirms the ion developer before  /
-      ^/ describing what the ion is.           /
+      |/ with an id matching "my.ion@doma.in"  /
+      |/ It confirms the ion developer before  /
+      |/ describing what the ion is.           /
 
          if (ion.re.by == "a.🇬🇾.developer")
           ~ {log:ion.re.is}
