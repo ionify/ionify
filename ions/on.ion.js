@@ -19,12 +19,11 @@
     , we:
         [" were examining if .onion() is the source of ions' lost 'this' reference.   "
         ," were implementing ~on.do...                                                "
-        ," will rename on.object to on.ion; more purposeful & cross-language name.    "
         ," will make .resolve() to convert ids to ions: e.g. ionified references.     "
         ," will .resolve this.* & ~* in strings & stories to actual ion references.   "
+        ," will .resolve action@test.ionify to test/action.js                         "
         ," will add logging for unknown terms like ~get with a hostless ionify.       "
         ," will make a way to undo all ~on:Type's.                                    "
-        ," like making ~on & ~no their own ions.                                      "
         ," like that ~{is:thing, type:'ion'} could test if a type is ionified.        "
         ," like ~{on:'term',dont:act} or {no:{term:act} vs {on:'term',no:act} ? 👎🏾    "
 
