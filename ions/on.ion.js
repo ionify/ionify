@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'on.object@ionify'
+    { id:  'on.ion@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190105
+    , to:  -7.20190316
     , is:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "

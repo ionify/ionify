@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190105
+    , to:  -7.20190316
     , is:  -0.1
     , it:" implements ionify: invoked object notation implemented for your web.      "
     , we:
@@ -43,7 +43,7 @@
     //; web.watch     ()
       ; web.ready     ()
       ; web.locate    ()
-      ; web.getScript ({at:'on.object@ionify'})
+      ; web.getScript ({at:'on.ion@ionify'})
       }
 
 , watch
