@@ -67,7 +67,7 @@ do:
 : function sharedAlias (tester)
     { var state = sharedAlias.our.logging.log
       ~
-      {'name@sharedfindtest':{}
+      {'alias@sharedfindtest':{}
       , share:{b:'b'}
       , b:[{log:true}
           ,{log:"✅ ~find shared alias"}
