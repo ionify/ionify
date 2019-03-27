@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190316
+    , to:  -7.20190327
     , is:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
@@ -98,10 +98,10 @@
 
         ~
         { get
-          : [ 'next.id@ionify',           'id@ionify',  'on.error@ionify'
-            ,   'errors@ionify',     'context@ionify',     'on.no@ionify'
-            , 'on.array@ionify',          'do@ionify',      'ions@ionify'
-            ,  'web.log@ionify', 'on.function@ionify', 'on.storie@ionify'
+          : [ 'next.id@ionify',               'id@ionify',  'on.error@ionify'
+            ,   'errors@ionify', 'find.link.share@ionify',     'on.no@ionify'
+            , 'on.array@ionify',              'do@ionify',      'ions@ionify'
+            ,  'web.log@ionify',     'on.function@ionify', 'on.storie@ionify'
             ,      'use@ionify'
             ,          'ions'
             ]

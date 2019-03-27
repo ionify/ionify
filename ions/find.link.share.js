@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'context@ionify'
+    { id:  'find.link.share@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190109
+    , to:  -7.20190327
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -15,11 +15,11 @@
         ]
     , we:
         [" like idea of queueing ~find's then doing once ~find's available          "
-        ," will implement ~link.as & ~link.to.              "
-        ," will apply unlink when ~link.to is falsey.       "
+        ," will implement ~link.as & ~link.to.          "
+        ," will apply unlink when ~link.to is falsey.   "
         ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
-        ," want all hip & hiphop ions did valueOf:hiphop --> start --> valueOf:hop. "
-        ," like renaming link.share@ to context@ but want names to match content... "
+        ," want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. "
+        ," like renaming ~link's .ion & .this to .home  "
         ," like exploring how prototypes enable automatic context sharing.          "
         ]
     }

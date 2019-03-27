@@ -1,11 +1,11 @@
 ;
 ~
-{'context.find.test@ionify'
+{'find.test@ionify'
 : { as:  'test'
   , by: ['mike.lee', 'team']
   , at:  'ionify.net'
   , on:  -8.20190107
-  , to:  -8.20190109
+  , to:  -7.20190327
   , is:  -0.1
   , it:  "tests ionify's ~find.in.as action. "
   , we: ["want tests to be done without being specified via a ~do."
