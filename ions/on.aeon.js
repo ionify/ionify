@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'on.array@ionify'
+    { id:  'on.aeon@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190104
+    , to:  -7.20190328
     , is:  -0.1
     , it:
         [" senses all array-expressed ions like:                   "
@@ -14,6 +14,7 @@
         ,
       we:
         [" were debugging ~find'ing aeon sensors like aesop "
+        ," want to move aesop@ to its own ion               "
         ," ... "
         ]
     },
