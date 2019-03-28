@@ -15,10 +15,10 @@
 }
 +
 { get
-:   [      'on.ion.test@ionify',       'on.test@ionify',        'do.test@ionify'
-    ,         'get.test@ionify',      'log.test@ionify',       'use.test@ionify'
-    , 'punctuation.test@ionify', 'on.emoji.test@ionify', 'on.errors.test@ionify'
-    ,        'find.test@ionify'
+:   [             'on.ion.test@ionify',       'on.test@ionify',        'do.test@ionify'
+    ,                'get.test@ionify',      'log.test@ionify',       'use.test@ionify'
+    , 'on.ion.punctuation.test@ionify', 'on.emoji.test@ionify', 'on.errors.test@ionify'
+    ,               'find.test@ionify'
     ]
 }
 ;
