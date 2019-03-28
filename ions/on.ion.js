@@ -98,12 +98,12 @@
 
         ~
         { get
-          : [ 'next.id@ionify',               'id@ionify',  'on.error@ionify'
-            ,   'errors@ionify', 'find.link.share@ionify',        'no@ionify'
-            ,  'on.aeon@ionify',              'do@ionify',      'ions@ionify'
-            ,  'web.log@ionify',     'on.function@ionify', 'on.storie@ionify'
-            ,      'use@ionify'
-            ,          'ions'
+          : [   'next.id@ionify',               'id@ionify', 'on.error@ionify'
+            , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
+            ,   'on.aeon@ionify',              'do@ionify',      'ions@ionify'
+            ,   'web.log@ionify',     'on.function@ionify', 'on.storie@ionify'
+            ,       'use@ionify'
+            ,           'ions'
             ]
         , in: 'sequence'||'order'
         }

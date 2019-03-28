@@ -18,7 +18,7 @@
 :   [       'on.test@ionify',          'do.test@ionify'
     ,      'get.test@ionify',         'log.test@ionify'
     ,      'use.test@ionify', 'punctuation.test@ionify'
-    , 'on.emoji.test@ionify',      'errors.test@ionify'
+    , 'on.emoji.test@ionify',   'on.errors.test@ionify'
     ,     'find.test@ionify'
     ]
 }

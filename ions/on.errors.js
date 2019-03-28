@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'errors@ionify'
+    { id:  'on.errors@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181203
+    , to:  -7.20190328
     , is:  +0.1
     , it:
         [/ converts messages to Error objects /

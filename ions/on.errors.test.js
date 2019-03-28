@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'errors.test@ionify'
+    { id:  'on.errors.test@ionify'
     , by: ['mike.lee','team']
     , at:  'ionify.net'
     , on:  -7.20170414
-    , to:  -8.20190102
+    , to:  -7.20190328
     , is:  -0.1
     , it:  "tests ionify's ~errors action"
     }
