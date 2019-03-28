@@ -72,8 +72,8 @@
 
         ~
         { on
-        :  'on.no@ionify'      //must: sense by id because ~on:[] overrides previous sensors
-        ,  'on.no@ionify'      //      which causes this sensor to be lost on ~context.
+        :  'no@ionify'      //must: sense by id because ~on:[] overrides previous sensors
+        ,  'no@ionify'      //      which causes this sensor to be lost on ~context.
         :   function on (no)
               { var space = this || on.our //must: use this=onion.sense since on.our isn't linked.
               ; space.share
@@ -99,7 +99,7 @@
         ~
         { get
           : [ 'next.id@ionify',               'id@ionify',  'on.error@ionify'
-            ,   'errors@ionify', 'find.link.share@ionify',     'on.no@ionify'
+            ,   'errors@ionify', 'find.link.share@ionify',        'no@ionify'
             ,  'on.aeon@ionify',              'do@ionify',      'ions@ionify'
             ,  'web.log@ionify',     'on.function@ionify', 'on.storie@ionify'
             ,      'use@ionify'
