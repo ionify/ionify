@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'emoji.test@ionify'
+    { id:  'on.emoji.test@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181230
+    , to:  -7.20190328
     , is:  -0.1
     , it:  "is ionify's emoji actions test suite"
     }

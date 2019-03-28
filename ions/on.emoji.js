@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'emoji@ionify'
+    { id:  'on.emoji@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190104
+    , to:  -7.20190328
     , is:  -0.1
     , it:
         [" senses specific aesop emoji that activate, disable & deactivate ionify i.e. "
