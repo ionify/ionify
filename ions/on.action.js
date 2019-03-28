@@ -1,11 +1,11 @@
 ;
 ~
 { re:
-    { id:  'on.function@ionify'
+    { id:  'on.action@ionify'
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181218
+    , to:  -7.20190328
     , is:  -0.1
     , it:
         [" ionifies functions; e.g. enabling ~go which does go()                       "
