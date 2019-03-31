@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190330
+    , to:  -7.20190331
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -14,9 +14,9 @@
         ," names to ions.                                                           "
         ]
     , we:
-        [" were renaming ~link's .ion & .this to .home  "
-        ," will implement ~link.as & ~link.to.          "
-        ," will apply unlink when ~link.to is falsey.   "
+        [" were renaming  ~link's .this, .ion & .home to .own "
+        ," will implement ~link.as & ~link.to                "
+        ," will apply unlink when ~link.to is falsey         "
         ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
         ," want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. "
         ," like idea of queueing ~find's then doing once ~find's available          "
