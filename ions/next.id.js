@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -7.20160910
-    , to:  -8.20190104
+    , to:  -7.20190330
     , is:  -0.1
     , it: "generates sequential ids on-demand"
     }
@@ -17,14 +17,14 @@
 
 , valueOf
 :   function hiphop ()
-      { this ["next id"].ion = this
+      { this ["next id"].home = this
       ; delete this.valueOf
       ~ this
       }
 
 , "next id"
 :   function nextId (ion)
-      { var my   = nextId.ion
+      { var my   = nextId.home
           , ids  = my.ids
           , name = ion.next
           , f0r  = ion.id.re || (ion.id.re = {})

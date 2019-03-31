@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190328
+    , to:  -7.20190330
     , is:  -0.1
     , it:
         [" ionifies functions; e.g. enabling ~go which does go()                       "
@@ -28,7 +28,7 @@
 ,     Function
 :       function act (ion)
           {  ion || (ion = this)
-          ;  var result = ion() //ion.call (ion.ion)
+          ;  var result = ion() //ion.call (ion.home)
           ~  {debug: ['~', ion.name || 'anonymous', '() : ', result]}
           ;  return result
           }

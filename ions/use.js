@@ -1,22 +1,23 @@
 ;
 ~
 { re:
-    { id: "use.0.1@ionify"
+    { id: 'use@ionify'
     , is: "An action enabling the use of an ion's thing(s)"
-    , by: "mike.lee@ionify"
-    , at: "2017.11.09-08...2007.09-04"
-        ,
-      stories:
+    , by: 'mike.lee@ionify'
+    , on: '2007.09-04'
+    , to: '2019.03.30-07'
+    , at: +0.1
+    , we:
         [ /note: +get.use.in.as: helps wakatta + is like ajile/
                   +
                   { use: "thing"    || ["thing", "...", "other.thing"]
                   ,  in:  this.item || "ion.id"
                   ,  as: "alias"
                   }
-        , /todo: Confirm ion id for each +on:use before acting/
-        , /todo: Maybe support a "from" parameter?/
+        , /will: Confirm ion id for each +on:use before acting/
+        , /will: Maybe support a "from" parameter?/
                   +{use:"show", from:"wakatta.view", in:"game"}
-        , /todo: Enable using with ion ids/
+        , /will: Enable using with ion ids/
                   +{use:"+wakatta.view.show", in:"+wakatta.game"}
                   +{use:"+view.thing", as:"+game.view.thing"}
                   +{use:"+view.show", as:"show", in:"+game"}
@@ -68,7 +69,7 @@
     ,
   "use as in":
     function useAsIn (ion)
-      { var USE     = useAsIn.ion
+      { var USE     = useAsIn.home
           , errors  = USE.errors
           , onUse   = USE.getOnUse
           , validIn = USE.okIn
@@ -116,7 +117,7 @@
     ,
   "use in":
     function useIn (ion)
-      { return useIn.ion ["use as in"] (ion);
+      { return useIn.home ["use as in"] (ion);
       }
 
 
@@ -129,7 +130,7 @@
   use:
     function onUse (ion)
       { ion.in = ion
-      ; onUse.ion ["use as in"] (ion)
+      ; onUse.home ["use as in"] (ion)
       }
 }
 ;

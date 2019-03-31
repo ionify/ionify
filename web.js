@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190316
+    , to:  -7.20190330
     , is:  -0.1
     , it:" implements ionify: invoked object notation implemented for your web.      "
     , we:
@@ -39,7 +39,7 @@
 :   function ionifyWeb ()
       { Object.prototype.valueOf.ionified = this
       ; var web        = this
-      ; web.get.ion    = web
+      ; web.get.home   = web
     //; web.watch     ()
       ; web.ready     ()
       ; web.locate    ()
@@ -84,11 +84,11 @@
 
 , getScript
 :   function getScript (ion)
-      { var  web = getScript.ion    || (getScript == this.getScript ? this : null)
+      { var  web = getScript.home   || (getScript == this.getScript ? this : null)
           , code = String (ion.code || '')
           ,  url = String (ion.at   || '')
           , get$ = web.get$
-          ; get$.URL.ion = get$
+          ; get$.URL.home = get$
           ;
 
         if (!url && !code)
@@ -143,7 +143,7 @@
     ,   EXT: (/(\.\D*$)/)    // matches file extensions
     ,   URL:
           function getURL (match, name, space, file, version, offset, string)
-            {   var get$  = getURL.ion
+            {   var get$  = getURL.home
             ,       ext   = get$.EXT.exec (match)
             ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
             ;       space = space && (space.match (get$.NAME) || [,space])[1]
@@ -167,7 +167,7 @@
 ,"get in then after":"get"
 , get
 :   function get (ion)
-      { var  web = get.ion
+      { var  web = get.home
           , ions = Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , last = ions.length
           , next = -1

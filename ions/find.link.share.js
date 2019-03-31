@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190327
+    , to:  -7.20190330
     , is:  -0.1
     , it:
         [" provides context via ~link which ensures ions' object-type members can   "
@@ -14,12 +14,12 @@
         ," names to ions.                                                           "
         ]
     , we:
-        [" like idea of queueing ~find's then doing once ~find's available          "
+        [" were renaming ~link's .ion & .this to .home  "
         ," will implement ~link.as & ~link.to.          "
         ," will apply unlink when ~link.to is falsey.   "
         ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
         ," want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. "
-        ," like renaming ~link's .ion & .this to .home  "
+        ," like idea of queueing ~find's then doing once ~find's available          "
         ," like exploring how prototypes enable automatic context sharing.          "
         ]
     }
@@ -60,17 +60,17 @@
       ,     to        = ion.in
       ,     as        = ('as' in ion) ? ion.as : name
       ,     ionified  = find.our.ionified
-      ,     context   = find.ion
+      ,     context   = find.home
       ,     found
       ,     last
 
       ; while
-          ( last != to)    // bug? might infinitely loop on circular .ion's | .our's
+          ( last != to)    // bug? might infinitely loop on circular .home's | .our's
           { last  = to
-          ; if ( found   = context.findName ({find:name, in:to})      ) break
-          ; if ( to.ion && ionified [typeof (found = to.ion [name]) ] ) break
-          ; if ( to.our && ionified [typeof (found = to.our [name]) ] ) break
-          ; if ( to.ion ){ to = to.ion } else break
+          ; if ( found   =  context.findName ({find:name, in:to})       ) break
+          ; if ( to.home && ionified [typeof (found = to.home [name]) ] ) break
+          ; if ( to.our  && ionified [typeof (found = to.our  [name]) ] ) break
+          ; if ( to.home ){ to = to.home } else break
           }
 
       ; found  && (ion.in [as] = found)
@@ -98,32 +98,30 @@
     ,{todo:" enable batch link ([ion, object, more])   "}
     ,{todo:" enable +{link:ion, to:thing}              "}
     ,{todo:" enable ~{link:ion, as:{member:thing}}     "}
-    ,{idea:" ion.this  --> ion.ionId & ion.ion         "}
     ]
 ,"link to":"link"
 ,"link as":"link"
 , link
 :   function link (ion)
-      { ion || (ion = link.ion || (link.ion = (link == this.link) && this))
+      { ion || (ion = link.home || (link.home = (link == this.link) && this))
 
         var property
           , thing
           , debug = []
           , id    = (ion.re ? ion.re.id : null) || 'ion'
-          , space = link.ion.getSpace (id)
+          , space = link.home.getSpace (id)
           ; id    = id.replace (/(.+)(@|\.\d\.).*/, '$1')
           ;
     //**/Object.setPrototypeOf (space, ion.__proto__)//prototype)
     //**/Object.setPrototypeOf (  ion, space)
-      //ion.ion = ion.ion || ion
+      //ion.home = ion.home || ion
 
         for (property in ion)
           { thing = ion [property]
           ; if (!thing)                                                 continue
           ; if ((typeof thing != 'function') && !Array.isArray (thing)) continue
           ; if (!ion.hasOwnProperty (property))                         continue
-          ! thing.this &&           (thing.this = ion)
-          ! thing.ion  &&        (/* thing [id] = */  thing.ion = ion)
+          ! thing.home &&           (thing.home = ion)
           ! thing.our  && space  && (thing.our  = /*|| ion ||*/ space)
         //; ('function' == typeof thing) && Object.setPrototypeOf (thing, ion)
         //; (id != 'ion') &&   alert ("linked "+ id +"."+ property)
@@ -161,9 +159,9 @@
  "share with":"share",
   share
   : function share (ion)
-      { var thi$   = share.ion || (share == this.share ? this : null)
+      { var thi$   = share.home || (share == this.share ? this : null)
           , spaces = thi$.spaces
-          , things = ion.share == '*' ? ion.ion.ion || ion.ion || ion : ion.share
+          , things = ion.share == '*' ? ion.home.home  || ion.home || ion : ion.share
           , wyth   = ion.with || (ion.re && ion.re.id) || ''
           , space  = thi$.getSpace (wyth)
           ;
@@ -192,7 +190,7 @@
     ]
 , getSpace
 :   function getSpace (id)
-      { var share  = getSpace.ion || (getSpace == this.getSpace ? this : null)
+      { var share  = getSpace.home || (getSpace == this.getSpace ? this : null)
           , spaces = share.spaces
           , domain = id.match (/@(.*)/)
           ; domain = domain && domain [1]

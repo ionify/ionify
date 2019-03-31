@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190328
+    , to:  -7.20190330
     , is:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
@@ -55,9 +55,9 @@
           ;    delete    Object.prototype.valueOf.ionified
           ;  ionified && delete  ionified.valueOf
 
-        var  onion           = this
-          ;  onion.sense. on = onion.on
-          ;  onion.onion.ion = onion.on.ion = onion.onSensor.ion
+        var  onion            = this
+          ;  onion.sense.on   = onion.on
+          ;  onion.onion.home = onion.on.home = onion.onSensor.home
           =  onion
         //;  onion.  on ({on:'on'   ,     on: onion.on   })
           ;  onion.  on ({on: Object, Object: onion.onion})
@@ -73,10 +73,10 @@
         ~
         { on
         :  'no@ionify'      //must: sense by id because ~on:[] overrides previous sensors
-        ,  'no@ionify'      //      which causes this sensor to be lost on ~context.
+        ,  'no@ionify'      //      which causes this sensor to be lost on find.link.share@.
         :   function on (no)
-              { var space = this || on.our //must: use this=onion.sense since on.our isn't linked.
-              ; space.share
+              { var space = this.on.our //must: use this=no@.on since on.our isn't linked
+              ; space.share             //      because find.link.share@ wasn't yet loaded.
                   ({ with              : (~/will be onion.re.domain/, onion.re.id)
                    , share             :
                       { activate       : onion.activate
@@ -87,7 +87,7 @@
                       , sense          : onion.sense
                       , sortKnownWords : onion.sortKnownWords
                   }}  )
-              ; no.no ({on:'on.no@ionify', no:on})
+              ; no.no ({on:'no@ionify', no:on})
               ; space.link (onion)
               ; space.link (ionified)
               ; space = onion = ionified = null //performance? memory release?
@@ -132,18 +132,18 @@
 , activate
 :   function activate (ion)
       {//if (ion [0] !== '0 . 0') return
-      ;  var ionify = activate.ion
+      ;  var ionify = activate.home
       ;  ionify.senses && (ionify.senses != ionify.sense) && ~ionify
       }
 , deactivate
 :   function deactivate (ion)
       {  delete Array .prototype.valueOf
       ;  delete Object.prototype.valueOf
-      ;  deactivate.ion.unlink()
+      ;  deactivate.home.unlink()
       }
 , disable
 :   function disable (ion)
-      { var ionify        = disable.ion
+      { var ionify        = disable.home
           ; ionify.senses = ionify.sense
           ; ionify.sense  = {'0 . 0':ionify.activate}
       }
@@ -163,15 +163,15 @@
 
 , on:
     function on (ion)
-      { if ( !ion  ||  !('on' in ion)  ) return    ion
-      ; if ('function' == typeof ion.on) return on.ion.onSensor (ion)
+      { if ( !ion  ||  !('on' in ion)  ) return ion
+      ; if ('function' == typeof ion.on) return  on.home.onSensor (ion)
 
       ; var debug = []
       ; debug.push ([ion.re && ion.re.id, "on:", ion.on, JSON.stringify (ion.on)])
 
       ; var groups  = ion.on
       ! Array.isArray (groups) && (groups = [groups])
-      ; var ionify  = on.ion
+      ; var ionify  = on.home
           , has     = ionify.hasKnownWord
           , known   = ionify.known
           , sense   = ionify.sense
@@ -236,7 +236,7 @@
 
 , sortKnownWords
 :   function sortKnownWords (updated)
-      { var ionify     = sortKnownWords.ion || (sortKnownWords == this.sortKnownWords) ? this : null
+      { var ionify     = sortKnownWords.home || (sortKnownWords == this.sortKnownWords) ? this : null
           , known      = ionify.known
           , descending = ionify.sortKnownWordsDescending
           , word
@@ -277,7 +277,7 @@
 :   function ion (object)
       { var id
           , link
-          , ionify      = ion.ion //.this
+          , ionify      = ion.home
         //, ionified    = ionify.ionified
           , sense       = ionify.sense
           , debug       = []
@@ -290,7 +290,7 @@
         ; debug.push ("onION:", object.re ? object.re.id : "anonymous")
 
         var from = ion.caller;
-        object.re && (object.re.from || (object.re.from = from && from.ion && from.ion.re && from.ion.re.id))
+        object.re && (object.re.from || (object.re.from = from && from.home && from.home.re && from.home.re.id))
         from && (from != ion) && debug.push ("from", object.re && object.re.from)
 
         var results = 0
@@ -309,17 +309,17 @@
               { group = groups [g]
                 if (!group.in (object)) continue
                 words   =  group.act
-                result  =  typeof  sense [words]     == 'function'
-                             ?  (  sense [words].ion !=  object) //bug?: don't self-activate sensor
-                                && sense [words]        (object)
+                result  =  typeof  sense [words]      == 'function'
+                             ?  (  sense [words].home !=  object) //bug?: don't self-activate sensor
+                                && sense [words].call    (object, object)
                            //:  ~{find:words=sense[words], in:sense} && sense [words] (object)
                            //:  sense [sense [words]] (object)
                              :  (  our && our.ionified [typeof [sense [words] ]])
                                     ? ~ sense [words]
                                     : ( our && our.find &&  our.find ({find:sense[words], in:sense, as:words}))
-                                          ?   sense [words] (object) //todo: resolve (sense [words]) to function or act ion
+                                          ?   sense [words].call   (object, object) //todo: resolve (sense [words]) to function or act ion
                                           :   console.log ("missing sensor: ", words, ":", sense[words])
-                                          ||  sense [sense [words]] (object)
+                                          ||  sense [sense [words]].call   (object, object)
                                           ;
                 results += 1
                 words   =  group.set
@@ -344,7 +344,7 @@
 
 , onSensor
 :   function onSensor (ion)
-      { var on        = onSensor.ion || (onSensor.ion = onSensor == this.onSensor ? this : null)
+      { var on        = onSensor.home || (onSensor.home = onSensor == this.onSensor ? this : null)
           , known     = on.ionified
           , onSensor$ = on.onSensor$
           , core      = onSensor$.core

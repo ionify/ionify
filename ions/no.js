@@ -5,22 +5,22 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20180328
+    , to:  -7.20180330
     , is:  -0.1
     , it:
         [" implements ~on.no which disables a sensor mapped to one or more "
         +" term(s).                                                        "
         ]
     , we:
-        [" like the idea of resolving ~ {no: 'this.ion'}     "
+        [" like the idea of resolving ~ {no: 'this.home'}    "
         ," must handle multiple actions using the same term. "
         ]
     }
 , on:
     [ ['on', 'no']
     ]
-,"on no"
-:"no"
+,'on no'
+:'no'
 , no:
     function no (sensor)
       { if (!sensor.no && !('no' in sensor)) return sensor
