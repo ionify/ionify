@@ -2,12 +2,11 @@
 ~
 { re:
     { id:  'web@ionify'
+    , is:  "ionify: invoked object notation implemented for your web"
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190330
-    , is:  -0.1
-    , it:" implements ionify: invoked object notation implemented for your web.      "
+    , to:  -7.20190401
+    , at:  -0.1
     , we:
         [" will add tests for web@ionify & its actions	                             "
         ," will set all ~get actions' ionid@ domains to the current ion's.           "
@@ -16,8 +15,10 @@
         ," want all ~get.then to delete script.onload after ~then for memory perf?   "
         ," like ~get to be the first ion sensor that queues ions for ~on sensing     "
         +" it enables getting ions like ions@ before sensors activate.               "
-        ," wish ... "
+        ," were ... "
+        ," must ... "
         ," want ... "
+        ," like ... "
         ]
     }
 
@@ -138,9 +139,9 @@
            , null      : "./"
            , ''        : "./"
            }
-    ,  NAME: (/(.*)\.$/)                         // matches  (api). | (host).
+    ,  NAME: (/(.*)\.$/)    // matches (api). | (host).
     ,  TYPE: ".js"
-    ,   EXT: (/(\.\D*$)/)    // matches file extensions
+    ,   EXT: (/(\.\D*$)/)   // matches file extensions
     ,   URL:
           function getURL (match, name, space, file, version, offset, string)
             {   var get$  = getURL.home
@@ -166,64 +167,28 @@
 ,"get in then"      :"get"
 ,"get in then after":"get"
 , get
-:   function get (ion)
-      { var  web = get.home
-          , ions = Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
-          , last = ions.length
-          , next = -1
-          , todo = ion.then && web.then (ion)
+:   function get ()
+      { var ion  =  this
+          , ions =  Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
+          , todo =  ion.then
           ;
 
         if (todo)
-            {~/todo: implement ~on.do to avoid this manual per-get sensor workaround/
-            ; var on = {on:ions, after:'all'/*, do:todo*/}
-          //,     on = {after:ions, do:todo}
-            ; for (var i = -1, I = ions.length; ++i < I; on[ions[i]] = todo){}
-            }
-
-        while (++next < last) web.getScript ({at: ions[next], in: ion.in, then: todo})
-      }
-
-, thenInfo
-:   [" Create a function that does something  "
-    +" based on ~get.then.after & sensed ions "
-    ]
-, then
-:   function then (ion)
-      { var ions = ion.get
-          , last = ions.length
-          ,  got = {}
-          , todo = then.our.ionified [typeof ion.then]
-                 ?   ion.then
-                 : ~{find: ion.then, in: ion} && ion [ion.then]
-                 ;
-        function afterAllIons (ion)
-          { if  (afterAllIons.done) return
-          ; var  id  = ion instanceof Event ? this.id : ion.re.id
-          ; got [id] = true
-          ~ {debug: `\nget: ${ions}\ngot: ${Object.keys (got)}`}
-          ; for (var next=-1; ++next < last;) if (! got [ions [next]]) return
-          ; afterAllIons.done = true
-          ~ {on:ions, no:afterAllIons}
-          ~ todo
+          { var on  =  {on:ions, do:todo, after:ion.after}
+          ; todo    =  (!get.our || get.our.ionified [typeof todo])
+                    ?    todo
+                    :    ~{find:todo, in:ion} && ion [todo]
+          ; todo && (on.do = todo)
+          ~ on
+          ; todo = on.do
           }
 
-        function afterAnyIon (ion)
-          {
-          ~ {on:ion.re.id, no:afterAnyIon}
-          ; if (afterAnyIon.done)  return
-          ;     afterAnyIon.done = true
-          ~ todo
-          }
-
-        function afterEachIon (ion)
-          { ion && ~todo <= / todo? remove duplicate todo from script.onload /
-          }
-
-        return {   all: afterAllIons
-               ,   any: afterAnyIon
-               ,  each: afterEachIon
-               }  [ion. after || 'all']
+        for ( var web  = get.home
+            ,     last = ions.length
+            ,     next = -1
+            ;  ++ next < last
+            ; web.getScript ({at:ions[next], in:ion.in, then:todo})
+            );
       }
 }
 ;
