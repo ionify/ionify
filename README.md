@@ -3,7 +3,7 @@
 **ion implemented for you**, is a flexible, unobtrusive & novel api for expressing ideas via
 [**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md).
 It was
-[created](https://github.com/ionify/about/blob/public/story.md)
+[created](https://github.com/ionify/about/blob/public/origin.md)
 by
 [**Michael Lee**](https://github.com/iskitz)
 in 2007 and is maintained by
