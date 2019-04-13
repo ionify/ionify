@@ -7,12 +7,12 @@
     , is: "invoked object notations interpreted for your node"
     , by:['mike.lee@iskitz', 'team@ionify']
     , on: '2009.05-04'
-    , to: '2019.03.30-07'
+    , to: '2019.04.13-07'
     }
 
 , debug
 :   false
-    
+
 , on:
     [ ['get', 'then']
     ,  'get'
@@ -29,8 +29,8 @@
 , valueOf
 :   function ionifyNode ()
       { var node         = this
-      ; node.ready.home  = node
-      ; node.get  .home  = node
+      ; node.ready.with  = node
+      ; node.get  .with  = node
       ; delete node.valueOf
       ; node.ready ()
       ; node.get   ({get:"./ions/on.object.js", then:node})
@@ -38,7 +38,7 @@
 
 , ready
 :   function ready ()
-      { var errors = ready.home.errors
+      { var errors = ready.with.errors
           , error  =
              (   (typeof require == "undefined") && errors.noRequire
              ||  (typeof console == "undefined") && errors.noConsole
@@ -49,8 +49,8 @@
 
 , get
 :  function get (ion)
-      { var http          = get.home.http
-        || (get.home.http = require ("http"))
+      { var http          = get.with.http
+        || (get.with.http = require ("http"))
          , path           = String (ion.get)
          , isLocal        = path.match (/^[\.\/\\]+/)
          , data           = ""
@@ -78,7 +78,7 @@
 , log
 :   function log (thing)
       {  thing = String (thing.log)
-      ;  console.log (log.home.re.id + ": " + thing)
+      ;  console.log (log.with.re.id + ": " + thing)
       }
 }
 ;

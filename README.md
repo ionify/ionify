@@ -3,14 +3,14 @@
 **ion implemented for you**, is a flexible, unobtrusive & novel api for expressing ideas via
 [**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md).
 It was
-[created](https://github.com/ionify/about/blob/public/origin.md)
+[created](http://key.ionify.net/)
 by
 [**Michael Lee**](https://github.com/iskitz)
-in 2007 and is maintained by
+and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team).
 
 ```javascript
-~ {log: "hi!"}  <=  /logs hi!/;
+~ {log: "hi!"}  <=  /logs hi!/ ;
 ```
 
 
@@ -53,35 +53,35 @@ are three we've explored & confirmed capable.
 
 ```javascript
 ~
-{ on
-:   ['ask', 'say']
+{ on:
+    ['ask', 'say'],
+ 
+  ask:
+    function ask (ion)
+      { ask.with.answer = prompt (ask.with.prep (ion.ask)) || ''
+      },
 
-, ask
-:   function quest (ion)
-      { quest.ion.answer = prompt (quest.ion.prepare (ion.ask)) || ''
-      }
+  say:
+    function say (ion)
+      { alert (say.with.prep (ion.say))
+      },
 
-, say
-:   function verbalizat (ion)
-      { alert (verbalizat.ion.prepare (ion.say))
-      }
-
-, prepare
-:   function prepared (quote)
-      { return quote.replace (/\[answer\]/g, prepared.ion.answer)
+  prep:
+    function prep (quote)
+      { return quote.replace (/\[answer\]/g, prep.with.answer)
       }
 }
 
 ~ / These ions can be in one or more files that /
 + / are fetched either locally or remotely ...  /
-|
++
 + { say: "👋🏾 Hi!"                              }
-| { ask: "What's your name?"                   }
-| { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
-| { ask: "[answer], what's 2 x 2?"             }
-| { say: "[answer]? Really? 🤔"                }
-| { ask: "Can I ask you another question?"     }
-| { say: 'I thought you\'d say "[answer]" 😉'  }
++ { ask: "What's your name?"                   }
++ { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
++ { ask: "[answer], what's 2 x 2?"             }
++ { say: "[answer]? Really? 🤔"                }
++ { ask: "Can I ask you another question?"     }
++ { say: 'I thought you\'d say "[answer]" 😉'  }
 ;
 ```
 
@@ -102,28 +102,28 @@ of ions and natural language.
 { re:
     { id: 'frendlee@ionified.net'
     , is: "a literate & natural language programming exploration"
-    , by: 'mike.lee@iskitz'
-    , at: '2018.04.28-07...2017.12.08-08'
+    , by: 'mike.lee@ionify'
+    , on: '2017.12.08-08'
+    , to: '2019.04.12-07'
     , in: 'san-jose.california.usa.earth'
-    }
+    },
 
-, do:
+  do:
     [ "say hello"
     , "ask their name"
     , "invite them to play"
-    ]
+    ],
 
-, "say hello"
-:   {say: "Hi! I'm Frend Lee!"}
+  "say hello":
+    {say: "Hi! I'm Frend Lee!"}
 
-, "ask their name"
-:   {ask: "What's your name?"}
+  "ask their name":
+    {ask: "What's your name?"}
 
-, "invite them to play"
-:   {ask: "Hi [answer]! Wanna play?!"}
+  "invite them to play":
+    {ask: "Hi [answer]! Wanna play?!"}
 }
 ;
-
 ```
 
 See [anemojii](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js),
@@ -140,13 +140,13 @@ our more in-depth exploration of literate programming.
     { id: 'an.ionified.module@doma.in'
     , is: "a basic ion module example"
     , by: 'a.developer@doma.in'
-    , at: '2018.04.28-07...2007.09-04'
+    , on: '2007.09-04'
+    , to: '2019.04.12-07'
+    },
+
+  do:function something ()
+    { ~/ do something when evaluating this ion /
     }
-    ,
-  do:
-    function something ()
-      { ~/do something when evaluating this ion/
-      }
 }
 ;
 ```
@@ -158,15 +158,14 @@ our more in-depth exploration of literate programming.
 
 ```javascript
 ~
-{ on: 'event'
-, do:
-    function someAct (ion)
-      { ~{log: ion.event} <= /logs "it happened!"/
-      }
+{ on:'event',
+  do:function someAct (ion)
+    { ~ {log: ion.event} <= / logs "it happened!" /
+    }
 }
 
-/ This event  ion can exist within another file /
-| {event: "it happened!"} <= /activates an event/
+/ This event ion can exist within another file. /
++ {event: "it happened!"} <= / invokes an event /
 ;
 ```
 
@@ -181,19 +180,20 @@ to enable observing objects without a direct reference. This enables observing j
 
 ```javascript
 ~
-{ on: 'hi'
-, hi:
-    function hello (ion)
-      {/ This method is called for each ion /
-      |/ with a "hi" property. It logs the  /
-      |/ value of that "hi" property.       /
-      |
-      | {log: ion.hi}
-      }
+{ on:'hi',
+  hi:function hello (ion)
+    {/ This method is called for each ion /
+    +/ with a "hi" property. It logs the  /
+    +/ value of that "hi" property.       /
+
+    ~  { log:  ion.hi }
+    ^  / logs "I'm an ion!" 1st /
+    &  / logs "I'm a json!" 2nd /
+    }
 }
 
-~ { hi : "I'm an ion!"} <= /can be in a separate/
-+ {"hi": "I'm a json!"} <= /file loaded remotely/
+~ { hi : "I'm an ion!"} <= / can be in a separate /
++ {"hi": "I'm a json!"} <= / file loaded remotely /
 ;
 ```
 
@@ -218,17 +218,17 @@ internal identifiers, within a single
 
 ```javascript
 ~
-{ on: 'my.ion@doma.in'
-, do:
-    function confirm (ion)
-      {/ This method is called for each ion    /
-      |/ with an id matching "my.ion@doma.in"  /
-      |/ It confirms the ion developer before  /
-      |/ describing what the ion is.           /
+{ on:'my.ion@doma.in',
+  do:function confirm (ion)
+    {/ This method is called for each ion    /
+    +/ with an id matching "my.ion@doma.in"  /
+    +/ It confirms the ion developer before  /
+    +/ describing what the ion is.           /
 
-         if (ion.re.by == "a.🇬🇾.developer")
-          ~ {log:ion.re.is}
-      }
+       if ( ion.re.by == "a.🇬🇾.developer" )
+        ~ { log:  ion.re.is }
+        ^ / logs "the intended module" /
+    }
 }
 
 
@@ -239,7 +239,8 @@ internal identifiers, within a single
 { re:
     { id: 'my.ion@doma.in'
     , by: 'a.🇬🇾+🇯🇵+🇺🇸.developer'
-    , at: '2018.04.28-07...2009.12-08'
+    , on: '2009.12-08'
+    , to: '2019.04.12-07'
     , in: 'san-jose.california.usa.earth'
     , is: "an identically id'd module"
     }
@@ -256,7 +257,8 @@ internal identifiers, within a single
 { re:
     { id: 'my.ion@doma.in'
     , by: 'a.🇬🇾+🇺🇸.developer'
-    , at: '2009.12-05...2007.09-04'
+    , on: '2007.09-04'
+    , to: '2009.12-05'
     , in: 'forest-hills.new-york.usa.earth'
     , is: "another identically id'd module"
     }

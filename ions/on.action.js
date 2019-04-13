@@ -28,7 +28,7 @@
 ,     Function
 :       function act (ion)
           {  ion || (ion = this)
-          ;  var result = ion() //ion.call (ion.home)
+          ;  var result = ion() //ion.call (ion.with)
           ~  {debug: ['~', ion.name || 'anonymous', '() : ', result]}
           ;  return result
           }

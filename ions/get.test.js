@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190330
+    , to:  -7.20190413
     , is:  -0.1
     , it:  "Tests ionify's ~get api"
     }
@@ -21,7 +21,7 @@
 , in  : 'order'
 , then:
     function hi ()
-      {~{log: ["did ", hi.home.get]}
+      {~{log: ["did ", hi.with.get]}
       }
 }
 

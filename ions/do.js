@@ -5,7 +5,7 @@
     , is:  "ionify's ~on.do.after action that senses ions & acts after a condition's met"
     , by: ['mike.lee','team']
     , on:  '2007.09-04'
-    , to:  '2019.04.01-07'
+    , to:  '2019.04.13-07'
     , at:  -0.1
     , it:
         [" implements: "
@@ -42,7 +42,7 @@
 :   function afterDo ()
       { this.on    = this.after
       ; this.after = 'all'
-      ; afterDo.home.after.call (this)
+      ; afterDo.with.after.call (this)
       }
 
 ,'on do after':'after'
@@ -62,7 +62,7 @@
       { var ion   = this
           , ions  = ion.on
           , after = ion.after || 'all'
-          , own   = doAfter.home
+          , own   = doAfter.with
           , ready = own [own.ensure [after] || 'all'] (ion)
           , todo  = ion.do/*
           ; todo  = doAfter.our.ionified [typeof todo]

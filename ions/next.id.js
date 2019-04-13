@@ -17,14 +17,14 @@
 
 , valueOf
 :   function hiphop ()
-      { this ["next id"].home = this
+      { this ["next id"].with = this
       ; delete this.valueOf
       ~ this
       }
 
 , "next id"
 :   function nextId (ion)
-      { var my   = nextId.home
+      { var my   = nextId.with
           , ids  = my.ids
           , name = ion.next
           , f0r  = ion.id.re || (ion.id.re = {})

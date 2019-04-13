@@ -69,7 +69,7 @@
     ,
   "use as in":
     function useAsIn (ion)
-      { var USE     = useAsIn.home
+      { var USE     = useAsIn.with
           , errors  = USE.errors
           , onUse   = USE.getOnUse
           , validIn = USE.okIn
@@ -117,7 +117,7 @@
     ,
   "use in":
     function useIn (ion)
-      { return useIn.home ["use as in"] (ion);
+      { return useIn.with ["use as in"] (ion);
       }
 
 
@@ -130,7 +130,7 @@
   use:
     function onUse (ion)
       { ion.in = ion
-      ; onUse.home ["use as in"] (ion)
+      ; onUse.with ["use as in"] (ion)
       }
 }
 ;

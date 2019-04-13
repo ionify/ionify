@@ -12,7 +12,7 @@
         +" term(s).                                                        "
         ]
     , we:
-        [" like the idea of resolving ~ {no: 'this.home'}    "
+        [" like the idea of resolving ~ {no: 'this.with'}    "
         ," must handle multiple actions using the same term. "
         ]
     }

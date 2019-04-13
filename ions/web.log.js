@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190330
+    , to:  -7.20190413
     , is:  -0.1
     , it:" implements ionify logging via    "
         +" ~debug ~error ~info ~log & ~warn "
@@ -39,14 +39,14 @@
 
   debug:
     function debug (ion)
-      { var    logger       =  debug.home
+      { var    logger       =  debug.with
       ;        logger.level = 'debug'
       ; return logger.logged  (ion)
       },
 
   error:
     function error (ion)
-      { var logger       =  error.home
+      { var logger       =  error.with
       ;     logger.level = 'error'
       ; var state        =  logger.logged (ion)
       ; if (typeof ion.error == 'boolean') return state
@@ -55,28 +55,28 @@
 
   info:
     function info (ion)
-      { var    logger       =  info.home
+      { var    logger       =  info.with
       ;        logger.level = 'info'
       ; return logger.logged  (ion)
       },
 
   log:
     function log (ion)
-      { var    logger       =  log.home
+      { var    logger       =  log.with
       ;        logger.level = 'log'
       ; return logger.logged  (ion)
       },
 
   warn:
     function warn (ion)
-      { var logger   =  warn.home
+      { var logger   =  warn.with
       ; logger.level = 'warn'
       ; return logger.logged (ion)
       },
 
   prepare:
     function prepare (ion)
-      { var logger       = prepare. home
+      { var logger       = prepare. with
           , logging      = prepare. our  . logging
           , level        = logger . level
           , message      = ion     [level]

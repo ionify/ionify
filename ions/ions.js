@@ -9,7 +9,7 @@
         ,   'san-jose.california.usa.earth'
         ]
     , on: -4.200709
-    , to: -8.20190104
+    , to: -7.20190413
     , is: -0.1
     , it:
         [" configures ionify "
@@ -22,10 +22,10 @@
     },
 
   do:
-    [ { with : '@ionify'
-      , share: '*'
-      , re   : false
-      , do   : false
+    [ { link  : '*'
+      , to    : '@ionify'
+      , re    : false
+      , do    : false
       }
     ],
 

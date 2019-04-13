@@ -5,7 +5,7 @@
     , is:  "ionify: invoked object notation implemented for your web"
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20190401
+    , to:  -7.20190413
     , at:  -0.1
     , we:
         [" will add tests for web@ionify & its actions	                             "
@@ -40,7 +40,7 @@
 :   function ionifyWeb ()
       { Object.prototype.valueOf.ionified = this
       ; var web        = this
-      ; web.get.home   = web
+      ; web.get.with   = web
     //; web.watch     ()
       ; web.ready     ()
       ; web.locate    ()
@@ -85,11 +85,11 @@
 
 , getScript
 :   function getScript (ion)
-      { var  web = getScript.home   || (getScript == this.getScript ? this : null)
+      { var  web = getScript.with   || (getScript == this.getScript ? this : null)
           , code = String (ion.code || '')
           ,  url = String (ion.at   || '')
           , get$ = web.get$
-          ; get$.URL.home = get$
+          ; get$.URL.with = get$
           ;
 
         if (!url && !code)
@@ -144,7 +144,7 @@
     ,   EXT: (/(\.\D*$)/)   // matches file extensions
     ,   URL:
           function getURL (match, name, space, file, version, offset, string)
-            {   var get$  = getURL.home
+            {   var get$  = getURL.with
             ,       ext   = get$.EXT.exec (match)
             ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
             ;       space = space && (space.match (get$.NAME) || [,space])[1]
@@ -183,7 +183,7 @@
           ; todo = on.do
           }
 
-        for ( var web  = get.home
+        for ( var web  = get.with
             ,     last = ions.length
             ,     next = -1
             ;  ++ next < last
