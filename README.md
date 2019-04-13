@@ -7,10 +7,11 @@ It was
 by
 [**Michael Lee**](https://github.com/iskitz)
 and is maintained by
-[**team ionify**](https://github.com/ionify/about/blob/public/README.md#team).
+[**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ {log: "hi!"}  <=  /logs hi!/ ;
+~ {"json" : "data" }  <= /observable json/
++ {  log  : '👋🏾👨🏾‍💻'}  <= /message logging/
 ```
 
 
