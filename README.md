@@ -193,8 +193,9 @@ to enable observing objects without a direct reference. This enables observing j
     }
 }
 
-~ { hi : "I'm an ion!"} <= / can be in a separate /
-+ {"hi": "I'm a json!"} <= / file loaded remotely /
+/ These can each be in separate & remote files /
++ { hi : "I'm an ion!"}  <= / invoke an object /
++ {"hi": "I'm a json!"}  <= / invoke some json /
 ;
 ```
 
