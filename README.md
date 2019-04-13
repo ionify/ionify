@@ -146,7 +146,7 @@ our more in-depth exploration of literate programming.
     },
 
   do:function something ()
-    { ~/ do something when evaluating this ion /
+    { ~/ immediately do something /
     }
 }
 ;
@@ -246,6 +246,7 @@ internal identifiers, within a single
     , is: "an identically id'd module"
     }
 }
+
 ~
 { re:
     { id: 'my.ion@doma.in'
@@ -254,6 +255,7 @@ internal identifiers, within a single
     , is: "the intended module"
     }
 }
+
 ~
 { re:
     { id: 'my.ion@doma.in'
