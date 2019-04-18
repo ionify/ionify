@@ -2,25 +2,23 @@
 ~
 { re:
     { id:  'find.link.share@ionify'
-    , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
-    , on:  -4.200709
-    , to:  -7.20190413
-    , is:  -0.1
-    , it:
-        [" provides context via ~link which ensures ions' object-type members can   "
-        ," access their containing ion, ~share for sharing things via domains,      "
-        ," optionally aliased data and-or functionality, and ~find.in for resolving "
-        ," names to ions.                                                           "
-        ]
+    , by: ['mike.lee', 'team'  ]
+    , on: { 200709   : -4      }
+    , to: { 20190415 : -7.0159 }
+    , at:  -0.1
+    , it:" provides context via ~link which ensures ions' object-type members can   "
+        +" access their containing ion, ~share for sharing things via domains,      "
+        +" optionally aliased data and-or functionality, and ~find.in for resolving "
+        +" names to ions.                                                           "
     , we:
-        [" were implementing ~link.to & ~link.as      "
-        ," will apply unlink when ~link.to is falsey  "
-        ," want to combine ~share & ~link.to          "
+        [" were updating ~link & ~share to use .with vs .our  "
+        ," were implementing ~link.to & ~link.as              "
+        ," will apply unlink when ~link.to is falsey          "
+        ," want to combine ~share & ~link.to                  "
         ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
         ," want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. "
         ," like idea of queueing ~find's then doing once ~find's available          "
-        ," like exploring how prototypes enable automatic context sharing.          "
+        ," like that prototypes could enable automatic context sharing within ions. "
         ]
     }
 
@@ -96,10 +94,15 @@
       }
 
 , linkInfo
-:   [{note:" ~{link: true, false} is auto-enabled-true "}
-    ,{todo:" enable batch link ([ion, object, more])   "}
-    ,{todo:" enable +{link:ion, to:thing}              "}
-    ,{todo:" enable ~{link:ion, as:{member:thing}}     "}
+:   [" were implementing .our.* --> .with.doma.in.*               "
+    ," must move id@domain matching to its own ion then share it  "
+    ," like id@domain matching with /(.*)([-+]\d+.*^@)|(@.*)/     "
+    ," like .with .doma .in.expanded.name.of.shared.thing:        "
+    +"      .with$.doma$.in.expanded auto-added $'s on conflicts  "
+    ," will enable   + {link:ion, to:thing}                       "
+    ," like enabling ~ {link: true|false } with true as default   "
+    ," like enabling ~ {link: [ion, object, more])                "
+    ," like enabling ~ {link:ion, as:{member:thing}}              "
     ]
 ,"link as":"link"
 , link
@@ -113,20 +116,14 @@
           , space = link.with.getSpace (id)
           ; id    = id.replace (/(.+)(@|\.\d\.).*/, '$1')
           ;
-    //**/Object.setPrototypeOf (space, ion.__proto__)//prototype)
-    //**/Object.setPrototypeOf (  ion, space)
-      //ion.with = ion.with || ion
 
         for (property in ion)
           { thing = ion [property]
-          ; if (!thing)                                                 continue
-          ; if ((typeof thing != 'function') && !Array.isArray (thing)) continue
-          ; if (!ion.hasOwnProperty (property))                         continue
-          ! thing.with &&           (thing.with = ion)
-          ! thing.our  && space  && (thing.our  = /*|| ion ||*/ space)
-        //; ('function' == typeof thing) && Object.setPrototypeOf (thing, ion)
-        //; (id != 'ion') &&   alert ("linked "+ id +"."+ property)
-        //; (id != 'ion') && ~{debug: "linked "+ id +'.'+ property}
+            if (!thing)                                                 continue
+            if ((typeof thing != 'function') && !Array.isArray (thing)) continue
+            if (!ion.hasOwnProperty (property))                         continue
+          ! thing.with    &&              (thing.with = ion)
+          ! thing.our     &&  space    && (thing.our  = /*|| ion ||*/ space)
           ; (id != 'ion') && !ion.debug && debug.push ("linked "+ id +'.'+ property)
           }
 
