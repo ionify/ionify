@@ -1,7 +1,8 @@
 # [ionify](http://about.ionify.net/)
 
-**ion implemented for you**, is a flexible, unobtrusive & novel api for expressing ideas via
-[**ion: invoked object notation**](https://github.com/ionify/about/blob/public/ions/ion.md).
+**ion implemented for you**, is a flexible, unobtrusive & novel api for expressing information
+& behavior with intuitive vocabulary &
+[**ion:** invoked object notation](https://github.com/ionify/about/blob/public/ions/ion.md).
 It was
 [created](http://key.ionify.net/)
 by
@@ -10,8 +11,9 @@ and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ {"json" : "data" }  <= /observable json/
-+ {  log  : '👋🏾👨🏾‍💻'}  <= /message logging/
+~ { "json" : "data" }  <= /observable json/
++ {   log  : '👋🏾👨🏾‍💻'}  <= /message logging/
+& ["observable text"]  <= /observable text/
 ```
 
 
@@ -74,15 +76,15 @@ are three we've explored & confirmed capable.
 }
 
 ~ / These ions can be in one or more files that /
-+ / are fetched either locally or remotely ...  /
-+
-+ { say: "👋🏾 Hi!"                              }
-+ { ask: "What's your name?"                   }
-+ { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
-+ { ask: "[answer], what's 2 x 2?"             }
-+ { say: "[answer]? Really? 🤔"                }
-+ { ask: "Can I ask you another question?"     }
-+ { say: 'I thought you\'d say "[answer]" 😉'  }
+/ / are fetched either locally or remotely ...  /
+|
+| { say: "👋🏾 Hi!"                              }
+| { ask: "What's your name?"                   }
+| { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
+| { ask: "[answer], what's 2 x 2?"             }
+| { say: "[answer]? Really? 🤔"                }
+| { ask: "Can I ask you another question?"     }
+| { say: 'I thought you\'d say "[answer]" 😉'  }
 ;
 ```
 
@@ -161,12 +163,12 @@ our more in-depth exploration of literate programming.
 ~
 { on:'event',
   do:function someAct (ion)
-    { ~ {log: ion.event} <= / logs "it happened!" /
+    { ~ {log: ion.event} <= /logs "it happened!"/
     }
 }
 
-/ This event ion can exist within another file. /
-+ {event: "it happened!"} <= / invokes an event /
+/ This event ion can exist within another file /
+/ {event: "it happened!"} <= /invokes an event /
 ;
 ```
 
@@ -184,18 +186,18 @@ to enable observing objects without a direct reference. This enables observing j
 { on:'hi',
   hi:function hello (ion)
     {/ This method is called for each ion /
-    +/ with a "hi" property. It logs the  /
-    +/ value of that "hi" property.       /
+    |/ with a "hi" property. It logs the  /
+    |/ value of that "hi" property.       /
 
-    ~  { log:  ion.hi }
-    ^  / logs "I'm an ion!" 1st /
-    &  / logs "I'm a json!" 2nd /
+    ~  {log:  ion.hi          }
+    ^  /logs "I'm an ion!" 1st/
+    &  /logs "I'm a json!" 2nd/
     }
 }
 
 / These can each be in separate & remote files /
-+ { hi : "I'm an ion!"}  <= / invoke an object /
-+ {"hi": "I'm a json!"}  <= / invoke some json /
+/ { hi : "I'm an ion!"}  <=  /invoke an object /
+/ {"hi": "I'm a json!"}  <=  /invoke some json /
 ;
 ```
 
@@ -223,19 +225,19 @@ internal identifiers, within a single
 { on:'my.ion@doma.in',
   do:function confirm (ion)
     {/ This method is called for each ion    /
-    +/ with an id matching "my.ion@doma.in"  /
-    +/ It confirms the ion developer before  /
-    +/ describing what the ion is.           /
+    |/ with an id matching "my.ion@doma.in"  /
+    |/ It confirms the ion developer before  /
+    |/ describing what the ion is.           /
 
-       if ( ion.re.by == "a.🇬🇾.developer" )
-        ~ { log:  ion.re.is }
-        ^ / logs "the intended module" /
+       if (ion.re.by == "a.🇬🇾.developer")
+        ~ {log:  ion.re.is              }
+        ^ /logs "the intended module"   /
     }
 }
 
 
 ~/ Each of the following modules could be in a /
-+/ separate file fetched locally or remotely!  /
+-/ separate file fetched locally or remotely!  /
 
 ~
 { re:
