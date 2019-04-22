@@ -1,7 +1,7 @@
 # [ionify](http://about.ionify.net/)
 
-**ion implemented for you**, is a flexible, unobtrusive & novel api for expressing data
-& code via
+**ion implemented for you**, is a flexible, unobtrusive & novel api for expressing
+actionable information & behavior via
 [**ion:** invoked object notation](https://github.com/ionify/about/blob/public/ions/ion.md).
 It was
 [created](http://key.ionify.net/)
@@ -41,20 +41,23 @@ and is maintained by
 **ion** & **ionify** are enabled by & can be implemented in languages that support
 [operator & operation overloading](https://en.wikipedia.org/wiki/Operator_overloading).
 [JavaScript](https://github.com/ionify/ionify/),
-[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java) &
-[Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
+[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java)
+& [Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
 are three we've explored & confirmed capable.
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
-*"...creating a domain-specific language...can be worthwhile if the language allows a particular type of problem or solution to be expressed more clearly than an existing language would allow..." - Wikipedia*
+*"...creating a domain-specific language...can be worthwhile if the language allows a
+particular type of problem or solution to be expressed more clearly than an existing
+language would allow..." - Wikipedia*
 
-**ionify** enables creating language(s) via **ions** that define and map terms to behaviors:
+**ionify** enables creating language(s) via **ions** that define & map terms to
+behaviors:
 
 ```javascript
 ~
-{'ask.say@ionified.net':
+{'ask.say@ions.iskitz.net':
     { by: 'mike.lee'
     , on: '2015.07.28-07'
     , to: '2019.04.21-07'
@@ -83,7 +86,7 @@ are three we've explored & confirmed capable.
 }
 
 ~ / These ions can be in one or more files that /
-^ / are fetched either locally or remotely ...  /
+^ / may be fetched either locally or remotely.  /
 
 ~ { say: "👋🏾 Hi!"                              }
 ~ { ask: "What's your name?"                   }
@@ -103,14 +106,16 @@ of ions & natural language.
 
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 
-*"...a program is best thought of as a web...of simple parts and simple relations between those parts; the programmer's task is to state those parts and those relationships, in whatever order is best for human comprehension" -
+*"...a program is best thought of as a web...of simple parts and simple relations
+between those parts; the programmer's task is to state those parts and those
+relationships, in whatever order is best for human comprehension" -
 [Donald E. Knuth](https://en.m.wikipedia.org/wiki/Donald_Knuth)*
 
 ```javascript
 ~
 { re:
     { id: 'frendlee@ionified.net'
-    , by: 'mike.lee@ionify'
+    , by: 'mike.lee@ionify.net'
     , on: '2017.12.08-08'
     , to: '2019.04.21-07'
     , in: 'san-jose.california.usa.earth'
@@ -134,44 +139,68 @@ of ions & natural language.
 }
 ```
 
+#### code phrases
+
+```javascript
+Object.prototype.valueOf
+= function saying ()
+    { console.log (this.say)         /*
+    | or do something more profound!  */
+    }
+
+var     you = {say:'do you see all the things'}
+  ,     can = {say:'we can do'   }
+  ,   write = {say:'if we write' }
+  ,    code = {say:'our code'    }
+  ,      as = {say:'as groups of'}
+  , phrases = {say:'phrases & sentences?! 🤓'}
+
+' With orion' + you + can + write + code + as
++ phrases
+```
+
 See [anemojii](https://glitch.com/~anemojii)
-for a more [in-depth](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
+for [another](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
 [exploration](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.re.js)
 of literate programming.
 
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
 
-*"...a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality." - Wikipedia*
+*"...a software design technique that emphasizes separating the functionality of a
+program into independent, interchangeable modules, such that each contains everything
+necessary to execute only one aspect of the desired functionality." - Wikipedia*
 
 ```javascript
 ~
 { re:
     { id: 'an.ionified.module@doma.in'
-    , by: 'a.developer@doma.in'
+    , by: 'a.developer'
     , on: '2007.09-04'
     , to: '2019.04.21-07'
     , it: "represents an ionified module"
     },
 
-  do:function something ()
-    { something.with.me++
+  do:function doing ()
+    { doing.with.hi ++
     },
 
-  me:/ Hi! 🤓 /
+  hi:/ Hi! 🤓 /
 }
 ```
 
 
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
-*"...a programming paradigm in which the flow of the program is determined by events such as user actions..., sensor outputs, or messages from other programs/threads." - Wikipedia*
+*"...a programming paradigm in which the flow of the program is determined by events
+such as user actions..., sensor outputs, or messages from other programs/threads."
+- Wikipedia*
 
 ```javascript
 ~
 { on:'event',
-  do:function someAct (ion)
-    { ~ {log: ion.event} <= /logs "it happened!"/
+  do: function act (ion)
+    { ~{log: ion.event} <= /logs "it happened!"/
     }
 }
 
@@ -184,14 +213,15 @@ of literate programming.
 
 **ionify** uses JavaScript's
 [prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
-and
+&
 [operation overloading](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
-to enable observing objects without a direct reference. This enables observing json and other anonymous & named objects:
+to enable observing objects without direct references. This enables observing json &
+other anonymous & named objects:
 
 ```javascript
 ~
 { on:'hi',
-  hi:function hello (ion)
+  hi: function (ion)
     {/ This method is called for each ion /
     ^/ with a "hi" property. It logs the  /
     ^/ value of that property.            /
@@ -219,21 +249,22 @@ i.e. `~/ / + [ ] & { }`, eliminate name collisions by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 
 **ionify** enables individually observing & inspecting multiple identically identified
-**lions** which enables their simultaneous coexistence within the same
-[execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts):
+**lions**. That capability enables **lions** to simultaneously coexist within the same
+[execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts)
+without overriding all, or parts, of each other:
 
 ```javascript
 ~
 { on:'my.ion@doma.in',
-  do:function confirm (ion)
-    {/ This method is called for each ion    /
-    ^/ with an id matching "my.ion@doma.in"  /
-    ^/ It confirms the ion developer before  /
-    ^/ describing what the ion is.           /
+  do: function confirming (ion)
+    {/ This method is called for each ion with   /
+    ^/ an id matching "my.ion@doma.in". It       /
+    ^/ confirms the ion developer before         /
+    ^/ describing what the ion does.             /
 
        if (ion.re.by == "a.🇬🇾.developer")
-        ~ {log:  ion.re.is              }
-        ^ /logs "the intended module"   /
+        ~ {log:  ion.re.it}
+        ^ /logs "identifies the intended module" /
     }
 }
 
