@@ -2,7 +2,7 @@
 
 **ion implemented for you**, is a flexible, unobtrusive & novel api for expressing
 actionable information & behavior via
-[**ion:** invoked object notation](https://github.com/ionify/about/blob/public/ions/ion.md).
+[**ion:** invoked object notation](http://ion.ionify.net/).
 It was
 [created](http://key.ionify.net/)
 by
@@ -44,6 +44,11 @@ and is maintained by
 [Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java)
 & [Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
 are three we've explored & confirmed capable.
+
+See [**ion**'s documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form)
+for a detailed explanation of how JavaScript handles **ion**: invoked object notation.
+
+See the following subsections for multiple applications of **ion** & **ionify**.
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
