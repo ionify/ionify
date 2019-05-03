@@ -45,10 +45,10 @@ and is maintained by
 & [Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
 are three we've explored & confirmed capable.
 
-See [**ion**'s documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form)
-for a detailed explanation of how JavaScript handles **ion**: invoked object notation.
+For a detailed explanation of how **ion**: invoked object notation is handled, visit
+[**ion**'s documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form).
 
-See the following subsections for multiple applications of **ion** & **ionify**.
+For examples of **ion** & **ionify** applications, visit the following subsections.
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
@@ -62,12 +62,13 @@ behaviors:
 
 ```javascript
 ~
-{'ask.say@ions.iskitz.net':
-    { by: 'mike.lee'
+{ re:
+    { id: 'ask.say@ions.iskitz.net'
+    , by: 'mike.lee'
     , on: '2015.07.28-07'
-    , to: '2019.04.21-07'
+    , to: '2019.05.02-07'
     , in: 'san-jose.california.usa.earth'
-    , is:  1.2
+    , is:  1.3
     , it: "implements a simple ask & say domain-specific language"
     },
 
@@ -90,21 +91,21 @@ behaviors:
       }
 }
 
-~ / These ions can be in one or more files that /
-^ / may be fetched either locally or remotely.  /
+~ / Each of these ask.say ions can be in their  /
+* / own file fetched either locally or remotely /
 
 ~ { say: "👋🏾 Hi!"                              }
-~ { ask: "What's your name?"                   }
+~ { ask: "What's your name?"                    }
 ~ { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
-~ { ask: "[answer], what's 2 x 2?"             }
+~ { ask: "[answer], what's 2 x 2?"              }
 ~ { say: "[answer]? Really? 🤔"                }
-~ { ask: "Can I ask you another question?"     }
+~ { ask: "Can I ask you another question?"      }
 ~ { say: 'I thought you\'d say "[answer]" 😉'  }
 ```
 
 See [jeni](https://github.com/ionified/jeni-ions.iskitz.net?files=1)
-for an even more
-[flexible](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.aeons.js)
+for a more
+[adaptive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.aeons.js)
 [exploration](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
 of ions & natural language.
 
@@ -144,24 +145,26 @@ relationships, in whatever order is best for human comprehension" -
 }
 ```
 
-#### code phrases
+#### code prose
 
 ```javascript
-Object.prototype.valueOf
-= function saying ()
-    { console.log (this.say)         /*
-    | or do something more profound!  */
-    }
+~
+{ on :'say'
+, say:
+    function saying (ion)
+      { ~{log: ion.say} * /or do lots more!/
+      }
+}
 
-var     you = {say:'do you see all the things'}
-  ,     can = {say:'we can do'   }
-  ,   write = {say:'if we write' }
-  ,    code = {say:'our code'    }
-  ,      as = {say:'as groups of'}
-  , phrases = {say:'phrases & sentences?! 🤓'}
+  you   = {say:'do you see all the things' }
+  can   = {say:'we can do'   }
+  write = {say:'if we write' }
+  code  = {say:'our code'    }
+  as    = {say:'as actionable words within'}
+  prose = {say:'phrases & sentences?! 🤓' }
 
 ' With orion' + you + can + write + code + as
-+ phrases
++ prose
 ```
 
 See [anemojii](https://glitch.com/~anemojii)
@@ -228,12 +231,12 @@ other anonymous & named objects:
 { on:'hi',
   hi: function (ion)
     {/ This method is called for each ion /
-    ^/ with a "hi" property. It logs the  /
-    ^/ value of that property.            /
+    */ with a "hi" property. It logs the  /
+    */ value of that property.            /
           
     ~{ log:  ion.hi }
-    ^/ logs "I'm an ion!" 1st /
-    ^/ logs "I'm a json!" 2nd /
+    */ logs "I'm an ion!" 1st /
+    */ logs "I'm a json!" 2nd /
     }
 }
 
@@ -247,7 +250,7 @@ _fyi: Syntax highlighting issues are due to a
 not **ionify** or its syntax._
 
 
-### [name collision free](https://en.wikipedia.org/wiki/Name_collision)
+### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
 
 [**lions**: literal ions](https://github.com/ionify/about/blob/public/ions/ion.md#form),
 i.e. `~/ / + [ ] & { }`, eliminate name collisions by encapsulating their
@@ -263,19 +266,19 @@ without overriding all, or parts, of each other:
 { on:'my.ion@doma.in',
   do: function confirming (ion)
     {/ This method is called for each ion with   /
-    ^/ an id matching "my.ion@doma.in". It       /
-    ^/ confirms the ion developer before         /
-    ^/ describing what the ion does.             /
+    */ an id matching "my.ion@doma.in". It       /
+    */ confirms the ion developer before         /
+    */ describing what the ion does.             /
 
        if (ion.re.by == "a.🇬🇾.developer")
         ~ {log:  ion.re.it}
-        ^ /logs "identifies the intended module" /
+        * /logs "identifies the intended module" /
     }
 }
 
 
 ~/ Each of the following ion modules could be in /
-^/ a separate file fetched locally or remotely!  /
+*/ a separate file fetched locally or remotely!  /
 
 ~
 { re:
