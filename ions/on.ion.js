@@ -5,7 +5,7 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190413
+    , to:  -7.20190502
     , is:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
@@ -236,7 +236,7 @@
 
 , sortKnownWords
 :   function sortKnownWords (updated)
-      { var ionify     = sortKnownWords.with || (sortKnownWords == this.sortKnownWords) ? this : null
+      { var ionify     = sortKnownWords.with || (sortKnownWords == this.sortKnownWords) ? (sortKnownWords.with = this) : null
           , known      = ionify.known
           , descending = ionify.sortKnownWordsDescending
           , word
@@ -244,7 +244,7 @@
         !updated && (updated = known)
 
         for (word in updated)
-          known [word].sort (descending)
+          updated.hasOwnProperty (word) && known [word].sort (descending)
       }
 
 , sortKnownWordsDescending
@@ -302,7 +302,8 @@
           ;
 
         for (word in known)
-          { if (word in skip || !(word in object)) continue
+          { if (! known.hasOwnProperty (word)    ) continue
+            if (word in skip || !(word in object)) continue
             groups = known [word]
 
             for (var g=0, G=groups.length; g < G; g++)
