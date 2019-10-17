@@ -211,8 +211,7 @@ necessary to execute only one aspect of the desired functionality." - Wikipedia*
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
 *"...a programming paradigm in which the flow of the program is determined by events
-such as user actions..., sensor outputs, or messages from other programs/threads."
-- Wikipedia*
+such as user actions..., sensor outputs, or messages from other programs/threads." - Wikipedia*
 
 ```javascript
 ~
