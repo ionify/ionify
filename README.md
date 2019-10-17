@@ -91,8 +91,8 @@ behaviors:
       }
 }
 
-~ / Each of these ask.say ions can be in their  /
-* / own file fetched either locally or remotely /
+
+~ / Each ask.say ion can be in a separate file /
 
 ~ { say: "👋🏾 Hi!"                              }
 ~ { ask: "What's your name?"                    }
@@ -135,10 +135,10 @@ relationships, in whatever order is best for human comprehension" -
     ],
 
   "say hello":
-    {say: "Hi! I'm Frend Lee!"}
+    {say: "Hi! I'm Frend Lee!"},
 
   "ask their name":
-    {ask: "What's your name?"}
+    {ask: "What's your name?"},
 
   "invite them to play":
     {ask: "Hi [answer]! Wanna play?!"}
@@ -149,22 +149,32 @@ relationships, in whatever order is best for human comprehension" -
 
 ```javascript
 ~
-{ on :'say'
-, say:
-    function saying (ion)
-      { ~{log: ion.say} * /or do lots more!/
-      }
+{ re:
+    { id: 'code.prose@ionified.net'
+    , by: 'mike.lee'
+    , on: -7.20190323
+    , to: -7.20190925
+    , at: -0.1
+    , in: 'san-jose.california.us.earth'
+    , is: "a test of code as prose via orion"
+    }
+
+, on: 'say'
+, say (ion)
+    { /log each thing that is said/
+    * {log: ion.say}
+    * /or do something more profound!/
+    }
 }
 
-  you   = {say:'do you see all the things' }
-  can   = {say:'we can do'   }
-  write = {say:'if we write' }
-  code  = {say:'our code'    }
-  as    = {say:'as actionable words within'}
-  prose = {say:'phrases & sentences?! 🤓' }
+  you = {say:'do you see all the things' }
+  can = {say:'we can do'   }
+write = {say:'if we write' }
+ code = {say:'our code'    }
+   as = {say:'as actionable words within'}
+prose = {say:'phrases & sentences?! 🤓' }
 
-' With orion' + you + can + write + code + as
-+ prose
+'With orion' + you + can + write + code + as + prose;
 ```
 
 See [anemojii](https://glitch.com/~anemojii)
@@ -206,14 +216,16 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 
 ```javascript
 ~
-{ on:'event',
-  do: function act (ion)
-    { ~{log: ion.event} <= /logs "it happened!"/
+{ on:'event'
+, do (ion)
+    { / log "it happened!" /
+    * { log: ion.event     }
+    * / on every event ion /
     }
 }
 
-/ This ion event can exist within another file /
-~ {event: "it happened!"} <= /invokes an event /
+~ /This event ion could be in a separate file./
+~ {event: "it happened!"} <= /invokes an event/
 ```
 
 
@@ -228,21 +240,23 @@ other anonymous & named objects:
 
 ```javascript
 ~
-{ on:'hi',
-  hi: function (ion)
-    {/ This method is called for each ion /
-    */ with a "hi" property. It logs the  /
-    */ value of that property.            /
-          
-    ~{ log:  ion.hi }
-    */ logs "I'm an ion!" 1st /
-    */ logs "I'm a json!" 2nd /
+{ on:'hi'
+, hi (ion)
+    { / This method is called for each ion /
+    * / with a "hi" property. It logs the  /
+    * / value of that property.            /
+
+    ~ { log:  ion.hi }
+
+    * / logs "I'm an ion!" 1st /
+    * / logs "I'm a json!" 2nd /
     }
 }
 
-/ These can each be in separate & remote files /
-~ { hi : "I'm an ion!"}  <= / invoke an object /
-~ {"hi": "I'm a json!"}  <= / invoke some json /
+~ / Each ion can be in its own local or remote file /
+
+~ { hi : "I'm an ion!"}  <=  / invoke an object /
+~ {"hi": "I'm a json!"}  <=  / invoke some json /
 ```
 
 _fyi: Syntax highlighting issues are due to a
@@ -263,22 +277,20 @@ without overriding all, or parts, of each other:
 
 ```javascript
 ~
-{ on:'my.ion@doma.in',
-  do: function confirming (ion)
-    {/ This method is called for each ion with   /
-    */ an id matching "my.ion@doma.in". It       /
-    */ confirms the ion developer before         /
-    */ describing what the ion does.             /
+{ on:'my.ion@doma.in'
+, do (ion)
+    { / This method is called for each ion with   /
+    * / an id matching "my.ion@doma.in". It       /
+    * / confirms the ion developer before         /
+    * / describing what the ion does.             /
 
-       if (ion.re.by == "a.🇬🇾.developer")
-        ~ {log:  ion.re.it}
-        * /logs "identifies the intended module" /
+      if (ion.re.by == "a.🇬🇾.developer")
+        ~ /log "identifies the intended module"/
+        * {log: ion.re.it}
     }
 }
 
-
-~/ Each of the following ion modules could be in /
-*/ a separate file fetched locally or remotely!  /
+~ / Each of these ions can be in a separate file /
 
 ~
 { re:
