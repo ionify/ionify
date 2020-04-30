@@ -241,11 +241,11 @@ other anonymous & named objects:
 ~
 { on:'hi'
 , hi (ion)
-    { / This method is called for each ion //
-      / with a "hi" property. It logs the  //
-      / value of that property.            //
+    { /This method is called for each ion//
+      /with a "hi" property. It logs the //
+      /value of that property.           //
 
-    ~ {log:  ion.hi }
+      {log: ion.hi}
 
       /logs "I'm an ion!" 1st//
       /logs "I'm a json!" 2nd/
@@ -273,13 +273,13 @@ without overriding all, or parts, of each other:
 ~
 { on:'my.ion@doma.in'
 , do (ion)
-    { / This method is called for each ion with //
-      / an id matching "my.ion@doma.in". It     //
-      / confirms the ion developer before       //
-      / describing what the ion does.            /
+    { /This method is called for each ion with//
+      /an id matching "my.ion@doma.in". It    //
+      /confirms the ion developer before      //
+      /describing what the ion does.           /
 
       if (ion.re.by == "a.🇬🇾.developer")
-         /log "identifies the intended module"  //
+         /log "identifies the intended module"//
          {log: ion.re.it}
     }
 }
