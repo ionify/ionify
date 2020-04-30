@@ -69,7 +69,7 @@ behaviors:
     , to: -7.20200430
     , at: +1.4
     , in: 'san-jose.california.usa.earth'
-    , is: "a simple ask & say domain-specific language implementation"
+    , is: "an ask & say domain-specific language ion"
     },
 
   on:
