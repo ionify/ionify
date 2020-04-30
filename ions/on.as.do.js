@@ -4,8 +4,8 @@
     { id:  'on.as.do@ionify.net'
     , by: ['mike.lee','team']
     , on:  -7.20190411
-    , to:  -7.20190412
-    , at:  -0.1
+    , to:  -7.20200429
+    , at:  +0.02
     , is: "ionify's type sensor"
     , it:
         [" enables sensing types via ~on.as"
@@ -13,19 +13,21 @@
     , we:
         [" were implementing ~on.as.do: saving sensors by type "
         ," will add typeChecker() as a sensor action "
-        ," were... "
-        ," must... "
-        ," will... "
-        ," want... "
-        ," like... "
+        ," were ... "
+        ," must ... "
+        ," will ... "
+        ," want ... "
+        ," like ... "
+        ," wont ... "
         ]
-    }
+    },
 
-, on:
-    [['on', 'as', 'do']]
+  on:
+    [['on', 'as', 'do']
+    ],
 
-, "on as do"
-:  function onType ()
+  "on as do":
+   function onType ()
      { var our              = onType.our
          ,     types        = our.types  ||
          ( our.types        = {}          )
