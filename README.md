@@ -11,9 +11,9 @@ and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ { "json" : "data" }  <= /observable json/
-+ {   log  : '👋🏾👨🏾‍💻'}  <= /message logging/
-& ["observable text"]  <= /observable text/
+~ { "json" : "data" }    <= /observable json/
++ {   log  : '👋🏾👨🏾‍💻'}  <= /unobtrusive api/
+& ["observable text"]    <= /observable text/
 ```
 
 
@@ -33,22 +33,22 @@ and is maintained by
   interacting with highly [decoupled](#decoupled-observation)
   data & code
 
-+ and [more](https://github.com/ionify/ideas/).
++ and more.
 
 
 ## how
 
 **ion** & **ionify** are enabled by & can be implemented in languages that support
-[operator & operation overloading](https://en.wikipedia.org/wiki/Operator_overloading).
+[operator overloading](https://en.wikipedia.org/wiki/Operator_overloading).
 [JavaScript](https://github.com/ionify/ionify/),
-[Java](https://github.com/ionify/ideas/blob/public/java/src/net/ionify/java/Hello.java)
-& [Python](https://github.com/ionify/ideas/blob/public/python/ion.proof.py)
+[Java](https://github.com/ionify/about/blob/public/api/java/src/net/ionify/java/Hello.java)
+& [Python](https://github.com/ionify/about/blob/public/api/python/ion.proof.py)
 are three we've explored & confirmed capable.
 
-For a detailed explanation of how **ion**: invoked object notation is handled, visit
-[**ion**'s documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form).
+For a detailed explanation of **ion**: invoked object notation, visit
+its [documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form).
 
-For examples of **ion** & **ionify** applications, visit the following subsections.
+For examples applying **ion** & **ionify**, visit the following subsections.
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
@@ -65,11 +65,11 @@ behaviors:
 { re:
     { id: 'ask.say@ions.iskitz.net'
     , by: 'mike.lee'
-    , on: '2015.07.28-07'
-    , to: '2019.05.02-07'
+    , on: -7.20150728
+    , to: -7.20200430
+    , at: +1.4
     , in: 'san-jose.california.usa.earth'
-    , is:  1.3
-    , it: "implements a simple ask & say domain-specific language"
+    , is: "a simple ask & say domain-specific language implementation"
     },
 
   on:
@@ -92,7 +92,7 @@ behaviors:
 }
 
 
-~ / Each ask.say ion can be in a separate file /
+~ /These ask.say ions can be in separate files./
 
 ~ { say: "👋🏾 Hi!"                              }
 ~ { ask: "What's your name?"                    }
@@ -122,10 +122,10 @@ relationships, in whatever order is best for human comprehension" -
 { re:
     { id: 'frendlee@ionified.net'
     , by: 'mike.lee@ionify.net'
-    , on: '2017.12.08-08'
-    , to: '2019.04.21-07'
+    , on: -8.20171208
+    , to: -7.20200430
     , in: 'san-jose.california.usa.earth'
-    , it: "explores literate & natural language programming"
+    , is: "a literate & natural language programming exploration"
     },
 
   do:
@@ -150,20 +150,20 @@ relationships, in whatever order is best for human comprehension" -
 ```javascript
 ~
 { re:
-    { id: 'code.prose@ionified.net'
+    { id: 'code.prose.demo@ionified.net'
     , by: 'mike.lee'
     , on: -7.20190323
-    , to: -7.20190925
-    , at: -0.1
+    , to: -7.20200430
+    , at: +0.02
     , in: 'san-jose.california.us.earth'
     , is: "a test of code as prose via orion"
-    }
+    },
 
-, on: 'say'
-, say (ion)
-    { /log each thing that is said/
-    * {log: ion.say}
-    * /or do something more profound!/
+  on: 'say',
+  say (ion)
+    { /log each thing that is said  //
+      {log: ion.say}                 /
+      /or do something more profound!/
     }
 }
 
@@ -174,7 +174,7 @@ write = {say:'if we write' }
    as = {say:'as actionable words within'}
 prose = {say:'phrases & sentences?! 🤓' }
 
-'With orion' + you + can + write + code + as + prose;
+'With orion' - you - can - write - code - as - prose;
 ```
 
 See [anemojii](https://glitch.com/~anemojii)
@@ -194,16 +194,17 @@ necessary to execute only one aspect of the desired functionality." - Wikipedia*
 { re:
     { id: 'an.ionified.module@doma.in'
     , by: 'a.developer'
-    , on: '2007.09-04'
-    , to: '2019.04.21-07'
+    , on: -4.200709
+    , to: -7.20200430
     , it: "represents an ionified module"
     },
 
-  do:function doing ()
-    { doing.with.hi ++
-    },
+  do:
+    function something ()
+      { something.with.hi ++
+      },
 
-  hi:/ Hi! 🤓 /
+  hi: /Hi! 🤓/
 }
 ```
 
@@ -217,16 +218,15 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 ~
 { on:'event'
 , do (ion)
-    { / log "it happened!" /
-    * { log: ion.event     }
-    * / on every event ion /
+    { /log "it happened!"//
+      {log: ion.event   } /
+      /on every event ion!/
     }
 }
 
 ~ /This event ion could be in a separate file./
 ~ {event: "it happened!"} <= /invokes an event/
 ```
-
 
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
 
@@ -241,27 +241,22 @@ other anonymous & named objects:
 ~
 { on:'hi'
 , hi (ion)
-    { / This method is called for each ion /
-    * / with a "hi" property. It logs the  /
-    * / value of that property.            /
+    { / This method is called for each ion //
+      / with a "hi" property. It logs the  //
+      / value of that property.            //
 
-    ~ { log:  ion.hi }
+    ~ {log:  ion.hi }
 
-    * / logs "I'm an ion!" 1st /
-    * / logs "I'm a json!" 2nd /
+      /logs "I'm an ion!" 1st//
+      /logs "I'm a json!" 2nd/
     }
 }
 
-~ / Each ion can be in its own local or remote file /
+~ /Each ion can be in its own local or remote file/
 
-~ { hi : "I'm an ion!"}  <=  / invoke an object /
-~ {"hi": "I'm a json!"}  <=  / invoke some json /
+~ { hi : "I'm an ion!"}  <=  /invoke an object/
+~ {"hi": "I'm a json!"}  <=  /invoke some json/
 ```
-
-_fyi: Syntax highlighting issues are due to a
-[Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
-not **ionify** or its syntax._
-
 
 ### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
 
@@ -278,25 +273,25 @@ without overriding all, or parts, of each other:
 ~
 { on:'my.ion@doma.in'
 , do (ion)
-    { / This method is called for each ion with   /
-    * / an id matching "my.ion@doma.in". It       /
-    * / confirms the ion developer before         /
-    * / describing what the ion does.             /
+    { / This method is called for each ion with //
+      / an id matching "my.ion@doma.in". It     //
+      / confirms the ion developer before       //
+      / describing what the ion does.            /
 
       if (ion.re.by == "a.🇬🇾.developer")
-        ~ /log "identifies the intended module"/
-        * {log: ion.re.it}
+         /log "identifies the intended module"  //
+         {log: ion.re.it}
     }
 }
 
-~ / Each of these ions can be in a separate file /
+~ /Each of these ions can be in a separate file/
 
 ~
 { re:
     { id: 'my.ion@doma.in'
     , by: 'a.🇬🇾+🇯🇵+🇺🇸.developer'
-    , on: '2009.12-08'
-    , to: '2019.04.21-07'
+    , on: -8.200912
+    , to: -7.20190421
     , in: 'san-jose.california.usa.earth'
     , it: "duplicates the intended module's id"
     }
@@ -315,14 +310,10 @@ without overriding all, or parts, of each other:
 { re:
     { id: 'my.ion@doma.in'
     , by: 'a.🇬🇾+🇺🇸.developer'
-    , on: '2007.09-04'
-    , to: '2009.12-05'
+    , on: -4.200709
+    , to: -5.200912
     , in: 'forest-hills.new-york.usa.earth'
     , it: "also duplicates the intended module's id"
     }
 }
 ```
-
-_fyi: Syntax highlighting issues are due to a
-[Github bug](https://github.com/atom/language-javascript/issues/530#issuecomment-341976488)
-not **ionify** or its syntax._
