@@ -2,20 +2,22 @@
 ~
 { re:
     { id:  'on.aeon@ionify'
+    , of:  'ionify'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190413
-    , is:  -0.1
+    , to:  -7.20200505
+    , at:  -0.05
+    , is: "ionify's list sensor"
     , it:
-        [" senses all array-expressed ions like:                   "
-        +"   ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0] "
+        [ "senses all array-expressed ions like:                  "
+        + "  ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
         ]
         ,
       we:
-        [" were debugging ~find'ing aeon sensors like aesop "
-        ," want to move aesop@ to its own ion               "
-        ," ... "
+        [ "will rename this to on.list since it handles lists of ions via arrays"
+        , "were debugging ~find'ing aeon sensors like aesop"
+        , "want to move aesop@ to its own ion"
+        , "... "
         ]
     },
 
