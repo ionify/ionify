@@ -1,26 +1,32 @@
 ;
-/do.test@ionify activating.../
-
-+
+~
 { re:
-    { id: "do.test.0.1@ionify"
-    , is: "A suite of tests for ionify's +do actions"
-    , by: "mike.lee@ionify"
-    , at: "2017.07.13-07...2007.09-04"
+    { id:  'do.test@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20190109
+    , at:  -0.1
+    , it: "tests ionify's ~do actions"
     }
 }
 
 +
-{ do: "hey"
+{ do: 'hey'
 , hey:
     function hi ()
-      { +{log: hi.ion.do + " did log"}
-      }
-}
+      { +{log:"✅ ~do:named:Function"}
+}     }
 
-+ {do: {log: "¡hey!  do  works!"}}
-+ {do:"went", went:{log:'¡hey! "do" works!'}}
-+ {do:null}
 +
-/do.test@ionify activated!/
+{ do:
+    function ()
+      { +{log:"✅ ~do:Function"}
+}     }
+
++ {do: {log:"✅ ~do:ion:{}"}}
++ {do:'went', went:{log:"✅ ~do:named:ion:{}"}}
++ {do: [ {log:"✅ ~do:[]"} ] }
++ {do: ['aesop'], aesop:{log:'✅ ~do:["aesop"]'}}
++ {do: null}
 ;

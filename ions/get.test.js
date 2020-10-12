@@ -1,85 +1,85 @@
 ;
-/get.test@ionify activating.../
-
-+
+~
 { re:
-    { id: "get.test.0.1@ionify"
-    , is: "A suite of tests for ionify's +get actions"
-    , by: "mike.lee@ionify"
-    , at: "2017.07.13...2007.09-04"
+    { id:  'get.test@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -7.20190413
+    , is:  -0.1
+    , it:  "Tests ionify's ~get api"
     }
 }
 
-+
-{ get: "http://ionify.net/ions/test/log.js"
-, now: true
+
+~ {get:''}         <-  /testing getting the .js file/
+~ {get:'@ionify'}  <-  /testing getting the @domain's .js file/
+
+
+~
+{ get : 'http://ionify.net/ions/test/log.js'
+, in  : 'order'
 , then:
     function hi ()
-      { +{log: "did " + hi.ion.get}
+      {~{log: ["did ", hi.with.get]}
       }
 }
 
 
-/* immediately disables ionify
-   even before previous get.then's activate
-
+~
+/ testing grouped & ordered ~get's with a shared ~get.then /
 +
-{ re:
-    ["playing with syntax for getting non-ion scripts in order"],
-
-  do:
-    [ {  get: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
-      ,  now:  true
-      },
-      {  get: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
-      ,  now:  true
-      , then: "doIt"
-      }
-    ],
-  doIt:
-      function onLoadExample ()
-      {  ~com.iskitz.ajile.examples.LoadExample
-      }
-}
-*/
-
-+
-{ re:
-    ["playing with syntax for getting multiple non-ion scripts in order"],
-
-  get:
-    [ "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff"
-    , "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
-    ],
-  now: true,
-  then:
-    [ ,
-      function onLoadExample ()
-        {  ~com.iskitz.ajile.examples.LoadExample
-        }
+{ re:" exploring syntax for ~get'ing non-ion scripts in order then using them "
+, get
+:   [ 'http://cdn.jsdelivr.net/gh/iskitz/ajile/use/com.iskitz.ajile.js?mvcoff,mvcshareoff'
+    , 'http://cdn.jsdelivr.net/gh/iskitz/ajile/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js'
     ]
+, in: 'order'
+, then
+:   function onLoadExample ()
+      {  ~com.iskitz.ajile.examples.LoadExample
+      }
 }
 
-/* immediately disables ionify
-   even before previous get.then's activate
 
+~
+/ testing ~do-grouped individually ordered ~get's with 1 aliased & shared then /
++
 { re:
-    ["playing with syntax for getting non-ion scripts in order"],
-
-  get:
-    [ {  now:  true, js: "http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff" },
-      {  now:  true, js: "http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js"
-      , then: "doIt"
+    " exploring syntax for ~get'ing non-ion scripts in order then using them "
+, do:
+    [ {  get: 'http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff'
+      ,   in: 'order'
       }
-    ],
-  now: true,
-  doIt:
-      function onLoadExample ()
+    , {  get: 'http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.IncludeExample.js'
+      ,   in: 'order'
+      , then: 'doIt'
+      }
+    ]
+, doIt
+:   function onIncludeExample ()
+      {  ~com.iskitz.ajile.examples.IncludeExample
+      }
+}
+
+/*
+~
+[" testing grouped & ordered individually mime-typed ~get's with a shared then. "
+," bug: emoji tests instantly disable ionify even before previous ~get.then's. "
+]
++
+{ re:
+    " exploring syntax for ~get'ing non-ion scripts in order "
+, get
+:   [ {js:'http://ajile.net/use/com.iskitz.ajile.js?mvcoff,mvcshareoff'}
+    , {js:'http://ajile.net/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js'}
+    ]
+, as: 'text/javascript'
+, in: 'order'
+, then
+:   function onLoadExample ()
       {  ~com.iskitz.ajile.examples.LoadExample
       }
 }
 */
-
-+
-/get.test@ionify activated!/
 ;

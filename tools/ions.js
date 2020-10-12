@@ -1,17 +1,23 @@
 ;
-
-+
+~
 { re:
-    { id: "ions@test.ionify.2017.03.20-07"
-    , is: "ionify's test ions"
-    , by:
-        [ {creator: "mike.lee@iskitz",  at: "2007.09-04",     in: "forest-hills.new-york.usa.earth"}
-        , {authors:     "team@ionify",  at: "2017.03.20-07",  in:   "san-jose.california.usa.earth"}
-        ]
+    { id:  'ions'
+    , by: ['mike.lee', 'team']
+    , at:  'test.ionify.net'
+    , in: ['forest-hills.new-york.usa.earth'
+          ,  'san-jose.california.usa.earth'
+          ]
+    , on:  -4.200709
+    , to:  -8.20181230
+    , is:  -0.1
+    , it:" configures ionify's test ions "
     }
 
-,  debug: !true
-,  get  : ["tests"]
+,  debug :  !true
+,  error :   true
+,  info  :  !true
+,  log   :   true
+,  warn  :   true
+,  get   : ['tests']
 }
-
 ;

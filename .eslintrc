@@ -28,20 +28,23 @@
     ,   "strict"               : 0
     ,   "quotes"               : 0
     ,   "yoda"                 : 0
-    },
+    }
+  
+ , "parserOptions":
+    {   "ecmaVersion" : 6
+    ,   "ecmaFeatures":
+          {   "defaultParams"                   : true
+          ,   "destructuring"                   : true
+          ,   "forOf"                           : true
+          ,   "objectLiteralShorthandMethods"   : true
+          ,   "objectLiteralShorthandProperties": true
+          ,   "restParams"                      : true
+          ,   "spread"                          : true
+          ,   "templateStrings"                 : true
+          }
+    }
 
-  "ecmaFeatures":
-    {   "defaultParams"                   : true
-    ,   "destructuring"                   : true
-    ,   "forOf"                           : true
-    ,   "objectLiteralShorthandMethods"   : true
-    ,   "objectLiteralShorthandProperties": true
-    ,   "restParams"                      : true
-    ,   "spread"                          : true
-    ,   "templateStrings"                 : true
-    },
-
-  "env":
+, "env":
     {   "browser" : true
     ,   "node"    : false
     }

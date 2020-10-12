@@ -1,24 +1,28 @@
 ;
-/log.test@ionify activating.../
-
-+
+~
 { re:
-    { id: "log.test.0.1@ionify"
-    , is: "A suite of tests for ionify's logging actions"
-    , by: "mike.lee@ionify"
-    , at: "2017.04.15-07...2007.09-04"
+    { id:  'log.test@ionify'
+    , by: ['mike.lee','team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -8.20181222
+    , is:  -0.1
+    , it: "tests ionify's logging actions"
     }
 }
 
 +
-[ /test +[], +debug, +error, +info, +log, +warn/
-, { info: "inform"}
-, {debug: "debug" }
-, {  log: "log"   }
-, { warn: "warn"  }
-, {error: "error" }
-]
+[" test +[], +debug, +error, +info, +log, +warn "
+, { info: "~info  works"}
 
-+
-/log.test@ionify activated!/
+, (this.ionifydebugteststate = !!+{debug:"get debug state"})
+, {debug: true}
+, {debug: "~debug works"}
+, {debug: ionifydebugteststate}
+, (delete this.ionifydebugteststate)
+
+, {  log: "~log   works"}
+, { warn: "~warn  works"}
+, {error: "~error works"}
+]
 ;

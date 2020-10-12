@@ -6,12 +6,13 @@
     { id: 'node@ionify'
     , is: "invoked object notations interpreted for your node"
     , by:['mike.lee@iskitz', 'team@ionify']
-    , at: '2018.04.27-07...2009.05-04'
+    , on: '2009.05-04'
+    , to: '2019.04.13-07'
     }
 
 , debug
 :   false
-    
+
 , on:
     [ ['get', 'then']
     ,  'get'
@@ -27,9 +28,9 @@
 
 , valueOf
 :   function ionifyNode ()
-      { var node        = this
-      ; node.ready.ion  = node
-      ; node.get  .ion  = node
+      { var node         = this
+      ; node.ready.with  = node
+      ; node.get  .with  = node
       ; delete node.valueOf
       ; node.ready ()
       ; node.get   ({get:"./ions/on.object.js", then:node})
@@ -37,7 +38,7 @@
 
 , ready
 :   function ready ()
-      { var errors = ready.ion.errors
+      { var errors = ready.with.errors
           , error  =
              (   (typeof require == "undefined") && errors.noRequire
              ||  (typeof console == "undefined") && errors.noConsole
@@ -48,8 +49,8 @@
 
 , get
 :  function get (ion)
-      { var http          = get.ion.http
-        || (get.ion.http  = require ("http"))
+      { var http          = get.with.http
+        || (get.with.http = require ("http"))
          , path           = String (ion.get)
          , isLocal        = path.match (/^[\.\/\\]+/)
          , data           = ""
@@ -77,7 +78,7 @@
 , log
 :   function log (thing)
       {  thing = String (thing.log)
-      ;  console.log (log.ion.re.id + ": " + thing)
+      ;  console.log (log.with.re.id + ": " + thing)
       }
 }
 ;

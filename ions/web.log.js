@@ -1,130 +1,137 @@
 ;
 ~
 { re:
-    { id: "log.0.1@ionify"
-    , is: "web-based logging for ionify"
-    , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.11.10-08...2007.09-04"
-        ,
-      stories:
-        [ /todo: Create log@ + move console + all +logging there/
-        , /todo: Update to only use alert() on iOS/
-        , /todo: ready(): only throw noConsole if no alert() /
+    { id: 'log@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -4.200709
+    , to:  -7.20190413
+    , is:  -0.1
+    , it:" implements ionify logging via    "
+        +" ~debug ~error ~info ~log & ~warn "
+    , we:
+        [" must understand why initial ~debug state isn't logged.    "
+        ," will create log@ & move console & all ~logging there.     "
+        ," will update to only use alert() on mobile (e.g. iOS).     "
+        ," will set .ready() to only throw noConsole if no alert().  "
+        ," like moving display logic to host, e.g. alert vs console. "
         ]
-    }
+    },
 
-    ,
   on:
-    [ "error", "warn", "log", "info", "debug"
-    ]
+    [ 'error', 'warn', 'debug', 'log', 'info'
+    ],
 
-    ,
   errors:
-    { noAlert   : "log@ionify needs the window.alert() API"
-    , noConsole : "log@ionify needs the console.log() API"
-    }
+    { noAlert   : "log@ionify needs the window.alert () API"
+    , noConsole : "log@ionify needs the console.log  () API"
+    },
 
-    ,
-  do:
-    [ {debug:true}
-    , "ready"
-    ]
-
-    ,
-  ready:
-    function ready ()
-      {   var error = ready.ion.errors
-      ;   (typeof  console == "undefined") && ~error.noConsole
-      ;   (typeof    alert == "undefined") && ~error.noAlert
-      ;   return true
-      }
-
-    ,
-  debug:
-    function debug (ion)
-      { ion.as  = "debug"
-      ; ion.log = ion.debug
-      ; debug.ion.log (ion)
+  valueOf:
+    function hiphop ()
+      {   var errors = this.errors
+      ;  (typeof console == 'undefined') && errors & errors.noConsole
+      ;  (typeof alert   == 'undefined') && errors & errors.noAlert
+      ;   this . logged ()
+      ;   delete this.valueOf
+      ~   this & this.prepare.our.logging
       },
 
+  debug:
+    function debug (ion)
+      { var    logger       =  debug.with
+      ;        logger.level = 'debug'
+      ; return logger.logged  (ion)
+      },
 
   error:
-    function logError (ion)
-      { ion.as  = "error"
-      ; ion.log = ion.error
-      ; logError.ion.log (ion)
+    function error (ion)
+      { var logger       =  error.with
+      ;     logger.level = 'error'
+      ; var state        =  logger.logged (ion)
+      ; if (typeof ion.error == 'boolean') return state
       ~ new Error (ion.error)
       },
 
-
   info:
-    function logInfo (ion)
-      { ion.as  = "info"
-      ; ion.log = ion.info
-      ; logInfo.ion.log (ion)
+    function info (ion)
+      { var    logger       =  info.with
+      ;        logger.level = 'info'
+      ; return logger.logged  (ion)
       },
-
 
   log:
     function log (ion)
-      {/* Uncommenting the following stories causes an infinite
-          loop log...onObject...debug...log
-          Maybe move logging to own flow | queue | thread so it
-          won't interupt other ion handling? Needs debugging.
+      { var    logger       =  log.with
+      ;        logger.level = 'log'
+      ; return logger.logged  (ion)
+      },
 
-        +/ ion: +{log:thing} logs some thing    /
-        +/ ion: +{log: true} enables  logging   /
-        +/ ion: +{log:false} disables logging   /
-        +/ ion: +{debug:...} same as +{log:...} /
-        +/ ion: +{error:...} same as +{log:...} /
-        +/ ion: +{ warn:...} same as +{log:...} /
-       */
+  warn:
+    function warn (ion)
+      { var logger   =  warn.with
+      ; logger.level = 'warn'
+      ; return logger.logged (ion)
+      },
 
-        function cons0le (ion)
-          {  sense (ion)
-          && console [level] (id + ": " + String (ion.log))
+  prepare:
+    function prepare (ion)
+      { var logger       = prepare. with
+          , logging      = prepare. our  . logging
+          , level        = logger . level
+          , message      = ion     [level]
+          , state        = prepare [level]
+          ; logger.state = state
+          ; logger.id    = ion.re.from || logger.re.id
+
+        if('boolean' == typeof message)
+          if( state = message != state)
+            { logger.state = prepare [level] = message
+            ; message      = "~" + level + (logger.state ? " on" : " off")
+            }
+
+      ; logger.state   && Array.isArray (message) && (message = message.join (" "))
+      ; logger.message  = String        (message)
+      ; logging [level] = logger.state
+      ; return state
+      },
+
+  loggedInfo:
+    [" ion: +{log:thing} logs some thing  "
+    ," ion: +{log: true} enables  logging "
+    ," ion: +{log:false} disables logging "
+    ," ion: +{debug:...} is +{log:...} with debug level "
+    ," ion: +{error:...} is +{log:...} with error level "
+    ," ion: +{ info:...} is +{log:...} with  info level "
+    ," ion: +{ warn:...} is +{log:...} woth  warn level "
+    ],
+
+  logged:
+    function logging (ion)
+      { function cons0le (ion)
+          {  prepare (ion)
+          && console [logger.level] (logger.id + ": " + logger.message)
+          ;  return   logger.state
           }
 
         function popup (ion)
-          {  sense (ion)
-          && alert (id + icon[level] + String (ion.log))
-          }
-
-        function sense (ion)
-          { Array.isArray (ion.log) && (ion.log = ion.log.join (" "))
-            id         =  ion.re.from || web.re.id
-            level      =  ion.as      || "log"
-          ; ("boolean" == typeof ion [level]) && (sense [level] = ion [level])
-            return sense [level]
+          { prepare (ion) && alert (icon [logger.level] + logger.id + logger.message)
+          ; return logger.state
           }
 
         var icon =
             { debug: "🐛"
-            , error: "❌"
+            , error: "🚫"
             ,  info: "💡"
             ,   log: "📋"
             ,  warn: "⚠️"
             }
 
-        var id
-          , level
-          , web         = log.ion
-          , iOSPath     = (/^file:\/\/.*\/var\/mobile\//)
-          , noConsole   = document.URL.match (iOSPath)
-          ; sense.debug = false
-          ; sense.error = true
-          ; sense.log   = true
-          ; sense.warn  = true
-          ; (web.log    = noConsole ? popup : cons0le) (ion)
-      },
-
-
-  warn:
-    function logWarn (ion)
-      { ion.as  = "warn"
-      ; ion.log = ion.warn
-      ; logWarn.ion.log (ion)
+        var logger        = this
+          , prepare       = logger.prepare
+          , iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
+          , noConsole     = document.URL.match (iOSPath)
+          ; logger.logged = noConsole ? popup : cons0le
       }
-
 }
 ;

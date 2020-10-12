@@ -1,30 +1,38 @@
 ;
 ~
 { re:
-    { id: "next.id.0.1@ionify"
-    , is: "An ion that generates sequential ids on-demand"
-    , by:["mike.lee@iskitz", "team@ionify"]
-    , at: "2017.07.15-07...2016.09.10-07"
+    { id:  'next.id@ionify'
+    , by: ['mike.lee', 'team']
+    , at:  'ionify.net'
+    , on:  -7.20160910
+    , to:  -7.20190330
+    , is:  -0.1
+    , it: "generates sequential ids on-demand"
     }
 
-, debug : false
-, on    : [["next", "id"]]
+, on    : [['next', 'id']]
+, MAX   : Number.MAX_SAFE_INTEGER ||  9007199254740991
+, MIN   : Number.MIN_SAFE_INTEGER || -9007199254740991
+, ids   : {}
 
-, MAX: Number.MAX_SAFE_INTEGER ||  9007199254740991
-, MIN: Number.MIN_SAFE_INTEGER || -9007199254740991
-, ids: {}
+, valueOf
+:   function hiphop ()
+      { this ["next id"].with = this
+      ; delete this.valueOf
+      ~ this
+      }
 
-, "next id":
-    function onNextId (ion)
-      { var th1s = onNextId.ion || this
-          , ids  = th1s.ids
+, "next id"
+:   function nextId (ion)
+      { var my   = nextId.with
+          , ids  = my.ids
           , name = ion.next
           , f0r  = ion.id.re || (ion.id.re = {})
           , id   = ids [name]
 
-      ; (id >= th1s.MAX)  && (id = ids [name] = null)
-      ; isNaN (id)        && (id = ids [name] = th1s.MIN)
-      ; f0r.id = name + '.' + id
+      ; (id >= my.MAX)  && (id = ids [name] = null)
+      ; isNaN (id)      && (id = ids [name] = my.MIN)
+      ;    f0r.id = name + '.' + id
       ; return ids [name]++
       }
 }
