@@ -2,11 +2,11 @@
 ~
 { re:
     { id:  'on.ion@ionify'
+    , is:  'sensor'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190502
-    , is:  -0.1
+    , to:  -7.20201028
+    , at:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
         ," senses ions as activated Objects; i.e. ~{} & ~objectReference.             "
@@ -42,15 +42,15 @@
         +" removes those ion references for memory performance. May be good enough to "
         +" only note this for now & revisit if performance needs to be improved.      "
         ]
-    }
+    },
 
-, valueOf
-:   function hip ()
+  valueOf:
+    function on ()
       { this.ionify ()
-      }
+      },
 
-, ionify
-:   function ionify ()
+  ionify:
+    function ionify ()
       { var  ionified  = Object.prototype.valueOf.ionified
           ;    delete    Object.prototype.valueOf.ionified
           ;  ionified && delete  ionified.valueOf
@@ -98,8 +98,8 @@
         ionified <= /todo: via .ionifi3d ()/
 
         ~
-        { get
-          : [   'next.id@ionify',              'id@ionify',  'on.error@ionify'
+        { get:
+            [   'next.id@ionify',           're.id@ionify',  'on.error@ionify'
             , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
             ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
             , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'

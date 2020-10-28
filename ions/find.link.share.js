@@ -2,15 +2,18 @@
 ~
 { re:
     { id:  'find.link.share@ionify'
+    , is:  'action'
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20190415 : -7.0159 }
+    , to: { 20201028 : -7.0908 }
     , at:  -0.1
-    , it:" provides context via ~link which ensures ions' object-type members can   "
+    , it:
+        [" provides context via ~link which ensures ions' object-type members can   "
         +" access their containing ion, ~share for sharing things via domains,      "
         +" optionally aliased data and-or functionality, and ~find.in for resolving "
         +" names to ions.                                                           "
-    , we:
+        ],
+      we:
         [" were updating ~link & ~share to use .with vs .our  "
         ," were implementing ~link.to & ~link.as              "
         ," will apply unlink when ~link.to is falsey          "
@@ -20,26 +23,26 @@
         ," like idea of queueing ~find's then doing once ~find's available          "
         ," like that prototypes could enable automatic context sharing within ions. "
         ]
-    }
+    },
 
-, on
-:   [ [ 'link',   'to'      ]
+  on:
+    [ [ 'link',   'to'      ]
     , [ 'link',   'as'      ]
     , [ 'link'              ]
     , [ 'find',   'in', 'as']
     , [ 'find',   'in'      ]
     , ['share'              ]
-    ]
+    ],
 
-, valueOf
-:   function hiphop ()
+  valueOf:
+    function find_link_share ()
       { this.ionify ()
       ; delete this.valueOf
       ~ this
-      }
+      },
 
-, ionify
-:   function ionify ()
+  ionify:
+    function ionify ()
       { this.link   ()
       ; this.share
             ({ link

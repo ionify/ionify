@@ -2,11 +2,11 @@
 ~
 { re:
     { id:  'no@ionify'
+    , is:  'action'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20180330
-    , is:  -0.1
+    , to:  -7.20201028
+    , at:  -0.1
     , it:
         [" implements ~on.no which disables a sensor mapped to one or more "
         +" term(s).                                                        "

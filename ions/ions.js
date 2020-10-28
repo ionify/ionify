@@ -2,21 +2,21 @@
 ~
 { re:
     { id: 'ions@ionify'
+    , is: 'configuration'
     , by: 'mike.lee'
-    , at: 'ionify.net'
     , in:
         [ 'forest-hills.new-york.usa.earth'
         ,   'san-jose.california.usa.earth'
         ]
     , on: -4.200709
-    , to: -7.20190413
-    , is: -0.1
+    , to: -7.20201028
+    , at: -0.1
     , it:
         [" configures ionify "
         ," defines ion domains, paths & more "
         ," provides domain lists as backup & performance options "
-        ]
-    , we:
+        ],
+      we:
         [" like ions@ionify in main directory with hosts like web@ionify "
         ]
     },
@@ -29,8 +29,8 @@
       }
     ],
 
-  domains
-  : { verify : true
+  domains:
+    { verify : true
     , resolve:
         { ''             : '@ionify'
         , '@'            : '@ionify'
