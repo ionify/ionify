@@ -5,7 +5,7 @@
     , is:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201028
+    , to:  -7.20201029
     , at:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
@@ -46,7 +46,16 @@
 
   valueOf:
     function on ()
-      { this.ionify ()
+      { delete this.valueOf
+      ~ this
+        this.ionify ()
+      },
+
+  ion:
+    function ion ()
+      { var doon = ion.with || (ion.with = ion == this.ion ? this : null)
+        this.re && doon.onSensor$.undo.Object.call (this)
+        doon.onion.call (this)
       },
 
   ionify:
@@ -58,9 +67,9 @@
         var  onion            = this
           ;  onion.sense.on   = onion.on
           ;  onion.onion.with = onion.on.with = onion.onSensor.with
-          =  onion
+          =  onion.ion.with   = onion
         //;  onion.  on ({on:'on'   ,     on: onion.on   })
-          ;  onion.  on ({on: Object, Object: onion.onion})
+          ;  onion.  on ({on: Object, Object: onion.ion})
 
         ~
         { on:
@@ -274,14 +283,14 @@
     ]
 
 , onion
-:   function ion (object)
+:   function onion (object)
       { var id
           , link
-          , ionify      = ion.with
+          , ionify      = onion.with
         //, ionified    = ionify.ionified
           , sense       = ionify.sense
           , debug       = []
-          , our         = ion.our
+          , our         = onion.our
           ; object || (object = this)
 
       //; our && our/*ionify*/.id  (object)
@@ -289,9 +298,9 @@
         !(object.next && object.id) && !('link' in object) && (object.link = link = true) ///*our && our*/ionify.link (object)
         ; debug.push ("onION:", object.re ? object.re.id : "anonymous")
 
-        var from = ion.caller;
+        var from = onion.caller;
         object.re && (object.re.from || (object.re.from = from && from.with && from.with.re && from.with.re.id))
-        from && (from != ion) && debug.push ("from", object.re && object.re.from)
+        from && (from != onion) && debug.push ("from", object.re && object.re.from)
 
         var results = 0
           , known   = ionify.known
@@ -310,7 +319,7 @@
               { group = groups [g]
                 if (!group.in (object)) continue
                 words   =  group.act
-                result  =  typeof  sense [words]      == 'function'
+                result  = (typeof  sense [words]      == 'function')
                              ?  (  sense [words].with !=  object) //bug?: don't self-activate sensor
                                 && sense [words].call    (object, object)
                            //:  ~{find:words=sense[words], in:sense} && sense [words] (object)
@@ -334,17 +343,16 @@
 
         ! object.debug && !(object.next && object.id) && ~{debug:debug} //bug! causes stack overflow
           return results == 1 ? result : object
-      }
+      },
 
-
-, onSensor$
-:   { core: {Function:'function', Object:'object'}
+  onSensor$:
+    { core: {Function:'function', Object:'object'}
     , name: (/function\s+(.*)\s*\(/)
     , undo: {}
-    }
+    },
 
-, onSensor
-:   function onSensor (ion)
+  onSensor:
+    function onSensor (ion)
       { var on        = onSensor.with || (onSensor.with = onSensor == this.onSensor ? this : null)
           , known     = on.ionified
           , onSensor$ = on.onSensor$

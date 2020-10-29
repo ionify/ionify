@@ -6,7 +6,7 @@
     , is:  'environment'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201028
+    , to:  -7.20201029
     , at:  -0.1
     , it: "ionify: invoked object notation implemented for your web"
     , we:
@@ -21,13 +21,25 @@
         ," must ... "
         ," want ... "
         ," like ... "
-        ,` PLAN:
+        ,`
+            PLAN:
+
+            host,do,link,get
+
+            hip.hop host creates & shares queue via ion.sensor
+            hip.hop host listens for ions & adds each to queue
+            hip.hop host fetches do, link & get simultaneously
+            hip.hop   do listens for ions & adds each to queue
+            hip.hop  get listens for ions & adds each to queue
+            hip.hop  get listens for ions pack & invokes order
+
+            PLAN:
 
             hip: host, gets
             get:       gets, do, link.share, log, error, errors,     , on.ions, ions: re.id, ?
             hop:       gets, do, link.share, log, error, errors, host, on.ions, ions, re.id, ...
 
-          HOW.GET:
+            HOW.GET:
 
             host: valueOf.ion:queue, getScript
             gets: valueOf          , valueOf.ion:gets+...+host+on.ions+ions@+ions
@@ -56,23 +68,36 @@
 
   ionify:
     function ionify ()
-      { var web   = ionify.with || (ionify.with = ionify == this.ionify ? this : null)
-          , gets  = web.gets
-          ; gets.got.with = gets.invoke.with = web.gets
+      { var web = ionify.with || (ionify.with = ionify == this.ionify ? this : null)
+          ; web.ion.with = web.get.with = web
 
-     // web.watch   ()
-        web.ready   ()
-        web.locate  ()
-        web.get
-          ({get:[ 'gets@ionify',  're.id@ionify', 'find.link.share@ionify'
-                ,   'do@ionify', 'on.ion@ionify'
-                ]
-           })
-     // web.get     ({get:'on.ion@ionify'})
+     // web.watch ()
+        web.ready ()
+        web.locate()
 
-        Object.prototype.valueOf          = this.gets.got
-        Object.prototype.valueOf.ions     = this.gets
-        Object.prototype.valueOf.ionified = this
+        var next
+          = ['web@ionify', 'on.ion@ionify', 'get@ionify']
+        for (var p=0  , P=next.length
+            ;  ++p    < P
+            ; web.getScript ({at:next[p]})
+            );
+        web.ions = {next:next, pack:{ionify:next.length-1}}
+        Object.prototype.valueOf.ions = web.ions
+        Object.prototype.valueOf      = web.ion
+        Object.prototype.valueOf.ionified = web // todo: remove, it's pre-ion-tracing
+      },
+
+  ion:
+    function ion ()
+      { if (!this.re) return
+
+        var index   = isFinite (ion.index) ? ++ion.index : (ion.index = 1)
+          , script  = document.currentScript
+          , ions    = ion.with.ions
+          , got     = ions.next [ index ] = this
+
+        console.log (`pack: ionify: ${index}: 👋🏾 ${got.re.id}`)
+        ion == script.onload && (script.onload = null)
       },
 
   watch:
@@ -203,7 +228,7 @@
           , ions = Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , pack = ion.pack = String (ions) + Math.random()
 
-        ion.then ? web.wait (ion) : (ion.then = web.gets.invoke)
+        ion.then && web.wait (ion) //: (ion.then = web.gets.invoke)
 
         for
           ( var flow = ion.in
@@ -214,7 +239,7 @@
           { ion       = {re:{}}; flow &&
           ( ion.in    = flow  )
             ion.at    = ions [next]
-            ion.then  = action.then
+            ion.then  = action.then || web.gets.invoke
             ion.pack  = pack
             ion.re.id = ion.at
             ion.re.go = web.getScript (ion)
@@ -247,20 +272,6 @@
             + fix the ion's sensor if its actual id vs its request id differ
             + fix the ion's script load event to avoid duplicating its sensor
        `]
-      },
-
-  got:
-    function got ()
-      { if (!this.re) return
-
-        var script  = document.currentScript
-          , gets    = got.with
-          , get     = gets.next [ gets.path [ this.re.go = script.src ]]
-          , pack    = gets.pack [ get.pack  ]--
-          ; get.ion = this
-
-        console.log (`pack: ${get.pack}: ${pack}: 👋🏾 ${get.re.id}`)
-        !pack ? ~get.then : (get.then == script.onload) && (script.onload = null)
       },
 
   gets:
