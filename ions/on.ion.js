@@ -103,7 +103,8 @@
             , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
             ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
             , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'
-            ,      'ions@ionify',         'web.log@ionify',           'ions'
+            ,      'ions@ionify',         'web.log@ionify',     'on.do@ionify'
+            ,      'ions'
             ]
         , in: 'sequence'||'order'
         }
