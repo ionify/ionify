@@ -8,7 +8,7 @@
     , is: ['action', 'sensor']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -7.20201030
     , at:  -0.1
     , it:
         [" senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action} "
@@ -28,14 +28,18 @@
 
   valueOf:
     function ondo ()
-      { delete this.valueOf
-      ~(this.ionify.is.with = this)
-        this.ionify.is ()
+      {   delete this.valueOf
+      ~ ( this.ionify.is.with = this )
+          this.ionify.is ()
       },
 
   ionify:
     { re:
-        { is: 'method'
+        { is: ['method']
+        , by: ['mike.lee','team']
+        , on: -4.200709
+        , to: -7.20201030
+        , at: -0.1
         , it:
             [ "initializes ionify's ~on.as.has.id.is.do.no sensors"
             , "activates linking for this on.do@ ion"
@@ -51,26 +55,36 @@
         function ionify ()
           { var ondo  = ionify.with || (ionify.with = ionify == this.ionify ? this : null)
               , terms = ondo.TERMS
-              , sense = ondo.any.is
+              , sense = ondo.ondo.is
               ; ondo  . link.is.with = ondo
               ; ondo  . link.is ()
 
             for
               ( var term  in terms)
-              {
-              ~ {on:[['on',term,'do']], [`on ${term} do`]:sense}
-              ~ {on:[['on',term,'no']], [`on ${term} no`]:sense}
+              { ~ {on:[['on',term,'do']], [`on ${term} do`]:sense}
+                & {on:[['on',term,'no']], [`on ${term} no`]:sense}
               }
 
-            ["Test ~on.as.has.id.is.do.no actions"]
+            [" Test ~on.as.has.id.is.do.no actions "]
+
             ^   {on:'ion',  as:[], do:Function}
             |   {on:'ion',  as:[], no:Function}
-            |   {on:'ion', has:[], do:Function}
+
+            |   {  on: 'ion'
+                , has:['this',['is','an'],['on','has'],'test']
+                ,  do:  function(ion){ console.log (`on.has: 👏🏾👨🏾‍💻🎉 ${Object.keys(ion)}`) }
+                }
+
             |   {on:'ion', has:[], no:Function}
             |   {on:'ion',  id:[], do:Function}
             |   {on:'ion',  id:[], no:Function}
             |   {on:'ion',  is:[], do:Function}
-            +   {on:'ion',  is:[], no:Function}
+            |   {on:'ion',  is:[], no:Function}
+
+            +   {this:0}
+            |   {is:0,an:false}
+            |   {on:0,has:0,test:0}
+            +   {test:0}
 
           //ondo.onion ({on:Object, do:ondo.onion})
           }
@@ -80,15 +94,18 @@
     { as:true, has:true, id:true, is:true
     },
 
-  any:
+  ondo:
     { re:
-        { id:  'any.on.as.has.id.is.do.no'
+        { id:  'on.as.has.id.is.do.no'
         , is: ['sensor','method']
+        , by: ['mike.lee','team']
+        , on: -4.200709
+        , to: -7.20201030
+        , at: -0.1
         , it: "senses ~{on:'ion',as:[],has:[],id:[],is:[],do:action,no:action}"
         , we:
             [ "were ..."
             , "will ..."
-            , "must fix on.ion@ ion.id:true work🐛round interferring with ~on.do"
             , "must fix ion.on & ion.on$ 🐛's that override user-defined values!"
             ]
         },
@@ -100,11 +117,9 @@
           getType: Object.prototype.toString
         },
       is:
-        function any (ion)
-          { if (typeof ion.id == 'boolean') return
-
-            var ondo  = any.with
-              , my    = any.my
+        function ondo (ion)
+          { var ond0  = ondo.with
+              , my    = ondo.my
               , on    = ion.on
               , which = my.getType
               , TYPE  = my.TYPE
@@ -117,11 +132,11 @@
                 && (ion.on$ = on      )
                 && (ion.on  = type    )
 
-            var sense, terms = ondo.TERMS
+            var sense, terms = ond0.TERMS
             for
               ( var term in terms)
               { if (! ion[term] && ! (term in ion)) continue
-                sense = ondo [term]
+                sense = ond0 [term]
                 sense ( ion  )
               }
           }
@@ -176,11 +191,19 @@ return
 
   has:
     { re:
-        { id: 'on.has.do.no'
-        , is: 'method'
-        , it: "senses ~{on:'ion', has:[], do:action, no:action}"
-        , we:
-            [ "were ..."
+        { id:  'on.has.do.no'
+        , of:  'ionify.net'
+        , is: ['sensor','method']
+        , by: ['mike.lee','team']
+        , on:  -4.200709
+        , to:  -7.20201030
+        , at:  -0.1
+        , it:
+            [ "senses ~{on:'ion', has:[], do:action, no:action}"
+            ],
+          we:
+            [ "must convert ~on.has.term_groups' objects to String 2 not invoke"
+            , "were ..."
             , "will ..."
             ]
         },
@@ -189,21 +212,36 @@ return
         },
       is:
         function has (ion)
-          { var ondo  = has.with
-              , my    = ondo.my
-              , on    = ion.on
-              , az    = ion.as
-              , d0    = ion.d0
+          { var haz   = ion.has
+              , d0    = ion.do
+              , sense ={on:[]}
+
+          ! Array.isArray (haz) && (haz = [haz])
+
+            for
+              ( var h=-1, H=haz.length, term
+              ;   ++h   < H;
+              )
+              { term = haz [h]
+                Array.isArray (term) && (term = term.join (' '))
+                sense.on.push (haz [h])
+                sense [term] = d0
+              }~sense
           }
     },
 
   id:
     { re:
-        { id: 'on.id.do.no'
-        , is: 'method'
+        { id:  'on.id.do.no'
+        , is: ['sensor','method']
+        , by: ['mike.lee','team']
+        , on: -4.200709
+        , to: -7.20201029
+        , at: -0.1
         , it: "senses ~{on:'ion', id:[], do:action, no:action}"
         , we:
-            [ "were ..."
+            [ "must fix on.ion@ ion.id:true work🐛round interferring with ~on.do"
+            , "were ..."
             , "will ..."
             ]
         },
@@ -212,10 +250,12 @@ return
         },
       is:
         function id (ion)
-          { var ondo  = id.with
+          { if (typeof ion.id == 'boolean') return
+
+            var ondo  = id.with
               , my    = ondo.my
               , on    = ion.on
-              , az    = ion.as
+              , iD    = ion.id
               , d0    = ion.d0
           }
     },
@@ -238,7 +278,7 @@ return
           { var ondo  = is.with
               , my    = ondo.my
               , on    = ion.on
-              , az    = ion.as
+              , iz    = ion.is
               , d0    = ion.d0
           }
     },
