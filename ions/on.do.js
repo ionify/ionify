@@ -65,27 +65,6 @@
                 & {on:[['on',term,'no']], [`on ${term} no`]:sense}
               }
 
-            [" Test ~on.as.has.id.is.do.no actions "]
-
-            ^   {on:'ion',  as:[], do:Function}
-            |   {on:'ion',  as:[], no:Function}
-
-            |   {  on: 'ion'
-                , has:['this',['is','an'],['on','has'],'test']
-                ,  do:  function(ion){ console.log (`on.has: 👏🏾👨🏾‍💻🎉 ${Object.keys(ion)}`) }
-                }
-
-            |   {on:'ion', has:[], no:Function}
-            |   {on:'ion',  id:[], do:Function}
-            |   {on:'ion',  id:[], no:Function}
-            |   {on:'ion',  is:[], do:Function}
-            |   {on:'ion',  is:[], no:Function}
-
-            +   {this:0}
-            |   {is:0,an:false}
-            |   {on:0,has:0,test:0}
-            +   {test:0}
-
           //ondo.onion ({on:Object, do:ondo.onion})
           }
     },
