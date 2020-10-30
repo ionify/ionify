@@ -2,11 +2,12 @@
 ~
 { re:
     { id: 'on.ion.punctuation.test@ionify'
-    , is: "A suite of tests for ion punctuation"
+    , is: 'examination'
     , by: 'mike.lee'
     , on: -8.20171111
-    , to: -7.20190328
+    , to: -7.20201029
     , at: -0.1
+    , it: "Tests ion punctuation"
     , we:
         [" must test all possible punctuation operators + 17 @ http://about.ionify.net "
         ," will create a test generator that clearly states ion-compatibility for each "
@@ -16,9 +17,9 @@
         ," want ... "
         ," like ... "
         ]
-    }
+    },
 
-, do:
+  do:
     function punctuationTests ()
       { var typeOf  = Object.prototype.toString
           , type    = (/\[object\s*(.+)\]/)

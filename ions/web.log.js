@@ -1,15 +1,16 @@
 ;
 ~
 { re:
-    { id: 'log@ionify'
+    { id:  'log@ionify'
+    , is:  'action'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190413
-    , is:  -0.1
+    , to:  -7.20201029
+    , at:  -0.1
     , it:" implements ionify logging via    "
         +" ~debug ~error ~info ~log & ~warn "
-    , we:
+        ,
+      we:
         [" must understand why initial ~debug state isn't logged.    "
         ," will create log@ & move console & all ~logging there.     "
         ," will update to only use alert() on mobile (e.g. iOS).     "
@@ -28,12 +29,12 @@
     },
 
   valueOf:
-    function hiphop ()
+    function log ()
       {   var errors = this.errors
-      ;  (typeof console == 'undefined') && errors & errors.noConsole
-      ;  (typeof alert   == 'undefined') && errors & errors.noAlert
-      ;   this . logged ()
-      ;   delete this.valueOf
+         (typeof console == 'undefined') && errors & errors.noConsole
+         (typeof alert   == 'undefined') && errors & errors.noAlert
+          this . logged ()
+          delete this.valueOf
       ~   this & this.prepare.our.logging
       },
 
@@ -47,9 +48,9 @@
   error:
     function error (ion)
       { var logger       =  error.with
-      ;     logger.level = 'error'
-      ; var state        =  logger.logged (ion)
-      ; if (typeof ion.error == 'boolean') return state
+            logger.level = 'error'
+        var state        =  logger.logged (ion)
+        if (typeof ion.error == 'boolean') return state
       ~ new Error (ion.error)
       },
 
@@ -90,10 +91,10 @@
             ; message      = "~" + level + (logger.state ? " on" : " off")
             }
 
-      ; logger.state   && Array.isArray (message) && (message = message.join (" "))
-      ; logger.message  = String        (message)
-      ; logging [level] = logger.state
-      ; return state
+        logger.state   && Array.isArray (message) && (message = message.join (" "))
+        logger.message  = String        (message)
+        logging [level] = logger.state
+        return state
       },
 
   loggedInfo:

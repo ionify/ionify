@@ -1,72 +1,66 @@
 ;
 ~
 { re:
-    { id: 'use@ionify'
-    , is: "An action enabling the use of an ion's thing(s)"
-    , by: 'mike.lee@ionify'
-    , on: '2007.09-04'
-    , to: '2019.03.30-07'
-    , at: +0.1
+    { id:  'use@ionify'
+    , is:  'action'
+    , by: ['mike.lee@ionify', 'team']
+    , on:  -4.200709
+    , to:  -7.20201029
+    , at:  -0.1
+    , it: "enables the use of an ion's thing(s)"
     , we:
-        [ /note: +get.use.in.as: helps wakatta + is like ajile/
+        [ "like +get.use.in.as: helps wakatta + is like ajile"
                   +
                   { use: "thing"    || ["thing", "...", "other.thing"]
                   ,  in:  this.item || "ion.id"
                   ,  as: "alias"
                   }
-        , /will: Confirm ion id for each +on:use before acting/
-        , /will: Maybe support a "from" parameter?/
+        , "will confirm ion id for each +on:use before acting"
+        , "will maybe support a 'from' parameter?"
                   +{use:"show", from:"wakatta.view", in:"game"}
-        , /will: Enable using with ion ids/
+        , "will enable using with ion ids"
                   +{use:"+wakatta.view.show", in:"+wakatta.game"}
                   +{use:"+view.thing", as:"+game.view.thing"}
                   +{use:"+view.show", as:"show", in:"+game"}
         ]
-    }
+    },
 
-    ,
   on:
     [ ["use", "as", "in"]
   //, ["use", "in"]
   //,  "use"
-    ]
+    ],
 
-    ,
   errors:
     { badAs: "Can't use 'as' with more than 1 'use'"
     , badIn: "Can only use 'in' with objects"
-    }
+    },
 
-    ,
   getOnUseStories:
     [ /note: A helper function for using ready-for-use things/
     , /todo: .../
-    ]
-    ,
+    ],
   getOnUse:
     function getOnUse (use)
       { return function onUse (ion)
           { var name        = use.use
-          ; use.in [use.as] = ion [name]
+            use.in [use.as] = ion [name]
           ~ {no:use.no}
           }
-      }
+      },
 
-    ,
   okIn:
     { function: true
     , object  : true
-    }
+    },
 
-    ,
   "use as in stories":
     [ /note: Enables using ion things within objects via aliases/
     , /todo: Switch "use" + "as" loops? Might not have an "as"/
     , /todo: Enable +{use: "thing" || ["..."], in: [{}]} /
     , /todo: Enable +{use: "thing", as:["alias", "..."], in:{}} /
     , /todo: Handle +{use: thing(s), from:ion}/
-    ]
-    ,
+    ],
   "use as in":
     function useAsIn (ion)
       { var USE     = useAsIn.with
@@ -107,30 +101,24 @@
 
         //; ("from" in use) || (use.from = from)
         return true
-      }
+      },
 
-
-    ,
   "use in stories":
     [ /note: Enables using things within a specific object/
-    ]
-    ,
+    ],
   "use in":
     function useIn (ion)
       { return useIn.with ["use as in"] (ion);
-      }
+      },
 
-
-    ,
   useStories:
     [ /note: Enables using things within the current ion/
     , /todo: .../
-    ]
-    ,
+    ],
   use:
     function onUse (ion)
       { ion.in = ion
-      ; onUse.with ["use as in"] (ion)
+        onUse.with ["use as in"] (ion)
       }
 }
 ;

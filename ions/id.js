@@ -2,11 +2,11 @@
 ~
 { re:
     { id:  'id@ionify'
+    , is:  'sensor'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190104
-    , is:  -0.1
+    , to:  -7.20201029
+    , at:  -0.1
     , it:
         [" ensures that all ionified objects have an re.id.                  "
         ," sets an object's re.id value as a member mapped to its object re. "
@@ -17,12 +17,13 @@
         ,
       we:
         [" will ensure that ~debug & ~next.id don't keep using setID.nextID. "
+        ," will 👨🏾‍💻 id.domain++ via id:{domain:'domain',toString:'id@domain'} "
         ," like linking this ion although it doesn't currently rely on it.   "
         ]
     },
 
   on:
-    ['id'
+    [ 'id'
     ],
 
   id:

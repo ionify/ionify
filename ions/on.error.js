@@ -2,22 +2,23 @@
 ~
 { re:
     { id:  'on.error@ionify'
+    , is:  'sensor'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20181203
-    , is:  +0.1
-    , it:/ senses error ions /
+    , to:  -7.20201029
+    , at:  +0.1
+    , it: "senses error ions"
     , we:
-        [/ were ... /
-        ,/ will ... /
+        [ "were ... "
+        , "will ... "
         ]
-    }
+    },
 
-, on: Error
-,     Error
-:       function onError (ion)
-          {  throw ion || this
-          }
+  on:
+    Error,
+    Error:
+      function onError (ion)
+        {  throw ion || this
+        }
 }
 ;

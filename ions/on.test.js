@@ -2,11 +2,12 @@
 ~
 { re:
     { id:  'on.test@ionify'
+    , of:  'ionify.net'
+    , is:  'examination'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -8.20190101
-    , is:  -0.1
+    , to:  -7.20201029
+    , at:  -0.1
     , it: "tests ionify's ~on api"
     }
 }

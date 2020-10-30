@@ -2,28 +2,28 @@
 ~
 { re:
     { id:  'next.id@ionify'
+    , is:  'action'
     , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
     , on:  -7.20160910
-    , to:  -7.20190330
-    , is:  -0.1
+    , to:  -7.20201029
+    , at:  -0.1
     , it: "generates sequential ids on-demand"
     }
 
-, on    : [['next', 'id']]
-, MAX   : Number.MAX_SAFE_INTEGER ||  9007199254740991
-, MIN   : Number.MIN_SAFE_INTEGER || -9007199254740991
-, ids   : {}
-
-, valueOf
-:   function hiphop ()
+, on  : [['next', 'id']]
+, MAX : Number.MAX_SAFE_INTEGER ||  9007199254740991
+, MIN : Number.MIN_SAFE_INTEGER || -9007199254740991
+, ids : {}
+,
+  valueOf:
+    function nextid ()
       { this ["next id"].with = this
       ; delete this.valueOf
       ~ this
-      }
+      },
 
-, "next id"
-:   function nextId (ion)
+  "next id":
+    function nextId (ion)
       { var my   = nextId.with
           , ids  = my.ids
           , name = ion.next
