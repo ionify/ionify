@@ -1,45 +1,290 @@
 ;
 ~
 { re:
-  { id:  'on.do@ionify'
-  , as: ['sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
-        ,'message', 'messaging'
+    { id:  'on.do@ionify'
+    , as: ['sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
+          ,'message', 'messaging'
+          ]
+    , is: ['action', 'sensor']
+    , by: ['mike.lee', 'team']
+    , on:  -4.200709
+    , to:  -7.20201029
+    , at:  -0.1
+    , it:
+        [" senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action} "
+        ],
+      we:
+        [" were re-implementing ionify's ~on action per:"
+        +"    https://github.com/orgs/ionify/projects/1#card-47996813"
+        ," were ..."
+        ," want ..."
+        ," must ..."
+        ," like ..."
+        ," have ..."
+        ," wont ..."
+        ," cant ..."
         ]
-  , is: ['action', 'sensor']
-  , by: ['mike.lee', 'team']
-  , on:  -4.200709
-  , to:  -7.20201029
-  , at:  -0.1
-  , it:
-      [" implements ionify's ~on:type,as,do,has,id,is action which enables"
-      +" sensing ions"
-      ],
-    we:
-      [" were ..."
-      ," want ..."
-      ," must ..."
-      ," like ..."
-      ," have ..."
-      ," wont ..."
-      ," cant ..."
-      ]
     },
 
   valueOf:
     function ondo ()
       { delete this.valueOf
-      ~ this
-        this.ionify ()
+      ~(this.ionify.is.with = this)
+        this.ionify.is ()
       },
 
   ionify:
-    function ionify ()
-      { var ondo = ionify . with  || (ionify.with = ionify == this.ionify ? this : null)
-            ondo . link   . is    .   with  = ondo
-            ondo . link   . is    ()
-            ondo . onion          ({on:'ion',as:1,has:1,id:1,is:1,do:1})
-         // ondo . onSensor       ({on:Object, do:ondo.onion})
-      },
+    { re:
+        { is: 'method'
+        , it:
+            [ "initializes ionify's ~on.as.has.id.is.do.no sensors"
+            , "activates linking for this on.do@ ion"
+            ],
+          we:
+            [ "must fix on.ion.id work🐛round that is polluting ions with ~on.id"
+            ]
+        },
+      my:
+        {
+        },
+      is:
+        function ionify ()
+          { var ondo  = ionify.with || (ionify.with = ionify == this.ionify ? this : null)
+              , terms = ondo.TERMS
+              , sense = ondo.any.is
+              ; ondo  . link.is.with = ondo
+              ; ondo  . link.is ()
+
+            for
+              ( var term  in terms)
+              {
+              ~ {on:[['on',term,'do']], [`on ${term} do`]:sense}
+              ~ {on:[['on',term,'no']], [`on ${term} no`]:sense}
+              }
+
+            ["Test ~on.as.has.id.is.do.no actions"]
+            ^   {on:'ion',  as:[], do:Function}
+            |   {on:'ion',  as:[], no:Function}
+            |   {on:'ion', has:[], do:Function}
+            |   {on:'ion', has:[], no:Function}
+            |   {on:'ion',  id:[], do:Function}
+            |   {on:'ion',  id:[], no:Function}
+            |   {on:'ion',  is:[], do:Function}
+            +   {on:'ion',  is:[], no:Function}
+
+          //ondo.onion ({on:Object, do:ondo.onion})
+          }
+    },
+
+  TERMS:
+    { as:true, has:true, id:true, is:true
+    },
+
+  any:
+    { re:
+        { id:  'any.on.as.has.id.is.do.no'
+        , is: ['sensor','method']
+        , it: "senses ~{on:'ion',as:[],has:[],id:[],is:[],do:action,no:action}"
+        , we:
+            [ "were ..."
+            , "will ..."
+            , "must fix on.ion@ ion.id:true work🐛round interferring with ~on.do"
+            , "must fix ion.on & ion.on$ 🐛's that override user-defined values!"
+            ]
+        },
+      my:
+        { TYPE:
+            { function: (/function\s+(.*)]/)
+            ,   object: (  /object\s+(.*)]/)
+            },
+          getType: Object.prototype.toString
+        },
+      is:
+        function any (ion)
+          { if (typeof ion.id == 'boolean') return
+
+            var ondo  = any.with
+              , my    = any.my
+              , on    = ion.on
+              , which = my.getType
+              , TYPE  = my.TYPE
+              , type
+
+            (typeof on     != 'string')
+                &&((type    =  which.call (on) .match (TYPE.function))
+                || (type    =  which.call (on) .match (TYPE.object  )))
+                && (type    = type [1])
+                && (ion.on$ = on      )
+                && (ion.on  = type    )
+
+            var sense, terms = ondo.TERMS
+            for
+              ( var term in terms)
+              { if (! ion[term] && ! (term in ion)) continue
+                sense = ondo [term]
+                sense ( ion  )
+              }
+          }
+    },
+
+  as:
+    { re:
+        { id: 'on.as.do.no'
+        , is: 'method'
+        , it: "senses ~{on:'ion', as:[], do:action, no:action}"
+        , we:
+            [ "were ..."
+            , "will ..."
+            ]
+        },
+      my:
+        { sense:
+            {    ion: true
+            , Object: true
+            }
+        },
+      is:
+        function as (ion)
+          { var ondo  = as.with
+              , my    = ondo.my
+              , on    = ion.on
+              , az    = ion.as
+              , d0    = ion.d0
+              , type  = ion.on$
+
+            az  && !Array.isArray (az) && (az = [az])
+
+            for
+              ( var a=az.length
+              ;     a--   ;
+              ) if (link [az [a]])  break
+              ; if (a < 0)         return
+return
+            [" ~{on:'ion', has:[]} <= ~{on:'Object', has:[]} <= ~{on:Object, has:[]} "]+
+            `
+              Prepopulate types list with ion & Object
+            `
+            if (! sense [type]) sense [type] = d0;
+            if (! sense [type]) /check for environment Type/  //return on  [type] (ion);
+            ~ {on:'function', do:onType}
+            + {on:'Object'  , do:onType}
+            & {on:'ion'   , do:onion}
+            & {on:'action', do:onFunction}
+            [""]
+          }
+    },
+
+  has:
+    { re:
+        { id: 'on.has.do.no'
+        , is: 'method'
+        , it: "senses ~{on:'ion', has:[], do:action, no:action}"
+        , we:
+            [ "were ..."
+            , "will ..."
+            ]
+        },
+      my:
+        {
+        },
+      is:
+        function has (ion)
+          { var ondo  = has.with
+              , my    = ondo.my
+              , on    = ion.on
+              , az    = ion.as
+              , d0    = ion.d0
+          }
+    },
+
+  id:
+    { re:
+        { id: 'on.id.do.no'
+        , is: 'method'
+        , it: "senses ~{on:'ion', id:[], do:action, no:action}"
+        , we:
+            [ "were ..."
+            , "will ..."
+            ]
+        },
+      my:
+        {
+        },
+      is:
+        function id (ion)
+          { var ondo  = id.with
+              , my    = ondo.my
+              , on    = ion.on
+              , az    = ion.as
+              , d0    = ion.d0
+          }
+    },
+
+  is:
+    { re:
+        { id: 'on.is.do.no'
+        , is: 'method'
+        , it: "senses ~{on:'ion', is:[], do:action, no:action}"
+        , we:
+            [ "were ..."
+            , "will ..."
+            ]
+        },
+      my:
+        {
+        },
+      is:
+        function is (ion)
+          { var ondo  = is.with
+              , my    = ondo.my
+              , on    = ion.on
+              , az    = ion.as
+              , d0    = ion.d0
+          }
+    },
+
+  onion:
+    { re:
+        { id: 'on.ion'
+        , as:
+            [ 'sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
+            , 'message', 'messaging'
+            ],
+          is:
+            [ 'sensor',  'method'
+            ],
+          we:
+            [ "want to have this replacing on.ion@'s ion sensor but not sure how to"
+            , "must enable  ~{on:Type,   no:action} so ionify won't sense that Type"
+            , "have enabled ~{on:Type,   do:action} so ionify can   sense that Type"
+            , "have enabled ~{on:Type, Type:action} so ionify can   sense that Type"
+            ]
+          },
+      my:
+        { core: {Function:'function', Object:'object'}
+        , name: (/function\s+(.*)\s*\(/)
+        , undo: {}
+        },
+      is:
+        function onion (ion)
+          { var ondo    = onion.with
+              ||        ( onion.with = onion == this.onSensor ? this : null)
+              , my      = onion.my
+              , core    = my.core
+              , name    = my.name
+              , undo    = my.undo
+              , known   = onion.our.ionified
+              , Sensor  = ion.on
+              , type    = Sensor.name     || String (Sensor).match (name)[1]
+              ; undo  [type]              =  Sensor.prototype.valueOf
+              ; Sensor.prototype.valueOf  =  ion [type] || ion.do
+              ; known [type]              =  true
+              ; known [core [type]]       =  !!core [type]
+
+          ~ {debug: ["onion", type, JSON.stringify (known)] }
+            return true
+          }
+    },
 
   link:
     { re:
@@ -107,132 +352,6 @@
                 delete thing . is
                 delete thing . our
               }
-          }
-    },
-
-  onion:
-    { re:
-        { is: 'method'
-        , it: "senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action}"
-        , we:
-            [ "were confused about how to initiate & integrate these sensors 🤔"
-            , "were re-implementing the ~on action per:"
-            + "   https://github.com/orgs/ionify/projects/1#card-47996813"
-            , "will handle oli's here & delegate others to other sensors"
-            ]
-        },
-      my:
-        { terms: {as:true, has:true, id:true, is:true}
-        },
-      is:
-        function onion (ion)
-          { if (!ion.on && !('on' in ion) && !ion.do && !('do' in ion)) return
-
-            var ondo  = onion.with
-              , terms = onion.my.terms
-
-            for
-              (var  term  in terms)
-              (ion [term] || term in ion)
-              && ~ {on: [['on',term,'do']], [`on ${term} do`]: ondo [term]}
-          }
-    },
-
-  as:
-    { re:
-        { id: 'on.as.do'
-        , is: 'method'
-        , it: "senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action}"
-        , we:
-            [ "were ..."
-            , "will ..."
-            ]
-        },
-      my:
-        { sense:
-            {    ion: true
-            , Object: true
-            }
-        , name: (/function\s+(.*)\s*\(/)
-        },
-      is:
-        function as (ion)
-          { var ondo  = as.with
-              , my    = ondo.my
-              , on    = ion.on
-              , az    = ion.as
-              , d0    = ion.d0
-              , type
-
-            (typeof on != 'string')
-                && (type = Object.prototype.toString.call (on) .match (my.name)[1])
-            az  && !Array.isArray (az) && (az = [az])
-
-            for
-              ( var a=az.length
-              ;     a--   ;
-              ) if (link [az [a]])  break
-              ; if (a < 0)         return
-
-
-return
-            [" ~{on:'ion', has:[]} <= ~{on:'Object', has:[]} <= ~{on:Object, has:[]} "]+
-            `
-              Prepopulate types list with ion & Object
-            `
-
-            if (! sense [type]) sense [type] = d0;
-
-            if (! sense [type]) /check for environment Type/  //return on  [type] (ion);
-
-            ~ {on:'function', do:onType}
-            + {on:'Object'  , do:onType}
-            & {on:'ion'   , do:onion}
-            & {on:'action', do:onFunction}
-
-            [""]
-          }
-    },
-
-  onSensor:
-    { re:
-        { id: 'on.ion'
-        , as:
-            [ 'sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
-            , 'message', 'messaging'
-            ],
-          is:
-            [ 'sensor',  'method'
-            ],
-          we:
-            [ "must enable  ~{on:Type,   no:action} so ionify won't sense that Type"
-            , "have enabled ~{on:Type,   do:action} so ionify can   sense that Type"
-            , "have enabled ~{on:Type, Type:action} so ionify can   sense that Type"
-            ]
-          },
-      my:
-        { core: {Function:'function', Object:'object'}
-        , name: (/function\s+(.*)\s*\(/)
-        , undo: {}
-        },
-      is:
-        function onSensor (ion)
-          { var ondo    = onSensor.with
-              ||        ( onSensor.with = onSensor == this.onSensor ? this : null)
-              , my      = onSensor.my
-              , core    = my.core
-              , name    = my.name
-              , undo    = my.undo
-              , known   = onSensor.our.ionified
-              , Sensor  = ion.on
-              , type    = Sensor.name     || String (Sensor).match (name)[1]
-              ; undo  [type]              =  Sensor.prototype.valueOf
-              ; Sensor.prototype.valueOf  =  ion [type] || ion.do
-              ; known [type]              =  true
-              ; known [core [type]]       =  !!core [type]
-
-          ~ {debug: ["onType", type, JSON.stringify (known)] }
-            return true
           }
     },
 }
