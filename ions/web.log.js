@@ -5,7 +5,7 @@
     , is:  'action'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -7.20201030
     , at:  -0.1
     , it:" implements ionify logging via    "
         +" ~debug ~error ~info ~log & ~warn "
@@ -25,19 +25,11 @@
     [ 'error', 'warn', 'debug', 'log', 'info'
     ],
 
-  errors:
-    { noAlert   : "log@ionify needs the window.alert () API"
-    , noConsole : "log@ionify needs the console.log  () API"
-    },
-
   valueOf:
     function log ()
-      {/* var errors = this.errors
-         (typeof console == 'undefined') && errors & errors.noConsole
-         (typeof alert   == 'undefined') && errors & errors.noAlert
-       */ this . logged ()
-          delete this.valueOf
-      ~   this & this.prepare.our.logging
+      { this . logged ()
+        delete this.valueOf
+      ~ this & this.prepare.our.logging
       },
 
   debug:
@@ -99,6 +91,11 @@
         return state
       },
 
+  errors:
+    { noAlert   : "log@ionify needs the window.alert () API"
+    , noConsole : "log@ionify needs the console.log  () API"
+    },
+
   loggedInfo:
     [" ion: +{log:thing} logs some thing  "
     ," ion: +{log: true} enables  logging "
@@ -111,7 +108,15 @@
 
   logged:
     function logging (ion)
-      { function cons0le (ion)
+      { var errors= this.errors
+          , has   = { console: typeof console != 'undefined'
+                    ,   alert: typeof alert   != 'undefined'
+                    }
+          ! (has.console ||  has.alert)
+          ? !has.console && ~errors & errors.noConsole
+          : !has.alert   && ~errors & errors.noAlert
+
+        function cons0le (ion)
           {  prepare (ion)
           && console [logger.level] (logger.id + ": " + logger.message)
           ;  return   logger.state
@@ -133,7 +138,7 @@
         var logger        = this
           , prepare       = logger.prepare
           , iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
-          , noConsole     = document.URL.match (iOSPath)
+          , noConsole     = document && document.URL.match (iOSPath)
           ; logger.logged = noConsole ? popup : cons0le
       }
 }
