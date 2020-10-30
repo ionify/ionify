@@ -5,7 +5,7 @@
     , is:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -7.20201030
     , at:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
@@ -98,8 +98,8 @@
         ionified <= /todo: via .ionifi3d ()/
 
         ~
-        { get
-          : [   'next.id@ionify',              'id@ionify',  'on.error@ionify'
+        { get:
+            [   'next.id@ionify',              'id@ionify',   'on.error@ionify'
             , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
             ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
             , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'
@@ -201,17 +201,16 @@
               && ! ionify.ionified [typeof action]
               && ( on.our
                  ? on.our.find ({find:action, in:ion, as:group})
-                       && ( sense [group] = ion [group ])
-                 :(action = sense [group] = ion [action])
-                 )
-                 ;
+                 && (action = sense [group] = ion [group ])
+                 :  (action = sense [group] = ion [action])
+                 );
 
             debug.push (["knows?", id, group, group in sense])
 
-            if (!action || !unknown) continue
+            if (!action || sense [group] && !unknown) continue
 
             test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
-            test  =  new Function ("ion", test)
+            test  =  new Function ('ion', test)
             group = {act:group, set:words, in:test||has}
 
             for (var w=0, W=words.length; w < W; w++)
@@ -319,10 +318,12 @@
                              :  (  our && our.ionified [typeof [sense [words] ]])
                                     ? ~ sense [words]
                                     : ( our && our.find &&  our.find ({find:sense[words], in:sense, as:words}))
-                                          ?   sense [words].call   (object, object) //todo: resolve (sense [words]) to function or act ion
-                                          :   console.log ("missing sensor: ", words, ":", sense[words])
-                                          ||  sense [sense [words]].call   (object, object)
-                                          ;
+                                          ?   sense [words].call     (object, object) //todo: resolve (sense [words]) to function or act ion
+                                          :(  console.log ("missing sensor: ", words, ":", sense[words])
+                                          || ('function' == typeof sense [sense [words]])
+                                              ?   sense [sense [words]].call (object, object)
+                                              : ~ sense [sense [words]]
+                                          );
                 results += 1
                 words   =  group.set
                 for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
