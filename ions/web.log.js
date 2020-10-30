@@ -11,7 +11,9 @@
         +" ~debug ~error ~info ~log & ~warn "
         ,
       we:
-        [" must understand why initial ~debug state isn't logged.    "
+        [" must fix bad valueOf() 🐛 of 'errors is not a function' ???"
+        +"  maybe its affected by on.action@ which senses Functions? "
+        ," must understand why initial ~debug state isn't logged.    "
         ," will create log@ & move console & all ~logging there.     "
         ," will update to only use alert() on mobile (e.g. iOS).     "
         ," will set .ready() to only throw noConsole if no alert().  "
@@ -30,10 +32,10 @@
 
   valueOf:
     function log ()
-      {   var errors = this.errors
+      {/* var errors = this.errors
          (typeof console == 'undefined') && errors & errors.noConsole
          (typeof alert   == 'undefined') && errors & errors.noAlert
-          this . logged ()
+       */ this . logged ()
           delete this.valueOf
       ~   this & this.prepare.our.logging
       },
