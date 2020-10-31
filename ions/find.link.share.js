@@ -5,7 +5,7 @@
     , is:  'action'
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20201030 : -7.2233 }
+    , to: { 20201030 : -7.2244 }
     , at:  -0.1
     , it:" provides context via ~link which ensures ions' object-type members can   "
         +" access their containing ion, ~share for sharing things via domains,      "
@@ -42,21 +42,21 @@
   ionify:
     function ionify ()
       { this.link   ()
-      ; this.share
-            ({ link
-             :   { find: this.find
+        this.share
+            ({ link:
+                 { find: this.find
                  ,  link: this.link
                  , share: this.share
                  , space: this.getSpace
                  }
              , to: this.re.id
             })
-      }
+      },
 
-,"find in as":"find"
-,"find in"   :"find"
-, find
-:   function find (ion)
+ "find in as":"find",
+ "find in"   :"find",
+  find:
+    function find (ion)
       { var name      = ion.find
       ,     to        = ion.in
       ,     as        = ('as' in ion) ? ion.as : name
@@ -76,10 +76,10 @@
 
       ; found  && (ion.in [as] = found)
       ; return !! found
-      }
+      },
 
-, findName
-:   function name (ion)
+  findName:
+    function name (ion)
       { var thing    = ion.find
       ,     place    = ion.in
       ,     ionified = name.our.ionified
@@ -92,10 +92,10 @@
           ; if (ionified  [typeof thing]) return thing
           }
       ; return false
-      }
+      },
 
-, linkInfo
-:   [" were implementing .our.* --> .with.doma.in.*               "
+  linkInfo:
+    [" were implementing .our.* --> .with.doma.in.*               "
     ," must move id@domain matching to its own ion then share it  "
     ," like id@domain matching with /(.*)([-+]\d+.*^@)|(@.*)/     "
     ," like .with .doma .in.expanded.name.of.shared.thing:        "
@@ -104,10 +104,10 @@
     ," like enabling ~ {link: true|false } with true as default   "
     ," like enabling ~ {link: [ion, object, more])                "
     ," like enabling ~ {link:ion, as:{member:thing}}              "
-    ]
-,"link as":"link"
-, link
-:   function link (ion)
+    ],
+ "link as":"link",
+  link:
+    function link (ion)
       { ion || (ion = link.with || (link.with = (link == this.link) && this))
 
         // 🐛 via on.ion@onion.link:true workaround
@@ -119,7 +119,6 @@
           , id    = (ion.re ? ion.re.id : null) || 'ion'
           , space = link.with.getSpace (id)
           ; id    = id.replace (/(.+)(@|\.\d\.).*/, '$1')
-          ;
 
         for (property in ion)
           { thing = ion [property]
@@ -133,13 +132,13 @@
 
       ! ion.debug && ~{debug:debug}
         return true
-      }
+      },
 
-, unlinkInfo
-:   [ "todo: enable +{unlink: ion, from: thing}"
-    ]
-, unlink
-:   function unlink (ion)
+  unlinkInfo:
+    [ "todo: enable +{unlink: ion, from: thing}"
+    ],
+  unlink:
+    function unlink (ion)
         { ion || (unlink == this.unlink) && (ion = this);
 
         var property
@@ -151,16 +150,16 @@
             {  thing = ion [property]
             ;  (typeof thing == "function") && (thing [id] == ion) && (delete thing [id])
             }
-        }
+        },
 
-, shareInfo
-:   [" ... "
+  shareInfo:
+    [" ... "
     ," will fix ~share:'*' to resolve shared things; now assumes ~do:[{share:'*'}] "
     ," will create +{share: {thing:..., other:...}, with:[ion.ids]} "
-    ]
-,"link to":"share"
-, share
-:   function share (ion)
+    ],
+ "link to":"share",
+  share:
+    function share (ion)
       { var thi$   = share.with || (share == this.share ? this : null)
           , spaces = thi$.spaces
           , things = ion.link ==  '*' ? ion.with.with  || ion.with || ion : ion.to ? ion.link : ion.share
@@ -171,32 +170,32 @@
           { if ((('boolean' == typeof ion [thing]) && !ion [thing])
             ||  ((thing == 're') && !ion.re))
             continue
-          ; space [thing]
+            space [thing]
               = typeof (thing = things [thing]) == 'string'
               ? ion    [thing]
               :         thing
           }
-      }
+      },
 
-, spacesInfo
-:   [ "note: ion-domain-based spaces"
+  spacesInfo:
+    [ "note: ion-domain-based spaces"
     , "todo: ..."
-    ]
-, spaces
-:   { null: {}
-    }
+    ],
+  spaces:
+    { null: {}
+    },
 
-, getSpaceInfo
-:   [ "note: Returns & if needed, creates a space based on id's @domain"
+  getSpaceInfo:
+    [ "note: Returns & if needed, creates a space based on id's @domain"
     , "todo: ..."
-    ]
-, getSpace
-:   function getSpace (id)
+    ],
+  getSpace:
+    function getSpace (id)
       { var share  = getSpace.with || (getSpace == this.getSpace ? this : null)
           , spaces = share.spaces
           , domain = id.match (/@(.*)/)
           ; domain = domain && domain [1]
-          ;
+
         return spaces [domain] || (spaces [domain] = {})
       }
 }
