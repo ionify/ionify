@@ -5,7 +5,7 @@
     , is:  'action'
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20201029 : -7.1552 }
+    , to: { 20201030 : -7.2233 }
     , at:  -0.1
     , it:" provides context via ~link which ensures ions' object-type members can   "
         +" access their containing ion, ~share for sharing things via domains,      "
@@ -109,6 +109,9 @@
 , link
 :   function link (ion)
       { ion || (ion = link.with || (link.with = (link == this.link) && this))
+
+        // 🐛 via on.ion@onion.link:true workaround
+        ;('boolean' == typeof ion.link) && delete ion.link
 
         var property
           , thing

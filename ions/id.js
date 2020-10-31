@@ -5,7 +5,7 @@
     , is:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -7.20201030
     , at:  -0.1
     , it:
         [" ensures that all ionified objects have an re.id.                  "
@@ -29,6 +29,9 @@
   id:
     function setID (ion)
       { if (!ion.id || typeof ion.id != 'boolean') return
+
+        // 🐛 via on.ion@onion.id:true workaround
+        ;('boolean' == typeof ion.id) && delete ion.id
 
         var id =  ion.hasOwnProperty ('re')
                ?  ion.re.id

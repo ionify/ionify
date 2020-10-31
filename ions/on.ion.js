@@ -15,8 +15,8 @@
         ," gets all of ionify's supporting ions using its host-provided ~get action.  "
         ," starts its host application by ~get'ing its launch config [via ions.js].   "
         ," ... "
-        ]
-    , we:
+        ],
+      we:
         [" were examining if .onion() is the source of ions' lost 'this' reference.   "
         ," were implementing ~on.do...                                                "
         ," will make .resolve() to convert ids to ions: e.g. ionified references.     "
@@ -71,10 +71,10 @@
         }
 
         ~
-        { on
-        :  'no@ionify'      //must: sense by id because ~on:[] overrides previous sensors
-        ,  'no@ionify'      //      which causes this sensor to be lost on find.link.share@.
-        :   function on (no)
+        { on:
+           'no@ionify',      //must: sense by id because ~on:[] overrides previous sensors
+           'no@ionify':      //      which causes this sensor to be lost on find.link.share@.
+            function on (no)
               { var space = no.on.our   //must: use this=no@.on since on.our isn't linked
               ; space.share             //      because find.link.share@ wasn't yet loaded.
                   ({ link              :
@@ -288,6 +288,11 @@
         !(object.next && object.id) && !(  'id' in object) && (object.id   = id   = true) ///*our && our*/ionify.link (object)
         !(object.next && object.id) && !('link' in object) && (object.link = link = true) ///*our && our*/ionify.link (object)
         ; debug.push ("onION:", object.re ? object.re.id : "anonymous")
+
+        // 🐛 via on.ion@onion.link:true workaround
+        ;('boolean' == typeof object.link && !object.link) && delete object.link
+        ;('boolean' == typeof object.id   && !object.id  ) && delete object.id
+        // 🐛 via on.ion@onion.  id:true workaround
 
         var from = ion.caller;
         object.re && (object.re.from || (object.re.from = from && from.with && from.with.re && from.with.re.id))
