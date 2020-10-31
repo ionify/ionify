@@ -110,47 +110,47 @@
         }
 
         return true
-      }
+      },
 
-, ionifi3d
-:   function ionified ()
+  ionifi3d:
+    function ionified ()
       {/ sense if ionified via any known sensor's .prototype.valueOf.ionified /
       |/ isolate & confirm at least 1 provides ~get         /
       |/ save & remove sensor's .prototype.valueOf.ionified /
       |/ remove   ionified's .valueOf /
       |/ activate sensor(s)           /
       |/ activate ionified            /
-      }
+      },
 
-, senseInfo
-:   [/ todo: ... /
-    ]
-, sense
-:   { id  :null
+  senseInfo:
+    [/ todo: ... /
+    ],
+  sense:
+    { id  :null
     , link:null
-    }
+    },
 
-, activate
-:   function activate (ion)
+  activate:
+    function activate (ion)
       {//if (ion [0] !== '0 . 0') return
       ;  var ionify = activate.with
       ;  ionify.senses && (ionify.senses != ionify.sense) && ~ionify
-      }
-, deactivate
-:   function deactivate (ion)
+      },
+  deactivate:
+    function deactivate (ion)
       {  delete Array .prototype.valueOf
       ;  delete Object.prototype.valueOf
       ;  deactivate.with.unlink()
-      }
-, disable
-:   function disable (ion)
+      },
+  disable:
+    function disable (ion)
       { var ionify        = disable.with
           ; ionify.senses = ionify.sense
           ; ionify.sense  = {'0 . 0':ionify.activate}
-      }
+      },
 
-, known
-:   { id  : []
+  known:
+    { id  : []
     , link: []
     , on:
         [ { act:  'on'
@@ -224,18 +224,18 @@
         ionify.sortKnownWords (updated)
       ~ {debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
         return ion
-      }
+      },
 
-, hasKnownWord
-:   function hasKnownWord (ion)
+  hasKnownWord:
+    function hasKnownWord (ion)
       { var ws = this.act
           , w  = ws.length
       ; while (w --> 0 && ws [w] in ion)
       ; return w <=- 1
-      }
+      },
 
-, sortKnownWords
-:   function sortKnownWords (updated)
+  sortKnownWords:
+    function sortKnownWords (updated)
       { var ionify     = sortKnownWords.with || (sortKnownWords == this.sortKnownWords) ? (sortKnownWords.with = this) : null
           , known      = ionify.known
           , descending = ionify.sortKnownWordsDescending
@@ -245,36 +245,36 @@
 
         for (word in updated)
           updated.hasOwnProperty (word) && known [word].sort (descending)
-      }
+      },
 
-, sortKnownWordsDescending
-:   function descending (known, nextKnown)
+  sortKnownWordsDescending:
+    function descending (known, nextKnown)
       { return nextKnown.set.length - known.set.length
-      }
+      },
 
 
-, ionifiedInfo
-:   [ /note: Use with typeof ion + ion.constructor.name/
+  ionifiedInfo:
+    [ /note: Use with typeof ion + ion.constructor.name/
     , /todo: Auto-update as types are deactivated/
     , /todo: Enable +{ionified: typeof thing} = 1:true|0:false/
-    ]
+    ],
 
-, ionified
-:   { function: true
-    }
+  ionified:
+    { function: true
+    },
 
 
-, onionInfo
-:   [ /todo: enable ionify's ions to set sensed order of action terms /
+  onionInfo:
+    [ /todo: enable ionify's ions to set sensed order of action terms /
     , /todo: sense => ArrayMap to preserve order & fast lookup.       /
     , /idea: log all matched actions & their results?                 /
     , /idea: disable activated words, enable after all matches        /
     ,(/idea: loop through ion's terms instead of known?               /)
     , /todo: Ignore similar actions after match: ~get ~get.then	      /
-    ]
+    ],
 
-, onion
-:   function ion (object)
+  onion:
+    function ion (object)
       { var id
           , link
           , ionify      = ion.with
@@ -336,17 +336,17 @@
 
         ! object.debug && !(object.next && object.id) && ~{debug:debug} //bug! causes stack overflow
           return results == 1 ? result : object
-      }
+      },
 
 
-, onSensor$
-:   { core: {Function:'function', Object:'object'}
+  onSensor$:
+    { core: {Function:'function', Object:'object'}
     , name: (/function\s+(.*)\s*\(/)
     , undo: {}
-    }
+    },
 
-, onSensor
-:   function onSensor (ion)
+  onSensor:
+    function onSensor (ion)
       { var on        = onSensor.with || (onSensor.with = onSensor == this.onSensor ? this : null)
           , known     = on.ionified
           , onSensor$ = on.onSensor$
