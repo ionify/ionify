@@ -2,24 +2,32 @@
 ~
 { re:
     { id:  'on.do@ionify'
+    , of:  'on.do'
     , as: ['sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
           ,'message', 'messaging'
           ]
     , is: ['action', 'sensor']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201031
+    , to:  -7.20201101
     , at:  -0.1
+    , go:" https://github.com/ionify/ionify/blob/public/ions/on.do.js"
+    , ex:" https://api.ionify.net/"
     , it:
         [" senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action} "
         ],
       we:
-        [" were re-implementing ionify's ~on action per:"
+        [" were about to implement ~on.id.do.no but..."
+        ," will implement ~on.re.as.do.no next since it'll help ~on.re.as"
+        ," were re-implementing ionify's ~on action per:"
         +"    https://github.com/orgs/ionify/projects/1#card-47996813"
         ," were ..."
         ," want ..."
         ," must ..."
-        ," like ..."
+        ," like ~re.of as ion sharing namespace; auto-add via method linking"
+        ," like ~re.ex as a way to associate extra or external info with an ion"
+        ," like ~re.go indicating via url or path this ion's current location."
+        ," like ~re.im url or path as this ion's re.by identity module resolver"
         ," have ..."
         ," wont ..."
         ," cant ..."
@@ -35,7 +43,8 @@
 
   ionify:
     { re:
-        { is: ['method']
+        { of:  'on.do'
+        , is: ['method']
         , by: ['mike.lee','team']
         , on: -4.200709
         , to: -7.20201030
