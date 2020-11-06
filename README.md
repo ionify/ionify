@@ -25,7 +25,8 @@ and is maintained by
 
 + [literate](#literate-programming),
   [modular](#modular-programming),
-  [event-driven](#event-driven-programming) &
+  [event-driven](#event-driven-programming),
+  [meta](https://en.wikipedia.org/wiki/Metaprogramming) &
   [name-collision-free](#name-collision-freedom)
   programming
 
