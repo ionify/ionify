@@ -338,8 +338,8 @@ return
         , is:  'method'
         , by: ['mike👨🏾‍💻lee', 'team']
         , on:  -4.200709
-        , to:  -7.20201029
-        , at:  -0.1
+        , to:  -7.20210401
+        , at:  -0.02
         , it:
             [ "enables defining modular, encapsulated & descriptive code"
             , "links code's implementation & description for easy access"
@@ -364,14 +364,14 @@ return
       is:
         function link ()
           { var is, my, thing, type
-              , ondo  = link.with
-              , types = ondo.link.my.types
+              , ion   = link.with
+              , types = ion.link.my.types
 
             for
-              ( var term in ondo )
+              ( var term in ion )
               { if (term == 're' || ~term.indexOf('@')) continue
 
-                thing = ondo [term]
+                thing = ion [term]
                 type  = thing.re && thing.re.is
 
                 !Array.isArray (type) && (type = [type])
@@ -380,22 +380,22 @@ return
                 for
                   ( var t=type.length
                   ;     t--   ;
-                  ) if (types [type [t]])  break
+                  ) if (types [type [t]]) break
                   ; if (t < 0)         continue
 
-                my        =   thing.my
-                my        || (my = thing.my = {})
-                my.me     =   thing
-                my.me.re  =   thing.re || (thing.re = {})
+                my         =   thing.my
+                my         || (my = thing.my = {})
+                my.me      =   thing
+                my.me.re   =   thing.re || (thing.re = {})
 
-                is      = thing.is
-                is.my   = my
-                is.our  = thing.our || {}
-                is.with = ondo
+                is         = thing.is
+                is.my      = my
+                is.our     = thing.our || {}
+                is.with    = ion
+                ion [term] = is
 
-                ondo  [term] = is
-                delete thing . is
-                delete thing . our
+                delete thing.is
+                delete thing.our
               }
           }
     },
