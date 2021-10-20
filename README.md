@@ -1,7 +1,7 @@
 # [ionify](http://about.ionify.net/)
 
 **ion implemented for you**, is a flexible, unobtrusive & novel api for expressing
-information & behavior via
+actionable information & behavior via
 [**ion:** invoked object notation](http://ion.ionify.net/).
 it was
 [created](http://key.ionify.net/)
@@ -11,7 +11,7 @@ and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ { "json" : "data" }  <= /observable json/
+~ { "json" : "data" }  <= /observable data/
 + {   log  : '👋🏾👨🏾‍💻'}  <= /unobtrusive api/
 & ["observable text"] <= /observable text/
 ```
