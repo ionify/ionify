@@ -1,19 +1,19 @@
 # [ionify](http://about.ionify.net/)
 
 **ion implemented for you**, is a flexible, unobtrusive & novel api for expressing
-actionable information & behavior via
+information & behavior via
 [**ion:** invoked object notation](http://ion.ionify.net/).
-It was
+it was
 [created](http://key.ionify.net/)
 by
-[**Michael Lee**](https://github.com/iskitz)
+[**michael lee**](https://github.com/iskitz)
 and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ { "json" : "data" }    <= /observable json/
+~ { "json" : "data" }  <= /observable json/
 + {   log  : '👋🏾👨🏾‍💻'}  <= /unobtrusive api/
-& ["observable text"]    <= /observable text/
+& ["observable text"] <= /observable text/
 ```
 
 
@@ -41,22 +41,22 @@ and is maintained by
 
 **ion** & **ionify** are enabled by & can be implemented in languages that support
 [operator overloading](https://en.wikipedia.org/wiki/Operator_overloading).
-[JavaScript](https://github.com/ionify/ionify/),
-[Java](https://github.com/ionify/about/blob/public/api/java/src/net/ionify/java/Hello.java)
-& [Python](https://github.com/ionify/about/blob/public/api/python/ion.proof.py)
+[javascript](https://github.com/ionify/ionify/),
+[java](https://github.com/ionify/about/blob/public/api/java/src/net/ionify/java/Hello.java)
+& [python](https://github.com/ionify/about/blob/public/api/python/ion.proof.py)
 are three we've explored & confirmed capable.
 
-For a detailed explanation of **ion**: invoked object notation, visit
+for a detailed explanation of **ion**: invoked object notation, visit
 its [documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form).
 
-For examples applying **ion** & **ionify**, visit the following subsections.
+for examples applying **ion** & **ionify**, visit the following subsections:
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
 *"...creating a domain-specific language...can be worthwhile if the language allows a
 particular type of problem or solution to be expressed more clearly than an existing
-language would allow..." - Wikipedia*
+language would allow..." - wikipedia*
 
 **ionify** enables creating language(s) via **ions** that define & map terms to
 behaviors:
@@ -67,8 +67,8 @@ behaviors:
     { id: 'ask.say@ions.iskitz.net'
     , by: 'mike.lee'
     , on: -7.20150728
-    , to: -7.20200430
-    , at: +1.4
+    , to: -7.20211020
+    , at: +1.5
     , in: 'san-jose.california.usa.earth'
     , is: "an ask & say domain-specific language ion"
     },
@@ -93,18 +93,18 @@ behaviors:
 }
 
 
-~ /These ask.say ions can be in separate files./
+~ /these ask.say ions can be in separate files./
 
-~ { say: "👋🏾 Hi!"                              }
-~ { ask: "What's your name?"                    }
-~ { say: "Hi [answer]! I'm Math E. Bot 🤓"     }
+~ { say: "👋🏾 hi!"                              }
+~ { ask: "what's your name?"                    }
+~ { say: "hi [answer]! i'm math e. bot 🤓"     }
 ~ { ask: "[answer], what's 2 x 2?"              }
-~ { say: "[answer]? Really? 🤔"                }
-~ { ask: "Can I ask you another question?"      }
-~ { say: 'I thought you\'d say "[answer]" 😉'  }
+~ { say: "[answer]? really? 🤔"                }
+~ { ask: "can i ask you another question?"      }
+~ { say: 'i thought you\'d say "[answer]" 😉'  }
 ```
 
-See [jeni](https://github.com/ionified/jeni-ions.iskitz.net?files=1)
+visit [jeni](https://github.com/ionified/jeni-ions.iskitz.net?files=1)
 for a more
 [adaptive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.aeons.js)
 [exploration](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
@@ -116,7 +116,7 @@ of ions & natural language.
 *"...a program is best thought of as a web...of simple parts and simple relations
 between those parts; the programmer's task is to state those parts and those
 relationships, in whatever order is best for human comprehension" -
-[Donald E. Knuth](https://en.m.wikipedia.org/wiki/Donald_Knuth)*
+[donald e. knuth](https://en.m.wikipedia.org/wiki/Donald_Knuth)*
 
 ```javascript
 ~
@@ -124,7 +124,7 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'frendlee@ionified.net'
     , by: 'mike.lee@ionify.net'
     , on: -8.20171208
-    , to: -7.20200430
+    , to: -7.20211020
     , in: 'san-jose.california.usa.earth'
     , is: "a literate & natural language programming exploration"
     },
@@ -136,13 +136,13 @@ relationships, in whatever order is best for human comprehension" -
     ],
 
   "say hello":
-    {say: "Hi! I'm Frend Lee!"},
+    {say: "hi! i'm frend lee!"},
 
   "ask their name":
-    {ask: "What's your name?"},
+    {ask: "what's your name?"},
 
   "invite them to play":
-    {ask: "Hi [answer]! Wanna play?!"}
+    {ask: "hi [answer]! wanna play?!"}
 }
 ```
 
@@ -154,8 +154,8 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'code.prose.demo@ionified.net'
     , by: 'mike.lee'
     , on: -7.20190323
-    , to: -7.20200430
-    , at: +0.02
+    , to: -7.20211020
+    , at: +0.03
     , in: 'san-jose.california.us.earth'
     , is: "a test of code as prose via orion"
     },
@@ -175,10 +175,10 @@ write = {say:'if we write' }
    as = {say:'as actionable words within'}
 prose = {say:'phrases & sentences?! 🤓' }
 
-'With orion' - you - can - write - code - as - prose;
+'with orion' - you - can - write - code - as - prose;
 ```
 
-See [anemojii](https://glitch.com/~anemojii)
+visit [anemojii](https://glitch.com/~anemojii)
 for [another](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
 [exploration](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.re.js)
 of literate programming.
@@ -188,7 +188,7 @@ of literate programming.
 
 *"...a software design technique that emphasizes separating the functionality of a
 program into independent, interchangeable modules, such that each contains everything
-necessary to execute only one aspect of the desired functionality." - Wikipedia*
+necessary to execute only one aspect of the desired functionality." - wikipedia*
 
 ```javascript
 ~
@@ -205,7 +205,7 @@ necessary to execute only one aspect of the desired functionality." - Wikipedia*
       { something.with.hi ++
       },
 
-  hi: /Hi! 🤓/
+  hi: /hi! 🤓/
 }
 ```
 
@@ -213,7 +213,7 @@ necessary to execute only one aspect of the desired functionality." - Wikipedia*
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
 *"...a programming paradigm in which the flow of the program is determined by events
-such as user actions..., sensor outputs, or messages from other programs/threads." - Wikipedia*
+such as user actions..., sensor outputs, or messages from other programs/threads." - wikipedia*
 
 ```javascript
 ~
@@ -225,38 +225,38 @@ such as user actions..., sensor outputs, or messages from other programs/threads
     }
 }
 
-~ /This event ion could be in a separate file./
+~ /this event ion could be in a separate file./
 ~ {event: "it happened!"} <= /invokes an event/
 ```
 
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
 
-**ionify** uses JavaScript's
+**ionify** uses javascript's
 [prototypal inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
 &
 [operation overloading](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
-to enable observing objects without direct references. This enables observing json &
-other anonymous & named objects:
+to enable observing objects without direct references. this enables observing json & other
+anonymous & named objects:
 
 ```javascript
 ~
 { on:'hi'
 , hi (ion)
-    { /This method is called for each ion//
-      /with a "hi" property. It logs the //
+    { /this method is called for each ion//
+      /with a "hi" property. it logs the //
       /value of that property.           //
 
       {log: ion.hi}
 
-      /logs "I'm an ion!" 1st//
-      /logs "I'm a json!" 2nd/
+      /logs "i'm an ion!" 1st//
+      /logs "i'm a json!" 2nd/
     }
 }
 
-~ /Each ion can be in its own local or remote file/
+~ /each ion can be in its own local or remote file/
 
-~ { hi : "I'm an ion!"}  <=  /invoke an object/
-~ {"hi": "I'm a json!"}  <=  /invoke some json/
+~ { hi : "i'm an ion!"}  <=  /invoke an object/
+~ {"hi": "i'm a json!"}  <=  /invoke some json/
 ```
 
 ### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
@@ -266,7 +266,7 @@ i.e. `~/ / + [ ] & { }`, eliminate name collisions by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 
 **ionify** enables individually observing & inspecting multiple identically identified
-**lions**. That capability enables **lions** to simultaneously coexist within the same
+**lions**. that capability enables **lions** to simultaneously coexist within the same
 [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts)
 without overriding all, or parts, of each other:
 
@@ -274,9 +274,9 @@ without overriding all, or parts, of each other:
 ~
 { on:'my.ion@doma.in'
 , do (ion)
-    { /This method is called for each ion with//
-      /an id matching "my.ion@doma.in". It    //
-      /confirms the ion developer before      //
+    { /this method is called for each ion with//
+      /an id matching "my.ion@doma.in".       //
+      /it confirms the ion developer before   //
       /describing what the ion does.           /
 
       if (ion.re.by == "a.🇬🇾.developer")
@@ -285,7 +285,7 @@ without overriding all, or parts, of each other:
     }
 }
 
-~ /Each of these ions can be in a separate file/
+~ /each of these ions can be in a separate file/
 
 ~
 { re:
@@ -318,3 +318,11 @@ without overriding all, or parts, of each other:
     }
 }
 ```
+
+####
+
+**🙇🏾‍♂️ through * God * impossible -is- nothing 🤎**
+
+**[🇬🇾](https://en.wikipedia.org/wiki/Guyana) [mike 👨🏾‍💻 lee](https://github.com/iskitz) & [team](https://github.com/orgs/ionify/people)**
+
+
