@@ -340,7 +340,7 @@ without overriding all, or parts, of each other:
 
 ####
 
-**'🙇🏾‍♂️'- through * God * impossible-is-nothing- '🤲🏾'**
+**'🙇🏾‍♂️'- through * God * impossible-is-nothing -'🤲🏾'**
 
 **[🇬🇾](https://en.wikipedia.org/wiki/Guyana) [mike 👨🏾‍💻 lee](https://github.com/iskitz) & [team](https://github.com/orgs/ionify/people)**
 
