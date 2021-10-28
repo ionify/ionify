@@ -1,7 +1,7 @@
 # [ionify](http://about.ionify.net/)
 
 **ion implemented for you**, is a flexible, unobtrusive & novel api for expressing
-actionable information & behavior via
+behavior & information via
 [**ion:** invoked object notation](http://ion.ionify.net/).
 it was
 [created](http://key.ionify.net/)
@@ -16,10 +16,11 @@ and is maintained by
 & ["observable text"] <= /observable text/
 ```
 
-
 ## why
 
-**ion** & **ionify** enable exploring & experimenting with
+**ion** & **ionify** enable expressing behavior & information that humans & software both
+[naturally understand](https://github.com/ionify/about/blob/public/VISION.md#vision)
+via:
 
 + [domain-specific languages](#domain-specific-languages)
 
@@ -30,7 +31,7 @@ and is maintained by
   [name-collision-free](#name-collision-freedom)
   programming
 
-+ fetching, [observing](#decoupled-observation) &
++ defining, fetching, [observing](#decoupled-observation) &
   interacting with highly [decoupled](#decoupled-observation)
   data & code
 
@@ -39,7 +40,7 @@ and is maintained by
 
 ## how
 
-**ion** & **ionify** are enabled by & can be implemented in languages that support
+**ion** & **ionify** are enabled by, and can be implemented in, languages that support
 [operator overloading](https://en.wikipedia.org/wiki/Operator_overloading).
 [javascript](https://github.com/ionify/ionify/),
 [java](https://github.com/ionify/about/blob/public/api/java/src/net/ionify/java/Hello.java)
@@ -49,7 +50,7 @@ are three we've explored & confirmed capable.
 for a detailed explanation of **ion**: invoked object notation, visit
 its [documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form).
 
-for examples applying **ion** & **ionify**, visit the following subsections:
+for applications of **ion** & **ionify**, visit the following subsections:
 
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
@@ -108,7 +109,7 @@ visit [jeni](https://github.com/ionified/jeni-ions.iskitz.net?files=1)
 for a more
 [adaptive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.aeons.js)
 [exploration](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
-of ions & natural language.
+of **ions** & natural language.
 
 
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
@@ -122,9 +123,9 @@ relationships, in whatever order is best for human comprehension" -
 ~
 { re:
     { id: 'frendlee@ionified.net'
-    , by: 'mike.lee@ionify.net'
+    , by: 'mike.lee'
     , on: -8.20171208
-    , to: -7.20211020
+    , to: -7.20211028
     , in: 'san-jose.california.usa.earth'
     , is: "a literate & natural language programming exploration"
     },
@@ -154,8 +155,8 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'code.prose.demo@ionified.net'
     , by: 'mike.lee'
     , on: -7.20190323
-    , to: -7.20211020
-    , at: +0.03
+    , to: -7.20211028
+    , at: +0.04
     , in: 'san-jose.california.us.earth'
     , is: "a test of code as prose via orion"
     },
@@ -175,7 +176,7 @@ write = {say:'if we write' }
    as = {say:'as actionable words within'}
 prose = {say:'phrases & sentences?! 🤓' }
 
-'with orion' - you - can - write - code - as - prose;
+'with orion' - you - can - write & code - as - prose;
 ```
 
 visit [anemojii](https://glitch.com/~anemojii)
@@ -194,9 +195,9 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
 ~
 { re:
     { id: 'an.ionified.module@doma.in'
-    , by: 'a.developer'
+    , by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -7.20200430
+    , to: -7.202110280442
     , it: "represents an ionified module"
     },
 
@@ -217,8 +218,14 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 
 ```javascript
 ~
-{ on:'event'
-, do (ion)
+{ re:
+    { by: ‘mike.lee@ionify.net’
+    , on: -4.200709
+    , to: -7.202110280449
+    },
+
+  on:'event',
+  do (ion)
     { /log "it happened!"//
       {log: ion.event   } /
       /on every event ion!/
@@ -240,11 +247,17 @@ anonymous & named objects:
 
 ```javascript
 ~
-{ on:'hi'
-, hi (ion)
+{ re:
+    { by: ‘mike.lee@ionify.net’
+    , on: -4.200709
+    , to: -7.202110280459
+    },
+
+  on:'hi',
+  hi (ion)
     { /this method is called for each ion//
-      /with a "hi" property. it logs the //
-      /value of that property.           //
+      /with a "hi" property & value which//
+      /it logs:                          //
 
       {log: ion.hi}
 
@@ -272,8 +285,14 @@ without overriding all, or parts, of each other:
 
 ```javascript
 ~
-{ on:'my.ion@doma.in'
-, do (ion)
+{ re:
+    { by: 'mike.lee@ionify.net'
+    , on: -4.200709
+    , to: -7.202110280451
+    },
+
+  on:'my.ion@doma.in',
+  do (ion)
     { /this method is called for each ion with//
       /an id matching "my.ion@doma.in".       //
       /it confirms the ion developer before   //
@@ -290,9 +309,9 @@ without overriding all, or parts, of each other:
 ~
 { re:
     { id: 'my.ion@doma.in'
-    , by: 'a.🇬🇾+🇯🇵+🇺🇸.developer'
+    , by: 'a.🇬🇾.🇯🇵.🇺🇸.developer'
     , on: -8.200912
-    , to: -7.20190421
+    , to: -7.202110280423
     , in: 'san-jose.california.usa.earth'
     , it: "duplicates the intended module's id"
     }
@@ -310,7 +329,7 @@ without overriding all, or parts, of each other:
 ~
 { re:
     { id: 'my.ion@doma.in'
-    , by: 'a.🇬🇾+🇺🇸.developer'
+    , by: 'a.🇬🇾.🇺🇸.developer'
     , on: -4.200709
     , to: -5.200912
     , in: 'forest-hills.new-york.usa.earth'
@@ -321,7 +340,7 @@ without overriding all, or parts, of each other:
 
 ####
 
-**🙇🏾‍♂️ through * God * impossible -is- nothing 🤎**
+**'🙇🏾‍♂️'- through * God * impossible-is-nothing- '🤲🏾'**
 
 **[🇬🇾](https://en.wikipedia.org/wiki/Guyana) [mike 👨🏾‍💻 lee](https://github.com/iskitz) & [team](https://github.com/orgs/ionify/people)**
 
