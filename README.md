@@ -12,14 +12,14 @@ and is maintained by
 
 ```javascript
 ~ { "json" : "data" }  <= /observable data/
-+ {   log  : '👋🏾👨🏾‍💻'}  <= /unobtrusive api/
++ {   log  : "👋🏾👨🏾‍💻"}  <= /unobtrusive api/
 & ["observable text"] <= /observable text/
 ```
 
 ## why
 
 **ion** & **ionify** enable expressing behavior & information that humans & software both
-[naturally understand](https://github.com/ionify/about/blob/public/VISION.md#vision)
+[naturally understand](https://github.com/ionify/about/blob/public/VISION.md#vision),
 via:
 
 + [domain-specific languages](#domain-specific-languages)
@@ -219,9 +219,9 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 ```javascript
 ~
 { re:
-    { by: ‘mike.lee@ionify.net’
+    { by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202110280449
+    , to: -7.202110292156
     },
 
   on:'event',
@@ -248,9 +248,9 @@ anonymous & named objects:
 ```javascript
 ~
 { re:
-    { by: ‘mike.lee@ionify.net’
+    { by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202110280459
+    , to: -7.202110292155
     },
 
   on:'hi',
