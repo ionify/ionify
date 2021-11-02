@@ -5,7 +5,7 @@
     , is:  'action'
     , by: ['mike.lee','team']
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -7.20210417
     , at:  -0.1
     , it:
         [" implements ~on.do.after to do something after sensing specific ions"
@@ -119,9 +119,12 @@
   each:
     function afterEach (ion)
       { var todo = ion.do
- 
+
         function afterEachIon ()
-          { this && ~todo <= / todo? remove duplicate todo from script.onload /
+          { if (!this) return
+            ("function" == typeof todo && todo.length)
+            ?   todo (this)
+            : ~ todo <= / todo? remove duplicate todo from script.onload /
           }
         return afterEachIon
       },

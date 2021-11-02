@@ -2,24 +2,32 @@
 ~
 { re:
     { id:  'on.do@ionify'
+    , of:  'on.do'
     , as: ['sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
           ,'message', 'messaging'
           ]
     , is: ['action', 'sensor']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201031
+    , to:  -7.20210417
     , at:  -0.1
+    , go:" https://github.com/ionify/ionify/blob/public/ions/on.do.js"
+    , ex:" https://api.ionify.net/"
     , it:
         [" senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action} "
         ],
       we:
-        [" were re-implementing ionify's ~on action per:"
+        [" were about to implement ~on.id.do.no but..."
+        ," will implement ~on.re.as.do.no next since it'll help ~on.re.as"
+        ," were re-implementing ionify's ~on action per:"
         +"    https://github.com/orgs/ionify/projects/1#card-47996813"
         ," were ..."
         ," want ..."
         ," must ..."
-        ," like ..."
+        ," like ~re.of as ion sharing namespace; auto-add via method linking"
+        ," like ~re.ex as a way to associate extra or external info with an ion"
+        ," like ~re.go indicating via url or path this ion's current location."
+        ," like ~re.im url or path as this ion's re.by identity module resolver"
         ," have ..."
         ," wont ..."
         ," cant ..."
@@ -35,17 +43,19 @@
 
   ionify:
     { re:
-        { is: ['method']
+        { of:  'on.do'
+        , is: ['method']
         , by: ['mike.lee','team']
         , on: -4.200709
-        , to: -7.20201030
+        , to: -7.20210417
         , at: -0.1
         , it:
             [ "initializes ionify's ~on.as.has.id.is.do.no sensors"
             , "activates linking for this on.do@ ion"
             ],
           we:
-            [ "must fix on.ion.id work🐛round that is polluting ions with ~on.id"
+            [ "were exploring moving each ~on.do.no.* to its own ion"
+            , "must fix on.ion.id work🐛round that is polluting ions with ~on.id"
             ]
         },
       my:
@@ -57,12 +67,13 @@
               , terms = ondo.TERMS
               , sense = ondo.ondo.is
               ; ondo  . link.is.with = ondo
-              ; ondo  . link.is ()
+              ; ondo  . link.is (ondo)
 
             for
               ( var term  in terms)
-              { ~ {on:[['on',term,'do']], [`on ${term} do`]:sense, id:!1,link:!1}
-                & {on:[['on',term,'no']], [`on ${term} no`]:sense, id:!1,link:!1}
+              { //~ {get:`on.do.no.${term}@ionify`, then:ondo.link, after:'each'}
+                + {on:[['on',term,'do']], [`on ${term} do`]:sense, id:!1,link:!1}
+                + {on:[['on',term,'no']], [`on ${term} no`]:sense, id:!1,link:!1}
               }
 
           //ondo.onion ({on:Object, do:ondo.onion})
@@ -338,17 +349,17 @@ return
         , is:  'method'
         , by: ['mike👨🏾‍💻lee', 'team']
         , on:  -4.200709
-        , to:  -7.20210401
+        , to:  -7.20210416
         , at:  -0.02
         , it:
             [ "enables defining modular, encapsulated & descriptive code"
             , "links code's implementation & description for easy access"
             ],
           we:
-            [ "were ..."
+            [ "were moving this to its own ion & applying it to all ion methods"
             , "must ..."
             , "will ..."
-            , "want to move this to its own ion and apply it to all ionify ions"
+            , "want to apply this to all ionified ions"
             , "have implemented its initial working version 🙌🏾 enjoy 🤲🏾"
             , "wont ..."
             , "cant ..."
@@ -362,10 +373,10 @@ return
             }
         },
       is:
-        function link ()
+        function link (ion)
           { var is, my, thing, type
-              , ion   = link.with
-              , types = ion.link.my.types
+              , host  = link.with
+              , types = host.link.my.types
 
             for
               ( var term in ion )
