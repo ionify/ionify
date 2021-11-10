@@ -95,6 +95,7 @@
                 ;  ++ next < last
                 ;
                 ) if (!got [ions [next]]) return
+            done = true
           ~ {on:ions, no:afterAllIons}
           ~ todo
           }

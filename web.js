@@ -5,8 +5,8 @@
     , is:  "ionify: invoked object notation implemented for your web"
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20190413
-    , at:  -0.1
+    , to:  -8.20211110
+    , at:  -0.043
     , we:
         [" will add tests for web@ionify & its actions	                             "
         ," will set all ~get actions' ionid@ domains to the current ion's.           "
@@ -109,10 +109,10 @@
 
       ; document.head.appendChild (script)
       ~{debug:["getting", url, "..."]}
-      }
+      },
 
-, getInfo
-:   [" does ~{get: ['ion.id' || './script.js'], then: ['actions']} "
+  getInfo:
+    [" does ~{get: ['ion.id' || './script.js'], then: ['actions']} "
     ," will update get$.PATH with new @domains & their paths.      "
     ," will handle URLs with existing file extension(s).           "
     ," will move got() & .then code to ~get.then                   "
@@ -121,9 +121,9 @@
     ," will set .then() to ~on.do.after                            "
     ," will set ~get.then to do ~on:ion.id & script.onload; 1st called cancels 2nd. "
     ," ... "
-    ]
-, get$
-:   { ASYNC:
+    ],
+  get$:
+    { ASYNC:
            {  parallel: true
            ,  sequence: false
            ,     order: false
@@ -153,9 +153,9 @@
             ;   return get$.PATH [space] + (name || file || '') + (version || '')
                                          + /*(ext ? ext [1] :*/(get$.TYPE)
             }
-    }
-,"get then info"
-:   ["  get: Ensure it's an array          "
+    },
+ "get then info":
+    ["  get: Ensure it's an array          "
     ,"   in: Ensure it's an expected value "
     ," then: Create beacon  function       "
     ,"  get: Create scripts with in & then "
@@ -166,21 +166,19 @@
 ,"get in"           :"get"
 ,"get in then"      :"get"
 ,"get in then after":"get"
-, get
-:   function get ()
+, get:
+    function get ()
       { var ion  =  this
           , ions =  Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , todo =  ion.then
           ;
 
         if (todo)
-          { var on  =  {on:ions, do:todo, after:ion.after}
-          ; todo    =  (!get.our || get.our.ionified [typeof todo])
-                    ?    todo
-                    :    ~{find:todo, in:ion} && ion [todo]
-          ; todo && (on.do = todo)
+          { var on  = {on:ions, do:todo, after:ion.after}
+            get.our &&
+            get.our.ionified [typeof todo]
+              || (+{find:todo, in:ion}, todo = on.do = ion [todo])
           ~ on
-          ; todo = on.do
           }
 
         for ( var web  = get.with

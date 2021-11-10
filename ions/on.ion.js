@@ -5,7 +5,7 @@
     , is:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201030
+    , to:  -8.20211110
     , at:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
@@ -64,14 +64,6 @@
 
         ~
         { on:
-            [ ['on', 'as', 'do']
-            , ['on',       'do']
-            ]
-      //,"on do": onion.on
-        }
-
-        ~
-        { on:
            'no@ionify',      //must: sense by id because ~on:[] overrides previous sensors
            'no@ionify':      //      which causes this sensor to be lost on find.link.share@.
             function on (no)
@@ -103,7 +95,7 @@
             , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
             ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
             , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'
-            ,      'ions@ionify',         'web.log@ionify',     'on.do@ionify'
+            ,      'ions@ionify',         'web.log@ionify',//   'on.do@ionify'
             ,      'ions'
             ]
         , in: 'sequence'||'order'
