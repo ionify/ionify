@@ -5,43 +5,73 @@
     , by: ['mike.lee', 'team']
     , at:  'ionify.net'
     , on:  -4.200709
-    , to:  -7.20190328
-    , is:  -0.1
+    , to:  -8.20211110
+    , is:  -0.02
     , it: "tests js' ion hip-hop: handled-in-place & handled-on-prototype implementation"
     }
 }
 
 ~
-{ valueOf
-:   function hip ()
+{ valueOf:
+    function hip ()
       { console.log ("✅ hip: handled-in-place ion")
       }
 }
 
 ~
-{ valueOf
-:   function hip     ()
-      { function hop ()
+{ valueOf:
+    function hip     ()
+      { var Objects = Object.prototype
+
+        function hop ()
           { restore  ()
           ; console.log ("✅ hop: handled-on-prototype ion")
           }
 
         function restore ()
-          { Object.prototype.valueOf = restore.hop 
+          { Objects.valueOf = restore.hop 
           }
 
-      ; restore.hop = Object.prototype.valueOf
-      ; Object.prototype.valueOf = hop
+        restore.hop =
+        Objects.valueOf
+        Objects.valueOf = hop
+      ~ {}
       }
 }
 
 ~
-{ valueOf
-:   function hiphop ()
-      { console.log ("✅ hip: handled-in-place coexists with hop: handled-on-prototype")
+{ valueOf:
+    function hiphop ()
+      { console.log ("✅ hip+hop: handled-in-place coexists with hop: handled-on-prototype")
       }
 }
 
-~ {_tests_:'manual hop: handled-on-prototype implementation'}
+~
+{ valueOf:
+    function hip     ()
+      { var Objects = Object.prototype
+
+        function hip ()
+          { console.log ("✅ hip-hop: ion replaces hip: handled-in-place     with hop: handled-on-prototype")
+          }
+
+        function hop ()
+          { restore  ()
+          ; console.log ("✅ hip-hop: ion replaces hop: handled-on-prototype with hip: handled-in-place")
+          }
+
+        function restore ()
+          { Objects.valueOf = restore.hop 
+          }
+
+        restore.hop =
+        Objects.valueOf
+        Objects.valueOf = hop
+        delete this.valueOf
+      ~ this
+        this.valueOf = hip
+      ~ this
+      }
+}
 
 ;
