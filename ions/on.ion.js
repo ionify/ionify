@@ -96,6 +96,7 @@
             ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
             , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'
             ,      'ions@ionify',         'web.log@ionify',//   'on.do@ionify'
+            , 'on.ionified@ionify'
             ,      'ions'
             ]
         , in: 'sequence'||'order'
@@ -189,7 +190,7 @@
             unknown = !sense [group]
             action  =    ion [group]
             action
-              && ( sense [group] = action )
+              && ( sense [group] = action )  // like sense [group].push (action) for multi-action
               && ! ionify.ionified [typeof action]
               && ( on.our
                  ? on.our.find ({find:action, in:ion, as:group})
