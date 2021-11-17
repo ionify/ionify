@@ -5,7 +5,7 @@
     , is:  'action'
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20201030 : -7.2244 }
+    , to: { 20211117 : -8.1440 }
     , at:  -0.1
     , it:" provides context via ~link which ensures ions' object-type members can   "
         +" access their containing ion, ~share for sharing things via domains,      "
@@ -97,6 +97,8 @@
   linkInfo:
     [" were implementing .our.* --> .with.doma.in.*               "
     ," must move id@domain matching to its own ion then share it  "
+    ," must fix callee.caller.our exposing ionify's domain space  "
+    ," like linking {}s & keeping their id-mapped with & our here "
     ," like id@domain matching with /(.*)([-+]\d+.*^@)|(@.*)/     "
     ," like .with .doma .in.expanded.name.of.shared.thing:        "
     +"      .with$.doma$.in.expanded auto-added $'s on conflicts  "
