@@ -1,7 +1,7 @@
 # [ionify](http://about.ionify.net/)
 
 **ion implemented for you**, is a flexible, unobtrusive & novel api for expressing
-behavior & information via
+actions & information via
 [**ion:** invoked object notation](http://ion.ionify.net/).
 it was
 [created](http://key.ionify.net/)
@@ -18,11 +18,11 @@ and is maintained by
 
 ## why
 
-**ion** & **ionify** enable expressing behavior & information that humans & software both
-[naturally understand](https://github.com/ionify/about/blob/public/VISION.md#vision),
-via:
+**ion** & **ionify** enable expressing actions & information that humans & software both
+[naturally understand](https://github.com/ionify/about/blob/public/VISION.md#vision).
+they enable:
 
-+ [domain-specific languages](#domain-specific-languages)
++ creating [domain-specific languages](#domain-specific-languages)
 
 + [literate](#literate-programming),
   [modular](#modular-programming),
@@ -33,7 +33,7 @@ via:
 
 + defining, fetching, [observing](#decoupled-observation) &
   interacting with highly [decoupled](#decoupled-observation)
-  data & code
+  software-defined actions & information
 
 + and more.
 
@@ -68,23 +68,23 @@ behaviors:
     { id: 'ask.say@ions.iskitz.net'
     , by: 'mike.lee'
     , on: -7.20150728
-    , to: -7.20211020
-    , at: +1.5
-    , in: 'san-jose.california.usa.earth'
-    , is: "an ask & say domain-specific language ion"
+    , to: -8.20211118
+    , at: +1.6
+    , in: 'silicon-valley.california.usa.earth'
+    , is: "an ask & say domain-specific language action"
     },
 
   on:
     ['ask', 'say'],
 
   ask:
-    function ask (ion)
-      { ask.with.answer = prompt (ask.with.prep (ion.ask)) || ''
+    function ask (action)
+      { ask.with.answer = prompt (ask.with.prep (action.ask)) || ''
       },
 
   say:
-    function say (ion)
-      { alert (say.with.prep (ion.say))
+    function say (action)
+      { alert (say.with.prep (action.say))
       },
 
   prep:
@@ -94,7 +94,7 @@ behaviors:
 }
 
 
-~ /these ask.say ions can be in separate files./
+~ /these ask.say actions can be in separate files/
 
 ~ { say: "👋🏾 hi!"                              }
 ~ { ask: "what's your name?"                    }
@@ -125,8 +125,8 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'frendlee@ionified.net'
     , by: 'mike.lee'
     , on: -8.20171208
-    , to: -7.20211028
-    , in: 'san-jose.california.usa.earth'
+    , to: -8.20211118
+    , in: 'silicon-valley.california.usa.earth'
     , is: "a literate & natural language programming exploration"
     },
 
@@ -155,10 +155,10 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'code.prose.demo@ionified.net'
     , by: 'mike.lee'
     , on: -7.20190323
-    , to: -7.20211028
-    , at: +0.04
-    , in: 'san-jose.california.us.earth'
-    , is: "a test of code as prose via orion"
+    , to: -8.20211118
+    , at: +0.05
+    , in: 'silicon-valley.california.us.earth'
+    , is: "code as prose with orion & stories"
     },
 
   on: 'say',
@@ -311,8 +311,8 @@ without overriding all, or parts, of each other:
     { id: 'my.ion@doma.in'
     , by: 'a.🇬🇾.🇯🇵.🇺🇸.developer'
     , on: -8.200912
-    , to: -7.202110280423
-    , in: 'san-jose.california.usa.earth'
+    , to: -8.202111181237
+    , in: 'silicon-valley.california.usa.earth'
     , it: "duplicates the intended module's id"
     }
 }
@@ -332,7 +332,7 @@ without overriding all, or parts, of each other:
     , by: 'a.🇬🇾.🇺🇸.developer'
     , on: -4.200709
     , to: -5.200912
-    , in: 'forest-hills.new-york.usa.earth'
+    , in: 'queens-county.new-york.usa.earth'
     , it: "also duplicates the intended module's id"
     }
 }
