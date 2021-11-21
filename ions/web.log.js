@@ -5,9 +5,9 @@
     , is:  'action'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201030
+    , to:  -8.20211121
     , at:  -0.1
-    , it:" implements ionify logging via    "
+    , is:" ionify's logging implementation providing:"
         +" ~debug ~error ~info ~log & ~warn "
         ,
       we:
@@ -82,11 +82,11 @@
         if('boolean' == typeof message)
           if( state = message != state)
             { logger.state = prepare [level] = message
-            ; message      = "~" + level + (logger.state ? " on" : " off")
+            ; message      = (logger.state ? "✅" : "🚫") + "~" + level
             }
 
         logger.state   && Array.isArray (message) && (message = message.join (" "))
-        logger.message  = String        (message)
+        logger.message  = logger.icon [logger.level] + logger.id + ": " + String (message)
         logging [level] = logger.state
         return state
       },
@@ -118,21 +118,29 @@
 
         function cons0le (ion)
           {  prepare (ion)
-          && console [logger.level] (logger.id + ": " + logger.message)
+          && console [logger.level] (logger.message)
           ;  return   logger.state
           }
 
         function popup (ion)
-          { prepare (ion) && alert (icon [logger.level] + logger.id + logger.message)
+          { prepare (ion) && alert (logger.message)
           ; return logger.state
           }
 
         var icon =
             { debug: "🐛"
-            , error: "🚫"
+            , error:  ""
             ,  info: "💡"
             ,   log: "📋"
-            ,  warn: "⚠️"
+            ,  warn:  ""
+            }
+
+        var icona =
+            { debug: icon.debug
+            , error: "🚫"
+            ,  info: icon.info
+            ,   log: icon.log
+            ,  warn: "⚠️"//"⚠️" 🐛not sure why chromium not rendering with yellow color & fullsize...
             }
 
         var logger        = this
@@ -140,6 +148,7 @@
           , iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
           , noConsole     = document && document.URL.match (iOSPath)
           ; logger.logged = noConsole ? popup : cons0le
+          ; logger.icon   = noConsole ? icona : icon
       }
 }
 ;
