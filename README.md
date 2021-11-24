@@ -11,9 +11,9 @@ and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ { "json" : "data" }  <= /observable data/
-+ {   log  : "👋🏾👨🏾‍💻"}  <= /unobtrusive api/
-& ["observable text"] <= /observable text/
+~ {   log  : "👋🏾👨🏾‍💻"  } <= /recording action/
++ { "json" : "data"  } <= /json information/
+& ["natural language"] <= /text information/
 ```
 
 ## why
@@ -340,8 +340,8 @@ without overriding all, or parts, of each other:
 
 ####
 
-**'🙇🏾‍♂️'- through * God * impossible-is-nothing -'🤲🏾'**
-
-**[🇬🇾](https://en.wikipedia.org/wiki/Guyana) [mike 👨🏾‍💻 lee](https://github.com/iskitz) & [team](https://github.com/orgs/ionify/people)**
-
-
+🙇🏾‍♂️ through * [**God**](LICENSE.txt) * impossible -is- nothing ||
+[🇬🇾👨🏾‍💻🇺🇸](https://en.wikipedia.org/wiki/Guyana)
+[**mike lee**](https://github.com/iskitz) &
+[**team**](https://github.com/orgs/ionify/people)
+🤎
