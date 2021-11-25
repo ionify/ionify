@@ -5,7 +5,7 @@
     , is:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211110
+    , to:  -8.20211125
     , at:  -0.1
     , it:
         [" implements ionify: invoked object notation implemented for you.            "
@@ -333,7 +333,7 @@
           link && delete object.link
 
         ! object.debug && !(object.next && object.id) && ~{debug:debug} //bug! causes stack overflow
-          return results == 1 ? result : object
+          return results < 4 /*== 1*/ ? result : object //bug ion.id+link:true 🐛 workaround
       },
 
 
