@@ -44,7 +44,7 @@
       { var logger       =  error.with
             logger.level = 'error'
         var state        =  logger.logged (ion)
-        if (typeof ion.error == 'boolean') return state
+        if (!state || typeof ion.error == 'boolean') return state
       ~ new Error (ion.error)
       },
 
