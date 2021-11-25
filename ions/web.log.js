@@ -5,7 +5,7 @@
     , is:  'action'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211121
+    , to:  -8.20211125
     , at:  -0.1
     , is:" ionify's logging implementation providing:"
         +" ~debug ~error ~info ~log & ~warn "
@@ -79,10 +79,11 @@
           ; logger.state = state
           ; logger.id    = ion.re.from || logger.re.id
 
+        if('string'  == typeof message && !message) return false
         if('boolean' == typeof message)
           if( state = message != state)
             { logger.state = prepare [level] = message
-            ; message      = (logger.state ? "✅" : "🚫") + "~" + level
+            ; message      = (logger.state ? "✅" : "🚫") + " ~" + level
             }
 
         logger.state   && Array.isArray (message) && (message = message.join (" "))
