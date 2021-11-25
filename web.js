@@ -5,8 +5,8 @@
     , is:  "ionify: invoked object notation implemented for your web"
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211124
-    , at:  -0.044
+    , to:  -8.20211125
+    , at:  -0.045
     , we:
         [ "will add tests for web@ionify & its actions	                             "
         , "will set all ~get actions' ionid@ domains to the current ion's.           "
@@ -183,6 +183,7 @@
             get.our.ionified [typeof todo]
               || (+{find:todo, in:ion}, todo = on.do = ion [todo])
           ~ on
+            todo = on.do
           }
 
         for ( var web  = get.with
