@@ -5,39 +5,40 @@
     , is:  "ionify: invoked object notation implemented for your web"
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211110
-    , at:  -0.043
+    , to:  -8.20211124
+    , at:  -0.044
     , we:
-        [" will add tests for web@ionify & its actions	                             "
-        ," will set all ~get actions' ionid@ domains to the current ion's.           "
-        ," will set ~debug:{member:true|false} = ion member to debug.                "
-        ," want to adopt ajile.test.inlineLoader to load inline code!                "
-        ," want all ~get.then to delete script.onload after ~then for memory perf?   "
-        ," like ~get to be the first ion sensor that queues ions for ~on sensing     "
-        +" it enables getting ions like ions@ before sensors activate.               "
-        ," were ... "
-        ," must ... "
-        ," want ... "
-        ," like ... "
+        [ "will add tests for web@ionify & its actions	                             "
+        , "will set all ~get actions' ionid@ domains to the current ion's.           "
+        , "will set ~debug:{member:true|false} = ion member to debug.                "
+        , "want to adopt ajile.test.inlineLoader to load inline code!                "
+        , "want all ~get.then to delete script.onload after ~then for memory perf?   "
+        , "like ~get to be the first ion sensor that queues ions for ~on sensing     "
+        + "it enables getting ions like ions@ before sensors activate.               "
+        , "were ... "
+        , "must ... "
+        , "want ... "
+        , "like ... "
         ]
-    }
+    },
 
-, on:
+  on:
     [ ['get', 'in', 'then', 'after']
     , ['get'      , 'then', 'after']
     , ['get', 'in', 'then']
     , ['get'      , 'then']
-    , ['get', 'in']
+    , ['get', 'in'  ]
+    , ['get', 'and' ]
     , ['get']
-    ]
+    ],
 
-, valueOf
-:   function hip    ()
+  valueOf:
+    function hip    ()
       { this.ionify ()
-      }
+      },
 
-, ionify
-:   function ionifyWeb ()
+  ionify:
+    function ionifyWeb ()
       { Object.prototype.valueOf.ionified = this
       ; var web        = this
       ; web.get.with   = web
@@ -45,46 +46,46 @@
       ; web.ready     ()
       ; web.locate    ()
       ; web.getScript ({at:'on.ion@ionify'})
-      }
+      },
 
-, watch
-:   function watch ()
+  watch:
+    function watch ()
       { onerror =
           function onUncaughtError (message, url, line, column, error)
            { ~{warn : [message, error && error.stack]}
            ; ~{debug: [message, 'errorstack', url, line, column, error]}
            ;  return true
            }
-      }
+      },
 
-, ready
-:   function ready ()
+  ready:
+    function ready ()
       {   var error = this.errors
       ;   if (typeof document == 'undefined') throw new Error (error.noDOM)
       ;   return true
-      }
+      },
 
-, errors
-:   { noDOM   : "web@ionify needs the DOM: Document Object Module API"
+  errors:
+    { noDOM   : "web@ionify needs the DOM: Document Object Module API"
     , noScript: "No script url or code found in "
-    }
+    },
 
-, locateInfo
-:   [" note: senses ionify's path for locating & loading its ions. "
+  locateInfo:
+    [" note: senses ionify's path for locating & loading its ions. "
     ,/ note: locates via most to least accurate techniques.        /
     ," will: sense /ions/ path & only when unable apply hardcode.  "
-    ]
-, locate
-:   function locate ()
+    ],
+  locate:
+    function locate ()
       { var script  =[  document.currentScript ,,]
                     ||  document.scripts
                     ||  document.head.getElementsByTagName ('script')
           , path    =   script && script [script.length - 2].src
           ; path    &&  (this.get$.PATH.ionify = path.replace (/(.+)\/.+$/, "$1/ions/"))
-      }
+      },
 
-, getScript
-:   function getScript (ion)
+  getScript:
+    function getScript (ion)
       { var  web = getScript.with   || (getScript == this.getScript ? this : null)
           , code = String (ion.code || '')
           ,  url = String (ion.at   || '')
@@ -154,24 +155,27 @@
                                          + /*(ext ? ext [1] :*/(get$.TYPE)
             }
     },
- "get then info":
-    ["  get: Ensure it's an array          "
-    ,"   in: Ensure it's an expected value "
-    ," then: Create beacon  function       "
-    ,"  get: Create scripts with in & then "
-    ,"  get: Attach scripts to webi        "
+ "get info":
+    [ " and: create & invoke a ~do with it"
+    , " get: ensure it's an array         "
+    , "  in: ensure it's an expected value"
+    , "then: create beacon  function      "
+    , " get: create scripts with in & then"
+    , " get: attach scripts to webi       "
     ]
 ,"get then"         :"get"
 ,"get then after"   :"get"
 ,"get in"           :"get"
 ,"get in then"      :"get"
 ,"get in then after":"get"
+,"get and"          :"get"
 , get:
     function get ()
       { var ion  =  this
-          , ions =  Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
+        ion.and && ~{do:ion.and}
+
+        var ions =  Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
           , todo =  ion.then
-          ;
 
         if (todo)
           { var on  = {on:ions, do:todo, after:ion.after}
