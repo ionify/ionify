@@ -2,42 +2,47 @@
 ~
 { re:
     { id:  'use@ionify'
-    , is:  'action'
-    , by: ['mike.lee@ionify', 'team']
+    , of:  'core'
+    , as:  'action'
+    , by: ['mike.lee@ionify.net', 'team']
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -8.20211126
     , at:  -0.1
-    , it: "enables the use of an ion's thing(s)"
+    , is: "enabling the use of an ion's thing(s)"
     , we:
-        [ "like +get.use.in.as: helps wakatta + is like ajile"
-                  +
-                  { use: "thing"    || ["thing", "...", "other.thing"]
-                  ,  in:  this.item || "ion.id"
-                  ,  as: "alias"
-                  }
-        , "will confirm ion id for each +on:use before acting"
-        , "will maybe support a 'from' parameter?"
-                  +{use:"show", from:"wakatta.view", in:"game"}
+        [ "must confirm ion id for each ~on:use before acting"
         , "will enable using with ion ids"
-                  +{use:"+wakatta.view.show", in:"+wakatta.game"}
-                  +{use:"+view.thing", as:"+game.view.thing"}
-                  +{use:"+view.show", as:"show", in:"+game"}
+                  +{use: 'wakatta.view@.show',      in: 'wakatta.game@'}
+                  +{use: 'view@.thing', as: 'game.view@.thing'}
+                  +{use: 'view@.show',  as: 'show', in: 'game@'}
+        , "want ~use:{name :alias} in:object"
+        , "want ~use:{name@:alias} in:[ions]"
+        , "want ~use.from for non-ions & ions!"
+                  +{use: 'show', from: 'wakatta.view', in: 'game'}
+        , "want ~get.then: ~use.in.as: helps wakatta & is like ajile's ImportAs"
+                  +
+                  { use: 'thing'    || ['thing', ". . .", 'other.things']
+                  ,  in:  this.item || 'ion.id@'
+                  ,  as: 'alias'
+                  }+
+        + "have this already for ions via ~get.then: ~use? must check! 🤓👨🏾‍💻"
+        + "want for non-ions too even if so!"
         ]
     },
 
   on:
-    [ ["use", "as", "in"]
-  //, ["use", "in"]
-  //,  "use"
+    [ ['use', 'as', 'in']
+  //, ['use', 'in']
+  //,  'use'
     ],
 
   errors:
-    { badAs: "Can't use 'as' with more than 1 'use'"
-    , badIn: "Can only use 'in' with objects"
+    { badAs: "can't ~use.as:[] with multiple ~use:[]"
+    , badIn: "can only ~use.in:{} objects"
     },
 
   getOnUseStories:
-    [ /note: A helper function for using ready-for-use things/
+    [ /note: a helper function for using ready-for-use things/
     , /todo: .../
     ],
   getOnUse:
