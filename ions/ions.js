@@ -1,40 +1,34 @@
 ;
 ~
 { re:
-    { id: 'ions@ionify'
-    , by: 'mike.lee'
-    , at: 'ionify.net'
+    { id: 'ions@'
+    , of: 'core'
+    , as: 'configuration'
+    , by: 'mike.lee@ionify.net'
     , in:
-        [ 'forest-hills.new-york.usa.earth'
-        ,   'san-jose.california.usa.earth'
+        [    'queens-county.new-york.usa.earth'
+        , 'silicon-valley.california.usa.earth'
         ]
     , on: -4.200709
-    , to: -7.20190413
-    , is: -0.1
-    , it:
-        [" configures ionify "
-        ," defines ion domains, paths & more "
-        ," provides domain lists as backup & performance options "
-        ]
-    , we:
-        [" like ions@ionify in main directory with hosts like web@ionify "
+    , to: -8.20211126
+    , at: -0.1
+    , is:
+        [ "configuring ionify "
+        , "defining ion domains, paths & more "
+        , "providing domain lists as backup & performance options "
+        ],
+      we:
+        [ "know this applies ~link.to to override on.ions@'s configuration action"
+        , "like ions@ionify in main directory with hosts like web@ionify"
         ]
     },
 
-  do:
-    [ { link  : '*'
-      , to    : '@ionify'
-      , re    : false
-      , do    : false
-      }
-    ],
-
-  domains
-  : { verify : true
+  domains:
+    { verify : true
     , resolve:
-        { ''             : '@ionify'
-        , '@'            : '@ionify'
-        , '@(.+)\.ionify': '@ionify/$1'
+        {     ''             : '@ionify'
+        ,     '@'            : '@ionify'
+        , '(.+)@(.+)\.ionify': '@ionify/$2/$1'
         , '@ionify':
               [ 'cdn.jsdelivr.net/gh/ionify/ionify@public/'
               , 'ionify.github.io/ionify/'
@@ -45,16 +39,16 @@
         }
     },
 
-  paths
-  : {  ions: './ions/'
+  paths:
+    {  ions: './ions/'
     ,  team: './team/'
     , notes: './notes/'
     , tests: './tests/'
     , tools: './tools/'
     },
 
-  logging
-  : { debug : false
+  logging:
+    { debug : false
     , error : true
     , info  : false
     , log   : false

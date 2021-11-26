@@ -1,24 +1,29 @@
 ;
 ~
 { re:
-    { id:  'ions'
-    , of:  'test.ionify.net'
-    , is:  'configuration'
+    { id:  'ions@'
+    , of:  'tests'
+    , as:  'configuration'
     , by: ['mike.lee', 'team']
-    , in: ['forest-hills.new-york.usa.earth'
-          ,  'san-jose.california.usa.earth'
+    , in: [    'queens-county.new-york.usa.earth'
+          , 'silicon-valley.california.usa.earth'
           ]
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -8.20211126
     , at:  -0.1
-    , it:" configures ionify's examinations "
+    , is: "configuring ionify's examinations"
     },
 
-   debug :  !true,
-   error :   true,
-   info  :  !true,
-   log   :   true,
-   warn  :   true,
-   get   : ['tests']
+  do:
+    [ {get: ['tests']}
+    ],
+
+  logging:
+    { debug :  !true
+    , error :   true
+    , info  :  !true
+    , log   :   true
+    , warn  :   true
+    }
 }
 ;
