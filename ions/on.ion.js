@@ -2,19 +2,19 @@
 ~
 { re:
     { id:  'on.ion@ionify'
-    , is:  'sensor'
+    , as:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211125
+    , to:  -8.20211126
     , at:  -0.1
-    , it:
-        [" implements ionify: invoked object notation implemented for you.            "
-        ," senses ions as activated Objects; i.e. ~{} & ~objectReference.             "
-        ," senses ~on actions.                                                        "
-        ," activates ionify's host environment ion; e.g. web@ionify | node@ionify.    "
-        ," gets all of ionify's supporting ions using its host-provided ~get action.  "
-        ," starts its host application by ~get'ing its launch config [via ions.js].   "
-        ," ... "
+    , is:
+        [ "implementing ionify: invoked object notation implemented for you.       "
+        , "sensing ions as activated Objects; i.e. ~{} & ~objectReference.         "
+        , "sensing ~on actions.                                                    "
+        , "activating ionify's host environment ion; e.g. web@ionify | node@ionify."
+        , "getting ionify's supporting ions using its host-provided ~get action.   "
+        , "starting its host application by ~get'ing its ions.js launch config.    "
+        , "..."
         ],
       we:
         [" were examining if .onion() is the source of ions' lost 'this' reference.   "
@@ -95,7 +95,7 @@
             , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
             ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
             , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'
-            ,      'ions@ionify',         'web.log@ionify',//   'on.do@ionify'
+            ,   'web.log@ionify',            'ions@ionify',//   'on.do@ionify'
             , 'on.ionified@ionify'
             ,      'ions'
             ]
