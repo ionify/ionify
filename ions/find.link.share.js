@@ -2,24 +2,26 @@
 ~
 { re:
     { id:  'find.link.share@ionify'
-    , is:  'action'
+    , as:  'action'
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20211117 : -8.1440 }
+    , to: { 20211125 : -8.0837 }
     , at:  -0.1
-    , it:" provides context via ~link which ensures ions' object-type members can   "
-        +" access their containing ion, ~share for sharing things via domains,      "
-        +" optionally aliased data and-or functionality, and ~find.in for resolving "
-        +" names to ions.                                                           "
-    , we:
-        [" were updating ~link & ~share to use .with vs .our  "
-        ," were implementing ~link.to & ~link.as              "
-        ," will apply unlink when ~link.to is falsey          "
-        ," want to combine ~share & ~link.to                  "
-        ," want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
-        ," want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. "
-        ," like idea of queueing ~find's then doing once ~find's available          "
-        ," like that prototypes could enable automatic context sharing within ions. "
+    , is:
+        [ "providing context via ~link which ensures ions' object-type members can  "
+        + "access their containing ion, ~share for sharing things via domains,      "
+        + "optionally aliased data and-or functionality, and ~find.in for resolving "
+        + "names to ions.                                                           "
+        ],
+      we:
+        [ "were updating ~link & ~share to use .with vs .our  "
+        , "were implementing ~link.to & ~link.as              "
+        , "will apply unlink when ~link.to is falsey          "
+        , "want to combine ~share & ~link.to                  "
+        , "want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    "
+        , "want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. "
+        , "like idea of queueing ~find's then doing once ~find's available          "
+        , "like that prototypes could enable automatic context sharing within ions. "
         ]
     },
 
@@ -132,7 +134,7 @@
           ; (id != 'ion') && !ion.debug && debug.push ("linked "+ id +'.'+ property)
           }
 
-      ! ion.debug && ~{debug:debug}
+      ! ion.debug && debug.length && ~{debug:debug}
         return true
       },
 
