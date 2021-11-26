@@ -5,7 +5,7 @@
     , is:  'action'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211125
+    , to:  -8.20211126
     , at:  -0.1
     , is:" ionify's logging implementation providing:"
         +" ~debug ~error ~info ~log & ~warn "
@@ -42,9 +42,9 @@
   error:
     function error (ion)
       { var logger       =  error.with
-            logger.level = 'error'
-        var state        =  logger.logged (ion)
-        if (!state || typeof ion.error == 'boolean') return state
+      ;     logger.level = 'error'
+      ; var state        =  logger.logged (ion)
+      ; if (!state || typeof ion.error == 'boolean') return state
       ~ new Error (ion.error)
       },
 
@@ -72,7 +72,8 @@
   prepare:
     function prepare (ion)
       { var logger       = prepare. with
-          , logging      = prepare. our  . logging
+          , logging      = prepare. our  . logging   ||
+                          (prepare. our  . logging = {})
           , level        = logger . level
           , message      = ion     [level]
           , state        = prepare [level]
