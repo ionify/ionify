@@ -2,12 +2,13 @@
 ~
 { re:
     { id:  'next.id@ionify'
-    , is:  'action'
+    , of:  'core'
+    , as:  'action'
     , by: ['mike.lee', 'team']
     , on:  -7.20160910
-    , to:  -7.20201029
+    , to:  -8.20211129
     , at:  -0.1
-    , it: "generates sequential ids on-demand"
+    , is: "generating namespaced sequential ids, per request"
     }
 
 , on  : [['next', 'id']]
@@ -32,7 +33,7 @@
 
       ; (id >= my.MAX)  && (id = ids [name] = null)
       ; isNaN (id)      && (id = ids [name] = my.MIN)
-      ;    f0r.id = name + '.' + id
+      ;    f0r.id = name + (id > 0 ? '.' : '') + id
       ; return ids [name]++
       }
 }
