@@ -1,21 +1,21 @@
 ;
 ~
 { re:
-    { id: 'documentation@ions.iskitz.net'
+    { id: 'documenter@ions.iskitz.net'
     , as: 'action'
     , by: 'mike.lee'
     , on: -4.200709
-    , to: -8.20211125
+    , to: -8.20211129
     , at: -0.1
     , is:
-        [" observes & presents live code documentation via these apis:     "
-        +"   ~I: do documentation once; only the 1st time per ~I instance. "
-        +"   ~i: do documentation every time an ~i instance is sensed.     "
+        [ "observes & presents live code documentation via these apis:    "
+        + "  ~I: do documentation once; only the 1st time per ~I instance."
+        + "  ~i: do documentation every time an ~i instance is sensed.    "
         ],
       we:
-        [" plan to improve & expand this ion's behavior    "
-        ," will rename this ion's file to documentation.js "
-        ," will move this ion to ionified.net              "
+        [ "plan to improve & expand this ion's behavior   "
+        , "will rename this ion's file to documenter.js"
+        , "will move this ion to ionified.net             "
         ]
     },
 
@@ -35,15 +35,15 @@
   document (action)
     { var my      =  document.with.my.own
         , message =  action.I || action.i
-        , state   = ('I' in action) ? 'I' : 'i'
+        , who     = ('I' in action) ? 'I' : 'i'
 
-      if( 'I' == state)
+      if( 'I' == who)
         { if( my.presented [message] ) return
               my.presented [message] = true
         }
 
     + {info: true}
-    ~ {info: state + String (message)}
+    ~ {info: who + String (message)}
     }
 }
 ;
