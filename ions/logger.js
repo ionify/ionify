@@ -5,16 +5,16 @@
     , of:  'core'
     , as:  'action'
     , by: ['mike.lee', 'kaito.lee', 'team']
-    , in: ['silicon-valley.california.us.earth']
+    , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
     , to:  -8.20211201
     , at:  -0.1
     , is:
         [ "ionify's log recording actions:"
-        ,  " ~{debug}, ~{error}, ~{info}, ~{log} & ~{warn}"
+        ,  " ~{debug:*}, ~{error:*}, ~{info:*}, ~{log:*} & ~{warn:*}"
 
         , "~ {log_level: true || false}"
-        +  "  true enables & false disables recording at that log level"
+        +  "  true enables & false disables recording at the specified log level"
         +  "  i.e. debug, error, info, log, or warn."
 
         , "+ {log_level: null}"
@@ -22,18 +22,17 @@
         ,  "  the unary operator is critical for acquiring a correct log level state"
         ,  "  +|- unary operators always correctly report the log level's state"
         ,  "  a ~ unary operator  always reports the log level state as enabled 👎🏾"
-        ,  "  ~~ {loglevel:null} can be used to report the correct log level"
+        ,  "  ~~ {log_level:null} can be used to report the correct log level"
 
         , '+ {log_level: "message"}'
-        ,  "  records a message at that log level if it's enabled"
+        ,  "  records a message at the specified log level if it's enabled"
 
         , '+ {log_level: reference}'
-        ,  "  passes the referenced object to the underlying logger, e.g. console"
-        +  "  enabling more elaborate, developer-level, object rendering."
+        ,  "  passes the referenced object to the underlying logger, e.g. console,"
+        +  "  to enable more informative, developer-level, object rendering"
         ],
       we:
         [ "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
-        , "like updating to only use alert() on mobile (e.g. iOS)"
         , "like moving display logic to host, e.g. web:alert vs web+node:console"
         ]
     },
@@ -42,12 +41,17 @@
     [ 'error', 'warn', 'debug', 'log', 'info'
     ],
 
+
   valueOf :function
-  logger  ()
-      { this.report ()
-        delete this.valueOf
-      ~ this & this.record.our.logging
+   logger ()
+      { this.report ({error:null, warn:null, debug:null, log:null, info:null})
+        this.ionify ()
       },
+
+  ionify :function
+  ionify ()
+    { delete (this.valueOf)  &&  ~this
+    },
 
   debug :function
   debug (action)
@@ -93,55 +97,46 @@
 
   record :function
   record (action)
-    { var logger  = record.with
+    { var toggled
+        , logger  = record.with
         , logging = record.our.logging   ||
                    (record.our.logging = {})
         , level   =  logger.level
-        , message = action [level]
-        , state   = record [level]
-        ; logger.state  = !!state
-        ; logger.id     =   action.re.from || logger.re.id
+        , message =  action [level]
+        , state   = logging [level]
+        ; logging [level] = logger.state = state
 
       if (null === message) return false
 
-      if('boolean' == typeof message)
-        if( state = message != state)
-          { logger.state = record [level] = message
-          ; message      = (logger.state ? "✅" : "🚫") + " ~" + level
+      if('boolean' ==  typeof message)
+      if( toggled  =  (message !=  state))
+          {   logging [level]   =  state = logger.state = message
+          ;   message           = (state ? "✅" : "🚫") + " ~"  + level
           }
 
-      logger.state
-        &&  Array.isArray   ( message   )
-        && 'string' == typeof message [0]
-        && (message =  message.join (" "))
+      state
+        &&   Array.isArray   ( message   )
+        &&  'string' == typeof message [0]
+        &&  (message =  message.join (" "))
+
+      logger.id = action.re.from || logger.re.id
 
       logger.message
-        = 'string' == typeof message
-        ?  logger.icon [logger.level] + logger.id + ": " + message
-        : [logger.icon [logger.level] + logger.id + ": " , message]
+        =   'string' == typeof message
+        ?    logger.icon [logger.level] + logger.id + ": " + message
+        :   [logger.icon [logger.level] + logger.id + ": " , message]
 
-      logging [level] = logger.state
-
-      return state
+      return toggled ? true : action [level] === true ? false : state
     },
 
-  errors:
-    { noAlert   : "logger@ionify needs the window.alert () api"
-    , noConsole : "logger@ionify needs the console.log  () api"
+  messages:
+    { noConsole: "logger@ionify is more informative with the console.*() reporting api"
+    , noReports: "logger@ionify couldn't find the alert() or console.*() reporting apis"
     },
 
   report :function
-  report ()
-    { var errors= this.errors
-        , has   = { console: typeof console != 'undefined'
-                  ,   alert: typeof alert   != 'undefined'
-                  }
-
-      ! (has.console ||   has.alert)
-      ? !has.console && ~ new Error (errors.noConsole)
-      : !has.alert   && ~ new Error (errors.noAlert)
-
-      var icon =
+  report (action)
+    { var icono =
           { debug: "🐛"
           , error:  ""
           ,  info: "💡"
@@ -149,19 +144,60 @@
           ,  warn:  ""
           }
 
-      var icona =
-          { debug: icon.debug
-          , error: "🚫"
-          ,  info: icon.info
-          ,   log: icon.log
-          ,  warn: "⚠️"
+      var icons =
+          { debug: icono.debug + ' '
+          , error: "❌ "
+          ,  info: icono.info  + ' '
+          ,   log: icono.log   + ' '
+          ,  warn: "⚠️ "
           }
 
-      var iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
-        , onMobile      = document && document.URL.match (iOSPath)
-        , logger        = this
-        ; logger.report = onMobile ? logger.popup : logger.console
-        ; logger.icon   = onMobile ?        icona : icon
+      var iOSPath  = (/^file:\/\/.*\/var\/mobile\//)
+        , onMobile = document && document.URL.match (iOSPath)
+        , logger   = this
+        , missing  = logger.missing
+        ; missing.console = typeof console == 'undefined'
+        ; missing.alert   = typeof alert   == 'undefined'
+
+      logger.report
+        = !onMobile
+        ?     logger.console
+        :     missing.alert ? logger.console : logger.popup
+
+        = onMobile
+        ?    !missing.alert ? logger.popup : logger.console
+        :     logger.console
+
+      logger.icon
+        = missing.console
+        ?     icons
+        :    !onMobile ? icono
+                       : missing.alert ? icono : icons
+
+      if( missing.console)
+        if( missing.alert)
+          { logger.report = missing
+            logger.ionify ()
+          ~ action
+          ~ new Error (logger.messages.noReports)
+          }
+        else
+          { logger.report = logger.popup
+            logger.ionify ()
+          ~ {warn: true }
+          & {warn: logger.messages.noConsole}
+          & {warn: logger.report.our.logging.warn}
+          }
+      else logger.ionify ()
+
+    ~ action
+    },
+
+  missing :function
+  missing (action)
+    { var    logger=missing.with
+    ;        logger.record (action)
+    ; return logger.state
     },
 
   console :function
