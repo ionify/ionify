@@ -34,6 +34,12 @@
       we:
         [ "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
         , "like moving display logic to host, e.g. web:alert vs web+node:console"
+
+        , "like defining & sensing log reporting api actions; maybe hosts can "
+        + "share their own so logger can sesnse & adopt them! 🤓"
+
+        , "like adding ~{log_level:..., to:'nowhere'||'webview'} later but "
+        + "know it enables in-context-session entities to unexpectedly hide records"
         ]
     },
 
