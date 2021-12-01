@@ -1,13 +1,13 @@
 ;
 ~
 { re:
-    { id:  'log.test@ionify'
+    { id:  'logger.test@ionify'
     , of:  'tests'
     , as:  'test.0'
     , by: ['mike.lee', 'kaito.lee', 'team']
     , in: ['silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -8.20211130
+    , to:  -8.20211201
     , at:  -0.1
     , is: "testing ionify's log recording actions"
     , we:
@@ -24,8 +24,8 @@
         ]
     },
 
-  valueOf      :function
-  test_logging ()
+  valueOf     :function
+  test_logger ()
     { this.test_debug ()
       this.test_error ()
       this.test_info  ()

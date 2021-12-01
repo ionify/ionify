@@ -1,13 +1,13 @@
 ;
 ~
 { re:
-    { id:  'log@ionify'
+    { id:  'logger@ionify'
     , of:  'core'
     , as:  'action'
     , by: ['mike.lee', 'kaito.lee', 'team']
     , in: ['silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -8.20211130
+    , to:  -8.20211201
     , at:  -0.1
     , is:
         [ "ionify's log recording actions:"
@@ -127,8 +127,8 @@
     },
 
   errors:
-    { noAlert   : "log@ionify needs the window.alert () api"
-    , noConsole : "log@ionify needs the console.log  () api"
+    { noAlert   : "logger@ionify needs the window.alert () api"
+    , noConsole : "logger@ionify needs the console.log  () api"
     },
 
   record :function

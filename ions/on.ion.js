@@ -6,7 +6,7 @@
     , as:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211130
+    , to:  -8.20211201
     , at:  -0.1
     , is:
         [ "implementing ionify: invoked object notation implemented for you.       "
@@ -95,7 +95,7 @@
         { get:
             [   'next.id@ionify',        'id@ionify', 'find.link.share@ionify'
             ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
-            ,   'web.log@ionify',   'on.aeon@ionify',              'do@ionify'
+            ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
             ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
             ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
             ,//   'on.do@ionify'
