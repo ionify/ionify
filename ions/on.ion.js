@@ -2,10 +2,11 @@
 ~
 { re:
     { id:  'on.ion@ionify'
+    , of:  'core'
     , as:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211126
+    , to:  -8.20211130
     , at:  -0.1
     , is:
         [ "implementing ionify: invoked object notation implemented for you.       "
@@ -19,6 +20,7 @@
       we:
         [" were examining if .onion() is the source of ions' lost 'this' reference.   "
         ," were implementing ~on.do...                                                "
+        ," like removing .re.id & .re's temporarily made for anions: anonymous ions   "
         ," will make .resolve() to convert ids to ions: e.g. ionified references.     "
         ," will .resolve this.* & ~* in strings & stories to actual ion references.   "
         ," will .resolve action@test.ionify to test/action.js                         "
@@ -91,12 +93,12 @@
 
         ~
         { get:
-            [   'next.id@ionify',              'id@ionify',   'on.error@ionify'
-            , 'on.errors@ionify', 'find.link.share@ionify',        'no@ionify'
-            ,   'on.aeon@ionify',              'do@ionify',   'on.ions@ionify'
-            , 'on.action@ionify',       'on.storie@ionify',       'use@ionify'
-            ,   'web.log@ionify',            'ions@ionify',//   'on.do@ionify'
-            , 'on.ionified@ionify'
+            [   'next.id@ionify',        'id@ionify', 'find.link.share@ionify'
+            ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
+            ,   'web.log@ionify',   'on.aeon@ionify',              'do@ionify'
+            ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
+            ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
+            ,//   'on.do@ionify'
             ,      'ions'
             ]
         , in: 'sequence'||'order'
