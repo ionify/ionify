@@ -6,7 +6,7 @@
     , as:  'action'
     , by: ['mike.lee', 'team']
     , on:  -7.20160910
-    , to:  -8.20211129
+    , to:  -8.202111290555
     , at:  -0.1
     , is: "generating namespaced sequential ids, per request"
     }
@@ -16,25 +16,25 @@
 , MIN : Number.MIN_SAFE_INTEGER || -9007199254740991
 , ids : {}
 ,
-  valueOf:
-    function nextid ()
-      { this ["next id"].with = this
-      ; delete this.valueOf
-      ~ this
-      },
+  valueOf :function
+  nextid  ()
+    { this ['next id'].with = this
+    ; delete this.valueOf
+    ~ this
+    },
 
-  "next id":
-    function nextId (ion)
-      { var my   = nextId.with
-          , ids  = my.ids
-          , name = ion.next
-          , f0r  = ion.id.re || (ion.id.re = {})
-          , id   = ids [name]
+ 'next id':function
+  next_id (action)
+    { var my   = next_id.with
+        , ids  = my.ids
+        , name = action.next
+        , f0r  = action.id.re || (ion.id.re = {})
+        , id   = ids [name]
 
-      ; (id >= my.MAX)  && (id = ids [name] = null)
-      ; isNaN (id)      && (id = ids [name] = my.MIN)
-      ;    f0r.id = name + (id > 0 ? '.' : '') + id
-      ; return ids [name]++
-      }
+    ; (id >= my.MAX)  && (id = ids [name] = null)
+    ; isNaN (id)      && (id = ids [name] = my.MIN)
+    ;    f0r.id = name + (id > 0 ? '.' : '') + id
+    ; return ids [name]++
+    }
 }
 ;
