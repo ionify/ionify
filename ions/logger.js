@@ -32,10 +32,9 @@
         +  "  enabling more elaborate, developer-level, object rendering."
         ],
       we:
-        [ "will create log@ & move console & all ~log.ing there"
-        , "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
+        [ "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
         , "like updating to only use alert() on mobile (e.g. iOS)"
-        , "like moving display logic to host, e.g. alert vs console"
+        , "like moving display logic to host, e.g. web:alert vs web+node:console"
         ]
     },
 
@@ -45,28 +44,28 @@
 
   valueOf :function
   logger  ()
-      { this.record ()
+      { this.report ()
         delete this.valueOf
-      ~ this & this.format.our.logging
+      ~ this & this.record.our.logging
       },
 
   debug :function
   debug (action)
     { var    logger       =  debug.with
     ;        logger.level = 'debug'
-    ; return logger.record  (action)
+    ; return logger.report  (action)
     },
 
   error :function
   error (action)
-    { var logger       =  error.with
-          logger.level = 'error'
+    { var logger       = error.with
+        ; logger.level = 'error'
 
-      var state        =  logger.record  (action)
-        , message      =  action.error
+      var state   = logger.report (action)
+        , message = action.error
 
-      if( null    ===        message )         return state
-      if('boolean' != typeof message && state)   ~new Error (message)
+      if( null === message) return state
+      if('boolean' != typeof message && state) ~new Error (message)
 
       return state
     },
@@ -75,39 +74,39 @@
   info (action)
     { var    logger       =  info.with
     ;        logger.level = 'info'
-    ; return logger.record  (action)
+    ; return logger.report  (action)
     },
 
   log :function
   log (action)
     { var    logger       =  log.with
     ;        logger.level = 'log'
-    ; return logger.record  (action)
+    ; return logger.report  (action)
     },
 
   warn :function
   warn (action)
     { var    logger       =  warn.with
     ;        logger.level = 'warn'
-    ; return logger.record  (action)
+    ; return logger.report  (action)
     },
 
-  format :function
-  format (action)
-    { var logger       = format.with
-        , logging      = format.our.logging   ||
-                        (format.our.logging = {})
-        , level        =  logger.level
-        , message      = action [level]
-        , state        = format [level]
-        ; logger.state = !!state
-        ; logger.id    = action.re.from || logger.re.id
+  record :function
+  record (action)
+    { var logger  = record.with
+        , logging = record.our.logging   ||
+                   (record.our.logging = {})
+        , level   =  logger.level
+        , message = action [level]
+        , state   = record [level]
+        ; logger.state  = !!state
+        ; logger.id     =   action.re.from || logger.re.id
 
       if (null === message) return false
 
       if('boolean' == typeof message)
         if( state = message != state)
-          { logger.state = format [level] = message
+          { logger.state = record [level] = message
           ; message      = (logger.state ? "✅" : "🚫") + " ~" + level
           }
 
@@ -131,28 +130,16 @@
     , noConsole : "logger@ionify needs the console.log  () api"
     },
 
-  record :function
-  record ()
+  report :function
+  report ()
     { var errors= this.errors
         , has   = { console: typeof console != 'undefined'
                   ,   alert: typeof alert   != 'undefined'
                   }
 
-      ! (has.console ||  has.alert)
-      ? !has.console && ~errors & errors.noConsole
-      : !has.alert   && ~errors & errors.noAlert
-
-      function
-      cons0le (action)
-        { format (action) && console [logger.level] (logger.message)
-        ; return logger.state
-        }
-
-      function
-      popup (action)
-        { format (action) && alert (logger.message)
-        ; return logger.state
-        }
+      ! (has.console ||   has.alert)
+      ? !has.console && ~ new Error (errors.noConsole)
+      : !has.alert   && ~ new Error (errors.noAlert)
 
       var icon =
           { debug: "🐛"
@@ -170,12 +157,25 @@
           ,  warn: "⚠️"
           }
 
-      var logger        = this
-        , format        = logger.format
-        , iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
-        , noConsole     = document && document.URL.match (iOSPath)
-        ; logger.record = noConsole ? popup : cons0le
-        ; logger.icon   = noConsole ? icona : icon
+      var iOSPath       = (/^file:\/\/.*\/var\/mobile\//)
+        , onMobile      = document && document.URL.match (iOSPath)
+        , logger        = this
+        ; logger.report = onMobile ? logger.popup : logger.console
+        ; logger.icon   = onMobile ?        icona : icon
+    },
+
+  console :function
+  cons0le (action)
+    { var    logger=cons0le.with
+    ;        logger.record (action) && console [logger.level] (logger.message)
+    ; return logger.state
+    },
+
+  popup :function
+  popup (action)
+    { var    logger=popup.with
+    ;        logger.record (action) && alert (logger.message)
+    ; return logger.state
     }
 }
 ;
