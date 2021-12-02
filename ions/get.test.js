@@ -2,11 +2,13 @@
 ~
 { re:
     { id:  'get.test@ionify'
+    , of:  'tests'
+    , as: 'test.0'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211125
+    , to:  -8.20211129
     , at:  -0.1
-    , is:  "testing ionify's ~get api"
+    , is:  "testing ionify's ~get action"
     }
 }
 
@@ -50,19 +52,20 @@
 { info:false }
 
 ~
-{ get : 'https://ionify.net/ions/test/log.js'
+{ get : '../ions/i'
 , in  : 'order'
 , then:
     { log: "✅ ~get script in order then oli {}"
     }
 }
 +
-{ get : 'https://ionify.net/ions/test/log.js'
+{ get : '../ions/i'
 , in  : 'order'
-, then:
-    function hi ()
-      {~{log: ["✅ ~get script in order then function ()", hi.with.get]}
-      }
+, then:  function
+   hi()
+    {
+    + {log: ["✅ ~get script in order then function ()", hi.with.get]}
+    }
 }
 
 
@@ -73,10 +76,10 @@
     [ 'https://cdn.jsdelivr.net/gh/iskitz/ajile/use/com.iskitz.ajile.js?mvcoff,mvcshareoff'
     , 'https://cdn.jsdelivr.net/gh/iskitz/ajile/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js'
     ],
-  then:
-    function onLoadExample ()
-      {  ~com.iskitz.ajile.examples.LoadExample
-      }
+  then:function
+  onLoadExample ()
+    {  ~com.iskitz.ajile.examples.LoadExample
+    }
 }
 
 
@@ -91,10 +94,10 @@
       , then: 'doIt'
       }
     ],
-  doIt:
-    function onIncludeExample ()
-      {  ~com.iskitz.ajile.examples.IncludeExample
-      }
+  doIt:function
+  onIncludeExample ()
+    {  ~com.iskitz.ajile.examples.IncludeExample
+    }
 }
 
 /*
