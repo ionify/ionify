@@ -2,19 +2,21 @@
 ~
 { re:
     { id:  'on.aeon@ionify'
-    , of:  'ionify'
-    , is:  'sensor'
+    , of:  'core'
+    , as:  'sensation'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201029
+    , to:  -8.20211203
     , at:  -0.1
-    , it:
-        [ "senses all array-expressed object notations like:      "
+    , is:
+        [ "sensing all array-expressed object notations like:      "
         + "  ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
         ],
       we:
-        [ "will rename this to on.list since it handles lists of ions via arrays"
-        , "were debugging ~find'ing aeon sensors like aesop"
+        [ "will rename on.array"
+        , "must fix aeon(🐛) for [//+,''] sensors||AEON run-time switching"
+        , "WERE debugging ~find'ing aeon sensors like aesop"
+        , "like fixing on:Array to have separate coexistent aeon & aesop handlers"
         , "want to move aesop@ to its own ion"
         , "... "
         ]
