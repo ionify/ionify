@@ -2,25 +2,26 @@
 ~
 { re:
     { id:  'do@ionify'
-    , is:  'action'
+    , of:  'core'
+    , as:  'action'
     , by: ['mike.lee','team']
     , on:  -4.200709
-    , to:  -7.20210417
+    , to:  -8.20211203
     , at:  -0.1
-    , it:
-        [" implements ~on.do.after to do something after sensing specific ions"
-        ," implements: "
-        ," ~ {   on:['ids'], do:action, after:'all'|'any'|'each'|'1..n'}"
-        ," + {after:['ids'], do:action}  "
-        ," + {on: String || [], do: ...} "
-        ," + {do: String || []}          "
+    , is:
+        [ "implementing ~on.do.after to do something after sensing specific ions"
+        , "implementing: "
+        , "~ {   on:['ids'], do:action, after:'all'|'any'|'each'|'1..n'}"
+        , "+ {after:['ids'], do:action}  "
+        , "+ {on: String || [], do: ...} "
+        , "+ {do: String || []}          "
         ],
       we:
-        [" were ... "
-        ," must ... "
-        ," will ... "
-        ," like ionified [typeof todo] --> ~ {is:todo, type:'ionified'} "
-        ," like ... "
+        [ "were implementing & testing on.do.after.# sensor disabling..."
+        , "must ... "
+        , "will ... "
+        , "like ionified [typeof todo] --> ~ {is:todo, type:'ionified'} "
+        , "like ... "
         ]
     },
 
@@ -55,6 +56,7 @@
     ,       any:'any'
     ,      each:'each'
     ,      null:'all'
+    ,    number:'number'
     , undefined:'all'
     },
 
@@ -64,7 +66,8 @@
           , ions  = ion.on
           , after = ion.after || 'all'
           , own   = doAfter.with
-          , ready = own [own.ensure [after] || 'all'] (ion)
+          , sense = own.ensure [after] || own.ensure [typeof after] || 'all'
+          , ready = own [sense] (ion)
           , todo  = ion.do/*
           ; todo  = doAfter.our.ionified [typeof todo]
                   ?   todo
@@ -80,14 +83,17 @@
 
   all:
     function afterAll (ion)
-      { var got  = {}
+      { var go   = afterAll.with.go
+          , got  = {}
           , ions = ion.on
           , todo = ion.do
+          , them = {}
           , done = false
           ;
         function afterAllIons ()
           { if (done)  return
-            var  id  = (this.re && this.re.id) || this.id
+            var   id = (this.re && this.re.id) || this.id
+            them[id] = this[id]
             got [id] = true
           ~ {debug: `\nget: ${ions}\ngot: ${Object.keys (got)}`}
             for ( var next = -1
@@ -97,22 +103,23 @@
                 ) if (!got [ions [next]]) return
             done = true
           ~ {on:ions, no:afterAllIons}
-          ~ todo
+            go ({do:todo, with:them})
           }
         return afterAllIons
       },
 
   any:
-    function afterAny (ion)
+    function afterAny (action)
       { var done = false
-          , todo = ion.do
+          , todo = action.do
+          ,   go = afterAny.with.go
 
         function afterAnyIon ()
           { var ion = this
           ~ {on:ion.re.id, no:afterAnyIon}
             if (done) return
             done = true
-          ~ todo
+            go ({do:todo, with:ion})
           }
         return afterAnyIon
       },
@@ -120,6 +127,7 @@
   each:
     function afterEach (ion)
       { var todo = ion.do
+          , go = afterEach.with.go
 
         function afterEachIon ()
           { if (!this) return
@@ -134,11 +142,21 @@
     function afterNumberOf (ion)
       { var count = 0
           , todo  = ion.do
+          , go = afterNumberOf.with.go
 
         function afterNumberOfIons ()
-          { !isNaN (ion.after) && (ion.after == ++count) && ~todo
+          { if (isNaN (ion.after) || (ion.after >= ++count)) return
+            go ({do:todo, with:this})
           }
         return afterNumberOfIons
+      },
+
+   go :function
+   go (todo)
+      { var can = ! ('in' in todo.do)
+        can && (todo.do.in = todo.with)
+             ~  todo.do
+        can && (todo.do.in = null)
       }
 }
 ;
