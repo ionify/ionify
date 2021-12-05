@@ -2,23 +2,24 @@
 ~
 { re:
     { id:  'id@ionify'
-    , is:  'sensor'
+    , of:  'core'
+    , as:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201030
+    , to:  -8.20211205
     , at:  -0.1
-    , it:
-        [" ensures that all ionified objects have an re.id.                  "
-        ," sets an object's re.id value as a member mapped to its object re. "
-        ," sets missing re & re.id on an object with a domain-named member.  "
-        ," sets missing re on a object.                                      "
-        ," sets missing re.id via ~next.id when possible.	                 "
+    , is:
+        [ 'ensuring that all ionified objects have an re.id.                  '
+        , "setting an object's re.id value as a member mapped to its object re"
+        , 'setting missing re & re.id on an object with a domain-named member '
+        , 'setting missing re on a object.                                    '
+        , 'setting missing re.id via ~next.id when possible.	                '
         ]
         ,
       we:
-        [" will ensure that ~debug & ~next.id don't keep using setID.nextID. "
-        ," will 👨🏾‍💻 id.domain++ via id:{domain:'domain',toString:'id@domain'} "
-        ," like linking this ion although it doesn't currently rely on it.   "
+        [ "will ensure that ~debug & ~next.id don't keep using setID.nextID "
+        , "will 👨🏾‍💻 id.domain++ via id:{domain:'domain',toString:'id@domain'}"
+        , "like linking this ion although it doesn't currently rely on it   "
         ]
     },
 
@@ -58,11 +59,11 @@
 
         !   ion.re.id
       //&& !ion.debug || (ion.re.as != 'logger')
-      //&& (console.log ("no ~next.id; debug?", !!ion.debug, "using "+setID.nextId),true)
+      //&& (console.log ('no ~next.id; debug?', !!ion.debug, 'using '+setID.nextId),true)
         && (ion.re.id = 'ion.'
                       + (setID.nextId ? ++setID.nextId
                                       :  (setID.nextId = 1)))
-                                      ;
+                                      + '@'
         id = ion.re.id
         !ion [id] && (ion [id] = ion.re)
         return id
