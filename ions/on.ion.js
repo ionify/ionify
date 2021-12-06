@@ -6,7 +6,7 @@
     , as:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211201
+    , to:  -8.20211205
     , at:  -0.1
     , is:
         [ "implementing ionify: invoked object notation implemented for you.       "
@@ -18,7 +18,7 @@
         , "..."
         ],
       we:
-        [" were examining if .onion() is the source of ions' lost 'this' reference.   "
+        [" were examining if .ion() is the source of ions' lost 'this' reference.   "
         ," were implementing ~on.do...                                                "
         ," like removing .re.id & .re's temporarily made for anions: anonymous ions   "
         ," will make .resolve() to convert ids to ions: e.g. ionified references.     "
@@ -46,66 +46,66 @@
         ]
     },
 
-  valueOf:
-    function onion  ()
-      { this.ionify ()
-      },
+  valueOf:function
+  ionify ()
+    { this.object ()
+    },
 
-  ionify:
-    function ionify ()
-      { var  ionified  = Object.prototype.valueOf.ionified
-          ;    delete    Object.prototype.valueOf.ionified
-          ;  ionified && delete  ionified.valueOf
+  object :function
+  object ()
+    { var  ionified  = Object.prototype.valueOf.ionified
+        ;    delete    Object.prototype.valueOf.ionified
+        ;  ionified && delete  ionified.valueOf
 
-        var  onion            = this
-          ;  onion.sense.on   = onion.on
-          ;  onion.onion.with = onion.on.with = onion.onSensor.with
-          =  onion
-        //;  onion.  on ({on:'on'   ,     on: onion.on   })
-          ;  onion.  on ({on: Object, Object: onion.onion})
+      var  ionify           = this
+        ;  ionify.sense.on  = ionify.on
+        ;  ionify.ion.with  = ionify.on.with = ionify.onSensor.with
+        =  ionify
+      //;  ionify.on ({on:'on'   ,     on: onion.on   })
+        ;  ionify.on ({on: Object, Object: ionify.ion})
 
-        ~
-        { on:
-           'no@ionify',      //must: sense by id because ~on:[] overrides previous sensors
-           'no@ionify':      //      which causes this sensor to be lost on find.link.share@.
-            function on (no)
-              { var space = no.on.our   //must: use this=no@.on since on.our isn't linked
-              ; space.share             //      because find.link.share@ wasn't yet loaded.
-                  ({ link              :
-                      { activate       : onion.activate
-                      , deactivate     : onion.deactivate
-                      , disable        : onion.disable
-                      , ionified       : onion.ionified
-                      , known          : onion.known
-                      , sense          : onion.sense
-                      , sortKnownWords : onion.sortKnownWords
-                      }
-                  ,  to                : (~/will be onion.re.domain/, onion.re.id)
-                  })
-              ; no.no ({on:'no@ionify', no:on})
-              ; space.link (onion)
-              ; space.link (ionified)
-              ; space = onion = ionified = null //performance? memory release?
-              }
-        }
+      ~
+      { on:
+          'no@ionify',      //must: sense by id because ~on:[] overrides previous sensors
+          'no@ionify':      //      which causes this sensor to be lost on find.link.share@.
+          function on (no)
+            { var space = no.on.our   //must: use this=no@.on since on.our isn't linked
+            ; space.share             //      because find.link.share@ wasn't yet loaded.
+                ({ link              :
+                    { activate       : ionify.activate
+                    , deactivate     : ionify.deactivate
+                    , disable        : ionify.disable
+                    , ionified       : ionify.ionified
+                    , known          : ionify.known
+                    , sense          : ionify.sense
+                    , sortKnownWords : ionify.sortKnownWords
+                    }
+                ,  to                : (~/want ion.re.id.domain/, ionify.re.id)
+                })
+            ; no.no ({on:'no@ionify', no:on})
+            ; space.link (ionify)
+            ; space.link (ionified)
+            ; space = ionify = ionified = null //performance? memory release?
+            }
+      }
 
-        ionified <= /todo: via .ionifi3d ()/
+      ionified <= /todo: via .ionifi3d ()/
 
-        ~
-        { get:
-            [   'next.id@ionify',        'id@ionify', 'find.link.share@ionify'
-            ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
-            ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
-            ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
-            ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
-            ,//   'on.do@ionify'
-            ,      'ions'
-            ]
-        , in: 'sequence'||'order'
-        }
+      ~
+      { get:
+          [   'next.id@ionify',        'id@ionify', 'find.link.share@ionify'
+          ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
+          ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
+          ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
+          ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
+          ,//   'on.do@ionify'
+          ,      'ions'
+          ]
+      , in: 'sequence'||'order'
+      }
 
-        return true
-      },
+      return true
+    },
 
   ionifi3d:
     function ionified ()
@@ -268,75 +268,75 @@
     , /todo: Ignore similar actions after match: ~get ~get.then	      /
     ],
 
-  onion:
-    function ion (object)
-      { var id
-          , link
-          , ionify      = ion.with
-        //, ionified    = ionify.ionified
-          , sense       = ionify.sense
-          , debug       = []
-          , our         = ion.our
-          ; object || (object = this)
+  ion :function
+  ion (object)
+    { var id
+        , link
+        , ionify      = ion.with
+      //, ionified    = ionify.ionified
+        , sense       = ionify.sense
+        , debug       = []
+        , our         = ion.our
+        ; object || (object = this)
 
-      //; our && our/*ionify*/.id  (object)
-        !(object.next && object.id) && !(  'id' in object) && (object.id   = id   = true) ///*our && our*/ionify.link (object)
-        !(object.next && object.id) && !('link' in object) && (object.link = link = true) ///*our && our*/ionify.link (object)
-        ; debug.push ("onION:", object.re ? object.re.id : "anonymous")
+    //; our && our/*ionify*/.id  (object)
+      !(object.next && object.id) && !(  'id' in object) && (object.id   = id   = true) ///*our && our*/ionify.link (object)
+      !(object.next && object.id) && !('link' in object) && (object.link = link = true) ///*our && our*/ionify.link (object)
+      ; debug.push ("onION:", object.re ? object.re.id : object.with && object.with.re && object.with.re.id || 'anonymous')
 
-        // 🐛 via on.ion@onion.link:true workaround
-        ;('boolean' == typeof object.link && !object.link) && delete object.link
-        ;('boolean' == typeof object.id   && !object.id  ) && delete object.id
-        // 🐛 via on.ion@onion.  id:true workaround
+      // 🐛 via on.ion@onion.link:true workaround
+      ;('boolean' == typeof object.link && !object.link) && delete object.link
+      ;('boolean' == typeof object.id   && !object.id  ) && delete object.id
+      // 🐛 via on.ion@onion.  id:true workaround
 
-        var from = ion.caller;
-        object.re && (object.re.from || (object.re.from = from && from.with && from.with.re && from.with.re.id))
-        from && (from != ion) && debug.push ("from", object.re && object.re.from)
+      var from = ion.caller;
+      object.re && (object.re.from || (object.re.from = from && from.with && from.with.re && from.with.re.id))
+      from && (from != ion) && debug.push ("from", object.re && object.re.from)
 
-        var results = 0
-          , known   = ionify.known
-          , skip    = {}
-          , group   , groups
-          , word    , words
-          , result
-          ;
+      var results = 0
+        , known   = ionify.known
+        , skip    = {}
+        , group   , groups
+        , word    , words
+        , result
+        ;
 
-        for (word in known)
-          { if (! known.hasOwnProperty (word)    ) continue
-            if (word in skip || !(word in object)) continue
-            groups = known [word]
+      for (word in known)
+        { if (! known.hasOwnProperty (word)    ) continue
+          if (word in skip || !(word in object)) continue
+          groups = known [word]
 
-            for (var g=0, G=groups.length; g < G; g++)
-              { group = groups [g]
-                if (!group.in (object)) continue
-                words   =  group.act
-                result  =  typeof  sense [words]      == 'function'
-                             ?  (  sense [words].with !=  object) //bug?: don't self-activate sensor
-                                && sense [words].call    (object, object)
-                           //:  ~{find:words=sense[words], in:sense} && sense [words] (object)
-                           //:  sense [sense [words]] (object)
-                             :  (  our && our.ionified [typeof [sense [words] ]])
-                                    ? ~ sense [words]
-                                    : ( our && our.find &&  our.find ({find:sense[words], in:sense, as:words}))
-                                          ?   sense [words].call     (object, object) //todo: resolve (sense [words]) to function or act ion
-                                          :(  console.log ("missing sensor: ", words, ":", sense[words])
-                                          || ('function' == typeof sense [sense [words]])
-                                              ?   sense [sense [words]].call (object, object)
-                                              : ~ sense [sense [words]]
-                                          );
-                results += 1
-                words   =  group.set
-                for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
-                break
-              }
-          }
+          for (var g=0, G=groups.length; g < G; g++)
+            { group = groups [g]
+              if (!group.in (object)) continue
+              words   =  group.act
+              result  =  typeof  sense [words]      == 'function'
+                            ?  (  sense [words].with !=  object) //bug?: don't self-activate sensor
+                              && sense [words].call    (object, object)
+                          //:  ~{find:words=sense[words], in:sense} && sense [words] (object)
+                          //:  sense [sense [words]] (object)
+                            :  (  our && our.ionified [typeof [sense [words] ]])
+                                  ? ~ sense [words]
+                                  : ( our && our.find &&  our.find ({find:sense[words], in:sense, as:words}))
+                                        ?   sense [words].call     (object, object) //todo: resolve (sense [words]) to function or act ion
+                                        :(  console.log ("missing sensor: ", words, ":", sense[words])
+                                        || ('function' == typeof sense [sense [words]])
+                                            ?   sense [sense [words]].call (object, object)
+                                            : ~ sense [sense [words]]
+                                        );
+              results += 1
+              words   =  group.set
+              for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
+              break
+            }
+        }
 
-          id   && delete object.id
-          link && delete object.link
+        id   && delete object.id
+        link && delete object.link
 
-        ! object.debug && !(object.next && object.id) && ~{debug:debug} //bug! causes stack overflow
-          return results < 4 /*== 1*/ ? result : object //bug ion.id+link:true 🐛 workaround
-      },
+        object.debug || (object.next && object.id) || ~{debug:debug} //bug! causes stack overflow
+        return results < 4 /*== 1*/ ? result : object //bug ion.id+link:true 🐛 workaround
+    },
 
 
   onSensor$:
@@ -360,7 +360,9 @@
           ; known [type]           =  true
           ; known [core [type]]    =  !!core [type]
 
-      ~ {debug: ["onSensor", type, JSON.stringify (known)] }
+        onSensor.our && onSensor.our.logging && onSensor.our.logging.debug
+           && ~ {debug: ["onSensor", type, JSON.stringify (known)]}
+
         return true
       }
 }
