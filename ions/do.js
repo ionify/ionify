@@ -6,7 +6,7 @@
     , as:  'action'
     , by: ['mike.lee','team']
     , on:  -4.200709
-    , to:  -8.20211203
+    , to:  -8.20211205
     , at:  -0.1
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
@@ -31,10 +31,10 @@
     ,           'do'
     ],
 
-  do    :function
-  doing (ion)
+  do :function
+  d0 (ion)
     { var todo  =    ion.do
-    ;     todo  && ! doing.our.ionified [typeof todo]
+    ;     todo  && ! d0.our.ionified [typeof todo]
                 && ~{find:todo, in:ion, as:'do'}
                 &&  (todo = ion.do)
     ;   ~ todo
