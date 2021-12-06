@@ -17,7 +17,8 @@
         ]
         ,
       we:
-        [ "will ensure that ~debug & ~next.id don't keep using setID.nextID "
+        [ "like updating ions with old ids once next.id's available"
+        , "will ensure that ~debug & ~next.id don't keep using setID.nextID "
         , "will 👨🏾‍💻 id.domain++ via id:{domain:'domain',toString:'id@domain'}"
         , "like linking this ion although it doesn't currently rely on it   "
         ]
