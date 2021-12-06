@@ -5,10 +5,10 @@
     , is:  "ionify: invoked object notation implemented for your web"
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211125
-    , at:  -0.045
+    , to:  -8.20211205
+    , at:  -0.046
     , we:
-        [ "will add tests for web@ionify & its actions	                             "
+        [ "were adding tests for web@ionify & its actions	                           "
         , "will set all ~get actions' ionid@ domains to the current ion's.           "
         , "will set ~debug:{member:true|false} = ion member to debug.                "
         , "want to adopt ajile.test.inlineLoader to load inline code!                "
@@ -32,21 +32,21 @@
     , ['get']
     ],
 
-  valueOf:
-    function hip    ()
-      { this.ionify ()
-      },
+  valueOf:function
+  ionify ()
+    { this.web ()
+    },
 
-  ionify:
-    function ionifyWeb ()
-      { Object.prototype.valueOf.ionified = this
-      ; var web        = this
-      ; web.get.with   = web
-    //; web.watch     ()
-      ; web.ready     ()
-      ; web.locate    ()
-      ; web.getScript ({at:'on.ion@ionify'})
-      },
+  web :function
+  web ()
+    { Object.prototype.valueOf.ionified = this
+    ; var web        = this
+    ; web.get.with   = web
+  //; web.watch     ()
+    ; web.ready     ()
+    ; web.locate    ()
+    ; web.getScript ({at:'on.ion@ionify'})
+    },
 
   watch:
     function watch ()
@@ -104,6 +104,7 @@
 
         if (url)
           { url.match (get$.ID) && (script.id = url)
+          ; url[url.length-1] == '/' && (url += get$.PATH.ions)
           ; script.src =  url = url.match   (get$.HTTP)
                        ?  url : url.replace (get$.ID, get$.URL)
           }
@@ -136,6 +137,7 @@
     ,  HTTP: (/^\w+:\/\//)                       // matches URL protocols
     ,  PATH:
            { ionify    : "//cdn.jsdelivr.net/gh/ionify/ionify@public/ions/"
+           , ions      : 'ions'
            , undefined : "./"
            , null      : "./"
            , ''        : "./"
