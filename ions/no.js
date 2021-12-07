@@ -2,48 +2,58 @@
 ~
 { re:
     { id:  'no@ionify'
-    , is:  'action'
+    , as:  'sensation'
+    , of:  'core'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20201029
-    , is:  -0.1
-    , it:
-        [" implements ~on.no which disables a sensor mapped to one or more "
-        +" term(s).                                                        "
+    , to:  -8.20212107
+    , as:  -0.1
+    , is:
+        [ "implementing ~on.no which disables a sensation mapped to one or more term(s)"
         ],
       we:
-        [" like the idea of resolving ~ {no: 'this.with'}    "
-        ," must handle multiple actions using the same term. "
+        [ "WERE implementing ~{no:action, on:*}..."
+        , "like the idea of resolving ~ {no: 'this.with'}    "
+        , "must handle multiple actions using the same term. "
         ]
     },
 
   on:
-    [ ['on', 'no']
-    ],
+    [['no','on']
+    ],'no on'  :'no'
+     ,
 
- 'on no':
- 'no'   ,
-  no    :
-    function no (sensor)
-      { if (!sensor.no && !('no' in sensor)) return sensor
+  no :function
+  no (sensation)
+   {  if (!sensation.no && !('no' in sensation)) return sensation
 
-        var  acts = sensor.no
-          ; !Array.isArray (acts) && (acts = [acts])
+      var actions = sensation.no
+        ; Array.isArray (actions) || (actions = [actions])
 
-        var act
-          , term
-          , next  = -1
-          , last  = acts.length
-          , known = no.our.known
-          , sense = no.our.sense
+      var action
+        , term
+        , next  = -1
+        , last  = actions.length
+        , our   = no.our
+        , known = our.known
+        , sense = our.senses
+        , does  = our.does
 
-        while (++next < last)
-          { term  =   sensor.on
-            act   =   sense [term]
-            act   && (act == acts  [next])
-                  &&  delete sense [term]
-                  &&  delete known [term]
-          }
-      }
+      while (++next < last)
+        { term   =   sensation.on
+          Array.isArray (term) || (term = [term])
+          for
+            ( var T =  term.length, t
+            ;     T--, t = term[T], T+1
+            ; action =    sense[t]
+            , action ?  (action   == actions[next])
+                          &&  delete   sense[t]
+                          &&  delete   known[t]
+                     :  (action   ==    does[t])
+                          &&   (does   [does[t]] = null)
+                          &&  delete    does[t]
+            );
+        }
+   }
 }
 ;

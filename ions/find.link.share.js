@@ -3,9 +3,10 @@
 { re:
     { id:  'find.link.share@ionify'
     , as:  'action'
+    , of:  'core'
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20211125 : -8.0837 }
+    , to: { 20211206 : -8.1910 }
     , at:  -0.1
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
@@ -26,7 +27,8 @@
     },
 
   on:
-    [ [ 'link',   'to'      ]
+    [ [  '*'  ]
+    , [ 'link',   'to'      ]
     , [ 'link',   'as'      ]
     , [ 'link'              ]
     , [ 'find',   'in', 'as']
@@ -34,26 +36,26 @@
     , ['share'              ]
     ],
 
-  valueOf:
-    function find_link_share ()
-      { this.ionify ()
-        delete this.valueOf
-      ~ this
-      },
+  valueOf:function
+  ionify ()
+    { this.find_link_share ()
+      delete this.valueOf
+    ~ this
+    },
 
-  ionify:
-    function ionify ()
-      { this.link   ()
-        this.share
-            ({ link:
-                 { find: this.find
-                 ,  link: this.link
-                 , share: this.share
-                 , space: this.getSpace
-                 }
-             , to: this.re.id
-            })
-      },
+  find_link_share :function
+  find_link_share ()
+    { this.link   ()
+      this.share
+        ({ link:
+              {  find: this.find
+              ,  link: this.link
+              , share: this.share
+              , space: this.getSpace
+              }
+          , to: this.re.id
+        })
+    },
 
  "find in as":"find",
  "find in"   :"find",
@@ -109,7 +111,8 @@
     ," like enabling ~ {link: [ion, object, more])                "
     ," like enabling ~ {link:ion, as:{member:thing}}              "
     ],
- "link as":"link",
+ 'link as':'link',
+  '*'     :'link',
   link:
     function link (ion)
       { ion || (ion = link.with || (link.with = (link == this.link) && this))
