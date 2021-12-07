@@ -6,7 +6,7 @@
     , as:  'action'
     , by: ['mike.lee','team']
     , on:  -4.200709
-    , to:  -8.20211205
+    , to:  -8.20211206
     , at:  -0.1
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
@@ -119,7 +119,7 @@
   go (todo)
     { var can = ! ('in' in todo.do)
       can && (todo.do.in = todo.with)
-            ~  todo.do
+            ~ todo.do
       can && (todo.do.in = null)
     },
 
