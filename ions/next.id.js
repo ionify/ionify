@@ -6,7 +6,7 @@
     , as:  'action'
     , by: ['mike.lee', 'team']
     , on:  -7.20160910
-    , to:  -8.20211205
+    , to:  -8.20211206
     , at:  -0.1
     , is: 'generating namespaced sequential ids, per request'
     }
@@ -33,7 +33,7 @@
 
     ; (id >= my.MAX)  && (id = ids [name] = null)
     ; isNaN (id)      && (id = ids [name] = my.MIN)
-    ;    f0r.id = name + (id > 0 ? '.' : '') + id + '@'
+    ;    f0r.id = name + (id > 0 ? '.' : '') + id
     ; return ids [name]++
     }
 }
