@@ -11,7 +11,7 @@ and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ {   log  : "👋🏾👨🏾‍💻"  } <= /recording action/
+~ {   log  : '👋🏾👨🏾‍💻'  } <= /user interaction/
 + { "json" : "data"  } <= /json information/
 & ["natural language"] <= /text information/
 ```
@@ -59,8 +59,8 @@ for applications of **ion** & **ionify**, visit the following subsections:
 particular type of problem or solution to be expressed more clearly than an existing
 language would allow..." - wikipedia*
 
-**ionify** enables creating language(s) via **ions** that define & map terms to
-behaviors:
+**ionify** enables creating language(s) via **ions** that define & map terms &
+phrases to actions:
 
 ```javascript
 ~
@@ -68,27 +68,27 @@ behaviors:
     { id: 'ask.say@ions.iskitz.net'
     , by: 'mike.lee'
     , on: -7.20150728
-    , to: -8.20211118
-    , at: +1.6
+    , to: -8.20211207
+    , at: +1.61
     , in: 'silicon-valley.california.usa.earth'
-    , is: "an ask & say domain-specific language action"
+    , is: 'an ask & say domain-specific-language interaction'
     },
 
   on:
     ['ask', 'say'],
 
-  ask:
-    function ask (action)
+  ask :function
+  ask (action)
       { ask.with.answer = prompt (ask.with.prep (action.ask)) || ''
       },
 
-  say:
-    function say (action)
+  say :function
+  say (action)
       { alert (say.with.prep (action.say))
       },
 
-  prep:
-    function prep (quote)
+  prep:function
+  prep(quote)
       { return quote.replace (/\[answer\]/g, prep.with.answer)
       }
 }
@@ -96,12 +96,12 @@ behaviors:
 
 ~ /these ask.say actions can be in separate files/
 
-~ { say: "👋🏾 hi!"                              }
+~ { say: '👋🏾 hi!'                              }
 ~ { ask: "what's your name?"                    }
 ~ { say: "hi [answer]! i'm math e. bot 🤓"     }
 ~ { ask: "[answer], what's 2 x 2?"              }
-~ { say: "[answer]? really? 🤔"                }
-~ { ask: "can i ask you another question?"      }
+~ { say: '[answer]? really? 🤔'                }
+~ { ask: 'can i ask you another question?'      }
 ~ { say: 'i thought you\'d say "[answer]" 😉'  }
 ```
 
@@ -125,25 +125,25 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'frendlee@ionified.net'
     , by: 'mike.lee'
     , on: -8.20171208
-    , to: -8.20211118
+    , to: -8.20211207
     , in: 'silicon-valley.california.usa.earth'
-    , is: "a literate & natural language programming exploration"
+    , is: 'a literate & natural language programming exploration'
     },
 
   do:
-    [ "say hello"
-    , "ask their name"
-    , "invite them to play"
+    [ 'say hello'
+    , 'ask their name'
+    , 'invite them to play'
     ],
 
-  "say hello":
+  'say hello':
     {say: "hi! i'm frend lee!"},
 
-  "ask their name":
+  'ask their name':
     {ask: "what's your name?"},
 
-  "invite them to play":
-    {ask: "hi [answer]! wanna play?!"}
+  'invite them to play':
+    {ask: 'hi [answer]! wanna play?!'}
 }
 ```
 
@@ -155,10 +155,10 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'code.prose.demo@ionified.net'
     , by: 'mike.lee'
     , on: -7.20190323
-    , to: -8.20211118
-    , at: +0.05
+    , to: -8.20211207
+    , at: +0.06
     , in: 'silicon-valley.california.us.earth'
-    , is: "code as prose with orion & stories"
+    , is: 'code as prose with orion & stories'
     },
 
   on: 'say',
@@ -197,14 +197,14 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
     { id: 'an.ionified.module@doma.in'
     , by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202110280442
-    , it: "represents an ionified module"
+    , to: -8.202112070222
+    , is: 'modeling an ionified module'
     },
 
-  do:
-    function something ()
-      { something.with.hi ++
-      },
+  do :function
+  something ()
+    { something.with.hi ++
+    },
 
   hi: /hi! 🤓/
 }
@@ -221,19 +221,19 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 { re:
     { by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202110292156
+    , to: -7.202112070209
     },
 
   on:'event',
   do (ion)
-    { /log "it happened!"//
+    { /log 'it happened!'//
       {log: ion.event   } /
       /on every event ion!/
     }
 }
 
 ~ /this event ion could be in a separate file./
-~ {event: "it happened!"} <= /invokes an event/
+~ {event: 'it happened!'} <= /invokes an event/
 ```
 
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
@@ -250,13 +250,13 @@ anonymous & named objects:
 { re:
     { by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202110292155
+    , to: -8.202112070220
     },
 
   on:'hi',
   hi (ion)
     { /this method is called for each ion//
-      /with a "hi" property & value which//
+      /with a 'hi' property & value which//
       /it logs:                          //
 
       {log: ion.hi}
@@ -288,23 +288,23 @@ without overriding all, or parts, of each other:
 { re:
     { by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202110280451
+    , to: -8.202112070219
     },
 
   on:'my.ion@doma.in',
   do (ion)
     { /this method is called for each ion with//
-      /an id matching "my.ion@doma.in".       //
+      /an id matching 'my.ion@doma.in'.       //
       /it confirms the ion developer before   //
       /describing what the ion does.           /
 
-      if (ion.re.by == "a.🇬🇾.developer")
-         /log "identifies the intended module"//
+      if (ion.re.by == 'a.🇬🇾.developer')
+         /log 'identifies the intended module'//
          {log: ion.re.it}
     }
 }
 
-~ /each of these ions can be in a separate file/
+~ /these ions can be together or in separate files/
 
 ~
 { re:
@@ -322,7 +322,7 @@ without overriding all, or parts, of each other:
     { id: 'my.ion@doma.in'
     , by: 'a.🇬🇾.developer'
     , in: 'georgetown.guyana.south-america.earth'
-    , it: "identifies the intended module"
+    , it: 'identifies the intended module'
     }
 }
 
