@@ -15,7 +15,7 @@
         [ 'remove', 'ion', 'ionify', 'sensation', 'action'
         ],
       we:
-        [ "were crearing first test(s)"
+        [ "were creating first ~no.on test(s)"
         , "must ..."
         , "will ..."
         , "plan ..."
@@ -35,8 +35,16 @@
 
 
   do:
-    [ ''
-
+    [ '~no: *'
+    , '~no: * multi'
+    , '~on: id no:  action'
+    , '~on: id no:  action alias'
+    , '~on: ids no: action'
+    , '~on: ids no: action alias'
+    , '~on: attribute  no: action'
+    , '~on: attribute  no: action alias'
+    , '~on: attributes no: action'
+    , '~on: attributes no: action alias'
     ]
 }
 ;
