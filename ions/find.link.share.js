@@ -6,7 +6,7 @@
     , of:  'core'
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20211206 : -8.1910 }
+    , to: { 20211207 : -8.2014 }
     , at:  -0.1
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
@@ -14,6 +14,14 @@
         + "optionally aliased data and-or functionality, and ~find.in for resolving "
         + "names to ions.                                                           "
         ],
+      go:
+        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
+        , team: 'https://github.com/ionify/about/tree/public/team'
+        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , more: 'https://api.ionify.net/'
+        },
       we:
         [ "were updating ~link & ~share to use .with vs .our  "
         , "were implementing ~link.to & ~link.as              "
@@ -117,12 +125,11 @@
     function link (ion)
       { ion || (ion = link.with || (link.with = (link == this.link) && this))
 
-        // 🐛 via on.ion@onion.link:true workaround
-        ;('boolean' == typeof ion.link) && delete ion.link
-
         var property
           , thing
+          , our   = link.our
           , debug = []
+          , debugging = !!(our && our.logging && our.logging.debug)
           , id    = (ion.re ? ion.re.id : null) || 'ion'
           , space = link.with.getSpace (id)
           ; id    = id.replace (/(.+)(@|\.\d\.).*/, '$1')
@@ -132,12 +139,12 @@
             if (!thing)                                                 continue
             if ((typeof thing != 'function') && !Array.isArray (thing)) continue
             if (!ion.hasOwnProperty (property))                         continue
-          ! thing.with    &&              (thing.with = ion)
-          ! thing.our     &&  space    && (thing.our  = /*|| ion ||*/ space)
-          ; (id != 'ion') && !ion.debug && debug.push ("linked "+ id +'.'+ property)
-          }
+            thing.with     ||              (thing.with = ion)
+            thing.our      ||   space   && (thing.our  = /*|| ion ||*/ space)
+            debugging      &&
+            ((id != 'ion') && ion.debug || debug.push ('linked '+ id +'.'+ property))
+          } debugging      && ion.debug || debug.length &&  our.debug ({debug:debug})
 
-      ! ion.debug && debug.length && ~{debug:debug}
         return true
       },
 
@@ -169,8 +176,8 @@
     function share (ion)
       { var thi$   = share.with || (share == this.share ? this : null)
           , spaces = thi$.spaces
-          , things = ion.link ==  '*' ? ion.with.with  || ion.with || ion : ion.to ? ion.link : ion.share
-          , to     = ion.to   || (ion.re && ion.re.id) || ''
+          , things = ion.link ===  '*' ?  ion.with.with || ion.with || ion : ion.to ? ion.link : ion.share
+          , to     = ion.to   ||  (ion.re && ion.re.id) || ''
           , space  = thi$.getSpace (to)
           ;
         for (var thing in things)
