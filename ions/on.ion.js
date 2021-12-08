@@ -3,20 +3,28 @@
 { re:
     { id:  'on.ion@ionify'
     , of:  'core'
-    , as:  'sensor'
+    , as: ['sensation','acquisition','sensor','activation','initialization']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
     , to:  -8.20211207
     , at:  -0.1
     , is:
-        [ 'implementing ionify: invoked object notation implemented for you.          '
+        [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
         , 'sensing ~on actions.                                                       '
         , "activating ionify's host environment ion; e.g. web@ionify | node@ionify.   "
-        , "getting ionify's supporting ions using its host-provided ~get action.      "
+        , "getting ionify's supporting ions via its host-implemented ~get action.     "
         , "starting its host application by ~get'ing its ions.js launch configuration."
-        , '...'
+        , 'sharing core actions & information via domain & other spaces.              '
         ],
+      go:
+        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
+        , team: 'https://github.com/ionify/about/tree/public/team'
+        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , more: 'https://api.ionify.net/'
+        },
       we:
         [ "were examining if .ion() is the source of ions' lost 'this' reference.     "
         , 'were implementing ~on.do...                                                '
@@ -30,7 +38,7 @@
         , "like ~{on:'term',dont:act} or {no:{term:act} vs {on:'term',no:act} ? 👎🏾    "
 
         , 'were adding .link() call to onArray & think we should for all onSensors to '
-        + 'ensure that they all have a .ion reference to their containing ion.        '
+        + 'ensure that they all have a .with reference to their containing ion.       '
         + "That'll support subsequent operations that depend on an ion's context.     "
 
         , 'like that it may be more sensible to create an ion Type sensor delegator   '
@@ -99,7 +107,7 @@
           ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
           ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
           ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
-          ,//   'on.do@ionify'
+        //,     'on.do@ionify'
           ,      'ions'
           ]
       , in: 'sequence'||'order'
@@ -163,14 +171,13 @@
 
       if (!sensation    ||  !('on' in sensation))   return  sensation
       if ('function'    ===    typeof sensation.on) return  ionify.via    (sensation)
-      if ( sensation.on ===   '*'  && always--)             ionify.always (sensation)
+      if ( sensation.on ===   '*')  { always = false;       ionify.always (sensation)}
 
       var debug = []
       debug.push ([sensation.re && sensation.re.id, 'on:', sensation.on, JSON.stringify (sensation.on)])
 
       var groups  = sensation.on
-      Array.isArray (groups)   ||  (groups = [groups])
-      if (~groups.indexOf('*') && !(always = false  )) ionify.always (sensation)
+      Array.isArray (groups)  || (groups = [groups])
 
       var our     = on.our
         , has     = ionify.hasKnownWord
@@ -194,7 +201,11 @@
           Array.isArray  (group) || (words = group = [group])
           group = group.join (' ')
 
-          if ('*' === group && always) {ionify.always (sensation); continue}
+         if ('*' === group)
+            { always && ionify.always (sensation)
+            ; always = false
+            ; continue
+            }
 
           unknown = !senses    [group]
           action  =  sensation [group]
@@ -224,7 +235,12 @@
         }
 
       ionify.sortKnownWords (updated)
-    ~ {debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
+
+      our
+        ? our.logging && our.logging.debug && our.debug
+          ({debug: (debug.push ([id].concat (groups)), debug.join ('\n'))})
+        : ~{debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
+
       return sensation
     },
 
@@ -274,7 +290,6 @@
   ionifiedInfo:
     [ /note: Use with typeof ion + ion.constructor.name/
     , /todo: Auto-update as types are deactivated/
-    , /todo: Enable +{ionified: typeof thing} = 1:true|0:false/
     ],
 
   ionified:
@@ -293,13 +308,12 @@
 
   sensed :function
   sensed (object)
-    { var id
-        , link
-        , ionify    = sensed.with
+    { var ionify    = sensed.with
       //, ionified  = ionify.ionified
         , senses    = ionify.senses
-        , debug     = []
         , our       = sensed.our
+        , debugging = !! (our && our.logging && our.logging.debug)
+        , debug     = debugging && []
         , does      = ionify.does
         ; object || (object = this)
 
@@ -313,16 +327,13 @@
         || ((always.in = object), ~always, delete always.in)
         );
 
-      debug.push ('onION:', object.re ? object.re.id : object.with && object.with.re && object.with.re.id || 'anonymous')
-
-      // 🐛 via on.ion@sensed.link:true workaround: keep until on.as.id.has.is*.do.no@ unaffected
-      ;('boolean' == typeof object.link && !object.link) && delete object.link
-      ;('boolean' == typeof object.id   && !object.id  ) && delete object.id
-      // 🐛 via on.ion@sensed.  id:true workaround: keep until on.as.id.has.is*.do.no@ unaffected
+      debugging
+        && debug.push ('onION:', object.re ? object.re.id : object.with && object.with.re && object.with.re.id || 'anonymous')
 
       var from = sensed.caller;
       object.re && (object.re.from || (object.re.from = from && from.with && from.with.re && from.with.re.id))
-      from && (from != sensed) && debug.push ('from', object.re && object.re.from)
+
+      debugging && from && (from != sensed) && debug.push ('from', object.re && object.re.from)
 
       var results = 0
         , known   = ionify.known
@@ -330,20 +341,21 @@
         , group   , groups
         , word    , words
         , result
-        ;
 
       for (word in known)
-        { if (! known.hasOwnProperty (word)    ) continue
-          if (word in skip || !(word in object)) continue
+        { if (! known.hasOwnProperty (word))  continue
+          if (word in skip || !(word in object))      continue
+          if (object === (senses[word] && senses[word].with))  continue
+
           groups = known [word]
 
           for (var g=0, G=groups.length; g < G; g++)
             { group = groups [g]
               if (!group.in (object)) continue
               words   =  group.act
-              result  =  typeof  senses [words]      == 'function'
-                            ?  ( senses [words].with !=  object) //bug?: don't self-activate sensation
-                              && senses [words].call    (object, object)
+              result  =  typeof  senses [words]       == 'function'
+                            ?  ( senses [words].with !==  object) //🐛? strict comparison = no coerced self-activation
+                              && senses [words].call     (object, object)
                           //:  ~{find:words=senses[words], in:senses} && senses [words] (object)
                           //:  senses [senses [words]] (object)
                             :  (  our && our.ionified [typeof [senses [words] ]])
@@ -362,11 +374,10 @@
             }
         }
 
-        id   && delete object.id
-        link && delete object.link
+      debugging   //🐛~debug causes stack overflow
+        && (object.debug || (object.next && object.id) || our.debug({debug:debug}))
 
-        object.debug || (object.next && object.id) || ~{debug:debug} //bug! causes stack overflow
-        return results < 4 /*== 1*/ ? result : object //bug ion.id+link:true 🐛 workaround
+      return results == 1 ? result : object
     },
 
 
