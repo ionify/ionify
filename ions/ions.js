@@ -2,41 +2,30 @@
 ~
 { re:
     { id: 'ions@'
-    , of: 'core'
     , as: 'configuration'
+    , of: 'core'
     , by: 'mike.lee@ionify.net'
+    , on: -4.200709
+    , to: -8.20211207
+    , at: -0.1
     , in:
         [    'queens-county.new-york.usa.earth'
         , 'silicon-valley.california.usa.earth'
-        ]
-    , on: -4.200709
-    , to: -8.20211126
-    , at: -0.1
-    , is:
-        [ "configuring ionify "
-        , "defining ion domains, paths & more "
-        , "providing domain lists as backup & performance options "
         ],
+      is:
+        [ "configuring ionify"
+        ],
+      go:
+        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/ions.js'
+        , team: 'https://github.com/ionify/about/tree/public/team'
+        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , more: 'https://api.ionify.net/'
+        },
       we:
-        [ "know this applies ~link.to to override on.ions@'s configuration action"
-        , "like ions@ionify in main directory with hosts like web@ionify"
+        [ "like ions@ionify in main directory with hosts like web@ionify"
         ]
-    },
-
-  domains:
-    { verify : true
-    , resolve:
-        {     ''             : '@ionify'
-        ,     '@'            : '@ionify'
-        , '(.+)@(.+)\.ionify': '@ionify/$2/$1'
-        , '@ionify':
-              [ 'cdn.jsdelivr.net/gh/ionify/ionify@public/'
-              , 'ionify.github.io/ionify/'
-              , 'ionify.glitch.me/'
-              , 'ionify.net/'
-              , 'ionify.org/'
-              ]
-        }
     },
 
   paths:
@@ -48,11 +37,11 @@
     },
 
   logging:
-    { debug : false
-    , error : true
-    , info  : false
-    , log   : false
-    , warn  : true
+    { debug : !true
+    , error :  true
+    ,  info : !true
+    ,   log : !true
+    ,  warn :  true
     }
 }
 ;
