@@ -9,9 +9,12 @@
           , 'silicon-valley.california.usa.earth'
           ]
     , on:  -4.200709
-    , to:  -8.20211126
+    , to:  -8.20211208
     , at:  -0.1
     , is: "configuring ionify's examinations"
+    , we:
+        [~/need re.as sensing to recognize & keep configurations by domain/
+        ]
     },
 
   do:
