@@ -2,25 +2,33 @@
 ~
 { re:
     { id:  'on.do@ionify'
-    , of:  'on.do'
+    , of: ['on.do', 'core']
     , as: ['sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
           ,'message', 'messaging'
           ]
     , is: ['action', 'sensor']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20210417
+    , to:  -7.20211207
     , at:  -0.1
-    , go:" https://github.com/ionify/ionify/blob/public/ions/on.do.js"
-    , ex:" https://api.ionify.net/"
     , it:
-        [" senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action} "
+        [ "senses ~{on:'ion', as:[], has:[], id:[], is:[], do:action, no:action}"
         ],
+      go:
+        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.do.js'
+        , team: 'https://github.com/ionify/about/tree/public/team'
+        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , more: 'https://api.ionify.net/'
+        },
       we:
         [" were about to implement ~on.id.do.no but..."
         ," will implement ~on.re.as.do.no next since it'll help ~on.re.as"
+
         ," were re-implementing ionify's ~on action per:"
         +"    https://github.com/orgs/ionify/projects/1#card-47996813"
+
         ," were ..."
         ," want ..."
         ," must ..."
@@ -31,8 +39,11 @@
         ," have ..."
         ," wont ..."
         ," cant ..."
+        ],
+      ex:
+        [~/re.ex: ephemeral miscellaneous data holder used by ionify core/
         ]
-    },
+      },
 
   valueOf:
     function on_do()
@@ -43,11 +54,11 @@
 
   ionify:
     { re:
-        { of:  'on.do'
+        { of: ['on.do', 'core']
         , is: ['method']
         , by: ['mike.lee','team']
         , on: -4.200709
-        , to: -7.20210417
+        , to: -7.20211207
         , at: -0.1
         , it:
             [ "initializes ionify's ~on.as.has.id.is.do.no sensors"
@@ -55,7 +66,6 @@
             ],
           we:
             [ "were exploring moving each ~on.do.no.* to its own ion"
-            , "must fix on.ion.id work🐛round that is polluting ions with ~on.id"
             ]
         },
       my:
@@ -72,8 +82,8 @@
             for
               ( var term  in terms)
               { //~ {get:`on.do.no.${term}@ionify`, then:ondo.link, after:'each'}
-                + {on:[['on',term,'do']], [`on ${term} do`]:sense, id:!1,link:!1}
-                + {on:[['on',term,'no']], [`on ${term} no`]:sense, id:!1,link:!1}
+                + {on:[['on',term,'do']], [`on ${term} do`]:sense}
+                + {on:[['on',term,'no']], [`on ${term} no`]:sense}
               }
 
           //ondo.onion ({on:Object, do:ondo.onion})
@@ -87,10 +97,11 @@
   ondo:
     { re:
         { id:  'on.as.has.id.is.do.no'
+        , of: ['on.do', 'core']
         , is: ['sensor','method']
         , by: ['mike.lee','team']
         , on: -4.200709
-        , to: -7.20201030
+        , to: -8.20211207
         , at: -0.1
         , it: "senses ~{on:'ion',as:[],has:[],id:[],is:[],do:action,no:action}"
         , we:
@@ -145,11 +156,11 @@ return
   as:
     { re:
         { id:  'on.as.do.no@ionify'
-        , of:  'on.do'
+        , of: ['on.do', 'core']
         , is: ['sensor','method']
         , by: ['mike.lee','team']
         , on: -4.200709
-        , to: -7.20201031
+        , to: -8.20211207
         , at: -0.1
         , it: "senses ~{on:'ion', as:[], do:action, no:action}"
         , we:
@@ -201,7 +212,7 @@ return
               , kept =  my.kept
 
             !kept [them] &&  my.keep  (az, kept [them] = {as:{}, it:az.length})
-          ~ { on: 'as' , as: my.find$ (my. kept [them] , ion.do  || no),/*🐛.on.ion@id.link:true*/id:!1, link:!1 }
+          ~ { on: 'as' , as: my.find$ (my. kept [them] , ion.do  || no)}
           }
     },
 
@@ -212,7 +223,7 @@ return
         , is: ['sensor','method']
         , by: ['mike.lee','team']
         , on:  -4.200709
-        , to:  -7.20201030
+        , to:  -7.20211207
         , at:  -0.1
         , it:
             [ "senses ~{on:'ion', has:[], do:action, no:action}"
@@ -232,7 +243,7 @@ return
               , doo   = ion.do
               , sense ={on:[]}
 
-          ! Array.isArray (haz) && (haz = [haz])
+            Array.isArray (haz) || (haz = [haz])
 
             for
               ( var h=-1, H=haz.length, term
@@ -249,14 +260,15 @@ return
   id:
     { re:
         { id:  'on.id.do.no'
+        , of: ['on.do', 'core']
         , is: ['sensor','method']
         , by: ['mike.lee','team']
         , on: -4.200709
-        , to: -7.20201029
+        , to: -7.20211207
         , at: -0.1
         , it: "senses ~{on:'ion', id:[], do:action, no:action}"
         , we:
-            [ "must fix on.ion@ ion.id:true work🐛round interferring with ~on.do"
+            [ "must ..."
             , "were ..."
             , "will ..."
             ]
@@ -266,9 +278,7 @@ return
         },
       is:
         function id (ion)
-          { if (typeof ion.id == 'boolean') return
-
-            var ondo  = id.with
+          { var ondo  = id.with
               , my    = id.my
               , on    = ion.on
               , iD    = ion.id
@@ -279,6 +289,7 @@ return
   is:
     { re:
         { id: 'on.is.do.no'
+        , of: ['on.do', 'core']
         , is: 'method'
         , it: "senses ~{on:'ion', is:[], do:action, no:action}"
         , we:
@@ -302,6 +313,7 @@ return
   onion:
     { re:
         { id: 'on.ion'
+        , of: ['on', 'core']
         , as:
             [ 'sensor',  'sense', 'listen', 'handle', 'delegate', 'event', 'pubsub'
             , 'message', 'messaging'
@@ -345,22 +357,26 @@ return
   link:
     { re:
         { id:  'ion.link@ionify'
+        , of: ['core']
         , as: ["literate", "software", "program", "context", "link"]
         , is:  'method'
         , by: ['mike👨🏾‍💻lee', 'team']
         , on:  -4.200709
-        , to:  -7.20210416
-        , at:  -0.02
+        , to:  -8.20211207
+        , at:  -0.03
         , it:
             [ "enables defining modular, encapsulated & descriptive code"
             , "links code's implementation & description for easy access"
             ],
           we:
             [ "were moving this to its own ion & applying it to all ion methods"
+            , "want to apply this to all ionified ions"
+            , "know applying this is now as easy as on:*!!! 🙇🏾‍♂️👨🏾‍💻🤲🏾🤓"
+            , "like alot this sion: structured ion implementation, including re.*"
+            , "want to incorporate .our:domain+re.of's spaces alongside .my:own"
             , "must ..."
             , "will ..."
-            , "want to apply this to all ionified ions"
-            , "have implemented its initial working version 🙌🏾 enjoy 🤲🏾"
+            , "HAVE implemented its initial working version 🙌🏾 ENJOY 🤲🏾"
             , "wont ..."
             , "cant ..."
             ]
@@ -385,7 +401,7 @@ return
                 thing = ion [term]
                 type  = thing.re && thing.re.is
 
-                !Array.isArray (type) && (type = [type])
+                Array.isArray (type) || (type = [type])
                 thing.is && type.push (typeof thing.is)
 
                 for
