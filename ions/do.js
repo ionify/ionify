@@ -6,7 +6,7 @@
     , as:  'action'
     , by: ['mike.lee','team']
     , on:  -4.200709
-    , to:  -8.20211206
+    , to:  -8.20211207
     , at:  -0.1
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
