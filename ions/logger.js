@@ -7,39 +7,48 @@
     , by: ['mike.lee', 'kaito.lee', 'team']
     , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -8.20211201
+    , to:  -8.20211207
     , at:  -0.1
     , is:
         [ "ionify's log recording actions:"
-        ,  " ~{debug:*}, ~{error:*}, ~{info:*}, ~{log:*} & ~{warn:*}"
 
-        , "~ {log_level: true || false}"
-        +  "  true enables & false disables recording at the specified log level"
-        +  "  i.e. debug, error, info, log, or warn."
+        , '~{debug:*}, ~{error:*}, ~{info:*}, ~{log:*} & ~{warn:*}'
 
-        , "+ {log_level: null}"
-        ,  "  reports if the log level is enabled:1:true | disabled:0:false"
-        ,  "  the unary operator is critical for acquiring a correct log level state"
-        ,  "  +|- unary operators always correctly report the log level's state"
-        ,  "  a ~ unary operator  always reports the log level state as enabled 👎🏾"
-        ,  "  ~~ {log_level:null} can be used to report the correct log level"
+        , '~ {log_level: true || false}'
+        + '  true enables & false disables recording at the specified log level'
+        + '  i.e. debug, error, info, log, or warn.'
+
+        , '+ {log_level: null}'
+        , '  reports if the log level is enabled:1:true | disabled:0:false'
+        , '  the unary operator is critical for acquiring a correct log level state'
+        , "  +|- unary operators always correctly report the log level's state"
+        , '  a ~ unary operator  always reports the log level state as enabled 👎🏾'
+        , '  ~~ {log_level:null} can be used to report the correct log level'
 
         , '+ {log_level: "message"}'
-        ,  "  records a message at the specified log level if it's enabled"
+        , "  records a message at the specified log level if it's enabled"
 
         , '+ {log_level: reference}'
-        ,  "  passes the referenced object to the underlying logger, e.g. console,"
-        +  "  to enable more informative, developer-level, object rendering"
+        , '  passes the referenced object to the underlying logger, e.g. console,'
+        + '  to enable more informative, developer-level, object rendering'
         ],
+      go:
+        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/logger.js'
+        , team: 'https://github.com/ionify/about/tree/public/team'
+        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , more: 'https://api.ionify.net/'
+        },
       we:
         [ "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
-        , "like moving display logic to host, e.g. web:alert vs web+node:console"
+        , 'like moving display logic to host, e.g. web:alert vs web+node:console'
 
-        , "like defining & sensing log reporting api actions; maybe hosts can "
-        + "share their own so logger can sesnse & adopt them! 🤓"
+        , 'like defining & sensing log reporting api actions; maybe hosts can '
+        + 'share their own so logger can sesnse & adopt them! 🤓'
 
         , "like adding ~{log_level:..., to:'nowhere'||'webview'} later but "
-        + "know it enables in-context-session entities to unexpectedly hide records"
+        + 'know it enables in-context-session entities to unexpectedly hide records'
         ]
     },
 
@@ -49,14 +58,24 @@
 
 
   valueOf :function
-   logger ()
-      { this.report ({error:null, warn:null, debug:null, log:null, info:null})
-        this.ionify ()
-      },
+  logger  ()
+    { this.report ({error:null, warn:null, debug:null, log:null, info:null})
+    },
 
   ionify :function
   ionify ()
-    { delete (this.valueOf)  &&  ~this
+    { delete (this.valueOf) && ~ this
+      var logger = ionify.with
+
+      ionify.our.share
+        ({ to  :     logger.re.id || ~/want logger@ to share log-level actions with *everyone*/
+         , link:
+            { debug: logger.debug
+            ,   log: logger.log
+            ,  info: logger.info
+            ,  warn: logger.warn
+            , error: logger.error
+         }  })
     },
 
   debug :function
@@ -117,45 +136,45 @@
       if('boolean' ==  typeof message)
       if( toggled  =  (message !=  state))
           {   logging [level]   =  state = logger.state = message
-          ;   message           = (state ? "✅" : "🚫") + " ~"  + level
+          ;   message           = (state ? '✅' : '🚫') + ' ~'  + level
           }
 
       state
         &&   Array.isArray   ( message   )
         &&  'string' == typeof message [0]
-        &&  (message =  message.join (" "))
+        &&  (message =  message.join (' '))
 
-      logger.id = action.re.from || logger.re.id
+      logger.id = (action.re && action.re.from) || logger.re.id
 
       logger.message
         =   'string' == typeof message
-        ?    logger.icon [logger.level] + logger.id + ": " + message
-        :   [logger.icon [logger.level] + logger.id + ": " , message]
+        ?    logger.icon [logger.level] + logger.id + ': ' + message
+        :   [logger.icon [logger.level] + logger.id + ': ' , message]
 
       return toggled ? true : action [level] === true ? false : state
     },
 
   messages:
-    { noConsole: "logger@ionify is more informative with the console.*() reporting api"
+    { noConsole: 'logger@ionify is more informative with the console.*() reporting api'
     , noReports: "logger@ionify couldn't find the alert() or console.*() reporting apis"
     },
 
   report :function
   report (action)
     { var icono =
-          { debug: "🐛"
+          { debug: '🐛'
           , error:  ""
-          ,  info: "💡"
-          ,   log: "📋"
+          ,  info: '💡'
+          ,   log: '📋'
           ,  warn:  ""
           }
 
       var icons =
           { debug: icono.debug + ' '
-          , error: "❌ "
+          , error: '❌ '
           ,  info: icono.info  + ' '
           ,   log: icono.log   + ' '
-          ,  warn: "⚠️ "
+          ,  warn: '⚠️ '
           }
 
       var iOSPath  = (/^file:\/\/.*\/var\/mobile\//)
