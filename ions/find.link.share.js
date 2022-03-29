@@ -69,6 +69,35 @@
       this.space.with = {its:this}
 
       delete this.valueOf <- this
+  find_link_share :function
+  find_link_share ()
+    { var pending = Object.prototype.valueOf.with.ion.pending
+      delete        Object.prototype.valueOf.with
+
+      this.link (this)
+
+      this.share
+          ({ link:
+                {  find: this.find
+                ,  link: this.link
+                , share: this.share
+                , space: this.space
+                ,  skip: this.with.all.skip
+                }
+            , to: '*'//this.re.id
+          })
+
+      for
+        ( var p=-1, P=pending.length
+        ;   ++p  <  P
+        ; this.link (pending[p])
+        );
+
+      for
+        (     p = -1
+        ;   ++p < P
+        ; ~pending[p]
+        );
     },
 
  'find in as':'find',
@@ -149,19 +178,132 @@
         ; domain    = domain && domain [1]
         ; id        = id.replace (/(.+)(@|\.\d\.).*/, '$1')
 
+      var id = ion.re.id || 'ion@' // 'ion'
+      //   , wiht  = link.with || {my:{}, all:{}, our:null, own:null}
+      //   , own   = wiht.own  || (wiht.own = wiht.space (id))
+      //   , self  = own.self  || (own.self = link === this.link ? this : null)
+      //   , our   = wiht.our  || (wiht.our = wiht.space (domain))
+      //   , all   = wiht.all  || (wiht.all = wiht.space (null))
+      //   , skip  = all.skip  || (all.skip = {with:true,re:true,do:true})
+      // //, it    = id.replace (/(.+)(@|[-\.]\d\.).*/, '$1')
+        , it    = id.replace (/(.+)(@|\.\d\.).*/, '$1')
+      // //, space = my.space (id)
+      //   , space = self.space ({id:id})
+      //   , can   = own.can || (own.can = {function:true, object:true})
+
+      var our       = (link.with || ion.with).our
+        , debugging = !!(our.logging && our.logging.debug)
+        , debugged  = []
+        , debug     = our.debug || String
+        , warn      = our.warn  || String
+        , can       = {function:true, object:true}
+        , skip      = (link.with || ion.with).all.skip
+        , thing
       for
         ( var property in ion)
         { thing = ion [property]
           if (!thing || skip [property] || !can [typeof thing])       continue
-      /**/if ((typeof thing != 'function') && !Array.isArray (thing)) continue
+     //**/if ((typeof thing != 'function') && !Array.isArray (thing)) continue
           if (!ion.hasOwnProperty (property))                         continue
         //thing.our      ||   space   && (thing.our  = /*|| ion ||*/ space)
           debugging      &&
-          ((it != 'ion') && ion.debug || debug.push ('\n\tlinked '+ it +' ['+ property +']'))
-        } debugging      && ion.debug || debug.length &&  our.debug ({debug:debug})
+          ((it != 'ion') && ion.debug || debugged.push ('\n\tlinked '+ it +' ['+ property +']'))
+        } debugging      && ion.debug || debugged.length && debug ({debug:debugged})
 
       return true
     },
+
+  linkSpacesRe:
+    [`sion link spaces flow...¿outdated? original
+
+      -3: get find_link_share's with
+      -2: set as   link.with
+      -1: get find_link_share & set as ion
+
+      0.0: get ion's re.of spaces
+      0.1: set its re.of spaces' @domains
+      0.2: get or set its re.of spaces on the WITH.our template
+
+      1.0: set with template:
+      1.1: .all
+      1.2: .our:domain
+      1.3: .our:spaces
+      1.4: .its:domain.link
+      1.5: .its:self.link
+      1.6: .my:link:domain
+      1.7: .my:link:own
+      1.8: .my:link:self
+
+      2.0: vet ion.with.all per template
+      2.1: get or set ion.with
+      2.2: get or set THE.all
+      2.3: set THE.all with ion.all.members
+      2.4: set ion.all to THE.all
+
+      3.0: repeat 1.x for ion.with.our per template
+      4.0: repeat 1.x for ion.with.lets per template
+
+      1: set ion.with: .all:any .our:domain+spaces .own:domain+self .my:domain+own+self
+      2.
+      3: use ion.with: .all .our.domain
+    `],
+
+  linkSpaces :function
+  linkSpaces (ion)
+    { var skip    = this.with.all.skip
+        , spaces  = this.spaces
+        , space   = this.space
+        , domain  = ion.re.id.match(/@(.*)/)
+        ; domain  = domain && domain[1]
+
+      var   WITH      = new spaces.WITH
+        ,   sion      = ion.with
+        ;    ion.with = WITH
+        ;  (WITH.our  = {}).domain  = this.space ({id:domain})
+        ;  (WITH.my   = {}).domain  = WITH.our.domain
+        ;   WITH.own  = (WITH.its   = WITH.my).own = ion
+        ;   WITH.all  = this.space()
+        ; WITH.its[domain] = WITH.my [domain]
+        = WITH.our[domain] = WITH.our.domain
+
+      if( !sion ) return
+
+      var
+        WITHs, sions
+      for// each of the sion template's with: .all .our .its .itself & .my
+        /// spaces, ensure that this ion has them and all their expected
+        /// member-spaces:
+        ( var s in WITH)
+        { if(! WITH.hasOwnProperty (s)) continue
+          if(  WITH[s]   ===   sion[s]) continue
+          s in sion       ||  (sion[s] = WITH[s])
+          WITHs = WITH[s] ;    sions   = sion[s]
+
+          var
+            WITHm, sionm
+          for// each of this ion's with: .all .our .its .itself & .my spaces,
+            /// ensure that all their known: .domain .self & unknown
+            /// member-spaces exist:
+            ( var m in sions)
+            { if(! sions.hasOwnProperty  (m)) continue //🤔 prohibits inherited sub-spaces
+            //if(/*skip[m] ||*/WITHs[m]  ===  sions[m]) continue
+              if(! (m in WITHs))
+              WITHs[m]  = (m != 'all' && 'object' == typeof sions[m])
+                        ?   this.space ({id:m, of:WITHs})
+                        :   sions[m]
+              sionm     =   sions[m]; WITHm= WITHs[m]
+              if( WITHm === sionm) continue
+
+                for// each of this ion's with: .all .our .its .itself & .my
+                  /// spaces' member spaces, ensure their values are as expected
+                  ( var v in sionm)
+                  { if(! sionm.hasOwnProperty (v)) continue
+                    WITHm[v] = sionm[v]
+                  }
+            }//for:WITH.my+its+our:domain+self+more
+        }//for:WITH
+    },
+
   sion :function
   sion (from)
     { sion.with || (sion.with = (sion === this.sion) && this.with)
@@ -172,7 +314,7 @@
         , skip    = wiTh.all.skip
         , spaces  = own.spaces || (own.spaces = own.self.spaces)
         , domain  = from.domain
-        , our     = from.our || wiTh.sion_space (domain)
+        , our     = from.our || wiTh.space (domain)
         , all     = wiTh.all || spaces.null
         , ion     = from.ion
         , within  = ion.with || (ion.with = {my:ion, our:our, all:all})
@@ -188,7 +330,7 @@
           ( var S = ofs.length, s,   fs
           ;     S--, (s  = ofs [S]), S+1
           ; ~s.indexOf('@') || (s +='@'+domain)
-          ,  within.our[s] = spaces[s]  || self.sion_space ((from.id=s, from.parent=self.sion_space((from.id=s,from.parent=null,from)), from))
+          ,  within.our[s] = spaces[s]  || self.space ((from.id=s, from.parent=self.space((from.id=s,from.parent=null,from)), from))
           ,  fs = s.replace('@','_')
           ,  within.our[fs] = spaces[fs] = within.our[s]
           );
@@ -244,12 +386,13 @@
         , spaces = thi$.spaces
         , things = ion.link ===  '*' ?  ion.with.its/*.with || ion.with*/ || ion : ion.to ? ion.link : ion.share
         , to     = ion.to   ||  (ion.re && ion.re.id) || ''
-        ; ('*' === to) && (to = Object.keys (thi$.spaces))
+        ; ('*' === to) && (to = null)//Object.keys (thi$.spaces))
         ; Array.isArray   (to)  || (to = [to])
 
       for (var thing in things)
         { if (( ('boolean' == typeof ion [thing]) && !ion [thing])
-          ||  ( ('re'      ==             thing ) &&  ion.re !== true)
+          ||  ( ('re'     ===             thing ) &&  ion.re     !== true)
+          ||  (                     skip [thing]  &&  ion[thing] !== true)
           ||     ~thing.indexOf ('@') &&  true   !==  ion [thing])
           continue
 
@@ -257,7 +400,7 @@
             ( var T = to.length, name=thing, id, space, from={id:null}
             ;     T--
             ;    id = (id = to[T]) && object [typeof id] ? id.re && id.re.id : id
-            , space = thi$/*.space (id)/*/.sion_space ((from.id=id, from))
+            , space = thi$.space ((from.id=String(id), from))
             , space [name]
                 = typeof (thing = things [name]) == 'string'
                 ?    ion [thing]
@@ -271,12 +414,12 @@
     , 'todo: ...'
     ],
   spaces:
-    { with: {all : null}
+    { WITH: function WITH(){}
     , null: {}
     },
 
   spaceInfo:
-    [ "note: Returns & if needed, creates a space based on id's @domain"
+    [ "note: Returns, and if needed, creates a space based on id's @domain"
     , 'todo: ...'
     ],
   space :function
