@@ -25,19 +25,10 @@
         ]
     },
 
-  on:
-    [ ['get', 'in', 'then', 'after']
-    , ['get'      , 'then', 'after']
-    , ['get', 'in', 'then']
-    , ['get'      , 'then']
-    , ['get', 'in'  ]
-    , ['get', 'and' ]
-    , ['get']
-    ],
-
   valueOf:function
   ionify ()
-    { this.web ()
+    { delete this.valueOf
+      this.web ()
     },
 
   web :function
@@ -50,6 +41,13 @@
     ; web.ready     ()
     ; web.locate    ()
     ; web.getScript ({at:'on.ion@ionify'})
+    { var host      = (Object.prototype.valueOf.with = {}).host = this
+        ; host.get  = this.getScript
+
+  //  host.watch  ()
+      host.ready  ()
+      host.locate ()
+      host.get    ({at:'get@ionify'})
     },
 
   watch:
@@ -70,14 +68,14 @@
       },
 
   errors:
-    { noDOM   : "web@ionify needs the DOM: Document Object Module API"
-    , noScript: "No script url or code found in "
+    { noDOM   : 'web@ionify needs the DOM: Document Object Module API'
+    , noScript: 'No script url or code found in '
     },
 
   locateInfo:
     [" note: senses ionify's path for locating & loading its ions. "
     ,/ note: locates via most to least accurate techniques.        /
-    ," will: sense /ions/ path & only when unable apply hardcode.  "
+    ,' will: sense /ions/ path & only when unable apply hardcode.  '
     ],
   locate:
     function locate ()
@@ -113,20 +111,40 @@
                        ?  url : url.replace (get$.ID, get$.URL)
           }
 
-      ; document.head.appendChild (script)
-      ~{debug:["getting", url, "..."]}
-      },
+  getScript :function
+  getScript (action)
+    { var  web = this
+        , code = String (action.code || '')
+        ,  url = String (action.at   || '')
+        , get$ = web.get$
+        ; get$.URL.get$ = get$
+
+      if (!url && !code)
+        return ~{warn: [web.errors.noScript, JSON.stringify (action)]}
+
+      var script = document.createElement ('script')
+        ; script.type  = 'text/javascript'
+        ; action.then && (script.onload = action.then)
+        ; script.async =  get$.ASYNC [action.in]
+
+      if (url)
+        { url.match (get$.ID) && (script.id = url)
+          url[url.length-1] == '/' && (url += get$.PATH.ions)
+          script.src  =  url = url.match   (get$.HTTP)
+                      ?  url : url.replace (get$.ID, get$.URL)
+        }
+
+      document.head.appendChild (script)
+    ~{debug:['getting', url, '...']}
+    },
 
   getInfo:
     [" does ~{get: ['ion.id' || './script.js'], then: ['actions']} "
-    ," will update get$.PATH with new @domains & their paths.      "
-    ," will handle URLs with existing file extension(s).           "
-    ," will move got() & .then code to ~get.then                   "
-    ," will sense ion ids vs. script paths: ./script.js            "
-    ," will use .then() as ~on.do where ~{on:''|[], do:ion, after:all|any|each}     "
-    ," will set .then() to ~on.do.after                            "
-    ," will set ~get.then to do ~on:ion.id & script.onload; 1st called cancels 2nd. "
-    ," ... "
+    ,' will update get$.PATH with new @domains & their paths.      '
+    ,' will handle URLs with existing file extension(s).           '
+    ,' will sense ion ids vs. script paths: ./script.js            '
+    ,' will set ~get.then to do ~on:ion.id & script.onload; 1st called cancels 2nd. '
+    ,' ... '
     ],
   get$:
     { ASYNC:
@@ -140,14 +158,14 @@
     ,    ID: (/(?:(.*)@(\D*)|(\D*))(\d+.*)*/)    // matches ((api)@(space.) | (api.)) version#
     ,  HTTP: (/^\w+:\/\//)                       // matches URL protocols
     ,  PATH:
-           { ionify    : "//cdn.jsdelivr.net/gh/ionify/ionify@public/ions/"
+           { ionify    : '//cdn.jsdelivr.net/gh/ionify/ionify@public/ions/'
            , ions      : 'ions'
-           , undefined : "./"
-           , null      : "./"
-           , ''        : "./"
+           , undefined : './'
+           , null      : './'
+           , ''        : './'
            }
     ,  NAME: (/(.*)\.$/)    // matches (api). | (host).
-    ,  TYPE: ".js"
+    ,  TYPE: '.js'
     ,   EXT: (/(\.\D*$)/)   // matches file extensions
     ,   URL:
           function getURL (match, name, space, file, version, offset, string)
@@ -160,44 +178,6 @@
             ;   return get$.PATH [space] + (name || file || '') + (version || '')
                                          + /*(ext ? ext [1] :*/(get$.TYPE)
             }
-    },
- "get info":
-    [ " and: create & invoke a ~do with it"
-    , " get: ensure it's an array         "
-    , "  in: ensure it's an expected value"
-    , "then: create beacon  function      "
-    , " get: create scripts with in & then"
-    , " get: attach scripts to webi       "
-    ]
-,"get then"         :"get"
-,"get then after"   :"get"
-,"get in"           :"get"
-,"get in then"      :"get"
-,"get in then after":"get"
-,"get and"          :"get"
-, get:
-    function get ()
-      { var ion  =  this
-        ion.and && ~{do:ion.and}
-
-        var ions =  Array.isArray (ion.get) ? ion.get : (ion.get = [ion.get])
-          , todo =  ion.then
-
-        if (todo)
-          { var on  = {on:ions, do:todo, after:ion.after}
-            get.with.our &&
-            get.with.our.ionified [typeof todo]
-              || (+{find:todo, in:ion}, todo = on.do = ion [todo])
-          ~ on
-            todo = on.do
-          }
-
-        for ( var web  = get.with.its
-            ,     last = ions.length
-            ,     next = -1
-            ;  ++ next < last
-            ; web.getScript ({at:ions[next], in:ion.in, then:todo})
-            );
-      }
+    }
 }
 ;

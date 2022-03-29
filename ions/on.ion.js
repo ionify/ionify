@@ -89,9 +89,17 @@
 
   object :function
   object ()
-    { var  ionified  = Object.prototype.valueOf.ionified
-        ;    delete    Object.prototype.valueOf.ionified
-        ;  ionified && delete  ionified.valueOf
+    {
+      // var  ionified  = Object.prototype.valueOf.ionified
+      //   ;    delete    Object.prototype.valueOf.ionified
+      //   ;  ionified && delete  ionified.valueOf
+
+      var  w1th               = Object.prototype.valueOf.with
+        ,  ionify             = this
+
+        ;  ionify.sensed.with = ionify.always.with
+        =  ionify.via.with    = ionify.on.with = on_no.with
+        =  {own:ionify,our:{domain:{}}}
 
       var  ionify             =  this
         ;  ionify.the.domain.senses.on  = [ionify.on]
@@ -323,6 +331,9 @@
     { function: true
     },
 
+  pending:
+    {
+    },
 
   sensedInfo:
     [ /todo: enable ionify's ions to set sensed order of action terms /
@@ -463,6 +474,7 @@
         ; Type.prototype.valueOf =  sensor [type]
         ; known [type]           =  true
         ; known [core [type]]    =  !!core [type]
+        ; Object.seal (Type)
 
       via.with.the
         &&    via.with.the.domain.logging
