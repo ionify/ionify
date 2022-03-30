@@ -43,12 +43,12 @@
 
               var our = act.with.our
                 , id  = this.re.id
-                , my  = our.space (id || '@')
+                , my  = act.with.all.space (id || '@')
                 , got = ion.apply (my, ion.in || ion)
                 , debugging = !! (our.logging && our.logging.debug)
 
               debugging
-                ? our.debug ({debug: ['~', id || ion.name || 'anonymous', '() : ', got]})
+                ? act.with.all.debug ({debug: ['~', id || ion.name || 'anonymous', '() : ', got]})
                 :           ~{debug: ['~', id || ion.name || 'anonymous', '() : ', got]}
 
               return (ion.out = got)
