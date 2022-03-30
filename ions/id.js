@@ -54,7 +54,7 @@
         ? 'log' : 'ion'
 
       ion.re.id
-        ||  (ion.next && ion.id) /*|| ion.debug*/
+        ||  (ion.next && ion.id) || ion.debug
         || ~{next:named, id:ion}
 
       ion.re.id
