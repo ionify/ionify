@@ -9,7 +9,12 @@
     , to:  -7.20220707
     , at:  -0.1
     , is: 'generating namespaced sequential ids, per request'
-    }
+    , we: "like valueOf switching next_id, creating a private closure for internals"
+    },
+
+  on:
+    [['next', 'id']
+    ],
 
 , on  : [['next', 'id']]
 , MAX : Number.MAX_SAFE_INTEGER ||  9007199254740991
@@ -30,10 +35,8 @@
         , f0r  = action.id.re || (ion.id.re = {})
         , id   = ids [name]
 
-    ; (id >= my.MAX)  && (id = ids [name] = null)
-    ; isNaN (id)      && (id = ids [name] = my.MIN)
-    ;    f0r.id = name + (id > 0 ? '.' : '') + id
-    ; return ids [name]++
+      this['next id']     = next_id
+            next_id.with  = {own:this}
     }
 }
 ;
