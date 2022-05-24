@@ -11,7 +11,7 @@ and is maintained by
 [**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
 
 ```javascript
-~ {   log  : '👋🏾👨🏾‍💻'  } <= /note interaction/
+~ {   log  : '👋🏾👨🏾‍💻'   } <= /note interaction/
 + { "json" : "data"  } <= /json information/
 & ["natural language"] <= /text information/
 ```
