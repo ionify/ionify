@@ -155,7 +155,7 @@ relationships, in whatever order is best for human comprehension" -
     { id: 'code-as-prose.demo@ionified.net'
     , by: 'mike.lee'
     , on: -7.20190323
-    , to: -8.20220525
+    , to: -7.20220525
     , at: +0.07
     , in: 'silicon-valley.california.us.earth'
     , is: 'code as prose with orion & stories'
