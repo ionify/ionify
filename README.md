@@ -147,16 +147,16 @@ relationships, in whatever order is best for human comprehension" -
 }
 ```
 
-#### code prose
+#### [code as prose](https://captions.ionify.net/)
 
 ```javascript
 ~
 { re:
-    { id: 'code.prose.demo@ionified.net'
+    { id: 'code-as-prose.demo@ionified.net'
     , by: 'mike.lee'
     , on: -7.20190323
-    , to: -8.20211207
-    , at: +0.06
+    , to: -8.20220525
+    , at: +0.07
     , in: 'silicon-valley.california.us.earth'
     , is: 'code as prose with orion & stories'
     },
