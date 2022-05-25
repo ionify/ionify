@@ -4,11 +4,11 @@
 actions & information via
 [**ion:** invoked object notation](http://ion.ionify.net/).
 it was
-[created](http://key.ionify.net/)
+[created](https://origin.ionify.net/)
 by
 [**michael lee**](https://github.com/iskitz)
 and is maintained by
-[**team ionify**](https://github.com/ionify/about/blob/public/README.md#team):
+[**team ionify**](https://team.ionify.net/):
 
 ```javascript
 ~ {   log  : '👋🏾👨🏾‍💻'   } <= /note interaction/
@@ -343,5 +343,5 @@ without overriding all, or parts, of each other:
 🙇🏾‍♂️ through * [**יהוה**](LICENSE.txt#L1) * impossible -is- nothing ||
 [🇬🇾👨🏾‍💻🇺🇸](https://en.wikipedia.org/wiki/Guyana)
 [**mike lee**](https://github.com/iskitz) &
-[**team**](https://github.com/orgs/ionify/people)
+[**team**](https://team.ionify.net/)
 🤲🏾
