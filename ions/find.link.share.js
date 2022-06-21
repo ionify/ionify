@@ -4,9 +4,9 @@
     { id:  'find.link.share@ionify'
     , of: ['core']
     , as: ['action']
-    , by: ['mike.lee', 'team'  ]
+    , by: ['mike.👨🏾‍💻.lee','team']
     , on: { 200709   : -4      }
-    , to: { 20220620 : -7.1648 }
+    , to: { 20220621 : -7.1607 }
     , at:  -0.1
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
@@ -109,15 +109,11 @@
 
   linkInfo:
     { were:
-        {'-7.20220616':
-            [ "updating link to set ions' re.of spaces"
-            ],
-          then:
-            [ 'updating ~link & ~share to use .with vs .our'
-            , 'implementing .our.* --> .with.doma.in.*               '
-            , 'implementing ~link.to & ~link.as'
-            ]
-        },
+        [ "-7.20220616: updating link to set ions' re.of spaces"
+        , 'updating ~link & ~share to use .with vs .our'
+        , 'implementing .our.* --> .with.doma.in.*               '
+        , 'implementing ~link.to & ~link.as'
+        ],
       must:
         [ 'move id@domain matching to its own ion then share it  '
         , "fix callee.caller.our exposing ionify's domain space  "
