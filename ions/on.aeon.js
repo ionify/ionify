@@ -2,11 +2,11 @@
 ~
 { re:
     { id:  'on.aeon@ionify'
-    , of:  'core'
-    , as:  'sensation'
+    , of: ['core']
+    , as: ['sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211203
+    , to:  -7.20220621
     , at:  -0.1
     , is:
         [ "sensing all array-expressed object notations like:      "
@@ -24,8 +24,10 @@
 
   valueOf:
     function aeon ()
-     { this.my.link.with = this.my.sensors.with = this
+     { var sensors       = this.my.sensors
+       this.my.link.with = sensors.with = this
        this.my.link ()
+       for (var sense in sensors) sensors [sense] = this [sensors [sense]]
        delete this.valueOf >> this
      },
 
@@ -93,7 +95,7 @@
         },
 
   aesopInfo:
-    [" aesop: array-expresses statement|sentence|storie or phrase|pattern "
+    [" aesop: array-expressed statement|sentence|storie or phrase|pattern "
     ," will find known words in each sentence "
     ," will interpret via sentence(s), paragraph(s), chapter(s) + book(s) "
     ," will handle ['0 . 0'] via sense [thing] && sense [thing] (thing)   "
@@ -112,10 +114,10 @@
         //, shared    = aesop.our
         //, aesop     = aesop.with
         //, ionified  = shared.ionified
-          ;
+
       ! sense                      && ~{find:phrase, in:ion} && (sense = ion[phrase])//(sense = shared .sense [phrase])
     //! ionified [typeof sense]    && (sense = shared [sense])
-        typeof sense == "function"  ?   sense  (ion) : ~sense
+        typeof sense == 'function' ? sense (ion) : ~sense
       }
 }
 ;
