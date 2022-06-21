@@ -2,11 +2,11 @@
 ~
 { re:
     { id:  'find.link.share@ionify'
-    , of:  'core'
-    , as:  'action'
+    , of: ['core']
+    , as: ['action']
     , by: ['mike.lee', 'team'  ]
     , on: { 200709   : -4      }
-    , to: { 20211207 : -8.2236 }
+    , to: { 20220620 : -7.1648 }
     , at:  -0.1
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
@@ -18,9 +18,9 @@
         { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
-        , team: 'https://github.com/ionify/about/tree/public/team'
+        , join: 'https://github.com/ionify/about/tree/public/team'
         , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
-        , more: 'https://api.ionify.net/'
+        , seek: 'https://api.ionify.net/'
         },
       we:
         [ 'were updating ~link & ~share to use .with vs .our  '
@@ -81,9 +81,9 @@
     ; while
         ( last != to)    // bug? might infinitely loop on circular .with's | .our's
         { last  = to
-        ; if ( found   =  context.find_alias ({find:name, in:to})       ) break
-        ; if ( to.with && ionified [typeof (found = to.with [name]) ] ) break
-        ; if ( to.our  && ionified [typeof (found = to.our  [name]) ] ) break
+        ; if ( found         = context.find_alias ({find:name, in:to})          ) break
+        ; if ( to.with      && ionified [typeof (found = to.with      [name]) ] ) break
+        ; if ( to.our       && ionified [typeof (found = to.our       [name]) ] ) break
         ; if ( to.with ){ to = to.with } else break
         }
 
@@ -108,18 +108,33 @@
     },
 
   linkInfo:
-    [ 'were implementing .our.* --> .with.doma.in.*               '
-    , 'must move id@domain matching to its own ion then share it  '
-    , "must fix callee.caller.our exposing ionify's domain space  "
-    , 'like linking {}s & keeping their id-mapped with & our here '
-    , 'like id@domain matching with /(.*)([-+]\d+.*^@)|(@.*)/     '
-    , 'like .with .doma .in.expanded.name.of.shared.thing:        '
-    + "     .with$.doma$.in.expanded auto-added $'s on conflicts  "
-    , 'will enable   + {link:ion, to:thing}                       '
-    , 'like enabling ~ {link: true|false } with true as default   '
-    , 'like enabling ~ {link: [ion, object, more])                '
-    , 'like enabling ~ {link:ion, as:{member:thing}}              '
-    ],
+    { were:
+        {'-7.20220616':
+            [ "updating link to set ions' re.of spaces"
+            ],
+          then:
+            [ 'updating ~link & ~share to use .with vs .our'
+            , 'implementing .our.* --> .with.doma.in.*               '
+            , 'implementing ~link.to & ~link.as'
+            ]
+        },
+      must:
+        [ 'move id@domain matching to its own ion then share it  '
+        , "fix callee.caller.our exposing ionify's domain space  "
+        ],
+      will:
+        [ 'enable   + {link:ion, to:thing}                       '
+        ],
+      like:
+        [ 'linking {}s & keeping their id-mapped with & our here '
+        , 'id@domain matching with /(.*)([-+]\d+.*^@)|(@.*)/     '
+        , '.with .doma .in.expanded.name.of.shared.thing:        '
+        + ".with$.doma$.in.expanded auto-added $'s on conflicts  "
+        , 'enabling ~ {link: true|false } with true as default   '
+        , 'enabling ~ {link: [ion, object, more])                '
+        , 'enabling ~ {link:ion, as:{member:thing}}              '
+        ]
+    },
  'link as':'link',
    '*'    :'link',
   link :function
@@ -131,9 +146,11 @@
         , our   = link.our
         , debug = []
         , debugging = !!(our && our.logging && our.logging.debug)
-        , id    = (ion.re ? ion.re.id : null) || 'ion'
-        , space = link.with.space (id)
-        ; id    = id.replace (/(.+)(@|\.\d\.).*/, '$1')
+        , id        = (ion.re ? ion.re.id : null) || 'ion'
+        , space     = link.with.space (id)
+        , domain    = id.match (/@(.*)/) || ''
+        ; domain    = domain && domain [1]
+        ; id        = id.replace (/(.+)(@|\.\d\.).*/, '$1')
 
       for (property in ion)
         { thing = ion [property]
@@ -145,6 +162,14 @@
           debugging      &&
           ((id != 'ion') && ion.debug || debug.push ('linked '+ id +'.'+ property))
         } debugging      && ion.debug || debug.length &&  our.debug ({debug:debug})
+
+      space             &&
+      ion.re            &&
+     !ion.re.of         &&
+     (ion.re.of         =  ion.of || {})
+      ion.re.of.own     = (ion.of && ion.of.own) || ion
+      ion.re.of[domain] = space
+    //delete ion.of
 
       return true
     },
@@ -168,10 +193,12 @@
     },
 
   shareInfo:
-    [ '... '
-    , "will fix ~share:'*' to resolve shared things; now assumes ~do:[{share:'*'}] "
-    , 'will create +{share: {thing:..., other:...}, with:[ion.ids]} '
-    ],
+    { will:
+        [ 'ensure ~share uses .with vs .our'
+        , "fix ~share:'*' to resolve shared things; now assumes ~do:[{share:'*'}] "
+        , 'create +{share: {thing:..., other:...}, with:[ion.ids]} '
+        ]
+    },
  'link to':'share',
   share :function
   share (ion)
