@@ -6,7 +6,7 @@
     , as: ['sensation','acquisition','sensor','activation','initialization']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211207
+    , to:  -7.20220620
     , at:  -0.1
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
@@ -21,9 +21,9 @@
         { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
-        , team: 'https://github.com/ionify/about/tree/public/team'
+        , join: 'https://github.com/ionify/about/tree/public/team'
         , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
-        , more: 'https://api.ionify.net/'
+        , seek: 'https://api.ionify.net/'
         },
       we:
         [ "were examining if .ion() is the source of ions' lost 'this' reference.     "
@@ -358,7 +358,7 @@
                               && senses [words].call     (object, object)
                           //:  ~{find:words=senses[words], in:senses} && senses [words] (object)
                           //:  senses [senses [words]] (object)
-                            :  (  our && our.ionified [typeof [senses [words] ]])
+                            :  (  our && our.ionified [typeof senses [words] ])
                                   ? ~ senses [words]
                                   : ( our && our.find &&  our.find ({find:senses[words], in:senses, as:words}))
                                         ?   senses [words].call     (object, object) //todo: resolve (senses [words]) to function or act ion
