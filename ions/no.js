@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'no@ionify'
-    , as:  'sensation'
-    , of:  'core'
-    , by: ['mike.lee', 'team']
+    , as: ['sensation']
+    , of: ['core','api']
+    , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20212107
-    , as:  -0.1
+    , to:  -7.20220623
+    , as:  -0.043
     , is:
         [ "implementing ~on.no which disables a sensation mapped to one or more term(s)"
         ],
@@ -46,12 +46,12 @@
             ( var T =  term.length, t
             ;     T--, t = term[T], T+1
             ; action =    sense[t]
-            , action ?  (action   == actions[next])
+            , action ?  (action  === actions[next])
                           &&  delete   sense[t]
                           &&  delete   known[t]
-                     :  (action   ==    does[t])
-                          &&   (does   [does[t]] = null)
-                          &&  delete    does[t]
+                     :  (actions[next] === does [does[t]])
+                          &&           ((  does [does[t]] = null)
+                                       , delete  does[t]        )
             );
         }
    }
