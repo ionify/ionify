@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'on.ion@ionify'
-    , of:  'core'
+    , of: ['core']
     , as: ['sensation','acquisition','sensor','activation','initialization']
-    , by: ['mike.lee', 'team']
+    , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220620
-    , at:  -0.1
+    , to:  -7.20220623
+    , at:  -0.067
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
@@ -22,11 +22,12 @@
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
         , join: 'https://github.com/ionify/about/tree/public/team'
-        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , deal: 'https://deal.ionify.net/'
         , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "were examining if .ion() is the source of ions' lost 'this' reference.     "
+        [ "were exploring ~on with mutiple reactions"
+        , "were examining if .ion() is the source of ions' lost 'this' reference.     "
         , 'were implementing ~on.do...                                                '
         , "like removing .re.id & .re's temporarily made for anions: anonymous ions   "
         , 'will make .resolve() to convert ids to ions: e.g. ionified references.     '
@@ -323,8 +324,8 @@
         ,               D >      d++
         ;  typeof always == 'function'
               ?   always.call (object, object)
-              :   always   && (always).hasOwnProperty ('in')
-        || ((always.in = object), ~always, delete always.in)
+              :   always   && ((always).hasOwnProperty ('in')
+             || ((always.in = object), ~always, delete always.in))
         );
 
       debugging
