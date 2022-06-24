@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'on.test@ionify'
-    , of: ['tests']
+    , of: ['core','tests']
     , as: ['examination']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220623
-    , at:  -0.017
+    , to:  -7.20220624
+    , at:  -0.018
     , is: "ionify's ~on api examination"
 }   }
 
@@ -58,7 +58,10 @@
 { on:'action',
      'action':function
     reaction1 (action)
-      { try
+      { /reaction1 first reacts to action:reaction2 then action:activation/
+        'count' in action || (action.count = 0)
+
+        try
           { ++action.count == 1
             ? ~{  log:"✅ ~on: reaction: per sensation: once"}
             : ~{error:"🚫 ~on: reaction: per sensation: once"}
@@ -73,7 +76,9 @@
 { on:'action',
      'action':function
     reaction2 (action)
-      { try
+      {'count' in action || (action.count = 0)
+
+        try
           { ++action.count == 2
             ? ~{  log:"✅ ~on: reaction: per sensation: multiple"}
             : ~{error:"🚫 ~on: reaction: per sensation: multiple"}
