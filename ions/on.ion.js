@@ -26,13 +26,16 @@
         , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "were exploring ~on with mutiple reactions"
+        [ "were implementing sion.re & sion.with to remove ?. optional chaining"
+        , "want sensed() to reaction.with.re.id === object.re.id before checksum"
         , "were examining if .ion() is the source of ions' lost 'this' reference.     "
         , 'were implementing ~on.do...                                                '
+
         , "like removing .re.id & .re's temporarily made for anions: anonymous ions   "
         , 'will make .resolve() to convert ids to ions: e.g. ionified references.     '
         , 'will .resolve this.* & ~* in strings & stories to actual ion references.   '
         , 'will .resolve action@test.ionify to test/action.js                         '
+
         , 'will add logging for unknown terms like ~get with a hostless ionify.       '
         , "will make a way to undo all ~on:Type's.                                    "
         , "like that ~{is:thing, type:'ion'} could test if a type is ionified.        "
@@ -374,10 +377,15 @@
                 { reaction = reactions [r]
 
                   switch (true)
-                    { case  typeof reaction        === 'function':
-                        if (  reaction.with        ===  object   )     continue //note: strict comparison = no coerced self-activation 🐛
-                      //if (!(reaction.with?.re     -   object.re))    continue //want: ~re.valueOf() generated checksum of re.* contents
-                      //if (  reaction.with?.re.id ===  object.re?.id) continue //like: but eliminates differing ions with same id
+                    { case  typeof reaction  === 'function':
+                        if(   reaction.with  ===    object ) continue             //note: strict comparison = no coerced self-activation 🐛
+
+                      //if({[ reaction.with?.re  ]:  true }[ object.re ]          //need: ionify core to be sions to eliminate ?. optional chaining
+                      //&&    reaction.with.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
+
+                        if(   reaction.with?.re     in    {[ object.re ]: true }  //need: ionify core to be sions to eliminate ?. optional chaining
+                        &&    reaction.with.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
+
                         result   = reaction.call (object, object)
                         results += 1
                         break
