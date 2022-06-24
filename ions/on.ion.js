@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'on.ion@ionify'
-    , of: ['core']
+    , of: ['core','api']
     , as: ['sensation','acquisition','sensor','activation','initialization']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220623
-    , at:  -0.067
+    , to:  -7.20220624
+    , at:  -0.068
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
@@ -66,9 +66,9 @@
         ;    delete    Object.prototype.valueOf.ionified
         ;  ionified && delete  ionified.valueOf
 
-      var  ionify             = this
-        ;  ionify.senses.on   = ionify.on
-        ;  ionify.sensed.with = ionify.on.with = ionify.via.with
+      var  ionify             =  this
+        ;  ionify.senses.on   = [ionify.on]
+        ;  ionify.sensed.with =  ionify.on.with = ionify.via.with
         =  ionify
       //;  ionify.on ({on:'on'   ,     on: ionify.sensed})
         ;  ionify.on ({on: Object, Object: ionify.sensed})
@@ -180,20 +180,20 @@
       var groups  = sensation.on
       Array.isArray (groups)  || (groups = [groups])
 
-      var our     = on.our
+      var id      = sensation.re && sensation.re.id
         , has     = ionify.hasKnownWord
         , known   = ionify.known
         , senses  = ionify.senses
-        , id      = sensation.re && sensation.re.id
+        , our     = on.our
         , next    = -1
         , last    = groups.length
         , updated = {}
-        , action
+        , reaction, reactions
+        , word    , words
         , group
+        , spot
         , test
         , unknown
-        , word
-        , words
 
       debug.push (Object.keys (senses))
 
@@ -208,20 +208,23 @@
             ; continue
             }
 
-          unknown = !senses    [group]
-          action  =  sensation [group]
-          action
-            &&  ( senses [group] = action )  // like senses [group].push (action) for multi-action
-            &&  ! ionify.ionified [typeof action]
+          unknown  = !senses [group]        // the sensation's terms are unknown to ionify
+          unknown && (senses [group] = [])  // so create an empty terms list to keep them.
+
+          reactions = senses    [group]
+          reaction  = sensation [group]     // get the reaction
+          reaction
+            &&  ( spot = reactions.push  (reaction))
+            &&  ! ionify.ionified [typeof reaction]
             &&  ( our
-                ? our.find ({find:action,  in:sensation, as:group})
-                && (action = senses [group] = sensation    [group ])
-                :  (action = senses [group] = sensation    [action])
+                ? our.find ({find:reaction,  in:sensation, as:group})
+                && (reaction = reactions [spot-1] = sensation [group ])
+                :  (reaction = reactions [spot-1] = sensation [reaction])
                 );
 
           debug.push (['knows?', id, group, group in senses])
 
-          if (!action || senses [group] && !unknown) continue
+          if (!reaction || reactions && !unknown) continue
 
           test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
           test  =  new Function ('ion', test)
@@ -336,42 +339,69 @@
 
       debugging && from && (from != sensed) && debug.push ('from', object.re && object.re.from)
 
-      var results = 0
-        , known   = ionify.known
-        , skip    = {}
+      var reaction, reactions
         , group   , groups
         , word    , words
-        , result
+        , result  , before
+        , results = 0
+        , known   = ionify.known
+        , skip    = {}
 
       for (word in known)
-        { if (! known.hasOwnProperty (word))  continue
-          if (word in skip || !(word in object))      continue
-          if (object === (senses[word] && senses[word].with))  continue
+        { if (! known.hasOwnProperty (word))                      continue
+          if (word in skip || !(word in object))                  continue
+          if (object === (senses[word] && senses[word][0].with))  continue
 
           groups = known [word]
 
-          for (var g=0, G=groups.length; g < G; g++)
+          for
+            ( var g=0, G=groups.length
+            ;     g  < G
+            ;     g ++
+            )
             { group = groups [g]
               if (!group.in (object)) continue
-              words   =  group.act
-              result  =  typeof  senses [words]       == 'function'
-                            ?  ( senses [words].with !==  object) //🐛? strict comparison = no coerced self-activation
-                              && senses [words].call     (object, object)
-                          //:  ~{find:words=senses[words], in:senses} && senses [words] (object)
-                          //:  senses [senses [words]] (object)
-                            :  (  our && our.ionified [typeof senses [words] ])
-                                  ? ~ senses [words]
-                                  : ( our && our.find &&  our.find ({find:senses[words], in:senses, as:words}))
-                                        ?   senses [words].call     (object, object) //todo: resolve (senses [words]) to function or act ion
-                                        :(  console.log ('missing sensation: ', words, ':', senses[words])
-                                        || ('function' == typeof senses [senses [words]])
-                                            ?   senses [senses [words]].call (object, object)
-                                            : ~ senses [senses [words]]
-                                        );
-              results += 1
-              words   =  group.set
+
+              words     = group.act
+              reactions = senses [words]
+              before    = results
+
+      restart:for
+                ( var r=0, R=reactions.length
+                ;     r  < R
+                ;     r ++
+                )
+                { reaction = reactions [r]
+
+                  switch (true)
+                    { case  typeof reaction        === 'function':
+                        if (  reaction.with        ===  object   )     continue //note: strict comparison = no coerced self-activation 🐛
+                      //if (!(reaction.with?.re     -   object.re))    continue //want: ~re.valueOf() generated checksum of re.* contents
+                      //if (  reaction.with?.re.id ===  object.re?.id) continue //like: but eliminates differing ions with same id
+                        result   = reaction.call (object, object)
+                        results += 1
+                        break
+
+                      case !!ionify.ionified [typeof reaction]:
+                        result = ~reaction
+                        results += 1
+                        break
+
+                  //     case !!
+                  //       (  our
+                  //       && our.find
+                  //       && our.find ({find:reaction, in:senses, as:words})
+                  //       ):
+                  //       reactions = senses [words]
+                  //       R = reactions.length
+                  //       r = -1
+                  //       continue restart
+                    }
+                }
+
+              words = group.set
               for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
-              break
+              if  (results > before)  break
             }
         }
 

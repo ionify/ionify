@@ -6,54 +6,60 @@
     , of: ['core','api']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220623
-    , as:  -0.043
+    , to:  -7.20220624
+    , as:  -0.044
     , is:
-        [ "implementing ~on.no which disables a sensation mapped to one or more term(s)"
+        [ "~on.no which disables a sensation mapped to one or more reactions"
         ],
       we:
-        [ "WERE implementing ~{no:action, on:*}..."
-        , "like the idea of resolving ~ {no: 'this.with'}    "
-        , "must handle multiple actions using the same term. "
+        [ "like the idea of resolving ~ {no: 'this.with'}"
         ]
     },
 
   on:
-    [['no','on']
-    ],'no on'  :'no'
-     ,
+    [['no','on']]
+    , 'no on'
+    : 'no'
+    ,
 
   no :function
-  no (sensation)
-   {  if (!sensation.no && !('no' in sensation)) return sensation
+  nO (sensation)
+   {  var our = nO.our
+        , on  = sensation.on
+        , no  = sensation.no
 
-      var actions = sensation.no
-        ; Array.isArray (actions) || (actions = [actions])
+      if (!no && !('no' in sensation)) return sensation
 
-      var action
-        , term
-        , next  = -1
-        , last  = actions.length
-        , our   = no.our
-        , known = our.known
-        , sense = our.senses
-        , does  = our.does
-
-      while (++next < last)
-        { term   =   sensation.on
-          Array.isArray (term) || (term = [term])
-          for
-            ( var T =  term.length, t
-            ;     T--, t = term[T], T+1
-            ; action =    sense[t]
-            , action ?  (action  === actions[next])
-                          &&  delete   sense[t]
-                          &&  delete   known[t]
-                     :  (actions[next] === does [does[t]])
-                          &&           ((  does [does[t]] = null)
-                                       , delete  does[t]        )
-            );
+      // clear ~on:*
+      var star = our.does
+        , spot = star [on]
+        ;
+      if( spot || (on in star))
+        { star [spot]  = null
+        ; delete star [on]
         }
+
+      // clear ~on:name
+      var words       = our.known
+        , sensations  = our.senses
+        , reactions   = sensations[on]
+        , removed     = 0
+
+      if (!reactions && !(on in sensations)) return
+
+      for
+        ( var R  =  reactions.length
+        ;     R --
+        ; no   ===  reactions[R] && (reactions[R] = null)
+        , null ===  reactions[R] &&  removed++
+        );
+
+      //note: if all reactions are removed, also remove known words
+      //like: that removing known words hastens sensation detection
+      //warn: it may be wise & prudent to keep known words for context
+
+      removed - reactions.length         || delete sensations [on]
+      words[on] && words[on].length == 1 && delete      words [on]
    }
 }
 ;
