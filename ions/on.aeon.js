@@ -6,8 +6,8 @@
     , as: ['sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220621
-    , at:  -0.1
+    , to:  -7.20220624
+    , at:  -0.0
     , is:
         [ "sensing all array-expressed object notations like:      "
         + "  ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
@@ -88,7 +88,8 @@
           ///*if (!thing.with && !('with' in thing))*/ (thing.with = array)
           //  if (+thing  && thing.did)  continue
               sense.next = next
-              sense (array)
+              sensors [type] (array)
+            //sense (array)
             }
 
           return next / array.length
@@ -117,7 +118,7 @@
 
       ! sense                      && ~{find:phrase, in:ion} && (sense = ion[phrase])//(sense = shared .sense [phrase])
     //! ionified [typeof sense]    && (sense = shared [sense])
-        typeof sense == 'function' ? sense (ion) : ~sense
+        typeof sense == 'function' ? /*(ion[phrase] ||*/ ion.with[phrase]/*.sense*/ (ion) : ~sense
       }
 }
 ;
