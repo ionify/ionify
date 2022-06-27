@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'find.link.share@ionify'
-    , of: ['core']
-    , as: ['action']
+    , of: ['core','context']
+    , as: ['convention']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on: { 200709   : -4      }
-    , to: { 20220621 : -7.1607 }
-    , at:  -0.1
+    , to: { 20220627 : -7.0815 }
+    , at:  -0.056
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
         + 'access their containing ion, ~share for sharing things via domains,      '
@@ -18,8 +18,10 @@
         { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
-        , join: 'https://github.com/ionify/about/tree/public/team'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/find.test.js'
+      //, test: 'https://github.com/ionify/ionify/blob/public/ions/link.test.js'
         , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , join: 'https://github.com/ionify/about/tree/public/team'
         , seek: 'https://api.ionify.net/'
         },
       we:
@@ -27,8 +29,8 @@
         , 'were implementing ~link.to & ~link.as              '
         , 'will apply unlink when ~link.to is falsey          '
         , 'want to combine ~share & ~link.to                  '
-        , 'want re.is:version(s), re.at:@domain(s), re.it:about & re.we:plan(s).    '
         , 'want all hip & hip-hop ions to valueOf:hiphop --> start --> valueOf:hop. '
+        , "like ~find'ing phrases as reactions in on.ion.senses reactions map"
         , "like idea of queueing ~find's then doing once ~find's available          "
         , 'like that prototypes could enable automatic context sharing within ions. '
         ]
