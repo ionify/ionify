@@ -2,15 +2,15 @@
 ~
 { re:
     { id:  'logger@ionify'
-    , of:  'core'
-    , as:  'action'
-    , by: ['mike.lee', 'kaito.lee', 'team']
+    , of: ['core','api']
+    , as: ['composition','sensation']
+    , by: ['mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team']
     , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -8.20211207
-    , at:  -0.1
+    , to:  -7.20220627
+    , at:  -0.045
     , is:
-        [ "ionify's log recording actions:"
+        [ "ionify's record logging composition:"
 
         , '~{debug:*}, ~{error:*}, ~{info:*}, ~{log:*} & ~{warn:*}'
 
@@ -36,9 +36,10 @@
         { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/logger.js'
-        , team: 'https://github.com/ionify/about/tree/public/team'
-        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
-        , more: 'https://api.ionify.net/'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/logger.test.js'
+        , deal: 'https://deal.ionify.net/'
+        , join: 'https://github.com/ionify/about/tree/public/team'
+        , seek: 'https://api.ionify.net/'
         },
       we:
         [ "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
@@ -92,9 +93,10 @@
 
       var state   = logger.report (action)
         , message = action.error
+        , halt    = action.halt !== false
 
-      if( null === message) return state
-      if('boolean' != typeof message && state) ~new Error (message)
+      if( message === null || !halt) return state
+      if('boolean' != typeof message   &&   state) ~new Error (message)
 
       return state
     },
