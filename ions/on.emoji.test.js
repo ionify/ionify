@@ -2,17 +2,16 @@
 ~
 { re:
     { id:  'on.emoji.test@ionify'
-    , by: ['mike.lee', 'team']
-    , at:  'ionify.net'
+    , of: ['tests','core','emoji','sensation','composition']
+    , as: ['examination']
+    , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20190328
-    , is:  -0.1
-    , it:  "is ionify's emoji actions test suite"
-    }
-}
+    , to:  -7.20220627
+    , at:  -0.05
+    , is:  "ionify's emoji composition test suite"
+}   }
 
-~['- . 0'] <= {warn:"~['- . 0']  <=  /ionify isn't disabled/"}
-+['0 . 0'] <= { log:"~['0 . 0']  <=  /ionify is     enabled/"}
--['0 . -'] <= {warn:"~['0 . -']  <=  /ionify isn't disabled/"}
-&['0 . 0']
-;
+~['- . 0']-   {error: "🚫 ~['- . 0']-  <=  /ionify isn't disabled/", halt:false}
++['0 . 0']+   {log  : "✅ +['0 . 0']+  <=  /ionify is     enabled/"}
+-['0 . -']-   {error: "🚫 -['0 . -']-  <=  /ionify isn't disabled/", halt:false}
+&['0 . 0']&   {log  : "✅ &['0 . 0']&  <=  /ionify is     enabled/"}
