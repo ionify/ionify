@@ -2,11 +2,11 @@
 ~
 { re:
     { id:  'on.aeon@ionify'
-    , of: ['core']
+    , of: ['core','conduit']
     , as: ['sensation']
-    , by: ['mike.lee', 'team']
+    , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220624
+    , to:  -7.20220627
     , at:  -0.0
     , is:
         [ "sensing all array-expressed object notations like:      "
@@ -52,22 +52,21 @@
 
   on:
     Array,
-    Array:
-      function aeon (array)
+    Array:function
+     aeon(array)
         { array ||  (array = this)
 
         ~ {debug: ["~[", array ,"]"]}
 
-          var AEON    = aeon.with
-            , sensors = AEON.my.sensors
-          //, aesop   = aeon.with.aesop
-            , ionified = aeon.our.ionified
-            , next    = -1
-            , last    = array.length
+          var AEON      = aeon.with
+            , sensors   = AEON.my.sensors
+            , ionified  = aeon.our.ionified
+            , next      = -1
+            , last      = array.length
             , thing
             , sense
             , type
-          //; our.ionified ['string'] = true
+          //; ionified ['string'] = true
 
           while (++next < last)
             { thing =   array [next]
@@ -84,23 +83,24 @@
                       ;   continue
                       }
                 }
-          //  if (!our.ionified [type])  continue
+          //  if (!ionified [type])  continue
           ///*if (!thing.with && !('with' in thing))*/ (thing.with = array)
           //  if (+thing  && thing.did)  continue
               sense.next = next
               sensors [type] (array)
-            //sense (array)
             }
 
           return next / array.length
         },
 
   aesopInfo:
-    [" aesop: array-expressed statement|sentence|storie or phrase|pattern "
+    [" aesop: array-expressed storie or phrase"
+    ," were ensuring best phrase resolution"
+    ," were ensuring 'this' context is preserved from aeon"
     ," will find known words in each sentence "
     ," will interpret via sentence(s), paragraph(s), chapter(s) + book(s) "
     ," will handle ['0 . 0'] via sense [thing] && sense [thing] (thing)   "
-    ," will use tbd name-to-ion resolver      "
+    ," will use tbd name-to-ion resolver"
     ],
 
   aesop:
@@ -109,16 +109,15 @@
 
         var phrase = ion [aesop.next]
         aesop.next = void 0
-        phrase && ~{debug: ["+[", phrase ,"]"]}
+        phrase  && ~{debug: ["+[", phrase ,"]"]}
 
-        var sense     = (ion.with && ion.with [phrase]) //|| (ion.ion && ion.ion [phrase])
-        //, shared    = aesop.our
-        //, aesop     = aesop.with
-        //, ionified  = shared.ionified
+        var sense =   (ion.with && ion.with [phrase])
+        !   sense && ~{find:phrase, in:ion}
+        && (sense =    ion [phrase])
 
-      ! sense                      && ~{find:phrase, in:ion} && (sense = ion[phrase])//(sense = shared .sense [phrase])
-    //! ionified [typeof sense]    && (sense = shared [sense])
-        typeof sense == 'function' ? /*(ion[phrase] ||*/ ion.with[phrase]/*.sense*/ (ion) : ~sense
+        typeof sense == 'function'
+            ? (ion.with || ion) [phrase] (ion)
+            : ~sense
       }
 }
 ;
