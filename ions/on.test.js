@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'on.test@ionify'
-    , of: ['core','tests']
+    , of: ['core','convention','sensation','tests']
     , as: ['examination']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220624
-    , at:  -0.018
+    , to:  -7.20220627
+    , at:  -0.019
     , is: "ionify's ~on api examination"
 }   }
 
@@ -32,9 +32,9 @@
           ?  ~{  log:"✅ ~on: reaction: named re.id"}
 
           :   action['ion@doma.in'].is === "a top-level-id ionified module"
-          ?  ~{  log:"✅ ~on: reaction: named top-level-id"}
+          ?  ~{  log:"✅ ~on: reaction: named via top-level-id"}
 
-          :  ~{error:"🚫 ~on: reaction: named top-level-id & re.id"}
+          :  ~{error:"🚫 ~on: reaction: named via top-level-id & re.id"}
 }         }
 +
 {re:
@@ -94,14 +94,14 @@
 
 ~
 { on:
-    [ [ 'multi-termed', 'reaction']
-    ,  'single-termed----reaction'
+    [ ['compound-term', 'reaction']
+    ,  'single-term------reaction'
     ,        '*'
     ]
     ,
  '*':function
   all_reactions (action)
-    { if (all_reactions == action.no) return  ~{log: "✅ ~on: reaction: all"}
+    { if (all_reactions == action.no) return  ~{log: "✅ ~on: convention"}
       if (all_reactions.happened    ) return; else all_reactions.happened = true
     ~ {on:all_reactions.with.re.id,   no:all_reactions}
     //~on:* keeps & maps reactions to their ids, not '*' <= 🐛 to fix?
@@ -109,20 +109,20 @@
     //~on:* would automatically do this if multi-reaction per sensation created
     }
     ,
- 'single-termed----reaction':function
-  single_termed____reaction  ( action )
+ 'single-term------reaction':function
+  single_termed____reaction ( action )
     {
-    ~ {log: "✅ ~on: reaction: single-termed"}
+    ~ {log: "✅ ~on: reaction: term: single"}
     }
     ,
- 'multi-termed reaction':function
-  multi_termed_reaction  ( action )
+ 'compound-term reaction':function
+  compound_term_reaction ( action )
     {
-      ~ {log: "✅ ~on: reaction: multi-termed"}
+      ~ {log: "✅ ~on: reaction: term: compound"}
     }
 }
 +
-{'multi-termed':'action', reaction:true}
+{'compound-term':'action', reaction:true}
 +
-{'single-termed----reaction':true}
+{'single-term------reaction':true}
 ;
