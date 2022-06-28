@@ -7,7 +7,7 @@
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
     , to:  -7.20220628
-    , at:  -0.069
+    , at:  -0.070
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
@@ -18,15 +18,26 @@
         , 'sharing core actions & information via domain & other spaces.              '
         ],
       go:
-        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
+      //, test: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.test.js'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , join: 'https://github.com/ionify/about/tree/public/team'
-        , deal: 'https://deal.ionify.net/'
-        , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "were implementing sion.re & sion.with to remove ?. optional chaining"
+        [ "MUST create an examination that ~get's on.test@ionify multiple "
+        + "times to recreate the duplicate sensation self-reaction scenario "
+        + "described in re.go.help.issue.14."
+
+        , "MUST observe ionify's behavior via the re.go.help.issue.14 "
+        + "examination, then implement changes to solve all of or the "
+        + "critically impactful problems +| opportunities it reveals before "
+        + "we can say the problem's solved or closed."
+
+        , "were implementing sion.re & sion.with to remove ?. optional chaining"
         , "want sensed() to reaction.with.re.id === object.re.id before checksum"
         , "were examining if .ion() is the source of ions' lost 'this' reference.     "
         , 'were implementing ~on.do...                                                '
