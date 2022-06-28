@@ -2,20 +2,29 @@
 ~
 { re:
     { id:  'no.test@ionify'
-    , of: ['tests']
-    , as: ['test.0']
-    , by: ['mike.lee', 'team']
+    , of: ['tests','core','sensation']
+    , as: ['examination.0']
+    , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211207
-    , at:  -0.0
+    , to:  -7.20220627
+    , at:  -0.02
     , is:
-        [ "testing ionify's ~no sensation removal action"
+        [ "ionify's ~no sensation removal api examination"
         ],
+      go:
+        { help: 'https://github.com/ionify/ionify/issues'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/no.js'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/no.test.js'
+        , deal: 'https://deal.ionify.net/'
+        , join: 'https://github.com/ionify/about/tree/public/team'
+        , seek: 'https://api.ionify.net/'
+        },
       it:
         [ 'remove', 'ion', 'ionify', 'sensation', 'action'
         ],
       we:
-        [ "were creating first ~no.on test(s)"
+        [ "were creating first ~no.on test(s)..."
         , "must ..."
         , "will ..."
         , "plan ..."
@@ -32,7 +41,6 @@
         , "cant ..."
         ]
     },
-
 
   do:
     [ '~no: *'
