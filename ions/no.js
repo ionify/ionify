@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'no@ionify'
-    , as: ['sensation']
     , of: ['core','api']
+    , as: ['composition','sensation','convention']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220624
-    , as:  -0.044
+    , to:  -7.20220628
+    , as:  -0.045
     , is:
         [ "~on.no which disables a sensation mapped to one or more reactions"
         ],
@@ -23,12 +23,12 @@
     ,
 
   no :function
-  nO (sensation)
-   {  var our = nO.our
+  no (sensation)
+   {  var our = no.our
         , on  = sensation.on
-        , no  = sensation.no
+        , No  = sensation.no
 
-      if (!no && !('no' in sensation)) return sensation
+      if (!No && !('no' in sensation)) return sensation
 
       // clear ~on:*
       var star = our.does
@@ -50,7 +50,7 @@
       for
         ( var R  =  reactions.length
         ;     R --
-        ; no   ===  reactions[R] && (reactions[R] = null)
+        ; No   ===  reactions[R] && (reactions[R] = null)
         , null ===  reactions[R] &&  removed++
         );
 

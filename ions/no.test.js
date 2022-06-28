@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'no.test@ionify'
-    , of: ['tests','core','sensation']
+    , of: ['tests','core','composition','sensation','convention','api']
     , as: ['examination.0']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220627
-    , at:  -0.02
+    , to:  -7.20220628
+    , at:  -0.03
     , is:
         [ "ionify's ~no sensation removal api examination"
         ],
