@@ -6,8 +6,8 @@
     , as: ['convention', 'sensation','sion']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220624
-    , at:  -0.041
+    , to:  -7.20220628
+    , at:  -0.042
     , is:
         [ 'ensuring that all ionified objects have an re.id.'
         , "setting an object's re.id value as a member mapped to its object re."
@@ -29,6 +29,8 @@
         , "like migrating non-sion re.* into re.ex.* & ~note'ing that"
         , "have implemented core sion.re & its checksum"
         , "want to reimplement checksum to auto-select core [non-object] values"
+        , "want to cache checksum, vs re-calculating everytime, with 0 problems"
+        , "want numeric checksum for simple & comprehensive comparison code"
         , "like checksum as re.at.checksum"
         , "have ID.nextID's range as opposite next.id's to minimize overlap."
         , "like ions with old ids being updated once next.id's available."
@@ -82,11 +84,14 @@
 
       function
       checksum ()
-        { var                 checksum
-          with   (this)       checksum
-            = id + '' + im  + String (of)       + String (as)
-                            + String (ax)       + String (by)
-            + on + to + at  + String (this.if)  + String (is)
+        { var             checksum
+          with(this)      checksum =
+            [ id, '', im, String (of)     , String (as)
+                        , String (by)
+            , on, to, at, String (this.if), String (is)
+            ].
+          join('...')
+
 
         //console.debug (checksum)
           return this.ex.checksum = checksum

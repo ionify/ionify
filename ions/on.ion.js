@@ -6,8 +6,8 @@
     , as: ['sensation','acquisition','sensor','activation','initialization']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220624
-    , at:  -0.068
+    , to:  -7.20220628
+    , at:  -0.069
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
@@ -383,7 +383,8 @@
                       //if({[ reaction.with?.re  ]:  true }[ object.re ]          //need: ionify core to be sions to eliminate ?. optional chaining
                       //&&    reaction.with.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
 
-                        if(   reaction.with?.re     in    {[ object.re ]: true }  //need: ionify core to be sions to eliminate ?. optional chaining
+                        if(   reaction.with?.re.id  ===      object.re?.id
+                        &&    reaction.with?.re     in    {[ object.re ]: true }  //need: ionify core to be sions to eliminate ?. optional chaining
                         &&    reaction.with.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
 
                         result   = reaction.call (object, object)
