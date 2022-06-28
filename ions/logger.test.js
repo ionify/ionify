@@ -2,15 +2,24 @@
 ~
 { re:
     { id:  'logger.test@ionify'
-    , of:  'tests'
-    , as:  'test.0'
-    , by: ['mike.lee', 'kaito.lee', 'team']
+    , of: ['tests','core','transcription','composition','sensation']
+    , as: ['examination.0']
+    , by: ['mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team']
     , in: ['silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -8.20211201
-    , at:  -0.1
-    , is: "testing ionify's log recording actions"
-    , we:
+    , to:  -7.20220627
+    , at:  -0.06
+    , is: "ionify's ~{info,log,debug,warn,error} transcription api examination"
+    , go:
+        { help: 'https://github.com/ionify/ionify/issues'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/logger.js'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/logger.test.js'
+        , deal: 'https://deal.ionify.net/'
+        , join: 'https://github.com/ionify/about/tree/public/team'
+        , seek: 'https://api.ionify.net/'
+        },
+      we:
         [ "were ..."
         , "must ..."
         , "will ..."
@@ -24,9 +33,10 @@
         ]
     },
 
-  valueOf     :function
+  valueOf:function
   test_logger ()
-    { this.test_debug ()
+    { delete this.valueOf <- this
+      this.test_debug ()
       this.test_error ()
       this.test_info  ()
       this.test_log   ()
@@ -91,18 +101,18 @@
     { var  mode = this.my.own.message
         ,  error= +{error:null}
         ~ {error: false}
-        - {error: "❌ ~error " + mode.disabled}
+        - {error: "❌ ~error " + mode.disabled, halt:false}
         + {error: true}
 
       try
         {
-        ~ {error: "✅ ~error " + mode.operates}
-        - {error: "❌ ~error " + mode.operates}
+        ~ {error: "✅ ~error " + mode.operates + " & obtrusive"}
+        - {error: "❌ ~error " + mode.operates + " & obtrusive", halt:false}
         }
       catch (err)
         {
-        ~ /~error test try-catch prevents disrupting subsequent tests/
-        & /~error records the error message before throwing the error/
+        ~ /~error.halt:false records & makes an error unobtrusive/
+        | /so this catch is only activated if ~error isn't halted/
         }
 
         ~ {error: !!error}
