@@ -3,11 +3,11 @@
 { re:
     { id:  'do@ionify'
     , of: ['core','api']
-    , as: ['sensation']
-    , by: ['mike.lee','team']
+    , as: ['composition','sensation']
+    , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220623
-    , at:  -0.025
+    , to:  -7.20220628
+    , at:  -0.026
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -64,7 +64,7 @@
   after :function
   afteR ()
     { var ion   = this
-        , ions  = ion.on
+        , ions  = Array.isArray (ion.on) ? ion.on : [ion.on]
         , after = ion.after || 'all'
         , own   = afteR.with
         , sense = own.ensure [after] || own.ensure [typeof after] || 'all'
@@ -86,7 +86,7 @@
   all (ion)
     { var go   = all.with.go
         , got  = {}
-        , ions = ion.on
+        , ions = Array.isArray (ion.on) ? ion.on : [ion.on]
         , todo = ion.do
         , them = {}
         , done = false
