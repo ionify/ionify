@@ -6,8 +6,8 @@
     , as: ['sensation','acquisition','sensor','activation','initialization']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220628
-    , at:  -0.070
+    , to:  -7.20220629
+    , at:  -0.071
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
@@ -117,7 +117,8 @@
 
       ~
       { get:
-          [   'next.id@ionify',        'id@ionify', 'find.link.share@ionify'
+          [ 're@ionify'
+          , /*'next.id@ionify',*/      'id@ionify', 'find.link.share@ionify'
           ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
           ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
           ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
@@ -336,7 +337,7 @@
         ; object || (object = this)
 
       for
-        ( var always,   D = does.length, d=0
+        ( var always,   D = does.length, d=-1
         ;    (always      = does[d])
         ,               D >      d++
         ;  typeof always == 'function'

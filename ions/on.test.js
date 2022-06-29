@@ -2,21 +2,21 @@
 ~
 { re:
     { id:  'on.test@ionify'
-    , of: ['tests','core','sensation','composition']
-    , as: ['examination']
+    , of: ['tests','core','api']
+    , as: ['examination','convention','sensation','composition']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.202206271905
-    , at:  -0.019
+    , to:  -7.20220629
+    , at:  -0.020
     , is: "ionify's ~on api examination"
     , go:
-        { help: 'https://github.com/ionify/ionify/issues'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
-        , deal: 'https://deal.ionify.net/'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , join: 'https://github.com/ionify/about/tree/public/team'
-        , seek: 'https://api.ionify.net/'
         },
       we:
         [ "were ... "
@@ -47,11 +47,13 @@
       { on:'ion@doma.in',
           'ion@doma.in':function
               on_ion_id (action)
-                {   action.re.id === 'ion@doma.in'
-                &&  action.re.is === "an re ionified module"
+                {   action.re.id    === 'ion@doma.in'
+                &&  action.re.is    === "an re ionified module"
+                ||  action.re.is[0] === "an re ionified module"
                 ?  ~{  log:"✅ ~on: reaction: named via re.id"}
 
-                :   action['ion@doma.in'].is === "a top-level-id ionified module"
+                :   action['ion@doma.in'].is    === "a top-level-id ionified module"
+                ||  action['ion@doma.in'].is[0] === "a top-level-id ionified module"
                 ?  ~{  log:"✅ ~on: reaction: named via top-level-id"}
 
                 :  ~{error:"❌ ~on: reaction: named via top-level-id & re.id", halt:false}

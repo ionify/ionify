@@ -6,32 +6,26 @@
     , as: ['convention', 'sensation','sion']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220628
-    , at:  -0.042
+    , to:  -7.20220629
+    , at:  -0.043
     , is:
-        [ 'ensuring that all ionified objects have an re.id.'
+        [ "ensuring that all ionified objects have an re.id."
         , "setting an object's re.id value as a member mapped to its object re."
-        , 'setting missing re & re.id on an object with a domain-named member.'
-        , 'setting missing re on a object.'
-        , 'setting missing re.id via ~next.id when possible.'
+        , "setting missing re.id via ~next.id when possible."
         ],
       go:
-        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/id.js'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/id.test.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , join: 'https://github.com/ionify/about/tree/public/team'
-        , deal: 'https://deal.ionify.net/'
-        , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "want own re@ convention from ID() to ensure sions have expected re.*"
-        , "were considering removing|replacing old.re.* duplicated by sion.re.*"
-        , "like migrating non-sion re.* into re.ex.* & ~note'ing that"
-        , "have implemented core sion.re & its checksum"
-        , "want to reimplement checksum to auto-select core [non-object] values"
-        , "want to cache checksum, vs re-calculating everytime, with 0 problems"
-        , "want numeric checksum for simple & comprehensive comparison code"
-        , "like checksum as re.at.checksum"
+        [ "plan to have top-level-ids reference entire ion not just its re & "
+        + "this requires re@, ~find, ~share & ~link's compatibility with that."
+
         , "have ID.nextID's range as opposite next.id's to minimize overlap."
         , "like ions with old ids being updated once next.id's available."
         , "like id.domain string via id:{domain:'domain',toString:'id@domain'}"
@@ -40,64 +34,20 @@
     },
 
   on:'*',
-     '*':'ID'
+     '*':'id'
         ,
 
-  ID:function
-  ID( ion )
-    { var id  =   ion.hasOwnProperty ('re')
-              ?   ion.re.id
-              :  (ion.re = {id: void 0}).id
+  id:function
+  id( ion )
+    { var ID = ion.re && ion.re.id
 
-      if(id || isFinite (id))
-      /*return*/ ion [id]
-            ?         id
-            :   (ion [id] = ion.re).id
+      if(ID || isFinite (ID))
+          return ion [ID]
+            ?         ID
+            :   (ion [ID] = ion.re).id
             ;
 
-      for (var word in ion)
-        if (~ word.search (/@/))
-          { var    re  = ion [id = ion.re.id = word]
-          ; typeof re == 'object'
-              &&  (ion .re = re)
-              && !('id' in   re)
-              &&  ( re .id = id)
-        //; return id
-          }
-
-      ion.re
-      = { id: ion.re.id ||  ''
-        , im: ion.re.im ||  ''
-        , of: ion.re.of || ['']
-        , as: ion.re.as || ['']
-        , ax: ion.re.ax ||  {}
-        , by: ion.re.by || ['']
-        , on: ion.re.on ||   0
-        , to: ion.re.to ||   0
-        , at: ion.re.at ||   0
-        , if: ion.re.if || ['']
-        , is: ion.re.is || [""]
-        , ex: ion.re.ex ||  {}
-        , toString: checksum
-        , valueOf : checksum
-        }
-
-      function
-      checksum ()
-        { var             checksum
-          with(this)      checksum =
-            [ id, '', im, String (of)     , String (as)
-                        , String (by)
-            , on, to, at, String (this.if), String (is)
-            ].
-          join('...')
-
-
-        //console.debug (checksum)
-          return this.ex.checksum = checksum
-        }
-
-      if (id = ion.re.id) return id
+      if (ID = ion.re.id) return ID
 
       var named
         = (ion.debug ||  ion.log || ion.error || ion.info || ion.warn)
@@ -109,13 +59,24 @@
 
       ion.re.id
         || (ion.re.id = named/*----*/+ '.' +/*----------------------------------*/
-         /*|*/          ( ID.nextId  ? --ID.nextId                              //
-         /*|*/                       :  (ID.nextId = Number.MAX_SAFE_INTEGER    //
+         /*|*/          ( id.nextId  ? --id.nextId                              //
+         /*|*/                       :  (id.nextId = Number.MAX_SAFE_INTEGER    //
          /*|*/                                    || 9007199254740991           //
            )/*--------*/)/*-----------*/)/*-------------------------------------*/
 
-      ion [id = ion.re.id]  ||  (ion [id] = ion.re)
-      return id
+      ion [ID = ion.re.id]  ||  (ion [ID] = ion.re)
+      return ID
+    },
+
+  valueOf:function
+  ionify ()
+    { delete  this.valueOf <- this & {get:'next.id@ionify'}
+    ; delete  this[this.re.id]
+    ; delete  this.id.with //keep to help on.ion@sensed() & ~find resolve names?
+    ; delete  this.id.our  //keep to help on.ion@sensed() & ~find resolve names?
+    ; delete  this.id
+    ; delete  this.re
+    ; delete  this['*']
     }
 }
 ;
