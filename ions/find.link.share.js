@@ -6,8 +6,8 @@
     , as: ['convention']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on: { 200709   : -4      }
-    , to: { 20220627 : -7.0815 }
-    , at:  -0.056
+    , to: { 20220628 : -7.1608 }
+    , at:  -0.057
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
         + 'access their containing ion, ~share for sharing things via domains,      '
@@ -15,17 +15,20 @@
         + 'names to ions.                                                           '
         ],
       go:
-        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/find.test.js'
       //, test: 'https://github.com/ionify/ionify/blob/public/ions/link.test.js'
-        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , join: 'https://github.com/ionify/about/tree/public/team'
-        , seek: 'https://api.ionify.net/'
         },
       we:
-        [ 'were updating ~link & ~share to use .with vs .our  '
+        [ "plan to have top-level-ids reference entire ion not just its re & "
+        + "this requires re.*@, ~find, ~share & ~link's compatibility with that"
+
+        , 'were updating ~link & ~share to use .with vs .our  '
         , 'were implementing ~link.to & ~link.as              '
         , 'will apply unlink when ~link.to is falsey          '
         , 'want to combine ~share & ~link.to                  '
