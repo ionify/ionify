@@ -6,8 +6,8 @@
     , as: ['composition','sensation']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220628
-    , at:  -0.026
+    , to:  -7.20220629
+    , at:  -0.027
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -16,6 +16,15 @@
         , "   + {on: String || [], do: ...} "
         , "   + {do: String || []}          "
         ],
+      go:
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/do.js'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/do.test.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://github.com/ionify/about/tree/public/team'
+        },
       we:
         [ "must ... "
         , "will ... "
@@ -32,9 +41,9 @@
     ],
 
   do :function
-  d0 (ion)
+  do_ (ion)
     { var todo  =    ion.do
-    ;     todo  && ! d0.our.ionified [typeof todo]
+    ;     todo  && ! do_.our.ionified [typeof todo]
                 && ~{find:todo, in:ion, as:'do'}
                 &&  (todo = ion.do)
     ;   ~ todo
@@ -62,12 +71,12 @@
     },
 
   after :function
-  afteR ()
+  after ()
     { var ion   = this
         , ions  = Array.isArray (ion.on) ? ion.on : [ion.on]
-        , after = ion.after || 'all'
-        , own   = afteR.with
-        , sense = own.ensure [after] || own.ensure [typeof after] || 'all'
+        , aftr  = ion.after || 'all'
+        , own   = after.with
+        , sense = own.ensure [aftr] || own.ensure [typeof aftr] || 'all'
         , ready = own [sense] (ion)
         , todo  = ion.do/*
         ; todo  = doAfter.our.ionified [typeof todo]
@@ -76,7 +85,7 @@
         ; todo || (todo = ion.do)*/
 
       if (!todo) return void ~{warn:`~on.do.after: unable to find ${ion.do}`}
-      var on = {on:ions, after:after}
+      var on = {on:ions, after:aftr}
       for (var next=-1, last=ions.length; ++next < last; on [ions [next]] = ready)
       ion.do = ready
     ~ on

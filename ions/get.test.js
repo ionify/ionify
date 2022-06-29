@@ -2,21 +2,21 @@
 ~
 { re:
     { id:  'get.test@ionify'
-    , of: ['tests','core','acquisition','composition','sensation']
-    , as: ['examination.0']
+    , of: ['tests','core','api']
+    , as: ['examination.0','acquisition','composition','sensation']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220627
-    , at:  -0.020
+    , to:  -7.20220629
+    , at:  -0.021
     , is:  "ionify's ~get api examination"
     , go:
-        { help: 'https://github.com/ionify/ionify/issues'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/web.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/get.test.js'
-        , deal: 'https://deal.ionify.net/'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , join: 'https://github.com/ionify/about/tree/public/team'
-        , seek: 'https://api.ionify.net/'
         },
       we:
         [ "were ..."
@@ -37,26 +37,26 @@
       ~
       { get:'../ions/i'
       , and:
-          { log: "✅ ~get:script and:{} oli: object-literal ion "
+          { log: "✅ ~get:script and:{} do oli: object-literal invocation"
           }
       }
       +
       { get:'../ions/i'
       , and:
-          [{ log: "✅ ~get:script and:[{}] aeon: array-expressed object notation"
+          [{ log: "✅ ~get:script and:[{}] do aeon: array-expressed object notation"
           }]
       }
       +
       { get:'../ions/i'
       , and:
           [ {info:true}
-          , /✅ ~get:script and:[\/\/,{}] aeon: array-expressed object notation/
+          , /✅ ~get:script and:[\/\/,{}] do aeon: array-expressed object notation/
           ]
       }
       +
       { get:'../ions/i'
       , and:
-          /✅ ~get:script and: \/\/   storie: statement, text, or recognition expression/
+          /✅ ~get:script and: \/\/     do storie: statement, text, or recognition expression/
       }
       +
       { get:'../ions/i'
@@ -73,7 +73,7 @@
       { get : '../ions/i'
       , in  : 'order'
       , then:
-          { log: "✅ ~get:script in:order then:{} oli: object-literal ion"
+          { log: "✅ ~get:script in:order then:{} do oli: object-literal invocation"
           }
       }
       +

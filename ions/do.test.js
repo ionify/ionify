@@ -2,21 +2,21 @@
 ~
 { re:
     { id:  'do.test@ionify'
-    , of: ['tests','core','sensation','composition']
-    , as: ['examination']
+    , of: ['tests','core','api']
+    , as: ['examination','sensation','composition']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220627
-    , at:  -0.06
+    , to:  -7.20220629
+    , at:  -0.07
     , is: "ionify's ~on.do.after api examination"
     , go:
-        { help: 'https://github.com/ionify/ionify/issues'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/do.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/do.test.js'
-        , deal: 'https://deal.ionify.net/'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
         , join: 'https://github.com/ionify/about/tree/public/team'
-        , seek: 'https://api.ionify.net/'
         },
       we:
         [ "were ..."
@@ -45,10 +45,10 @@
             }
       }
 
-      ~ {do: {log:"✅ ~do: {}: oli: object-literal ion"}}
+      ~ {do: {log:"✅ ~do: {}: oli: object-literal invocation"}}
       ~ {do: 'went', went:{log:"✅ ~do: {}: oli: named"}}
 
-      ~ {do: [{log:"✅ ~do: []: ali: array-literal ion"}] }
+      ~ {do: [{log:"✅ ~do: []: ali: array-literal invocation"}] }
       ~ {do: 'many', many:[{log:"✅ ~do: []: ali: named"}] }
       ~ {do: ['aesop'], aesop:{log:'✅ ~do: ["aesop: array-expressed storie or phrase"]'}}
       ~ {do: null}
