@@ -3,33 +3,54 @@
 { re:
     { id:  'on.aeon@ionify'
     , of: ['core','conduit']
-    , as: ['sensation']
+    , as: ['transmission','sensation']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220627
-    , at:  -0.0
+    , to:  -7.20220629
+    , at:  -0.032
     , is:
-        [ "sensing all array-expressed object notations like:      "
-        + "  ['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
+        [ "sensing all array-expressed object notations like these:"
+                                        +
+                      "ali: array-literal invocation emoji:"
+                                        +
+              "['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
+                                        +
+                    "aesop: array-expressed storie or phrase:"
+                                        +
+          '["get sensations", "activate them", "enjoy their reactions!"]'
         ],
+      go:
+        { seek: 'https://api.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.aeons.js'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/on.aeons.tests.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://github.com/ionify/about/tree/public/team'
+        },
       we:
-        [ "will rename on.array"
-        , "must fix aeon(🐛) for [//+,''] sensors||AEON run-time switching"
-        , "WERE debugging ~find'ing aeon sensors like aesop"
+        [ "WERE exploring sharing aesop's current storie|phrase with its "
+        + "operation; currently to help tests use their aesop storie|phrase in "
+        + "their reports."
+        + "know this'll also help aesop & aeon automate await|wait|pause|resume"
+
+        , "WERE exploring challenge of ~find'ing aeon sensors like aesop"
+        , "will rename on.array"
+        , "must meet aeon [//+,''] sensors challenge 🤔 AEON run-time switching?"
         , "like fixing on:Array to have separate coexistent aeon & aesop handlers"
         , "want to move aesop@ to its own ion"
         , "... "
         ]
     },
 
-  valueOf:
-    function aeon ()
-     { var sensors       = this.my.sensors
-       this.my.link.with = sensors.with = this
-       this.my.link ()
-       for (var sense in sensors) sensors [sense] = this [sensors [sense]]
-       delete this.valueOf >> this
-     },
+  valueOf:function
+  aeon()
+    { var sensors       = this.my.sensors
+      this.my.link.with = sensors.with = this
+      this.my.link ()
+      for (var sense in sensors) sensors [sense] = this [sensors [sense]]
+      delete this.valueOf <- this
+    },
 
   my:
     { sensors:
@@ -94,30 +115,31 @@
         },
 
   aesopInfo:
-    [" aesop: array-expressed storie or phrase"
-    ," were ensuring best phrase resolution"
-    ," were ensuring 'this' context is preserved from aeon"
-    ," will find known words in each sentence "
-    ," will interpret via sentence(s), paragraph(s), chapter(s) + book(s) "
-    ," will handle ['0 . 0'] via sense [thing] && sense [thing] (thing)   "
-    ," will use tbd name-to-ion resolver"
+    [ "aesop: array-expressed storie or phrase"
+    , "were ensuring best phrase resolution"
+    , "will find known words in each sentence"
+    , "will interpret via sentence(s), paragraph(s), chapter(s) + book(s)"
+    , "will handle ['0 . 0'] via sense [thing] && sense [thing] (thing)"
+    , "will use tbd name-to-ion resolver"
     ],
 
-  aesop:
-    function aesop (ion)
-      { ion || (aesop == this.aesop) && (ion = this)
+  aesop:function
+  aesop(ion)
+    { ion || (aesop == this.aesop) && (ion = this)
 
-        var phrase = ion [aesop.next]
-        aesop.next = void 0
-        phrase  && ~{debug: ["+[", phrase ,"]"]}
+      var phrase = ion [aesop.next]
+      ion.own ||  (ion.own = {})  //👈🏾temporary
+      ion.own.next = aesop.next   //👈🏾exploration
+      aesop.next   = void 0
+      phrase  && ~{debug: ["+[", phrase ,"]"]}
 
-        var sense =   (ion.with && ion.with [phrase])
-        !   sense && ~{find:phrase, in:ion}
-        && (sense =    ion [phrase])
+      var sense =   (ion.with && ion.with [phrase])
+      !   sense && ~{find:phrase, in:ion}
+      && (sense =    ion [phrase])
 
-        typeof sense == 'function'
-            ? (ion.with || ion) [phrase] (ion)
-            : ~sense
-      }
+      typeof sense == 'function'
+          ? (ion.with || ion) [phrase] (ion)
+          : ~sense
+    }
 }
 ;
