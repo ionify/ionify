@@ -105,13 +105,6 @@ phrases to actions:
 ~ { say: 'i thought you\'d say "[answer]" 😉'  }
 ```
 
-visit [jeni](https://github.com/ionified/jeni-ions.iskitz.net?files=1)
-for a more
-[adaptive](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.aeons.js)
-[exploration](https://github.com/ionified/jeni-ions.iskitz.net/blob/public/jeni.play.js)
-of **ions** & natural language.
-
-
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 
 *"...a program is best thought of as a web...of simple parts and simple relations
