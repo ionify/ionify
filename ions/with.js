@@ -7,8 +7,8 @@
     , as: ['aggregation','convention','sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220705
-    , at:  -0.0
+    , to:  -7.20220707
+    , at:  -0.01
     , is:
         [ "ionify's with convention"
         ],
@@ -45,10 +45,17 @@
     { own:
         { WITH:
             { ion:
-                { own:    {}
-                , domain: {}
-                , all:    {}
+                { all:    null
+                , own:    null
+                , domain: null
                 }
+            , its: null
+            , own: null
+            },
+
+          WiTH:function
+          WiTH()
+            {
             }
         },
       domain:
@@ -58,16 +65,36 @@
 
   valueOf:function
   ionify()
-    { this.with || (this.with = new this.own.WITH)
-      this.with(this)
+    { var            own = this.of.own
+      own.WiTH.prototype = own.WITH
+      this.with.with     = {own:own}
+      this.with (this)
+
       delete this.valueOf <- this
-      delete this['*']
-      delete this.with
+    //delete this['*']
+    //delete this.with
     },
 
   with:function
   with_(obi)
-    { var _with_  = obi.with
+    { var exists
+        ,   own      = with_.with.own
+        , _with_     = new own.WiTH
+        ; _with_.its = obi
+        ; _with_.ion = obi.of
+        ; _with_.own = obi.of.own
+
+      for
+        ( var member in obi )
+        { if(!obi.hasOwnProperty     (member)  ) continue
+
+          if('function' != typeof obi[member] &&
+             !Array.isArray      (obi[member]) ) continue
+
+          exists  =   obi [member].with
+          exists  &&  exists instanceof own.WiTH
+                  || (obi [member].with =  _with_)
+        }
     }
 }
 ;
