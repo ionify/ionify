@@ -6,8 +6,8 @@
     , as: ['composition','sensation']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220629
-    , at:  -0.027
+    , to:  -7.20220707
+    , at:  -0.028
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -26,7 +26,8 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "must ... "
+        [ "were migrating to with@ specification"
+        , "must ... "
         , "will ... "
         , "like ionified [typeof todo] --> ~ {is:todo, type:'ionified'} "
         , "like ... "
@@ -54,7 +55,7 @@
   after_do ()
     { this.on    = this.after
     ; this.after = 'all'
-    ; after_do.with.after.call (this)
+    ; after_do.with.its.after.call (this)
     },
 
  'on do after':'after',
@@ -75,7 +76,7 @@
     { var ion   = this
         , ions  = Array.isArray (ion.on) ? ion.on : [ion.on]
         , aftr  = ion.after || 'all'
-        , own   = after.with
+        , own   = after.with.its
         , sense = own.ensure [aftr] || own.ensure [typeof aftr] || 'all'
         , ready = own [sense] (ion)
         , todo  = ion.do/*
@@ -93,7 +94,7 @@
 
   all :function
   all (ion)
-    { var go   = all.with.go
+    { var go   = all.with.its.go
         , got  = {}
         , ions = Array.isArray (ion.on) ? ion.on : [ion.on]
         , todo = ion.do
@@ -136,7 +137,7 @@
   any (action)
     { var done = false
         , todo = action.do
-        ,   go = any.with.go
+        ,   go = any.with.its.go
 
       function after_any ()
         { var ion = this
@@ -151,7 +152,7 @@
   each :function
   each (ion)
     { var todo = ion.do
-        , go = each.with.go
+        , go = each.with.its.go
 
       function after_each ()
         { if (!this) return
@@ -166,7 +167,7 @@
   number (ion)
     { var count = 0
         , todo  = ion.do
-        , go = number.with.go
+        , go = number.with.its.go
 
       function after_number ()
         { if (isNaN (ion.after) || (ion.after >= ++count)) return

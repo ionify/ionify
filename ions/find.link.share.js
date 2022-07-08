@@ -6,8 +6,8 @@
     , as: ['convention']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on: { 200709   : -4      }
-    , to: { 20220628 : -7.1608 }
-    , at:  -0.057
+    , to: { 20220707 : -7.1912 }
+    , at:  -0.058
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
         + 'access their containing ion, ~share for sharing things via domains,      '
@@ -28,6 +28,7 @@
         [ "plan to have top-level-ids reference entire ion not just its re & "
         + "this requires re.*@, ~find, ~share & ~link's compatibility with that"
 
+        , "were migrating to new with@ & of@ specifications"
         , 'were updating ~link & ~share to use .with vs .our  '
         , 'were implementing ~link.to & ~link.as              '
         , 'will apply unlink when ~link.to is falsey          '
@@ -50,11 +51,13 @@
     ],
 
 
-  valueOf :function
-  ionify  ()
-    {   this.find_link_share ()
-    ;   delete this.valueOf
-    ; ~ this
+  valueOf:function
+  ionify()
+    { this.link.with  =
+      this.share.with =
+      this.space.with = {its:this}
+      this.find_link_share()
+      delete this.valueOf <- this
     },
 
   find_link_share :function
@@ -79,7 +82,7 @@
     ,     to        = action.in
     ,     as        = ('as' in action) ? action.as : name
     ,     ionified  = find.our.ionified
-    ,     context   = find.with
+    ,     context   = find.with.its
     ,     found
     ,     last
 
@@ -87,9 +90,9 @@
         ( last != to)    // bug? might infinitely loop on circular .with's | .our's
         { last  = to
         ; if ( found         = context.find_alias ({find:name, in:to})          ) break
-        ; if ( to.with      && ionified [typeof (found = to.with      [name]) ] ) break
+        ; if ( to.with      && ionified [typeof (found = to.with.its  [name]) ] ) break
         ; if ( to.our       && ionified [typeof (found = to.our       [name]) ] ) break
-        ; if ( to.with ){ to = to.with } else break
+        ; if ( to.with )     {                      to = to.with.its       } else break
         }
 
     ; found  && (action.in [as] = found)
@@ -140,7 +143,7 @@
    '*'    :'link',
   link :function
   link (ion)
-    { ion || (ion = link.with || (link.with = (link == this.link) && this))
+    { ion || (ion = link.with.its)// || (link.with = (link == this.link) && this))
 
       var property
         , thing
@@ -148,7 +151,7 @@
         , debug = []
         , debugging = !!(our && our.logging && our.logging.debug)
         , id        = (ion.re ? ion.re.id : null) || 'ion'
-        , space     = link.with.space (id)
+        , space     = link.with.its.space (id)
         , domain    = id.match (/@(.*)/) || ''
         ; domain    = domain && domain [1]
         ; id        = id.replace (/(.+)(@|\.\d\.).*/, '$1')
@@ -158,7 +161,7 @@
           if (!thing)                                                 continue
           if ((typeof thing != 'function') && !Array.isArray (thing)) continue
           if (!ion.hasOwnProperty (property))                         continue
-          thing.with     ||              (thing.with = ion)
+        //thing.with     ||              (thing.with = {its:ion})
           thing.our      ||   space   && (thing.our  = /*|| ion ||*/ space)
           debugging      &&
           ((id != 'ion') && ion.debug || debug.push ('linked '+ id +'.'+ property))
@@ -168,7 +171,7 @@
       ion.re            &&
      !ion.re.of         &&
      (ion.re.of         =  ion.of || {})
-      ion.re.of.own     = (ion.of && ion.of.own) || ion
+      ion.re.of.own     = (ion.of && ion.of.own) //|| ion
       ion.re.of[domain] = space
     //delete ion.of
 
@@ -203,9 +206,9 @@
  'link to':'share',
   share :function
   share (ion)
-    { var thi$   = share.with || (share == this.share ? this : null)
+    { var thi$   = share.with.its //|| (share == this.share ? this : null)
         , spaces = thi$.spaces
-        , things = ion.link ===  '*' ?  ion.with.with || ion.with || ion : ion.to ? ion.link : ion.share
+        , things = ion.link ===  '*' ?  ion.with.its/*.with || ion.with*/ || ion : ion.to ? ion.link : ion.share
         , to     = ion.to   ||  (ion.re && ion.re.id) || ''
         , space  = thi$.space (to)
         ;
@@ -234,7 +237,7 @@
     ],
   space :function
   space (id)
-    { var share  = space.with || (space == this.space ? this : null)
+    { var share  = space.with.its //|| (space == this.space ? this : null)
         , spaces = share.spaces
         , domain = id.match (/@(.*)/)
         ; domain = domain && domain [1]
@@ -242,4 +245,4 @@
       return spaces [domain] || (spaces [domain] = {})
     }
 }
-;
+;   

@@ -6,8 +6,8 @@
     , as: ['convention', 'sensation','sion']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220629
-    , at:  -0.043
+    , to:  -7.20220707
+    , at:  -0.044
     , is:
         [ "ensuring that all ionified objects have an re.id."
         , "setting an object's re.id value as a member mapped to its object re."
@@ -26,6 +26,7 @@
         [ "plan to have top-level-ids reference entire ion not just its re & "
         + "this requires re@, ~find, ~share & ~link's compatibility with that."
 
+        , "were migrating to with@ specification"
         , "have ID.nextID's range as opposite next.id's to minimize overlap."
         , "like ions with old ids being updated once next.id's available."
         , "like id.domain string via id:{domain:'domain',toString:'id@domain'}"
@@ -70,13 +71,14 @@
 
   valueOf:function
   ionify ()
-    { delete  this.valueOf <- this & {get:'next.id@ionify'}
-    ; delete  this[this.re.id]
-    ; delete  this.id.with //keep to help on.ion@sensed() & ~find resolve names?
-    ; delete  this.id.our  //keep to help on.ion@sensed() & ~find resolve names?
-    ; delete  this.id
-    ; delete  this.re
-    ; delete  this['*']
+    { ionify.with = this.id.with = {its:this}
+    ; delete  this.valueOf <- this & {get:'next.id@ionify'}
+  //; delete  this[this.re.id]
+  //; delete  this.id.with //keep to help on.ion@sensed() & ~find resolve names?
+  //; delete  this.id.our  //keep to help on.ion@sensed() & ~find resolve names?
+  //; delete  this.id
+  //; delete  this.re
+  //; delete  this['*']
     }
 }
 ;

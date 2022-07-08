@@ -5,8 +5,8 @@
     , as: ['examination.0']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -8.20211205
-    , to:  -7.20220627
-    , at:  -0.01
+    , to:  -7.20220707
+    , at:  -0.02
     , is:  "ionify's ~link.to api examination"
     , go:
         { help: 'https://github.com/ionify/ionify/issues'
@@ -18,10 +18,11 @@
         , seek: 'https://api.ionify.net/'
         },
       we:
-        [ ~/were investigating why ~link.to:* wasn't working as expected.../
+        [ "WERE migrating to with@ & of@ specifications"
+        ,~/were investigating why ~link.to:* wasn't working as expected.../
 
-        , ~/know ~link doesn't set .with|our for ion's, only their function/
-          +/or array members, so ions with none of those, have none.../
+        ,~/know ~link doesn't set .with|our for ion's, only their function/
+         +/or array members, so ions with none of those, have none.../
 
         , 'want tests to be done without being specified via a ~do'
         ]
@@ -51,7 +52,7 @@
 
  'link to object' :function
   link_to_object  ()
-    { var from = link_to_object.with.my.from
+    { var from = link_to_object.with.its.my.from
         ,   to = {getourwith:[]}
 
       ~
@@ -67,7 +68,7 @@
 
  'link to *'   :function
   link_to_all  ()
-    { var from    = link_to_all.with.my.from
+    { var from    = link_to_all.with.its.my.from
         , to      = {getourwith:[]}
         , to_our  = (~to, to.getourwith.our)
 

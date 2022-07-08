@@ -5,8 +5,8 @@
     , as: ['convention','sensation','sion','foundation','examination']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220629
-    , at:  -0.000001
+    , to:  -7.20220707
+    , at:  -0.000002
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , we:
@@ -30,8 +30,8 @@
 
  "re@ sets: re.core for anion ~{ }":function
   recore_anion (doing)
-    { var question  = doing [doing.own.next]
-        , tests     = recore_anion.with.of.own.tests
+    { var question  = doing [doing.next]
+        , tests     = recore_anion.with.own.tests
         ; tests.if  = 1
 
       var anion
@@ -72,9 +72,9 @@
   recore_malformation (doing)
     { var malformation = {re:{}}
         ,      testing = []
-        ,     question = doing [doing.own.next]
-        ,        tests = recore_malformation.with.of.own.tests
-        ,        later = recore_malformation.with.testLater
+        ,     question = doing [doing.next]
+        ,        tests = recore_malformation.with.own.tests
+        ,        later = recore_malformation.with.its.testLater
 
       function
       testNow()

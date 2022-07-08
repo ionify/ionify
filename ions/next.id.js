@@ -6,7 +6,7 @@
     , as:  'action'
     , by: ['mike.lee', 'team']
     , on:  -7.20160910
-    , to:  -8.20211206
+    , to:  -7.20220707
     , at:  -0.1
     , is: 'generating namespaced sequential ids, per request'
     }
@@ -15,17 +15,16 @@
 , MAX : Number.MAX_SAFE_INTEGER ||  9007199254740991
 , MIN : Number.MIN_SAFE_INTEGER || -9007199254740991
 , ids : {}
-,
+      ,
   valueOf :function
   nextid  ()
-    { this ['next id'].with = this
-    ; delete this.valueOf
-    ~ this
+    { this ['next id'].with = {its:this}
+      delete this.valueOf  <-  this
     },
 
  'next id':function
   next_id (action)
-    { var my   = next_id.with
+    { var my   = next_id.with.its
         , ids  = my.ids
         , name = action.next
         , f0r  = action.id.re || (ion.id.re = {})

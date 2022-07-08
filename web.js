@@ -2,11 +2,14 @@
 ~
 { re:
     { id:  'web@ionify'
-    , is:  "ionify: invoked object notation implemented for your web"
+    , im:  'web.im@ionify'
+    , as: ['organization']
+    , of: ['web']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211205
-    , at:  -0.046
+    , to:  -7.20220707
+    , at:  -0.047
+    , is:  "ionify: invoked object notation implemented for your web"
     , we:
         [ "were adding tests for web@ionify & its actions	                           "
         , "will set all ~get actions' ionid@ domains to the current ion's.           "
@@ -15,7 +18,8 @@
         , "want all ~get.then to delete script.onload after ~then for memory perf?   "
         , "like ~get to be the first ion sensor that queues ions for ~on sensing     "
         + "it enables getting ions like ions@ before sensors activate.               "
-        , "were ... "
+
+        , "were migrating to with@ specification"
         , "must ... "
         , "want ... "
         , "like ... "
@@ -40,8 +44,9 @@
   web :function
   web ()
     { Object.prototype.valueOf.ionified = this
-    ; var web        = this
-    ; web.get.with   = web
+    ; var web           = this
+    ; web.get.with      = web.getScript.with = {its:web}
+    ; web.get$.URL.with = {its: web.get$}
   //; web.watch     ()
     ; web.ready     ()
     ; web.locate    ()
@@ -86,11 +91,11 @@
 
   getScript:
     function getScript (ion)
-      { var  web = getScript.with   || (getScript == this.getScript ? this : null)
+      { var  web = getScript.with.its //|| (getScript == this.getScript ? this : null)
           , code = String (ion.code || '')
           ,  url = String (ion.at   || '')
           , get$ = web.get$
-          ; get$.URL.with = get$
+        //; get$.URL.with = get$
           ;
 
         if (!url && !code)
@@ -147,7 +152,7 @@
     ,   EXT: (/(\.\D*$)/)   // matches file extensions
     ,   URL:
           function getURL (match, name, space, file, version, offset, string)
-            {   var get$  = getURL.with
+            {   var get$  = getURL.with.its
             ,       ext   = get$.EXT.exec (match)
             ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
             ;       space = space && (space.match (get$.NAME) || [,space])[1]
@@ -188,7 +193,7 @@
             todo = on.do
           }
 
-        for ( var web  = get.with
+        for ( var web  = get.with.its
             ,     last = ions.length
             ,     next = -1
             ;  ++ next < last

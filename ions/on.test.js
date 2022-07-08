@@ -6,8 +6,8 @@
     , as: ['examination','convention','sensation','composition']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220629
-    , at:  -0.020
+    , to:  -7.20220707
+    , at:  -0.021
     , is: "ionify's ~on api examination"
     , go:
         { seek: 'https://api.ionify.net/'
@@ -114,7 +114,7 @@
         convention (action)
           { if (convention == action.no) return  ~{log: "✅ ~on: convention"}
             if (convention.happened    ) return; else convention.happened = true
-          ~ {on:convention.with.re.id,   no:convention}
+          ~ {on:convention.with.its.re.id, no:convention}
           //~on:* keeps & maps reactions to their ids, not '*' <= 🐛 to fix?
           //~on:* keep  & map  could  do {'*':[reaction,reaction,...]}
           //~on:* would automatically do this if multi-reaction per sensation created

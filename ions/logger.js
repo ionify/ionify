@@ -7,8 +7,8 @@
     , by: ['mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team']
     , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -7.20220627
-    , at:  -0.045
+    , to:  -7.20220707
+    , at:  -0.046
     , is:
         [ "ionify's record logging composition:"
 
@@ -42,7 +42,8 @@
         , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
+        [ "were migrating to with@ specification"
+        , "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
         , 'like moving display logic to host, e.g. web:alert vs web+node:console'
 
         , 'like defining & sensing log reporting api actions; maybe hosts can '
@@ -60,13 +61,14 @@
 
   valueOf :function
   logger  ()
-    { this.report ({error:null, warn:null, debug:null, log:null, info:null})
+    { this.report.with = {its:this}
+      this.report ({error:null, warn:null, debug:null, log:null, info:null})
     },
 
   ionify :function
   ionify ()
-    { delete (this.valueOf) && ~ this
-      var logger = ionify.with
+    { delete this.valueOf <- this
+      var logger = ionify.with.its
 
       ionify.our.share
         ({ to  :     logger.re.id || ~/want logger@ to share log-level actions with *everyone*/
@@ -81,14 +83,14 @@
 
   debug :function
   debug (action)
-    { var    logger       =  debug.with
+    { var    logger       =  debug.with.its
     ;        logger.level = 'debug'
     ; return logger.report  (action)
     },
 
   error :function
   error (action)
-    { var logger       = error.with
+    { var logger       = error.with.its
         ; logger.level = 'error'
 
       var state   = logger.report (action)
@@ -103,21 +105,21 @@
 
   info :function
   info (action)
-    { var    logger       =  info.with
+    { var    logger       =  info.with.its
     ;        logger.level = 'info'
     ; return logger.report  (action)
     },
 
   log :function
   log (action)
-    { var    logger       =  log.with
+    { var    logger       =  log.with.its
     ;        logger.level = 'log'
     ; return logger.report  (action)
     },
 
   warn :function
   warn (action)
-    { var    logger       =  warn.with
+    { var    logger       =  warn.with.its
     ;        logger.level = 'warn'
     ; return logger.report  (action)
     },
@@ -125,7 +127,7 @@
   record :function
   record (action)
     { var toggled
-        , logger  = record.with
+        , logger  = record.with.its
         , logging = record.our.logging   ||
                    (record.our.logging = {})
         , level   =  logger.level
@@ -222,21 +224,21 @@
 
   missing :function
   missing (action)
-    { var    logger=missing.with
+    { var    logger=missing.with.its
     ;        logger.record (action)
     ; return logger.state
     },
 
   console :function
   cons0le (action)
-    { var    logger=cons0le.with
+    { var    logger=cons0le.with.its
     ;        logger.record (action) && console [logger.level] (logger.message)
     ; return logger.state
     },
 
   popup :function
   popup (action)
-    { var    logger=popup.with
+    { var    logger=popup.with.its
     ;        logger.record (action) && alert (logger.message)
     ; return logger.state
     }

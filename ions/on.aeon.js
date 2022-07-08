@@ -6,8 +6,8 @@
     , as: ['transmission','sensation']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220629
-    , at:  -0.032
+    , to:  -7.20220707
+    , at:  -0.033
     , is:
         [ "sensing all array-expressed object notations like these:"
                                         +
@@ -29,7 +29,9 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "WERE exploring sharing aesop's current storie|phrase with its "
+        [ "WERE migrating to with@ specification"
+
+        , "WERE exploring sharing aesop's current storie|phrase with its "
         + "operation; currently to help tests use their aesop storie|phrase in "
         + "their reports."
         + "know this'll also help aesop & aeon automate await|wait|pause|resume"
@@ -46,7 +48,7 @@
   valueOf:function
   aeon()
     { var sensors       = this.my.sensors
-      this.my.link.with = sensors.with = this
+      this.my.link.with = sensors.with = {its:this}
       this.my.link ()
       for (var sense in sensors) sensors [sense] = this [sensors [sense]]
       delete this.valueOf <- this
@@ -62,7 +64,7 @@
         },
       link:
         function link (ion)
-          { ion || (ion = link.with)
+          { ion || (ion = link.with.its)
             for (var  member  in ion)
               { member = ion [member]
               ; if (member.my || ('my' in member)) continue
@@ -79,7 +81,7 @@
 
         ~ {debug: ["~[", array ,"]"]}
 
-          var AEON      = aeon.with
+          var AEON      = aeon.with.its
             , sensors   = AEON.my.sensors
             , ionified  = aeon.our.ionified
             , next      = -1
@@ -94,7 +96,7 @@
               type  =  typeof  thing
               sense = sensors [type]
               if (!thing)      continue
-              if (ionified    [typeof thing]  && !('with' in thing)) thing.with = array
+              if (ionified    [typeof thing]  && !('with' in thing)) thing.with = {its:array}
               if (!sense)     {~thing; continue }
               if (!ionified   [typeof sense])
                 { ~{find:sense, in:sensors ||AEON, as:type}
@@ -128,17 +130,16 @@
     { ion || (aesop == this.aesop) && (ion = this)
 
       var phrase = ion [aesop.next]
-      ion.own ||  (ion.own = {})  //👈🏾temporary
-      ion.own.next = aesop.next   //👈🏾exploration
-      aesop.next   = void 0
+      ion.next   = aesop.next //👈🏾temporary exploration
+      aesop.next = void 0
       phrase  && ~{debug: ["+[", phrase ,"]"]}
 
-      var sense =   (ion.with && ion.with [phrase])
+      var sense =   (ion.with && ion.with.its [phrase])
       !   sense && ~{find:phrase, in:ion}
       && (sense =    ion [phrase])
 
       typeof sense == 'function'
-          ? (ion.with || ion) [phrase] (ion)
+          ? (ion.with.its || ion) [phrase] (ion)
           : ~sense
     }
 }
