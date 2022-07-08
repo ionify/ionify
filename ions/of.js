@@ -7,8 +7,8 @@
     , as: ['aggregation','convention','sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220705
-    , at:  -0.01
+    , to:  -7.20220707
+    , at:  -0.02
     , is:
         [ "ionify's re.of & of convention"
         ],
@@ -22,7 +22,7 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were"
+        [ "were doing initial implementation"
         , "must"
         , "will"
         , "plan"
@@ -41,7 +41,7 @@
         ,
   of:
     { own:
-        {
+        { spaces: {'':{}}
         },
       domain:
         {
@@ -50,31 +50,40 @@
 
   valueOf:function
   ionify()
-    { this.of || (this.of = {})
+    { var        own = this.of.own
+      own.spaces.all = own.spaces['']
+      this.of_.with  = ionify.with = {its:this, own:own}
       this.of_(this)
+
+    //delete this.of_.with
       delete this.valueOf <- this
-      delete this['*']
-      delete this.of_
+    //delete this['*']
+    //delete this.of_
     },
 
   of_:function
   of_(obi)
-    { var of  = obi.of
-        , ofs = obi.re.of
-        , ion = of_.ion
-        , spaces, space, name
+    { var of     = obi.of
+        , ofs    = obi.re.of
+        , spaces = of_.with.own.spaces
+        , space, name
+
+      ; (of     && 'object' == typeof of)     || (of     && (obi.re.ex.of     = of),     (obi.of= of = {}))
+      ; (of.own && 'object' == typeof of.own) || (of.own && (obi.re.ex.of_own = of.own), (obi.of.own = {}))
+      ;
 
       / resolve all re.of spaces to references /
       for
         ( var f=0, F=ofs.length
         ;  ++ f  < F          ;
         )
-        { name  =   ofs [f]
-          space =   ion [name]
-          space || name in ion || (space = ion [name] = {})
-          ofs [name]  =  space
+        { name   =    ofs [f]
+          space  = spaces [name]
+          space || name in spaces ||
+         (space  = spaces [name]   = {})
+          ofs [name] = space
         }
-
+/*
       / resolve the re.of.domain & re.of.own spaces /
       var domain  = obi.re.id.domain
         , full    = domain.full
@@ -89,6 +98,7 @@
       //; ofs.own    || ofs.push ('own')    &&
       //( ofs.own     = ion.own    || (ion.own    = {}))
       //}
+*/
     }
 }
 ;
