@@ -7,8 +7,8 @@
     , as: ['resolution','acquisition','convention','sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220705
-    , at:  -0.0
+    , to:  -7.20220707
+    , at:  -0.01
     , is:
         [ "ionify's as convention"
         ],
@@ -26,9 +26,9 @@
         , "must"
         , "will"
         , "plan"
- 
+
         , "muse about re.it tags' & re.as descript*ions' purposes & differences"
-        
+
         , "note that *ion words may be a consistent & reliable way of tagging "
         + "ions. that set of words is well established & comprehensively "
         + "descriptive & of course includes & completes with 'ion' 🤓"
@@ -52,8 +52,8 @@
     { this.re.as || (this.re.as = [])
       this.as(this)
       delete this.valueOf <- this
-      delete this['*']
-      delete this.as
+    //delete this['*']
+    //delete this.as
     },
 
   as:function
@@ -61,4 +61,4 @@
     { var as_  = obi.re.as
     }
 }
-;  
+;
