@@ -6,8 +6,8 @@
     , as: ['sensation','acquisition','sensor','activation','initialization']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220629
-    , at:  -0.071
+    , to:  -7.20220707
+    , at:  -0.072
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
@@ -37,7 +37,8 @@
         + "critically impactful problems +| opportunities it reveals before "
         + "we can say the problem's solved or closed."
 
-        , "were implementing sion.re & sion.with to remove ?. optional chaining"
+        , "WERE implementing re@, of@ & with@ to remove ?. optional chaining"
+        , "WERE migrating to with@ specification"
         , "want sensed() to reaction.with.re.id === object.re.id before checksum"
         , "were examining if .ion() is the source of ions' lost 'this' reference.     "
         , 'were implementing ~on.do...                                                '
@@ -82,35 +83,43 @@
 
       var  ionify             =  this
         ;  ionify.senses.on   = [ionify.on]
-        ;  ionify.sensed.with =  ionify.on.with = ionify.via.with
-        =  ionify
-      //;  ionify.on ({on:'on'   ,     on: ionify.sensed})
-        ;  ionify.on ({on: Object, Object: ionify.sensed})
+        ;  ionify.sensed.with =  ionify.on.with
+        =  ionify.via.with    =  ionify.object.with
+        =  ionify.always.with =  ionify.sortKnownWords.with
+        =  on_no.with         = {its:ionify}
+
+      ionify.on ({on:'on'   ,     on: ionify.sensed})
+      ionify.on ({on: Object, Object: ionify.sensed})
+
+      function on_no (no)
+        { var space = no.on.our   //must: use this=no@.on since on_no.our isn't linked
+
+          space.share             //      because find.link.share@ wasn't yet loaded.
+            ({ link              :
+                { activate       : ionify.activate
+                , deactivate     : ionify.deactivate
+                , disable        : ionify.disable
+                , ionified       : ionify.ionified
+                , known          : ionify.known
+                , senses         : ionify.senses
+                , does           : ionify.does
+                , sortKnownWords : ionify.sortKnownWords
+                },
+               to                : (~/want ion.re.id.domain/, ionify.re.id)
+            })
+
+          no.no ({on:'no@ionify', no:on_no})
+          delete ionify.valueOf <- ionify
+          space.link (ionify)
+          space.link (ionified)
+          space = ionify = ionified = null //performance? memory release?
+        }
 
       ~
       { on:
           'no@ionify',      //must: sense by id because ~on:[] overrides previous sensors???
           'no@ionify':      //      which causes this sensor to be lost on find.link.share@.
-           function on (no)
-              { var space = no.on.our   //must: use this=no@.on since on.our isn't linked
-              ; space.share             //      because find.link.share@ wasn't yet loaded.
-                  ({ link              :
-                      { activate       : ionify.activate
-                      , deactivate     : ionify.deactivate
-                      , disable        : ionify.disable
-                      , ionified       : ionify.ionified
-                      , known          : ionify.known
-                      , senses         : ionify.senses
-                      , does           : ionify.does
-                      , sortKnownWords : ionify.sortKnownWords
-                      }
-                  ,  to                : (~/want ion.re.id.domain/, ionify.re.id)
-                  })
-              ; no.no ({on:'no@ionify', no:on})
-              ; space.link (ionify)
-              ; space.link (ionified)
-              ; space = ionify = ionified = null //performance? memory release?
-              }
+           on_no
       }
 
       ionified <= /todo: via .ionifi3d ()/
@@ -118,7 +127,9 @@
       ~
       { get:
           [ 're@ionify'
-          , /*'next.id@ionify',*/      'id@ionify', 'find.link.share@ionify'
+          , /*'next.id@ionify',*/
+          ,        'id@ionify',        'of@ionify',            'with@ionify'
+          ,                                         'find.link.share@ionify'
           ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
           ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
           ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
@@ -145,7 +156,7 @@
   activate :function
   activate (ion)
     {//if (ion [0] !== '0 . 0') return
-    ;  var ionify = activate.with
+    ;  var ionify = activate.with.its
     ;  ionify.sense$ && (ionify.sense$ != ionify.senses) && ~ionify
     },
 
@@ -153,12 +164,12 @@
   deactivate (ion)
     {  delete Array .prototype.valueOf
     ;  delete Object.prototype.valueOf
-    ;  deactivate.with.unlink()
+    ;  deactivate.with.its.unlink()
     },
 
   disable :function
   disable (ion)
-    { var ionify        = disable.with
+    { var ionify        = disable.with.its
         ; ionify.sense$ = ionify.senses
         ; ionify.senses  = {'0 . 0':ionify.activate}
     },
@@ -182,7 +193,7 @@
 
   on :function
   on (sensation)
-    { var ionify = on.with
+    { var ionify = on.with.its
         , always = true
 
       if (!sensation    ||  !('on' in sensation))   return  sensation
@@ -273,7 +284,7 @@
 
   sortKnownWords :function
   sortKnownWords (updated)
-    { var ionify     = sortKnownWords.with || (sortKnownWords == this.sortKnownWords) ? (sortKnownWords.with = this) : null
+    { var ionify     = sortKnownWords.with.its //|| (sortKnownWords == this.sortKnownWords) ? (sortKnownWords.with = this) : null
         , known      = ionify.known
         , descending = ionify.sortKnownWordsDescending
         , word
@@ -294,7 +305,7 @@
 
   always :function
   always (sensation)
-    { var ionify = always.with || this
+    { var ionify = always.with.its //|| this
         , does = ionify.does
         , action = sensation['*']
 
@@ -327,7 +338,7 @@
 
   sensed :function
   sensed (object)
-    { var ionify    = sensed.with
+    { var ionify    = sensed.with.its
       //, ionified  = ionify.ionified
         , senses    = ionify.senses
         , our       = sensed.our
@@ -347,10 +358,12 @@
         );
 
       debugging
-        && debug.push ('onION:', object.re ? object.re.id : object.with && object.with.re && object.with.re.id || 'anonymous')
+        && debug.push ('onION:', object.re ? object.re.id : object.with.its && object.with.its.re && object.with.its.re.id || 'anonymous')
 
       var from = sensed.caller;
-      object.re && (object.re.from || (object.re.from = from && from.with && from.with.re && from.with.re.id))
+      object.re &&
+     (object.re.from ||
+     (object.re.from = (from && from.with) ? from.with.its.re.id : object.re.id))
 
       debugging && from && (from != sensed) && debug.push ('from', object.re && object.re.from)
 
@@ -363,9 +376,9 @@
         , skip    = {}
 
       for (word in known)
-        { if (! known.hasOwnProperty (word))                      continue
-          if (word in skip || !(word in object))                  continue
-          if (object === (senses[word] && senses[word][0].with))  continue
+        { if (! known.hasOwnProperty (word))                          continue
+          if (word in skip || !(word in object))                      continue
+          if (object === (senses[word] && senses[word][0].with.its))  continue
 
           groups = known [word]
 
@@ -389,15 +402,15 @@
                 { reaction = reactions [r]
 
                   switch (true)
-                    { case  typeof reaction  === 'function':
-                        if(   reaction.with  ===    object ) continue             //note: strict comparison = no coerced self-activation 🐛
+                    { case    typeof   reaction  === 'function':
+                        if(   reaction.with.its  ===    object ) continue             //note: strict comparison = no coerced self-activation 🐛
 
-                      //if({[ reaction.with?.re  ]:  true }[ object.re ]          //need: ionify core to be sions to eliminate ?. optional chaining
-                      //&&    reaction.with.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
+                      //if({[ reaction.with?.its.re  ]:  true }[ object.re ]          //need: ionify core to be sions to eliminate ?. optional chaining
+                      //&&    reaction.with.its.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
 
-                        if(   reaction.with?.re.id  ===      object.re?.id
-                        &&    reaction.with?.re     in    {[ object.re ]: true }  //need: ionify core to be sions to eliminate ?. optional chaining
-                        &&    reaction.with.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
+                        if(   reaction.with?.its.re.id  ===      object.re?.id
+                        &&    reaction.with?.its.re     in    {[ object.re ]: true }  //need: ionify core to be sions to eliminate ?. optional chaining
+                        &&    reaction.with.its.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
 
                         result   = reaction.call (object, object)
                         results += 1
@@ -441,7 +454,7 @@
 
   via: function
   via (sensor)
-    { var on      = via.with || (via.with = via == this.via ? this : null)
+    { var on      = via.with.its //|| (via.with = via == this.via ? this : null)
         , known   = on.ionified
         , sensors = on.sensors
         , core    = sensors.core

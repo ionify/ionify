@@ -7,8 +7,8 @@
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , in:  'silicon-valley.california.usa.earth'
     , on:  -7.20160518
-    , to:  -7.20220629
-    , at:  -0.024
+    , to:  -7.20220706
+    , at:  -0.025
     , is:  "testing ionify.js: invoked object notation implemented for your js"
     , go:
         { seek: 'https://api.ionify.net/'
@@ -30,7 +30,7 @@
     { delete this.valueOf <- this
       ~
       { get:
-          [ 're.test@ionify'
+          [ 're.test@ionify', 'with.test@ionify'
           ,             'on.ion.test@ionify',       'on.test@ionify',        'do.test@ionify'
           ,                'get.test@ionify',   'logger.test@ionify',       'use.test@ionify'
           , 'on.ion.punctuation.test@ionify', 'on.emoji.test@ionify', 'on.errors.test@ionify'
