@@ -6,7 +6,7 @@
     , as: ['convention']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on: { 200709   : -4      }
-    , to: { 20220708 : -7.0022 }
+    , to: { 20220708 : -7.2056 }
     , at:  -0.059
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
@@ -167,12 +167,12 @@
           ((id != 'ion') && ion.debug || debug.push ('linked '+ id +'.'+ property))
         } debugging      && ion.debug || debug.length &&  our.debug ({debug:debug})
 
-      space             &&
-      ion.re            &&
-     !ion.re.of         &&
-     (ion.re.of         =  ion.of || {})
-      ion.re.of.own     = (ion.of && ion.of.own) //|| ion
-      ion.re.of[domain] = space
+    //   space             &&
+    //   ion.re            &&
+    //  !ion.re.of         &&
+    //  (ion.re.of         =  ion.of || {})
+    //   ion.re.of.own     = (ion.of && ion.of.own) //|| ion
+    //   ion.re.of[domain] = space
     //delete ion.of
 
       return true

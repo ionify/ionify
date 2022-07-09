@@ -7,10 +7,10 @@
     , as: ['aggregation','convention','sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.02
+    , to:  -7.20220708
+    , at:  -0.03
     , is:
-        [ "ionify's re.of & of convention"
+        [ "ionify's of@ convention that sets ion's re.of & of"
         ],
       go:
         { seek: 'https://api.ionify.net/'
@@ -22,14 +22,14 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were doing initial implementation"
+        [ "WERE replacing .our & ~link.to with of@"
         , "must"
         , "will"
         , "plan"
 
         , "want re.of & ion.of names converted to name@ion.re.domain.full "
-        + "unless they alreay are. all spaces are name@domain where domain can "
-        + "be blank."
+        + "unless they already are. all spaces are name@domain where domain can "
+        + "be blank. ~name.search (/@/) ||  (name += domain.full)"
 
         , "want .with.ion.* to include the sion's re.of & sion.of spaces"
         , "want .with.ion to be exactly sion.of whether declared in sion or not"
@@ -41,7 +41,8 @@
         ,
   of:
     { own:
-        { spaces: {'':{}}
+        { spaces:       {'':{}}
+        , domainParser: /@(.+)\.(.+\..+)$|@(.+\..+)$|@(.*)$|^[^@]+$/
         },
       domain:
         {
@@ -63,42 +64,91 @@
 
   of_:function
   of_(obi)
-    { var of     = obi.of
-        , ofs    = obi.re.of
-        , spaces = of_.with.own.spaces
-        , space, name
+    { /set .of.doma.in & re.of.doma.in space/
+      var domain = {}
+        ; domain.find = obi.re.id.match (of_.with.own.domainParser)
+        ; domain.full = domain.find [0]
+        ; domain.name = domain.find [4] || ''
+        ; domain.subs = domain.find [1] || ''
+        ; domain.base = domain.find [2] || domain.find [3]
+        ;
 
-      ; (of     && 'object' == typeof of)     || (of     && (obi.re.ex.of     = of),     (obi.of= of = {}))
-      ; (of.own && 'object' == typeof of.own) || (of.own && (obi.re.ex.of_own = of.own), (obi.of.own = {}))
-      ;
+      var spaces  = of_.with.own.spaces;
 
-      / resolve all re.of spaces to references /
+      /ensure the ion's doma.in space exists/
+      spaces[domain.name] || (spaces[domain.name] = {})
+
+      var of      = obi.of
+        , ofs     = obi.re.of
+        , space   , name
+        , ensure  =
+                  { all:    spaces.all
+                  , own:    {}
+                  , domain: spaces[domain.name]
+                  };
+
+
+      /ensure  .of  .of.all  .of.own  &  .of.domain exist/
+      ;   (of && 'object' == typeof of)
+      ||  (of && (obi.re.ex.of    = of), (obi.of= of = {}))
+
       for
-        ( var f=0, F=ofs.length
-        ;  ++ f  < F          ;
+        ( name in ensure )
+        { if(!ensure.hasOwnProperty (name)) continue
+        ;  space =   of [name]
+        ; (space && 'object' == typeof space)
+        ||(space && (obi.re.ex ['of_'+name] = space), (obi.of[name] = ensure[name]))
+        }
+
+
+      /ensure of.doma.in = re.of.doma.in = of.domain/
+      of[domain.name] = ofs[domain.name] = of.domain;
+
+
+      /resolve all re.of spaces to references & ensure in .of/
+      for
+        ( var f=-1, F=ofs.length
+        ;  ++ f  <  F          ;
         )
         { name   =    ofs [f]
           space  = spaces [name]
           space || name in spaces ||
          (space  = spaces [name]   = {})
-          ofs [name] = space
+          ofs [name]  =  space
+          of  [name] || (of[name] = space)
         }
-/*
-      / resolve the re.of.domain & re.of.own spaces /
-      var domain  = obi.re.id.domain
-        , full    = domain.full
+
+
+      /merge all .of spaces with any existing re.of spaces/
+      var merge
       for
-        ( name in {domain:1, own:1, [full]:1, [domain.sub]:1})
-        {~name.search (/@/) ||  (name += full)
-        ; ofs[name] || ofs.push (name) &&
-        ( ofs[name]  = ion[name]  || (ion[name] = {}))
+        ( name in of )
+        { if(name == 'own' || name == 'domain' || !of.hasOwnProperty(name))
+            continue
+
+          space = ofs[name]
+          merge =  of[name]
+
+          if(!space && merge && 'object' == typeof merge)
+            { ofs[name] = merge
+              continue
+            }
+
+          if(!merge && space)
+            { of[name] = space
+              continue
+            }
+
+          /merge .of into re.of spaces/
+          for
+            (       name in merge       )
+            { space[name] = merge[name] }
+
+          /merge re.of spaces into .of/
+          for
+            (   name in space                                 )
+            { !(name in merge) && (merge[name] = space[name]) }
         }
-      //{ ofs.domain || ofs.push ('domain') &&
-      //( ofs.domain  = ion.domain || (ion.domain = {}))
-      //; ofs.own    || ofs.push ('own')    &&
-      //( ofs.own     = ion.own    || (ion.own    = {}))
-      //}
-*/
     }
 }
 ;
