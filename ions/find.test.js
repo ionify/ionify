@@ -5,8 +5,8 @@
     , as: ['examination.0']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -8.20190107
-    , to:  -7.20220627
-    , at:  -0.04
+    , to:  -7.20221031
+    , at:  -0.05
     , is:  "ionify's ~find.in.as api examination"
     , go:
         { help: 'https://github.com/ionify/ionify/issues'
@@ -38,7 +38,7 @@
 
  'find name':function
   find_name (tester)
-      { var state = find_name.our.logging.log
+      { var state = find_name.with.our.logging.log
 
       ~ {do:['a']
         , a:[{log:true}
@@ -50,7 +50,7 @@
 
  'find name shared':function
   find_name_shared (tester)
-      { var state = find_name_shared.our.logging.log
+      { var state = find_name_shared.with.our.logging.log
         ~
         {'name@sharedfindtest':{}
         , share:{a:'a'}
@@ -67,7 +67,7 @@
 
  'find alias':function
   find_alias (tester)
-      { var state = find_alias.our.logging.log
+      { var state = find_alias.with.our.logging.log
 
       ~ {do: 'a'
         , a: 'b'
@@ -80,7 +80,7 @@
 
  'find alias shared':function
   find_alias_shared (tester)
-      { var state = find_alias_shared.our.logging.log
+      { var state = find_alias_shared.with.our.logging.log
         ~
         {'alias@sharedfindtest':{}
         , share:{b:'b'}
@@ -98,21 +98,21 @@
 
  'find aliases':function
   find_aliases (tester)
-      { var state = find_aliases.our.logging.log
+      { var state = find_aliases.with.our.logging.log
 
       ~ {do: 'a'
         , a: 'b'
         , b: 'c'
         , c:[{log:true}
             ,{log:'✅ ~find: aliases'}
-            ,{log:find_aliases.our.logging.log}
+            ,{log:find_aliases.with.our.logging.log}
             ]
         }
       },
 
  'find aliases cyclical':function
   find_aliases_cyclical (tester)
-      { var state = find_aliases_cyclical.our.logging.log
+      { var state = find_aliases_cyclical.with.our.logging.log
 
       ~ {do: 'a'
         , a: 'b'
@@ -120,7 +120,7 @@
         }
       + {log:true}
       + {log:'✅ ~find: aliases: cyclical'}
-      + {log:find_aliases_cyclical.our.logging.log}
+      + {log:find_aliases_cyclical.with.our.logging.log}
       }
 }
 ;

@@ -4,9 +4,9 @@
     { id:  'on.ions@ionify'
     , of:  'core'
     , as:  'sensation'
-    , by: ['mike.lee', 'team']
+    , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211203
+    , to:  -7.20221030
     , at:  -0.1
     , is:
         [ "intended to sense ions@domain ions & apply & share their settings, but..."
@@ -28,7 +28,7 @@
 
  'ions@' :function
   onions (configuration)
-      { var our    = onions.our
+      { var our    = onions.with.our
           , space  = our.space (configuration.re.id)
           , skip   = {re:true, on:true, do:true, get:true, 'ions@':true}
 

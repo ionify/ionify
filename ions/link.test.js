@@ -5,8 +5,8 @@
     , as: ['examination.0']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -8.20211205
-    , to:  -7.20220707
-    , at:  -0.02
+    , to:  -7.20221031
+    , at:  -0.03
     , is:  "ionify's ~link.to api examination"
     , go:
         { help: 'https://github.com/ionify/ionify/issues'
@@ -18,10 +18,7 @@
         , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "WERE migrating to with@ & of@ specifications"
-        ,~/were investigating why ~link.to:* wasn't working as expected.../
-
-        ,~/know ~link doesn't set .with|our for ion's, only their function/
+        [~/know ~link doesn't set .with|our for ion's, only their function/
          +/or array members, so ions with none of those, have none.../
 
         , 'want tests to be done without being specified via a ~do'
@@ -57,11 +54,11 @@
 
       ~
       { link:
-          {boolean:from.number}//boolean}
+          {number:from.number}
       , to:(~to, to.re.id)
       }
 
-      to.getourwith.our.boolean == from.number//boolean
+      to.getourwith.with.all.number == from.number
         ? ~{log  : '✅ ~link: to:object'}
         : ~{error: '❌ ~link: to:object', halt:false}
     },
@@ -70,12 +67,12 @@
   link_to_all  ()
     { var from    = link_to_all.with.its.my.from
         , to      = {getourwith:[]}
-        , to_our  = (~to, to.getourwith.our)
+        , to_our  = (~to, to.getourwith.with.all)
 
       ~ {link:from, to:'*'}
 
-      for (var thing in to_our)
-          if(to_our.hasOwnProperty (thing) && to_our [thing] != from [thing])
+      for (var thing in from)
+          if(from.hasOwnProperty (thing) && from [thing] != to_our [thing])
               return ~ {error: '❌ ~link: to:*', halt:false}
       ~ {log: '✅ ~link: to:*'}
     }

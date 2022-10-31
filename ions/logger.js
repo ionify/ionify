@@ -7,8 +7,8 @@
     , by: ['mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team']
     , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.046
+    , to:  -7.20221030
+    , at:  -0.047
     , is:
         [ "ionify's record logging composition:"
 
@@ -42,8 +42,7 @@
         , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "were migrating to with@ specification"
-        , "want '⚠️' 🐛 in blink web views to render with full yellow color & size"
+        [ "want '⚠️' 🐛 in Blink web views to render with full yellow color & size"
         , 'like moving display logic to host, e.g. web:alert vs web+node:console'
 
         , 'like defining & sensing log reporting api actions; maybe hosts can '
@@ -58,7 +57,6 @@
     [ 'error', 'warn', 'debug', 'log', 'info'
     ],
 
-
   valueOf :function
   logger  ()
     { this.report.with = {its:this}
@@ -68,17 +66,14 @@
   ionify :function
   ionify ()
     { delete this.valueOf <- this
-      var logger = ionify.with.its
 
-      ionify.our.share
-        ({ to  :     logger.re.id || ~/want logger@ to share log-level actions with *everyone*/
-         , link:
-            { debug: logger.debug
-            ,   log: logger.log
-            ,  info: logger.info
-            ,  warn: logger.warn
-            , error: logger.error
-         }  })
+      var   logger  = this
+        ,   domain  = ionify.with.our
+      domain.debug  = logger.debug
+      domain.log    = logger.log
+      domain.info   = logger.info
+      domain.warn   = logger.warn
+      domain.error  = logger.error
     },
 
   debug :function
@@ -128,8 +123,8 @@
   record (action)
     { var toggled
         , logger  = record.with.its
-        , logging = record.our.logging   ||
-                   (record.our.logging = {})
+        , logging = record.with.our.logging   ||
+                   (record.with.our.logging = {})
         , level   =  logger.level
         , message =  action [level]
         , state   = logging [level]
@@ -215,7 +210,7 @@
             logger.ionify ()
           ~ {warn: true }
           & {warn: logger.messages.noConsole}
-          & {warn: logger.report.our.logging.warn}
+          & {warn: logger.report.with.our.logging.warn}
           }
       else logger.ionify ()
 

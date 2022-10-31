@@ -6,8 +6,8 @@
     , as: ['transmission','sensation']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.033
+    , to:  -7.20221031
+    , at:  -0.034
     , is:
         [ "sensing all array-expressed object notations like these:"
                                         +
@@ -29,9 +29,7 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "WERE migrating to with@ specification"
-
-        , "WERE exploring sharing aesop's current storie|phrase with its "
+        [ "WERE exploring sharing aesop's current storie|phrase via aesop.next"
         + "operation; currently to help tests use their aesop storie|phrase in "
         + "their reports."
         + "know this'll also help aesop & aeon automate await|wait|pause|resume"
@@ -83,7 +81,7 @@
 
           var AEON      = aeon.with.its
             , sensors   = AEON.my.sensors
-            , ionified  = aeon.our.ionified
+            , ionified  = aeon.with.our.ionified
             , next      = -1
             , last      = array.length
             , thing
@@ -96,7 +94,7 @@
               type  =  typeof  thing
               sense = sensors [type]
               if (!thing)      continue
-              if (ionified    [typeof thing]  && !('with' in thing)) thing.with = {its:array}
+              if (ionified    [typeof thing]  && !('with' in thing)) thing.with = array.with
               if (!sense)     {~thing; continue }
               if (!ionified   [typeof sense])
                 { ~{find:sense, in:sensors ||AEON, as:type}

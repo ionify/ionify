@@ -6,8 +6,8 @@
     , as: ['composition','sensation','convention']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220628
-    , as:  -0.045
+    , to:  -7.20221030
+    , at:  -0.046
     , is:
         [ "~on.no which disables a sensation mapped to one or more reactions"
         ],
@@ -24,7 +24,7 @@
 
   no :function
   no (sensation)
-   {  var our = no.our
+   {  var our = no.with.our
         , on  = sensation.on
         , No  = sensation.no
 

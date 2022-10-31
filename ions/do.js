@@ -6,8 +6,8 @@
     , as: ['composition','sensation']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.028
+    , to:  -7.20221031
+    , at:  -0.029
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -26,8 +26,7 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were migrating to with@ specification"
-        , "must ... "
+        [ "must ... "
         , "will ... "
         , "like ionified [typeof todo] --> ~ {is:todo, type:'ionified'} "
         , "like ... "
@@ -44,7 +43,7 @@
   do :function
   do_ (ion)
     { var todo  =    ion.do
-    ;     todo  && ! do_.our.ionified [typeof todo]
+    ;     todo  && ! do_.with.our.ionified [typeof todo]
                 && ~{find:todo, in:ion, as:'do'}
                 &&  (todo = ion.do)
     ;   ~ todo
@@ -76,14 +75,14 @@
     { var ion   = this
         , ions  = Array.isArray (ion.on) ? ion.on : [ion.on]
         , aftr  = ion.after || 'all'
-        , own   = after.with.its
-        , sense = own.ensure [aftr] || own.ensure [typeof aftr] || 'all'
-        , ready = own [sense] (ion)
+        , its   = after.with.its
+        , sense = its.ensure [aftr] || its.ensure [typeof aftr] || 'all'
+        , ready = its [sense] (ion)
         , todo  = ion.do/*
-        ; todo  = doAfter.our.ionified [typeof todo]
+        ; todo  = after.with.our.ionified [typeof todo]
                 ?   todo
                 : ~{find:todo, in:ion} && ion [todo]
-        ; todo || (todo = ion.do)*/
+        ; todo || (todo = ion.do)//*/
 
       if (!todo) return void ~{warn:`~on.do.after: unable to find ${ion.do}`}
       var on = {on:ions, after:aftr}

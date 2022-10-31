@@ -5,7 +5,7 @@
     , as: ['sensation','convention','sion','foundation']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220707
+    , to:  -7.20221030
     , at:  -0.1
     , ax:  -0.09 || [-0.09] || "what will re@ do? thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
@@ -63,8 +63,6 @@
         [ "WARN that RENAMING re@'s REACTION to re() WILL DAMAGE re@ AND ionify"
         , "NEED space-shared non-ion warn() & error() transcription 👨🏾‍🏫 tools."
 
-        , "were migrating to with@ specification"
-
         , "plan to have top-level-ids reference entire sion not just its re & "
         + "this requires id@, ~find, ~share & ~link's compatibility with that."
 
@@ -104,9 +102,9 @@
             RE.id ? (RE.id = String (RE.id)) : (RE.id = void 0)
             RE.im ? (RE.im = String (RE.im)) : (RE.im =  ''   )
 
-               isFinite (RE.on) || (RE.on = 0.0)
-               isFinite (RE.to) || (RE.to = 0.0)
-               isFinite (RE.at) || (RE.at = 0.0)
+          typeof RE.on == 'number' || (RE.on = 0.0)
+          typeof RE.to == 'number' || (RE.to = 0.0)
+          typeof RE.at == 'number' || (RE.at = 0.0)
 
           Array.isArray (RE.of) || (RE.of = [String (RE.of || '')])
           Array.isArray (RE.as) || (RE.as = [String (RE.as || '')])
@@ -115,7 +113,7 @@
           Array.isArray (RE.is) || (RE.is = [String (RE.is || "")])
 
 /*temporary👇🏾proof-of-concept👇🏾work-around*/
-RE.id == 'logger@ionify' && (re/*.with.ion*/.tools = ion)
+RE.id == 'logger@ionify' && (re/*.with.the*/.tools = ion)
 /*temporary☝🏾proof-of-concept☝🏾work-around*/
 
       'object' == typeof RE.go  || Array.isArray (RE.go)|| (RE.go = [RE.go||''])
@@ -156,13 +154,7 @@ RE.id == 'logger@ionify' && (re/*.with.ion*/.tools = ion)
   ionify ()
     { this.Re(this)
     ; ionify.with = {its:this}
-    ; delete  this.valueOf <- this//& {get:['id@ionify']}
-  //; delete  this[this.re.id]
-  //; delete  this.Re.with //keep to help on.ion@sensed() & ~find resolve names?
-  //; delete  this.Re.our  //keep to help on.ion@sensed() & ~find resolve names?
-  //; delete  this.Re
-  //; delete  this.re
-  //; delete  this['*']
+    ; delete this.valueOf <- this//& {get:['id@ionify']}
     }
 }
 ;

@@ -5,7 +5,7 @@
     , as:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211207
+    , to:  -8.20221030
     , at:  -0.1
     , is:
         [ 'ion, invoked object notation, interactions from your functions'
@@ -41,7 +41,7 @@
 
               Object.prototype.valueOf.apply (ion)
 
-              var our = act.our
+              var our = act.with.our
                 , id  = this.re.id
                 , my  = our.space (id || '@')
                 , got = ion.apply (my, ion.in || ion)

@@ -6,8 +6,8 @@
     , as: ['sensation','acquisition','sensor','activation','initialization']
     , by: ['mike.👨🏾‍💻.lee','team']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.072
+    , to:  -7.20221031
+    , at:  -0.073
     , is:
         [ 'ionify: invoked object notation implemented for you                        '
         , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
@@ -37,12 +37,11 @@
         + "critically impactful problems +| opportunities it reveals before "
         + "we can say the problem's solved or closed."
 
-        , "WERE implementing re@, of@ & with@ to remove ?. optional chaining"
-        , "WERE migrating to with@ specification"
         , "want sensed() to reaction.with.re.id === object.re.id before checksum"
         , "were examining if .ion() is the source of ions' lost 'this' reference.     "
         , 'were implementing ~on.do...                                                '
 
+        , "WANT to set host & ionify spaces without [dis|en]abling host.on hack"
         , "like removing .re.id & .re's temporarily made for anions: anonymous ions   "
         , 'will make .resolve() to convert ids to ions: e.g. ionified references.     '
         , 'will .resolve this.* & ~* in strings & stories to actual ion references.   '
@@ -70,6 +69,19 @@
         ]
     },
 
+  the:
+    { domain:
+        { does      : []
+        , senses    : {}
+        , ionified  : {function: true}
+        , known     : {on:
+                        [ { act:  'on'
+                          , set: ['on']
+                          , in : function within (ion){ return 'on' in ion }
+                      } ] }
+        }
+    },
+
   valueOf:function
   ionify ()
     { this.object ()
@@ -82,36 +94,28 @@
         ;  ionified && delete  ionified.valueOf
 
       var  ionify             =  this
-        ;  ionify.senses.on   = [ionify.on]
+        ;  ionify.the.domain.senses.on  = [ionify.on]
         ;  ionify.sensed.with =  ionify.on.with
         =  ionify.via.with    =  ionify.object.with
         =  ionify.always.with =  ionify.sortKnownWords.with
-        =  on_no.with         = {its:ionify}
+        =  on_no.with         = {its:ionify, the:{domain:ionify.the.domain}}
 
       ionify.on ({on:'on'   ,     on: ionify.sensed})
       ionify.on ({on: Object, Object: ionify.sensed})
 
       function on_no (no)
-        { var space = no.on.our   //must: use this=no@.on since on_no.our isn't linked
+        { var space = no.on.with.our   //must: use this=no@.on since on_no.our isn't linked
 
-          space.share             //      because find.link.share@ wasn't yet loaded.
-            ({ link              :
-                { activate       : ionify.activate
-                , deactivate     : ionify.deactivate
-                , disable        : ionify.disable
-                , ionified       : ionify.ionified
-                , known          : ionify.known
-                , senses         : ionify.senses
-                , does           : ionify.does
-                , sortKnownWords : ionify.sortKnownWords
-                },
-               to                : (~/want ion.re.id.domain/, ionify.re.id)
-            })
+          ;/spot: disable host:ionified@ons to avoid duplicated sensations/;
+          ionified._on_ = ionified.on   ; delete ionified.on
+
+          //invoke this:ionify & the host:ionified ions to set their spaces/
+          delete ionify.valueOf <- ionify & ionified
+
+          ;/spot: enable  host:ionified@ons to avoid duplicated sensations/;
+          ionified.on   = ionified._on_ ; delete ionified._on_
 
           no.no ({on:'no@ionify', no:on_no})
-          delete ionify.valueOf <- ionify
-          space.link (ionify)
-          space.link (ionified)
           space = ionify = ionified = null //performance? memory release?
         }
 
@@ -181,14 +185,7 @@
     {},
 
   known:
-    { on:
-        [ { act:  'on'
-          , set: ['on']
-          , in : function within (ion)
-                    { return 'on' in ion
-                    }
-          }
-        ]
+    {
     },
 
   on :function
@@ -208,9 +205,9 @@
 
       var id      = sensation.re && sensation.re.id
         , has     = ionify.hasKnownWord
-        , known   = ionify.known
-        , senses  = ionify.senses
-        , our     = on.our
+        , domain  = on.with.the.domain
+        , known   = domain.known
+        , senses  = domain.senses
         , next    = -1
         , last    = groups.length
         , updated = {}
@@ -241,9 +238,9 @@
           reaction  = sensation [group]     // get the reaction
           reaction
             &&  ( spot = reactions.push  (reaction))
-            &&  ! ionify.ionified [typeof reaction]
-            &&  ( our
-                ? our.find ({find:reaction,  in:sensation, as:group})
+            &&  ! domain.ionified [typeof reaction]
+            &&  ( domain.find
+                ? domain.find ({find:reaction,  in:sensation, as:group})
                 && (reaction = reactions [spot-1] = sensation [group ])
                 :  (reaction = reactions [spot-1] = sensation [reaction])
                 );
@@ -266,8 +263,8 @@
 
       ionify.sortKnownWords (updated)
 
-      our
-        ? our.logging && our.logging.debug && our.debug
+      domain
+        ? domain.logging && domain.logging.debug && domain.debug
           ({debug: (debug.push ([id].concat (groups)), debug.join ('\n'))})
         : ~{debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
 
@@ -284,9 +281,9 @@
 
   sortKnownWords :function
   sortKnownWords (updated)
-    { var ionify     = sortKnownWords.with.its //|| (sortKnownWords == this.sortKnownWords) ? (sortKnownWords.with = this) : null
-        , known      = ionify.known
-        , descending = ionify.sortKnownWordsDescending
+    { var witH       = sortKnownWords.with
+        , known      = witH.the.domain.known
+        , descending = witH.its.sortKnownWordsDescending
         , word
 
       !updated && (updated = known)
@@ -305,7 +302,7 @@
 
   always :function
   always (sensation)
-    { var ionify = always.with.its //|| this
+    { var ionify = always.with.the.domain
         , does = ionify.does
         , action = sensation['*']
 
@@ -338,17 +335,17 @@
 
   sensed :function
   sensed (object)
-    { var ionify    = sensed.with.its
+    { var ionify    = sensed.with.the.domain
       //, ionified  = ionify.ionified
         , senses    = ionify.senses
-        , our       = sensed.our
-        , debugging = !! (our && our.logging && our.logging.debug)
+        , domain    = sensed.with.the.domain
+        , debugging = !!(domain && domain.logging && domain.logging.debug)
         , debug     = debugging && []
         , does      = ionify.does
         ; object || (object = this)
 
       for
-        ( var always,   D = does.length, d=-1
+        ( var always,   D = does.length, d=0
         ;    (always      = does[d])
         ,               D >      d++
         ;  typeof always == 'function'
@@ -422,9 +419,9 @@
                         break
 
                   //     case !!
-                  //       (  our
-                  //       && our.find
-                  //       && our.find ({find:reaction, in:senses, as:words})
+                  //       (  domain
+                  //       && domain.find
+                  //       && domain.find ({find:reaction, in:senses, as:words})
                   //       ):
                   //       reactions = senses [words]
                   //       R = reactions.length
@@ -440,7 +437,7 @@
         }
 
       debugging   //🐛~debug causes stack overflow
-        && (object.debug || (object.next && object.id) || our.debug({debug:debug}))
+        && (object.debug || (object.next && object.id) || domain.debug({debug:debug}))
 
       return results == 1 ? result : object
     },
@@ -454,8 +451,8 @@
 
   via: function
   via (sensor)
-    { var on      = via.with.its //|| (via.with = via == this.via ? this : null)
-        , known   = on.ionified
+    { var on      = via.with.its
+        , known   = via.with.the.domain.ionified
         , sensors = on.sensors
         , core    = sensors.core
         , name    = sensors.name
@@ -467,9 +464,9 @@
         ; known [type]           =  true
         ; known [core [type]]    =  !!core [type]
 
-      via.our
-        &&    via.our.logging
-        &&    via.our.logging.debug
+      via.with.the
+        &&    via.with.the.domain.logging
+        &&    via.with.the.domain.logging.debug
         && ~ {debug: ['via (sensor)', type, JSON.stringify (known)]}
 
       return true
