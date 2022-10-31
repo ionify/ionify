@@ -116,9 +116,9 @@ relationships, in whatever order is best for human comprehension" -
 ~
 { re:
     { id: 'frendlee@ionified.net'
-    , by: 'mike.lee'
+    , by: 'mike.👨🏾‍💻.lee'
     , on: -8.20171208
-    , to: -8.20211207
+    , to: -7.20221031
     , in: 'silicon-valley.california.usa.earth'
     , is: 'a literate & natural language programming exploration'
     },
@@ -146,10 +146,10 @@ relationships, in whatever order is best for human comprehension" -
 ~
 { re:
     { id: 'code-as-prose.demo@ionified.net'
-    , by: 'mike.lee'
+    , by: 'mike.👨🏾‍💻.lee'
     , on: -7.20190323
-    , to: -7.20220525
-    , at: +0.07
+    , to: -7.20221031
+    , at: +0.08
     , in: 'silicon-valley.california.us.earth'
     , is: 'code as prose with orion & stories'
     },
@@ -188,9 +188,9 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
 ~
 { re:
     { id: 'an.ionified.module@doma.in'
-    , by: 'mike.lee@ionify.net'
+    , by: 'mike.👨🏾‍💻.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202210310741
+    , to: -7.202210310819
     , is: 'modeling an ionified module'
     },
 
@@ -212,9 +212,9 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 ```javascript
 ~
 { re:
-    { by: 'mike.lee@ionify.net'
+    { by: 'mike.👨🏾‍💻.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202112070209
+    , to: -7.202210310819
     },
 
   on:'event',
@@ -241,9 +241,9 @@ anonymous & named objects:
 ```javascript
 ~
 { re:
-    { by: 'mike.lee@ionify.net'
+    { by: 'mike.👨🏾‍💻.lee@ionify.net'
     , on: -4.200709
-    , to: -8.202112070220
+    , to: -7.202210310820
     },
 
   on:'hi',
@@ -279,9 +279,9 @@ without overriding all, or parts, of each other:
 ```javascript
 ~
 { re:
-    { by: 'mike.lee@ionify.net'
+    { by: 'mike.👨🏾‍💻.lee@ionify.net'
     , on: -4.200709
-    , to: -8.202112070219
+    , to: -7.202210310823
     },
 
   on:'my.ion@doma.in',
