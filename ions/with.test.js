@@ -6,8 +6,8 @@
     , as: ['examination','convention','sensation','composition']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.0
+    , to:  -7.20221027
+    , at:  -0.01
     , is: "ionify's with@ api tests"
     , go:
         { seek: 'https://api.ionify.net/'
@@ -19,7 +19,7 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were implementing initial tests"
+        [ "were ..."
         , "must ..."
         , "will ..."
         , "want ... "
@@ -32,8 +32,8 @@
     , "with@ adds .with to arrays"
     , "with@ adds .with to methods & arrays only"
     , "with@ sets .with.its as the ion"
-    , "with@ sets .with.ion as the ion's of"
-    , "with@ sets .with.own as the ion's of.own"
+    , "with@ sets .with.the as the ion's the"
+    , "with@ sets .with.our as the ion's domain space"
     ],
 
   report :function
@@ -78,23 +78,22 @@
       exam.report (question, answer)
     },
 
- "with@ sets .with.ion as the ion's of":function
-  of (doing)
-    { var     exam = of.with.its
+ "with@ sets .with.the as the ion's the":function
+  the (doing)
+    { var     exam = the.with.its
         , question = doing [doing.next]
-        ,   answer = Boolean (exam.of) && exam.of === of.with.ion
+        ,   answer = Boolean (exam.the) && exam.the === the.with.the
 
       exam.report (question, answer)
     },
 
- "with@ sets .with.own as the ion's of.own":function
-  own (doing)
-    { var     exam = own.with.its
+ "with@ sets .with.our as the ion's domain space":function
+  our (doing)
+    { var     exam = our.with.its
         , question = doing [doing.next]
-        ,   answer = Boolean (exam.of) && exam.of.own === own.with.own
+        ,   answer = our.with.our === our.with.the.domain
 
       exam.report (question, answer)
     }
-
 }
 ;

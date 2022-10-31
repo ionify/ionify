@@ -7,8 +7,8 @@
     , as: ['aggregation','convention','sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220708
-    , at:  -0.03
+    , to:  -7.20221031
+    , at:  -0.04
     , is:
         [ "ionify's of@ convention that sets ion's re.of & of"
         ],
@@ -22,7 +22,7 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "WERE replacing .our & ~link.to with of@"
+        [ "will move domain parsing to id@ as id.domain.name+full+subs"
         , "must"
         , "will"
         , "plan"
@@ -37,75 +37,74 @@
     },
 
   on:'*',
-     '*':'of_'
+     '*':'of'
         ,
-  of:
-    { own:
-        { spaces:       {'':{}}
-        , domainParser: /@(.+)\.(.+\..+)$|@(.+\..+)$|@(.*)$|^[^@]+$/
-        },
-      domain:
+  the:
+    { domain:
         {
         }
     },
 
-  valueOf:function
-  ionify()
-    { var        own = this.of.own
-      own.spaces.all = own.spaces['']
-      this.of_.with  = ionify.with = {its:this, own:own}
-      this.of_(this)
-
-    //delete this.of_.with
-      delete this.valueOf <- this
-    //delete this['*']
-    //delete this.of_
+  spaces:
+    { '':{}
     },
 
-  of_:function
-  of_(obi)
-    { /set .of.doma.in & re.of.doma.in space/
+  valueOf:function
+  ionify()
+    { this.spaces.all = this.spaces['']
+      this.the.domain.spaces = this.spaces
+      this.of.with   = ionify.with = {the:this.the, its:this}
+      this.of(this)
+      delete this.valueOf <- this
+    },
+
+  domainParser
+    : /@(.+)\.(.+\..+)$|@(.+\..+)$|@(.*)$|^[^@]+$/
+    ,
+
+  of:function
+  of(ion)
+    { var its = of.with.its;
+
+      /parse ion's domain name/
       var domain = {}
-        ; domain.find = obi.re.id.match (of_.with.own.domainParser)
+        ; domain.find = ion.re.id.match (its.domainParser)
         ; domain.full = domain.find [0]
         ; domain.name = domain.find [4] || ''
         ; domain.subs = domain.find [1] || ''
         ; domain.base = domain.find [2] || domain.find [3]
         ;
 
-      var spaces  = of_.with.own.spaces;
+      var spaces  = its.spaces;
 
       /ensure the ion's doma.in space exists/
       spaces[domain.name] || (spaces[domain.name] = {})
 
-      var of      = obi.of
-        , ofs     = obi.re.of
+      var the     = ion.the
+        , ofs     = ion.re.of
         , space   , name
         , ensure  =
                   { all:    spaces.all
-                  , own:    {}
                   , domain: spaces[domain.name]
                   };
 
 
-      /ensure  .of  .of.all  .of.own  &  .of.domain exist/
-      ;   (of && 'object' == typeof of)
-      ||  (of && (obi.re.ex.of    = of), (obi.of= of = {}))
+      /ensure  .the  .the.all  &  .the.domain exist/
+      ;   (the && 'object' == typeof the)
+      ||  (the && (ion.re.ex.the   = the), (ion.the = the = {}))
 
       for
         ( name in ensure )
         { if(!ensure.hasOwnProperty (name)) continue
-        ;  space =   of [name]
+        ;  space =   the [name]
         ; (space && 'object' == typeof space)
-        ||(space && (obi.re.ex ['of_'+name] = space), (obi.of[name] = ensure[name]))
+        ||(space && (ion.re.ex ['the_'+name ] = space), (ion.the[name] = ensure[name]))
         }
 
+      /ensure the.domain = the.doma.in = re.of.doma.in/
+      ofs[domain.name] = the[domain.name] = the.domain;
 
-      /ensure of.doma.in = re.of.doma.in = of.domain/
-      of[domain.name] = ofs[domain.name] = of.domain;
-
-
-      /resolve all re.of spaces to references & ensure in .of/
+      /resolve all re.of space names to space instances & ensure their in .the/
       for
         ( var f=-1, F=ofs.length
         ;  ++ f  <  F          ;
@@ -115,39 +114,44 @@
           space || name in spaces ||
          (space  = spaces [name]   = {})
           ofs [name]  =  space
-          of  [name] || (of[name] = space)
+          the [name] || (the[name] = space)
         }
 
 
-      /merge all .of spaces with any existing re.of spaces/
-      var merge
+      /merge all .the spaces with any existing re.of spaces/
+      var local
       for
-        ( name in of )
-        { if(name == 'own' || name == 'domain' || !of.hasOwnProperty(name))
+        ( name in the )
+        { if(name == 'domain' || !the.hasOwnProperty(name))
             continue
 
           space = ofs[name]
-          merge =  of[name]
+          local = the[name]
 
-          if(!space && merge && 'object' == typeof merge)
-            { ofs[name] = merge
+          if(!space && local && typeof local == 'object')
+            { ofs[name] = local
               continue
             }
 
-          if(!merge && space)
-            { of[name] = space
+          if(!local && space)
+            { the[name] = space
               continue
             }
 
-          /merge .of into re.of spaces/
-          for
-            (       name in merge       )
-            { space[name] = merge[name] }
+          /ensure re.of & .the spaces will be the exact of@spaces/
+          if( space != spaces[name] )
+            { space  = spaces[name]
+              if( domain.name == name )
+                { the.domain   = space}
+            }
 
-          /merge re.of spaces into .of/
+          /set .the space to its exact re.of & of@spaces space/
+          if( space == local ) continue; else the[name] = space;
+
+          /merge .the into re.of spaces/
           for
-            (   name in space                                 )
-            { !(name in merge) && (merge[name] = space[name]) }
+            (       name in local       )
+            { space[name] = local[name] }
         }
     }
 }

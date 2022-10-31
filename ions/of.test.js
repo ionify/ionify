@@ -6,8 +6,8 @@
     , as: ['examination','convention','sensation','composition']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220708
-    , at:  -0.0
+    , to:  -7.20221031
+    , at:  -0.01
     , is: "ionify's of@ api tests"
     , go:
         { seek: 'https://api.ionify.net/'
@@ -28,12 +28,12 @@
     },
 
   do:
-    [ "of@ ensures ions have .of"
-    , "of@ ensures ions have .of.own"
-    , "of@ ensures ions have .of.domain"
-    , "of@ ensures ions have .of.all singular shared space"
+    [ "of@ ensures ions have .its"
+    , "of@ ensures ions have .the"
+    , "of@ ensures ions have .the.domain"
+    , "of@ ensures ions have .the.all singular shared space"
     , "of@ ensures ions' re.of spaces exist as re.of.space(s)"
-    , "of@ ensures ions' re.of spaces & .of spaces are merged"
+    , "of@ ensures ions' re.of spaces & .the spaces are merged"
     ],
 
   report :function
@@ -43,41 +43,41 @@
         :  ~{error:`❌ ${question}`, halt:false}
     },
 
- "of@ ensures ions have .of":function
+ "of@ ensures ions have .its":function
+  its(doing)
+    { var     exam = its.with.its
+        , question = doing [doing.next]
+        ,   answer = exam && exam[question] === its
+      exam.report (question, answer)
+    },
+
+ "of@ ensures ions have .the":function
   of(doing)
     { var     exam = of.with.its
         , question = doing [doing.next]
-        ,   answer =  exam.of && typeof exam.of == 'object'
+        ,   answer =  exam.the && typeof exam.the == 'object'
       exam.report (question, answer)
     },
 
- "of@ ensures ions have .of.own":function
-  own(doing)
-    { var     exam = own.with.its
-        , question = doing [doing.next]
-        ,   answer = exam.of && exam.of.own && typeof exam.of.own == 'object'
-      exam.report (question, answer)
-    },
-
- "of@ ensures ions have .of.domain":function
+ "of@ ensures ions have .the.domain":function
   domain(doing)
     { var     exam = domain.with.its
         , question = doing [doing.next]
-        ,   answer = exam.of && exam.of.domain && typeof exam.of.domain == 'object'
+        ,   answer = exam.the && exam.the.domain && typeof exam.the.domain == 'object'
       exam.report (question, answer)
     },
 
- "of@ ensures ions have .of.all singular shared space":function
+ "of@ ensures ions have .the.all singular shared space":function
   all(doing)
     { var     exam = all.with.its
         , question = doing [doing.next]
         ,    anion = {}
         ;   ~anion
 
-      var   answer = exam.of
-                  && exam.of.all
-                  && anion.of.all   === exam.of.all
-                  && 'object' == typeof exam.of.all
+      var   answer = exam.the
+                  && exam.the.all
+                  && anion.the.all  === exam.the.all
+                  && 'object' == typeof exam.the.all
 
       exam.report (question, answer)
     },
@@ -101,26 +101,26 @@
       exam.report (question, answer)
     },
 
- "of@ ensures ions' re.of spaces & .of spaces are merged":function
+ "of@ ensures ions' re.of spaces & .the spaces are merged":function
   merge(doing)
     { var ion =
-              { re: {of: ['lee']      }
-              , of: { m: {i:'chael'}  }
+              {  re: {of: ['lee']      }
+              , the: { m: {i:'chael'}  }
               }
         ~ ion
 
       var     exam = merge.with.its
         , question = doing [doing.next]
         ,      ofs = Object.keys (ion.re.of).sort()
-        ,      of  = Object.keys (ion.of   ).sort()
-        ,   answer = (ofs.length - 1) == (of.length - 2) //- .own .domain & '0' not in re.of/
+        ,      the = Object.keys (ion.the  ).sort()
+        ,   answer = (ofs.length - 1) == (the.length - 1) //- .domain not in .re.of & - '0' not in .the/
         ,    found =  ofs.length - 1
-        ,     skip = {own:1,domain:1}
+        ,     skip = {domain:1}
 
       for
-        ( var name in ion.of )
+        ( var name in ion.the )
         { if (skip [name]) continue
-          answer &&= (ion.of[name] === ion.re.of[name]) && --found >= 0
+          answer &&= (ion.the[name] === ion.re.of[name]) && --found >= 0
         }
 
       exam.report (question, answer)

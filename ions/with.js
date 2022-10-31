@@ -7,10 +7,10 @@
     , as: ['aggregation','convention','sensation']
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.01
+    , to:  -7.20221031
+    , at:  -0.02
     , is:
-        [ "ionify's with convention"
+        [ "ionify's .with convention"
         ],
       go:
         { seek: 'https://api.ionify.net/'
@@ -22,78 +22,69 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were implementing ionify's with convention"
+        [ "were"
         , "must"
         , "will"
         , "plan"
 
-        , "want .with.ion on sion methods to access ion contexts e.g: domain"
-        , "want .with.ion.domain(s)+space(s)"
-        , "want .with.ion.* to include the sion's re.of & sion.of spaces"
-        , "want .with.ion to be exactly sion.of whether declared in sion or not"
-        , "want .with.ion to be accessible to only the sion it's populated for?"
-        , "know .with.ion can be exposed if shared via host method as reaction"
+        , "want .with.the to be accessible to only the sion it's populated for?"
+        , "know .with.* can be exposed if shared via host method as reaction"
 
-        , "like ion.with()'s existence being a sensible aggregation indication"
+        , "like .re.of.* & .the.* being sensible sion aggregation indications"
         ]
     },
 
   on:'*',
      '*':'with'
         ,
-  of:
-    { own:
-        { WITH:
-            { ion:
-                { all:    null
-                , own:    null
-                , domain: null
-                }
-            , its: null
-            , own: null
-            },
 
-          WiTH:function
-          WiTH()
-            {
-            }
-        },
-      domain:
+  the:
+    { domain:
         {
         }
     },
 
+  WITH:
+    { its: null
+    , all: null
+    , the: null
+    , our: null
+    },
+
+  WiTH:function
+  WiTH()
+    {
+    },
+
   valueOf:function
   ionify()
-    { var            own = this.of.own
-      own.WiTH.prototype = own.WITH
-      this.with.with     = {own:own}
+    { this.WiTH.prototype = this.WITH
+      this.with.with      = {its:this}
       this.with (this)
 
       delete this.valueOf <- this
-    //delete this['*']
-    //delete this.with
     },
 
   with:function
-  with_(obi)
+  with_(ion)
     { var exists
-        ,   own      = with_.with.own
-        , _with_     = new own.WiTH
-        ; _with_.its = obi
-        ; _with_.ion = obi.of
-        ; _with_.own = obi.of.own
+        ,   its      = with_.with.its
+        , _with_     = new its.WiTH
+        ; _with_.its = ion
+        ; _with_.all = ion.the.all
+        ; _with_.the = ion.the
+        ; _with_.our = ion.the.domain
 
       for
-        ( var member in obi )
-        { if(!obi.hasOwnProperty     (member)  ) continue
+        ( var member in ion )
+        { if(!ion.hasOwnProperty     (member)  ) continue
 
-          if('function' != typeof obi[member] &&
-             !Array.isArray      (obi[member]) ) continue
+          if('function' != typeof ion[member] &&
+             !Array.isArray      (ion[member]) ) continue
 
-          exists  =   obi [member].with
-          exists  &&  exists instanceof own.WiTH
-                  || (obi [member].with =  _with_)
+          exists  =   ion [member].with
+          exists  &&  exists instanceof its.WiTH
+                  || (ion [member].with =  _with_)
         }
     }
 }
