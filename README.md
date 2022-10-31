@@ -66,10 +66,10 @@ phrases to actions:
 ~
 { re:
     { id: 'ask.say@ions.iskitz.net'
-    , by: 'mike.lee'
+    , by: 'mike.👨🏾‍💻.lee'
     , on: -7.20150728
-    , to: -8.20211207
-    , at: +1.61
+    , to: -7.20221031
+    , at: +2.00
     , in: 'silicon-valley.california.usa.earth'
     , is: 'an ask & say domain-specific-language interaction'
     },
@@ -79,22 +79,22 @@ phrases to actions:
 
   ask :function
   ask (action)
-      { ask.with.answer = prompt (ask.with.prep (action.ask)) || ''
+      { ask.with.its.answer = prompt (ask.with.its.prep (action.ask)) || ''
       },
 
   say :function
   say (action)
-      { alert (say.with.prep (action.say))
+      { alert (say.with.its.prep (action.say))
       },
 
   prep:function
   prep(quote)
-      { return quote.replace (/\[answer\]/g, prep.with.answer)
+      { return quote.replace (/\[answer\]/g, prep.with.its.answer)
       }
 }
 
 
-~ /these ask.say actions can be in separate files/
+~ /ask.say interactions can be in separate files/
 
 ~ { say: '👋🏾 hi!'                              }
 ~ { ask: "what's your name?"                    }
@@ -190,11 +190,11 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
     { id: 'an.ionified.module@doma.in'
     , by: 'mike.lee@ionify.net'
     , on: -4.200709
-    , to: -8.202112070222
+    , to: -7.202210310741
     , is: 'modeling an ionified module'
     },
 
-  do :function
+  do: function
   something ()
     { something.with.hi ++
     },
