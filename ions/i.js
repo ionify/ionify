@@ -5,7 +5,7 @@
     , as: 'action'
     , by: 'mike.lee'
     , on: -4.200709
-    , to: -7.20220707
+    , to: -7.20221031
     , at: -0.1
     , is:
         [ "observes & presents live code documentation via these apis:    "
@@ -23,23 +23,20 @@
     [ 'I', 'i'
     ],
 
-  of:
-    { own:
-        { presented: {}
-        }
-    }
+  presented:
+    {}
 
 , I        :'document'
 , i        :'document'
 , document :function
   document (action)
-    { var own     =  document.with.own
+    { var its     =  document.with.its
         , message =  action.I || action.i
         , who     = ('I' in action) ? 'I' : 'i'
 
       if( 'I' == who)
-        { if( own.presented [message] ) return
-              own.presented [message] = true
+        { if( its.presented [message] ) return
+              its.presented [message] = true
         }
 
     + {info: true}
