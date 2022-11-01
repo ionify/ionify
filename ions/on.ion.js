@@ -89,24 +89,14 @@
 
   object :function
   object ()
-    {
-      // var  ionified  = Object.prototype.valueOf.ionified
-      //   ;    delete    Object.prototype.valueOf.ionified
-      //   ;  ionified && delete  ionified.valueOf
-
-      var  w1th               = Object.prototype.valueOf.with
-        ,  ionify             = this
-
-        ;  ionify.sensed.with = ionify.always.with
-        =  ionify.via.with    = ionify.on.with = on_no.with
-        =  {own:ionify,our:{domain:{}}}
-
-      var  ionify             =  this
-        ;  ionify.the.domain.senses.on  = [ionify.on]
+    { var  ionify             =  this
         ;  ionify.sensed.with =  ionify.on.with
         =  ionify.via.with    =  ionify.object.with
         =  ionify.always.with =  ionify.sortKnownWords.with
-        =  on_no.with         = {its:ionify, the:{domain:ionify.the.domain}}
+        =  ionify.invoke.with =  on_no.with
+        = {its:ionify, the:{domain:ionify.the.domain}}
+        ;  ionify.pending     =  Object.prototype.valueOf.with.ion.pending
+        ;  ionify.the.domain.senses.on = [ionify.on]
 
       ionify.on ({on:'on'   ,     on: ionify.sensed})
       ionify.on ({on: Object, Object: ionify.sensed})
@@ -114,16 +104,11 @@
       function on_no (no)
         { var space = no.on.with.our   //must: use this=no@.on since on_no.our isn't linked
 
-          ;/spot: disable host:ionified@ons to avoid duplicated sensations/;
-          ionified._on_ = ionified.on   ; delete ionified.on
-
-          //invoke this:ionify & the host:ionified ions to set their spaces/
-          delete ionify.valueOf <- ionify & ionified
-
-          ;/spot: enable  host:ionified@ons to avoid duplicated sensations/;
-          ionified.on   = ionified._on_ ; delete ionified._on_
+          //invoke this:ionify to set its space connections/
+          delete ionify.valueOf <- ionify
 
           no.no ({on:'no@ionify', no:on_no})
+          ionify.invoke()
           space = ionify = ionified = null //performance? memory release?
         }
 
@@ -134,25 +119,18 @@
            on_no
       }
 
-      ionified <= /todo: via .ionifi3d ()/
-
-      ~
-      { get:
-          [ 're@ionify'
-          , /*'next.id@ionify',*/
-          ,        'id@ionify',        'of@ionify',            'with@ionify'
-          ,                                         'find.link.share@ionify'
-          ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
-          ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
-          ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
-          ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
-        //,     'on.do@ionify'
-          ,      'ions'
-          ]
-      , in: 'sequence'||'order'
-      }
-
       return true
+    },
+
+  invoke :function
+  invoke ()
+    { var pending = invoke.with.its.pending
+
+      for
+        ( var p = -1, P=pending.length
+        ;   ++p < P
+        ; ~pending[p]
+        );
     },
 
   ionifi3d :function

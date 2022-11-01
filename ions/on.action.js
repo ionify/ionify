@@ -5,7 +5,7 @@
     , as:  'sensor'
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20221030
+    , to:  -8.20221031
     , at:  -0.1
     , is:
         [ 'ion, invoked object notation, interactions from your functions'
@@ -43,12 +43,12 @@
 
               var our = act.with.our
                 , id  = this.re.id
-                , my  = act.with.all.space (id || '@')
+                , my  = act.with.our.space (id || '@')
                 , got = ion.apply (my, ion.in || ion)
                 , debugging = !! (our.logging && our.logging.debug)
 
               debugging
-                ? act.with.all.debug ({debug: ['~', id || ion.name || 'anonymous', '() : ', got]})
+                ? act.with.our.debug ({debug: ['~', id || ion.name || 'anonymous', '() : ', got]})
                 :           ~{debug: ['~', id || ion.name || 'anonymous', '() : ', got]}
 
               return (ion.out = got)

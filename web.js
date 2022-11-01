@@ -33,21 +33,16 @@
 
   web :function
   web ()
-    { Object.prototype.valueOf.ionified = this
-    ; var web           = this
-    ; web.get.with      = web.getScript.with = {its:web}
-    ; web.get$.URL.with = {its: web.get$}
-  //; web.watch     ()
-    ; web.ready     ()
-    ; web.locate    ()
-    ; web.getScript ({at:'on.ion@ionify'})
-    { var host      = (Object.prototype.valueOf.with = {}).host = this
-        ; host.get  = this.getScript
+    { var web             =  Object.prototype.valueOf.ionified  = this
+      var host            = (Object.prototype.valueOf.with      = { }).host = web
+      host.get            =  web.getScript
+      web.get$.URL.with   = {its: web.get$}
+      web.getScript.with  = {its: web}
 
-  //  host.watch  ()
-      host.ready  ()
-      host.locate ()
-      host.get    ({at:'get@ionify'})
+    //web.watch     ()
+      web.ready     ()
+      web.locate    ()
+      web.getScript ({at:'get@ionify'})
     },
 
   watch:
@@ -87,21 +82,21 @@
       },
 
   getScript:
-    function getScript (ion)
+    function getScript (action)
       { var  web = getScript.with.its //|| (getScript == this.getScript ? this : null)
-          , code = String (ion.code || '')
-          ,  url = String (ion.at   || '')
+          , code = String (action.code || '')
+          ,  url = String (action.at   || '')
           , get$ = web.get$
-        //; get$.URL.with = get$
+        //; get$.URL.with.its = get$
           ;
 
         if (!url && !code)
-          return ~{warn: [web.errors.noScript, JSON.stringify (ion)]}
+          return ~{warn: [web.errors.noScript, JSON.stringify (action)]}
 
         var script = document.createElement ('script')
           ; script.type  = 'text/javascript'
-          ; ion   .then && (script.onload = ion.then)
-          ; script.async =  get$.ASYNC [ion.in]
+          ; action.then && (script.onload = action.then)
+          ; script.async =  get$.ASYNC [action.in]
           ;
 
         if (url)
@@ -111,31 +106,8 @@
                        ?  url : url.replace (get$.ID, get$.URL)
           }
 
-  getScript :function
-  getScript (action)
-    { var  web = this
-        , code = String (action.code || '')
-        ,  url = String (action.at   || '')
-        , get$ = web.get$
-        ; get$.URL.get$ = get$
-
-      if (!url && !code)
-        return ~{warn: [web.errors.noScript, JSON.stringify (action)]}
-
-      var script = document.createElement ('script')
-        ; script.type  = 'text/javascript'
-        ; action.then && (script.onload = action.then)
-        ; script.async =  get$.ASYNC [action.in]
-
-      if (url)
-        { url.match (get$.ID) && (script.id = url)
-          url[url.length-1] == '/' && (url += get$.PATH.ions)
-          script.src  =  url = url.match   (get$.HTTP)
-                      ?  url : url.replace (get$.ID, get$.URL)
-        }
-
-      document.head.appendChild (script)
-    ~{debug:['getting', url, '...']}
+        document.head.appendChild (script)
+      ~{debug:['getting', url, '...']}
     },
 
   getInfo:

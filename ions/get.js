@@ -5,8 +5,8 @@
     , is:  "implementing ionify's ~get"
     , by: ['mike.lee', 'team']
     , on:  -4.200709
-    , to:  -8.20211214
-    , at:  -0.047
+    , to:  -7.20221031
+    , at:  -0.048
     , we:
         [ 'were adding tests for web@ionify & its actions	                           '
         , "will set all ~get actions' ionid@ domains to the current ion's.           "
@@ -32,18 +32,6 @@
     , ['get']
     ],
 
-  with:
-    { my:
-        { ORDER:
-            { ''        : 'parallel'
-            , null      : 'parallel'
-            , order     : 'order'
-            , sequence  : 'order'
-            , undefined : 'parallel'
-            }
-        }
-    },
-
   valueOf:function
   ionify ()
     { var w1th  = Object.prototype.valueOf.with
@@ -60,20 +48,21 @@
         ; pending [id]  = pending.length - 1
 
       var ions
-        =   [      'on.ion@ionify', 'find.link.share@ionify',   'next.id@ionify'
-            ,          'id@ionify',              'no@ionify',  'on.error@ionify'
-            ,   'on.errors@ionify',          'logger@ionify', /*'on.aeon@ionify'
-            ,          'do@ionify',         'on.ions@ionify', 'on.action@ionify'
-            ,   'on.storie@ionify',             'use@ionify',      'ions@ionify'
-            , 'on.ionified@ionify'
-          //,       'on.do@ionify'
-            ,        'ions'         */
-            ]
+        = [    'on.ion@ionify',        're@ionify',         'next.id@ionify'
+          ,        'id@ionify',        'of@ionify',            'with@ionify'
+          ,                                         'find.link.share@ionify'
+          ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
+          ,    'logger@ionify',   'on.aeon@ionify',              'do@ionify'
+          ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
+          ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
+        //,     'on.do@ionify'
+          ,      'ions'
+          ]
 
       var get       = this.get
-        ; get.with  = {own:this, my:this.with.my}
+        ; get.with  = {its:this}
 
-      get ({get:ions, in:'order'})
+      get ({get:ions, in:'sequence'||'order'})
     },
 
   getInfo:
@@ -102,25 +91,23 @@
 ,'get and'          :'get'
 , get:
     function get (action)
-      { var w1th    = get.with
-          , ion     = w1th.all && w1th.all.ionified
-          , own     = w1th.own
-          , host    = own.host
-          , ORDER   = own.with.my.ORDER
-          , resolve = own.resolve
+      { var ionified  = get.with.our && get.with.our.ionified
+          , its       = get.with.its
+          , host      = its.host
+          , resolve   = its.resolve
 
         action      ||  (action = this)
         action.and  && ~{do:action.and}
-        Array.isArray (action.get) || (action.get = [action.get])
+        Array.isArray   (action.get) || (action.get = [action.get])
 
         var todo  = action.then
           , ions  = action.get
 
         if( todo )
-          { var on  = {on:ions, do:todo, after:action.after}
-            ion &&    ( ion [typeof todo]
-                      || (+{find:todo, in:action}, todo = on.do = action [todo])
-                      )
+          { var on    =   {on:ions, do:todo, after:action.after}
+            ionified  &&  (   ionified [typeof todo]
+                          || (+{find:todo, in:action}, todo = on.do = action [todo])
+                          )
           ~ on
             todo = on.do
           }
@@ -128,8 +115,16 @@
         for ( var last = ions.length
             ,     next = -1
             ;  ++ next < last
-            ; host.get ({at:ions[next], in:ORDER[action.in], then:todo})
+            ; host.get ({at:ions[next], in:its.ORDER[action.in], then:todo})
             );
-      }
+      },
+
+  ORDER:
+    { ''        : 'parallel'
+    , null      : 'parallel'
+    , order     : 'order'
+    , sequence  : 'order'
+    , undefined : 'parallel'
+    }
 }
 ;
