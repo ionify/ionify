@@ -3,19 +3,17 @@
 { re:
     { id:  'on.aeon@ionify'
     , of: ['core','conduit']
-    , as: ['transmission','sensation']
+    , as: {observation:0.001}
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20221031
-    , at:  -0.034
+    , to:  -7.20221102
+    , at:  -0.035
     , is:
-        [ "sensing all array-expressed object notations like these:"
+        [ "sensing all aeon: array-expressed object notations like these:"
                                         +
                       "ali: array-literal invocation emoji:"
                                         +
               "['~ . ~']  &  [{0 : 0}]  &  [/d(~ . ~)b/]  &  [0 . 0]"
-                                        +
-                    "aesop: array-expressed storie or phrase:"
                                         +
           '["get sensations", "activate them", "enjoy their reactions!"]'
         ],
@@ -34,81 +32,63 @@
         + "their reports."
         + "know this'll also help aesop & aeon automate await|wait|pause|resume"
 
-        , "WERE exploring challenge of ~find'ing aeon sensors like aesop"
-        , "will rename on.array"
-        , "must meet aeon [//+,''] sensors challenge 🤔 AEON run-time switching?"
-        , "like fixing on:Array to have separate coexistent aeon & aesop handlers"
-        , "want to move aesop@ to its own ion"
         , "... "
         ]
     },
 
-  valueOf:function
-  aeon()
-    { var sensors       = this.my.sensors
-      this.my.link.with = sensors.with = {its:this}
-      this.my.link ()
-      for (var sense in sensors) sensors [sense] = this [sensors [sense]]
+  valueOf :function
+  aeon( )
+    { var sensors  = this.sensors
+      sensors.with = {its:this}
+    //for (var sense in sensors) sensors [sense] = this [sensors [sense]]
       delete this.valueOf <- this
     },
 
-  my:
-    { sensors:
-        { string    : 'aesop'
-      //, number    : ''
-      //, boolean   : ''
-      //, null      : ''
-      //, undefined : ''
-        },
-      link:
-        function link (ion)
-          { ion || (ion = link.with.its)
-            for (var  member  in ion)
-              { member = ion [member]
-              ; if (member.my || ('my' in member)) continue
-              ; member.my = ion.my
-              }
-          }
+  sensors:
+    { boolean   : 'aesop'
+    , null      : 'aesop'
+    , number    : 'aesop'
+    , string    : 'aesop'
+    , undefined : 'aesop'
     },
 
   on:
     Array,
     Array:function
      aeon(array)
-        { array ||  (array = this)
+        { array || (array = this)
 
         ~ {debug: ["~[", array ,"]"]}
 
           var AEON      = aeon.with.its
-            , sensors   = AEON.my.sensors
+            , sensors   = AEON.sensors
             , ionified  = aeon.with.our.ionified
             , next      = -1
             , last      = array.length
             , thing
             , sense
             , type
-          //; ionified ['string'] = true
 
           while (++next < last)
             { thing =   array [next]
-              type  =  typeof  thing
+              type  = thing === null ? 'null' : typeof thing
               sense = sensors [type]
-              if (!thing)      continue
-              if (ionified    [typeof thing]  && !('with' in thing)) thing.with = array.with
-              if (!sense)     {~thing; continue }
-              if (!ionified   [typeof sense])
-                { ~{find:sense, in:sensors ||AEON, as:type}
-                    sense = (sensors ||AEON) [type ||sense]
-                    if (!sense)
+
+              if(  ionified  [type] && !('with' in thing)) thing.with = array.with
+              if( !sense)   {~thing; continue}
+
+              if( !ionified  [typeof sense] && sense)
+                { ~{find:sense, in:sensors, as:type}
+                    sense = (sensors) [type]
+                    if( !sense )
                       { ~{warn:`aeon: couldn't sense ${type} ~${JSON.stringify (thing)}`}
                       ;   continue
                       }
                 }
-          //  if (!ionified [type])  continue
-          ///*if (!thing.with && !('with' in thing))*/ (thing.with = array)
+
           //  if (+thing  && thing.did)  continue
-              sense.next = next
-              sensors [type] (array)
+              sense && (sense.next = next)
+              sensors  [type] (array)
             }
 
           return next / array.length
@@ -123,8 +103,8 @@
     , "will use tbd name-to-ion resolver"
     ],
 
-  aesop:function
-  aesop(ion)
+  aesop :function
+  aesop (ion)
     { ion || (aesop == this.aesop) && (ion = this)
 
       var phrase = ion [aesop.next]
