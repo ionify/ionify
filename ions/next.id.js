@@ -2,25 +2,21 @@
 ~
 { re:
     { id:  'next.id@ionify'
-    , of:  'core'
-    , as:  'action'
-    , by: ['mike.lee', 'team']
+    , of: ['core','public','api']
+    , by: ['mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team']
     , on:  -7.20160910
-    , to:  -7.20220707
+    , to:  -7.20221104
     , at:  -0.1
+    , as: {sensation:0.001, composition:0.001}
     , is: 'generating namespaced sequential ids, per request'
     , we: "like valueOf switching next_id, creating a private closure for internals"
-    },
-
-  on:
-    [['next', 'id']
-    ],
+    }
 
 , on  : [['next', 'id']]
 , MAX : Number.MAX_SAFE_INTEGER ||  9007199254740991
 , MIN : Number.MIN_SAFE_INTEGER || -9007199254740991
-, ids : {}
-      ,
+, ids : {},
+
   valueOf :function
   nextid  ()
     { this ['next id'].with = {its:this}
@@ -34,9 +30,6 @@
         , name = action.next
         , f0r  = action.id.re || (ion.id.re = {})
         , id   = ids [name]
-
-      this['next id']     = next_id
-            next_id.with  = {own:this}
     }
 }
 ;
