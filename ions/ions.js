@@ -42,6 +42,7 @@
     ,  info : !true
     ,   log : !true
     ,  warn :  true
+    , notes :  true
     }
 }
 ;
