@@ -2,17 +2,19 @@
 ~
 { re:
     { id:  'no@ionify'
-    , of: ['core','api']
-    , as: ['composition','sensation','convention']
+    , of: ['core','public','api']
+    , as: {sensation:0.001, composition:0.001}
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20221030
-    , at:  -0.046
+    , to:  -7.20221104
+    , at:  -0.047
     , is:
-        [ "~on.no which disables a sensation mapped to one or more reactions"
+        [ "ionify's public ~on.no action"
+        , "disabling all reactions to the specified sensation"
+        , "disabling the convention with the specified reaction"
         ],
       we:
-        [ "like the idea of resolving ~ {no: 'this.with'}"
+        [ "like the idea of resolving ~{no: 'this.with'}"
         ]
     },
 
@@ -31,12 +33,12 @@
       if (!No && !('no' in sensation)) return sensation
 
       // clear ~on:*
-      var star = our.does
-        , spot = star [on]
+      var does       = our.does
+        , convention = does[on]
         ;
-      if( spot || (on in star))
-        { star [spot]  = null
-        ; delete star [on]
+      if( convention || (on in does))
+        { does  [convention] = null
+        ; delete   does [on]
         }
 
       // clear ~on:name
