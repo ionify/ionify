@@ -7,14 +7,15 @@
     , as: {sensation:0.001, composition:0.001, specification:0.001}
     , on:  -4.200709
     , to:  -8.20221107
-    , at:  -0.048
+    , at:  -0.049
     , is:
         [ "ionify's public ~on.no action"
         , "disabling all reactions to the specified sensation"
         , "disabling the convention with the specified reaction"
         ],
       we:
-        [ "like the idea of resolving ~{no: 'this.with'}"
+        [ "will make a way to deactivate all observation@s, aka ~on:Type's."
+        , "like the idea of resolving ~{no: 'this.with'}"
 
         , "muse ~{on:'term',dont:act} 👎🏾 | {no:{term:act} | {on:'term',no:act} "
         + "~{no:{term:act}} enables deactivating multiple sensations at once 🤓"

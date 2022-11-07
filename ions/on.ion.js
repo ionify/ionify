@@ -6,7 +6,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221107
-    , at:  -0.075
+    , at:  -0.076
     , as:
         { observation   :0.001, sensation:0.001, specification:0.001
         , transcription :0.001
@@ -64,7 +64,7 @@
         + "once they're unneeded, but it may be good enough to only note this "
         + "for now & revisit this proposal if performance needs to be improved."
 
-        , "will make a way to undo all observation@s, aka ~on:Type's."
+        , "will make a way to deactivate all observation@s, aka ~on:Type's."
         , "want .resolve() converting text ids to ion-capable instances."
         , "like .resolve() this.* & ~* text & stories to actual ion instances?"
         , "want transcription@ for unknown terms like acquisition@less ~get's"
