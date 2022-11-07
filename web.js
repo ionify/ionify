@@ -7,7 +7,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221107
-    , at:  -0.051
+    , at:  -0.052
     , as:
         { habitation   :-0.001, connection:-0.001, initialization:true
         , transcription:-0.001
@@ -101,10 +101,8 @@
     [],
   queue :function
   queue (ion)
-    { var web     = queue.with.its
-        , pending = web.pending
-        ; pending . push (ion)
-        ; pending [ ion.re.id] = pending.length - 1
+    { var web = queue.with.its
+        ; web.pending.push (ion)
     },
 
   configuration:
