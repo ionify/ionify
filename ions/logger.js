@@ -2,31 +2,31 @@
 ~
 { re:
     { id:  'logger@ionify'
-    , of: ['core','api']
-    , as: ['composition','sensation']
-    , by: ['mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team']
+    , of: ['public','transcription','api']
+    , as: {sensation:0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team✨ionify']
     , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -7.20221030
-    , at:  -0.047
+    , to:  -8.20221107
+    , at:  -0.048
     , is:
-        [ "ionify's record logging composition:"
+        [ "ionify's transcription sensation:"
 
         , '~{debug:*}, ~{error:*}, ~{info:*}, ~{log:*} & ~{warn:*}'
 
         , '~ {log_level: true || false}'
-        + '  true enables & false disables recording at the specified log level'
+        + '  true enables & false disables recording at the specified level'
         + '  i.e. debug, error, info, log, or warn.'
 
         , '+ {log_level: null}'
         , '  reports if the log level is enabled:1:true | disabled:0:false'
         , '  the unary operator is critical for acquiring a correct log level state'
         , "  +|- unary operators always correctly report the log level's state"
-        , '  a ~ unary operator  always reports the log level state as enabled 👎🏾'
+        , "  a ~ unary operator  always 😒 reports the log level state's enabled"
         , '  ~~ {log_level:null} can be used to report the correct log level'
 
         , '+ {log_level: "message"}'
-        , "  records a message at the specified log level if it's enabled"
+        , "  records a message at the specified level if it's enabled"
 
         , '+ {log_level: reference}'
         , '  passes the referenced object to the underlying logger, e.g. console,'
@@ -42,14 +42,15 @@
         , seek: 'https://api.ionify.net/'
         },
       we:
-        [ "want '⚠️' 🐛 in Blink web views to render with full yellow color & size"
-        , 'like moving display logic to host, e.g. web:alert vs web+node:console'
+        [ "will ~debug:{ionid:true|false} to [en|dis]able per-ion transcription"
+        , "like moving display logic to host, e.g. web:alert vs web+node:console"
+        , "want '⚠️' 🐛 in Blink web views to render with full yellow color & size"
 
-        , 'like defining & sensing log reporting api actions; maybe hosts can '
-        + 'share their own so logger can sesnse & adopt them! 🤓'
+        , "like defining & sensing log reporting api actions; maybe hosts can "
+        + "share their own so logger can sense & adopt them! 🤓"
 
         , "like adding ~{log_level:..., to:'nowhere'||'webview'} later but "
-        + 'know it enables in-context-session entities to unexpectedly hide records'
+        + "know it enables in-context-session entities to unexpectedly hide records"
         ]
     },
 
