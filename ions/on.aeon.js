@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'on.aeon@ionify'
-    , of: ['core','conduit']
-    , as: {observation:0.001}
+    , of: ['core','public','conduit','api']
+    , as: {observation:-0.001}
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20221102
-    , at:  -0.035
+    , to:  -8.20221107
+    , at:  -0.036
     , is:
         [ "sensing all aeon: array-expressed object notations like these:"
                                         +
