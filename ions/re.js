@@ -1,11 +1,11 @@
 ;
 ~
 {'re@ionify':
-    { of: ['core','api']
-    , as: ['sensation','convention','sion','foundation']
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    { of: ['core','public','sion','api']
+    , as: {sion:0.001, convention:0.001, sensation:0.001, specification:0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221030
+    , to:  -8.20221107
     , at:  -0.1
     , ax:  -0.09 || [-0.09] || "what will re@ do? thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
@@ -72,6 +72,7 @@
         , "want cached checksum with 0 problems 😅 vs. re-calculating each time"
         , "want numeric checksum for simple & comprehensive comparison code👨🏾‍🔬"
         , "like checksum as re.at.checksum 👨🏾‍💻"
+        , "like multiple sion with exact re.am's for attribution resolution👨🏾‍💻"
 
         , "have non-ion warn() proof for teaching about malformed re.* values"
         , "have auto-corrected all malformed re.* & notified whenever preserved"
