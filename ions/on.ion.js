@@ -2,20 +2,23 @@
 ~
 { re:
     { id:  'on.ion@ionify'
-    , of: ['core','api']
-    , as: ['sensation','acquisition','sensor','activation','initialization']
-    , by: ['mike.👨🏾‍💻.lee','team']
+    , of: ['core','public','api','launch']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221031
-    , at:  -0.073
-    , is:
-        [ 'ionify: invoked object notation implemented for you                        '
-        , 'sensing ions as activated Objects; i.e. ~{} & ~objectReference.            '
-        , 'sensing ~on actions.                                                       '
-        , "activating ionify's host environment ion; e.g. web@ionify | node@ionify.   "
-        , "getting ionify's supporting ions via its host-implemented ~get action.     "
-        , "starting its host application by ~get'ing its ions.js launch configuration."
-        , 'sharing core actions & information via domain & other spaces.              '
+    , to:  -8.20221107
+    , at:  -0.075
+    , as:
+        { observation   :0.001, sensation:0.001, specification:0.001
+        , transcription :0.001
+        },
+      is:
+        [ "ionify: invoked object notation implemented for you"
+        , "enabling the ionosphere: invoked object notation observation sphere"
+        , "sensing ~{} oli & ~objectReference orion as invoked Object instances"
+        , "sensing ~on actions"
+        , "sharing core actions & information via the core @ionify domain space"
+        , "sharing ionified [typeof ion && ion.constructor.name] utility"
+        , "ionifying all ions that were ~get'd before ionify's core conventions"
         ],
       go:
         { seek: 'https://api.ionify.net/'
@@ -38,34 +41,35 @@
         + "we can say the problem's solved or closed."
 
         , "want sensed() to reaction.with.re.id === object.re.id before checksum"
-        , "were examining if .ion() is the source of ions' lost 'this' reference.     "
-        , 'were implementing ~on.do...                                                '
+        , "MUST auto-update ionified:observation@ list as Types are deactivated"
 
-        , "WANT to set host & ionify spaces without [dis|en]abling host.on hack"
-        , "like removing .re.id & .re's temporarily made for anions: anonymous ions   "
-        , 'will make .resolve() to convert ids to ions: e.g. ionified references.     '
-        , 'will .resolve this.* & ~* in strings & stories to actual ion references.   '
-        , 'will .resolve action@test.ionify to test/action.js                         '
+        , "WANT to sense when .with.* is 1st enabled then ionify pending ions "
+        + "and we can via ~on:*,*:method + method.with.its.method == method! "
+        + "THANK YOU 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻 for this insight 🤓"
 
-        , 'will add logging for unknown terms like ~get with a hostless ionify.       '
-        , "will make a way to undo all ~on:Type's.                                    "
-        , "like that ~{is:thing, type:'ion'} could test if a type is ionified.        "
-        , "like ~{on:'term',dont:act} or {no:{term:act} vs {on:'term',no:act} ? 👎🏾    "
+        , "LIKE having separate on.ion@ & on@ ions & now can via .with.our.* 🤓"
+        , "were examining if .sensed() causes ions' lost 'this' reference."
 
-        , 'were adding .link() call to onArray & think we should for all onSensors to '
-        + 'ensure that they all have a .with reference to their containing ion.       '
-        + "That'll support subsequent operations that depend on an ion's context.     "
+        , "KNOW that it may be sensible to create an observation@ delegator "
+        + "that ensures all ions have an id & that they & their ion-capable "
+        + "members have a connection@ to their container ion. re.*@ & with@ "
+        + "already do most of this, but on.ion@ could still interface with all "
+        + "obervation@s before delegating to each one."
 
-        , 'like that it may be more sensible to create an ion Type sensor delegator   '
-        + 'that ensures all ions have an id & that they & their ionified content have '
-        + 'a reference to their host ion.                                             '
+        , "KNOW that the delegator would do common actions for all ion types "
+        + "then delegate to the relevant ion's observation@."
 
-        , 'like that the delegator would do common actions for all ion types then     '
-        + "delegate to the relevant ion's Type sensor.                                "
+        , "like that it may then also make sense to have a sanitation@ "
+        + "observation@ that, for memory performance, removes ion connection@s "
+        + "once they're unneeded, but it may be good enough to only note this "
+        + "for now & revisit this proposal if performance needs to be improved."
 
-        , 'like that it may then also make sense to have an ion Type cleanup that     '
-        + 'removes those ion references for memory performance. May be good enough to '
-        + 'only note this for now & revisit if performance needs to be improved.      '
+        , "will make a way to undo all observation@s, aka ~on:Type's."
+        , "want .resolve() converting text ids to ion-capable instances."
+        , "like .resolve() this.* & ~* text & stories to actual ion instances?"
+        , "want transcription@ for unknown terms like acquisition@less ~get's"
+
+        , "like that ~{is:thing, type:'ion'} could test for observation@ types."
         ]
     },
 
@@ -73,7 +77,7 @@
     { domain:
         { does      : []
         , senses    : {}
-        , ionified  : {function: true}
+        , ionified  : {function: true, undefined: false}
         , known     : {on:
                         [ { act:  'on'
                           , set: ['on']
@@ -87,50 +91,34 @@
     { this.object ()
     },
 
+
+  pending:null,
+
   object :function
   object ()
     { var  ionify             =  this
         ;  ionify.sensed.with =  ionify.on.with
         =  ionify.via.with    =  ionify.object.with
         =  ionify.always.with =  ionify.sortKnownWords.with
-        =  ionify.invoke.with =  on_no.with
+        =  spaces.with
         = {its:ionify, the:{domain:ionify.the.domain}}
-        ;  ionify.pending     =  Object.prototype.valueOf.with.ion.pending
         ;  ionify.the.domain.senses.on = [ionify.on]
+
+      delete ionify.valueOf <- ionify <=
+     /accept ions pending  ionification/
 
       ionify.on ({on:'on'   ,     on: ionify.sensed})
       ionify.on ({on: Object, Object: ionify.sensed})
+      //☝🏾activate ionosphere: ion observation sphere
 
-      function on_no (no)
-        { var space = no.on.with.our   //must: use this=no@.on since on_no.our isn't linked
-
-          //invoke this:ionify to set its space connections/
-          delete ionify.valueOf <- ionify
-
-          no.no ({on:'no@ionify', no:on_no})
-          ionify.invoke()
-          space = ionify = ionified = null //performance? memory release?
+      function spaces (no)
+        { ionify <= /share members in @ionify space/
+          no.no ({on:'no@ionify', no:spaces})
+        ~ ionify.pending
         }
 
-      ~
-      { on:
-          'no@ionify',      //must: sense by id because ~on:[] overrides previous sensors???
-          'no@ionify':      //      which causes this sensor to be lost on find.link.share@.
-           on_no
-      }
-
+    ~ {on:'no@ionify', 'no@ionify':spaces}
       return true
-    },
-
-  invoke :function
-  invoke ()
-    { var pending = invoke.with.its.pending
-
-      for
-        ( var p = -1, P=pending.length
-        ;   ++p < P
-        ; ~pending[p]
-        );
     },
 
   ionifi3d :function
@@ -211,17 +199,17 @@
           Array.isArray  (group) || (words = group = [group])
           group = group.join (' ')
 
-         if ('*' === group)
+          if('*' === group)
             { always && ionify.always (sensation)
             ; always = false
             ; continue
             }
 
-          unknown  = !senses [group]        // the sensation's terms are unknown to ionify
-          unknown && (senses [group] = [])  // so create an empty terms list to keep them.
+          unknown  = !senses [group]        // the sensation's terms are unknown
+          unknown && (senses [group] = [])  // so make a new terms list for them
 
           reactions = senses    [group]
-          reaction  = sensation [group]     // get the reaction
+          reaction  = sensation [group]
           reaction
             &&  ( spot = reactions.push  (reaction))
             &&  ! domain.ionified [typeof reaction]
@@ -300,15 +288,6 @@
       does [sensation.re.id] = does.push (action) - 1
     },
 
-  ionifiedInfo:
-    [ /note: Use with typeof ion + ion.constructor.name/
-    , /todo: Auto-update as types are deactivated/
-    ],
-
-  ionified:
-    { function: true
-    },
-
   pending:
     {
     },
@@ -325,7 +304,7 @@
   sensed :function
   sensed (object)
     { var ionify    = sensed.with.the.domain
-      //, ionified  = ionify.ionified
+        , ionified  = ionify.ionified
         , senses    = ionify.senses
         , domain    = sensed.with.the.domain
         , debugging = !!(domain && domain.logging && domain.logging.debug)
@@ -402,7 +381,7 @@
                         results += 1
                         break
 
-                      case !!ionify.ionified [typeof reaction]:
+                      case !!ionified [typeof reaction]:
                         result = ~reaction
                         results += 1
                         break
