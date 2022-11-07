@@ -2,14 +2,14 @@
 ~
 { re:
     { id:  'on.ion@ionify'
-    , of: ['core','public','api','launch']
+    , of: ['core','public','conduit','api','launch']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221107
-    , at:  -0.076
+    , at:  -0.077
     , as:
-        { observation   :0.001, sensation:0.001, specification:0.001
-        , transcription :0.001
+        { observation   :-0.001, sensation:-0.001, specification:-0.001
+        , transcription :-0.001
         },
       is:
         [ "ionify: invoked object notation implemented for you"
@@ -42,10 +42,6 @@
 
         , "want sensed() to reaction.with.re.id === object.re.id before checksum"
         , "MUST auto-update ionified:observation@ list as Types are deactivated"
-
-        , "WANT to sense when .with.* is 1st enabled then ionify pending ions "
-        + "and we can via ~on:*,*:method + method.with.its.method == method! "
-        + "THANK YOU 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻 for this insight 🤓"
 
         , "LIKE having separate on.ion@ & on@ ions & now can via .with.our.* 🤓"
         , "were examining if .sensed() causes ions' lost 'this' reference."
@@ -91,7 +87,6 @@
     { this.object ()
     },
 
-
   pending:null,
 
   object :function
@@ -112,12 +107,13 @@
       //☝🏾activate ionosphere: ion observation sphere
 
       function spaces (no)
-        { ionify <= /share members in @ionify space/
-          no.no ({on:'no@ionify', no:spaces})
+        { ionify <= /initialize ionify@ space/
+        ; no.no  ({on:'no@ionify', no:spaces})
         ~ ionify.pending
+        ; ionify.pending = null
         }
+      ~ {on:'no@ionify', 'no@ionify':spaces}
 
-    ~ {on:'no@ionify', 'no@ionify':spaces}
       return true
     },
 
@@ -149,12 +145,9 @@
   disable (ion)
     { var ionify        = disable.with.its
         ; ionify.sense$ = ionify.senses
-        ; ionify.senses  = {'0 . 0':ionify.activate}
+        ; ionify.senses = {'0 . 0':ionify.activate}
     },
 
-  sensesInfo:
-    [/ todo: ... /
-    ],
   senses:
     {},
 
@@ -168,6 +161,7 @@
         , always = true
 
       if (!sensation    ||  !('on' in sensation))   return  sensation
+      if ( sensation.on ===    on)                  return  sensation
       if ('function'    ===    typeof sensation.on) return  ionify.via    (sensation)
       if ( sensation.on ===   '*')  { always = false;       ionify.always (sensation)}
 
@@ -270,9 +264,6 @@
   descending (known, nextKnown)
     { return nextKnown.set.length - known.set.length
     },
-
-  does:
-    [],
 
   always :function
   always (sensation)
