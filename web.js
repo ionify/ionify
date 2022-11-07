@@ -7,7 +7,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221107
-    , at:  -0.050
+    , at:  -0.051
     , as:
         { habitation   :-0.001, connection:-0.001, initialization:true
         , transcription:-0.001
@@ -17,8 +17,8 @@
         , "an initialization@ of ionify web habitats"
         , "a      habitation@ with web habitat connections & interactions"
         , "a      connection@ of ~get for web habitat acquisition@"
-        , "get-ing ionify's ~get action@ specification@"
-        , "get-ing & applying ionify's configuration@"
+        , "get.ing ionify's ~get action@ specification@"
+        , "get.ing & applying ionify's configuration@"
         ],
       go:
         { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
