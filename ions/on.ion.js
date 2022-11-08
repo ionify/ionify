@@ -5,8 +5,8 @@
     , of: ['core','public','conduit','api','launch']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221107
-    , at:  -0.077
+    , to:  -8.20221108
+    , at:  -0.078
     , as:
         { observation   :-0.001, sensation:-0.001, specification:-0.001
         , transcription :-0.001
@@ -31,7 +31,12 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "MUST create an examination that ~get's on.test@ionify multiple "
+        [ "KNOW ~{on:'id@doma.in','id@doma.in':ion} self-reacts for anemojii@"
+        , "MUST implement ~{on:'id@doma.in',do:ion} to eliminate self-reactions"
+        , "HAVE hardcoded a safeguard against id@ sensation@s self-reactions."
+        , "MUSE is an id@ sensation@ self-reaction causing re.go.help.issue.14?"
+
+        , "MUST create an examination that ~get's on.test@ionify multiple "
         + "times to recreate the duplicate sensation self-reaction scenario "
         + "described in re.go.help.issue.14."
 
@@ -146,13 +151,6 @@
     { var ionify        = disable.with.its
         ; ionify.sense$ = ionify.senses
         ; ionify.senses = {'0 . 0':ionify.activate}
-    },
-
-  senses:
-    {},
-
-  known:
-    {
     },
 
   on :function
@@ -333,8 +331,9 @@
 
       for (word in known)
         { if (! known.hasOwnProperty (word))                          continue
-          if (word in skip || !(word in object))                      continue
-          if (object === (senses[word] && senses[word][0].with.its))  continue
+          if (word in skip ||  ! (word in object))                    continue
+          if (object === (senses [word] && senses[word][0].with.its)) continue
+          if (object.on   ===     word)                               continue
 
           groups = known [word]
 
