@@ -6,18 +6,18 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221107
-    , at:  -0.049
+    , at:  -0.050
     , as:
-        { acquisition   :0.001, convention   :0.001, sensation     :0.001
-        , composition   :0.001, specification:0.001, initialization:0.001
-        , transcription :0.001
+        { acquisition   :-0.001, convention   :-0.001, sensation     :-0.001
+        , composition   :-0.001, specification:-0.001, initialization:-0.001
+        , transcription :-0.001
         },
       is:
         [ "ionify's public ~get api's implementation"
         , "an acquisition@  so it defines ~get actions for acquiring things"
         , "acquires things via its habitation's get function"
-        , "its host application by ~get'ing its ions.js launch configuration"
-        , "~get-ing ionify's ions to initialize the environment with ionify"
+        , "its host application by ~get.ing its ions.js launch configuration"
+        , "~get.ing ionify's ions to initialize the environment with ionify"
         ],
       go:
         { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
@@ -29,7 +29,7 @@
         , more: 'https://api.ionify.net/'
         },
       we:
-        [ "WERE forming re.as & re.of relation sensing & ~get-ing convention"
+        [ "WERE forming re.as & re.of relation sensing & ~get.ing convention"
         , "want to ~get & apply configuration(s) asap; coordinate with on.ions@"
         , "will set all ~get actions' ionid@ domains to the current ion's"
         , "like having a .resolve action@test.ionify to test/action.js"
@@ -130,8 +130,8 @@
           )
           { id =ions[next]
             its.ions[id] = ion = {id:id, uri:uri}
-            its.gets.push (id)
-            its.gots.push (id)
+            its.gets.push (id); its.gets[id] = its.gets.length - 1
+            its.gots.push (id); its.gots[id] = its.gots.length - 1
             get.via ({at:id, in:its.ORDER[action.in], then:todo})
           }
     },
