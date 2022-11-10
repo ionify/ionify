@@ -8,7 +8,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221110
-    , at:  -0.079
+    , at:  -0.080
     , im: { re:'on.ion.re@ionify' }
     , is:
         [ "ionify: invoked object notation implemented for you"
@@ -17,7 +17,7 @@
         , "sensing ~on actions"
         , "sharing core actions & information via the core @ionify domain space"
         , "sharing ionified [typeof ion && ion.constructor.name] utility"
-        , "ionifying all ions that were ~get'd before ionify's core conventions"
+        , "ionifying all ions that were ~get.d before ionify's core conventions"
         ],
       go:
         { seek: 'https://api.ionify.net/'
@@ -54,8 +54,8 @@
         , "want sensed() to reaction.with.re.id === object.re.id before checksum"
         , "MAKE ionify@ space inaccessible via ion.valueOf:with.our, the.domain"
         , "MUST auto-update ionified:observation@ list as Types are deactivated"
-        , "want actions() moved to a generic observer@ delegator vs convention."
-        , "want renamed action <= ionified since it tests by known action types"
+        , "WANT renamed sensible <= ionified since its sensing observable types"
+        , "want sensible() within a common observer@ delegator vs convention."
         ]
     },
 
@@ -65,7 +65,7 @@
         , senses  : {}
         , known   : {}
         , ionified: {boolean:false, null:false, string:false, undefined:false}
-        //actions☝🏾
+        //sensible☝🏾
       }
     },
 
@@ -81,7 +81,7 @@
     { var  ionify               = this
         ;  ionify.on.with       = ionify.sensed.with
         =  ionify.via.with      = ionify.object.with
-        =  ionify.actions.with  = ionify.conventions.with
+        =  ionify.sensible.with = ionify.conventions.with
         =  ionify.always.with   = ionify.sortKnownWords.with
         =  connections.with
         = {its:ionify, the:{domain:ionify.the.domain}}
@@ -269,9 +269,9 @@
         );
     },
 
-  actions :function
-  actions (object)
-    { var its       = actions.with.its
+  sensible :function
+  sensible (object)
+    { var its       = sensible.with.its
         , observers = its.observers
         , core      = observers.core
         , make      = observers.make
@@ -280,7 +280,7 @@
 
       make [type] &&  object instanceof make [type]
                   && (core [type] =  typeof object)
-                  && (actions.with.the.domain.ionified [core[type]] = true)
+                  && (sensible.with.the.domain.ionified [core[type]] = true)
                   && (make [type] = null)
     },
 
@@ -300,7 +300,7 @@
         , senses    = ionify.senses
         ; object || (object = this)
 
-      its.actions     (object)
+      its.sensible    (object)
       its.conventions (object)
 
       var from      = sensed.caller
@@ -403,7 +403,7 @@
   via: function
   via (observer)
     { var its       = via.with.its
-        , action    = via.with.the.domain.ionified
+        , sensible  = via.with.the.domain.ionified
         , observers = its.observers
         , core      = observers.core
         , make      = observers.make
@@ -411,18 +411,18 @@
         , undo      = observers.undo
         , Type      = observer.on
         , type      = Type.name   ||  String (Type).match (name)[1]
-        ; make    [type]          =   Type
-        ; undo    [type]          =   Type.prototype.valueOf
+        ; make     [type]         =   Type
+        ; undo     [type]         =   Type.prototype.valueOf
         ; Type.prototype.valueOf  =   observer [type]
-        ; core    [type]          =   typeof Type
-        ; action  [type]          =   true
-        ; action  [core [type]]   = !!core [type]
+        ; core     [type]         =   typeof Type
+        ; sensible [type]         =   true
+        ; sensible [core [type]]  = !!core [type]
         ; Object.seal (Type)
 
       via.with.the
         &&    via.with.the.domain.logging
         &&    via.with.the.domain.logging.debug
-        && ~ {debug: ['via (observer)', type, JSON.stringify (action)]}
+        && ~ {debug: ['via (observer)', type, JSON.stringify (sensible)]}
 
       return true
     }
