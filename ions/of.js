@@ -2,15 +2,14 @@
 ~
 { re:
     { id:  'of@ionify'
-    , im:  'of.im@ionify'
-    , of: ['core','sion','context','api']
-    , as: ['aggregation','convention','sensation']
-    , by: ['mike.lee', 'team']
+    , of: ['core','public','sion','context','api']
+    , as: {specification:-0.001, sensation:-0.001, convention:-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221031
-    , at:  -0.04
+    , to:  -7.20221110
+    , at:  -0.006
     , is:
-        [ "ionify's of@ convention that sets ion's re.of & of"
+        [ "ionify's re.of@ convention that sets ions' re.of & with.the.* spaces"
         ],
       go:
         { seek: 'https://api.ionify.net/'
@@ -22,23 +21,26 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "will move domain parsing to id@ as id.domain.name+full+subs"
+        [ "STOP the.all"
+        , "MAKE re.of.all = method.with.all"
+        , "WILL rename this sion re.of@ <= of@"
+        , "WILL move domain parsing to id@ as id.domain.name+full+subs"
+        , "MUSE should re.of combine with with@ since it sets with:.all & .the?"
+
         , "must"
         , "will"
         , "plan"
 
-        , "want re.of & ion.of names converted to name@ion.re.domain.full "
+        , "want re.of & ion.the.* names converted to name@ion.re.domain.full "
         + "unless they already are. all spaces are name@domain where domain can "
         + "be blank. ~name.search (/@/) ||  (name += domain.full)"
 
-        , "want .with.ion.* to include the sion's re.of & sion.of spaces"
-        , "want .with.ion to be exactly sion.of whether declared in sion or not"
         ]
     },
 
-  on:'*',
-     '*':'of'
-        ,
+  on:'*'
+    ,
+
   the:
     { domain:
         {
@@ -53,8 +55,8 @@
   ionify()
     { this.spaces.all = this.spaces['']
       this.the.domain.spaces = this.spaces
-      this.of.with   = ionify.with = {the:this.the, its:this}
-      this.of(this)
+      this['*'].with  = ionify.with = {the:this.the, its:this}
+      this['*'](this)
       delete this.valueOf <- this
     },
 
@@ -62,8 +64,8 @@
     : /@(.+)\.(.+\..+)$|@(.+\..+)$|@(.*)$|^[^@]+$/
     ,
 
-  of:function
-  of(ion)
+ '*':function
+  of( ion )
     { var its = of.with.its;
 
       /parse ion's domain name/
@@ -101,8 +103,8 @@
         ||(space && (ion.re.ex ['the_'+name ] = space), (ion.the[name] = ensure[name]))
         }
 
-      /ensure the.domain = the.doma.in = re.of.doma.in/
-      ofs[domain.name] = the[domain.name] = the.domain;
+      /set re.of.doma.in= the.doma.in       = re.of.domain  = the.domain/
+      ofs[domain.name]  = the[domain.name]  = ofs.domain    = the.domain;
 
       /resolve all re.of space names to space instances & ensure their in .the/
       for

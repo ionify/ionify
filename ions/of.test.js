@@ -2,13 +2,14 @@
 ~
 { re:
     { id:  'of.test@ionify'
-    , of: ['tests','core','api']
-    , as: ['examination','convention','sensation','composition']
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    , of: ['core','public','api','tests']
+    , do: {transcription:  true, 're.of':true, 'next.id':true}
+    , as: {examination  :-0.001, 're.do':true}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221031
-    , at:  -0.01
-    , is: "ionify's of@ api tests"
+    , to:  -7.20221110
+    , at:  -0.003
+    , is: "ionify's re.of@ api tests"
     , go:
         { seek: 'https://api.ionify.net/'
         , deal: 'https://deal.ionify.net/'
@@ -19,21 +20,22 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were implementing initial tests"
+        [ "were ..."
         , "must ..."
-        , "will ..."
-        , "want ... "
-        , "like ... "
+        , "will adjust & add tests once .with.the.* <= .the.* is confirmed."
+        , "want ..."
+        , "like ..."
         ]
     },
 
   do:
-    [ "of@ ensures ions have .its"
-    , "of@ ensures ions have .the"
-    , "of@ ensures ions have .the.domain"
-    , "of@ ensures ions have .the.all singular shared space"
+    [ "of@ ensures ions' method.with.its"
+    , "of@ ensures ions' method.with.the & the"
+    , "of@ ensures ions' method.with.the.domain & the.domain"
+    , "of@ ensures ions' method.all & the.all singular shared space"
+    , "of@ ensures ions' re.of.domain"
     , "of@ ensures ions' re.of spaces exist as re.of.space(s)"
-    , "of@ ensures ions' re.of spaces & .the spaces are merged"
+    , "of@ ensures ions' re.of spaces & the spaces are merged"
     ],
 
   report :function
@@ -43,7 +45,7 @@
         :  ~{error:`❌ ${question}`, halt:false}
     },
 
- "of@ ensures ions have .its":function
+ "of@ ensures ions' method.with.its":function
   its(doing)
     { var     exam = its.with.its
         , question = doing [doing.next]
@@ -51,33 +53,55 @@
       exam.report (question, answer)
     },
 
- "of@ ensures ions have .the":function
+ "of@ ensures ions' method.with.the & the":function
   of(doing)
     { var     exam = of.with.its
         , question = doing [doing.next]
-        ,   answer =  exam.the && typeof exam.the == 'object'
+
+      var   answer = exam.the
+                  && exam.the === of.with.the
+                  && typeof exam.the == 'object'
+
       exam.report (question, answer)
     },
 
- "of@ ensures ions have .the.domain":function
+ "of@ ensures ions' method.with.the.domain & the.domain":function
   domain(doing)
     { var     exam = domain.with.its
         , question = doing [doing.next]
-        ,   answer = exam.the && exam.the.domain && typeof exam.the.domain == 'object'
+
+      var   answer = exam.the
+                  && exam.the.domain
+                  && domain.with.the.domain === exam.the.domain
+                  && typeof exam.the.domain == 'object'
+
       exam.report (question, answer)
     },
 
- "of@ ensures ions have .the.all singular shared space":function
+ "of@ ensures ions' method.all & the.all singular shared space":function
   all(doing)
     { var     exam = all.with.its
         , question = doing [doing.next]
-        ,    anion = {}
+        ,    anion = {method:function(){}}
         ;   ~anion
 
-      var   answer = exam.the
-                  && exam.the.all
+      var   answer =  exam.the
+                  &&  exam.the.all
                   && anion.the.all  === exam.the.all
+                  && anion.the.all  === anion.method.with.all
                   && 'object' == typeof exam.the.all
+
+      exam.report (question, answer)
+    },
+
+ "of@ ensures ions' re.of.domain":function
+  re_of_domain(doing)
+    { var     exam = re_of_domain.with.its
+        , question = doing [doing.next]
+        ,   answer = exam.re
+                  && exam.re.of
+                  && exam.re.of.domain
+                  && typeof exam.re.of.domain == 'object'
 
       exam.report (question, answer)
     },
@@ -101,7 +125,7 @@
       exam.report (question, answer)
     },
 
- "of@ ensures ions' re.of spaces & .the spaces are merged":function
+ "of@ ensures ions' re.of spaces & the spaces are merged":function
   merge(doing)
     { var ion =
               {  re: {of: ['lee']      }
@@ -113,7 +137,7 @@
         , question = doing [doing.next]
         ,      ofs = Object.keys (ion.re.of).sort()
         ,      the = Object.keys (ion.the  ).sort()
-        ,   answer = (ofs.length - 1) == (the.length - 1) //- .domain not in .re.of & - '0' not in .the/
+        ,   answer = (ofs.length - 1) == the.length // .re.of - '0:lee' not in .the/
         ,    found =  ofs.length - 1
         ,     skip = {domain:1}
 
