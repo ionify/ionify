@@ -3,15 +3,14 @@
 { re:
     { id:  'on.ion@ionify'
     , of: ['core','public','conduit','api','launch']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
+    , as: { observation :-0.001, sensation    :-0.001 }
+    , do: { resolution  :-0.001, transcription:-0.001 }
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221108
-    , at:  -0.078
-    , as:
-        { observation   :-0.001, sensation:-0.001, specification:-0.001
-        , transcription :-0.001
-        },
-      is:
+    , to:  -8.20221110
+    , at:  -0.079
+    , im: { re:'on.ion.re@ionify' }
+    , is:
         [ "ionify: invoked object notation implemented for you"
         , "enabling the ionosphere: invoked object notation observation sphere"
         , "sensing ~{} oli & ~objectReference orion as invoked Object instances"
@@ -31,7 +30,14 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "KNOW ~{on:'id@doma.in','id@doma.in':ion} self-reacts for anemojii@"
+        [ "NOTE many more plans, ideas & issue notes are in on.ion.re@ionify✨"
+
+        , "HAVE migrated this lengthy re.we to on.ion.re.we@ or on.ion.im@, "
+        + "but worry that its plans & notes'll be forgotten and-or neglected "
+        + "since they won't be visible in on.ion@. perhaps we can keep the "
+        + "most critical notes in on.ion@ re.we 🤔👨🏾‍💻🤓"
+
+        , "KNOW ~{on:'id@doma.in','id@doma.in':ion} self-reacts for anemojii@"
         , "MUST implement ~{on:'id@doma.in',do:ion} to eliminate self-reactions"
         , "HAVE hardcoded a safeguard against id@ sensation@s self-reactions."
         , "MUSE is an id@ sensation@ self-reaction causing re.go.help.issue.14?"
@@ -46,45 +52,21 @@
         + "we can say the problem's solved or closed."
 
         , "want sensed() to reaction.with.re.id === object.re.id before checksum"
+        , "MAKE ionify@ space inaccessible via ion.valueOf:with.our, the.domain"
         , "MUST auto-update ionified:observation@ list as Types are deactivated"
-
-        , "LIKE having separate on.ion@ & on@ ions & now can via .with.our.* 🤓"
-        , "were examining if .sensed() causes ions' lost 'this' reference."
-
-        , "KNOW that it may be sensible to create an observation@ delegator "
-        + "that ensures all ions have an id & that they & their ion-capable "
-        + "members have a connection@ to their container ion. re.*@ & with@ "
-        + "already do most of this, but on.ion@ could still interface with all "
-        + "obervation@s before delegating to each one."
-
-        , "KNOW that the delegator would do common actions for all ion types "
-        + "then delegate to the relevant ion's observation@."
-
-        , "like that it may then also make sense to have a sanitation@ "
-        + "observation@ that, for memory performance, removes ion connection@s "
-        + "once they're unneeded, but it may be good enough to only note this "
-        + "for now & revisit this proposal if performance needs to be improved."
-
-        , "will make a way to deactivate all observation@s, aka ~on:Type's."
-        , "want .resolve() converting text ids to ion-capable instances."
-        , "like .resolve() this.* & ~* text & stories to actual ion instances?"
-        , "want transcription@ for unknown terms like acquisition@less ~get's"
-
-        , "like that ~{is:thing, type:'ion'} could test for observation@ types."
+        , "want actions() moved to a generic observer@ delegator vs convention."
+        , "want renamed action <= ionified since it tests by known action types"
         ]
     },
 
   the:
     { domain:
-        { does      : []
-        , senses    : {}
-        , ionified  : {function: true, undefined: false}
-        , known     : {on:
-                        [ { act:  'on'
-                          , set: ['on']
-                          , in : function within (ion){ return 'on' in ion }
-                      } ] }
-        }
+        { does    : []
+        , senses  : {}
+        , known   : {}
+        , ionified: {boolean:false, null:false, string:false, undefined:false}
+        //actions☝🏾
+      }
     },
 
   valueOf:function
@@ -96,40 +78,31 @@
 
   object :function
   object ()
-    { var  ionify             =  this
-        ;  ionify.sensed.with =  ionify.on.with
-        =  ionify.via.with    =  ionify.object.with
-        =  ionify.always.with =  ionify.sortKnownWords.with
-        =  spaces.with
+    { var  ionify               = this
+        ;  ionify.on.with       = ionify.sensed.with
+        =  ionify.via.with      = ionify.object.with
+        =  ionify.actions.with  = ionify.conventions.with
+        =  ionify.always.with   = ionify.sortKnownWords.with
+        =  connections.with
         = {its:ionify, the:{domain:ionify.the.domain}}
-        ;  ionify.the.domain.senses.on = [ionify.on]
 
       delete ionify.valueOf <- ionify <=
      /accept ions pending  ionification/
 
-      ionify.on ({on:'on'   ,     on: ionify.sensed})
+      //👇🏾activate ionosphere: ion observation sphere
       ionify.on ({on: Object, Object: ionify.sensed})
-      //☝🏾activate ionosphere: ion observation sphere
+      ionify.on ({on:'on',        on: ionify.on    })
 
-      function spaces (no)
-        { ionify <= /initialize ionify@ space/
-        ; no.no  ({on:'no@ionify', no:spaces})
-        ~ ionify.pending
-        ; ionify.pending = null
-        }
-      ~ {on:'no@ionify', 'no@ionify':spaces}
+      function
+        connections (no)
+          { ionify <= /share to ionify@ domain space/
+          ; no.no  ({on:'no@ionify', no:connections})
+          ~ ionify.pending
+          ; ionify.pending = null
+          }
+        ~ {on:'no@ionify', 'no@ionify':connections}
 
       return true
-    },
-
-  ionifi3d :function
-  ionified ()
-    {/ sense if ionified via any known sensor's .prototype.valueOf.ionified /
-    |/ isolate & confirm at least 1 provides ~get         /
-    |/ save & remove sensor's .prototype.valueOf.ionified /
-    |/ remove   ionified's .valueOf /
-    |/ activate sensor(s)           /
-    |/ activate ionified            /
     },
 
   activate :function
@@ -143,7 +116,7 @@
   deactivate (ion)
     {  delete Array .prototype.valueOf
     ;  delete Object.prototype.valueOf
-    ;  deactivate.with.its.unlink()
+    ;  deactivate.with.the.tools.unlink()
     },
 
   disable :function
@@ -157,16 +130,21 @@
   on (sensation)
     { var ionify = on.with.its
         , always = true
+        , launch = ionify.on ===  sensation.on
 
-      if (!sensation    ||  !('on' in sensation))   return  sensation
-      if ( sensation.on ===    on)                  return  sensation
-      if ('function'    ===    typeof sensation.on) return  ionify.via    (sensation)
-      if ( sensation.on ===   '*')  { always = false;       ionify.always (sensation)}
+      if (!sensation    ||  !('on' in sensation)) return  sensation
+      if (!launch)
+      if ('function'    === typeof sensation.on)  return  ionify.via    (sensation)
+      if ( sensation.on === '*' ){ always = false;        ionify.always (sensation)}
 
       var debug = []
-      debug.push ([sensation.re && sensation.re.id, 'on:', sensation.on, JSON.stringify (sensation.on)])
+      debug.push
+         ([ sensation.re && sensation.re.id, 'on:'
+          , sensation.on, /*JSON.stringify*/ (sensation)
+                          //👆🏾circular reference error🚨
+          ])
 
-      var groups  = sensation.on
+      var groups  = launch ? ['on'] : sensation.on
       Array.isArray (groups)  || (groups = [groups])
 
       var id      = sensation.re && sensation.re.id
@@ -215,11 +193,11 @@
 
           if (!reaction || reactions && !unknown) continue
 
-          test  = 'return "'+ words.join ('" in ion && "') +'" in ion;'
+          test  = '  return "'+ words.join ('" in ion && "') +'" in ion;'
           test  =  new Function ('ion', test)
           group = {act:group, set:words, in:test||has}
 
-          for (var w=0, W=words.length; w < W; w++)
+          for (var w=words.length; w --> 0;)
             { word  =  words [w]
              !known   [word]  &&  (known [word] = [])
               known   [word].push (group)
@@ -265,9 +243,9 @@
 
   always :function
   always (sensation)
-    { var ionify = always.with.the.domain
-        , does = ionify.does
-        , action = sensation['*']
+    { var ionify  = always.with.the.domain
+        , does    = ionify.does
+        , action  = sensation['*']
 
       ionify.ionified [typeof action]
         || +{find:action, in:sensation, as:'*'}
@@ -277,49 +255,63 @@
       does [sensation.re.id] = does.push (action) - 1
     },
 
-  pending:
-    {
-    },
-
-  sensedInfo:
-    [ /todo: enable ionify's ions to set sensed order of action terms /
-    , /todo: senses => ArrayMap to preserve order & fast lookup.       /
-    , /idea: log all matched actions & their results?                 /
-    , /idea: disable activated words, enable after all matches        /
-    ,(/idea: loop through ion's terms instead of known?               /)
-    , /todo: Ignore similar actions after match: ~get ~get.then	      /
-    ],
-
-  sensed :function
-  sensed (object)
-    { var ionify    = sensed.with.the.domain
-        , ionified  = ionify.ionified
-        , senses    = ionify.senses
-        , domain    = sensed.with.the.domain
-        , debugging = !!(domain && domain.logging && domain.logging.debug)
-        , debug     = debugging && []
-        , does      = ionify.does
-        ; object || (object = this)
-
-      for
-        ( var always,   D = does.length, d=0
-        ;    (always      = does[d])
+  conventions :function
+  conventions (object)
+    { for
+        ( var  does       = conventions.with.the.domain.does
+        ,      always,  D = does.length, d=0
+        ;     (always     = does[d])
         ,               D >      d++
-        ;  typeof always == 'function'
+        ; typeof  always == 'function'
               ?   always.call (object, object)
               :   always   && ((always).hasOwnProperty ('in')
              || ((always.in = object), ~always, delete always.in))
         );
+    },
 
-      debugging
-        && debug.push ('onION:', object.re ? object.re.id : object.with.its && object.with.its.re && object.with.its.re.id || 'anonymous')
+  actions :function
+  actions (object)
+    { var its       = actions.with.its
+        , observers = its.observers
+        , core      = observers.core
+        , make      = observers.make
+        , Type      = object.constructor
+        , type      = Type.name || String (Type).match (observers.name)[1]
 
-      var from = sensed.caller;
-      object.re &&
-     (object.re.from ||
-     (object.re.from = (from && from.with) ? from.with.its.re.id : object.re.id))
+      make [type] &&  object instanceof make [type]
+                  && (core [type] =  typeof object)
+                  && (actions.with.the.domain.ionified [core[type]] = true)
+                  && (make [type] = null)
+    },
 
-      debugging && from && (from != sensed) && debug.push ('from', object.re && object.re.from)
+  sensedInfo:
+    [ /todo: enable ionify's ions to set sensed order of action terms /
+    , /todo: senses => ArrayMap to preserve order & fast lookup.      /
+    , /idea: log all matched actions & their results?                 /
+    , /idea: loop through ion's terms instead of known?               /
+    , /done: disable activated words, enable after all matches        /
+    , /done: Ignore similar actions after match: ~get ~get.then	      /
+    ],
+
+  sensed :function
+  sensed (object)
+    { var its       = sensed.with.its
+        , ionify    = sensed.with.the.domain
+        , senses    = ionify.senses
+        ; object || (object = this)
+
+      its.actions     (object)
+      its.conventions (object)
+
+      var from      = sensed.caller
+        , debugging = !!(ionify && ionify.logging && ionify.logging.debug)
+        , debug     = debugging && []
+        ; debugging &&
+          debug.push ('onION:', object.re ? object.re.id : object.with.its && object.with.its.re && object.with.its.re.id || 'anonymous')
+          object.re       &&
+         (object.re.from  ||
+         (object.re.from  =    (from && from.with) ? from.with.its.re.id : object.re.id))
+          debugging && from && (from != sensed)   && debug.push ('from', object.re && object.re.from)
 
       var reaction, reactions
         , group   , groups
@@ -327,11 +319,12 @@
         , result  , before
         , results = 0
         , known   = ionify.known
+        , ionified= ionify.ionified
         , skip    = {}
 
       for (word in known)
-        { if (! known.hasOwnProperty (word))                          continue
-          if (word in skip ||  ! (word in object))                    continue
+        { if (!known.hasOwnProperty (word))                           continue
+          if (word in skip ||  ! (word  in object))                   continue
           if (object === (senses [word] && senses[word][0].with.its)) continue
           if (object.on   ===     word)                               continue
 
@@ -395,38 +388,41 @@
         }
 
       debugging   //🐛~debug causes stack overflow
-        && (object.debug || (object.next && object.id) || domain.debug({debug:debug}))
+        && (object.debug || (object.next && object.id) || ionify.debug({debug:debug}))
 
       return results == 1 ? result : object
     },
 
-
-  sensors:
-    { core: {Function:'function', Object:'object'}
+  observers:
+    { core: {}
+    , make: {}
     , name: (/function\s+(.*)\s*\(/)
     , undo: {}
     },
 
   via: function
-  via (sensor)
-    { var on      = via.with.its
-        , known   = via.with.the.domain.ionified
-        , sensors = on.sensors
-        , core    = sensors.core
-        , name    = sensors.name
-        , undo    = sensors.undo
-        , Type    = sensor.on
-        , type    = Type.name   ||  String (Type).match (name)[1]
-        ; undo [type]            =  Type.prototype.valueOf
-        ; Type.prototype.valueOf =  sensor [type]
-        ; known [type]           =  true
-        ; known [core [type]]    =  !!core [type]
+  via (observer)
+    { var its       = via.with.its
+        , action    = via.with.the.domain.ionified
+        , observers = its.observers
+        , core      = observers.core
+        , make      = observers.make
+        , name      = observers.name
+        , undo      = observers.undo
+        , Type      = observer.on
+        , type      = Type.name   ||  String (Type).match (name)[1]
+        ; make    [type]          =   Type
+        ; undo    [type]          =   Type.prototype.valueOf
+        ; Type.prototype.valueOf  =   observer [type]
+        ; core    [type]          =   typeof Type
+        ; action  [type]          =   true
+        ; action  [core [type]]   = !!core [type]
         ; Object.seal (Type)
 
       via.with.the
         &&    via.with.the.domain.logging
         &&    via.with.the.domain.logging.debug
-        && ~ {debug: ['via (sensor)', type, JSON.stringify (known)]}
+        && ~ {debug: ['via (observer)', type, JSON.stringify (action)]}
 
       return true
     }
