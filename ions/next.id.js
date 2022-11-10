@@ -2,14 +2,27 @@
 ~
 { re:
     { id:  'next.id@ionify'
-    , of: ['core','public','api']
-    , by: ['mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team']
+    , of: ['public','tools','api']
+    , as: {sion:-0.001, sensation:0.001, composition:0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -7.20160910
-    , to:  -7.20221104
-    , at:  -0.1
-    , as: {sensation:0.001, composition:0.001}
-    , is: 'generating namespaced sequential ids, per request'
-    , we: "like valueOf switching next_id, creating a private closure for internals"
+    , to:  -8.20221110
+    , at:  -0.021
+  //, hi: 'nextid'
+    , is:
+        [ "doing on-request sequential namespaced id generation"
+        , "returning the numeric sequential id"
+
+        , '+{next: "id.prefix", id: object}'
+
+        , "recommended for use with + invocation to receive actual numeric id"
+        , "recommended for use with -~... invocations if numeric id not needed"
+        ],
+      we:
+        [ "want to encapsulate its internal members, i.e. MAX, MIN, ids"
+        , "like valueOf switching next_id creating a private internals closure"
+        , "like re.hi: hidden invocation to eliminate delete this.valueOf<-this"
+        ]
     }
 
 , on  : [['next', 'id']]
@@ -28,8 +41,13 @@
     { var my   = next_id.with.its
         , ids  = my.ids
         , name = action.next
-        , f0r  = action.id.re || (ion.id.re = {})
+        , f0r  = action.id.re || (action.id.re = {})
         , id   = ids [name]
+
+    ; (id >= my.MAX)  && (id = ids [name] = null)
+    ; isNaN (id)      && (id = ids [name] = my.MIN)
+    ;    f0r.id = name + (id > 0 ? '.' : '') + id
+    ; return ids [name]++
     }
 }
 ;
