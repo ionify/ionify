@@ -2,12 +2,11 @@
 ~
 { re:
     { id:  'web@ionify'
-    , im:  'web.im@ionify'
     , of: ['web','launch']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221107
-    , at:  -0.052
+    , to:  -8.20221110
+    , at:  -0.053
     , as:
         { habitation   :-0.001, connection:-0.001, initialization:true
         , transcription:-0.001
@@ -32,14 +31,13 @@
       we:
         [ "NOTE .watch() is disabled because it hides critical script errors."
 
-        , "WERE moving re.as & re.of relation sensing & ~get-ing to get@ convention"
         , "WANT with@ to sense ion .with.* vs .the.* connection@ augmentations."
         , "WERE modeling re.as@ specification@s with version@s & re.of@ association@s"
         , "WERE modeling  initialization@ideas.js & ROLES-&-FLOWS@launch.js"
         , "WILL implement initialization@ideas.js & ROLES-&-FLOWS@launch.js"
         , "WANT to update .locate() per launch.js' habitation@ ajile-legacy discovery"
 
-        , "will set all ~get's ionid@ domains to the current ion's @domain."
+        , "will set all ~get.s ionid@ domains to the current ion's @domain."
         , "want to adopt ajile.test.inlineLoader to load inline code!"
         , "want ~get.then to delete script.onload after ~then for memory perf?"
 
@@ -71,6 +69,12 @@
           //, onstorage     :onstorage
             }
         },
+    },
+
+  the:
+    { domain:
+        { settings: {}
+        }
     },
 
   valueOf :function
@@ -117,11 +121,8 @@
 
       if(!ion.re || !ion.re.as) return how; else web.queue (ion)
 
-    ;/want re.as array & map: re:{as:{configuration:0.001, 0:'configuration'}}/;
-    ;/know es.6+ can re:{as:{configuration}}, but needs configuration instance/;
-
       if( ion.re.as.configuration && ion.spaces )
-        { web.configuration.spaces = ion.spaces
+        { web.the.domain.settings.spaces = ion.spaces
         }
 
       if( ion.re.as.acquisition && ion.get )
@@ -186,9 +187,10 @@
     { var web = get.with.its
         , as  = web.types [thing.as]
 
-    /*delegate non-ecmascript type-specific ~get's to own get.type@ ion
-      actually, get.type@s can on:any,as:type,do to auto-acquire them
-    */web [as] (thing)
+    /*delegate non-ecmascript type-specific ~get.s to own get.type@ ion
+      actually, get.type@s can on:any,as:type,do to auto-acquire them*/
+
+      web [as] (thing)
     },
 
   script :function
