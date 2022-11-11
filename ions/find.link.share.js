@@ -2,12 +2,13 @@
 ~
 { re:
     { id:  'find.link.share@ionify'
-    , of: ['core','context']
-    , as: ['convention']
-    , by: ['mike.👨🏾‍💻.lee','team']
+    , of: ['core', 'context', 'tools', 'api']
+    , do: {transcription:-0.001}
+    , as: {convention   :-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on: { 200709   : -4      }
-    , to: { 20221031 : -7.1642 }
-    , at:  -0.060
+    , to: { 20221111 : -8.1349 }
+    , at:  -0.061
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
         + 'access their containing ion, ~share for sharing things via domains,      '
@@ -25,7 +26,10 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "plan to have top-level-ids reference entire ion not just its re & "
+        [ "WANT to simplify this ion & separate its actions into their own ions"
+        , "WANT to keep these actions domain-private until otherwise needed"
+
+        , "plan to have top-level-ids reference entire ion not just its re & "
         + "this requires re.*@, ~find, ~share & ~link's compatibility with that"
 
         , "were implementing ~link.to & ~link.as"
@@ -83,17 +87,17 @@
     { var name      = action.find
     ,     to        = action.in
     ,     as        = ('as' in action) ? action.as : name
-    ,     ionified  = find.with.our.ionified
+    ,     sensible  = find.with.our.ionified
     ,     context   = find.with.its
     ,     found
     ,     last
 
-    ; while
-        ( last != to)    // bug? might infinitely loop on circular .with's | .our's
+      while
+        ( last != to)    //🚨 ¿might infinitely loop on circular .with's | .our's?
         { last  = to
         ; if ( found    = context.find_alias ({find:name, in:to})         ) break
-        ; if ( to.with && ionified [typeof (found = to.with.its [name]) ] ) break
-        ; if ( to.with && ionified [typeof (found = to.with.our [name]) ] ) break
+        ; if ( to.with && sensible [typeof (found = to.with.its [name]) ] ) break
+        ; if ( to.with && sensible [typeof (found = to.with.our [name]) ] ) break
         ; if ( to.with )  {                    to = to.with.its      } else break
         }
 
@@ -105,14 +109,14 @@
   find_alias (action)
     { var thing    = action.find
     ,     place    = action.in
-    ,     ionified = find_alias.with.our.ionified
+    ,     sensible = find_alias.with.our.ionified
     ,     tried    = {}
     ; while
         (!tried [thing] && thing in place)
         { tried [thing]  = true
       //; console.log (`~find ${thing} ...`)
         ; thing = place [thing]
-        ; if (ionified  [typeof thing]) return thing
+        ; if (sensible  [typeof thing]) return thing
         }
       return false
     },
