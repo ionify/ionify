@@ -7,8 +7,8 @@
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221107
-    , at:  -0.003
+    , to:  -8.20221110
+    , at:  -0.005
     , is:
         [ "ionify's .with connection@ convention@"
         , "ionify's connection@ to habitation@s like web@, node@ & more"
@@ -25,24 +25,40 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were"
+        [ "STOP the.all"
+        , "KEEP method.with.all"
+        , "were"
         , "must"
         , "will"
         , "plan"
 
-        , "WANT to sense ion with.the.* vs the.* connection@ augmentations "
-        + "because it enables declarative sharing to all .with connection@s👨🏾‍💻"
+        , "WANT to sense with.the.* vs the.* connection@ augmentations "
+        + "since it enables declarative sharing to all with.* connection@s 👨🏾‍💻"
+
+        , "note that locally-defined with:{} can be preserved via "
+        + "method.with.its.with ≠ method.with but 2 ≠ withs can be confusing."
+
+        , "like that locally-defined with.* that're successfully migrated to "
+        + "method.with.* can be removed from with. this would leave only what "
+        + "couldn't be migrated which could be migrated within the entire "
+        + "original locally-defined with to re.ex.with."
+
+        , "like that unsuccessfully migrated locally defined with can be "
+        + "notified about via transcription stating that their continued "
+        + "presence via re.ex.with isn't guaranteed."
 
         , "want .with.the to be accessible to only the sion it's populated for?"
-        , "know .with.* can be exposed if shared via host method as reaction"
+        , "KNOW .with.* can be exposed if shared via host method as reaction"
 
-        , "like .re.of.* & .the.* being sensible sion aggregation indications"
+        , "need text-to-ion-member resolution for reference-less space sharing "
+        + "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"
+
+        , "like re.of.* & the.* being sensible sion acquisition indications"
         ]
     },
 
-  on:'*',
-     '*':'with'
-        ,
+  on:'*'
+    ,
 
   the:
     { domain:
@@ -65,11 +81,11 @@
   valueOf :function
   ionify  ()
     { this.WITH.prototype =  this.WiTH
-      this.with.with      =  {its:this}
+      this['*']['with']   =  {its:this}
       delete this.valueOf <- this
     },
 
-  with  :function
+  '*': function
   with_ (ion)
     { var exists
         ,   its      = with_.with.its
