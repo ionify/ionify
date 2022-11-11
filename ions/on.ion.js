@@ -7,8 +7,8 @@
     , do: { resolution  :-0.001, transcription:-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221110
-    , at:  -0.080
+    , to:  -8.20221111
+    , at:  -0.081
     , im: { re:'on.ion.re@ionify' }
     , is:
         [ "ionify: invoked object notation implemented for you"
@@ -79,11 +79,11 @@
   object :function
   object ()
     { var  ionify               = this
-        ;  ionify.on.with       = ionify.sensed.with
+        ;  ionify.on.with       = connections.with
         =  ionify.via.with      = ionify.object.with
         =  ionify.sensible.with = ionify.conventions.with
-        =  ionify.always.with   = ionify.sortKnownWords.with
-        =  connections.with
+        =  ionify.always.with   = ionify.transcript.with
+        =  ionify.sensed.with   = ionify.sortKnownWords.with
         = {its:ionify, the:{domain:ionify.the.domain}}
 
       delete ionify.valueOf <- ionify <=
@@ -284,6 +284,28 @@
                   && (make [type] = null)
     },
 
+  transcript :function
+  transcript (whence)
+    { var ion           =    whence.ion
+        , from          =    whence.from
+        , transcription =    transcript.with.the.domain.logging
+        , debugging     = !!(transcription  && transcription.debug)
+        , debug         =    debugging      && []
+        ; debugging     &&   debug.push
+                              ('onION:'
+                              , ion.re  ?   ion.re.id
+                                        :   ion.with.its
+                                        &&  ion.with.its.re
+                                        &&  ion.with.its.re.id
+                                        ||  'anion')
+        ; ion.re         &&
+        ( ion.re.ex.from ||
+        ( ion.re.ex.from  = (from && from.with)? from.with.its.re.id : ion.re.id
+        ))
+        ; debugging && from    && ( from != transcript.with.its.sensed)
+                    && debug.push ('from',  ion.re  && ion.re.ex.from)
+    },
+
   sensedInfo:
     [ /todo: enable ionify's ions to set sensed order of action terms /
     , /todo: senses => ArrayMap to preserve order & fast lookup.      /
@@ -295,23 +317,15 @@
 
   sensed :function
   sensed (object)
-    { var its       = sensed.with.its
-        , ionify    = sensed.with.the.domain
-        , senses    = ionify.senses
-        ; object || (object = this)
+    { var transcribe
+        , its       =   sensed.with.its
+        , ionify    =   sensed.with.the.domain
+        , senses    =   ionify.senses
+        ; object    || (object = this)
 
       its.sensible    (object)
-      its.conventions (object)
-
-      var from      = sensed.caller
-        , debugging = !!(ionify && ionify.logging && ionify.logging.debug)
-        , debug     = debugging && []
-        ; debugging &&
-          debug.push ('onION:', object.re ? object.re.id : object.with.its && object.with.its.re && object.with.its.re.id || 'anonymous')
-          object.re       &&
-         (object.re.from  ||
-         (object.re.from  =    (from && from.with) ? from.with.its.re.id : object.re.id))
-          debugging && from && (from != sensed)   && debug.push ('from', object.re && object.re.from)
+      its.conventions (object)    ; transcribe =
+      its.transcript  ({ion:object, from:sensed.caller})
 
       var reaction, reactions
         , group   , groups
@@ -319,7 +333,7 @@
         , result  , before
         , results = 0
         , known   = ionify.known
-        , ionified= ionify.ionified
+        , sensible= ionify.ionified
         , skip    = {}
 
       for (word in known)
@@ -364,8 +378,8 @@
                         results += 1
                         break
 
-                      case !!ionified [typeof reaction]:
-                        result = ~reaction
+                      case !!sensible [typeof reaction]:
+                        result   = +reaction
                         results += 1
                         break
 
@@ -382,13 +396,15 @@
                 }
 
               words = group.set
-              for (var w=0, W=words.length; w < W; skip [words [w++]] = true);
-              if  (results > before)  break
+              for (var w=words.length; w --> 0; skip [words [w]] = true);
+              if  (results  >  before) break
             }
         }
 
-      debugging   //🐛~debug causes stack overflow
-        && (object.debug || (object.next && object.id) || ionify.debug({debug:debug}))
+      transcribe    //🚨 stack overflow caused by
+      &&  (object.debug  // infite-looping ~debug
+      ||  (object.next   && object.id) //~next.id
+      ||   ionify.debug  ({ debug:debug }))
 
       return results == 1 ? result : object
     },

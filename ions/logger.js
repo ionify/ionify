@@ -2,13 +2,13 @@
 ~
 { re:
     { id:  'logger@ionify'
-    , of: ['public','transcription','api']
-    , as: {sensation:0.001}
+    , of: ['public', 'transcription', 'tools', 'api']
+    , as: {sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team✨ionify']
     , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
-    , to:  -8.20221107
-    , at:  -0.048
+    , to:  -8.20221111
+    , at:  -0.049
     , is:
         [ "ionify's transcription sensation:"
 
@@ -144,7 +144,7 @@
         &&  'string' == typeof message [0]
         &&  (message =  message.join (' '))
 
-      logger.id = (action.re && action.re.from) || logger.re.id
+      logger.id = (action.re && action.re.ex.from) || logger.re.id
 
       logger.message
         =   'string' == typeof message
