@@ -8,7 +8,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -7.20221110
-    , at:  -0.003
+    , at:  -0.004
     , is: "ionify's re.of@ api tests"
     , go:
         { seek: 'https://api.ionify.net/'
@@ -32,7 +32,7 @@
     [ "of@ ensures ions' method.with.its"
     , "of@ ensures ions' method.with.the & the"
     , "of@ ensures ions' method.with.the.domain & the.domain"
-    , "of@ ensures ions' method.all & the.all singular shared space"
+    , "of@ ensures ions' method.with.all & the.all singular shared space"
     , "of@ ensures ions' re.of.domain"
     , "of@ ensures ions' re.of spaces exist as re.of.space(s)"
     , "of@ ensures ions' re.of spaces & the spaces are merged"
@@ -78,7 +78,7 @@
       exam.report (question, answer)
     },
 
- "of@ ensures ions' method.all & the.all singular shared space":function
+ "of@ ensures ions' method.with.all & the.all singular shared space":function
   all(doing)
     { var     exam = all.with.its
         , question = doing [doing.next]
