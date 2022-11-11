@@ -1,18 +1,20 @@
 ;
 ~
 {'re.test@ionify':
-    { of: ['tests','core','api']
-    , as: ['convention','sensation','sion','foundation','examination']
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    { of: ['core','sion','api','tests']
+    , do: {stories:true, transcription: true }
+    , as: {     re:true, examination  :-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221030
-    , at:  -0.000003
+    , to:  -7.20221110
+    , at:  -0.004
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , we:
-        [ "must create comprehensive re.* tests to ensure a reliable foundation"
-        , "want aesop's current storie or phrase as aesop.with.own.next"
-        , "have created initial tests with temporary aesop.next implementation"
+        [ "MUST create comprehensive re.* tests to ensure a reliable foundation"
+        , "MUST create re.* specification@ conformance tests for reliability"
+        , "were"
+        , "will"
         ]
     },
 
@@ -22,7 +24,7 @@
     ],
 
   tests:
-    {id:1,im:1,of:1,as:1,by:1,on:1,to:1,at:1,ax:1,is:1,ex:1,go:1
+    {id:1,im:1,of:1,do:1,as:1,by:1,on:1,to:1,at:1,ax:1,hi:1,is:1,ex:1,go:1
     },
 
  "re@ sets: re.core for anion ~{ }":function
@@ -90,11 +92,6 @@
         }
 
       malformation - testing <= /invoke the malformed re & activate its tests/
-    },
-
-  d0:function
-  reexamination()
-    {
     }
 }
 ;
