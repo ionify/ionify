@@ -2,15 +2,17 @@
 ~
 { re:
     { id:  'as@ionify'
-    , im:  'as.im@ionify'
-    , of: ['core','sion','context','api']
-    , as: ['resolution','acquisition','convention','sensation']
-    , by: ['mike.lee', 'team']
+    , of: ['core', 'public', 're', 'sion', 'context', 'api']
+    , as: {specification:-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee@ionify.net', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.01
+    , to:  -8.20221110
+    , at:  -0.002
+    , it: ["indicates", "specifies", "constructs", "validates", "adapts"]
     , is:
-        [ "ionify's as convention"
+        [ "ionify's re.as sensation convention"
+        , "specifying an ions' action(s) & information api"
+        , "validating that an ion meets its specification"
         ],
       go:
         { seek: 'https://api.ionify.net/'
@@ -22,12 +24,22 @@
         , join: 'https://github.com/ionify/about/tree/public/team'
         },
       we:
-        [ "were implementing ionify's re.as convention"
+        [ "were implementing ionify's re.as specification"
         , "must"
-        , "will"
+        , "will rename this re.as@ <= as@"
         , "plan"
 
-        , "muse about re.it tags' & re.as descript*ions' purposes & differences"
+        , "like that this re.as could be a 1st exploration of the re.do action."
+        + "to have this work we may need to ~get, ~on:re.as@ & adopt re.as@ "
+        + "via re@. let me come back to this..."
+
+        , "muse should this supplant the re.as construction, validation & "
+        + "adaption done for re.as in re@? YES & should be ~get.d by re@ "
+        + "via its own re.do then applied by the re@ convention when needed."
+
+        , "muse about re.it description@s & re.as specification@s purpose & "
+        + "differences. re.it are free-form verbs & nouns, re.as are active "
+        + "noun identifications that're resolved to ion implementations?"
 
         , "note that *ion words may be a consistent & reliable way of tagging "
         + "ions. that set of words is well established & comprehensively "
@@ -35,30 +47,49 @@
         ]
     },
 
-  on:'*',
-     '*':'as'
-        ,
-  of:
-    { own:
-        {
-        },
-      domain:
-        {
-        }
+  with:
+    { its:
+        {},
+      all:
+        {},
+      the:
+        {re: {as:'as@re.as@ionify'}},
+      our:
+        {}
     },
 
   valueOf:function
   ionify()
-    { this.re.as || (this.re.as = [])
-      this.as(this)
+    { var its = this
+      its.with.the.re.as = its.as
       delete this.valueOf <- this
-    //delete this['*']
-    //delete this.as
     },
 
+  warning
+    : "re.as should be a {specification@: version@|true|false, ...} object"
+    ,
   as:function
-  as(obi)
-    { var as_  = obi.re.as
+  as(RE)
+    { var warning = as.with.its.warning
+        , it      = RE.as
+
+      Array.isArray (it)
+
+        ? it.forEach
+              (function next (element)
+              {           it [element] = true
+              })
+
+        : typeof it == 'object'
+          ||  ( it       &&        (RE.ex.as  =   it)
+              ,(RE.as =  {})
+              , RE.ex.as && (RE.as [RE.ex.as] = true)
+              )
+
+      RE.ex.as
+      && as.with.the.tools
+      && as.with.the.tools.warn.with
+      && as.with.the.tools.warn ({warn: [!0, warning, RE.id, RE]})
     }
 }
 ;
