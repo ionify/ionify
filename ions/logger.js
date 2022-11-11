@@ -8,7 +8,7 @@
     , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
     , on:  -4.200709
     , to:  -8.20221111
-    , at:  -0.049
+    , at:  -0.050
     , is:
         [ "ionify's transcription sensation:"
 
@@ -162,18 +162,18 @@
   report :function
   report (action)
     { var icono =
-          { debug: '🐛'
-          , error:  ""
-          ,  info: '💡'
-          ,   log: '📋'
-          ,  warn:  ""
+          { debug: '🔎 '
+          , error: ' '
+          ,  info: '🤓 '
+          ,   log: '📋 '
+          ,  warn: ' '
           }
 
       var icons =
-          { debug: icono.debug + ' '
+          { debug: icono.debug
           , error: '❌ '
-          ,  info: icono.info  + ' '
-          ,   log: icono.log   + ' '
+          ,  info: icono.info
+          ,   log: icono.log
           ,  warn: '⚠️ '
           }
 
