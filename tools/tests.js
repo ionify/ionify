@@ -3,12 +3,13 @@
 { re:
     { id:  'tests@ionify'
     , of: ['tests']
-    , as: ['examination','acquisition']
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    , as: {examination:-0.001}
+    , do: {acquisition:  true}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , in:  'silicon-valley.california.usa.earth'
     , on:  -7.20160518
-    , to:  -7.20220708
-    , at:  -0.026
+    , to:  -8.20221110
+    , at:  -0.027
     , is:  "testing ionify.js: invoked object notation implemented for your js"
     , go:
         { seek: 'https://api.ionify.net/'
@@ -35,6 +36,7 @@
           ,                'get.test@ionify',   'logger.test@ionify',       'use.test@ionify'
           , 'on.ion.punctuation.test@ionify', 'on.emoji.test@ionify', 'on.errors.test@ionify'
           ,               'find.test@ionify',     'link.test@ionify',     'on.do.test@ionify'
+          ,            'next.id.test@ionify'
           ]
       }
     }
