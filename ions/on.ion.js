@@ -8,7 +8,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221111
-    , at:  -0.081
+    , at:  -0.082
     , im: { re:'on.ion.re@ionify' }
     , is:
         [ "ionify: invoked object notation implemented for you"
@@ -107,27 +107,31 @@
 
   activate :function
   activate (ion)
-    {//if (ion [0] !== '0 . 0') return
-    ;  var ionify = activate.with.its
-    ;  ionify.sense$ && (ionify.sense$ != ionify.senses) && ~ionify
+    { var ionify = activate.with.its.object
+        , domain = activate.with.the.domain
+        ; domain.kn0wn
+          && (domain.kn0wn != domain.known)
+          && (domain.known  = domain.kn0wn) && ~ionify
     },
 
   deactivate :function
   deactivate (ion)
-    {  delete Array .prototype.valueOf
-    ;  delete Object.prototype.valueOf
-    ;  deactivate.with.the.tools.unlink()
+    { var observers = deactivate.with.its.observers
+
+      for(var type in observers.undo)
+       if(observers.hasOwnProperty (type))
+          observers.make[type].prototype.valueOf = observers.undo [type]
     },
 
   disable :function
   disable (ion)
-    { var ionify        = disable.with.its
-        ; ionify.sense$ = ionify.senses
-        ; ionify.senses = {'0 . 0':ionify.activate}
+    { var domain       = disable.with.the.domain
+        ; domain.kn0wn = domain.known
+        ; domain.known = { 0 : 0 }
     },
 
-  on :function
-  on (sensation)
+  on: function
+  on( sensation  )
     { var ionify = on.with.its
         , always = true
         , launch = ionify.on ===  sensation.on
@@ -147,16 +151,17 @@
       var groups  = launch ? ['on'] : sensation.on
       Array.isArray (groups)  || (groups = [groups])
 
-      var id      = sensation.re && sensation.re.id
-        , has     = ionify.hasKnownWord
-        , domain  = on.with.the.domain
-        , known   = domain.known
-        , senses  = domain.senses
-        , next    = -1
-        , last    = groups.length
-        , updated = {}
-        , reaction, reactions
-        , word    , words
+      var id        = sensation.re && sensation.re.id
+        , has       = ionify.hasKnownWord
+        , domain    = on.with.the.domain
+        , known     = domain.known
+        , sensible  = domain.ionified
+        , senses    = domain.senses
+        , next      = -1
+        , last      = groups.length
+        , updated   = {}
+        , reaction  , reactions
+        , word      , words
         , group
         , spot
         , test
@@ -181,19 +186,21 @@
           reactions = senses    [group]
           reaction  = sensation [group]
           reaction
-            &&  ( spot = reactions.push  (reaction))
-            &&  ! domain.ionified [typeof reaction]
+            &&  ( spot = reactions.push (reaction))
+            &&  ! sensible  [   typeof   reaction]
             &&  ( domain.find
-                ? domain.find ({find:reaction,  in:sensation, as:group})
-                && (reaction = reactions [spot-1] = sensation [group ])
-                :  (reaction = reactions [spot-1] = sensation [reaction])
+                ? domain.find ({find:reaction,  in: sensation, as:group})
+                && (reactions [spot-1] = reaction = sensation [   group])
+                :  (reactions [spot-1] = reaction = sensation [reaction])
                 );
 
-          debug.push (['knows?', id, group, group in senses])
+          debug.push ([id, group in senses ? "knows" : "ignores", group])
 
-          if (!reaction || reactions && !unknown) continue
+          //🙇🏾‍♂️intentionally  👇🏾keep inactive👇🏾 reaction for dynamic-self-reactions🤲🏾
+          if(!reaction /*|| !sensible [typeof reaction]*/ || reactions && !unknown)
+              continue
 
-          test  = '  return "'+ words.join ('" in ion && "') +'" in ion;'
+          test  = '\treturn "'+ words.join ('" in ion && "') +'" in ion;'
           test  =  new Function ('ion', test)
           group = {act:group, set:words, in:test||has}
 
@@ -304,6 +311,7 @@
         ))
         ; debugging && from    && ( from != transcript.with.its.sensed)
                     && debug.push ('from',  ion.re  && ion.re.ex.from)
+      return debug
     },
 
   sensedInfo:
@@ -317,14 +325,14 @@
 
   sensed :function
   sensed (object)
-    { var transcribe
+    { var transcript
         , its       =   sensed.with.its
         , ionify    =   sensed.with.the.domain
         , senses    =   ionify.senses
         ; object    || (object = this)
 
       its.sensible    (object)
-      its.conventions (object)    ; transcribe =
+      its.conventions (object)    ; transcript =
       its.transcript  ({ion:object, from:sensed.caller})
 
       var reaction, reactions
@@ -337,10 +345,12 @@
         , skip    = {}
 
       for (word in known)
-        { if (!known.hasOwnProperty (word))                           continue
-          if (word in skip ||  ! (word  in object))                   continue
-          if (object === (senses [word] && senses[word][0].with.its)) continue
-          if (object.on   ===     word)                               continue
+        { if (!known.hasOwnProperty (word))                   continue
+          if (word in skip     || ! (word in object))         continue
+          if (senses [word])
+          if (senses [word][0] && senses [word][0].with)
+          if (object          === senses [word][0].with.its)  continue
+          if (object.on       ===         word)               continue
 
           groups = known [word]
 
@@ -356,8 +366,8 @@
               reactions = senses [words]
               before    = results
 
-      restart:for
-                ( var r=0, R=reactions.length
+              for
+                ( var r=0, R=reactions.length, temp
                 ;     r  < R
                 ;     r ++
                 )
@@ -383,15 +393,26 @@
                         results += 1
                         break
 
-                  //     case !!
-                  //       (  domain
-                  //       && domain.find
-                  //       && domain.find ({find:reaction, in:senses, as:words})
-                  //       ):
-                  //       reactions = senses [words]
-                  //       R = reactions.length
-                  //       r = -1
-                  //       continue restart
+                      case !!             // got unresolved 🤔
+                        (  ionify         // reaction alias 🧐
+                        && ionify.find    // so resolve it! 🤓
+                        && ionify.find ({find:reaction, in:object})
+                        ): reactions  = [object [reaction]]
+                                  R   =  reactions.length
+                                  r   = -1
+                                  continue
+
+                      default:
+                        temp =
+                          [ "inactive reaction -"   , reaction
+                          , "- for sensed term(s) -",    words
+                          , "- within this object:" ,   object
+                          ]
+                        transcript
+                          && (transcript = transcript.concat (temp))
+                          &&  ionify.warn  ({ warn:  temp})
+                          &&  ionify.debug ({debug: (temp.unshift (true), temp)})
+                        break
                     }
                 }
 
@@ -401,10 +422,10 @@
             }
         }
 
-      transcribe    //🚨 stack overflow caused by
+      transcript    //🚨 stack overflow caused by
       &&  (object.debug  // infite-looping ~debug
       ||  (object.next   && object.id) //~next.id
-      ||   ionify.debug  ({ debug:debug }))
+      ||   ionify.debug  ({ debug: transcript }))
 
       return results == 1 ? result : object
     },

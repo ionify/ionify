@@ -2,12 +2,13 @@
 ~
 { re:
     { id:  'on.test@ionify'
-    , of: ['tests','core','api']
-    , as: ['examination','convention','sensation','composition']
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    , of: ['core', 'public', 'sensation', 'api', 'tests']
+    , do: {sensation  :true, transcription:true}
+    , as: {examination:true}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.021
+    , to:  -8.20221111
+    , at:  -0.022
     , is: "ionify's ~on api examination"
     , go:
         { seek: 'https://api.ionify.net/'
@@ -41,6 +42,17 @@
       }       }
       +
       {fatherhood:"かいととマイケル"}
+
+      ~
+      { on:'something', something:'whoa!!!'}
+      +
+      { something:'hi'
+      ,'whoa!!!':
+          [//function(){
+           {log:"✅ YES! 🙇🏾‍♂️ יהוה 🤲🏾 !THANK YOU ✅"}
+          ,{log:"✅ ~on: reaction: dynamic✨self✨reaction: named, unreferenced & future-defined"}
+          ]// doesn't report when whoa!!! is a function because of no-self-reaction code in sensed@on.ion@
+    /*}*/ }
 
 
       ~
