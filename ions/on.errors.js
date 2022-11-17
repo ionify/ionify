@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'on.errors@ionify'
-    , of:  'core'
-    , as:  'action'
-    , by: ['mike.lee', 'team']
+    , of: ['core','public','api']
+    , as: {malfunction:-0.001, sensation:-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20211126
-    , at:  -0.1
+    , to:  -8.20221117
+    , at:  -0.007
     , is:
         [ "converting messages to Error objects"
         , "usage:"
@@ -18,6 +18,17 @@
                   }
               }
         ],
+      go:
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/on.errors.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.errors.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
+        },
       we:
         [ "will ..."
         ]

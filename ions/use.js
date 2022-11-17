@@ -2,14 +2,25 @@
 ~
 { re:
     { id:  'use@ionify'
-    , of:  'core'
-    , as:  'action'
-    , by: ['mike.lee@ionify.net', 'team']
+    , of:  ['core','public','api']
+    , as:  {sensation:-0.001, composition:-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee@ionify.net', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20220707
-    , at:  -0.1
+    , to:  -8.20221117
+    , at:  -0.010
     , is: "enabling the use of an ion's thing(s)"
-    , we:
+    , go:
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+      //, test: 'https://github.com/ionify/ionify/blob/public/ions/use.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/use.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
+        },
+      we:
         [ "must confirm ion id for each ~on:use before acting"
         , "will enable using with ion ids"
                 ||+{use: 'wakatta.view@.show',      in: 'wakatta.game@'}

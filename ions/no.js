@@ -3,16 +3,27 @@
 { re:
     { id:  'no@ionify'
     , of: ['core','public','api']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
-    , as: {sensation:0.001, composition:0.001, specification:0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , as: {sensation:-0.001, composition:-0.001, specification:-0.001}
     , on:  -4.200709
-    , to:  -8.20221107
-    , at:  -0.049
+    , to:  -8.20221117
+    , at:  -0.050
     , is:
         [ "ionify's public ~on.no action"
         , "disabling all reactions to the specified sensation"
         , "disabling the convention with the specified reaction"
         ],
+      go:
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+      //, test: 'https://github.com/ionify/ionify/blob/public/ions/no.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/no.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
+        },
       we:
         [ "will make a way to deactivate all observation@s, aka ~on:Type's."
         , "like the idea of resolving ~{no: 'this.with'}"
