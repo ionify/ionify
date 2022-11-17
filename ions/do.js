@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'do@ionify'
-    , of: ['core','api']
-    , as: ['composition','sensation']
-    , by: ['mike.👨🏾‍💻.lee','team']
+    , of: ['core','public','api']
+    , as: {sensation:-0.001, composition:-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221031
-    , at:  -0.029
+    , to:  -8.20221117
+    , at:  -0.030
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -23,12 +23,13 @@
         , code: 'https://github.com/ionify/ionify/blob/public/ions/do.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/do.test.js'
         , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
-        , join: 'https://github.com/ionify/about/tree/public/team'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
         [ "must ... "
         , "will ... "
-        , "like ionified [typeof todo] --> ~ {is:todo, type:'ionified'} "
+        , "like ionified [typeof todo] --> + {is:todo, type:'ionified'} "
         , "like ... "
         ]
     },
@@ -40,13 +41,13 @@
     ,           'do'
     ],
 
-  do :function
-  do_ (ion)
+  do:function
+  dO( ion )
     { var todo  =    ion.do
-    ;     todo  && ! do_.with.our.ionified [typeof todo]
-                && ~{find:todo, in:ion, as:'do'}
+    ;     todo  && ! dO.with.our.ionified [typeof todo]
+                && +{find:todo, in:ion, as:'do'}
                 &&  (todo = ion.do)
-    ;   ~ todo
+    ;   + todo
     ; return true
     },
 
@@ -81,10 +82,10 @@
         , todo  = ion.do/*
         ; todo  = after.with.our.ionified [typeof todo]
                 ?   todo
-                : ~{find:todo, in:ion} && ion [todo]
+                : +{find:todo, in:ion} && ion [todo]
         ; todo || (todo = ion.do)//*/
 
-      if (!todo) return void ~{warn:`~on.do.after: unable to find ${ion.do}`}
+      if (!todo) return void +{warn:`+on.do.after: unable to find ${ion.do}`}
       var on = {on:ions, after:aftr}
       for (var next=-1, last=ions.length; ++next < last; on [ions [next]] = ready)
       ion.do = ready
@@ -117,7 +118,7 @@
               ) if (!got [ions [next]]) return
 
           done = true
-            ~  {on:ions, no:after_all}
+           ~  {on:ions, no:after_all}
           go ({do:todo, with:them})
         }
 
@@ -155,9 +156,9 @@
 
       function after_each ()
         { if (!this) return
-          ("function" == typeof todo && todo.length)
+          ('function' == typeof todo && todo.length)
           ?   todo (this)
-          : ~ todo <= / todo? remove duplicate todo from script.onload /
+          : + todo <- / todo? remove duplicate todo from script.onload /
         }
       return after_each
     },
