@@ -5,8 +5,8 @@
     , of: ['web','launch']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221110
-    , at:  -0.053
+    , to:  -8.20221117
+    , at:  -0.054
     , as:
         { habitation   :-0.001, connection:-0.001, initialization:true
         , transcription:-0.001
@@ -20,18 +20,19 @@
         , "get.ing & applying ionify's configuration@"
         ],
       go:
-        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/web.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/web/web.test.js'
-        , join: 'https://github.com/ionify/about/tree/public/team'
-        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
-        , more: 'https://api.ionify.net/'
+        , code: 'https://github.com/ionify/ionify/blob/public/web.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
         [ "NOTE .watch() is disabled because it hides critical script errors."
 
-        , "WANT with@ to sense ion .with.* vs .the.* connection@ augmentations."
         , "WERE modeling re.as@ specification@s with version@s & re.of@ association@s"
         , "WERE modeling  initialization@ideas.js & ROLES-&-FLOWS@launch.js"
         , "WILL implement initialization@ideas.js & ROLES-&-FLOWS@launch.js"
@@ -48,9 +49,13 @@
     },
 
   with:
-    { the:
+    { our:
+        { configuration:
+            {}
+        },
+      the:
         { launch:
-            { get:null
+            {
             }
         },
       web:
@@ -69,12 +74,6 @@
           //, onstorage     :onstorage
             }
         },
-    },
-
-  the:
-    { domain:
-        { settings: {}
-        }
     },
 
   valueOf :function
@@ -109,11 +108,9 @@
         ; web.pending.push (ion)
     },
 
-  configuration:
-    {},
   setup :function
   setup (ion)
-    {/implementing per launch.js' ROLES & FLOWS/;
+    {//🙇🏾‍♂️ setup@web@ implementing launch per launch.js' ROLES & FLOWS 👨🏾‍💻/
       var web = setup.with.its
         , how = -4.200709
         ; ion ||
@@ -121,12 +118,12 @@
 
       if(!ion.re || !ion.re.as) return how; else web.queue (ion)
 
-      if( ion.re.as.configuration && ion.spaces )
-        { web.the.domain.settings.spaces = ion.spaces
+      if( ion.re.as.configuration     && ion.spaces )
+        { web.with.our.configuration.spaces = ion.spaces
         }
 
-      if( ion.re.as.acquisition && ion.get )
-        { ion.get.via = web.get
+      if( ion.re.as.acquisition &&  ion.get )
+        { ion.get.via           =   web.get
         }
 
       if( ion.re.as.observation )
@@ -183,8 +180,8 @@
     },
 
   get :function
-  get (thing)
-    { var web = get.with.its
+  via (thing)
+    { var web = via.with.its
         , as  = web.types [thing.as]
 
     /*delegate non-ecmascript type-specific ~get.s to own get.type@ ion

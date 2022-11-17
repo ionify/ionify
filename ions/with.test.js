@@ -6,20 +6,22 @@
     , as: ['examination','convention','sensation','composition']
     , by: ['mike.👨🏾‍💻.lee', 'team']
     , on:  -4.200709
-    , to:  -7.20221027
-    , at:  -0.01
+    , to:  -7.20221117
+    , at:  -0.02
     , is: "ionify's with@ api tests"
     , go:
         { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/with.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/with.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/with.js'
         , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
-        , join: 'https://github.com/ionify/about/tree/public/team'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
-        [ "were ..."
+        [ "WERE ..."
         , "must ..."
         , "will ..."
         , "want ... "
@@ -31,9 +33,9 @@
     [ "with@ adds .with to methods"
     , "with@ adds .with to arrays"
     , "with@ adds .with to methods & arrays only"
-    , "with@ sets .with.its as the ion"
-    , "with@ sets .with.the as the ion's the"
-    , "with@ sets .with.our as the ion's domain space"
+    , "with@ sets .with.its = the ion"
+    , "with@ sets .with.the = the ion's with.the"
+    , "with@ sets .with.our = the ion's domain space"
     ],
 
   report :function
@@ -69,7 +71,7 @@
       exam.report (question, answer)
     },
 
- "with@ sets .with.its as the ion":function
+ "with@ sets .with.its = the ion":function
   its (doing)
     { var     exam = its.with.its
         , question = doing [doing.next]
@@ -78,22 +80,49 @@
       exam.report (question, answer)
     },
 
- "with@ sets .with.the as the ion's the":function
+ "with@ sets .with.the = the ion's with.the":function
   the (doing)
     { var     exam = the.with.its
         , question = doing [doing.next]
-        ,   answer = Boolean (exam.the) && exam.the === the.with.the
+        ,   answer = Boolean (exam.with.the) && exam.with.the === the.with.the
 
       exam.report (question, answer)
     },
 
- "with@ sets .with.our as the ion's domain space":function
+ "with@ sets .with.our = the ion's domain space":function
   our (doing)
     { var     exam = our.with.its
         , question = doing [doing.next]
-        ,   answer = our.with.our === our.with.the.domain
+        ,   answer = our.with.our === our.with.its.domain
 
       exam.report (question, answer)
     }
+
+/*
+ great test of merging aliased spaces, must make into actual tests!👨🏾‍💻🤓
+  with:
+    { its:
+        { //....🌱 share with your .members here 🌱
+          domain:
+            { //🌱 share with-in your domain here 🌱
+              testing:{testing:123}
+            }
+        },
+      all:
+        { //....🌱 share with all the ~ions here 🌱
+        },
+      our:
+        { //....🌱 share with-in your domain here 🌱
+          working:2022
+        },
+      the:
+        { //....🌱 share with more++ spaces here 🌱
+          ionify:
+            { //🌱 share with ionify domain here 🌱
+              spaces: null
+            }
+        }
+    },
+ */
 }
 ;

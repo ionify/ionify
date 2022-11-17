@@ -4,12 +4,15 @@
     { id:  'logger@ionify'
     , of: ['public', 'transcription', 'tools', 'api']
     , as: {sensation:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'kaito.🧑🏾‍🦱.lee', 'team✨ionify']
-    , in: ['queens-county.new-york.us.earth', 'silicon-valley.california.us.earth']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221111
-    , at:  -0.050
-    , is:
+    , to:  -8.20221116
+    , at:  -0.051
+    , in:
+        [    'queens-county.new-york.us.earth'
+        , 'silicon-valley.california.us.earth'
+        ],
+      is:
         [ "ionify's transcription sensation:"
 
         , '~{debug:*}, ~{error:*}, ~{info:*}, ~{log:*} & ~{warn:*}'
@@ -33,30 +36,39 @@
         + '  to enable more informative, developer-level, object rendering'
         ],
       go:
-        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
-        , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/logger.js'
-        , test: 'https://github.com/ionify/ionify/blob/public/ions/logger.test.js'
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , join: 'https://github.com/ionify/about/tree/public/team'
-        , seek: 'https://api.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/logger.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/logger.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
-        [ "will ~debug:{ionid:true|false} to [en|dis]able per-ion transcription"
-        , "like moving display logic to host, e.g. web:alert vs web+node:console"
+        [ "were exploring with.*:* sharing via boolean permissions"
+        , "will ~debug:{ionid:true|false} to [en|dis]able per-ion transcription"
+        , "like 🙇🏾‍♂️displaying via habitation@, e.g. web:alert vs web+node:console"
         , "want '⚠️' 🐛 in Blink web views to render with full yellow color & size"
 
-        , "like defining & sensing log reporting api actions; maybe hosts can "
-        + "share their own so logger can sense & adopt them! 🤓"
+        , "like defining & sensing transcription@ apis; maybe habitation@s can "
+        + "send their own so logger can sense & adopt them! 🤓"
 
         , "like adding ~{log_level:..., to:'nowhere'||'webview'} later but "
-        + "know it enables in-context-session entities to unexpectedly hide records"
+        + "know it enables in-context-session entities' unexpected record-hides"
         ]
     },
 
   on:
     [ 'error', 'warn', 'debug', 'log', 'info'
     ],
+
+  with:
+    { the:
+        { tools: {'*': {error:true, warn:true, debug:true, log:true, info:true}}
+        }
+    },
 
   valueOf :function
   logger  ()
@@ -69,7 +81,7 @@
     { delete this.valueOf <- this
 
       var   logger  = this
-        ,   domain  = ionify.with.our
+        ,   domain  = ionify.with.the.tools
       domain.debug  = logger.debug
       domain.log    = logger.log
       domain.info   = logger.info
@@ -94,7 +106,7 @@
         , halt    = action.halt !== false
 
       if( message === null || !halt) return state
-      if('boolean' != typeof message   &&   state) ~new Error (message)
+      if('boolean' != typeof message   &&   state) +new Error (message)
 
       return state
     },
@@ -204,14 +216,14 @@
           { logger.report = missing
             logger.ionify ()
           ~ action
-          ~ new Error (logger.messages.noReports)
+          + new Error (logger.messages.noReports)
           }
         else
           { logger.report = logger.popup
             logger.ionify ()
           ~ {warn: true }
-          & {warn: logger.messages.noConsole}
-          & {warn: logger.report.with.our.logging.warn}
+          + {warn: logger.messages.noConsole}
+          + {warn: logger.report.with.our.logging.warn}
           }
       else logger.ionify ()
 

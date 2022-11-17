@@ -3,36 +3,41 @@
 { re:
     { id:  'get@ionify'
     , of: ['core','public','api','launch']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
+    , do: { transcription :-0.001 }
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221107
-    , at:  -0.050
+    , to:  -8.20221116
+    , at:  -0.051
     , as:
-        { acquisition   :-0.001, convention   :-0.001, sensation     :-0.001
-        , composition   :-0.001, specification:-0.001, initialization:-0.001
-        , transcription :-0.001
+        { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
+        , convention  :-0.001, specification:-0.001, initialization:-0.001
         },
       is:
-        [ "ionify's public ~get api's implementation"
-        , "an acquisition@  so it defines ~get actions for acquiring things"
-        , "acquires things via its habitation's get function"
-        , "its host application by ~get.ing its ions.js launch configuration"
-        , "~get.ing ionify's ions to initialize the environment with ionify"
+        [ "ionify's public ~get api's specification@.s implementation@"
+        , "an acquisition@  so it defines ~get action@s for acquiring things"
+        , "acquires things via its habitation@ .get() method"
+        , "~get.ing ionify's configuration@ habitation@ initialization@"
+        , "~get.ing ionify's ions to ionify its habitation@"
         ],
       go:
-        { plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/get.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/get.test.js'
-        , join: 'https://github.com/ionify/about/tree/public/team'
-        , deal: 'https://github.com/ionify/ionify/blob/public/LICENSE.txt'
-        , more: 'https://api.ionify.net/'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/get.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
-        [ "WERE forming re.as & re.of relation sensing & ~get.ing convention"
+        [ "WERE assaying re.as, re.do & re.of relationships & before ~get.ing."
+        , "WERE implementing a convention to introspect & ~get re.as relation@s"
+        , "HAVE processed ~get.d ions' re.as; now need their space definitions@"
         , "want to ~get & apply configuration(s) asap; coordinate with on.ions@"
+
         , "will set all ~get actions' ionid@ domains to the current ion's"
-        , "like having a .resolve action@test.ionify to test/action.js"
+        , "like having a .resolve of action@test.ionify to test/action.js"
 
         , "were ... "
         , "must ... "
@@ -49,24 +54,25 @@
     , ['get', 'in'  ]
     , ['get', 'and' ]
     , ['get']
-    ,  '*'
+  //,  '*'
     ],
-
+       /*
  '*':'got'
-    ,
+    , //*/
 
   valueOf :function
   ionify  ()
     { var ions
-        = [    'on.ion@ionify',        're@ionify',         'next.id@ionify'
-          ,        'id@ionify',        'of@ionify',            'with@ionify'
+        = [    'on.ion@ionify',   /*'on.do@ionify'
+          ,*/      're@ionify',   /*'re.hi@ionify'
+          ,*/ 'next.id@ionify',        'id@ionify'
+          ,      'with@ionify',        'of@ionify'
           ,                       'on.aeon@ionify', 'find.link.share@ionify'
           ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
           ,    'logger@ionify'                    ,              'do@ionify'
           ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
-          ,       'use@ionify',      'ions@ionify',     'on.ionified@ionify'
-        //,     'on.do@ionify'
-          ,      'ions'
+          ,       'use@ionify',                         'on.ionified@ionify'
+          //*/
           ]
 
       var get       = this.get
@@ -78,22 +84,20 @@
     },
 
   getInfo:
-    [" does ~{get: ['ion.id' || './script.js'], then: ['actions']} "
-    ,' will update get$.PATH with new @domains & their paths.      '
-    ,' will move got() & .then code to ~get.then                   '
-    ,' will sense ion ids vs. script paths: ./script.js            '
-    ," will use .then() as ~on.do where ~{on:''|[], do:ion, after:all|any|each}     "
-    ,' will set .then() to ~on.do.after                            '
-    ,' will set ~get.then to do ~on:ion.id & script.onload; 1st called cancels 2nd. '
-    ,' ... '
-    ],
- 'get info':
-    [ ' and: create & invoke a ~do with it'
-    , " get: ensure it's an array         "
-    , "  in: ensure it's an expected value"
-    , 'then: create beacon  function      '
-    , ' get: create scripts with in & then'
-    , ' get: attach scripts to webi       '
+    [ "does ~{get: ['ion.id@domain' || './script.js'], then: ['actions']} "
+    , "note and: create & invoke a ~do with ~get"
+    , "note  get: ensure ~get    is an array"
+    , "note   in: ensure ~get.in is an expected value"
+    , "note then: create beacon  function"
+    , "note  get: create scripts with ~get.in & ~get.then"
+    , "note  get: attach scripts to webi"
+
+    , "will update get$.PATH with new @domains & their paths."
+    , "will move got() & .then code to ~get.then"
+    , "will sense ion ids vs. script paths: ./script.js"
+    , "will use .then() as ~on.do where ~{on:''|[], do:ion, after:all|any|each}"
+    , "will set .then() to ~on.do.after"
+    , "will set ~get.then to do ~on:ion.id & script.onload; 1st called cancels 2nd."
     ]
 ,'get then'         :'get'
 ,'get then after'   :'get'
@@ -130,8 +134,7 @@
           )
           { id =ions[next]
             its.ions[id] = ion = {id:id, uri:uri}
-            its.gets.push (id); its.gets[id] = its.gets.length - 1
-            its.gots.push (id); its.gots[id] = its.gots.length - 1
+            its.gets[id] = its.gots[id] = true
             get.via ({at:id, in:its.ORDER[action.in], then:todo})
           }
     },
@@ -144,8 +147,8 @@
     , undefined : 'parallel'
     },
 
-  gets:[],
-  gots:[],
+  gets:{},
+  gots:{},
   ions:{},
 
   errors:
@@ -171,8 +174,56 @@
 
   got :function
   got (ion)
-    {//unqueue the observed ion from gets
+    { var list
+        , spaces= got.with.our.settings.relations
+        , its   = got.with.its
+        , gets  = its.gets
+        , gots  = its.gots
+        , id    = ion.re.id
+        , as    = ion.re.as
+        , needs = []
+        , name  =(/(.*)@$/)
+        , d
+        , domain=(/.*(@.*)/)
+        , found = id.match (domain)
+        ; found = found  ?  found[1] : ''
+
+      gets[id] && delete gets[id]
+
     //~/observe each ion's re.as & re.of relations then prioritize & ~get them/;
+      for
+        ( var a in as )
+        { if(!as.hasOwnProperty(a)) continue
+          list = spaces[a]
+
+          if(!list)
+            {   d   = a.match (domain)
+            ;   a  += d ?  d[1] : found
+            ; list  = spaces[a]
+            ; if (!list) continue
+            }
+
+          for
+            ( var s=-1, S=list.length, space
+            ;     s <-- S;
+            )
+            { space = list [S]
+
+             ~space.search (name )
+                && (list   = spaces [a.match (name)[1]] || '')
+                && (needs  = needs.concat (list))
+
+             ~space.search (found)
+                || (space += found)
+                && ! gots[space]
+                && !needs[space]
+                &&  needs.push (space)
+                && (needs[space] = needs.length-1)
+            }
+        }
+
+      its.get ({get:needs})
+    //gots[id] && delete gots[id]
     }
 }
 ;

@@ -7,8 +7,8 @@
     , as: {convention   :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on: { 200709   : -4      }
-    , to: { 20221111 : -8.1349 }
-    , at:  -0.061
+    , to: { 20221117 : -8.0918 }
+    , at:  -0.062
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
         + 'access their containing ion, ~share for sharing things via domains,      '
@@ -17,13 +17,15 @@
         ],
       go:
         { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/find.test.js'
       //, test: 'https://github.com/ionify/ionify/blob/public/ions/link.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
         , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
-        , join: 'https://github.com/ionify/about/tree/public/team'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
         [ "WANT to simplify this ion & separate its actions into their own ions"
@@ -51,33 +53,29 @@
     , ['share'              ]
     ],
 
-  the:
-    { all:
-        { skip:
-            { with:true, re:true, do:true, get:true, on:true }
-        },
-      domain:
-        { find  : 'find.link.share@ionify:find'
-        , link  : 'find.link.share@ionify:link'
-        , share : 'find.link.share@ionify:share'
-        , space : 'find.link.share@ionify:space'
+  with:
+    { our:
+        { find  :  'find@find.link.share@ionify'
+        , link  :  'link@find.link.share@ionify'
+        , share : 'share@find.link.share@ionify'
+        , space : 'space@find.link.share@ionify'
+        , skip:
+            { with  :true, re:true
+            , domain:true, do:true
+            , get   :true, on:true
+            }
         }
     },
 
   valueOf:function
   ionify()
-    { var   domain  = this.the.domain
-      domain.find   = this.find
-      domain.link   = this.link
-      domain.share  = this.share
-      domain.space  = this.space
-
-      this.find.with  =
-      this.link.with  =
-      this.share.with =
-      this.space.with = {its:this}
-
-      delete this.valueOf <- this
+    { var   sense   = this
+        ,  domain   = sense.with.our
+      domain.find   = sense.find
+      domain.link   = sense.link
+      domain.share  = sense.share
+      domain.space  = sense.space
+      delete sense.valueOf <- sense
     },
 
  'find in as':'find',
@@ -154,7 +152,7 @@
         , debugged  = []
         , debug     = our.debug || String
         , can       = {function:true, object:true}
-        , skip      = (link.with || ion.with).all.skip
+        , skip      = (link.with || ion.with).our.skip
         , thing
       for
         ( var property in ion)
@@ -198,7 +196,7 @@
   share :function
   share (ion)
     { var object = {object:true, function:true}
-        , skip   = share.with.all.skip
+        , skip   = share.with.our.skip
         , thi$   = share.with.its
         , spaces = thi$.spaces
         , things = ion.link ===  '*' ?  ion.with.its/*.with || ion.with*/ || ion : ion.to ? ion.link : ion.share
@@ -217,7 +215,7 @@
             ( var T = to.length, name=thing, id, space, from={id:null}
             ;     T--
             ;    id = (id = to[T]) && object [typeof id] ? id.re && id.re.id : id
-            , space = thi$.space (String(id))
+            , space = thi$.space (String (id || ''))
             , space [name]
                 = typeof (thing = things [name]) == 'string'
                 ?    ion [thing]
@@ -234,10 +232,10 @@
   space (id)
     { var share  = space.with.our
         , spaces = share.spaces
-        , domain = id.match (/@(.*)/)
-        ; domain = domain && domain [1] || 'all'
+        , domain = String (id || '').match (/@(.*)/)
+        ; domain = domain  && domain [1] || 'all'
 
-      return  spaces [domain]
+      return  spaces [domain] || (spaces [domain] = {})
         //|| (spaces [domain] = Object.create (parent || spaces.null))
     }
 }

@@ -7,13 +7,14 @@
     , do: { resolution  :-0.001, transcription:-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221111
-    , at:  -0.082
+    , to:  -8.20221117
+    , at:  -0.083
     , im: { re:'on.ion.re@ionify' }
     , is:
         [ "ionify: invoked object notation implemented for you"
         , "enabling the ionosphere: invoked object notation observation sphere"
-        , "sensing ~{} oli & ~objectReference orion as invoked Object instances"
+        , "sensing ~{} oli: object literals as invoked Object instances"
+        , "sensing ~object_reference  orion as invoked Object instances"
         , "sensing ~on actions"
         , "sharing core actions & information via the core @ionify domain space"
         , "sharing ionified [typeof ion && ion.constructor.name] utility"
@@ -21,21 +22,26 @@
         ],
       go:
         { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
       //, test: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.test.js'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
         , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
-        , join: 'https://github.com/ionify/about/tree/public/team'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
         [ "NOTE many more plans, ideas & issue notes are in on.ion.re@ionify✨"
+        , "WILL set re.go.deal = https://deal.ionify.net in all ionify sions"
 
-        , "HAVE migrated this lengthy re.we to on.ion.re.we@ or on.ion.im@, "
-        + "but worry that its plans & notes'll be forgotten and-or neglected "
-        + "since they won't be visible in on.ion@. perhaps we can keep the "
-        + "most critical notes in on.ion@ re.we 🤔👨🏾‍💻🤓"
+        , "LIKE enacting a best-practice of intentionally keep critically "
+        + "essential & actionable notes in ion@ & others in ion.re@"
+
+        , "want to remove on:no@ionify; conventions retroactively auto-apply"
+        , "WILL +{} vs ~{}, safely, within ionify sions for faster invocation"
+        , "want ++indices vs indices++ for clarity, comprehension, simplicity"
 
         , "KNOW ~{on:'id@doma.in','id@doma.in':ion} self-reacts for anemojii@"
         , "MUST implement ~{on:'id@doma.in',do:ion} to eliminate self-reactions"
@@ -51,22 +57,23 @@
         + "critically impactful problems +| opportunities it reveals before "
         + "we can say the problem's solved or closed."
 
-        , "want sensed() to reaction.with.re.id === object.re.id before checksum"
+        , "want sensed() to reaction.with.re.id===object.re.id before checksum"
         , "MAKE ionify@ space inaccessible via ion.valueOf:with.our, the.domain"
         , "MUST auto-update ionified:observation@ list as Types are deactivated"
-        , "WANT renamed sensible <= ionified since its sensing observable types"
-        , "want sensible() within a common observer@ delegator vs convention."
+        , "WANT renamed sensible <- ionified since its sensing observable types"
+        , "want sensible() within a core observation@ delegator vs convention@."
+        , "want ionify@ = core observation@ routing to others post-convention@s"
         ]
     },
 
-  the:
-    { domain:
+  with:
+    { our:
         { does    : []
         , senses  : {}
         , known   : {}
         , ionified: {boolean:false, null:false, string:false, undefined:false}
         //sensible☝🏾
-      }
+        }
     },
 
   valueOf:function
@@ -80,13 +87,13 @@
   object ()
     { var  ionify               = this
         ;  ionify.on.with       = connections.with
-        =  ionify.via.with      = ionify.object.with
-        =  ionify.sensible.with = ionify.conventions.with
-        =  ionify.always.with   = ionify.transcript.with
-        =  ionify.sensed.with   = ionify.sortKnownWords.with
-        = {its:ionify, the:{domain:ionify.the.domain}}
+        =  ionify.via.with      = ionify.conventions.with
+        =  ionify.sensed.with   = ionify.convention.with
+        =  ionify.object.with   = ionify.sortKnownWords.with
+        =  ionify.sensible.with = ionify.transcript.with
+        = {its:ionify,the:{},our: ionify.with.our}
 
-      delete ionify.valueOf <- ionify <=
+      delete ionify.valueOf <- ionify <-
      /accept ions pending  ionification/
 
       //👇🏾activate ionosphere: ion observation sphere
@@ -95,12 +102,12 @@
 
       function
         connections (no)
-          { ionify <= /share to ionify@ domain space/
+          { ionify <- /share to @ionify domain space/
           ; no.no  ({on:'no@ionify', no:connections})
           ~ ionify.pending
-          ; ionify.pending = null
+        //; ionify.pending = null
           }
-        ~ {on:'no@ionify', 'no@ionify':connections}
+      ~ {on:'no@ionify', 'no@ionify':connections}
 
       return true
     },
@@ -108,10 +115,10 @@
   activate :function
   activate (ion)
     { var ionify = activate.with.its.object
-        , domain = activate.with.the.domain
+        , domain = activate.with.our
         ; domain.kn0wn
           && (domain.kn0wn != domain.known)
-          && (domain.known  = domain.kn0wn) && ~ionify
+          && (domain.known  = domain.kn0wn) && +ionify
     },
 
   deactivate :function
@@ -125,21 +132,21 @@
 
   disable :function
   disable (ion)
-    { var domain       = disable.with.the.domain
+    { var domain       = disable.with.our
         ; domain.kn0wn = domain.known
         ; domain.known = { 0 : 0 }
     },
 
   on: function
   on( sensation  )
-    { var ionify = on.with.its
-        , always = true
-        , launch = ionify.on ===  sensation.on
+    { var ionify  = on.with.its
+        , pending = true
+        , launch  = ionify.on ===  sensation.on
 
       if (!sensation    ||  !('on' in sensation)) return  sensation
       if (!launch)
-      if ('function'    === typeof sensation.on)  return  ionify.via    (sensation)
-      if ( sensation.on === '*' ){ always = false;        ionify.always (sensation)}
+      if ('function'    === typeof sensation.on)  return  ionify.via        (sensation)
+      if ( sensation.on === '*' ){ pending = false;       ionify.convention (sensation)}
 
       var debug = []
       debug.push
@@ -153,7 +160,7 @@
 
       var id        = sensation.re && sensation.re.id
         , has       = ionify.hasKnownWord
-        , domain    = on.with.the.domain
+        , domain    = on.with.our
         , known     = domain.known
         , sensible  = domain.ionified
         , senses    = domain.senses
@@ -175,8 +182,8 @@
           group = group.join (' ')
 
           if('*' === group)
-            { always && ionify.always (sensation)
-            ; always = false
+            { pending && ionify.convention (sensation)
+            ; pending = false
             ; continue
             }
 
@@ -215,7 +222,7 @@
       ionify.sortKnownWords (updated)
 
       domain
-        ? domain.logging && domain.logging.debug && domain.debug
+        ? domain.logging && domain.logging.debug && on.with.the.tools.debug
           ({debug: (debug.push ([id].concat (groups)), debug.join ('\n'))})
         : ~{debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
 
@@ -233,7 +240,7 @@
   sortKnownWords :function
   sortKnownWords (updated)
     { var witH       = sortKnownWords.with
-        , known      = witH.the.domain.known
+        , known      = witH.our.known
         , descending = witH.its.sortKnownWordsDescending
         , word
 
@@ -248,9 +255,11 @@
     { return nextKnown.set.length - known.set.length
     },
 
-  always :function
-  always (sensation)
-    { var ionify  = always.with.the.domain
+  convention :function
+  convention (sensation)
+    { var with_   = convention.with
+        , sense   = with_.its
+        , ionify  = with_.our
         , does    = ionify.does
         , action  = sensation['*']
 
@@ -259,20 +268,51 @@
         ?   (action = sensation [ '*' ]       )
         :   (action = sensation [action]      )
 
+      //⚛️ self-apply each convention before applying to others:
+      sense.always ({do:action, for:sensation})
       does [sensation.re.id] = does.push (action) - 1
+
+      for
+        //⚛️ apply each convention to all
+        //⚛️ earlier conventions' sensations:
+        ( var missed= does.length -1
+        ,     m     = -1
+        ;  ++ m     < missed
+        ; sensation = does[m].with.its
+        , sense.always ({do:action, for:sensation})
+        );
+
+      for
+        //⚛️ apply each convention to all
+        //⚛️ pre-sensation launch-ions:
+        ( var launch  = sense.pending
+        ,     p=-1,P  = launch.length
+        ;  ++ p  < P
+        ;   sense.always ({do:action, for:launch[p]})
+        );  sense.always ({do:action, for:sense})
+        //⚛️ apply each convention to this☝🏾sensation
+    },
+
+  always :function
+  always (action)
+    { var convention = action.do
+        ,         on = action.for
+        ; typeof  convention   == 'function'
+              ?   convention.call (on, on)
+              :   convention   && ((convention).hasOwnProperty ('in')
+             || ((convention.in = on), +convention, delete convention.in))
     },
 
   conventions :function
   conventions (object)
     { for
-        ( var  does       = conventions.with.the.domain.does
-        ,      always,  D = does.length, d=0
-        ;     (always     = does[d])
-        ,               D >      d++
-        ; typeof  always == 'function'
-              ?   always.call (object, object)
-              :   always   && ((always).hasOwnProperty ('in')
-             || ((always.in = object), ~always, delete always.in))
+        ( var       with_    = conventions.with
+        ,           sense    = with_.its
+        ,            does    = with_.our.does
+        ,      convention, D = does.length, d=0
+        ;     (convention    = does[d])
+        ,                  D >      d++
+        ; sense.always ({do:convention, for:object})
         );
     },
 
@@ -287,7 +327,7 @@
 
       make [type] &&  object instanceof make [type]
                   && (core [type] =  typeof object)
-                  && (sensible.with.the.domain.ionified [core[type]] = true)
+                  && (sensible.with.our.ionified [core[type]] = true)
                   && (make [type] = null)
     },
 
@@ -295,16 +335,16 @@
   transcript (whence)
     { var ion           =    whence.ion
         , from          =    whence.from
-        , transcription =    transcript.with.the.domain.logging
+        , transcription =    transcript.with.our.logging
         , debugging     = !!(transcription  && transcription.debug)
         , debug         =    debugging      && []
         ; debugging     &&   debug.push
-                              ('onION:'
+                              ('+sion:'
                               , ion.re  ?   ion.re.id
                                         :   ion.with.its
                                         &&  ion.with.its.re
                                         &&  ion.with.its.re.id
-                                        ||  'anion')
+                                        ||  'ion')
         ; ion.re         &&
         ( ion.re.ex.from ||
         ( ion.re.ex.from  = (from && from.with)? from.with.its.re.id : ion.re.id
@@ -327,7 +367,8 @@
   sensed (object)
     { var transcript
         , its       =   sensed.with.its
-        , ionify    =   sensed.with.the.domain
+        , ionify    =   sensed.with.our
+        , tools     =   sensed.with.the.tools
         , senses    =   ionify.senses
         ; object    || (object = this)
 
@@ -380,7 +421,7 @@
                       //if({[ reaction.with?.its.re  ]:  true }[ object.re ]          //need: ionify core to be sions to eliminate ?. optional chaining
                       //&&    reaction.with.its.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
 
-                        if(   reaction.with?.its.re.id  ===      object.re?.id
+                        if(   reaction.with?.its.re.id  ==       object.re?.id
                         &&    reaction.with?.its.re     in    {[ object.re ]: true }  //need: ionify core to be sions to eliminate ?. optional chaining
                         &&    reaction.with.its.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
 
@@ -410,8 +451,8 @@
                           ]
                         transcript
                           && (transcript = transcript.concat (temp))
-                          &&  ionify.warn  ({ warn:  temp})
-                          &&  ionify.debug ({debug: (temp.unshift (true), temp)})
+                          &&  tools.warn  ({ warn:  temp})
+                          &&  tools.debug ({debug: (temp.unshift (true), temp)})
                         break
                     }
                 }
@@ -425,7 +466,7 @@
       transcript    //🚨 stack overflow caused by
       &&  (object.debug  // infite-looping ~debug
       ||  (object.next   && object.id) //~next.id
-      ||   ionify.debug  ({ debug: transcript }))
+      ||   tools.debug   ({ debug: transcript }))
 
       return results == 1 ? result : object
     },
@@ -439,8 +480,11 @@
 
   via: function
   via (observer)
-    { var its       = via.with.its
-        , sensible  = via.with.the.domain.ionified
+    { var with_     = via.with
+        , its       = with_.its
+        , the       = with_.the
+        , our       = with_.our
+        , sensible  = our.ionified
         , observers = its.observers
         , core      = observers.core
         , make      = observers.make
@@ -456,10 +500,11 @@
         ; sensible [core [type]]  = !!core [type]
         ; Object.seal (Type)
 
-      via.with.the
-        &&    via.with.the.domain.logging
-        &&    via.with.the.domain.logging.debug
-        && ~ {debug: ['via (observer)', type, JSON.stringify (sensible)]}
+      the
+        &&  our.logging
+        &&  our.logging.debug
+        &&  the.tools.debug
+              ({debug: ['via (observer)', type, JSON.stringify (sensible)]})
 
       return true
     }

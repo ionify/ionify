@@ -2,44 +2,88 @@
 ~
 { re:
     { id:  'on.ions@ionify'
-    , of:  'core'
-    , as:  'sensation'
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    , of: ['core','public','api']
+    , as: {sensation      :-0.001, convention :-0.001}
+    , do: {initialization :-0.001, acquisition:-0.001, ions:true}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221030
-    , at:  -0.1
+    , to:  -8.20221117
+    , at:  -0.007
     , is:
-        [ "intended to sense ions@domain ions & apply & share their settings, but..."
-        , "currently senses single ions@ id which puts all configurations in an empty"
-        + "shared domain space."
+        [ "sensing configuration@s, applying and-or sharing their settings"
         ],
+      go:
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+      //, test: 'https://github.com/ionify/ionify/blob/public/ions/on.ions.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ions.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
+        },
       we:
-        [ "WERE doing its initial implementation"
-        , "must fix ~on:ions@ overriding domains & paths because of common '' domain"
-        , "like ~on sensing ion.as to support ion.id:ions@doma.in for domain-configs"
-        , "..."
+        [ "WILL confirm that on:* + re.as.configuration indeed delivers "
+        + "domain-specific configuration@s via id@doma.in vs prior ions@ style."
+
+        , "KNOW there's unexpected errors when ionify's configuration has an "
+        + "ions@ionify id. maybe this resets the @ionify space...YES via"
+        + "spaces@ions@ionify which tries to reset 'spaces' in @ionify..."
+
+        , "MUST FIX sensing single ions@ id putting all configurations in an "
+        + "unnamed ¿with.all? shared domain space."
+
+        , "MUST FIX ~on:ions@ overriding domains & paths in common '' domain."
+        , "like ~on sensing ion.as + ion.id:ions@doma.in for domain-configs."
+
+        , "were ..."
+        , "must ..."
+        , "will ..."
+        , "know ..."
+        , "LIKE re.do: {ions:true} to ~get application@.s configuration@"
+        , "have ..."
+        , "want ..."
+        , "wont ..."
         ]
     },
 
+  get
+    : 'ions'
+    ,
   on:
-    [ 'ions@'
-    ],
+  '*',
+  '*':function
+  configure (settings)
+      { if (!settings.re.as.configuration) return
 
-
- 'ions@' :function
-  onions (configuration)
-      { var our    = onions.with.our
-          , space  = our.space (configuration.re.id)
-          , skip   = {re:true, on:true, do:true, get:true, 'ions@':true}
+        var id    = settings.re.id
+          , our   = configure.with.our
+          , space = our.space (id)
+          , skip  = our.skip
+          , configuration
 
         for
-          ( var setting in configuration)
+          (  var  setting in settings)
           {!skip [setting]
-              &&  configuration.hasOwnProperty (setting)
-              && (space [setting] = configuration [setting])
+              &&!~setting.indexOf('@')  //🚨alternate re@ object model
+              &&  settings.hasOwnProperty (setting)
+              && 'function' != typeof (configuration = settings [setting])
+              &&!(space == our && setting == 'spaces' &&
+                    {warn:true}+
+                    {warn:
+                        ["🚨🛡 ionosphere 🛡🚨", id, "tried setting", setting
+                        ,"in the",configure.with.its.re.id.domain, "space"
+                        ,"placing in the 'all' space instead & warning..."
+                        //🤔 should we keep it instead & if so, where?...
+                    ]   }+
+                    {warn:configuration},
+                    (our.spaces[setting] = configuration, true)
+                  )
+              && (space[setting] = configuration)
           }
 
-        ~ configuration.logging
+        ~ settings.logging
       }
 }
 ;
