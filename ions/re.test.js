@@ -6,15 +6,33 @@
     , as: {     re:true, examination  :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221110
-    , at:  -0.004
+    , to:  -7.20221117
+    , at:  -0.005
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
-    , we:
+    , go:
+        { seek: 'https://api.ionify.net/'
+        , read: 'https://lingo.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://github.com/ionify/ionify/issues'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/re.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/re.js'
+        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
+        },
+      we:
         [ "MUST create comprehensive re.* tests to ensure a reliable foundation"
         , "MUST create re.* specification@ conformance tests for reliability"
-        , "were"
-        , "will"
+        , "WILL add test(s) for values of auto-created & corrected re.* members"
+
+        , "were ..."
+        , "must ..."
+        , "want ..."
+        , "like ..."
+        , "muse ..."
+        , "have ..."
+        , "wont ..."
         ]
     },
 
