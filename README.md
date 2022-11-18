@@ -187,10 +187,10 @@ captions    = {say:'📝 code-as-prose terminology ions!👨🏾‍💻'}
               ['^ ڐ ^']
 ```
 
-visit [**😎 anemojii**](https://glitch.com/~anemojii)
+visit [😎 anemojii](https://ionified.github.io/anemojii-ions.iskitz.net/)
 to experience
-[another](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
-[exploration](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.re.js)
+[another](https://glitch.com/edit/#!/anemojii?path=index.re.js%3A1%3A0)
+[exploration](https://glitch.com/edit/#!/anemojii?path=index.js%3A1%3A0)
 of literate programming.
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
@@ -287,7 +287,7 @@ anonymous & named objects:
 
 ### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
 
-[**🦁 lions**: literal ions](https://github.com/ionify/about/blob/public/LINGO.md#⚛️-ion),
+[**🦁 lions**: literal ions](https://github.com/ionify/about/blob/public/LINGO.md#%EF%B8%8E-ion),
 i.e. `~/ / + [ ] & { }`, eliminate name collisions by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 
