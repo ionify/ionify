@@ -1,4 +1,4 @@
-# [ionify](http://about.ionify.net/)
+# [ionify](http://meet.ionify.net/)
 
 **🧬 ion implemented for you**, is a flexible & unobtrusive, natural-language api
 for expressing actions & information via
@@ -32,19 +32,19 @@ they enable:
   expressions
 
 + defining, acquiring, [observing](#decoupled-observation) &
-  interacting with highly [decoupled](#decoupled-observation)
-  software-defined actions & information
+  interacting, with highly-[decoupled](#decoupled-observation)
+  software-defined [actions & information](https://lingo.ionify.net/)
 
-+ and more.
++ and, more...
 
 ## how
 
 **⚛️ ion** + **🧬 ionify** are enabled by, and can be implemented in, languages that support
-[**operator ⚙️ overloading**](https://en.wikipedia.org/wiki/Operator_overloading).
+[operator ⚙️ overloading](https://en.wikipedia.org/wiki/Operator_overloading).
 three we've explored & confirmed capable are,
-[**{✨:javascript}**](https://github.com/ionify/ionify/),
-[**🐍_python**](https://github.com/ionify/about/blob/public/api/python/ion.proof.py), &
-[**java.☕️**](https://github.com/ionify/about/blob/public/api/java/src/net/ionify/java/Hello.java).
+[**{✨:javascript}**](https://github.com/ionify/about/blob/public/ions/ion.md#javascript),
+[**🐍_python**](https://github.com/ionify/about/blob/public/ions/ion.md#python), &
+[**java.☕️**](https://github.com/ionify/about/blob/public/ions/ion.md#java).
 
 for a detailed explanation of **ion**: invoked object notation, visit
 its [**📚 documentation**](https://github.com/ionify/about/blob/public/ions/ion.md#form).
