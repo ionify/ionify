@@ -175,7 +175,7 @@ relationships, in whatever order is best for human comprehension" -
      as     = {say:'as actionable words within'}
   prose     = {say:'phrases & sentences?!🤓'}
 
-    via     = {say:'❦ natural language & 🙇🏾‍♂️ יהוה 🤲🏾'}
+    via     = {say:'natural ❦ language & 🙇🏾‍♂️ יהוה 🤲🏾'}
     ionify  = {say:'🧬 ions implemented for your'},
     ion     = {say:'⚛️ invoked object notation'},
   orion     = {say:'✨ object-reference ion:'},
