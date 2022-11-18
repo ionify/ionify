@@ -181,7 +181,7 @@ relationships, in whatever order is best for human comprehension" -
   orion     = {say:'✨ object-reference ion:'},
 captions    = {say:'📝 code-as-prose terminology ions!👨🏾‍💻'}
 
- 'with' , ion + ionify & orion, you -can-
+ 'with' , ion & ionify + orion, you -can-
   write & code -as- prose -via- captions-
 
               ['^ ڐ ^']
