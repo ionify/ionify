@@ -1,25 +1,25 @@
 # [ionify](http://about.ionify.net/)
 
-**ion implemented for you**, is a flexible, unobtrusive & novel api for expressing
-actions & information via
+**ion implemented for you**, is a flexible & unobtrusive, natural-language api
+for expressing actions & information via
 [**ion:** invoked object notation](http://ion.ionify.net/).
 it was
 [created](https://origin.ionify.net/)
 by
-[**michael lee**](https://github.com/iskitz)
+[**michael 👨🏾‍💻 lee**](https://github.com/iskitz)
 and is maintained by
-[**team ionify**](https://team.ionify.net/):
+[**team✨ionify**](https://team.ionify.net/):
 
 ```javascript
-~ {   log  : '👋🏾👨🏾‍💻'   } <= /do transcription/
-+ { "json" : "data"  } <= /json information/
-& ["natural language"] <= /text information/
+~ {   log  : '👋🏾👨🏾‍💻'   } <- /do transcription/
++ { "json" : "data"  } <- /json information/
+& ["natural language"] <- /text information/
 ```
 
 ## why
 
 **ion** & **ionify** enable expressing actions & information that humans & software both
-[naturally understand](https://github.com/ionify/about/blob/public/VISION.md#vision).
+[naturally ❦ understand](https://github.com/ionify/about/blob/public/VISION.md#vision).
 they enable:
 
 + creating [domain-specific languages](#domain-specific-languages)
@@ -31,27 +31,25 @@ they enable:
   [name-collision-free](#name-collision-freedom)
   programming
 
-+ defining, fetching, [observing](#decoupled-observation) &
++ defining, acquiring, [observing](#decoupled-observation) &
   interacting with highly [decoupled](#decoupled-observation)
   software-defined actions & information
 
 + and more.
 
-
 ## how
 
 **ion** & **ionify** are enabled by, and can be implemented in, languages that support
-[operator overloading](https://en.wikipedia.org/wiki/Operator_overloading).
-[javascript](https://github.com/ionify/ionify/),
-[java](https://github.com/ionify/about/blob/public/api/java/src/net/ionify/java/Hello.java)
-& [python](https://github.com/ionify/about/blob/public/api/python/ion.proof.py)
-are three we've explored & confirmed capable.
+[operator-⚙️-overloading](https://en.wikipedia.org/wiki/Operator_overloading).
+three we've explored & confirmed capable are
+[**{✨:javascript}**](https://github.com/ionify/ionify/),
+[**🐍_python**](https://github.com/ionify/about/blob/public/api/python/ion.proof.py), &
+[**java.☕️**](https://github.com/ionify/about/blob/public/api/java/src/net/ionify/java/Hello.java).
 
 for a detailed explanation of **ion**: invoked object notation, visit
-its [documentation](https://github.com/ionify/about/blob/public/ions/ion.md#form).
+its [**📚 documentation**](https://github.com/ionify/about/blob/public/ions/ion.md#form).
 
-for applications of **ion** & **ionify**, visit the following subsections:
-
+for applications of **ion** & **ionify** 🤲🏾 🧬 🤲🏾 enjoy the following subsections:
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
@@ -66,12 +64,14 @@ phrases to actions:
 ~
 { re:
     { id: 'ask.say@ions.iskitz.net'
-    , by: 'mike.👨🏾‍💻.lee'
+    , as: {sensation:true}
+    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee'
     , on: -7.20150728
-    , to: -7.20221031
-    , at: +2.00
+    , to: -7.20221117
+    , at: +3.01
     , in: 'silicon-valley.california.usa.earth'
     , is: 'an ask & say domain-specific-language interaction'
+    , do: {webi:true, interaction:true}
     },
 
   on:
@@ -79,7 +79,8 @@ phrases to actions:
 
   ask :function
   ask (action)
-      { ask.with.its.answer = prompt (ask.with.its.prep (action.ask)) || ''
+      { ask.with.its.answer =
+        prompt(ask.with.its.prep (action.ask)) || ''
       },
 
   say :function
@@ -89,12 +90,14 @@ phrases to actions:
 
   prep:function
   prep(quote)
-      { return quote.replace (/\[answer\]/g, prep.with.its.answer)
+      { return  quote.replace       ( // aligned
+               (/\[answer\]/g)      , // to fit
+                prep.with.its.answer) // neatly
       }
 }
 
 
-~ /ask.say interactions can be in separate files/
+~ /ask.say interactions can be independent ions/
 
 ~ { say: '👋🏾 hi!'                              }
 ~ { ask: "what's your name?"                    }
@@ -116,11 +119,13 @@ relationships, in whatever order is best for human comprehension" -
 ~
 { re:
     { id: 'frendlee@ionified.net'
-    , by: 'mike.👨🏾‍💻.lee'
+    , do: 'ask.say@ions.iskitz.net:3'
+    , as: 'aesop action'
+    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee'
     , on: -8.20171208
-    , to: -7.20221031
+    , to: -8.20221117
     , in: 'silicon-valley.california.usa.earth'
-    , is: 'a literate & natural language programming exploration'
+    , is: 'a literate & natural-language exploration'
     },
 
   do:
@@ -146,37 +151,44 @@ relationships, in whatever order is best for human comprehension" -
 ~
 { re:
     { id: 'code-as-prose.demo@ionified.net'
-    , by: 'mike.👨🏾‍💻.lee'
+    , as: {sion:true, sensation:true}
+    , do: {transcription:true}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike.👨🏾‍💻.lee']
     , on: -7.20190323
-    , to: -7.20221031
-    , at: +0.08
+    , to: -8.20221117
+    , at: +0.14
     , in: 'silicon-valley.california.us.earth'
-    , is: 'code as prose with orion & stories'
+    , is: 'code-as-prose with ionify & orion'
     },
 
   on: 'say',
   say (ion)
-    { /log each thing that is said  //
-      {log: ion.say}                 /
-      /or do something more profound!/
+    {
+    + {log: ion.say}
     }
 }
 
-  you = {say:'do you see all the things' }
-  can = {say:'we can do'   }
-write = {say:'if we write' }
- code = {say:'our code'    }
-   as = {say:'as actionable words within'}
-prose = {say:'phrases & sentences?! 🤓' }
+    you     = {say:'do you see all the things'}
+    can     = {say:'we can do'   }
+  write     = {say:'if we write' }
+   code     = {say:'our code'    }
+     as     = {say:'as actionable words within'}
+  prose     = {say:'phrases & sentences?! 🤓'}
 
-'with orion' - you - can - write & code - as - prose;
+    via     = {say:'natural language & 🙇🏾‍♂️ יהוה 🤲🏾'}
+    ionify  = {say:'ions implemented for your'},
+    ion     = {say:'invoked object notation'},
+  orion     = {say:'object-reference ion:'},
+captions    = {say:'code-as-prose terminology ions! 👨🏾‍💻'}
+
+ 'with' , ion + ionify & orion, you -can-
+  write & code -as- prose -via- captions- ['^ ڐ ^']
 ```
 
 visit [anemojii](https://glitch.com/~anemojii)
 for [another](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.js)
 [exploration](https://github.com/ionified/anemojii-ions.iskitz.net/blob/public/index.re.js)
 of literate programming.
-
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
 
@@ -188,10 +200,12 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
 ~
 { re:
     { id: 'an.ionified.module@doma.in'
-    , by: 'mike.👨🏾‍💻.lee@ionify.net'
+    , as: {sion:true, action:true}
+    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202210310819
+    , to: -7.202211171724
     , is: 'modeling an ionified module'
+    , do: {stories:true}
     },
 
   do: function
@@ -203,7 +217,6 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
 }
 ```
 
-
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
 *"...a programming paradigm in which the flow of the program is determined by events
@@ -212,9 +225,11 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 ```javascript
 ~
 { re:
-    { by: 'mike.👨🏾‍💻.lee@ionify.net'
+    { do: {transcription:true, stories:true}
+    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202210310819
+    , to: -7.202211171200
+    , as: {sensation:true}
     },
 
   on:'event',
@@ -226,7 +241,7 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 }
 
 ~ /this event ion could be in a separate file./
-~ {event: 'it happened!'} <= /invokes an event/
+~ {event: 'it happened!'} <- /invokes an event/
 ```
 
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
@@ -241,9 +256,11 @@ anonymous & named objects:
 ```javascript
 ~
 { re:
-    { by: 'mike.👨🏾‍💻.lee@ionify.net'
+    { do: {transcription:true, stories:true}
+    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202210310820
+    , to: -7.202211171159
+    , as: {sensation:true}
     },
 
   on:'hi',
@@ -261,8 +278,8 @@ anonymous & named objects:
 
 ~ /each ion can be in its own local or remote file/
 
-~ { hi : "i'm an ion!"}  <=  /invoke an object/
-~ {"hi": "i'm a json!"}  <=  /invoke some json/
+~ { hi : "i'm an ion!"}  <-  /invoke an object/
+~ {"hi": "i'm a json!"}  <-  /invoke some json/
 ```
 
 ### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
@@ -279,9 +296,11 @@ without overriding all, or parts, of each other:
 ```javascript
 ~
 { re:
-    { by: 'mike.👨🏾‍💻.lee@ionify.net'
+    { do: {transcription:true, stories:true}
+    , by: 'mike.👨🏾‍💻.lee@ionify.net'
     , on: -4.200709
-    , to: -7.202210310823
+    , to: -7.202211171223
+    , as: {sensation:true}
     },
 
   on:'my.ion@doma.in',
