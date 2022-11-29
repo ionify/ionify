@@ -1,23 +1,24 @@
 ;
 ~
 { re:
-    { id:  'of.test@ionify'
+    { id:  're.of.do.as.test@ionify'
     , of: ['core','public','api','tests']
-    , do: {transcription:  true, 're.of':true, 'next.id':true}
-    , as: {examination  :-0.001, 're.do':true}
+    , do: {transcription:  true, 're.do.as.of@':true, 'next.id@':true}
+    , as: {examination  :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike.🇬🇾👨🏾‍💻🇺🇸.lee','team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221117
-    , at:  -0.005
+    , to:  -7.20221122
+    , at:  -0.007
     , is: "ionify's re.of@ api tests"
     , go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/of.test.js'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/of.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/re.of.do.as.js'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },

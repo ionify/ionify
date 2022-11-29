@@ -6,8 +6,8 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , as: {documentation:-0.001, sion:-0.001}
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.006
+    , to:  -8.20221121
+    , at:  -0.007
     , im:
         { re:
             { id: 're@ionify'
@@ -72,20 +72,30 @@
           `
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/re.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/re.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
         [ "plan ..."
         , "want ..."
-        , "like re.do@re@'s pairing & grouping of related re.mem.bers' a.i 🙇🏾‍♂️"
+        , "like re.we+is@ having nested aesop for joined messages without +'s"
+        , "like re.we+is@ starting messages with known were, will, ... prefixes"
+        , "like re.we+is@ joining messages without content  : with \n, e.g:[,,]"
+        , "like re.we+is@ joining messages ending with    .&: with \n"
+        , "like re.we+is@ joining messages ending without .&: with a space"
+        ,
+        [
+        , "like re.do@re@.s grouping related re.mem.bers' a.i 🙇🏾‍♂️ as one ion:"
+        ,     "re.do.as.of: re.do + re.as + re.of all implemented in one ion"
+        ,     "re.hi.my   : re.hi + re.my        both implemented in one ion"
+        ]
         , "muse ..."
         , "have ..."
         ]

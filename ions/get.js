@@ -6,8 +6,8 @@
     , do: { transcription :-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221116
-    , at:  -0.051
+    , to:  -8.20221122
+    , at:  -0.052
     , as:
         { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
         , convention  :-0.001, specification:-0.001, initialization:-0.001
@@ -20,22 +20,22 @@
         , "~get.ing ionify's ions to ionify its habitation@"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/get.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/get.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "WERE assaying re.as, re.do & re.of relationships & before ~get.ing."
-        , "WERE implementing a convention to introspect & ~get re.as relation@s"
-        , "HAVE processed ~get.d ions' re.as; now need their space definitions@"
+        [ "HAVE processed ~get.d ions' re.as; now need their space definitions@"
         , "want to ~get & apply configuration(s) asap; coordinate with on.ions@"
 
+        , "must place ion into .gets before get@habitation to catch any error(s)"
+        , "must clear ion from .gets after  get@habitation to sense any error(s)"
         , "will set all ~get actions' ionid@ domains to the current ion's"
         , "like having a .resolve of action@test.ionify to test/action.js"
 
@@ -54,32 +54,51 @@
     , ['get', 'in'  ]
     , ['get', 'and' ]
     , ['get']
-  //,  '*'
     ],
-       /*
- '*':'got'
-    , //*/
+
+  with:
+    { its:
+        { get:
+            { gets  :  'gets@get@ionify'
+            , gots  :  'gots@get@ionify'
+            , order : 'ORDER@get@ionify'
+            }
+        },
+      our:
+        { acquisition:'get@get@ionify'
+        }
+    },
 
   valueOf :function
   ionify  ()
     { var ions
-        = [    'on.ion@ionify',   /*'on.do@ionify'
-          ,*/      're@ionify',   /*'re.hi@ionify'
-          ,*/ 'next.id@ionify',        'id@ionify'
-          ,      'with@ionify',        'of@ionify'
-          ,                       'on.aeon@ionify', 'find.link.share@ionify'
-          ,        'no@ionify',  'on.error@ionify',       'on.errors@ionify'
-          ,    'logger@ionify'                    ,              'do@ionify'
-          ,   'on.ions@ionify', 'on.action@ionify',       'on.storie@ionify'
-          ,       'use@ionify',                         'on.ionified@ionify'
+        = [    'on.ion@ionify',    /*'on.do@ionify'
+          ,*/      're@ionify'//,    're.hi@ionify'
+          ,/* 'next.id@ionify',*/    're.id@ionify'
+          ,      'with@ionify','re.do.as.of@ionify'
+          ,                        'on.aeon@ionify', 'find.link.share@ionify'
+          ,        'no@ionify',   'on.error@ionify',       'on.errors@ionify'
+          ,    'logger@ionify'                     ,              'do@ionify'
+          ,   'on.ions@ionify',  'on.action@ionify',       'on.storie@ionify'
+          ,       'use@ionify',                          'on.ionified@ionify'
           //*/
           ]
 
-      var get       = this.get
-        ; get.with  = {its:this}
-        ; get.via   = this.via
+      var GET         = this
+        , with_       = GET.with
+        , get$        = with_.its.get
 
-      delete this.valueOf <- this <= /invoke habitation observation of get@/
+        , get         = GET.get
+        ; get.with    ={its:GET}
+        ; get.via     = GET.via
+
+        ; GET.gots[GET.re.id]   = true
+        ; with_.our.acquisition = get         ;+ /until we've with@-declaration/
+        ; get$.gets   = GET.gets              ;+ /name-resolution, manually set/
+        ; get$.gots   = GET.gots              ;+ /with@ declarations via 💃🏾:hip/
+        ; get$.order  = GET.ORDER             ;+ /with@ declarations via 💃🏾:hip/
+
+      delete GET.valueOf <=  GET <= /invoke habitation@ get@ observation/
       get ({get:ions, in:'sequence'||'order'})
     },
 
@@ -107,13 +126,13 @@
 ,'get and'          :'get'
 , get :function
   get (action)
-    { var ionified  = get.with.our && get.with.our.ionified
-        , its       = get.with.its
-        , host      = its.host
-        , resolve   = its.resolve
+    { var with_     = get.with
+        , our       = with_.our
+        , sensible  = our && our.ionified
+        , sense     = our && our.on
 
       action      ||  (action = this)
-      action.and  && ~{do:action.and}
+      action.and  && +{do:action.and}
       Array.isArray   (action.get) || (action.get = [action.get])
 
       var todo  = action.then
@@ -121,35 +140,44 @@
 
       if( todo )
         { var on    =   {on:ions, do:todo, after:action.after}
-          ionified  &&  (   ionified [typeof todo]
+          sensible  &&  (  sensible [typeof todo]
                         || (+{find:todo, in:action}, todo = on.do = action [todo])
                         )
-        ~ on
+          sense (on)
           todo = on.do
         }
 
-      for ( var last = ions.length, id, ion, uri
+      for ( var how  = action.in  , domain  = action.at || ''
+          ,     GET  = with_.its  , resolve = GET.resolve
+          ,     gets = GET.gets   , id
+          ,     gots = GET.gots   , ion
+          ,     last = ions.length, uri
           ,     next = -1
           ;  ++ next < last;
           )
-          { id =ions[next]
-            its.ions[id] = ion = {id:id, uri:uri}
-            its.gets[id] = its.gots[id] = true
-            get.via ({at:id, in:its.ORDER[action.in], then:todo})
+          { id = ions [next]
+            if (id/*is*/===/*missing*/void 0) continue
+           ~id.indexOf ('@')  ||    (id +=  domain)
+            GET.ions [id]  =  ion = {id:id, uri:uri}
+            gets [id] = gots [id] =  true
+            get.via ({at:id, in: GET.ORDER [how], then:todo})
+            gets [id] && delete gets [id]
           }
     },
+
+  gets:{},
+  gots:{},
+  ions:{},
 
   ORDER:
     { ''        : 'parallel'
     , null      : 'parallel'
     , order     : 'order'
     , sequence  : 'order'
+    , true      : 'order'
+    , false     : 'parallel'
     , undefined : 'parallel'
     },
-
-  gets:{},
-  gots:{},
-  ions:{},
 
   errors:
     { acquisition : "😞 no habitation@ has yet enabled ~get acquisition@"
@@ -158,72 +186,18 @@
 
   via :function
   via (get)
-    { var fail
-        =   { get : errors.acquisition
-            , skip:[errors.skipping, get.at, get]
-            }
-        , state = ~{warn: fail.get }
-        ; state = ~{warn: fail.skip}
+    { var errors  = via.with.its.errors
+        , fail    = { get : errors.acquisition
+                    , skip:[errors.skipping, get.at, get]
+                    }
+        , state   = +{warn: fail.get }
+        ; state   = +{warn: fail.skip}
 
     ~/if transcription's return value is habitation@'s try console/
       if( state == -4.200709 && typeof console != 'undefined')
         { console.warn (fail.get)
         ; console.warn (fail.skip)
         }
-    },
-
-  got :function
-  got (ion)
-    { var list
-        , spaces= got.with.our.settings.relations
-        , its   = got.with.its
-        , gets  = its.gets
-        , gots  = its.gots
-        , id    = ion.re.id
-        , as    = ion.re.as
-        , needs = []
-        , name  =(/(.*)@$/)
-        , d
-        , domain=(/.*(@.*)/)
-        , found = id.match (domain)
-        ; found = found  ?  found[1] : ''
-
-      gets[id] && delete gets[id]
-
-    //~/observe each ion's re.as & re.of relations then prioritize & ~get them/;
-      for
-        ( var a in as )
-        { if(!as.hasOwnProperty(a)) continue
-          list = spaces[a]
-
-          if(!list)
-            {   d   = a.match (domain)
-            ;   a  += d ?  d[1] : found
-            ; list  = spaces[a]
-            ; if (!list) continue
-            }
-
-          for
-            ( var s=-1, S=list.length, space
-            ;     s <-- S;
-            )
-            { space = list [S]
-
-             ~space.search (name )
-                && (list   = spaces [a.match (name)[1]] || '')
-                && (needs  = needs.concat (list))
-
-             ~space.search (found)
-                || (space += found)
-                && ! gots[space]
-                && !needs[space]
-                &&  needs.push (space)
-                && (needs[space] = needs.length-1)
-            }
-        }
-
-      its.get ({get:needs})
-    //gots[id] && delete gots[id]
     }
 }
 ;

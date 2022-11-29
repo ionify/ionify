@@ -4,13 +4,17 @@
     { id:  'next.id.test@ionify'
     , of: ['public','tools','tests']
     , as: {examination  :-0.001}
-    , do: {transcription:-0.001, 'next.id':true}
+    , do: {transcription:-0.001, 'next.id@':true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -7.20160910
-    , to:  -8.20221110
-    , at:  -0.001
+    , to:  -8.20221129
+    , at:  -0.002
     , is: "testing ionify's ~next.id tool"
-    , we: "note that a previous merge corrupted next.id, but we didn't notice 😩"
+    , we:
+        [ "must add a - to + number id range transition test"
+        , "must add id number range overflow reset test"
+        , "must add id.# & id-# confirmation tests "
+        ]
     },
 
   do:

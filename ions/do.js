@@ -6,8 +6,8 @@
     , as: {sensation:-0.001, composition:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.030
+    , to:  -8.20221122
+    , at:  -0.031
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -94,7 +94,10 @@
 
   all :function
   all (ion)
-    { var go   = all.with.its.go
+    { var with_= all.with
+        , debug= with_.the.tools.debug
+        , sense= with_.our.on
+        , go   = with_.its.go
         , got  = {}
         , ions = Array.isArray (ion.on) ? ion.on : [ion.on]
         , todo = ion.do
@@ -109,7 +112,7 @@
           them[id] = this[id]
           got [id] = true
 
-        ~ {debug: `\nget: ${ions}\ngot: ${Object.keys (got)}`}
+        debug ({debug: `\nget: ${ions}\ngot: ${Object.keys (got)}`})
 
           for ( var next = -1
               ,     last = ions.length
@@ -118,7 +121,7 @@
               ) if (!got [ions [next]]) return
 
           done = true
-           ~  {on:ions, no:after_all}
+          sense ({on:ions, no:after_all})
           go ({do:todo, with:them})
         }
 

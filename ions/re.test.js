@@ -2,22 +2,22 @@
 ~
 {'re.test@ionify':
     { of: ['core','sion','api','tests']
-    , do: {stories:true, transcription: true }
-    , as: {     re:true, examination  :-0.001}
+    , do: {'re@':true, 'on.storie@':true, transcription:true}
+    , as: {examination  :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221117
-    , at:  -0.005
+    , to:  -7.20221122
+    , at:  -0.006
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/re.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/re.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },

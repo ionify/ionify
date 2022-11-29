@@ -7,8 +7,8 @@
     , do: { resolution  :-0.001, transcription:-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.083
+    , to:  -8.20221121
+    , at:  -0.084
     , im: { re:'on.ion.re@ionify' }
     , is:
         [ "ionify: invoked object notation implemented for you"
@@ -73,6 +73,7 @@
         , known   : {}
         , ionified: {boolean:false, null:false, string:false, undefined:false}
         //sensible☝🏾
+        , on      : 'on@on.ion@'
         }
     },
 
@@ -86,6 +87,7 @@
   object :function
   object ()
     { var  ionify               = this
+        ;  ionify.with.our.on   = ionify.on
         ;  ionify.on.with       = connections.with
         =  ionify.via.with      = ionify.conventions.with
         =  ionify.sensed.with   = ionify.convention.with

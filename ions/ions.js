@@ -6,8 +6,8 @@
     , as: {configuration:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee@ionify.net', 'team✨ionify']
     , on: -4.200709
-    , to: -8.20221117
-    , at: -0.012
+    , to: -8.20221123
+    , at: -0.013
     , in:
         [    'queens-county.new-york.usa.earth'
         , 'silicon-valley.california.usa.earth'
@@ -18,37 +18,63 @@
         , "defining paths for relation@ resolution"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
       //, test: 'https://github.com/ionify/ionify/blob/public/ions/ions.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/ions.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "like ions@ionify in main directory with hosts like web@ionify"
+        [ "WERE defining relations for re.as & re.do application(s)"
+        , "NEED to integrate paths in resolution flow"
+        , "WANT ions@ionify in main directory with habitation@s like web@ionify"
+        , "like [¿re.of?] relations being augmented as ions are invoked"
+        , "like logger <= logging; associates instrumentation & configuration"
         ]
     },
 
   relations:
-    {    acquisition: [ 'get']
-    ,     convention: [ 're','id','of','as','with']
-    ,    observation: [ 'on.action','on.aeon','on.error','on.ion','on.storie']
-    , initialization: [ 'ions']
-    ,    malfunction: [ 'on.error','on.errors']
-    ,      sensation: [ 'no','on.ion']
-    ,  transcription: [ 'logger']
+    {           launch: [  'initialization' ]
+    ,             core: [      'foundation' ]
+    ,             more: [       'extension' ]
+    ,            tools: [ 'instrumentation' ]
+    ,             node: [ 'node@', 'launch' ]
+    ,              web: [  'web@', 'launch' ]
 
-    , launch        : [ 'web','get','ions','on.ion']
-    , core          : [ 'convention@','observation@','sensation@','do','get'
-                      , 'no', 'on.errors'
-                      ],
-      tools         : [ 'find.link.share','i','logger','next.id','on.ionified'
-                      , 'transcription@','use'
-                      ]
+    ,     augmentation: [/* specification(s) */]
+    ,      composition: [/* specification(s) */]
+    ,       connection: [/* specification(s) */]
+    ,       convention: [/* specification(s) */]
+    ,      examination: [/* specification(s) */]
+    ,       habitation: [/* specification(s) */]
+    ,    specification: []
+
+    ,      acquisition: [      'get@' ]
+    ,    configuration: [  'on.ions@' ]
+    ,    documentation: [ 'narrator@' ]
+    ,        extension: [ 'narrator@', 'on.emoji@', 'use@' ] /*<=@ionified.net*/
+    ,       foundation: [   'acquisition', 'convention', 'malfunction'
+                        ,   'observation',  'sensation',        'sion'
+                        , 'transcription'
+                        , 'do@'
+                        ]
+    ,   initialization: [ 'get@', 'ions@', 'sion', 'on.ion@']
+    ,  instrumentation: [ 'documentation', 'examination' , 'find.link.share@'
+                        , 'narrator@','next.id@', 'on.ionified@', 'transcription'
+                        , 'use@'
+                        ]
+    ,      malfunction: [ 'on.error@' , 'on.errors@']
+    ,      observation: [ 'on.action@', 'on.aeon@', 'on.error@', 'on.ion@'
+                        , 'on.storie@'
+                        ]
+    ,       resolution: [ 'find.link.share@', 're.do.as.of@', 'with@' ]
+    ,        sensation: [ 'no@', 'on.ion@'  ]
+    ,             sion: [ 're@', 're.hi.my@', 're.id@', 're.do.as.of@', 'with@']
+    ,    transcription: [ 'logger@' ]
     },
 
   paths:

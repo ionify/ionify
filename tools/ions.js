@@ -2,36 +2,42 @@
 ~
 { re:
     { id:  'ions@tests.ionify'
-    , of: ['tests']
+    , do:  'tests'
     , as: {configuration:-0.001}
-    , is: "configuring ionify's examinations"
+    , is:  "ionify's test suite configuration"
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee@ionify.net', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.013
+    , to:  -8.20221121
+    , at:  -0.014
     , in:
         [    'queens-county.new-york.usa.earth'
         , 'silicon-valley.california.usa.earth'
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
       //, test: 'https://github.com/ionify/ionify/blob/public/tools/ions.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/tools/ions.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [+/need re.as sensing to recognize & keep configurations by domain/
+        [ "were ..."
+        , "will ..."
+        , "must ..."
+        , "need ..."
+        , "want ..."
+        , "like ..."
+        , "note ..."
+        , "muse ..."
+        , "know ..."
+        , "dont ..."
+        , "wont ..."
         ]
     },
-
-  do:
-    [ {get: ['tests']}
-    ],
 
   logging:
     { debug :  !true

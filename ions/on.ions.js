@@ -3,12 +3,12 @@
 { re:
     { id:  'on.ions@ionify'
     , of: ['core','public','api']
-    , as: {sensation      :-0.001, convention :-0.001}
-    , do: {initialization :-0.001, acquisition:-0.001, ions:true}
+    , as: {sensation:-0.001, convention:-0.001}
+    , do: {ions:true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.007
+    , to:  -8.20221125
+    , at:  -0.008
     , is:
         [ "sensing configuration@s, applying and-or sharing their settings"
         ],
@@ -48,9 +48,6 @@
         ]
     },
 
-  get
-    : 'ions'
-    ,
   on:
   '*',
   '*':function

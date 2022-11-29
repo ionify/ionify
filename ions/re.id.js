@@ -1,14 +1,14 @@
 ;
 ~
 { re:
-    { id:  'id@ionify'
+    { id:  're.id@ionify'
     , of: ['core','public','sion','api']
     , as: {sion:-0.001, sensation:-0.001, convention:-0.001}
     , do: {'next.id@ionify':true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.048
+    , to:  -8.20221125
+    , at:  -0.050
     , hi:  true
     , is:
         [ "ensuring that all ionified objects have an re.id."
@@ -16,20 +16,20 @@
         , "setting missing re.id via ~next.id when possible."
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/id.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/id.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
         [ "have id.nextId's range as opposite next.id's to delay their overlap."
+
         , "MUST right ion[id] = ion.re logic enabling ~on:id@...,id@...:action."
-        , "WILL rename re.id@ <= id@ to indicate collaboration with re@."
         , "want auto-populating re.on.to.at.as.do from compound re.id 🙇🏾‍♂️ה🤲🏾!"
 
         , "PLAN to have top-level-ids reference entire ion not just its re & "
@@ -64,11 +64,12 @@
         || ~{next:named, id:ion}
 
       ion.re.id
-        || (ion.re.id = named/*----*/+ '.' +/*----------------------------------*/
-         /*|*/          ( id.nextId  ? --id.nextId                              //
-         /*|*/                       :  (id.nextId = Number.MAX_SAFE_INTEGER    //
-         /*|*/                                    || 9007199254740991           //
-           )/*--------*/)/*-----------*/)/*-------------------------------------*/
+        || (ion.re.id =  named /*-*/+  '.' +/*--------------------------------*/
+         /*|*/        (( id.nextId  ||  id.nextId === 0)                      //
+         /*|*/                      ? --id.nextId                             //
+         /*|*/                      :  (id.nextId =   Number.MAX_SAFE_INTEGER //
+         /*|*/                                    ||  9007199254740991        //
+           )/*------*/)/*----------*/)/*--------------------------------------*/
 
       ion [ID = ion.re.id] || (ion [ID] = ion.re)
       return sense.d0main (ion)
@@ -98,6 +99,7 @@
           id.domain.valueOf  =
           id.domain.toString = sense.string
       Object.setPrototypeOf (id, String.prototype)
+      Object.freeze         (id)
       return id
     },
 

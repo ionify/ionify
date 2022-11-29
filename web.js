@@ -5,28 +5,26 @@
     , of: ['web','launch']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.054
-    , as:
-        { habitation   :-0.001, connection:-0.001, initialization:true
-        , transcription:-0.001
-        },
-      is:
+    , to:  -8.20221125
+    , at:  -0.055
+    , do: {initialization:true, acquisition:true, transcription:true}
+    , as:     {habitation:true,  connection:true}
+    , is:
         [ "ionify: invoked object notation implemented for your web"
-        , "an initialization@ of ionify web habitats"
-        , "a      habitation@ with web habitat connections & interactions"
+        , "an initialization@ of ionify web habitation@s"
+        , "a      habitation@ with web-habitat connection@s & interactions"
         , "a      connection@ of ~get for web habitat acquisition@"
         , "get.ing ionify's ~get action@ specification@"
         , "get.ing & applying ionify's configuration@"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/web/web.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/web.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
@@ -37,14 +35,17 @@
         , "WERE modeling  initialization@ideas.js & ROLES-&-FLOWS@launch.js"
         , "WILL implement initialization@ideas.js & ROLES-&-FLOWS@launch.js"
         , "WANT to update .locate() per launch.js' habitation@ ajile-legacy discovery"
+        , "WANT .get() batch & setting onload that invokes .then after all load"
 
         , "will set all ~get.s ionid@ domains to the current ion's @domain."
         , "want to adopt ajile.test.inlineLoader to load inline code!"
-        , "want ~get.then to delete script.onload after ~then for memory perf?"
+        , "want tiny: ~get.then delete script.onload post~then for memory perf?"
 
         , "must ... "
         , "want ... "
         , "like ... "
+
+        , "like fast: document.createDocumentFragment() to batch add ions"
         ]
     },
 
@@ -118,8 +119,8 @@
 
       if(!ion.re || !ion.re.as) return how; else web.queue (ion)
 
-      if( ion.re.as.configuration     && ion.spaces )
-        { web.with.our.configuration.spaces = ion.spaces
+      if( ion.re.as.configuration             && ion.relations )
+        { web.with.our.configuration.relations = ion.relations
         }
 
       if( ion.re.as.acquisition &&  ion.get )
@@ -192,14 +193,15 @@
 
   script :function
   script (action)
-    { var  web = script.with.its //|| (script == this.script ? this : null)
-        , code = String (action.code || '')
-        ,  url = String (action.at   || '')
-        , get$ = web.get$
+    { var     web = script.with.its //|| (script == this.script ? this : null)
+        ,    code = String (action.code || '')
+        ,     url = String (action.at   || '')
+        ,    get$ = web.get$
+        , warning = web.errors.noScript
         ;
 
       if (!url && !code)
-        return ~{warn: [web.errors.noScript, JSON.stringify (action)]}
+        return {warn:warning} + {debug:[true, warning, action]}
 
       var SCRIPT        =  document.createElement ('script')
         ; SCRIPT.type   = 'text/javascript'
@@ -238,11 +240,11 @@
     ,    ID: (/(?:(.*)@(\D*)|(\D*))(\d+.*)*/)    // matches ((api)@(space.) | (api.)) version#
     ,  HTTP: (/^\w+:\/\//)                       // matches URL protocols
     ,  PATH:
-           { ionify    : '//cdn.jsdelivr.net/gh/ionify/ionify@public/ions/'
-           , ions      : 'ions'
-           , undefined : './'
-           , null      : './'
-           , ''        : './'
+           { ionify   : '//cdn.jsdelivr.net/gh/ionify/ionify@public/ions/'
+           , ions     : 'ions'
+           , undefined: './'
+           , null     : './'
+           , ''       : './'
            }
     ,  NAME: (/(.*)\.$/)    // matches (api). | (host).
     ,  TYPE: '.js'
@@ -250,13 +252,17 @@
     ,   URL:
           function getURL (match, name, space, file, version, offset, string)
             {   var get$  = getURL.with.its
-            ,       ext   = get$.EXT.exec (match)
-            ;       name  = name  && ( name.match (get$.NAME) || [, name])[1]
-            ;       space = space && (space.match (get$.NAME) || [,space])[1]
-            ;       file  = file  && ( file.match (get$.NAME) || [, file])[1]
-
-            ;   return get$.PATH [space] + (name || file || '') + (version || '')
-                                         + /*(ext ? ext [1] :*/(get$.TYPE)
+                  , ext   = get$.EXT.exec (match)
+                  , path  = get$.PATH
+                  , NAME  = get$.NAME
+                  ; name  = name  &&  ( name.match (NAME) || [, name])[1]
+                  ; space = space &&  (space.match (NAME) || [,space])[1]
+                  ; file  = file  &&  ( file.match (NAME) || [, file])[1]
+                  ;(path  = path      [space])
+                 ||(path  = get$.PATH [path ])
+                  ; return  path  +   (name     ||  file  ||'')
+                                  +   (version            ||'')
+                                  + /*(ext      ?   ext[1] :*/(get$.TYPE)
             }
     }
 }

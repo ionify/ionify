@@ -4,13 +4,13 @@
     { of: ['core', 'public', 'sion', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.1  ||  -0.006 || "re@'s actual version"
+    , to:  -8.20221122
+    , at:  -0.1  ||  -0.007 || "re@'s actual version"
     , ax:  -0.09 || [-0.09] || "what will re@ do? thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , do:
-        [ 're.hi.my', 're.id',    're.im.am', 're.of.as.do', 're.by.in'
-        , 're.on.to', 're.at.ax', 're.re.it.is.we', 're.go', 're.if'
+        [/*'re.hi.my@', 're.id@',    're.im.am@', 're.do.as.of@', 're.by.in@'
+        , 're.on.to@', 're.at.ax@', 're.re.it.is.we@', 're.go@', 're.if@'*/
         ],
       as:
         { sion      :-0.001, specification:-0.001
@@ -18,8 +18,10 @@
         },
       is:
         [ "ionify's convention of ensuring all ions: invoked object notations, "
-        + "have a re member with a known & consistent form; we've named these "
-        + "sions: structured ions."
+        + "have a re member with a known & consistent form; visit re.re@ for "
+        + "a complete explanation of re & its member specifications."
+
+        , "the foundation for sions: structured ions."
 
         , "setting missing re & re.id on an object with a domain-named member."
         , "setting missing re on a object."
@@ -28,20 +30,21 @@
         + "with its members."
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/re.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/re.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
         [ "WARN that RENAMING re@'s CONVENTION re() WILL DAMAGE re@ AND ionify"
-        , "HAVE full re@ specification@ & other re@ notes in re.re@ionify."
+        , "have full re@ specification@ & other re@ notes in re.re@ionify."
         , "WILL migrate re.we have's to re.is & rephrase as present-tense acts."
+        , "WILL move all non-trivial member-implementations to respective ions"
 
         , "plan to have top-level-ids reference entire sion not just its re & "
         + "this requires id@, ~find, ~share & ~link's compatibility with that."
