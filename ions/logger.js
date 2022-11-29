@@ -6,8 +6,8 @@
     , as: {sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221116
-    , at:  -0.051
+    , to:  -8.20221121
+    , at:  -0.052
     , in:
         [    'queens-county.new-york.us.earth'
         , 'silicon-valley.california.us.earth'
@@ -225,7 +225,10 @@
           + {warn: logger.messages.noConsole}
           + {warn: logger.report.with.our.logging.warn}
           }
-      else logger.ionify ()
+      else
+        { logger.console.via = console
+          logger.ionify ()
+        }
 
     ~ action
     },
@@ -238,9 +241,10 @@
     },
 
   console :function
-  cons0le (action)
-    { var    logger=cons0le.with.its
-    ;        logger.record (action) && console [logger.level] (logger.message)
+  console (action)
+    { var    logger = console.with.its
+    ,        via    = console.via
+    ;        logger.record (action) && via [logger.level] (logger.message)
     ; return logger.state
     },
 
