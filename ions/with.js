@@ -6,8 +6,8 @@
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221116
-    , at:  -0.006
+    , to:  -8.20221121
+    , at:  -0.007
     , is:
         [ "ionify's .with connection@ convention@"
         , "ionify's connection@ to habitation@s like web@, node@ & more"
@@ -17,13 +17,13 @@
         , "temporarily preserving any replaced .with at re.ex.with"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/with.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/with.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
@@ -35,6 +35,15 @@
         , "have with.the.* vs the.* connection@ augmentations since it enables "
         + "declarative sharing to all with.* connection@s 👨🏾‍💻"
 
+        , "NOTE that with@ merge could also enable & delegate with-declaration "
+        + "name-resolution as it merges to with.connection.space depth so it "
+        + "at least sense & delegate resolution to that depth!"
+
+        , "LIKE member.dot.path@method@sion@domain resolution-format 🙇🏾‍♂️ ה 🤲🏾"
+
+        , "want text-to-ion-member resolution for reference-less space sharing "
+        + "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"
+
         , "like that unsuccessfully migrated locally defined with can be "
         + "notified about via transcription stating that their continued "
         + "presence via re.ex.with isn't guaranteed."
@@ -42,9 +51,6 @@
         , "must ..."
         , "will ..."
         , "plan ..."
-
-        , "want text-to-ion-member resolution for reference-less space sharing "
-        + "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"
 
         , "want .with.its to be accessible to only the sion it's populated for?"
         , "like re.of.* & the.* being sensible sion acquisition indications"
@@ -126,7 +132,7 @@
           ion [member].with = WiTH
         }
 
-      var domain    = ion.re.id.domain
+      var domain    = ion.re.id.domain.name
         , our       = ion.with && ion.with.our
         , spaces    = links.with.the.ionify.spaces
         ; WiTH.its  = ion
