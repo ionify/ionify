@@ -6,13 +6,14 @@
     , as: {specification:-0.001, sensation:-0.001, convention:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221123
-    , at:  -0.008
+    , to:  -7.20221129
+    , at:  -0.009
     , is:
-        [ "ionify's re: .of@ .do@ .as@ api convention@ that validates & sets: "
+        [ "ionify's re: .do@ .as@ .of@ api convention@ that validates & sets: "
         , "re.of & corresponding ionosphere spaces"
-        , "re.as & ~get.s them to auto-enable via-ionosphere-interactions"
-        , "re.do & ~get.s them to activate the ion's capabilities"
+        , "re.as & ~gets them to enable   the ion's ionosphere-interactions"
+        , "re.do & ~gets them to activate the ion's capabilities."
+        , "interpreting re.do & re.as arrays as relations to ~get sequentially"
         ],
       go:
         { meet: 'https://meet.ionify.net/'
@@ -30,14 +31,24 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "WILL rename this sion re.of@ <= of@"
-        , "MUSE should ~get.ing relation@s be done here in re.of@ vs get@? YES?"
-
+        [ "WILL MOVE .resolve() to get@ since it should primarily do resolution"
+        , "WILL MOVE ok@re@ here to be re.do & re.as validation@ convention@s."
+        , "WANT fast⏱ tag & skip of relation groups already in:lined & dom@ined"
+        ,
+        [ "NOTE re.do won't re~get ions unless ions state ~get: once, every, batch, ..."
+        ,
+        ,     " once: ~get the ion only 1 time in an application session"
+        ,     "every: ~get the ion every  time it's requested"
+        ,     "batch: ~get the ion once per ~get:[] batch"
+        ,
+        , "normal applications'll likely expect batch behavior, so its default."
+        , "configurations state ~get behavior for their @domain & re.of:spaces"
+        ]
         , "must"
         , "will"
         , "plan"
         ,
-        [ "muse how to re.do like do.get: do:ions@ionify,add.savi.adopt@app?"
+        [ "muse how to re.do like do.get: ./ionify/,./proof/app/add.savi.adopt?"
         , "like relation@s of id@[path|domain] resolving paths before domains, "
         , "then re.do: ['ions@ionify', 'add.savi.adopt@app'] 🙇🏾‍♂️ יהוה 🤲🏾"
         , "like re.do: '@[path|domain] meaning ions@[path|domain]'"
