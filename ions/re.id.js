@@ -7,9 +7,8 @@
     , do: {'next.id@ionify':true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221125
-    , at:  -0.050
-    , hi:  true
+    , to:  -8.20221129
+    , at:  -0.051
     , is:
         [ "ensuring that all ionified objects have an re.id."
         , "setting an object's re.id value as a member mapped to its object re."

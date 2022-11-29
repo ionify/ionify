@@ -6,9 +6,8 @@
     , as: {sion:-0.001, sensation:0.001, composition:0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -7.20160910
-    , to:  -8.20221110
-    , at:  -0.021
-  //, hi: 'nextid'
+    , to:  -8.20221129
+    , at:  -0.022
     , is:
         [ "doing on-request sequential namespaced id generation"
         , "returning the numeric sequential id"
@@ -21,7 +20,6 @@
       we:
         [ "want to encapsulate its internal members, i.e. MAX, MIN, ids"
         , "like valueOf switching next_id creating a private internals closure"
-        , "like re.hi: hidden invocation to eliminate delete this.valueOf<-this"
         ]
     }
 
@@ -33,7 +31,7 @@
   valueOf :function
   nextid  ()
     { this ['next id'].with = {its:this}
-      delete this.valueOf  <-  this
+      delete this.valueOf  <=  this
     },
 
  'next id':function

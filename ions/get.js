@@ -7,7 +7,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221129
-    , at:  -0.053
+    , at:  -0.054
     , as:
         { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
         , convention  :-0.001, specification:-0.001, initialization:-0.001
@@ -73,7 +73,7 @@
   ionify  ()
     { var ions
         = [    'on.ion@ionify',    /*'on.do@ionify'
-          ,*/      're@ionify'//,    're.hi@ionify'
+          ,*/      're@ionify'
           ,/* 'next.id@ionify',*/    're.id@ionify'
           ,      'with@ionify','re.do.as.of@ionify'
           ,                        'on.aeon@ionify', 'find.link.share@ionify'

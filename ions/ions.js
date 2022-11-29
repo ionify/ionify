@@ -7,7 +7,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee@ionify.net', 'team✨ionify']
     , on: -4.200709
     , to: -8.20221129
-    , at: -0.014
+    , at: -0.015
     , in:
         [    'queens-county.new-york.usa.earth'
         , 'silicon-valley.california.usa.earth'
@@ -58,7 +58,7 @@
     ,            aesop: [  'on.aeon@' ]
     ,    configuration: [  'on.ions@' ]
     ,    documentation: [ 'narrator@' ]
-    ,        extension: [ 'narrator@' ,  'on.emoji@', 'use@' ]
+    ,        extension: [ 'narrator@'    ,  'on.emoji@',      're.hi@', 'use@' ]
     ,       foundation: [   'acquisition', 'convention', 'malfunction'
                         ,   'observation',  'sensation',        'sion'
                         , 'transcription'
@@ -76,7 +76,7 @@
                         ]
     ,       resolution: [ 'find.link.share@', 're.do.as.of@', 'with@' ]
     ,        sensation: [ 'no@', 'on.ion@'  ]
-    ,             sion: [ 're@', 're.hi.my@', 're.id@', 're.do.as.of@', 'with@']
+    ,             sion: [ 're@', 're.id@', 're.do.as.of@', 'with@']
     ,    transcription: [ 'logger@' ]
     ,             webi: [ 'jess@', 'jewel@']
     },

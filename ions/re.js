@@ -5,11 +5,11 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221129
-    , at:  -0.1  ||  -0.009 || "re@'s actual version"
+    , at:  -0.1  ||  -0.010 || "re@'s actual version"
     , ax:  -0.09 || [-0.09] || "what will re@ do? thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , do:
-        [/*'re.hi.my@', 're.id@',    're.im.am@', 're.do.as.of@', 're.by.in@'
+        [/*'re.my@', 're.id@',    're.im.am@', 're.do.as.of@', 're.by.in@'
         , 're.on.to@', 're.at.ax@', 're.re.it.is.we@', 're.go@', 're.if@'*/
         ],
       as:
