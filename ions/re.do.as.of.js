@@ -7,7 +7,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -7.20221129
-    , at:  -0.009
+    , at:  -0.010
     , is:
         [ "ionify's re: .do@ .as@ .of@ api convention@ that validates & sets: "
         , "re.of & corresponding ionosphere spaces"
@@ -32,7 +32,7 @@
         },
       we:
         [ "WILL MOVE .resolve() to get@ since it should primarily do resolution"
-        , "WILL MOVE ok@re@ here to be re.do & re.as validation@ convention@s."
+        , "WILL MOVE so@re@ here to be re.do & re.as validation@ convention@s."
         , "WANT fast⏱ tag & skip of relation groups already in:lined & dom@ined"
         ,
         [ "NOTE re.do won't re~get ions unless ions state ~get: once, every, batch, ..."
@@ -140,6 +140,7 @@
         , gets  = with_.our.acquisition.gets
         , gots  = with_.our.acquisition.gots
         , NAME  =(/(.*)@$/)
+        , ionify='@ionify'
         , domain= it.at
         , via   = it.via
         , array = Array.isArray (via)
@@ -154,9 +155,10 @@
           group = relations [relation] || [relation]
 
           for
-            ( var g=-1; ++g < group.length; )
-            {
-              if(   (relation = group[g])
+            ( var g=-1, was=relation
+            ;  ++ g  <  group.length;
+            )
+            { if(   (relation = group[g])
                 && !~relation.indexOf('@')                  //⏱fast: it's a relation group alias     🙇🏾‍♂️ ה 🤲🏾
                 &&  (relation = relations [relation])       //⏱fast: get the group for in-lining     🙇🏾‍♂️ ה 🤲🏾
                 &&   relation.unshift (g, 1)                //🛠es.2019.array.flat.es.5.polyfill.start🙇🏾‍♂️ ה 🤲🏾
@@ -166,7 +168,11 @@
                 )   continue
 
               (relation || (relation = group[g]))
-                &&  (group[g] = relation = relation.replace (NAME, '$1'+ domain))
+                &&  ( group[g]
+                    = relation
+                    = relation.replace (NAME, '$1' + (was == group[g] ? domain
+                                                                      : ionify))
+                    )
                 &&  !gots [relation]
                 &&  !want [relation]
                 &&   want.push (relation)

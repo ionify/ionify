@@ -6,8 +6,8 @@
     , as: {configuration:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee@ionify.net', 'team✨ionify']
     , on: -4.200709
-    , to: -8.20221123
-    , at: -0.013
+    , to: -8.20221129
+    , at: -0.014
     , in:
         [    'queens-county.new-york.usa.earth'
         , 'silicon-valley.california.usa.earth'
@@ -54,9 +54,11 @@
     ,    specification: []
 
     ,      acquisition: [      'get@' ]
+    ,           action: [       'do@' , 'on.action@']
+    ,            aesop: [  'on.aeon@' ]
     ,    configuration: [  'on.ions@' ]
     ,    documentation: [ 'narrator@' ]
-    ,        extension: [ 'narrator@', 'on.emoji@', 'use@' ] /*<=@ionified.net*/
+    ,        extension: [ 'narrator@' ,  'on.emoji@', 'use@' ]
     ,       foundation: [   'acquisition', 'convention', 'malfunction'
                         ,   'observation',  'sensation',        'sion'
                         , 'transcription'
@@ -67,6 +69,7 @@
                         , 'narrator@','next.id@', 'on.ionified@', 'transcription'
                         , 'use@'
                         ]
+    ,      interaction: [/* user input, ion output & vice versa */]
     ,      malfunction: [ 'on.error@' , 'on.errors@']
     ,      observation: [ 'on.action@', 'on.aeon@', 'on.error@', 'on.ion@'
                         , 'on.storie@'
@@ -75,6 +78,7 @@
     ,        sensation: [ 'no@', 'on.ion@'  ]
     ,             sion: [ 're@', 're.hi.my@', 're.id@', 're.do.as.of@', 'with@']
     ,    transcription: [ 'logger@' ]
+    ,             webi: [ 'jess@', 'jewel@']
     },
 
   paths:

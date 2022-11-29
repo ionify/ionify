@@ -6,8 +6,8 @@
     , do: { transcription :-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221122
-    , at:  -0.052
+    , to:  -8.20221129
+    , at:  -0.053
     , as:
         { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
         , convention  :-0.001, specification:-0.001, initialization:-0.001
@@ -130,6 +130,7 @@
         , our       = with_.our
         , sensible  = our && our.ionified
         , sense     = our && our.on
+        , atDomain  = (/.*@$/)
 
       action      ||  (action = this)
       action.and  && +{do:action.and}
@@ -147,7 +148,7 @@
           todo = on.do
         }
 
-      for ( var how  = action.in  , domain  = action.at || ''
+      for ( var how  = action.in  , domain  = action.from || ''
           ,     GET  = with_.its  , resolve = GET.resolve
           ,     gets = GET.gets   , id
           ,     gots = GET.gots   , ion
@@ -157,7 +158,7 @@
           )
           { id = ions [next]
             if (id/*is*/===/*missing*/void 0) continue
-           ~id.indexOf ('@')  ||    (id +=  domain)
+            id = id.replace (atDomain, domain)
             GET.ions [id]  =  ion = {id:id, uri:uri}
             gets [id] = gots [id] =  true
             get.via ({at:id, in: GET.ORDER [how], then:todo})

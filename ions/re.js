@@ -4,8 +4,8 @@
     { of: ['core', 'public', 'sion', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221122
-    , at:  -0.1  ||  -0.007 || "re@'s actual version"
+    , to:  -8.20221129
+    , at:  -0.1  ||  -0.008 || "re@'s actual version"
     , ax:  -0.09 || [-0.09] || "what will re@ do? thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , do:
@@ -45,6 +45,7 @@
         , "have full re@ specification@ & other re@ notes in re.re@ionify."
         , "WILL migrate re.we have's to re.is & rephrase as present-tense acts."
         , "WILL move all non-trivial member-implementations to respective ions"
+        , "WANT re.do & re.as 'single string mutiple space-separated relations'"
 
         , "plan to have top-level-ids reference entire sion not just its re & "
         + "this requires id@, ~find, ~share & ~link's compatibility with that."
@@ -77,7 +78,7 @@
       = its.so.with
       = {its:its,the:{}}
 
-      delete its.valueOf <- its
+      delete its.valueOf <= its
     },
 
   on:
@@ -149,6 +150,8 @@
         , RE      = fix.re
         , bit     = fix.bit
         , it      = RE [bit]
+
+      'string' == typeof it && (it = RE [bit] = it.split(' '))
 
       Array.isArray  (it)
 
