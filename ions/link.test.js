@@ -2,20 +2,20 @@
 ~
 {'link.test@ionify':
     { of: ['tests','core','context','sensation','composition']
-    , as: ['examination.0']
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    , as: {examination:-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -8.20211205
-    , to:  -7.20221117
-    , at:  -0.04
+    , to:  -7.20221122
+    , at:  -0.05
     , is:  "ionify's ~link.to api examination"
     , go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/link.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
