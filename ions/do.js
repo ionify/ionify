@@ -3,11 +3,12 @@
 { re:
     { id:  'do@ionify'
     , of: ['core','public','api']
+    , do: {transcription:-0.001}
     , as: {sensation:-0.001, composition:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221122
-    , at:  -0.031
+    , to:  -8.20221129
+    , at:  -0.032
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -17,12 +18,13 @@
         , "   + {do: String || []}          "
         ],
       go:
-        { seek: 'https://api.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/do.js'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/do.test.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/do.js'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
@@ -112,7 +114,7 @@
           them[id] = this[id]
           got [id] = true
 
-        debug ({debug: `\nget: ${ions}\ngot: ${Object.keys (got)}`})
+          debug ({debug: `\nget: ${ions}\ngot: ${Object.keys (got)}`})
 
           for ( var next = -1
               ,     last = ions.length
@@ -122,7 +124,7 @@
 
           done = true
           sense ({on:ions, no:after_all})
-          go ({do:todo, with:them})
+          go    ({do:todo, with:them})
         }
 
       return after_all
@@ -132,7 +134,7 @@
   go (todo)
     { var can = ! ('in' in todo.do)
       can && (todo.do.in = todo.with)
-             ~todo.do
+      ~       todo.do
       can && (delete todo.do.in)
     },
 
@@ -161,7 +163,7 @@
         { if (!this) return
           ('function' == typeof todo && todo.length)
           ?   todo (this)
-          : + todo <- / todo? remove duplicate todo from script.onload /
+          : + todo <= / todo? remove duplicate todo from script.onload /
         }
       return after_each
     },
