@@ -11,9 +11,9 @@ and is maintained by
 [**team✨ionify**](https://team.ionify.net/):
 
 ```javascript
-~ {   log  : '👋🏾👨🏾‍💻'   } <- /do transcription/
-+ { "json" : "data"  } <- /json information/
-& ["natural language"] <- /text information/
+~ {   log  : '👋🏾👨🏾‍💻'   } <= /do transcription/
++ { "json" : "data"  } <= /json information/
+& ["natural language"] <= /text information/
 ```
 
 ## why
@@ -63,15 +63,15 @@ phrases to actions:
 ```javascript
 ~
 { re:
-    { do: {webi:true, interaction:true}
-    , as: {sensation:true}
-    , id: 'ask.say@ions.iskitz.net'
-    , is: 'an ask & say domain-specific-language interaction'
-    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee'
-    , on: -7.20150728
-    , to: -8.20221117
-    , at: +3.02
-    , in: 'silicon-valley.california.usa.earth'
+    { id:  'ask.say@ions.iskitz.net'
+    , is:  'an ask & say domain-specific-language interaction'
+    , do: ['webi', 'interaction']
+    , as:  'sensation'
+    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee'
+    , on:  -7.20150728
+    , to:  -8.20221129
+    , at:  +3.03
+    , in:  'silicon-valley.california.usa.earth'
     },
 
   on: ['ask','say'],
@@ -119,13 +119,13 @@ relationships, in whatever order is best for human comprehension" -
 ~
 { re:
     { id: 'frendlee@ionified.net'
-    , do: 'ask.say@ions.iskitz.net:3'
+    , is: 'a literate & natural-language exploration'
+    , do: 'ask.say.3@ions.iskitz.net'
     , as: 'aesop action'
     , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee'
     , on: -8.20171208
-    , to: -8.20221117
+    , to: -8.20221129
     , in: 'silicon-valley.california.usa.earth'
-    , is: 'a literate & natural-language exploration'
     },
 
   do:
@@ -150,15 +150,15 @@ relationships, in whatever order is best for human comprehension" -
 ```javascript
 ~
 { re:
-    { id: 'code-as-prose.demo@ionified.net'
-    , as: {sion:true, sensation:true}
-    , do: {transcription:true}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike.👨🏾‍💻.lee']
-    , on: -7.20190323
-    , to: -8.20221117
-    , at: +0.14
-    , in: 'silicon-valley.california.us.earth'
-    , is: 'code-as-prose with ionify & orion'
+    { id:  'code-as-prose.demo@ionified.net'
+    , is:  'code-as-prose with ionify & orion'
+    , do:  'transcription'
+    , as: ['sion', 'sensation']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee']
+    , on:  -7.20190323
+    , to:  -8.20221129
+    , at:  +0.15
+    , in:  'silicon-valley.california.us.earth'
     },
 
   on: 'say',
@@ -202,18 +202,19 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
 ```javascript
 ~
 { re:
-    { id: 'an.ionified.module@doma.in'
-    , as: {sion:true, action:true}
-    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
-    , on: -4.200709
-    , to: -8.202211180154
-    , is: 'modeling an ionified module'
-    , do: {stories:true}
+    { id:  'an.ionified.module@doma.in'
+    , is:  'modeling an ionified module'
+    , do:  'on.storie@ionify'
+    , as: ['sion', 'action']
+    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
+    , on:  -4.200709
+    , to:  -8.202211290651
     },
 
   do: function
   something ()
-    { something.with.its.hi & this
+    {
+    + something.with.its.hi
     },
 
   hi: /hi! 🤓/
@@ -228,11 +229,11 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 ```javascript
 ~
 { re:
-    { do: {transcription:true, stories:true}
-    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
-    , on: -4.200709
-    , to: -8.202211180158
-    , as: {sensation:true}
+    { do: ['transcription', 'on.storie@']
+    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
+    , on:  -4.200709
+    , to:  -8.202211290420
+    , as:  'sensation'
     },
 
   on:'event',
@@ -244,7 +245,7 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 }
 
 ~ /this event ion could be in a separate file!/
-~ {event: 'it happened!'} <- /invokes an event/
+~ {event: 'it happened!'} <= /invokes an event/
 ```
 
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
@@ -259,11 +260,11 @@ anonymous & named objects:
 ```javascript
 ~
 { re:
-    { do: {transcription:true, stories:true}
-    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
-    , on: -4.200709
-    , to: -8.202211180201
-    , as: {sensation:true}
+    { do: ['transcription', 'on.storie@']
+    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
+    , on:  -4.200709
+    , to:  -8.202211290421
+    , as:  'sensation'
     },
 
   on:'hi',
@@ -281,8 +282,8 @@ anonymous & named objects:
 
 ~ /ion can be in its own local, or remote file/
 
-~ { hi : "i'm an ion!"}  <-  /invoke an object/
-~ {"hi": "i'm a json!"}  <-  /invoke some json/
+~ { hi : "i'm an ion!"}  <=  /invoke an object/
+~ {"hi": "i'm a json!"}  <=  /invoke some json/
 ```
 
 ### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
@@ -299,11 +300,11 @@ without overriding all, or parts, of each other:
 ```javascript
 ~
 { re:
-    { do: {transcription:true, stories:true}
-    , by: 'mike.👨🏾‍💻.lee@ionify.net'
-    , on: -4.200709
-    , to: -8.202211171223
-    , as: {sensation:true}
+    { do: ['transcription', 'on.storie@']
+    , by:  'mike.👨🏾‍💻.lee@ionify.net'
+    , on:  -4.200709
+    , to:  -8.202211290424
+    , as:  'sensation'
     },
 
   on:'my.ion@doma.in',
