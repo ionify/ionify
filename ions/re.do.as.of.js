@@ -7,7 +7,7 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike👨🏾‍💻lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -7.20221129
-    , at:  -0.010
+    , at:  -0.011
     , is:
         [ "ionify's re: .do@ .as@ .of@ api convention@ that validates & sets: "
         , "re.of & corresponding ionosphere spaces"
@@ -33,6 +33,10 @@
       we:
         [ "WILL MOVE .resolve() to get@ since it should primarily do resolution"
         , "WILL MOVE so@re@ here to be re.do & re.as validation@ convention@s."
+
+        , "LIKE disabling ions' ~do & ~on actions until all relations're ~get.d"
+        + "can remove & keep them & set ~do.after.all that restores them & ~ion"
+
         , "WANT fast⏱ tag & skip of relation groups already in:lined & dom@ined"
         ,
         [ "NOTE re.do won't re~get ions unless ions state ~get: once, every, batch, ..."
