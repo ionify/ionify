@@ -4,10 +4,10 @@
     { id:  'with@ionify'
     , of: ['core','public','sion','context','api']
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221121
-    , at:  -0.007
+    , to:  -8.20221202
+    , at:  -0.008
     , is:
         [ "ionify's .with connection@ convention@"
         , "ionify's connection@ to habitation@s like web@, node@ & more"
@@ -39,7 +39,8 @@
         + "name-resolution as it merges to with.connection.space depth so it "
         + "at least sense & delegate resolution to that depth!"
 
-        , "LIKE member.dot.path@method@sion@domain resolution-format 🙇🏾‍♂️ ה 🤲🏾"
+        , "LIKE 🙇🏾‍♂️ ה 🤲🏾 member.dot.path@method@sion@domain resolution-format"
+        , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
 
         , "want text-to-ion-member resolution for reference-less space sharing "
         + "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"

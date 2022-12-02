@@ -4,11 +4,11 @@
     { id:  'tests@ionify'
     , of: ['tests']
     , as: {examination:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , in:  'silicon-valley.california.usa.earth'
     , on:  -7.20160518
-    , to:  -8.20221129
-    , at:  -0.029
+    , to:  -8.20221202
+    , at:  -0.030
     , is:  "testing ionify.js: invoked object notation implemented for your js"
     , do:
         [                 're.test@ionify',    're.of.test@ionify',      'with.test@ionify'

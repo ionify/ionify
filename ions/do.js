@@ -5,10 +5,10 @@
     , of: ['core','public','api']
     , do: {transcription:-0.001}
     , as: {sensation:-0.001, composition:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221129
-    , at:  -0.032
+    , to:  -8.20221202
+    , at:  -0.033
     , is:
         [ "implementing ~on.do.after to do something after sensing specific ions"
         , "implementing: "
@@ -29,7 +29,8 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "must ... "
+        [ "MUSE 🤔 is .after() ready to re-enable find ({find:todo, in:ion})?"
+        , "must ... "
         , "will ... "
         , "like ionified [typeof todo] --> + {is:todo, type:'ionified'} "
         , "like ... "
