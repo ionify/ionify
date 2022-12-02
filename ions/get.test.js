@@ -7,17 +7,19 @@
     , as: {examination:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221127
-    , at:  -0.022
+    , to:  -8.20221201
+    , at:  -0.023
     , is:  "ionify's ~get api examination"
     , go:
-        { seek: 'https://api.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
-        , code: 'https://github.com/ionify/ionify/blob/public/web.js'
+        , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/get.test.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
-        , join: 'https://github.com/ionify/about/tree/public/team'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/get.js'
+        , plan: 'https://plan.ionify.net/'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
         },
       we:
         [ "were ..."
@@ -60,7 +62,7 @@
       +
       { get:'narrator@ionify'
       , and:
-          /✅ ~get:script and: \/\/     do storie: statement, text, or recognition expression/
+          /✅ ~get:script and: \/\/     do storie: stated text of recognition expression/
       , info:true
       }
       +
