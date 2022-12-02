@@ -3,10 +3,10 @@
 { re:
     { id:  'web@ionify'
     , of: ['web','launch']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221125
-    , at:  -0.055
+    , to:  -8.20221202
+    , at:  -0.056
     , do: {initialization:true, acquisition:true, transcription:true}
     , as:     {habitation:true,  connection:true}
     , is:
@@ -216,8 +216,14 @@
                       ?  url : url.replace (get$.ID, get$.URL)
         }
 
+      var via       =   script.with
+        , debug     =   via.the && via.the.tools && via.the.tools.debug
+        , enabled   =   via.our && via.our.logging && via.our.logging.debug
+        , debugging =  (debug && enabled) || (debug = Object, false)
+        ; debugging &&  debug  ({debug:['getting', url, '...']})
+        //WANT 🤔 to eliminate 🚫 doing 🔁 all👆🏾the👆🏾above 🔁 over 😓 & 😓 over
+
       document.head.appendChild (SCRIPT)
-  //~{debug:['getting', url, '...']}
   },
 
   getInfo:
