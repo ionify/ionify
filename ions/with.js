@@ -6,14 +6,18 @@
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221202
-    , at:  -0.008
+    , to:  -8.20221205
+    , at:  -0.007
     , is:
         [ "ionify's .with connection@ convention@"
         , "ionify's connection@ to habitation@s like web@, node@ & more"
-        , "simplifying ion method & array ion-access via .with.its connection@"
+        , "merging all locally defined with.* connections with the ionosphere's"
+        , "ensuring all ions have a domain connection@ via with.its.domain"
+        , "setting  all ions-missing-re.id@domain's with.its.domain to with.all"
         , "ensuring all ions with methods & arrays have connection@ via .with.*"
-        , "merging all locally defined with.* connections with those shared"
+        , "easy in-method association-access by method.with:the+our connection@"
+        , "easy in-method       ion-access  via method.with.its connection@"
+        , "easy name-to-member  resolution  via action.with.its connection@"
         , "temporarily preserving any replaced .with at re.ex.with"
         ],
       go:
@@ -29,32 +33,27 @@
         },
       we:
         [ "KNOW .with.* can be exposed if an ion.method shares it as a reaction"
-        , "have set with.its.domain = with.all for blank domain spaces"
-        , "have in 🎊🙇🏾‍♂️יהוה👨🏾‍💻🎉 realized with.its.domain👍🏾 with.the.domain👎🏾"
-
-        , "have with.the.* vs the.* connection@ augmentations since it enables "
-        + "declarative sharing to all with.* connection@s 👨🏾‍💻"
+        , "HAVE in 🎊🙇🏾‍♂️יהוה👨🏾‍💻🎉 realized with.its.domain👍🏾 with.the.domain👎🏾"
 
         , "NOTE that with@ merge could also enable & delegate with-declaration "
-        + "name-resolution as it merges to with.connection.space depth so it "
-        + "at least sense & delegate resolution to that depth!"
+        + "name-resolution as it merges, to with.connection@.space depth so we "
+        + "can at least have sensed & delegated name-resolutions to that depth!"
 
+        , "WERE exploring sensible@with observation@s via first-launch~get.ing"
         , "LIKE 🙇🏾‍♂️ ה 🤲🏾 member.dot.path@method@sion@domain resolution-format"
         , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
+        , "like 🤔 re.of.* & with.the.* being sensible acquisition@ indications?"
 
-        , "want text-to-ion-member resolution for reference-less space sharing "
+        , "want name-to-ion-member resolution for reference-less space sharing "
         + "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"
 
-        , "like that unsuccessfully migrated locally defined with can be "
-        + "notified about via transcription stating that their continued "
+        , "like that unsuccessfully migrated locally defined with.* can be "
+        + "notified about via transcription -- stating that their continued "
         + "presence via re.ex.with isn't guaranteed."
 
         , "must ..."
         , "will ..."
         , "plan ..."
-
-        , "want .with.its to be accessible to only the sion it's populated for?"
-        , "like re.of.* & the.* being sensible sion acquisition indications"
         ]
     },
 
@@ -104,7 +103,7 @@
       links.WiTH.the       =  iOnify.spaces      = links.with.the
       links.WiTH.all       =  iOnify.spaces.all  = links.with.all
       Object.seal            (links.WiTH) //🛡 protect original .its .the .all .our
-      delete links.valueOf <- links       //🔂 self-ionify +re.* +with.* convention
+      delete links.valueOf <= links       //🔂 self-ionify +re.* +with.* convention
     },
 
   '*': function
@@ -113,24 +112,31 @@
       if( wIth && wIth.its && wIth.its.re && wIth.its.re.id != ion.re.id) return
       //👨🏾‍💻 skip this with.its-propagated-for-name-to-reference-resolution⏩ion 👆🏾
 
-      var exists
-        , links = with_.with.its
-        , WiTH  = new links.WITH
+      var via       = with_.with
+        , sensible  = via.our && via.our.ionified || {}
+        , links     = via.its
+        , WiTH      = new links.WITH
+        , thing     , exists
 
       for
         ( var member in ion )
-        { if(!ion.hasOwnProperty (member)) continue
+        { if(!ion.hasOwnProperty (member))        continue
 
-          if('function' != typeof ion[member])
-          if(   !  Array.isArray (ion[member])) continue
+          thing = ion [member]
 
-          exists = ion [member].with
+          if(!thing)                              continue
+        //if(!sensible [typeof thing])            continue
+        //if(!sensible [thing.constructor.name])  continue
+          if('function' != typeof thing)
+          if(   !  Array.isArray (thing))         continue
+
+          exists = thing.with
 
           if(exists)
-            if(exists instanceof links.WITH) continue
+            if(exists instanceof links.WITH)      continue
             else ion.re.ex && (ion.re.ex.with = exists);
 
-          ion [member].with = WiTH
+          thing.with = WiTH
         }
 
       var domain    = ion.re.id.domain.name
