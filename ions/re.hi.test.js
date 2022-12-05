@@ -5,10 +5,10 @@
     , of: ['more', 'public', 're', 'sion', 'api', 'tests']
     , do: 're.hi@'
     , as: {examination:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221129
-    , at:  -0.001
+    , to:  -8.20221205
+    , at:  -0.002
     , hi:  true || 'ionify' || "other method name" || false
     , is:
         [ "ionify's re.hi@: handled    invocation, "
@@ -31,6 +31,7 @@
         ],
       we:
         [ "WERE doing it's initial implementation!"
+        , "LIKE .missing & .malformed ~on:warn(act): act.warn == missing@re.hi@"
 
         , "must ..."
         , "will ..."
