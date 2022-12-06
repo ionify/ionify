@@ -2,12 +2,12 @@
 ~
 { re:
     { id:  'with@ionify'
-    , of: ['core','public','sion','context','api']
+    , of: ['core', 'public', 'sion', 'context', 'api']
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
     , to:  -8.20221205
-    , at:  -0.007
+    , at:  -0.009
     , is:
         [ "ionify's .with connection@ convention@"
         , "ionify's connection@ to habitation@s like web@, node@ & more"
