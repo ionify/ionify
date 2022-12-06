@@ -2,14 +2,14 @@
 ~
 { re:
     { id:  'on.ion@ionify'
+    , re:  'on.ion.re@ionify'
     , of: ['core','public','conduit','api','launch']
     , as: { observation :-0.001, sensation    :-0.001 }
     , do: { resolution  :-0.001, transcription:-0.001 }
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221121
-    , at:  -0.084
-    , im: { re:'on.ion.re@ionify' }
+    , to:  -8.20221205
+    , at:  -0.085
     , is:
         [ "ionify: invoked object notation implemented for you"
         , "enabling the ionosphere: invoked object notation observation sphere"
@@ -21,47 +21,35 @@
         , "ionifying all ions that were ~get.d before ionify's core conventions"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
-      //, test: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.test.js'
-        , test: 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
+        , help: 'https://help.ionify.net/'
+        , test:
+              [ 'https://github.com/ionify/ionify/blob/public/ions/on.ion.test.js'
+              , 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
+              , 'https://github.com/ionify/ionify/blob/public/ions/on.duplicate.test.js'
+              ]
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "NOTE many more plans, ideas & issue notes are in on.ion.re@ionify✨"
-        , "WILL set re.go.deal = https://deal.ionify.net in all ionify sions"
+        [ "NOTE ✨ many more plans, ideas & issue notes are in on.ion.re@ionify"
+        , "WILL 🙇🏾‍♂️ set all ionify sions' re.go.deal: https://deal.ionify.net"
+        , "HAVE 🛡 safeguarded on@on.ion@ sensation@ observation@ misapplication"
 
         , "LIKE enacting a best-practice of intentionally keep critically "
         + "essential & actionable notes in ion@ & others in ion.re@"
 
-        , "want to remove on:no@ionify; conventions retroactively auto-apply"
-        , "WILL +{} vs ~{}, safely, within ionify sions for faster invocation"
-        , "want ++indices vs indices++ for clarity, comprehension, simplicity"
-
-        , "KNOW ~{on:'id@doma.in','id@doma.in':ion} self-reacts for anemojii@"
-        , "MUST implement ~{on:'id@doma.in',do:ion} to eliminate self-reactions"
-        , "HAVE hardcoded a safeguard against id@ sensation@s self-reactions."
-        , "MUSE is an id@ sensation@ self-reaction causing re.go.help.issue.14?"
-
-        , "MUST create an examination that ~get's on.test@ionify multiple "
-        + "times to recreate the duplicate sensation self-reaction scenario "
-        + "described in re.go.help.issue.14."
-
-        , "MUST observe ionify's behavior via the re.go.help.issue.14 "
-        + "examination, then implement changes to solve all of or the "
-        + "critically impactful problems +| opportunities it reveals before "
-        + "we can say the problem's solved or closed."
-
-        , "want sensed() to reaction.with.re.id===object.re.id before checksum"
-        , "MAKE ionify@ space inaccessible via ion.valueOf:with.our, the.domain"
-        , "MUST auto-update ionified:observation@ list as Types are deactivated"
-        , "WANT renamed sensible <- ionified since its sensing observable types"
-        , "want sensible() within a core observation@ delegator vs convention@."
+        , "MUST 🧹 auto-update ionified:observation@ list's deactivated Types"
+        , "WANT ionify@ space inaccessible via ion.valueOf:with.our, the.domain"
+        , "WANT ✨ to enable ~{on:'id@doma.in',do:ion} minimized self-reactions"
+        , "MUSE 🤔 configure [en+dis]abled duplicated multi-reaction sensations?"
+        , "WANT renamed observable <= ionified as confirms observable ion types"
+        , "want 🧹 to remove on:no@ionify; conventions retroactively auto-apply"
+        , "want .sensible() within a core observation@ delegator vs convention@"
         , "want ionify@ = core observation@ routing to others post-convention@s"
         ]
     },
@@ -72,7 +60,7 @@
         , senses  : {}
         , known   : {}
         , ionified: {boolean:false, null:false, string:false, undefined:false}
-        //sensible☝🏾
+        //☝🏾observable
         , on      : 'on@on.ion@'
         }
     },
@@ -95,16 +83,17 @@
         =  ionify.sensible.with = ionify.transcript.with
         = {its:ionify,the:{},our: ionify.with.our}
 
-      delete ionify.valueOf <- ionify <-
+      delete ionify.valueOf <= ionify <=
      /accept ions pending  ionification/
 
-      //👇🏾activate ionosphere: ion observation sphere
+      //👇🏾activate ionosphere:👇🏾ion observation👇🏾sphere
       ionify.on ({on: Object, Object: ionify.sensed})
       ionify.on ({on:'on',        on: ionify.on    })
+      //note: this 👆🏾 is erased by ☝🏾 same-named term
 
       function
         connections (no)
-          { ionify <- /share to @ionify domain space/
+          { ionify <= /share to @ionify domain space/
           ; no.no  ({on:'no@ionify', no:connections})
           ~ ionify.pending
         //; ionify.pending = null
@@ -146,7 +135,7 @@
         , launch  = ionify.on ===  sensation.on
 
       if (!sensation    ||  !('on' in sensation)) return  sensation
-      if (!launch)
+      if (!launch)      //👈🏾 blocks on@on.ion@ being applied as👇🏾an observation@
       if ('function'    === typeof sensation.on)  return  ionify.via        (sensation)
       if ( sensation.on === '*' ){ pending = false;       ionify.convention (sensation)}
 
@@ -174,7 +163,7 @@
         , group
         , spot
         , test
-        , unknown
+        , senseless
 
       debug.push (Object.keys (senses))
 
@@ -189,8 +178,8 @@
             ; continue
             }
 
-          unknown  = !senses [group]        // the sensation's terms are unknown
-          unknown && (senses [group] = [])  // so make a new terms list for them
+          senseless  = !senses [group]    // the sensation's terms aren't sensed
+          senseless && (senses [group] = [])    // so make them a new terms list
 
           reactions = senses    [group]
           reaction  = sensation [group]
@@ -203,10 +192,13 @@
                 :  (reactions [spot-1] = reaction = sensation [reaction])
                 );
 
+          //🙇🏾‍♂️ enables simplified per-ion self-reacting sensation@
+          groups [group] = reaction //👨🏾‍💻 detection in .sensed() 🤲🏾
+
           debug.push ([id, group in senses ? "knows" : "ignores", group])
 
           //🙇🏾‍♂️intentionally  👇🏾keep inactive👇🏾 reaction for dynamic-self-reactions🤲🏾
-          if(!reaction /*|| !sensible [typeof reaction]*/ || reactions && !unknown)
+          if(!reaction /*|| !sensible [typeof reaction]*/ || reactions && !senseless)
               continue
 
           test  = '\treturn "'+ words.join ('" in ion && "') +'" in ion;'
@@ -226,7 +218,7 @@
       domain
         ? domain.logging && domain.logging.debug && on.with.the.tools.debug
           ({debug: (debug.push ([id].concat (groups)), debug.join ('\n'))})
-        : ~{debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
+        : +{debug: (debug.push ([id].concat (groups)), debug.join ('\n'))}
 
       return sensation
     },
@@ -320,17 +312,22 @@
 
   sensible :function
   sensible (object)
-    { var its       = sensible.with.its
-        , observers = its.observers
-        , core      = observers.core
-        , make      = observers.make
-        , Type      = object.constructor
-        , type      = Type.name || String (Type).match (observers.name)[1]
+    { var via         = sensible.with
+        , its         = via.its
+        , observers   = its.observers
+        , core        = observers.core
+        , make        = observers.make
+        , Type        = object.constructor
+        , type        = Type.name || String (Type).match (observers.NAME)[1]
+        , OBSERVABLE  = via.our.ionified
 
-      make [type] &&  object instanceof make [type]
-                  && (core [type] =  typeof object)
-                  && (sensible.with.our.ionified [core[type]] = true)
-                  && (make [type] = null)
+      if( make [type] && object instanceof make [type])
+        { core [type] ||
+         (core [type]  = typeof object)
+
+          OBSERVABLE [core [type]] ||
+         (OBSERVABLE [core [type]]  = true)
+        }
     },
 
   transcript :function
@@ -400,7 +397,7 @@
           for
             ( var g=0, G=groups.length
             ;     g  < G
-            ;     g ++
+            ;  ++ g
             )
             { group = groups [g]
               if (!group.in (object)) continue
@@ -410,31 +407,35 @@
               before    = results
 
               for
-                ( var r=0, R=reactions.length, temp
-                ;     r  < R
-                ;     r ++
+                ( var r=0,  R= reactions ? reactions.length : 0
+                ;     r  <  R
+                ;  ++ r
                 )
                 { reaction = reactions [r]
 
                   switch (true)
-                    { case    typeof   reaction  === 'function':
-                        if(   reaction.with.its  ===    object ) continue             //note: strict comparison = no coerced self-activation 🐛
+                    { case !reaction
+                         :  continue
 
-                      //if({[ reaction.with?.its.re  ]:  true }[ object.re ]          //need: ionify core to be sions to eliminate ?. optional chaining
-                      //&&    reaction.with.its.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
+                      case  object.on         &&
+                            object.on [words] &&                          (
+                            object.on [words] === reaction                ||  (
+                            object.re                                         &&
+                            object.re.as.sensation  /*👇🏾compare checksums*/   &&
+                            object.re ==  String (reaction.with.its.re)       &&
+                            object.re.indexOf    ('[object ')   !=   0    )   )
+                         :  continue  //☝🏾confirm checksum-match not coincidence
 
-                        if(   reaction.with?.its.re.id  ==       object.re?.id
-                        &&    reaction.with?.its.re     in    {[ object.re ]: true }  //need: ionify core to be sions to eliminate ?. optional chaining
-                        &&    reaction.with.its.re.ex?.checksum) continue             //need: re@ convention from id@ID() to ensure sions have expected re.*"
-
+                      case  typeof reaction  === 'function':
                         result   = reaction.call (object, object)
                         results += 1
-                        break
+                        continue
 
                       case !!sensible [typeof reaction]:
+                      case !!sensible [reaction.constructor.name]:
                         result   = +reaction
                         results += 1
-                        break
+                        continue
 
                       case !!             // got unresolved 🤔
                         (  ionify         // reaction alias 🧐
@@ -446,7 +447,7 @@
                                   continue
 
                       default:
-                        temp =
+                        var temp =
                           [ "inactive reaction -"   , reaction
                           , "- for sensed term(s) -",    words
                           , "- within this object:" ,   object
@@ -455,7 +456,7 @@
                           && (transcript = transcript.concat (temp))
                           &&  tools.warn  ({ warn:  temp})
                           &&  tools.debug ({debug: (temp.unshift (true), temp)})
-                        break
+                        continue
                     }
                 }
 
@@ -476,8 +477,8 @@
   observers:
     { core: {}
     , make: {}
-    , name: (/function\s+(.*)\s*\(/)
     , undo: {}
+    , NAME: (/function\s+(.*)\s*\(/)
     },
 
   via: function
@@ -490,7 +491,7 @@
         , observers = its.observers
         , core      = observers.core
         , make      = observers.make
-        , name      = observers.name
+        , name      = observers.NAME
         , undo      = observers.undo
         , Type      = observer.on
         , type      = Type.name   ||  String (Type).match (name)[1]

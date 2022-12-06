@@ -3,33 +3,38 @@
 { re:
     { id:  'no@ionify'
     , of: ['core','public','api']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , as: {sensation:-0.001, composition:-0.001, specification:-0.001}
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.050
+    , to:  -8.20221202
+    , at:  -0.051
     , is:
         [ "ionify's public ~on.no action"
         , "disabling all reactions to the specified sensation"
         , "disabling the convention with the specified reaction"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
-      //, test: 'https://github.com/ionify/ionify/blob/public/ions/no.test.js'
+        , help: 'https://help.ionify.net/'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/no.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/no.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "will make a way to deactivate all observation@s, aka ~on:Type's."
-        , "like the idea of resolving ~{no: 'this.with'}"
-
-        , "muse ~{on:'term',dont:act} 👎🏾 | {no:{term:act} | {on:'term',no:act} "
-        + "~{no:{term:act}} enables deactivating multiple sensations at once 🤓"
+        [ "MUST 👨🏾‍💻 enable deactivating any & all observation@s, aka ~on:Type's"
+        , "MUSE 🤔 if all reactions are removed, also remove known words?"
+        , "WARN 🚨 removing known words before all sensations disables remaining"
+        , "NOTE 💡 it may be wise & prudent to keep known words for cap context"
+        , "like 🧹 noting senseless known words for removal for 🧹+⏩ performance"
+        , "like ⏩ that removing known words hastens sensation detection"
+        , "LIKE 🧹 noting empty reaction spots & refilling via ~on vs by .push()"
+        , "MUSE 👍🏾{no:act, on:'term'} | 🤔{no:{term:act} | ~{on:'term',dont:act}"
+        , "LIKE 🤓 how ~{no:{term:act}} enables deactivating multiple sensations"
+        , "like 🤔 the idea of resolving ~{no: 'with.its:my@this?'} for on:[,,,]"
         ]
     },
 
@@ -71,12 +76,9 @@
         , null ===  reactions[R] &&  removed++
         );
 
-      //note: if all reactions are removed, also remove known words
-      //like: that removing known words hastens sensation detection
-      //warn: it may be wise & prudent to keep known words for context
-
-      removed - reactions.length         || delete sensations [on]
-      words[on] && words[on].length == 1 && delete      words [on]
-   }
+      removed - reactions.length          || delete sensations [on] //&&
+    //words[on] && words[on].length == 1  && delete      words [on]
+    //WARN! 🚨removing☝🏾known☝🏾words before all👆🏾sensations👆🏾disables😬remaining🚨
+    }
 }
 ;

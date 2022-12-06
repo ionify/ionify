@@ -7,8 +7,8 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , in:  'silicon-valley.california.usa.earth'
     , on:  -7.20160518
-    , to:  -8.20221202
-    , at:  -0.030
+    , to:  -8.20221205
+    , at:  -0.031
     , is:  "testing ionify.js: invoked object notation implemented for your js"
     , do:
         [                 're.test@ionify',    're.of.test@ionify',      'with.test@ionify'
@@ -30,8 +30,10 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "were beginning to test re@'s malformed re.ax & re.ex notifications"
+        [ "MUST favor test💡invocation~breakpointing & ✅comprehension over speed"
+        , "were beginning to test re@'s malformed re.ax & re.ex notifications"
         , "will remove re.hi@ionify once re.do ~gets relations THEN invokes ion"
+        , "LIKE ~on:['log','warn','error'],do(act){act.error==message.expected}"
         , "like testing ionify emoji actions ['0 . 0'] + ['0 . -'] & ['- . -']"
         ]
     }

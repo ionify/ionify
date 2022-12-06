@@ -2,12 +2,13 @@
 ~
 { re:
     { id:  'on.aeon@ionify'
-    , of: ['core','public','conduit','api']
-    , as: {observation:-0.001}
-    , by: ['mike.👨🏾‍💻.lee', 'team']
+    , of: ['core', 'public', 'conduit', 'api']
+    , do: {transcription:-0.001}
+    , as: {  observation:-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.037
+    , to:  -8.20221202
+    , at:  -0.038
     , is:
         [ "sensing all aeon: array-expressed object notations like these:"
                                         +
@@ -18,13 +19,13 @@
           '["get sensations", "activate them", "enjoy their reactions!"]'
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
-        , test: 'https://github.com/ionify/ionify/blob/public/ions/on.aeons.tests.js'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.aeons.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , help: 'https://help.ionify.net/'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/on.aeon.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/on.aeon.js'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
@@ -50,7 +51,7 @@
     { var sensors  = this.sensors
       sensors.with = {its:this}
     //for (var sense in sensors) sensors [sense] = this [sensors [sense]]
-      delete this.valueOf <- this
+      delete this.valueOf <= this
     },
 
   sensors:
@@ -67,31 +68,50 @@
      aeon(array)
         { array || (array = this)
 
-        ~ {debug: [true, "+[...]", array]}
+          var via       = aeon.with
+            , our       = via.our
+            , find      = our.find  || Object
+            , tools     = via.the   && via.the.tools
+            , warn      = tools     && tools.warn
+            , debug     = tools     && tools.debug
+            , debugging = debug ? our.logging.debug : (debug = Object, false)
+            ; debugging&& debug ({debug: [true, "+[...]", array]})
+          //WANT 🤔 to eliminate 🚫 doing 🔁 all👆🏾the👆🏾above 🔁 over 😓 & 😓 over
 
-          var AEON      = aeon.with.its
+          var AEON      = via.its
             , sensors   = AEON.sensors
-            , sensible  = aeon.with.our.ionified
+            , sensible  = our.ionified
             , next      = -1
             , last      = array.length
             , thing     , sense
             , type
 
-          while (++next < array.length) //✨await shortens its length; test often
-            { thing =   array [next]
+          while (++next < array.length) //✨~[await] shortens length; test often
+            { thing = array [next]
+
+            // sensible [thing]
+            //   ||  find ({find:thing, in:array, as:thing})
+            //   && (thing = array[thing])
+
               type  = thing === null ? 'null' : typeof thing
               sense = sensors [type]
-              sensible [type] && !('with' in thing) && (thing.with = array.with)
+              sensible [type]     ||
+              sensible [type == 'object' && thing.constructor.name]
+                &&  !('with' in thing) && (thing.with = array.with)
 
-              if( !sense) {+thing; AEON.unwith (thing); continue}
+              if( !sense )
+                { +thing
+                ;  AEON.unwith (thing)
+                ;  continue
+                }
 
-              if( !sensible [typeof sense] && sense)
-                { +{find:sense,  in:sensors, as:type}
+              if( !sensible [typeof sense] && sense )
+                { find ({find:sense,  in:sensors, as:type})
                     sense = (sensors) [type]
-                    if( !sense )
-                      { +{warn:`aeon: couldn't sense ${type} ~${JSON.stringify (thing)}`}
-                      ;   AEON.unwith (thing)
-                      ;   continue
+                    if(!sense)
+                      { warn ({warn:`aeon: couldn't sense ${type} ~${JSON.stringify (thing)}`})
+                      ; AEON.unwith (thing)
+                      ; continue
                       }
                 }
 
@@ -108,10 +128,10 @@
   unwith (thing)
     { thing.with
       && thing.with.its
-      && thing.with.its.re
-      && thing.with.its.re    != thing.re && thing.re
-      && thing.with.its.re.id != thing.re.id
-      && (delete thing.with)
+      && thing.with.its.re    && thing.re
+      && thing.with.its.re    != thing.re.toString()
+      && thing.with.its.re.id != thing.re.id.toString()
+/**/  && (delete thing.with)
     },
 
   aesopInfo:
@@ -130,17 +150,24 @@
       var phrase = ion [aesop.next]
       ion.next   = aesop.next //👈🏾temporary exploration
       aesop.next = void 0
-      phrase  && +{debug: [true, "+[...]", phrase]}
 
-      var sense =   (ion.with && ion.with.its [phrase])
-      !   sense && +{find:phrase, in:ion}
-      && (sense =    ion [phrase])
+      var via       = aesop.with
+        , our       = via.our
+        , find      = our.find  || Object
+        , debug     = via.the && via.the.tools && via.the.tools.debug
+        , debugging = debug   ?  our.logging.debug : (debug = Object, false)
+        ; phrase   && debugging  &&  debug ({debug : [true, "+[...]", phrase]})
+        //WANT 🤔 to eliminate 🚫 doing 🔁 all👆🏾the👆🏾above 🔁 over 😓 & 😓 over
+
+      var sense =  (ion.with && ion.with.its [phrase])
+      !   sense &&  find ({find:phrase, in:ion})
+      && (sense =   ion   [phrase])
 
       typeof sense == 'function'
           ? (ion.with.its || ion) [phrase] (ion)
           : +sense
 
-      if(ion.next > ion.length) ion.next = ion.length
+      if (ion.next > ion.length) ion.next = ion.length
     }
 }
 ;

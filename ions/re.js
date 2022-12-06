@@ -1,11 +1,12 @@
 ;
 ~
 {'re@ionify':
-    { of: ['core', 'public', 'sion', 'api']
+    { re:  're.re@ionify'
+    , of: ['core', 'public', 'sion', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221129
-    , at:  -0.1  ||  -0.010 || "re@'s actual version"
+    , to:  -8.20221202
+    , at:  -0.1  ||  -0.011 || "re@'s actual version"
     , ax:  -0.09 || [-0.09] || "what will re@ do? thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , do:
@@ -42,7 +43,7 @@
         },
       we:
         [ "WARN that RENAMING re@'s CONVENTION re() WILL DAMAGE re@ AND ionify"
-        , "have full re@ specification@ & other re@ notes in re.re@ionify."
+        , "HAVE full re@ specification@ & other re@ notes in re.re@ionify."
         , "WILL migrate re.we have's to re.is & rephrase as present-tense acts."
         , "WILL move all non-trivial member-implementations to respective ions"
 
@@ -74,6 +75,7 @@
       = its['*']['with']
       = its.ax.with
       = its.ex.with
+      = its.eq.with
       = its.so.with
       = {its:its,the:{}}
 
@@ -94,9 +96,9 @@
                 ( RE.id = word )
             :   ( RE    = void 0)
 
-      RE   || (RE    =        ion.re  || (ion.re  = {}))
-      RE.id ? (RE.id = String (RE.id)) : (RE.id   = void 0)
-      RE.im ? (RE.im = String (RE.im)) : (RE.im   = '')
+      RE   || (RE    =        ion.re  || (ion.re= {__proto__:String.prototype}))
+      RE.id ? (RE.id = String (RE.id)) : (RE.id =  void 0)
+      RE.im ? (RE.im = String (RE.im)) : (RE.im =  '')
 
       typeof RE.hi == 'boolean' || (RE.hi = RE.hi ? String (RE.hi) : false)
       typeof RE.on == 'number'  || (RE.on = 0.0)
@@ -114,27 +116,39 @@
       its.so ({re:RE, bit:'as'})
       its.so ({re:RE, bit:'do'})
       its.eq (RE)
+
+      Object.setPrototypeOf (RE, String.prototype)
+      Object.seal           (RE)
     },
 
   eq:function
   eq(RE)
-    { RE.toString=
-      RE.valueOf=function checksum ()
-        { if ('checksum' in RE.ex) return RE.ex.checksum
+    { var members = Object.entries ? 'entries' : 'keys'
+        , value
 
-          with(RE) RE.ex. checksum =
-            [ id,     im, String (of)   , String (Object.keys (as))
-            ,             String (by)
-            , on, to, at, String (RE.if), String (Object.keys (RE.do))
-            ,         hi, String (is)
+      RE.toString =
+      RE.valueOf  = function checksum ()
+        { if (value)  return value
+
+          with (RE)
+            value =
+            [ String (of)   , String (Object [members] (as))
+            , String (by)   , on, to, at  //🚨these may differ🤔
+            , String (RE.if), String (Object [members] (RE.do))
+            , String (is)
             ].
-          join('...')
+          join ('...')
 
-      /* /console
-          .debug (RE.ex.checksum)//*/
-          return  RE.ex.checksum
+          debugging && debug ({debug:['checksum', RE.id, value]})
+          return value
         }
-    },
+
+      var via       =   eq.with
+        , debug     =   via.the && via.the.tools && via.the.tools.debug
+        , enabled   =   via.our && via.our.logging && via.our.logging.debug
+        , debugging =  (debug && enabled) || (debug = Object, false)
+      //WANT 🤔 to eliminate 🚫 doing 🔁 all👆🏾the👆🏾above 🔁 over 😓 & 😓 over
+  },
 
   warning:
     { as: "re.as should be a   {specification@: version@|true|false, ...} object"

@@ -5,10 +5,10 @@
     , of: ['core', 'context', 'tools', 'api']
     , do: {transcription:-0.001}
     , as: {convention   :-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on: { 200709   : -4      }
-    , to: { 20221117 : -8.0918 }
-    , at:  -0.062
+    , to: { 20221205 : -8.0338 }
+    , at:  -0.063
     , is:
         [ "providing context via ~link which ensures ions' object-type members can  "
         + 'access their containing ion, ~share for sharing things via domains,      '
@@ -16,20 +16,27 @@
         + 'names to ions.                                                           '
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
-        , test: 'https://github.com/ionify/ionify/blob/public/ions/find.test.js'
-      //, test: 'https://github.com/ionify/ionify/blob/public/ions/link.test.js'
+        , help: 'https://help.ionify.net/'
+        , test:
+              [ 'https://github.com/ionify/ionify/blob/public/ions/find.test.js'
+              , 'https://github.com/ionify/ionify/blob/public/ions/link.test.js'
+            //, 'https://github.com/ionify/ionify/blob/public/ions/share.test.js'
+              ]
         , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "WANT to simplify this ion & separate its actions into their own ions"
+        [ "WILL 🙇🏾‍♂️ retire .link() since with@ successfully refined it 🤲🏾"
+        , "WANT to simplify this ion & separate its actions into their own ions"
         , "WANT to keep these actions domain-private until otherwise needed"
+        , "WANT 🤔 .find_alias() thing:void 0||null? b4 thing.constructor.name"
+        , "WANT 🤔 .find_alias() debug({debug: [message, thing, place[thing]]})"
+        , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
 
         , "plan to have top-level-ids reference entire ion not just its re & "
         + "this requires re.*@, ~find, ~share & ~link's compatibility with that"
@@ -75,7 +82,7 @@
       domain.link   = sense.link
       domain.share  = sense.share
       domain.space  = sense.space
-      delete sense.valueOf <- sense
+      delete sense.valueOf <= sense
     },
 
  'find in as':'find',
@@ -105,16 +112,21 @@
 
   find_alias :function
   find_alias (action)
-    { var thing    = action.find
+    { var via      = find_alias.with
+    ,     our      = via.our
+    ,     debug    = via.the.tools.debug
+    ,     debugging= debug ? our.logging.debug : (debug = Object, false)
+    ,     thing    = action.find
     ,     place    = action.in
-    ,     sensible = find_alias.with.our.ionified
+    ,     sensible = our.ionified
     ,     tried    = {}
     ; while
         (!tried [thing] && thing in place)
         { tried [thing]  = true
-      //; console.log (`~find ${thing} ...`)
+        ; debugging  &&  debug ({debug:`~find ${thing} ...`})
         ; thing = place [thing]
-        ; if (sensible  [typeof thing]) return thing
+        ; if (sensible  [typeof thing])           return thing
+        ; if (sensible  [thing.constructor.name]) return thing
         }
       return false
     },
