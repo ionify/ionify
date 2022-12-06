@@ -4,10 +4,10 @@
     { id:  'get@ionify'
     , of: ['core','public','api','launch']
     , do: { transcription :-0.001 }
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221129
-    , at:  -0.054
+    , to:  -8.20221202
+    , at:  -0.055
     , as:
         { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
         , convention  :-0.001, specification:-0.001, initialization:-0.001
@@ -132,8 +132,8 @@
         , sense     = our && our.on
         , atDomain  = (/.*@$/)
 
-      action      ||  (action = this)
-      action.and  && +{do:action.and}
+      action || (action = this)
+     ~action.and
       Array.isArray   (action.get) || (action.get = [action.get])
 
       var todo  = action.then
