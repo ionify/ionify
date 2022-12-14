@@ -6,8 +6,8 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , as: {sensation:-0.001, composition:-0.001, specification:-0.001}
     , on:  -4.200709
-    , to:  -8.20221202
-    , at:  -0.051
+    , to:  -8.20221206
+    , at:  -0.052
     , is:
         [ "ionify's public ~on.no action"
         , "disabling all reactions to the specified sensation"
@@ -47,8 +47,8 @@
   no :function
   no (sensation)
    {  var our = no.with.our
-        , on  = sensation.on
-        , No  = sensation.no
+        , on  = String (sensation.on)
+        , No  =         sensation.no
 
       if (!No && !('no' in sensation)) return sensation
 
