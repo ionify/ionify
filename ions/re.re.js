@@ -6,16 +6,14 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , as: {documentation:-0.001, sion:-0.001}
     , on:  -4.200709
-    , to:  -8.20221121
-    , at:  -0.007
-    , im:
-        { re:
-            { id: 're@ionify'
-            , at: -0.006
-            , as:
-                { sion      :-0.001, specification:-0.001
-                , sensation :-0.001, convention   :-0.001
-                }
+    , to:  -8.20221209
+    , at:  -0.008
+    , re:
+        { id: 're@ionify'
+        , at: -0.006
+        , as:
+            { sion      :-0.001, specification:-0.001
+            , sensation :-0.001, convention   :-0.001
             }
         },
       is:
@@ -30,7 +28,7 @@
                 .im ~get.s stated ionified module stating fuller re.*
                 .id ~get.s stated domain(s) validation if configured
                 .re states the sion's re@ ion 🤓
-                .of ~get.s stated spaces & links to ion's members
+                .of ~get.s stated groups & links to ion's members
                 .as ~get.s stated ai: actions & information types
                 .by states ion's creators, authors & contributors
                 .in states ion's places where it's created & updated
@@ -40,9 +38,9 @@
                 .ax states current version's incompatibilities
                 .my public & internal api [alias] map with version compatibility
                 .am ~get.s stated am: attribution module(s)
-                .if states which spaces can interact with ion & how
+                .if states which groups can interact with ion & how
                 .is states description(s) of what the ion is +| does
-                .ex shared-space for unregulated non-guaranteed data
+                .ex local-group for unregulated non-guaranteed data
                 .we states plans, ideas, notes, hopes, wants, & more
                 .go states uri links to plan, help, join, deal, code
                 .do thing(s) the ion does via one other ion(s)
@@ -78,6 +76,7 @@
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/re.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/re.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'

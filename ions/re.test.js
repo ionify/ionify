@@ -1,13 +1,13 @@
 ;
 ~
 {'re.test@ionify':
-    { of: ['core','sion','api','tests']
+    { of: ['core', 'sion', 'api', 'tests']
     , do: {'re@':true, 'on.storie@':true, transcription:true}
     , as: {examination  :-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -7.20221122
-    , at:  -0.006
+    , to:  -7.20221212
+    , at:  -0.007
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , go:
@@ -17,6 +17,7 @@
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/re.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/re.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -36,19 +37,24 @@
         ]
     },
 
+  with:
+    { my:
+        { tests:
+            { id:1, im:1, of:1, do:1, as:1, by:1, on:1
+            , to:1, at:1, ax:1, hi:1, is:1, ex:1, go:1
+            },
+        }
+    },
+
   do:
     [ "re@ sets: re.core for anion ~{ }"
     , "re@ sets: re.core malformed ~{*}"
     ],
 
-  tests:
-    {id:1,im:1,of:1,do:1,as:1,by:1,on:1,to:1,at:1,ax:1,hi:1,is:1,ex:1,go:1
-    },
-
  "re@ sets: re.core for anion ~{ }":function
   recore_anion (doing)
     { var question  = doing [doing.next]
-        , tests     = recore_anion.with.its.tests
+        , tests     = recore_anion.with.my.tests
         ; tests.if  = 1
 
       var anion
@@ -90,8 +96,8 @@
     { var malformation = {re:{}}
         ,      testing = []
         ,     question = doing [doing.next]
-        ,        tests = recore_malformation.with.its.tests
-        ,        later = recore_malformation.with.its.testLater
+        ,        tests = recore_malformation.with.my.tests
+        ,        later = recore_malformation.with.my.testLater
 
       function
       testNow()

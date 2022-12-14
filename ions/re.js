@@ -1,12 +1,13 @@
 ;
 ~
-{'re@ionify':
-    { re:  're.re@ionify'
+{ re:
+    { id:  're@ionify'
+    , re:  're.re@ionify'
     , of: ['core', 'public', 'sion', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -4.200709
-    , to:  -8.20221202
-    , at:  -0.1  ||  -0.011 || "re@'s actual version"
+    , to:  -8.20221206
+    , at:  -0.1  ||  -0.012 || "re@'s actual version"
     , ax:  -0.09 || [-0.09] || "what will re@ do? thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , do:
@@ -118,7 +119,7 @@
       its.eq (RE)
 
       Object.setPrototypeOf (RE, String.prototype)
-      Object.seal           (RE)
+      Object.seal           (RE)  //muse 🤔 prevents re.with, wanted or not?...
     },
 
   eq:function
