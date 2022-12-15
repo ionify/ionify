@@ -6,17 +6,17 @@
     , as: {examination:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , in:  'silicon-valley.california.usa.earth'
-    , on:  -7.20160518
-    , to:  -8.20221205
-    , at:  -0.031
+    , on:  -71.201605184
+    , to:  - 8.578309102
+    , at:  - 0.031
     , is:  "testing ionify.js: invoked object notation implemented for your js"
     , do:
         [                 're.test@ionify',    're.of.test@ionify',      'with.test@ionify'
         ,             'on.ion.test@ionify',       'on.test@ionify',        'do.test@ionify'
         ,                'get.test@ionify',   'logger.test@ionify',       'use.test@ionify'
         , 'on.ion.punctuation.test@ionify', 'on.emoji.test@ionify', 'on.errors.test@ionify'
-        ,               'find.test@ionify',     'link.test@ionify',     'on.do.test@ionify'
-        ,            'next.id.test@ionify',         're.hi@ionify',     're.hi.test@ionify'
+        ,               'find.test@ionify',     'link.test@ionify',   /*'on.do.test@ionify'
+        ,*/          'next.id.test@ionify',         're.hi@ionify',     're.hi.test@ionify'
         ],
       go:
         { meet: 'https://meet.ionify.net/'
@@ -25,6 +25,7 @@
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/tools/tests.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/ions.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
