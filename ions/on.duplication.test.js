@@ -6,9 +6,9 @@
     , do: {sensation  :true, transcription:true}
     , as: {examination:true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221205
-    , at:  -0.001
+    , on:  -24.200709
+    , to:  -18.578309182
+    , at:  - 0.002
     , is:
         [ "🙇🏾‍♂️ ionify's duplicated multi-reaction ~on sensation api examination"
         , "✅ vetting re.go.help.issue.14's fix & re.go.help.issue.13's goals"
@@ -17,6 +17,7 @@
       go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test:
@@ -24,6 +25,7 @@
               , 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
               ]
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -42,8 +44,13 @@
     , "invoke action again"
     ],
 
+ "invoke action again":
+    { action:'duplication'
+    },
+
  "sense action again":
-    { on:
+    { message: "~on: reaction: per sensation: duplication without self-reaction"
+    ,      on:
      'action',
      'action':    function
       duplication (action)
@@ -62,20 +69,12 @@
           var
           reacts = tests.on_self_react
           reacts == 0
-              ? ~{  log:["✅", duplication.with.its.message]}
-              : ~{error:["❌", duplication.with.its.message, reacts], halt:false}
+              ? ~{  log:["✅", duplication.with.my.message]}
+              : ~{error:["❌", duplication.with.my.message, reacts], halt:false}
 
           delete tests.on_duplication   //🧹 tidy the tests collection@
           delete tests.on_self_react    //🧹 tidy the tests collection@
-        },
-      message:
-        "~on: reaction: per sensation: duplication without self-reaction"
-    },
-
- "invoke action again":function
-  duplicate (doing)
-    {
-    ~ {action:'duplication'}
+        }
     }
 }
 ;
