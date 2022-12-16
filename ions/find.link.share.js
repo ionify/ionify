@@ -6,18 +6,23 @@
     , do: {transcription:-0.001}
     , as: {convention   :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on: { 200709   : -4      }
-    , to: { 20221205 : -8.0338 }
-    , at:  -0.063
+    , on: { 2.200709    : -4      }
+    , to: { 1.578309226 : -8.1157 }
+    , at:  -0.064
     , is:
-        [ "providing context via ~link which ensures ions' object-type members can  "
-        + 'access their containing ion, ~share for sharing things via domains,      '
-        + 'optionally aliased data and-or functionality, and ~find.in for resolving '
-        + 'names to ions.                                                           '
+        [
+        [ "implementing ionify's ~find.for.as.in.skip name-to-ai-resolution"
+        , "which finds ai: active-information via a stated or aliased term"
+        , "within a stated object, its collections, or the ionosphere"
+        ],
+        [ "implementing ionify's ~link.to+as & ~share for sharing optionally"
+        , "aliased actions and-or information via domains"
+        ]
         ],
       go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test:
@@ -26,6 +31,7 @@
             //, 'https://github.com/ionify/ionify/blob/public/ions/share.test.js'
               ]
         , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -34,10 +40,23 @@
         [ "WILL 🙇🏾‍♂️ retire .link() since with@ successfully refined it 🤲🏾"
         , "WANT to simplify this ion & separate its actions into their own ions"
         , "WANT to keep these actions domain-private until otherwise needed"
-        , "WANT 🤔 .find_alias() thing:void 0||null? b4 thing.constructor.name"
+        , "WILL ~find in ion's parent for aliases before searching ion.with.in"
         , "WANT 🤔 .find_alias() debug({debug: [message, thing, place[thing]]})"
         , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
-
+        , "LIKE 🙇🏾‍♂️ ~find.ing in ion's re.ex.from caller & its collection@s!🤓"
+        ,
+        [ "WILL rename find@ionify <= find.link.share@ionify"
+        , "WILL migrate .share() to a 'per' parameter of copy@with@ionify"
+        ,   { copy:
+                { from:null, to:null
+                , per:
+                    { field: true || 'only this  field or * if +1 more false'
+                    , field:false || 'everything but field or  * if +1 false'
+                    ,   '*': true || 'everything'
+                    }
+                }
+            }
+        ]
         , "plan to have top-level-ids reference entire ion not just its re & "
         + "this requires re.*@, ~find, ~share & ~link's compatibility with that"
 
@@ -52,16 +71,26 @@
     },
 
   on:
-    [ [ 'link',   'to'      ]
-    , [ 'link',   'as'      ]
-    , [ 'link'              ]
-    , [ 'find',   'in', 'as']
-    , [ 'find',   'in'      ]
-    , ['share'              ]
+    [ [ 'find', 'for', 'as',  'in', 'skip']
+    , [ 'find', 'for', 'as',  'in'        ]
+    , [ 'find', 'for',        'in', 'skip']
+    , [ 'find', 'for',        'in']
+    , [ 'find',        'as',  'in']
+    , [ 'find',               'in']
+    , [ 'link', 'to']
+    , [ 'link', 'as']
+    , ['share']
     ],
 
   with:
-    { our:
+    { its:
+        { is:
+            { base  : {function:false, object:false}
+            , object: {function:true,  object:true}
+            , sensed: 'sensible@with.our'
+            }
+        },
+      our:
         { find  :  'find@find.link.share@ionify'
         , link  :  'link@find.link.share@ionify'
         , share : 'share@find.link.share@ionify'
@@ -85,48 +114,95 @@
       delete sense.valueOf <= sense
     },
 
- 'find in as':'find',
- 'find in'   :'find',
+ 'find for as in skip':'find',
+ 'find for as in'     :'find',
+ 'find for in skip'   :'find',
+ 'find for in'        :'find',
+ 'find as in'         :'find',
+ 'find in'            :'find',
   find :function
   find (action)
-    { var name      = action.find
-    ,     to        = action.in
-    ,     as        = ('as' in action) ? action.as : name
-    ,     sensible  = find.with.our.ionified
-    ,     context   = find.with.its
-    ,     found
-    ,     last
+    { var finding   = action.in
+      if(!finding)  return false
+
+      var term      = action.find
+        , as        = ('as' in action) ? action.as : term
+        , f0r       = action.for || finding
+        , next      = finding
+        , skip      = action.skip
+        , via       = find.with
+        , none      = via.all.none
+        , its       = via.its
+        , alias     = its.find_alias
+        , group     = its.find_shared
+        , sensible  = via.our.ionified
+        , found     , last
 
       while
-        ( last != to)    //🚨 ¿might infinitely loop on circular .with's | .our's?
-        { last  = to
-        ; if ( found    = context.find_alias ({find:name, in:to})         ) break
-        ; if ( to.with && sensible [typeof (found = to.with.its [name]) ] ) break
-        ; if ( to.with && sensible [typeof (found = to.with.our [name]) ] ) break
-        ; if ( to.with )  {                    to = to.with.its      } else break
-        }
+        ( last != next && next) //👨🏾‍🏫 avoids .with.its infinite loops
+        { last  = next          //👨🏾‍🏫 senses .with.its infinite loops
+          if (found  = alias ({find:term, in:next}))            break
 
-      found  && (action.in [as] = found)
-      return !! found
+          if (!(next = next.with))                              break
+          ;  (found  = (its = next.its) && its [term])
+          if (sensible [typeof   found])                        break
+          if (sensible [found && found.constructor.name])       break
+
+          if (next   = next.in)   //👨🏾‍🏫 search within ion's collections
+          if (found  = group ({find:term, in:next, skip:skip})) break
+
+          ;   next   = its
+        } if (found && (f0r [as] = found)) return true
+
+      //🙇🏾‍♂️ remember the ion's already searched collection@s & as we search,
+      last =  finding.with && finding.with.in.domain  //👨🏾‍🏫 skip them within
+      next =  via.the                   //👨🏾‍🏫 the ionosphere's collection@s!
+      next && (found = group ({find:term, in:next, skip:last||none}))
+      if (found && (f0r [as] = found)) return true
+
+      return false
     },
 
-  find_alias :function
+  find_shared:function
+  find_shared (action)
+    { var via   = find_shared.with
+        , name  = action.find
+        , next  = action.in
+        , skip  = action.skip || via.all.none
+        , alias = via.my.find_alias
+        , object= via.my.is.object
+        , group
+        , found
+
+      for
+        ( group in next )             //👨🏾‍🏫 search within collections, but
+        { if( skip [group]) continue  //👨🏾‍🏫 skipping any specified group(s)
+          ;   group =   next   [group]
+          if(!group || !object [typeof group])          continue
+          if( found =   alias  ({find:name, in:group})) break
+        }
+
+      return found
+    },
+
+  find_alias:function
   find_alias (action)
     { var via      = find_alias.with
-    ,     our      = via.our
-    ,     debug    = via.the.tools.debug
-    ,     debugging= debug ? our.logging.debug : (debug = Object, false)
-    ,     thing    = action.find
-    ,     place    = action.in
-    ,     sensible = our.ionified
-    ,     tried    = {}
-    ; while
-        (!tried [thing] && thing in place)
+        , our      = via.our
+        , debug    = via.the.tools.debug
+        , debugging= debug ? our.logging.debug : (debug = via.all.none, false)
+        , thing    = action.find
+        , object   = action.in
+        , sensible = our.ionified
+        , tried    = {}
+
+      while
+        (!tried [thing] && thing in object)
         { tried [thing]  = true
-        ; debugging  &&  debug ({debug:`~find ${thing} ...`})
-        ; thing = place [thing]
-        ; if (sensible  [typeof thing])           return thing
-        ; if (sensible  [thing.constructor.name]) return thing
+          debugging  &&  debug ({debug:["~find",action.find,"as",thing,"..."]})
+          thing = object[thing]
+          if (sensible  [typeof   thing])                   return thing
+          if (sensible  [thing && thing.constructor.name])  return thing
         }
       return false
     },
@@ -137,7 +213,7 @@
         ],
       must:
         [ 'move id@domain matching to its own ion then share it  '
-        , "fix callee.caller.with.the.domain exposing ionify's domain space"
+        , "fix callee.caller.with.in.domain exposing ionify's domain space"
         ],
       will:
         [ 'enable   + {link:ion, to:thing}                       '
@@ -236,19 +312,19 @@
         }
     },
 
-  spaceInfo:
-    [ "note: Returns, and if needed, creates a space based on id's @domain"
+  groupInfo:
+    [ "note: Returns, and if needed, creates a group based on id's @domain"
     , 'todo: ...'
     ],
   space :function
-  space (id)
-    { var share  = space.with.our
-        , spaces = share.spaces
+  group (id)
+    { var share  = group.with.our
+        , groups = share.spaces
         , domain = String (id || '').match (/@(.*)/)
         ; domain = domain  && domain [1] || 'all'
 
-      return  spaces [domain] || (spaces [domain] = {})
-        //|| (spaces [domain] = Object.create (parent || spaces.null))
+      return  groups [domain] || (groups [domain] = {})
+        //|| (groups [domain] = Object.create (parent || groups.null))
     }
 }
 ;
