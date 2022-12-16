@@ -6,17 +6,19 @@
     , do: {sensation  :true, transcription:true}
     , as: {examination:true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221202
-    , at:  -0.023
+    , on:  -24.200709
+    , to:  -18.57830911
+    , at:  - 0.024
     , is: "ionify's ~on api examination"
     , go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -146,9 +148,10 @@
           ],
         '*':       function
         convention (action)
-          { if (convention == action.no) return  ~{log: "✅ ~on: convention"}
-            if (convention.happened    ) return; else convention.happened = true
-          ~ {on:convention.with.its.re.id, no:convention}
+          { if(convention === action.no) return
+            if(convention.happened     ) return; else convention.happened = true
+            ~ {log: "✅ ~on: convention"}
+            ~ {on:convention.with.my.re.id, no:convention}
           //~on:* keeps & maps reactions to their ids, not '*' <= ¿🚨 to fix?
           //~on:* keep  & map  could  do {'*':[reaction,reaction,...]}
           //~on:* would automatically do this if multi-reaction *-sensation created
