@@ -2,33 +2,36 @@
 ~
 { re:
     { id:  're.id@ionify'
-    , of: ['core','public','sion','api']
+    , of: ['core', 'public', 'sion', 'api']
     , as: {sion:-0.001, sensation:-0.001, convention:-0.001}
     , do: {'next.id@ionify':true}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221201
-    , at:  -0.052
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
+    , on:  -24.200709
+    , to:  -18.57830919
+    , at:  - 0.053
     , is:
-        [ "ensuring that all ionified objects have an re.id."
-        , "setting an object's re.id value as a member mapped to its object re."
-        , "setting missing re.id via ~next.id when possible."
+        [ "ensuring that all sensible ai: active-information have an re.id"
+        , "ensuring that all nested sensible ai have their parent's domain"
+        , "setting an object's re.id value as a member mapped to its object re"
+        , "setting missing re.id via ~next.id when possible"
+        , "generating sequential alpha-numeric ids when ~next.id is unavailable"
+        , "generating ~next.id-opposite-range ids to delay their overlap"
         ],
       go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/id.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/id.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "have id.nextId's range as opposite next.id's to delay their overlap."
-
-        , "MUST right ion[id] = ion.re logic enabling ~on:id@...,id@...:action."
+        [ "MUST right ion[id] = ion.re logic enabling ~on:id@...,id@...:action."
         , "want auto-populating re.on.to.at.as.do from compound re.id 🙇🏾‍♂️ה🤲🏾!"
 
         , "PLAN to have top-level-ids reference entire ion not just its re & "
@@ -61,9 +64,17 @@
         = (ion.debug ||  ion.log || ion.error || ion.info || ion.warn)
         ? 'log' : 'ion'
 
+      var next
+        = {next:named, id:ion}
+
       ion.re.id
-        ||  (ion.next && ion.id) || ion.debug
-        || ~{next:named, id:ion}
+        || (ion.next && ion.id)
+        ||  ion.debug
+        ||  (id.next
+                ?  id.next (next)
+                : (id.next = id.with.the && id.with.the.tools && id.with.the.tools.next_id)
+                  ?  id.next (next)
+                  : ~next)
 
       ion.re.id
         || (ion.re.id =  named /*-*/+  '.' +/*--------------------------------*/
@@ -87,10 +98,10 @@
   domain (ion)
     { var sense       = (this.d0main && domain === this.d0main)
                       ?  this
-                      :  domain.with.its
+                      : domain.with.its
         , id          = String (ion.re.id)
         , dOmain      = {}
-        ; found       = id.match (sense.domainParser)
+        , found       = id.match (sense.domainParser)
         ; dOmain.full = found [0] // parse the ion's domain name
         ; dOmain.subs = found [2] || ''
         ; dOmain.name = found [1] || found [4] || ''
@@ -100,6 +111,20 @@
           id.toString =
           id.domain.valueOf  =
           id.domain.toString = sense.string
+
+      var sion_domain =    ion.with   &&   id.domain.name == ''
+        ; sion_domain && (sion_domain =    ion.with.its   || ion.with.my)
+                      && (sion_domain =   sion_domain.re)
+                      && (sion_domain =   sion_domain.id)
+                      && (sion_domain =   sion_domain.domain)
+                      && (sion_domain =   sion_domain.name  && sion_domain.full)
+
+      ;;  id.domain.name == ''        //🙇🏾‍♂️ blank-domain ions, whose parents
+      &&  sion_domain                 //👨🏾‍🏫 have non-blank domains, will set
+      && (delete ion[id.name])                    //👨🏾‍💻 their domains to the
+      && (ion.re.id.name = id.name + sion_domain) //👨🏾‍💻 parent's domain 🤲🏾
+      && (id = sense['*'](ion))                   //👨🏾‍💻 via recursion ✅🔁✅
+
       Object.setPrototypeOf (id, String.prototype)
       Object.freeze         (id)
       return id

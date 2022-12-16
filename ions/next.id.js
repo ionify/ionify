@@ -6,8 +6,8 @@
     , as: {sion:-0.001, sensation:0.001, composition:0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -7.20160910
-    , to:  -8.20221129
-    , at:  -0.022
+    , to:  -8.20221206
+    , at:  -0.023
     , is:
         [ "doing on-request sequential namespaced id generation"
         , "returning the numeric sequential id"
@@ -28,9 +28,18 @@
 , MIN : Number.MIN_SAFE_INTEGER || -9007199254740991
 , ids : {},
 
+  with:
+    { the:
+        { tools:
+            { next_id: 'next id@next.id@'
+            }
+        }
+    },
+
   valueOf :function
   nextid  ()
-    { this ['next id'].with = {its:this}
+    { this.with.the.tools.next_id = this ['next id']
+      this ['next id'].with = {its:this, the:this.with.the}
       delete this.valueOf  <=  this
     },
 
