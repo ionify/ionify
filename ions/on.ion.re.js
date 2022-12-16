@@ -2,18 +2,17 @@
 ~
 { re:
     { id:  'on.ion.re@ionify'
+    , re:  'on.ion@ionify'
     , as: {'re':-0.001, documentation:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221117
-    , at:  -0.002
-    , re:
-        { is:
-            [ "ionify's   on.ion@'s re:about module."
-            , "ionify's   on.ion@'s actions & information fully described."
-            , "augmenting on.ion@'s more crucial & less verbose re.we.notes."
-            ],
-        },
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
+    , on:  -24.200709
+    , to:  -18.578309123
+    , at:  - 0.003
+    , is:
+        [ "ionify's   on.ion@'s re:about module."
+        , "ionify's   on.ion@'s actions & information fully described."
+        , "augmenting on.ion@'s more crucial & less verbose re.we.notes."
+        ],
       it:
         [ "implements", "senses", "observes", "notifies", "javascript", "json"
         , "ion", "invoked", "object", "notation", "ionosphere"
@@ -21,14 +20,18 @@
         , "prototype", "procedure", "operation", "overload", "language"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
-      //, test: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.test.js'
-        , test: 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
+        , help: 'https://help.ionify.net/'
+        , test:
+              [ 'https://github.com/ionify/ionify/blob/public/ions/on.ion.test.js'
+              , 'https://github.com/ionify/ionify/blob/public/ions/on.test.js'
+              ]
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , talk: 'https://talk.ionify.net/'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },

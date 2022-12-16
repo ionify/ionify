@@ -7,22 +7,23 @@
     , as: { observation :-0.001, sensation    :-0.001 }
     , do: { resolution  :-0.001, transcription:-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221205
-    , at:  -0.085
+    , on:  -24.200709
+    , to:  -18.578309226
+    , at:  - 0.086
     , is:
         [ "ionify: invoked object notation implemented for you"
         , "enabling the ionosphere: invoked object notation observation sphere"
         , "sensing ~{} oli: object literals as invoked Object instances"
         , "sensing ~object_reference  orion as invoked Object instances"
         , "sensing ~on actions"
-        , "sharing core actions & information via the core @ionify domain space"
+        , "sharing core actions & information via the core @ionify domain group"
         , "sharing ionified [typeof ion && ion.constructor.name] utility"
         , "ionifying all ions that were ~get.d before ionify's core conventions"
         ],
       go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test:
@@ -31,6 +32,7 @@
               , 'https://github.com/ionify/ionify/blob/public/ions/on.duplicate.test.js'
               ]
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ion.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -43,27 +45,49 @@
         , "LIKE enacting a best-practice of intentionally keep critically "
         + "essential & actionable notes in ion@ & others in ion.re@"
 
+        , "WERE 👨🏾‍💻 migrating on.ionified here & with@ sharing as a tool"
+        , "WERE 👨🏾‍💻 begining sensible <= on.ionified migration"
+        , "WANT 👨🏾‍💻 renamed sensible <= ionified; confirms sensible ion types"
+        , "want 🙇🏾‍♂️ boolean < {sensible:'name', in:object} +find-resolved 🤲🏾"
+        , "WERE 🙇🏾‍♂️ exploring with-resolution syntax 🤓👨🏾‍💻🤲🏾"
+        ,
+        [ "LIKE 🙇🏾‍♂️ with:ai@@ indicating ai@group relative to the with 🤓"
+        , "NOTE 🙇🏾‍♂️ ai@:@with, ai@@:@ion, ai@@@:@affiliation:group,domain,etc"
+        ]
         , "MUST 🧹 auto-update ionified:observation@ list's deactivated Types"
-        , "WANT ionify@ space inaccessible via ion.valueOf:with.our, the.domain"
+        , "WANT ionify@ group inaccessible via ion.valueOf.with:our & in.domain"
         , "WANT ✨ to enable ~{on:'id@doma.in',do:ion} minimized self-reactions"
+        , "MUSE 🤔 does self-applying conventions post-on.ion application work?Y"
         , "MUSE 🤔 configure [en+dis]abled duplicated multi-reaction sensations?"
-        , "WANT renamed observable <= ionified as confirms observable ion types"
         , "want 🧹 to remove on:no@ionify; conventions retroactively auto-apply"
+        , "will create observation@ delegator & have it do prep@sensed@on.ion@"
         , "want .sensible() within a core observation@ delegator vs convention@"
         , "want ionify@ = core observation@ routing to others post-convention@s"
+        , "like ⏩ application catalyst re.as.configuration for fast initiation"
         ]
     },
 
   with:
-    { our:
-        { does    : []
+    { my:
+        {//pending : null //uncomment when|if able to ~with pre-habitation@ set
+        },
+      our:
+        { on      : 'on@on.ion@'
+        , does    : []
         , senses  : {}
         , known   : {}
         , ionified: {boolean:false, null:false, string:false, undefined:false}
-        //☝🏾observable
-        , on      : 'on@on.ion@'
+        //☝🏾sensible
         }
+    , the:{tools:{sensible:'sensible@on.ion@'}}
+    ,'the.tools.sensible@':'sensible@@'
     },
+
+  on:
+    [['sensible', 'in']
+    , 'sensible'
+    , 'ionified'
+    ],
 
   valueOf:function
   ionify ()
@@ -75,13 +99,16 @@
   object :function
   object ()
     { var  ionify               = this
-        ;  ionify.with.our.on   = ionify.on
         ;  ionify.on.with       = connections.with
         =  ionify.via.with      = ionify.conventions.with
         =  ionify.sensed.with   = ionify.convention.with
         =  ionify.object.with   = ionify.sortKnownWords.with
-        =  ionify.sensible.with = ionify.transcript.with
+        =  ionify.sensible.with = ionify.transcribe.with
         = {its:ionify,the:{},our: ionify.with.our}
+
+     ~/👨🏾‍💻👇🏾remove once with@ name-to-member resolution👍🏾/
+      ionify.with.our.on              = ionify.on
+      ionify.with.the.tools.sensible  = ionify.ionified
 
       delete ionify.valueOf <= ionify <=
      /accept ions pending  ionification/
@@ -93,14 +120,28 @@
 
       function
         connections (no)
-          { ionify <= /share to @ionify domain space/
+          { ionify <= /share to @ionify domain group/
           ; no.no  ({on:'no@ionify', no:connections})
           ~ ionify.pending
-        //; ionify.pending = null
           }
-      ~ {on:'no@ionify', 'no@ionify':connections}
 
+      ionify.on ({on:'no@ionify', 'no@ionify':connections})
       return true
+    },
+
+ 'sensible':
+ 'ionified',
+  ionified :function
+  sensible  (action)
+    { var within= action.in
+        , thing = within && within [action.sensible || action.ionified]
+        ,  type = thing ===  null ? 'null' : typeof thing
+        ,   our = sensible.with.our
+        ,  find = our.find
+        ,    is = our.ionified
+        ;    is = is [type] || is [thing && thing.constructor.name]
+
+      return Boolean (is || +find ({find:thing, in:within}))
     },
 
   activate :function
@@ -114,11 +155,11 @@
 
   deactivate :function
   deactivate (ion)
-    { var observers = deactivate.with.its.observers
+    { var sensors = deactivate.with.its.sensors
 
-      for(var type in observers.undo)
-       if(observers.hasOwnProperty (type))
-          observers.make[type].prototype.valueOf = observers.undo [type]
+      for(var type in sensors.undo)
+       if(sensors.hasOwnProperty (type))
+          sensors.make[type].prototype.valueOf = sensors.undo [type]
     },
 
   disable :function
@@ -262,29 +303,34 @@
         ?   (action = sensation [ '*' ]       )
         :   (action = sensation [action]      )
 
-      //⚛️ self-apply each convention before applying to others:
-      sense.always ({do:action, for:sensation})
-      does [sensation.re.id] = does.push (action) - 1
+      //🙇🏾‍♂️ save convention pre-application since it'll be self-applied next
+      does [sensation.re.id.name || sensation.re.id] = does.push (action) - 1
+      //👨🏾‍💻 & may ~no.on itself which this would undo by post-application save
+
+      //👨🏾‍🔬 apply each convention to this primary convention before any others,
+      sense.always ({do:action, for:sense})     //👨🏾‍🔬 then each one to its own
+      sense.always ({do:action, for:sensation}) //👨🏾‍🔬 sensation, then to others
 
       for
-        //⚛️ apply each convention to all
-        //⚛️ earlier conventions' sensations:
-        ( var missed= does.length -1
-        ,     m     = -1
-        ;  ++ m     < missed
-        ; sensation = does[m].with.its
-        , sense.always ({do:action, for:sensation})
-        );
+        //🙇🏾‍♂️ apply each convention to itself & earlier conventions' sensations;
+        ( var missed =  does.length       // re-apply to itself since some a.i.
+        ,     m      =  -1, dO            // may be formed, like ionifed@ionify
+        ;  ++ m      <  missed            // for *@with@ionify by on.ion@ionify,
+        ;                                 // during a convention@.s application
+        )                                 // to other ions. while doing this, 1+
+        { if (!(dO  = does[m])) continue  // convention@s may have been ~no.on.d
+          sensation = dO.with.its         // so only get active ones for us to
+          sense.always ({do:action, for:sensation})   // apply to convention@s 🎉
+        }
 
       for
-        //⚛️ apply each convention to all
-        //⚛️ pre-sensation launch-ions:
+        //🙇🏾‍♂️ apply each convention@ to all
+        //👨🏾‍🔬 pre-connection@ initiation@s:
         ( var launch  = sense.pending
         ,     p=-1,P  = launch.length
         ;  ++ p  < P
         ;   sense.always ({do:action, for:launch[p]})
-        );  sense.always ({do:action, for:sense})
-        //⚛️ apply each convention to this☝🏾sensation
+        );
     },
 
   always :function
@@ -312,43 +358,42 @@
 
   sensible :function
   sensible (object)
-    { var via         = sensible.with
-        , its         = via.its
-        , observers   = its.observers
-        , core        = observers.core
-        , make        = observers.make
-        , Type        = object.constructor
-        , type        = Type.name || String (Type).match (observers.NAME)[1]
-        , OBSERVABLE  = via.our.ionified
+    { var via       = sensible.with
+        , its       = via.its
+        , sensors   = its.sensors
+        , core      = sensors.core
+        , make      = sensors.make
+        , Type      = object.constructor
+        , type      = Type.name || String (Type).match (sensors.NAME)[1]
+        , SENSIBLE  = via.our.ionified
 
       if( make [type] && object instanceof make [type])
-        { core [type] ||
-         (core [type]  = typeof object)
+        { core [type]  = typeof object
 
-          OBSERVABLE [core [type]] ||
-         (OBSERVABLE [core [type]]  = true)
+          SENSIBLE [core [type]] ||
+         (SENSIBLE [core [type]]  = true)
         }
     },
 
-  transcript :function
-  transcript (whence)
-    { var ion           =    whence.ion
-        , from          =    whence.from
-        , transcription =    transcript.with.our.logging
-        , debugging     = !!(transcription  && transcription.debug)
-        , debug         =    debugging      && []
-        ; debugging     &&   debug.push
-                              ('+sion:'
-                              , ion.re  ?   ion.re.id
-                                        :   ion.with.its
-                                        &&  ion.with.its.re
-                                        &&  ion.with.its.re.id
-                                        ||  'ion')
+  transcribe :function
+  transcribe (whence)
+    { var ion           =   whence.ion
+        , from          =   whence.from
+        , transcription =   transcribe.with.our.logging
+        , debugging     =   Boolean (transcription  && transcription.debug)
+        , debug         =   debugging && []
+        ; debugging     &&  debug.push
+                            ('+sion:'
+                            , ion.re  ?   ion.re.id
+                                      :   ion.with.its
+                                      &&  ion.with.its.re
+                                      &&  ion.with.its.re.id
+                                      ||  'ion')
         ; ion.re         &&
         ( ion.re.ex.from ||
         ( ion.re.ex.from  = (from && from.with)? from.with.its.re.id : ion.re.id
         ))
-        ; debugging && from    && ( from != transcript.with.its.sensed)
+        ; debugging && from    && ( from != transcribe.with.its.sensed)
                     && debug.push ('from',  ion.re  && ion.re.ex.from)
       return debug
     },
@@ -365,15 +410,19 @@
   sensed :function
   sensed (object)
     { var transcript
-        , its       =   sensed.with.its
-        , ionify    =   sensed.with.our
-        , tools     =   sensed.with.the.tools
-        , senses    =   ionify.senses
-        ; object    || (object = this)
+        , ion     =   sensed.with.its
+        , ionify  =   sensed.with.our
+        , tools   =   sensed.with.the.tools
+        , senses  =   ionify.senses
+        ; object  || (object = this)
 
-      its.sensible    (object)
-      its.conventions (object)    ; transcript =
-      its.transcript  ({ion:object, from:sensed.caller})
+      if( ionify.initiation !== false)
+        if( object.re && object.re.as.observation)
+            ion.pending.push (object)
+
+      ion.sensible    (object)
+      ion.conventions (object)    ; transcript =
+      ion.transcribe  ({ion:object, from:sensed.caller})
 
       var reaction, reactions
         , group   , groups
@@ -431,13 +480,13 @@
                         results += 1
                         continue
 
-                      case !!sensible [typeof reaction]:
-                      case !!sensible [reaction.constructor.name]:
+                      case Boolean (sensible [typeof reaction]):
+                      case Boolean (sensible [reaction.constructor.name]):
                         result   = +reaction
                         results += 1
                         continue
 
-                      case !!             // got unresolved 🤔
+                      case Boolean        // got unresolved 🤔
                         (  ionify         // reaction alias 🧐
                         && ionify.find    // so resolve it! 🤓
                         && ionify.find ({find:reaction, in:object})
@@ -474,7 +523,7 @@
       return results == 1 ? result : object
     },
 
-  observers:
+  sensors:
     { core: {}
     , make: {}
     , undo: {}
@@ -482,32 +531,32 @@
     },
 
   via: function
-  via (observer)
+  via (sensor)
     { var with_     = via.with
         , its       = with_.its
         , the       = with_.the
         , our       = with_.our
         , sensible  = our.ionified
-        , observers = its.observers
-        , core      = observers.core
-        , make      = observers.make
-        , name      = observers.NAME
-        , undo      = observers.undo
-        , Type      = observer.on
-        , type      = Type.name   ||  String (Type).match (name)[1]
-        ; make     [type]         =   Type
-        ; undo     [type]         =   Type.prototype.valueOf
-        ; Type.prototype.valueOf  =   observer [type]
-        ; core     [type]         =   typeof Type
-        ; sensible [type]         =   true
-        ; sensible [core [type]]  = !!core [type]
+        , sensors   = its.sensors
+        , core      = sensors.core
+        , make      = sensors.make
+        , name      = sensors.NAME
+        , undo      = sensors.undo
+        , Type      = sensor.on
+        , type      = Type.name  || String (Type).match (name)[1]
+        ; make     [type]         = Type
+        ; undo     [type]         = Type.prototype.valueOf
+        ; Type.prototype.valueOf  = sensor [type]
+        ; core     [type]         = typeof Type
+        ; sensible [type]         = true
+        ; sensible [core [type]]  = Boolean (core [type])
         ; Object.seal (Type)
 
       the
         &&  our.logging
         &&  our.logging.debug
         &&  the.tools.debug
-              ({debug: ['via (observer)', type, JSON.stringify (sensible)]})
+              ({debug: ['via (sensor)', type, JSON.stringify (sensible)]})
 
       return true
     }

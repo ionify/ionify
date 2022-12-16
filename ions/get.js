@@ -5,9 +5,9 @@
     , of: ['core','public','api','launch']
     , do: { transcription :-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221202
-    , at:  -0.055
+    , on:  -24.200709
+    , to:  -18.578309204
+    , at:  - 0.056
     , as:
         { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
         , convention  :-0.001, specification:-0.001, initialization:-0.001
@@ -22,10 +22,12 @@
       go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/get.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/get.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -72,16 +74,13 @@
   valueOf :function
   ionify  ()
     { var ions
-        = [    'on.ion@ionify',    /*'on.do@ionify'
-          ,*/      're@ionify'
-          ,/* 'next.id@ionify',*/    're.id@ionify'
-          ,      'with@ionify','re.do.as.of@ionify'
-          ,                        'on.aeon@ionify', 'find.link.share@ionify'
-          ,        'no@ionify',   'on.error@ionify',       'on.errors@ionify'
-          ,    'logger@ionify'                     ,              'do@ionify'
-          ,   'on.ions@ionify',  'on.action@ionify',       'on.storie@ionify'
-          ,       'use@ionify',                          'on.ionified@ionify'
-          //*/
+        = [          'on.ion@ionify',     /*'on.do@ionify'
+          ,*/            're@ionify',       're.id@ionify'
+          ,        'on.error@ionify',   'on.storie@ionify',   'on.action@ionify'
+          ,         'on.aeon@ionify',        'with@ionify', 're.do.as.of@ionify'
+          , 'find.link.share@ionify',          'no@ionify',   'on.errors@ionify'
+          ,          'logger@ionify',          'do@ionify',     'on.ions@ionify'
+          ,             'use@ionify', 'on.ionified@ionify'
           ]
 
       var GET         = this
@@ -132,20 +131,19 @@
         , sense     = our && our.on
         , atDomain  = (/.*@$/)
 
-      action || (action = this)
+      action  ||    (action = this)
      ~action.and
-      Array.isArray   (action.get) || (action.get = [action.get])
+      Array.isArray (action.get) || (action.get = [action.get])
 
       var todo  = action.then
         , ions  = action.get
 
       if( todo )
-        { var on    =   {on:ions, do:todo, after:action.after}
-          sensible  &&  (  sensible [typeof todo]
-                        || (+{find:todo, in:action}, todo = on.do = action [todo])
-                        )
+        { var on = {on:ions, do:todo, after:action.after}
+          sensible                                          &&(
+          sensible [typeof todo]                            ||(
+         +{find:todo, in:action}, todo = on.do = action [todo]))
           sense (on)
-          todo = on.do
         }
 
       for ( var how  = action.in  , domain  = action.from || ''

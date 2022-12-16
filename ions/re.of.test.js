@@ -1,14 +1,14 @@
 ;
 ~
 { re:
-    { id:  're.of.do.as.test@ionify'
+    { id:  're.do.as.of.test@ionify'
     , of: ['core','public','api','tests']
     , do: {transcription:  true, 're.do.as.of@':true, 'next.id@':true}
     , as: {examination  :-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike.🇬🇾👨🏾‍💻🇺🇸.lee','team✨ionify']
-    , on:  -4.200709
-    , to:  -7.20221122
-    , at:  -0.007
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
+    , on:  -24.200709
+    , to:  -18.578309204
+    , at:  - 0.008
     , is: "ionify's re.of@ api tests"
     , go:
         { meet: 'https://meet.ionify.net/'
@@ -17,7 +17,8 @@
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/of.test.js'
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/re.of.do.as.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/re.do.as.of.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -32,13 +33,9 @@
     },
 
   do:
-    [ "of@ ensures ions' method.with.its"
-    , "of@ ensures ions' method.with.the & with.the"
-    , "of@ ensures ions' method.with.its.domain & with.its.domain"
-    , "of@ ensures ions' method.with.all & with.all singular shared space"
-    , "of@ ensures ions' re.of.domain"
-    , "of@ ensures ions' re.of spaces exist as re.of.space(s)"
-    , "of@ ensures ions' re.of spaces & the spaces are merged"
+    [ "re.of@ ensures ions' re.of.domain"
+    , "re.of@ ensures ions' re.of groups exist as re.of.group(s)"
+    , "re.of@ ensures ions' re.of groups & the groups are merged"
     ],
 
   report :function
@@ -48,57 +45,7 @@
         :  ~{error:`❌ ${question}`, halt:false}
     },
 
- "of@ ensures ions' method.with.its":function
-  its(doing)
-    { var     exam = its.with.its
-        , question = doing [doing.next]
-        ,   answer = exam && exam[question] === its
-      exam.report (question, answer)
-    },
-
- "of@ ensures ions' method.with.the & with.the":function
-  of (doing)
-    { var     exam = of.with.its
-        , question = doing [doing.next]
-
-      var   answer = exam.with
-                  && exam.with.the
-                  && exam.with.the === of.with.the
-                  && typeof exam.with.the == 'object'
-
-      exam.report (question, answer)
-    },
-
- "of@ ensures ions' method.with.its.domain & with.its.domain":function
-  domain (doing)
-    { var     exam = domain.with.its
-        , question = doing [doing.next]
-
-      var   answer = exam.with.its
-                  && exam.with.its.domain
-                  && domain.with.its.domain === exam.with.its.domain
-                  && typeof exam.with.its.domain == 'object'
-
-      exam.report (question, answer)
-    },
-
- "of@ ensures ions' method.with.all & with.all singular shared space":function
-  all (doing)
-    { var     exam = all.with.its
-        , question = doing [doing.next]
-        ,      ion = {method:function(){}}
-        ;     +ion
-
-      var   answer = exam.with
-                  && exam.with.all
-                  &&  ion.with.all  === exam.with.all
-                  &&  ion.with.all  === ion.method.with.all
-                  && 'object' == typeof exam.with.all
-
-      exam.report (question, answer)
-    },
-
- "of@ ensures ions' re.of.domain":function
+ "re.of@ ensures ions' re.of.domain":function
   re_of_domain(doing)
     { var     exam = re_of_domain.with.its
         , question = doing [doing.next]
@@ -110,26 +57,26 @@
       exam.report (question, answer)
     },
 
- "of@ ensures ions' re.of spaces exist as re.of.space(s)":function
-  re_of_spaces(doing)
-    { var     exam = re_of_spaces.with.its
+ "re.of@ ensures ions' re.of groups exist as re.of.group(s)":function
+  re_of_groups(doing)
+    { var     exam = re_of_groups.with.its
         , question = doing [doing.next]
         ,   answer = true
         ,      ofs = exam.re.of
 
       for
-        ( var f=-1, F=ofs.length, name, space
+        ( var f=-1, F=ofs.length, name, group
         ; (++ f  <  F) && answer;
         )
         { name   = ofs [f]
-          space  = ofs [name]
-          answer &&= space && typeof space == 'object'
+          group  = ofs [name]
+          answer &&= group && typeof group == 'object'
         }
 
       exam.report (question, answer)
     },
 
- "of@ ensures ions' re.of spaces & the spaces are merged":function
+ "re.of@ ensures ions' re.of groups & the groups are merged":function
   merge(doing)
     { var ion =
               {   re: { of: ['lee']           }
