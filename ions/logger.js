@@ -5,9 +5,9 @@
     , of: ['public', 'transcription', 'tools', 'api']
     , as: {sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221205
-    , at:  -0.053
+    , on:  -24.200709
+    , to:  -18.578309215
+    , at:  - 0.054
     , in:
         [    'queens-county.new-york.us.earth'
         , 'silicon-valley.california.us.earth'
@@ -42,22 +42,31 @@
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/logger.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/logger.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "were exploring with.*:* sharing via boolean permissions"
-        , "will ~debug:{ionid:true|false} to [en|dis]able per-ion transcription"
+        [ "WILL rename   fail:error, seek:debug, note:log levels"
+        , "LIKE renaming transcribe@👍🏾verb|transcript@🤔noun <= logger@"
         , "WANT 👨🏾‍💻 [message, base, object] sensing object --> console(object)"
-        , "like 🙇🏾‍♂️displaying via habitation@, e.g. web:alert vs web+node:console"
+        ,
+        [ "want 🙇🏾‍♂️ displaying via habitation@: web:alert vs web+node:console"
+        , "like 🙇🏾‍♂️ adoption@s having a .via property that habitation@ sets"
+        ]
+        , "will ~debug:{ionid:true|false} to [en|dis]able per-ion transcription"
+        , "were exploring re.on+to instantiation@s calendarids + timezone + dow"
+        , "were exploring with.*:* sharing via boolean permissions"
+        , "like paired level:message & info-level:id generated-id transcription"
         , "want 🚨 Blink web views' '⚠️' to render with full yellow color & size"
-
-        , "like defining & sensing transcription@ apis; maybe habitation@s can "
-        + "send their own so logger can sense & adopt them! 🤓"
-
-        , "like adding ~{log_level:..., to:'nowhere'||'webview'} later but "
-        + "know it enables in-context-session entities' unexpected record-hides"
+        ,
+        [ "like defining & sensing transcription@ apis; maybe habitation@s can"
+        , "send their own so logger can sense & adopt them! 🤓"
+        ],
+        [ "like adding ~{log_level:..., to:'nowhere'||'webview'} later but"
+        , "know it enables in-context-session entities' unexpected record-hides"
+        ]
         ]
     },
 
@@ -157,7 +166,10 @@
         &&  'string' == typeof message [0]
         &&  (message =  message.join (' '))
 
+      var prefix
       logger.id = (action.re && action.re.ex.from) || logger.re.id
+     ~logger.id.indexOf('@') || (prefix = logger.id.match(/^(log|ion)[.-]\d+/))
+      prefix && (logger.id = (prefix[1] == 'log' ? logger.level : 'sion') + '@')
 
       logger.message
         =   'string' == typeof message
