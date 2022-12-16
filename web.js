@@ -4,11 +4,11 @@
     { id:  'web@ionify'
     , of: ['web','launch']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221202
-    , at:  -0.056
-    , do: {initialization:true, acquisition:true, transcription:true}
-    , as:     {habitation:true,  connection:true}
+    , on:  -24.200709
+    , to:  -18.578309226
+    , at:  - 0.057
+    , do: {ionosphere:true, webi:true, ions:true}
+    , as: {habitation:true, connection:true}
     , is:
         [ "ionify: invoked object notation implemented for your web"
         , "an initialization@ of ionify web habitation@s"
@@ -24,6 +24,7 @@
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/web/web.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/web.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
@@ -37,6 +38,7 @@
         , "WANT to update .locate() per launch.js' habitation@ ajile-legacy discovery"
         , "WANT .get() batch & setting onload that invokes .then after all load"
 
+        , "were exploring re.on+to instantiation@s calendarids + timezone + dow"
         , "will set all ~get.s ionid@ domains to the current ion's @domain."
         , "want to adopt ajile.test.inlineLoader to load inline code!"
         , "want tiny: ~get.then delete script.onload post~then for memory perf?"
@@ -156,7 +158,7 @@
 
   errors:
     { noDOM   : 'web@ionify needs the DOM: Document Object Module API'
-    , noScript: 'No script url or code found in '
+    , noScript: 'no script url or code found in '
     },
 
   locateInfo:
@@ -197,11 +199,13 @@
         ,    code = String (action.code || '')
         ,     url = String (action.at   || '')
         ,    get$ = web.get$
-        , warning = web.errors.noScript
+        , warning
         ;
 
-      if (!url && !code)
-        return {warn:warning} + {debug:[true, warning, action]}
+      if(!url && !code)
+        { warning = [web.errors.noScript," ['",url,"' & '",code,"']"].join('')
+          return {warn:warning} + {debug:[true, warning, action]}
+        }
 
       var SCRIPT        =  document.createElement ('script')
         ; SCRIPT.type   = 'text/javascript'
