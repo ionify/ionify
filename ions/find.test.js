@@ -3,24 +3,33 @@
 {'find.test@ionify':
     { of: ['tests','core','context','sensation','composition']
     , as:  {examination:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
-    , on:  -8.20190107
-    , to:  -7.20221129
-    , at:  -0.06
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
+    , on:  -28.201901072
+    , to:  -18.578309204
+    , at:  - 0.07
     , is:  "ionify's ~find.in.as api examination"
     , go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
         , test: 'https://github.com/ionify/ionify/blob/public/ions/find.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/find.link.share.js'
+        , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "were ..."
+        [
+        [ "NOTE 🧐 'find share' test is being done thrice: duplicated post-alias"
+        , "know this is because we're not removing its shared 'a' aeon of it"
+        , "from the 'all' shared group. what we don't understand is why if its"
+        , "found there, the 'find alias' & 'find aliases' tests still also log"
+        , "their own messages..."
+        ]
+        , "were ..."
         , "must ..."
         , "will ..."
         , "have intentionally given this sensation a top-level id vs an re.id 🤓"
@@ -39,7 +48,7 @@
     ],
 
  'find name':function
-  find_name (tester)
+  find_name (doing)
       { var state = find_name.with.our.logging.log
 
       ~ {do:['a']
@@ -51,7 +60,7 @@
       },
 
  'find name shared':function
-  find_name_shared (tester)
+  find_name_shared (doing)
       { var state = find_name_shared.with.our.logging.log
         ~
         {'name@sharedfindtest':{}
@@ -68,7 +77,7 @@
       },
 
  'find alias':function
-  find_alias (tester)
+  find_alias (doing)
       { var state = find_alias.with.our.logging.log
 
       ~ {do: 'a'
@@ -81,7 +90,7 @@
       },
 
  'find alias shared':function
-  find_alias_shared (tester)
+  find_alias_shared (doing)
       { var state = find_alias_shared.with.our.logging.log
         ~
         {'alias@sharedfindtest':{}
@@ -99,7 +108,7 @@
       },
 
  'find aliases':function
-  find_aliases (tester)
+  find_aliases (doing)
       { var state = find_aliases.with.our.logging.log
 
       ~ {do: 'a'
@@ -113,7 +122,7 @@
       },
 
  'find aliases cyclical':function
-  find_aliases_cyclical (tester)
+  find_aliases_cyclical (doing)
       { var state = find_aliases_cyclical.with.our.logging.log
 
       ~ {do: 'a'
