@@ -5,10 +5,11 @@
     , re:  'with.re@ionify'
     , of: ['core', 'public', 'sion', 'context', 'api']
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
+  //, do: {copy:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.578309226
-    , at:  - 0.010
+    , on:  -2.20070904
+    , to:  -1.57830928508
+    , at:  -0.011
     , is:
         [ "ionify's .with connection@ convention@"
         , "ionify's connection@ to habitation@s like web@, node@ & more"
@@ -35,30 +36,24 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "KNOW .with.* can be exposed if an ion.method shares it as a reaction"
-        , "HAVE🤲🏾implemented sensible@with observation@s via 1st-launch~get.ing"
-        , "HAVE by 🎊🙇🏾‍♂️יהוה👨🏾‍💻🎉 realized with.in.domain && with.in.collections"
-        , "HAVE remade with.in.domain <= with.its.domain THANKS 🎊🙇🏾‍♂️יהוה👨🏾‍💻🎉"
-        , "HAVE 🛠 refined ._with_() with .augment() for member.with extension 🤓"
-        , "HAVE 🙇🏾‍♂️ adopted domains from parent ions during augmentation..."
+        [ "KNOW 🚨 ~next.id sets ion.with.its to itself when ~next.id.s .with.d"
+        , "KNOW .with.* can be exposed if an ion.method shares it as a reaction"
+        , "were 🙇🏾‍♂️ renaming with.the.ionify.groups <= with.the.ionify.spaces"
         ,
-        [ "WERE 👨🏾‍💻 refining implementation to handle ¿all? .with scenarios 🤔🧐"
-        , "WERE 👨🏾‍💻 investigating do.aeon.get.alias@get.test@ ~find challenge"
-        , "WERE 🙇🏾‍♂️ experimenting with hebrew & other when.timezoned@s"
-        , "WERE 🙇🏾‍♂️ renaming with.the.ionify.groups <= with.the.ionify.spaces"
-        ]
-        , "KNOW 🙇🏾‍♂️ member.my is {new} + its.members-copy if ion.with.my:{} 🚨"
-        ,
-        [ "WERE 👨🏾‍💻 finalizing .copy()..."
+        [ "KNOW 🙇🏾‍♂️ with.my is an entirely new object with copies of or"
+        , "references to with.its' members if declared ion.with.my:{} 🚨"
+        ],
+        [ "MUST 🚨 confirm clearing copy.done only @ the end of its recursion"
         , "WANT 👨🏾‍💻 copy.reset() that clears copy.done"
-        , "WILL 🧹 migrate copy@with@ to own ion publicly shared via tools"
-        , "WILL 🧹 migrate share@find*share@ to a 'per' parameter of copy@with@"
+        , "will 🧹 migrate copy@with@ to own ion publicly shared via tools"
+        , "will 🧹 migrate share@find*share@ to a 'part' parameter of copy@with@"
         ,   { copy:
-                { from:null, to:null
-                , per:
-                    { field: true || 'only this  field or * if +1 more false'
-                    , field:false || 'everything but field or  * if +1 false'
-                    ,   '*': true || 'everything'
+                { from: null
+                , into: null
+                , part:
+                    { name: true || "only this named member or * if *|+1 false"
+                    , name:false || "all  but  named member"
+                    ,  '*': true || "all  its  known members"
                     }
                 }
             }
@@ -75,24 +70,35 @@
         , "like 👨🏾‍💻 ajile.legacy (dot|path).naming sion.with.js & sion/with.js"
         , "like 👨🏾‍💻 configuration@ specifying name-to-path resolution@s"
         ],
-        [ "NOTE that augment+copy@with@ could enable & apply with-declaration"
+        [ "WANT name-to-ion-member resolution for reference-less group sharing"
+        , "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"
+        ,
+        , "KNOW 🙇🏾‍♂️ this will eliminate much of ionify's ions' need to be"
+        , "hip-hop invocations soley or primarily to set their with@ shares."
+        ,
+        , "LIKE 🙇🏾‍♂️ ה 🤲🏾 member.dot.path@member@sion@domain resolution-format"
+        , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
+        ,
+        , "NOTE that augment+copy@with@ could enable & apply with-declaration"
         , "name-resolution, as it forms, to with.connection@.group depth so we"
         , "can at least have sensed & delegated name-resolutions to that depth!"
         ,
         , "NOTE that now copy@with@ can do arbitrary depth so can resolve to any"
         , "desired or needed depth! THANK YOU 👨🏾‍🔬🎊🙇🏾‍♂️🤲🏾 יהוה 🤲🏾🎉👨🏾‍💻🤓"
         ,
-        [ "LIKE 🙇🏾‍♂️ with:{...ai@@} indicating ai@path relative to the with! 🤓"
-        , "NOTE 🙇🏾‍♂️ ai@:@with, ai@@:@ion, ai@@@:@affiliation:group,domain,etc"
-        ]
-        ]
-        , "KNOW 🚨 ~next.id sets ion.with.its to itself when ~next.id.s .with.d"
-        , "LIKE 🙇🏾‍♂️ ה 🤲🏾 member.dot.path@method@sion@domain resolution-format"
-        , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
-        , "like 🤔 re.of.* & with.the.* being sensible acquisition@ indications?"
+        , "LIKE adding an 'act' parameter to perform an act on each copy entry."
+        , "this would help to keep copy@ general while enabling ionify-specific"
+        , "acts like name-resolution for entries with string values matching"
+        , "to-be-resolved names +| paths."
         ,
-        [ "want name-to-ion-member resolution for reference-less group sharing"
-        , "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"
+        , "NOTE ~find now searches as deeply & widely as possible so .augment()"
+        , "will benefit from that when it applies it for name resolution."
+        ,
+        , "LIKE 🙇🏾‍♂️ with:{...ai@@} indicating ai@path relative to the with! 🤓"
+        , "NOTE 🙇🏾‍♂️ ai@:@with, ai@@:@ion, ai@@@:@affiliation:group,domain,etc"
+        ],
+        [ "muse 🤔 re.of.* & with.the.* being sensible acquisition@ indications?"
+        , "note domain-less re.as +| re.do can be resolved to ion.re.of groups"
         ],
         [ "LIKE 🙇🏾‍♂️ declared ion.with's prototype as sion WITH instance 👨🏾‍💻"
         , "as a more unobtrusive extension of the ion's original .with which is"
@@ -105,11 +111,18 @@
         , "notified about via transcription -- stating that their continued"
         , "presence via re.ex.with isn't guaranteed, but prefer ☝🏾 extension"
         ]
+        , "were ..."
         , "must ..."
         , "will ..."
         , "plan ..."
-        , "muse 🤔 should we seal WITH * after * vs before it's sion extension?"
+        , "know ..."
+        , "like ..."
+        ,
+        [ "muse 🤔 should we seal WITH * after * vs before it's sion extension?"
         , "muse 🤔 should WITH apply .augment() as a copy constructor?"
+        , "muse 🤔 WITH:(function WITH(){}()) enables true instanceof WITH?"
+        , "muse 🤔 {WITH:{named-expression}} <= WITH@with.constructor === Object"
+        ]
         ]
     },
 
@@ -271,6 +284,7 @@
           sion.its      = sion.my = ion       //👨🏾‍💻 set with@.s its & my to ion
           me.connect ({ion:ion, with:sion})   //👨🏾‍🔬 and connect its collections
           member.with   = sion
+          me.conceal (member)
         }
 
       var adhoc = ion.with                      //🙇🏾‍♂️ maybe an adhoc with@ ion
@@ -292,7 +306,14 @@
 
       me.connect ({ion:ion, with:sion}) //🙇🏾‍♂️ and connect the ion's collections
       ion.with  = sion                  //👨🏾‍💻 then set|replace the ion's with@!
+      me.conceal (ion)
       return      sion                  //👨🏾‍🔬 ion's with@ augmentation done! ✅
+    },
+
+  conceal:function
+  conceal (within)
+    {   Object.isExtensible   (within)
+    &&  Object.defineProperty (within, 'with', {enumerable:false})
     },
 
   connect:function
@@ -370,8 +391,12 @@
         copy.count--
       } copy.count || (copy.done = {})
 
-      /*🚨 MUST figure where to do this @ the end of the recursion
-      for //👨🏾‍💻 free copied things
+      /*🚨MUST confirm doing this only @ the end of the recursion then remove
+      //🚨copy.count || (copy.done = {}) shortcut above
+
+      if( copy.count) return
+
+      for//👨🏾‍💻free copied things
         ( id  in copy.done    )
         { delete copy.done[id]}
       */
