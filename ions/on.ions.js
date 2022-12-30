@@ -4,22 +4,23 @@
     { id:  'on.ions@ionify'
     , of: ['core','public','api']
     , as: {sensation:-0.001, convention:-0.001}
-    , do: {ions:true}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221125
-    , at:  -0.008
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on:  -2.20070904
+    , to:  -1.57831006608
+    , at:  -0.009
     , is:
         [ "sensing configuration@s, applying and-or sharing their settings"
         ],
       go:
-        { seek: 'https://api.ionify.net/'
-        , read: 'https://lingo.ionify.net/'
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
+        , read: 'https://read.ionify.net/'
         , deal: 'https://deal.ionify.net/'
-        , help: 'https://github.com/ionify/ionify/issues'
+        , help: 'https://help.ionify.net/'
       //, test: 'https://github.com/ionify/ionify/blob/public/ions/on.ions.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/ions/on.ions.js'
-        , plan: 'https://github.com/ionify/ionify/projects/1?fullscreen=true'
+        , talk: 'https://talk.ionify.net/'
+        , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
@@ -55,10 +56,13 @@
       { if (!settings.re.as.configuration) return
 
         var id    = settings.re.id
-          , our   = configure.with.our
-          , space = our.space (id)
-          , skip  = our.skip
+          , at    = id.domain.name
+          , via   = configure.with
+          , our   = via.our
+          , space = via.the [at ||'all'] || (via.the [at] = {})
+          , skip  = our.skip    || via.all.none
           , configuration
+          ; space.configuration || (space.configuration = {})
 
         for
           (  var  setting in settings)
@@ -66,18 +70,18 @@
               &&!~setting.indexOf('@')  //🚨alternate re@ object model
               &&  settings.hasOwnProperty (setting)
               && 'function' != typeof (configuration = settings [setting])
-              &&!(space == our && setting == 'spaces' &&
-                    {warn:true}+
+              &&!(setting == 'spaces' && space == our &&
+                   ({warn:true}+
                     {warn:
-                        ["🚨🛡 ionosphere 🛡🚨", id, "tried setting", setting
-                        ,"in the",configure.with.its.re.id.domain, "space"
+                        ["🚨🛡 ionosphere 🛡🚨",id.name, "tried setting"
+                        ,setting,"in the", at,"space"
                         ,"placing in the 'all' space instead & warning..."
                         //🤔 should we keep it instead & if so, where?...
                     ]   }+
                     {warn:configuration},
-                    (our.spaces[setting] = configuration, true)
+                    ((via.all[setting] = configuration), true))
                   )
-              && (space[setting] = configuration)
+              && (space[setting] = configuration, space.configuration[setting] = configuration)
           }
 
         ~ settings.logging
