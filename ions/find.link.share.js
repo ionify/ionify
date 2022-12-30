@@ -7,8 +7,8 @@
     , as: {convention   :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on: { 2.200709    : -4      }
-    , to: { 1.578309226 : -8.1157 }
-    , at:  -0.064
+    , to: { 1.578309263 : -8.1224 }
+    , at:  -0.065
     , is:
         [
         [ "implementing ionify's ~find.for.as.in.skip name-to-ai-resolution"
@@ -41,6 +41,7 @@
         , "WANT to simplify this ion & separate its actions into their own ions"
         , "WANT to keep these actions domain-private until otherwise needed"
         , "WILL ~find in ion's parent for aliases before searching ion.with.in"
+        , "MUST 🙇🏾‍♂️ ~find with limits to skip unsafe out-of-scope resolutions"
         , "WANT 🤔 .find_alias() debug({debug: [message, thing, place[thing]]})"
         , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
         , "LIKE 🙇🏾‍♂️ ~find.ing in ion's re.ex.from caller & its collection@s!🤓"
@@ -99,6 +100,12 @@
             { with  :true, re:true
             , domain:true, do:true
             , get   :true, on:true
+            },
+          tools:
+            { find  :  'find@find.link.share@ionify'
+            , link  :  'link@find.link.share@ionify'
+            , share : 'share@find.link.share@ionify'
+            , space : 'space@find.link.share@ionify'
             }
         }
     },
@@ -107,10 +114,11 @@
   ionify()
     { var   sense   = this
         ,  domain   = sense.with.our
-      domain.find   = sense.find
-      domain.link   = sense.link
-      domain.share  = sense.share
-      domain.space  = sense.space
+        ,   tools   = domain.tools
+      tools.find    = domain.find   = sense.find  //WILL remove after with@ name-to-ai-resolution
+      tools.link    = domain.link   = sense.link  //WILL remove after with@ name-to-ai-resolution
+      tools.share   = domain.share  = sense.share //WILL remove after with@ name-to-ai-resolution
+      tools.space   = domain.space  = sense.space //WILL remove after with@ name-to-ai-resolution
       delete sense.valueOf <= sense
     },
 
@@ -189,21 +197,22 @@
   find_alias (action)
     { var via      = find_alias.with
         , our      = via.our
-        , debug    = via.the.tools.debug
-        , debugging= debug ? our.logging.debug : (debug = via.all.none, false)
         , thing    = action.find
         , object   = action.in
         , sensible = our.ionified
         , tried    = {}
+        , debug    = Boolean (our.logging && our.logging.debug)
+        ; debug   &&(debug = via.the.tools.debug || via.all.nope)
 
       while
         (!tried [thing] && thing in object)
         { tried [thing]  = true
-          debugging  &&  debug ({debug:["~find",action.find,"as",thing,"..."]})
+          debug && debug({debug:["~find",action.find,"as",thing,"..."]})
           thing = object[thing]
           if (sensible  [typeof   thing])                   return thing
           if (sensible  [thing && thing.constructor.name])  return thing
         }
+
       return false
     },
 
