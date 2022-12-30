@@ -6,12 +6,13 @@
     , do: {transcription:-0.001}
     , as: {observation  :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.202209226
-    , at:  - 0.025
+    , on:  -2.20070904
+    , to:  -1.20220928508
+    , at:  -0.026
     , is:
         [ "🙇🏾‍♂️ ion: invoked object notation invocation for your functions🤲🏾"
-        , "enabling e.g. ~go for go() with its ion|domain-space as its 'this'"
+        , "enabling e.g. ~go for go() with its home|association@ as its 'this'"
+        , "enabling all input types, but always .apply's with an array"
         , "enabling input via ion.in & setting output via ion.out"
         , 'enabling more actions to have similar interaction interfaces'
         ],
@@ -67,11 +68,10 @@
 
           ion.     in             ||
           'in'     in     ion     || (ion.in = ion)
-          Array.isArray  (ion.in) || (ion.in = [ion.in])
 
           var via   = act.with
             , our   = via.our
-            , ins   = ion.in
+            , ins   =[ion.in]
             , id    = ion.re.id
             , my    = ion.with.my ||  our.space (id || '')
             , name  = ion.name    || 'action'

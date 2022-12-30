@@ -6,9 +6,9 @@
     , do: {transcription:-0.001}
     , as: {  observation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.578309226
-    , at:  - 0.039
+    , on:  -2.20070904
+    , to:  -1.57830927408
+    , at:  -0.040
     , is:
         [ "sensing all aeon: array-expressed object notations like these:"
                                         +
@@ -32,7 +32,13 @@
         , team: 'https://team.ionify.net/'
         },
       we:
+        [
         [ "MUST migrate anemojii's aeon await logic here & integrate with .next"
+        ,     " doing            = anemojii.do"
+        ,     " anemojii.do      = doing.slice (1)"
+        ,     " anemojii.do.with = doing.with"
+        ,     " doing.length     = 1"
+        ]
         ,
         [ "WERE exploring sharing aesop's current storie|phrase via aeon.next."
         , "it currently helps tests apply their aesop storie|phrase within"
@@ -48,16 +54,12 @@
         ]
     },
 
-  with:
-    { my:
-        { sensors:
-            { boolean   : 'aesop'
-            , null      : 'aesop'
-            , number    : 'aesop'
-            , string    : 'aesop'
-            , undefined : 'aesop'
-            }
-        }
+  sensors:
+    { boolean   : 'aesop'
+    , null      : 'aesop'
+    , number    : 'aesop'
+    , string    : 'aesop'
+    , undefined : 'aesop'
     },
 
   on:
@@ -112,7 +114,7 @@
               if( !sensible [typeof sense])
               if( !sensible [sense.constructor.name])
                 { find    ({find:sense,  in:sensors, as:type})
-                  sense = (sensors) [type]
+                  sense = sensors [type]
                   if(!sense)
                     { warn ({warn:["aeon: couldn't sense",type,"~",[JSON.stringify (thing)]]})
                     ; continue
@@ -149,7 +151,7 @@
         //WANT 🤔 to eliminate 🚫 doing 🔁 all👆🏾the👆🏾above 🔁 over 😓 & 😓 over
 
       var     action =   find ({find:phrase, in:act}) && act [phrase]
-      typeof  action == 'function' && (action.in = [act])
+      typeof  action == 'function' && (action.in = act)
           ~   action                  //☝🏾{api.exploration:action@.in}
       if (act.next > act.length) act.next = act.length
     }
