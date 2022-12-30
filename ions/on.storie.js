@@ -6,9 +6,9 @@
     , do: {transcription:-0.001}
     , as: {observation  :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -28.20161116
-    , to:  -18.578309111
-    , at:  - 0.009
+    , on:  -2.2016111608
+    , to:  -1.5783106608
+    , at:  - 0.010
     , is:
         [ "sensing invoked stories: stated text of recognition expressions like"
         , "                ~ /.../                                             "
@@ -54,7 +54,7 @@
       stories  ()
         {
         ~ {info: this.source}
-          return this //true
+          return true //this
         }
 }
 ;
