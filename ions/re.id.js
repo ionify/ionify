@@ -3,12 +3,12 @@
 { re:
     { id:  're.id@ionify'
     , of: ['core', 'public', 'sion', 'api']
-    , as: {sion:-0.001, sensation:-0.001, convention:-0.001}
-    , do: {'next.id@ionify':true}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.57830919
-    , at:  - 0.053
+    , on:  -2.20070904
+    , to:  -1.57831004408
+    , at:  -0.054
+    , do: {'next.id@ionify':true}
+    , as: {sion:-0.001, sensation:-0.001, convention:-0.001}
     , is:
         [ "ensuring that all sensible ai: active-information have an re.id"
         , "ensuring that all nested sensible ai have their parent's domain"
@@ -45,6 +45,12 @@
         ]
     },
 
+  valueOf:function
+  ionify ()
+    { this["*"].with = {its:this}
+      delete this.valueOf <= this
+    },
+
   on:
  '*',
  '*':function
@@ -56,7 +62,6 @@
         { ion [ID] || (ion [ID] = ion.re)
           return sense.d0main (ion)
         }
-
 
       if (ID = ion.re.id) return sense.d0main (ion)
 
@@ -72,9 +77,11 @@
         ||  ion.debug
         ||  (id.next
                 ?  id.next (next)
-                : (id.next = id.with.the && id.with.the.tools && id.with.the.tools.next_id)
-                  ?  id.next (next)
-                  : ~next)
+                : (id.next = id.with.the
+                          && id.with.the.tools
+                          && id.with.the.tools.nextid)
+                ?  id.next (next)
+                :   ~ next)
 
       ion.re.id
         || (ion.re.id =  named /*-*/+  '.' +/*--------------------------------*/
@@ -92,7 +99,7 @@
   string () {return this.name}
     ,
   domainParser
-    : /@((.+)\.(.+\..+))$|@(.*)$|^[^@]+$/
+    : /@((.+)\.(.+\..+))$|@(.*)$|^([^@]+)$/
     ,
   d0main :function
   domain (ion)
@@ -102,10 +109,10 @@
         , id          = String (ion.re.id)
         , dOmain      = {}
         , found       = id.match (sense.domainParser)
-        ; dOmain.full = found [0] // parse the ion's domain name
+        ; dOmain.full = found [0] == found [5] ? '' : found [0] //🛡@domain|blank
         ; dOmain.subs = found [2] || ''
         ; dOmain.name = found [1] || found [4] || ''
-        ; dOmain.base = found [3] || dOmain.name
+        ; dOmain.base = found [3] || dOmain.name      //👇🏾NOTE👇🏾{es5.ish.api}
         ; ion.re.id   = id  = {name:id, domain:dOmain/*, __proto__:String.prototype*/}
         ; id.valueOf  =
           id.toString =
@@ -125,15 +132,14 @@
       && (ion.re.id.name = id.name + sion_domain) //👨🏾‍💻 parent's domain 🤲🏾
       && (id = sense['*'](ion))                   //👨🏾‍💻 via recursion ✅🔁✅
 
-      Object.setPrototypeOf (id, String.prototype)
-      Object.freeze         (id)
-      return id
-    },
+      var fixen  = {configurable:false, enumerable:false, writable:false}
+        , fixens = {toString: fixen, valueOf: fixen}
 
-  valueOf:function
-  ionify ()
-    { this["*"].with = {its:this}
-      delete this.valueOf <= this
+      Object.defineProperties (id        , fixens)
+      Object.defineProperties (id.domain , fixens)
+      Object.setPrototypeOf   (id, String.prototype)  //👈🏾NOTE:{es6.api}
+      Object.freeze           (id)
+      return                   id
     }
 }
 ;

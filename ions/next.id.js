@@ -5,9 +5,9 @@
     , of: ['public','tools','api']
     , as: {sion:-0.001, sensation:0.001, composition:0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -7.20160910
-    , to:  -8.20221206
-    , at:  -0.023
+    , on:  -2.20160910707
+    , to:  -1.57831005508
+    , at:  -0.100
     , is:
         [ "doing on-request sequential namespaced id generation"
         , "returning the numeric sequential id"
@@ -19,7 +19,7 @@
         ],
       we:
         [ "want to encapsulate its internal members, i.e. MAX, MIN, ids"
-        , "like valueOf switching next_id creating a private internals closure"
+        , "like valueOf switching nextid creating a private internals closure"
         ]
     }
 
@@ -31,21 +31,21 @@
   with:
     { the:
         { tools:
-            { next_id: 'next id@next.id@'
+            { nextid: 'next id@next.id@'
             }
         }
     },
 
   valueOf :function
   nextid  ()
-    { this.with.the.tools.next_id = this ['next id']
+    { this.with.the.tools.nextid = this ['next id']
       this ['next id'].with = {its:this, the:this.with.the}
       delete this.valueOf  <=  this
     },
 
  'next id':function
-  next_id (action)
-    { var my   = next_id.with.its
+  nextid (action)
+    { var my   = nextid.with.its
         , ids  = my.ids
         , name = action.next
         , f0r  = action.id.re || (action.id.re = {})
