@@ -5,9 +5,9 @@
     , do: {'re@':true, 'on.storie@':true, transcription:true}
     , as: {examination  :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -7.20221212
-    , at:  -0.007
+    , on:  -2.20070904
+    , to:  -1.57831003308
+    , at:  -0.008
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , go:
@@ -40,7 +40,7 @@
   with:
     { my:
         { tests:
-            { id:1, im:1, of:1, do:1, as:1, by:1, on:1
+            { id:1, re:1, of:1, do:1, as:1, by:1, on:1
             , to:1, at:1, ax:1, hi:1, is:1, ex:1, go:1
             },
         }

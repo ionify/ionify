@@ -5,9 +5,9 @@
     , of: ['core','public','sion','api','documentation']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , as: {documentation:-0.001, sion:-0.001}
-    , on:  -4.200709
-    , to:  -8.20221209
-    , at:  -0.008
+    , on:  -2.20070904
+    , to:  -1.57831003308
+    , at:  -0.009
     , re:
         { id: 're@ionify'
         , at: -0.006
@@ -23,9 +23,9 @@
 
         , `specifying ion re's as having these members:
 
-              re.hi.im.id.re.of.as.by.in.on.to.at.ax.my.am.if.is.ex.we.go.do.it
+              re.hi.id.re.of.as.by.in.on.to.at.ax.my.am.if.is.ex.we.go.do.it
                 .hi hidden.ion boolean | observer.name | observer.id
-                .im ~get.s stated ionified module stating fuller re.*
+                .re ~get.s stated ionified module stating fuller re.*
                 .id ~get.s stated domain(s) validation if configured
                 .re states the sion's re@ ion 🤓
                 .of ~get.s stated groups & links to ion's members
@@ -49,6 +49,7 @@
                 .an ¿the ion's type(s) but differs from re.as how?
                 .be ¿key statements or warnings, some container?
                 .hi ¿introduction or welcome message or documentation?
+                .im ¿identities, entity resolutions, related ions or entities?
                 .me ¿identities, entity resolutions, related ions or entities?
                 .no ¿restricted actions & information; re.if | re.ax alternate?
                 .ow ¿compilation map of all errors or a finite # rotating set?
@@ -58,14 +59,14 @@
                 .yo ¿...?
 
               re.core
-                .hi.im.id.re.of.as.ax.by.on.to.at.my.if.is.go.do.ex
+                .hi.id.re.of.as.ax.by.on.to.at.my.if.is.go.do.ex
                 .go: 'license|site uri, email address, or contact'
                   ,  ['license|site uri', 'email address', ...]
                   ,  {chat, code,deal,help,join,plan,seek,test}
-                  ,  is augmented by & overrides re.im.go's entries'
+                  ,  is augmented by & overrides re.re.go's entries'
                 .do: map of versioned ions helping this ion do things
 
-              re.im
+              re.re
                 .am.id.is.on.to.at.in.it.we.go
           `
         ],
