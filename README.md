@@ -18,8 +18,8 @@ and is maintained by
 
 ## why
 
-**⚛︎ ion** + **🧬 ionify** enable expressing actions & information that humans & software both
-[naturally ❦ understand](https://github.com/ionify/about/blob/public/VISION.md#vision).
+**⚛︎ ion** + **🧬 ionify**, enable expressing actions & information, that humans
+& software [naturally ❦ understand](https://github.com/ionify/about/blob/public/VISION.md#vision).
 they enable:
 
 + creating [domain-specific languages](#domain-specific-languages)
@@ -29,7 +29,7 @@ they enable:
   [event-driven](#event-driven-programming),
   [meta](https://en.wikipedia.org/wiki/Metaprogramming) &
   [name-collision-free](#name-collision-freedom)
-  expressions
+  expression
 
 + defining, acquiring, [observing](#decoupled-observation) &
   interacting, with highly-[decoupled](#decoupled-observation)
@@ -39,9 +39,9 @@ they enable:
 
 ## how
 
-**⚛️ ion** + **🧬 ionify** are enabled by, and can be implemented in, languages that support
+**⚛️ ion** + **🧬 ionify**, are enabled by & can be implemented in, languages that support
 [operator ⚙️ overloading](https://en.wikipedia.org/wiki/Operator_overloading).
-three we've explored & confirmed capable are,
+three we've explored & confirmed capable, are
 [**{✨:javascript}**](https://github.com/ionify/about/blob/public/ions/ion.md#javascript),
 [**🐍_python**](https://github.com/ionify/about/blob/public/ions/ion.md#python), &
 [**java.☕️**](https://github.com/ionify/about/blob/public/ions/ion.md#java).
@@ -63,36 +63,36 @@ phrases to actions:
 ```javascript
 ~
 { re:
-    { id:  'ask.say@ions.iskitz.net'
-    , is:  'an ask & say domain-specific-language interaction'
-    , do: ['webi', 'interaction']
-    , as:  'sensation'
-    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee'
-    , on:  -7.20150728
-    , to:  -8.20221129
-    , at:  +3.03
-    , in:  'silicon-valley.california.usa.earth'
+    { id: 'ask.say@ions.iskitz.net'
+    , is: 'an ask & say domain-specific-language interaction'
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {201507283.2 : -7}
+    , to: {202212262.2 : -8}
+    , at: +3.100
+    , in: 'silicon-valley.california.usa.earth'
+    , do: 'webi interaction'
+    , as: 'sensation'
     },
 
   on: ['ask','say'],
 
   ask :function
   ask ( action )
-      { ask.with.its.answer =
-        prompt (ask.with.its.prep (action.ask))
+      { ask.with.my.answer =
+        prompt (ask.with.my.prep (action.ask))
         ||''
       },
 
   say :function
   say ( action )
-      { alert  (say.with.its.prep (action.say))
+      { alert  (say.with.my.prep (action.say))
       },
 
   prep:function
   prep( quote )
-      { return  quote.replace         (// replace
-               (/\[answer\]/g)        ,// [answer]
-                prep.with.its.answer  )// 👈🏾 with
+      { return  quote.replace       (// replace
+               (/\[answer\]/g)      ,// [answer]
+                prep.with.my.answer )// 👈🏾 with
       }
 }
 
@@ -100,11 +100,11 @@ phrases to actions:
 ~ /ask.say interactions can be independent ions/
 
 ~ { say: '👋🏾 hi!'                              }
-~ { ask: "what's your name?"                    }
+~ { ask: "what's your name?"                   }
 ~ { say: "hi [answer]! i'm math e. bot 🤓"     }
-~ { ask: "[answer], what's 2 x 2?"              }
+~ { ask: "[answer], what's 2 x 2?"             }
 ~ { say: '[answer]? really? 🤔'                }
-~ { ask: 'can i ask you another question?'      }
+~ { ask: 'can i ask you another question?'     }
 ~ { say: 'i thought you\'d say "[answer]" 😉'  }
 ```
 
@@ -120,12 +120,12 @@ relationships, in whatever order is best for human comprehension" -
 { re:
     { id: 'frendlee@ionified.net'
     , is: 'a literate & natural-language exploration'
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {201712086.2 : -8}
+    , to: {202212262.2 : -8}
+    , in: 'silicon-valley.california.usa.earth'
     , do: 'ask.say.3@ions.iskitz.net'
     , as: 'aesop action'
-    , by: 'mike.🇬🇾👨🏾‍💻🇺🇸.lee'
-    , on: -8.20171208
-    , to: -8.20221129
-    , in: 'silicon-valley.california.usa.earth'
     },
 
   do:
@@ -150,15 +150,15 @@ relationships, in whatever order is best for human comprehension" -
 ```javascript
 ~
 { re:
-    { id:  'code-as-prose.demo@ionified.net'
-    , is:  'code-as-prose with ionify & orion'
-    , do:  'transcription'
-    , as: ['sion', 'sensation']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee']
-    , on:  -7.20190323
-    , to:  -8.20221129
-    , at:  +0.15
-    , in:  'silicon-valley.california.us.earth'
+    { id: 'code-as-prose.demo@ionified.net'
+    , is: 'code-as-prose with ionify & orion'
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {201903237.2 : -7       }
+    , to: {578310011.1 : -8.235423}
+    , at: +0.200
+    , in: 'silicon-valley.california.us.earth'
+    , do: 'transcription'
+    , as: 'sion sensation'
     },
 
   on: 'say',
@@ -175,13 +175,13 @@ relationships, in whatever order is best for human comprehension" -
      as     = {say:'as actionable words within'}
   prose     = {say:'phrases & sentences?!🤓'}
 
-    via     = {say:'natural ❦ language & 🙇🏾‍♂️ יהוה 🤲🏾'}
-    ionify  = {say:'🧬 ions implemented for your'},
+    via     = {say:'natural ❦ language by 🙇🏾‍♂️ יהוה 🤲🏾 via'}
     ion     = {say:'⚛️ invoked object notation'},
+    ionify  = {say:'🧬 ions implemented for your'},
   orion     = {say:'✨ object-reference ion:'},
 captions    = {say:'📝 code-as-prose terminology ions!👨🏾‍💻'}
 
- 'with' , ion & ionify + orion, you -can-
+ 'with' , ion + ionify & orion, you -can-
   write & code -as- prose -via- captions-
 
               ['^ ڐ ^']
@@ -202,22 +202,22 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
 ```javascript
 ~
 { re:
-    { id:  'an.ionified.module@doma.in'
-    , is:  'modeling an ionified module'
-    , do:  'on.storie@ionify'
-    , as: ['sion', 'action']
-    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
-    , on:  -4.200709
-    , to:  -8.202211290651
+    { id: 'an.ionified.module@doma.in'
+    , is: 'modeling an ionified module'
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {200709.2    : -4     }
+    , to: {202212251.2 : -8.2337}
+    , do: 'on.storie@ionify'
+    , as: 'sion action'
     },
 
   do: function
   something ()
     {
-    + something.with.its.hi
+    + something.with.my.ai
     },
 
-  hi: /hi! 🤓/
+  ai: /hi! 🤓/
 }
 ```
 
@@ -229,18 +229,18 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 ```javascript
 ~
 { re:
-    { do: ['transcription', 'on.storie@']
-    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
-    , on:  -4.200709
-    , to:  -8.202211290420
-    , as:  'sensation'
+    { by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {200709.2    : -4     }
+    , to: {202212251.2 : -8.2224}
+    , do: 'on.storie@ionify transcription'
+    , as: 'sensation'
     },
 
   on:'event',
   do(  ion  )
-    { /log 'it happened!'//
-      {log: ion.event   } /
-      /via  the event ion!/
+    { /log 'it happened!' via the event ion!//
+      {log: ion.event} & /stop sensing event//
+      { on:'event', no:this.do}
     }
 }
 
@@ -260,21 +260,22 @@ anonymous & named objects:
 ```javascript
 ~
 { re:
-    { do: ['transcription', 'on.storie@']
-    , by:  'mike.🇬🇾👨🏾‍💻🇺🇸.lee@ionify.net'
-    , on:  -4.200709
-    , to:  -8.202211290421
-    , as:  'sensation'
+    { by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {200709.2    : -4     }
+    , to: {202212236.2 : -8.1202}
+    , do: 'on.storie@ionify transcription'
+    , as: 'sensation'
     },
 
   on:'hi',
   hi( ion)
     { /this method is called for each ion//
       /with a 'hi' property & value which//
-      /it logs:                          //
+      /it transcribes via the log action://
 
       {log: ion.hi}
 
+      ^
       /logs "i'm an ion!" 1st//
       /logs "i'm a json!" 2nd/
     }
@@ -288,35 +289,37 @@ anonymous & named objects:
 
 ### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
 
-[**🦁 lions**: literal ions](https://github.com/ionify/about/blob/public/LINGO.md#%EF%B8%8E-ion),
+[**🦁 lions**: literal ions](https://talk.ionify.net/),
 i.e. `~/ / + [ ] & { }`, eliminate name collisions by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 
 **ionify** enables individually observing & inspecting multiple identically identified
-**lions**. that capability enables **lions** to simultaneously coexist within the same
+**lions**. this capability enables **lions** to simultaneously coexist within the same
 [execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts)
 without overriding all, or parts, of each other:
 
 ```javascript
 ~
 { re:
-    { do: ['transcription', 'on.storie@']
-    , by:  'mike.👨🏾‍💻.lee@ionify.net'
-    , on:  -4.200709
-    , to:  -8.202211290424
-    , as:  'sensation'
+    { by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {200709.2    : -4     }
+    , to: {578310022.2 : -8.0007}
+    , do: 'on.storie@ionify transcription'
+    , as: 'sensation'
     },
 
   on:'my.ion@doma.in',
-  do (ion)
-    { /this method is called for each ion with//
-      /an id matching 'my.ion@doma.in'.       //
-      /it confirms the ion developer before   //
-      /describing what the ion does.           /
+  do( ion )
+    { ion.re.by ['a.🇬🇾👨🏾‍💻🇺🇸.developer.created']
 
-      if (ion.re.by == 'a.🇬🇾.developer')
-         /log 'identifies the intended module'//
-         {log: ion.re.it}
+      &&  /this method is called for each ion with//
+          /an id matching 'my.ion@doma.in', but it//
+          /confirms the ion developer before      //
+          /describing what the ion is or does:    //
+
+          /log 'identifying the intended module 🎉'//
+          {log: ion.re.is} & /stop sensing this id//
+          { on: ion.re.id, no: this.do }
     }
 }
 
@@ -325,31 +328,31 @@ without overriding all, or parts, of each other:
 ~
 { re:
     { id: 'my.ion@doma.in'
-    , by: 'a.🇬🇾.🇯🇵.🇺🇸.developer'
-    , on: -8.200912
-    , to: -8.202111181237
+    , by: 'a.🇬🇾👨🏾‍💻🇺🇸.developer.producing'
+    , on: -2.20091205708
+    , to: -1.578309296080333
     , in: 'silicon-valley.california.usa.earth'
-    , it: "duplicates the intended module's id"
+    , is: "sharing the intended module's id"
     }
 }
 
 ~
 { re:
     { id: 'my.ion@doma.in'
-    , by: 'a.🇬🇾.developer'
+    , by: 'a.🇬🇾👨🏾‍💻🇺🇸.developer.created'
     , in: 'georgetown.guyana.south-america.earth'
-    , it: 'identifies the intended module'
+    , is: 'identifying the intended module 🎉'
     }
 }
 
 ~
 { re:
     { id: 'my.ion@doma.in'
-    , by: 'a.🇬🇾.🇺🇸.developer'
-    , on: -4.200709
-    , to: -5.200912
+    , by: 'a.🇬🇾👨🏾‍💻🇺🇸.developer.discovering'
+    , on: -2.20070904
+    , to: -2.20091205705
     , in: 'queens-county.new-york.usa.earth'
-    , it: "also duplicates the intended module's id"
+    , is: "also sharing the intended module's id"
     }
 }
 ```
