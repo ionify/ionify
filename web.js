@@ -4,10 +4,10 @@
     { id:  'web@ionify'
     , of: ['web','launch']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.578309226
-    , at:  - 0.057
-    , do: {ionosphere:true, webi:true, ions:true}
+    , on:  -2.20070904
+    , to:  -1.57831005508
+    , at:  -0.100
+    , do: 'ionosphere webi ions'
     , as: {habitation:true, connection:true}
     , is:
         [ "ionify: invoked object notation implemented for your web"
@@ -32,11 +32,13 @@
       we:
         [ "NOTE .watch() is disabled because it hides critical script errors."
 
+        , "WERE 🧹 nullifying .script()'s onload callback once its script loads"
         , "WERE modeling re.as@ specification@s with version@s & re.of@ association@s"
         , "WERE modeling  initialization@ideas.js & ROLES-&-FLOWS@launch.js"
         , "WILL implement initialization@ideas.js & ROLES-&-FLOWS@launch.js"
-        , "WANT to update .locate() per launch.js' habitation@ ajile-legacy discovery"
+        , "WANT 👨🏾‍💻 .locate() per launch.js ajile-legacy habitation@ discovery"
         , "WANT .get() batch & setting onload that invokes .then after all load"
+        , "MUST 🚨 IMPROVE .jsonxd() to handle {at:'id@js.on'} vs {at:'url'}"
 
         , "were exploring re.on+to instantiation@s calendarids + timezone + dow"
         , "will set all ~get.s ionid@ domains to the current ion's @domain."
@@ -48,6 +50,15 @@
         , "like ... "
 
         , "like fast: document.createDocumentFragment() to batch add ions"
+        , "like .script()'s then.and adding to any existing ~*.and action"
+        ,
+        [ "want .via() delegating script, es.module, ajile, amd, umd, commonjs:"
+        , "note https://nodejs.org/api/esm.html"
+        , "note https://exploringjs.com/impatient-js/ch_modules.html"
+        , "note https://jameshfisher.com/2020/10/04/what-are-umd-modules/"
+        , "note https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules"
+        , "note https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/apA.md#universal-modules-umd"
+        ]
         ]
     },
 
@@ -89,13 +100,13 @@
   web ()
     { var web           = this
       web.get$.URL.with = {its: web.get$}
-      web.get     .with =
+      web.via     .with =
       web.script  .with =
       web.setup   .with =
       web.queue   .with = {its: web}
       Object.prototype.valueOf =web.setup
 
-      web.queue   (this)
+      web.queue   (web)
     //web.watch     ()
       web.ready     ()
       web.locate    ()
@@ -107,30 +118,38 @@
     [],
   queue :function
   queue (ion)
-    { var web = queue.with.its
-        ; web.pending.push (ion)
+    { var who = ion.re.id.name || ion.re.id
+        , web = queue.with.its
+        , all = web.pending
+        ; all[who] =ion
+        ; all.push (who)
     },
 
   setup :function
   setup (ion)
     {//🙇🏾‍♂️ setup@web@ implementing launch per launch.js' ROLES & FLOWS 👨🏾‍💻/
       var web = setup.with.its
-        , how = -4.200709
+        , how = -2.20070904
         ; ion ||
         ( ion = this);
 
       if(!ion.re || !ion.re.as) return how; else web.queue (ion)
 
-      if( ion.re.as.configuration             && ion.relations )
-        { web.with.our.configuration.relations = ion.relations
+      var as = ion.re.as
+        , configuration = web.with.our.configuration
+
+      if( as.configuration)
+        { configuration.relations ||= ion.relation || {}
+          configuration.locations ||= ion.location || {}
         }
 
-      if( ion.re.as.acquisition &&  ion.get )
-        { ion.get.via           =   web.get
+      if( as.acquisition &&  ion.get )
+        { ion.get.via = web.via
         }
 
-      if( ion.re.as.observation )
+      if( as.observation )
         { ion.pending = web.pending
+          ion.queue   = web.queue
         }
 
       return how
@@ -177,12 +196,19 @@
     },
 
   types:
-    {       es:'script'
-    ,       js:'script'
+    {    amd  :'script'
+  //,    css  :'style'
+    ,    cjs  :'script'
+  //,    esm  :'module'
+    ,    es   :'script'
+    ,    js   :'script'
+    ,    jsonp:'jsonxd'
+  //,      mjs:'module'
+    ,      umd:'script'
     ,undefined:'script'
     },
 
-  get :function
+  via :function
   via (thing)
     { var web = via.with.its
         , as  = web.types [thing.as]
@@ -193,12 +219,18 @@
       web [as] (thing)
     },
 
+  jsonxd:function
+  jsonxd (jsonp)
+    { jsonp.at += '&callback=~'
+      return jsonxd.with.its.script (jsonp)
+    },
+
   script :function
   script (action)
-    { var     web = script.with.its //|| (script == this.script ? this : null)
+    { var     via = script.with
+        ,     web = via.its           //|| (script == this.script ? this : null)
         ,    code = String (action.code || '')
         ,     url = String (action.at   || '')
-        ,    get$ = web.get$
         , warning
         ;
 
@@ -207,10 +239,32 @@
           return {warn:warning} + {debug:[true, warning, action]}
         }
 
-      var SCRIPT        =  document.createElement ('script')
-        ; SCRIPT.type   = 'text/javascript'
-        ; action.then  && (SCRIPT.onload = action.then)
-        ; SCRIPT.async  =  get$.ASYNC [action.in]
+      function clean ()
+        { SCRIPT.onload = null
+          delete then.and
+          return true
+        }
+
+      function error
+        ( event )
+        { var which = event.target
+            , note  = ["~get unsuccessful for", which.id ||'script'
+                      ,"\n  "                 , which.src
+                      ].join (' ')
+            , oops  = new Error (note)
+            , tell  = action.or || action.then || via.all.nope
+            ; tell  (oops)
+        }
+
+      var then
+        , get$          =   web.get$
+        , SCRIPT        =   document.createElement ('script')
+        ;(then          =   action.then)  &&
+         (SCRIPT.onload =   then)         &&
+         (then.and      =   clean)
+        ; SCRIPT.onerror=   error
+        ; SCRIPT.type   =  'text/javascript'
+        ; SCRIPT.async  =   get$.ASYNC [action.in]
         ;
 
       if (url)
@@ -220,8 +274,7 @@
                       ?  url : url.replace (get$.ID, get$.URL)
         }
 
-      var via       =   script.with
-        , debug     =   via.the && via.the.tools && via.the.tools.debug
+      var debug     =   via.the && via.the.tools && via.the.tools.debug
         , enabled   =   via.our && via.our.logging && via.our.logging.debug
         , debugging =  (debug && enabled) || (debug = Object, false)
         ; debugging &&  debug  ({debug:['getting', url, '...']})

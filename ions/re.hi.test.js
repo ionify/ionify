@@ -1,15 +1,15 @@
 ;
 ~
 { re:
-    { id:  're.hi.test@ionify'
+    { hi:   true || 'ionify' || "other method name" || false
+    , id:  're.hi.test@ionify'
     , of: ['more', 'public', 're', 'sion', 'api', 'tests']
-    , do: 're.hi@'
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
+    , on:  -2.20070904
+    , to:  -1.57831004408
+    , at:  -0.003
+    , do: {'re.hi@':true,aesop:true,'on.storie@ionify':true,transcription:true}
     , as: {examination:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221205
-    , at:  -0.002
-    , hi:  true || 'ionify' || "other method name" || false
     , is:
         [ "ionify's re.hi@: handled    invocation, "
         +           "sion@: structured invoked object notation, "
@@ -65,9 +65,25 @@
     },
 
   ionify:function
-  ionify ()
-    {
-    + {log: [ionify.with.its.message.pass, "re.hi: true"]}
+  ionify()
+    { var my      = ionify.with && ionify.with.my || this
+    ,     re      = my.re
+    ,     hiphop  = my.hiphop
+    ~ {log:[my.message.pass, "re.hi: true"]}
+      hiphop.real_do    = my.do
+      re.hi             = false
+      my.do             = hiphop
+      delete my.valueOf<= my
+      return true
+    },
+
+  hiphop:function
+  hiphop()
+    { var my= hiphop.with.my
+      my.do = hiphop.real_do
+    ~{log:[my.message.pass, "re.hi:true-->false 🎉 hip-->hop & continues"]}
+      delete hiphop.real_do
+      return true
     },
 
   message:
@@ -77,7 +93,7 @@
 
  "re.hi: named":function
   named (doing)
-    { var message = doing.with.its.message
+    { var message = named.with.its.message
         , exam    = doing [doing.next]
         , ion =
             { re:
@@ -99,7 +115,7 @@
 
  "re.hi: false":function
   fals3 (doing)
-    { var ignores = doing.with.its.ignores
+    { var ignores = fals3.with.its.ignores
         , exam    = doing [doing.next]
         , ion =
             { re:
@@ -128,7 +144,7 @@
 
  "re.hi: missing":function
   missing (doing)
-    { var ignores = doing.with.its.ignores
+    { var ignores = missing.with.its.ignores
         , exam    = doing [doing.next]
         , ion =
             { ionify()
@@ -149,7 +165,7 @@
 
  "re.hi: malformed":function
   missing (doing)
-    { var ignores = doing.with.its.ignores
+    { var ignores = missing.with.its.ignores
         , exam    = doing [doing.next]
 
     ;  ({ re:
@@ -170,7 +186,7 @@
 
  "re.hi: malformed:named":function
   malformed_named (doing)
-    { var ignores = doing.with.its.ignores
+    { var ignores = malformed_named.with.its.ignores
         , exam    = doing [doing.next]
 
     ; ({ re:

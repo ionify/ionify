@@ -5,9 +5,9 @@
     , of: ['core','public','api','launch']
     , do: { transcription :-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.578309204
-    , at:  - 0.056
+    , on:  -2.20070904
+    , to:  -1.57831004408
+    , at:  -0.100
     , as:
         { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
         , convention  :-0.001, specification:-0.001, initialization:-0.001
@@ -33,9 +33,13 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "HAVE processed ~get.d ions' re.as; now need their space definitions@"
+        [ "WILL specify & implement ~get.then.or"
         , "want to ~get & apply configuration(s) asap; coordinate with on.ions@"
-
+        , "like re.do.ing all current ~get.s, except re.do.as.of which'll apply"
+        ,
+        [ "like 🙇🏾‍♂️ & want to confirm jsdelivr combined-files with ~get:[].s"
+        , "read 👨🏾‍💻https://github.com/jsdelivr/jsdelivr#combine-multiple-files"
+        ]
         , "must place ion into .gets before get@habitation to catch any error(s)"
         , "must clear ion from .gets after  get@habitation to sense any error(s)"
         , "will set all ~get actions' ionid@ domains to the current ion's"
@@ -49,8 +53,8 @@
     },
 
   on:
-    [ ['get', 'in', 'then', 'after']
-    , ['get'      , 'then', 'after']
+    [ ['get', 'in', 'then', 'if']
+    , ['get'      , 'then', 'if']
     , ['get', 'in', 'then']
     , ['get'      , 'then']
     , ['get', 'in'  ]
@@ -68,33 +72,36 @@
         },
       our:
         { acquisition:'get@get@ionify'
+        , tools:
+            { acquisition:'get@get@ionify'
+            }
         }
     },
 
   valueOf :function
-  ionify  ()
+  ionify
+    ( )
     { var ions
-        = [          'on.ion@ionify',     /*'on.do@ionify'
-          ,*/            're@ionify',       're.id@ionify'
-          ,        'on.error@ionify',   'on.storie@ionify',   'on.action@ionify'
-          ,         'on.aeon@ionify',        'with@ionify', 're.do.as.of@ionify'
-          , 'find.link.share@ionify',          'no@ionify',   'on.errors@ionify'
-          ,          'logger@ionify',          'do@ionify',     'on.ions@ionify'
-          ,             'use@ionify', 'on.ionified@ionify'
+        = [   'on.ion@ionify',         'no@ionify',        'on.error@ionify'
+          ,       're@ionify',      're.id@ionify', 'find.link.share@ionify'
+          ,'on.storie@ionify',    'on.aeon@ionify',       'on.action@ionify'
+          ,     'with@ionify',      're.hi@ionify',          'logger@ionify'
+          ,  'on.ions@ionify', /*'on.*/'do@ionify',     're.do.as.of@ionify'
           ]
 
       var GET         = this
-        , with_       = GET.with
-        , get$        = with_.its.get
+        , via         = GET.with
+        , get$        = via.its.get
 
         , get         = GET.get
         ; get.with    ={its:GET}
         ; get.via     = GET.via
 
-        ; GET.gots[GET.re.id]   = true
-        ; with_.our.acquisition = get         ;+ /until we've with@-declaration/
+        ; GET.gots[GET.re.id]       = true
+        ; via.our.acquisition       = get     ;+ /until we've with@-declaration/
+        ; via.our.tools.acquisition = get     ;+ /until we've with@-declaration/
         ; get$.gets   = GET.gets              ;+ /name-resolution, manually set/
-        ; get$.gots   = GET.gots              ;+ /with@ declarations via 💃🏾:hip/
+        ; get$.gots   = GET.gots              ;+ /with@ declarations via 🕺🏾:hip/
         ; get$.order  = GET.ORDER             ;+ /with@ declarations via 💃🏾:hip/
 
       delete GET.valueOf <=  GET <= /invoke habitation@ get@ observation/
@@ -113,22 +120,22 @@
     , "will update get$.PATH with new @domains & their paths."
     , "will move got() & .then code to ~get.then"
     , "will sense ion ids vs. script paths: ./script.js"
-    , "will use .then() as ~on.do where ~{on:''|[], do:ion, after:all|any|each}"
-    , "will set .then() to ~on.do.after"
+    , "will use .then() as ~on.do where ~{on:''|[], do:ion, if:all|any|each}"
     , "will set ~get.then to do ~on:ion.id & script.onload; 1st called cancels 2nd."
-    ]
-,'get then'         :'get'
-,'get then after'   :'get'
-,'get in'           :'get'
-,'get in then'      :'get'
-,'get in then after':'get'
-,'get and'          :'get'
-, get :function
-  get (action)
-    { var with_     = get.with
-        , our       = with_.our
+    ],
+ 'get then'         :'get',
+ 'get then if'      :'get',
+ 'get in'           :'get',
+ 'get in then'      :'get',
+ 'get in then if'   :'get',
+ 'get and'          :'get',
+  get:function
+  get
+    ( action )
+    { var via       = get.with
+        , our       = via.our
         , sensible  = our && our.ionified
-        , sense     = our && our.on
+        , iF        = via.the && via.the.tools.if
         , atDomain  = (/.*@$/)
 
       action  ||    (action = this)
@@ -139,28 +146,29 @@
         , ions  = action.get
 
       if( todo )
-        { var on = {on:ions, do:todo, after:action.after}
-          sensible                                          &&(
-          sensible [typeof todo]                            ||(
-         +{find:todo, in:action}, todo = on.do = action [todo]))
-          sense (on)
+        { var on = {on:ions, do:todo, if:action.if}
+          sensible                                    &&(
+          sensible [typeof todo]                      ||(
+        + {find:todo, in:action}, on.do = action [todo]))
+          iF    ? iF (on) : + on
+          todo  = on.do
         }
 
       for ( var how  = action.in  , domain  = action.from || ''
-          ,     GET  = with_.its  , resolve = GET.resolve
-          ,     gets = GET.gets   , id
-          ,     gots = GET.gots   , ion
-          ,     last = ions.length, uri
-          ,     next = -1
-          ;  ++ next < last;
+          ,     my   = via.its    , resolve = my.resolve
+          ,     gets = my.gets    , missing = void 0
+          ,     gots = my.gots    , id
+          ,     last = ions.length, ion
+          ,     next = -1         , uri
+          ;  ++ next < last       ;
           )
           { id = ions [next]
-            if (id/*is*/===/*missing*/void 0) continue
+            if ( id === missing) continue
             id = id.replace (atDomain, domain)
-            GET.ions [id]  =  ion = {id:id, uri:uri}
-            gets [id] = gots [id] =  true
-            get.via ({at:id, in: GET.ORDER [how], then:todo})
-            gets [id] && delete gets [id]
+            my.ions [id]  = ion = {id:id, uri:uri}
+            gets    [id]  = gots  [id]  = true
+            get.via ({at:id, in:my.ORDER[how], then:todo})
+            gets    [id] && delete gets [id]
           }
     },
 
@@ -183,8 +191,9 @@
     , skipping    : "🤔 skipping ~get.ing: "
     },
 
-  via :function
-  via (get)
+  via:function
+  via
+    ( get )
     { var errors  = via.with.its.errors
         , fail    = { get : errors.acquisition
                     , skip:[errors.skipping, get.at, get]
@@ -193,7 +202,7 @@
         ; state   = +{warn: fail.skip}
 
     ~/if transcription's return value is habitation@'s try console/
-      if( state == -4.200709 && typeof console != 'undefined')
+      if( state == -2.20070904 && typeof console != 'undefined')
         { console.warn (fail.get)
         ; console.warn (fail.skip)
         }

@@ -6,10 +6,10 @@
     , do: {acquisition:true, transcription:true}
     , as: {examination:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.578309226
-    , at:  - 0.025
-    , is:  "ionify's ~get api examination"
+    , on:  -2.20070904
+    , to:  -1.57831004408
+    , at:  -0.026
+    , is:  "ionify's ~get.in.and.then.if api examination"
     , go:
         { meet: 'https://meet.ionify.net/'
         , seek: 'https://seek.ionify.net/'
@@ -25,16 +25,17 @@
         },
       we:
         [ "were ..."
-        , "must ..."
+        , "must test ~get.in"
+        , "must test ~get.then.if"
         , "will ..."
-        , "want ..."
+        , "want tests named within a ~do"
         , "like ..."
         ]
     },
 
   do:function
   test_get ()
-    { var state = +{info:null}
+    { var state = Boolean (+{info:null})
 
       ~ {get:''}         <=  /testing getting the .js file/
       ~ {get:'@ionify'}  <=  /testing getting the @domain's .js file/
@@ -104,16 +105,16 @@
           , 'https://cdn.jsdelivr.net/gh/iskitz/ajile/play/api/scripts/com.iskitz.ajile.examples.LoadExample.js'
           ],
         then:         function
-        onLoadExample (script)
-          { var got = '\n   ' + (script.target || script.re).id
-              , my  = onLoadExample.with.my
+        onLoadExample (scripts)
+          { var my  = onLoadExample.with.my
               , say = my.say
+              ; scripts = "\n   " + scripts.join ("\n   ")
 
             com.iskitz.ajile.examples
-              ? {log  : ["✅", say, got]} + com.iskitz.ajile.examples.LoadExample
-              : {error: ["❌", say, got]  , halt:false}
-              + {warn : my.err}
-            }
+              ? {log  : ["✅", say,scripts]}
+                + com.iskitz.ajile.examples.LoadExample
+              : {error: ["❌", say,scripts], halt:false} + {warn : my.err}
+          }
       }
 
       ~
@@ -129,7 +130,7 @@
           ],
         doIt:function
         onIncludeExample (script)
-          {  var got = '\n   ' + (script.target || script.re).id
+          {  var got = "\n   " + script.target.id
           ~ {log: ["✅ ~do:[get:script    in:order then:Function:named]", got]}
           ~  com.iskitz.ajile.examples.IncludeExample
           }

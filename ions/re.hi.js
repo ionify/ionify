@@ -1,13 +1,15 @@
 ;
 ~
 { re:
-    { id:  're.hi@ionify'
+    { hi:   true
+    , id:  're.hi@ionify'
     , of: ['more', 'public', 're', 'sion', 'api']
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
+    , on:  -2.20070904
+    , to:  -1.57831005508
+    , at:  -0.003
+    , do: {'on.storie@ionify':true, transcription:true}
     , as: {sensation:-0.001, convention: -0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.👨🏾‍💻.lee', 'team✨ionify']
-    , on:  -4.200709
-    , to:  -8.20221129
-    , at:  -0.002
     , is:
         [ "ionify's re.hi@: handled    invocation, "
         +           "sion@: structured invoked object notation, "
@@ -31,9 +33,11 @@
         [ "..."
         ],
       we:
-        [ "WERE migrating this to ionify extensions"
+        [ "KNOW we should keep ions' re.hi method in case reinitiation's needed"
+        , "LIKE re.hi == 'ionify' means delete ion.valueOf after +ion.ionify"
+        , "MUSE 🤔 ¿should 👍🏾re.hi:true=hiphop|hip or 👎🏾re.hi:'name'=hiphop|hip?"
         , "WILL implement calling a sim implemented elsewhere, i.e. ~get.ing it"
-
+        ,
         , "must ..."
         , "will ..."
         , "plan ..."
@@ -55,22 +59,37 @@
  '*',
  '*':function
   hi( ion )
-    { var method = ion.re.hi;
+    { var method = ion.re && ion.re.hi;
       if(!method)  return //ion is an obi: observable ion & wants to be that 👋🏾
 
-      //ion wants to handle its invocation
-      method === true && (method = 'ionify')
-      method = hi.with.our.ionified [typeof method] ? method : ion [method]
+      var hiphop =  false //ion wants to handle its invocation
+        ; method === true && (method = 'ionify') && (hiphop = true)
 
-      if(typeof method != 'function')
-        { var missing = hi.with.its.missing
-        ~ {warn : missing} + {debug: [true, missing, ion.re]}
+      var via       = hi.with
+        , sensing   = via && via.the && via.the.tools.sensible
+        , sensible  ={sensible:method, in:ion}
+        ; sensing   = sensing && sensing (sensible) || +sensible
+
+      method = ion [method] || method
+
+      if(!sensing)
+        { var missing = via.its.missing
+        ~ {warn:missing} + {debug: [true, missing, ion.re]}
         ; return
         }
 
-      //ion can handle its own invocation so let it
-      ion.valueOf = method
-      ion <= /invoke ion's handled invocation/
+      ion.re.hi   = false   //🙇🏾‍♂️ ion can handle its own invocation so let it
+      ion.valueOf = method  //👨🏾‍💻 by setting its invocation sensor as stated.
+      Object.isExtensible   (ion) &&//👨🏾‍🏫 configurable | writable false blocks
+      Object.defineProperty (ion,'valueOf',{enumerable:false})  //🤭 hip-hop!
+    ~ ion                           //⚛️ invoke the ion's handled invocation &
+      hiphop && delete ion.valueOf  //🕺🏾 do hip-hop invocation if specified 🎉
+    },
+
+  ionify:function
+  ionify()
+    { var   hi      = this
+      hi['*'].with  ={its:hi}
     },
 
   missing

@@ -1,13 +1,15 @@
 ;
 ~
 { re:
-    { id:  'logger@ionify'
+    { hi:   true
+    , id:  'logger@ionify'
     , of: ['public', 'transcription', 'tools', 'api']
-    , as: {sensation:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.578309215
-    , at:  - 0.054
+    , on:  -2.20070904
+    , to:  -1.57831005508
+    , at:  -0.054
+    , do: {malfunction:true}
+    , as: {sensation:-0.001}
     , in:
         [    'queens-county.new-york.us.earth'
         , 'silicon-valley.california.us.earth'
@@ -48,8 +50,10 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "WILL rename   fail:error, seek:debug, note:log levels"
+        [ "MUST 🚨 fix +{log:[1]} basic types doing console object presentation"
+        , "WILL rename   fail:error, seek:debug, note:log levels"
         , "LIKE renaming transcribe@👍🏾verb|transcript@🤔noun <= logger@"
+        , "WANT to reenable 1st-launch listing all transcription-level satuses"
         , "WANT 👨🏾‍💻 [message, base, object] sensing object --> console(object)"
         ,
         [ "want 🙇🏾‍♂️ displaying via habitation@: web:alert vs web+node:console"
@@ -66,6 +70,7 @@
         ],
         [ "like adding ~{log_level:..., to:'nowhere'||'webview'} later but"
         , "know it enables in-context-session entities' unexpected record-hides"
+        , "like that this could support silent pre-presentation logging: launch"
         ]
         ]
     },
@@ -80,23 +85,16 @@
         }
     },
 
-  valueOf :function
-  logger  ()
-    { this.report.with = {its:this}
-      this.report ({error:null, warn:null, debug:null, log:null, info:null})
-    },
-
   ionify :function
   ionify ()
-    { delete this.valueOf <= this
-
-      var   logger  = this
+    { var   logger  = this
         ,   domain  = ionify.with.the.tools
       domain.debug  = logger.debug
       domain.log    = logger.log
       domain.info   = logger.info
       domain.warn   = logger.warn
       domain.error  = logger.error
+      this.report ({error:null, warn:null, debug:null, log:null, info:null})
     },
 
   debug :function
@@ -153,13 +151,12 @@
         , state   = logging [level]
         ; logging [level] = logger.state = state
 
-      if (null === message) return false
-
-      if('boolean' ==  typeof message)
+      if( null === message) return false
+      if('boolean' == typeof message)
       if( toggled  =  (message !=  state))
           {   logging [level]   =  state = logger.state = message
           ;   message           = (state ? '✅' : '🚫') + ' ~'  + level
-          }
+          }   else          return false
 
       state
         &&   Array.isArray   ( message   )
@@ -167,7 +164,7 @@
         &&  (message =  message.join (' '))
 
       var prefix
-      logger.id = (action.re && action.re.ex.from) || logger.re.id
+      logger.id = ((action.re && action.re.ex.from) || logger.re.id).name
      ~logger.id.indexOf('@') || (prefix = logger.id.match(/^(log|ion)[.-]\d+/))
       prefix && (logger.id = (prefix[1] == 'log' ? logger.level : 'sion') + '@')
 
@@ -227,20 +224,17 @@
       if( missing.console)
         if( missing.alert)
           { logger.report = missing
-            logger.ionify ()
           ~ action
           + new Error (logger.messages.noReports)
           }
         else
           { logger.report = logger.popup
-            logger.ionify ()
           ~ {warn: true }
           + {warn: logger.messages.noConsole}
           + {warn: logger.report.with.our.logging.warn}
           }
       else
         { logger.console.via = console
-          logger.ionify ()
         }
 
     ~ action

@@ -4,12 +4,12 @@
     { id:  'with@ionify'
     , re:  'with.re@ionify'
     , of: ['core', 'public', 'sion', 'context', 'api']
-    , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
-  //, do: {copy:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on:  -2.20070904
-    , to:  -1.57830928508
+    , to:  -1.57831005508
     , at:  -0.011
+  //, do: {copy:-0.001}
+    , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , is:
         [ "ionify's .with connection@ convention@"
         , "ionify's connection@ to habitation@s like web@, node@ & more"
@@ -78,6 +78,8 @@
         ,
         , "LIKE 🙇🏾‍♂️ ה 🤲🏾 member.dot.path@member@sion@domain resolution-format"
         , "LIKE 🙇🏾‍♂️ ~find.ing member@id@affiliation:caller,this,with,global🤲🏾"
+        , "LIKE 🙇🏾‍♂️ ה 🤲🏾 with@ section for flat fully-qualified-resolve-names"
+        , "WANT 🎊🙇🏾‍♂️יהוה👨🏾‍💻🎉",{with:{set:{'dot.ted@@domain':'dot.value@ip'}}}
         ,
         , "NOTE that augment+copy@with@ could enable & apply with-declaration"
         , "name-resolution, as it forms, to with.connection@.group depth so we"
@@ -126,6 +128,9 @@
         ]
     },
 
+  on:
+  '*',
+
   with:
     { my://........🌱 share with  your .members here 🌱
         { copy:
@@ -145,11 +150,20 @@
             }
         },
       our://.......🌱 share with-in your domain here 🌱
-        { initiation: true
+        { states:
+            { initiating: false
+            }
         },
       all://.......🌱 share with all the ~ions  here 🌱
-        { none: {}
-        , nope: function nothing () {}
+        { ""        : ""
+        , blank     : ""
+        , none      : []
+        , null      : null
+        , nope      : function nothing () {}
+        , fixed     : {configurable:false, writable:false}
+        , fixen     : {configurable:false, writable:false, enumerable:false}
+        , missing   : void 0
+        , undefined : void 0
         },
       the://.......🌱 share with-in collections here 🌱
         { ionify://🌱 share with @ionify domain here 🌱
@@ -158,6 +172,9 @@
             , tests:
               { WITH:'WITH@with@ionify'
               }
+            },
+          tools:
+            { fixed:'fixed@@'
             }
         }
     },
@@ -177,33 +194,51 @@
       delete  WITH.with   //👈🏾👆🏾 like but closure's cleaner
     },
 
-  on:'*'
-    ,
-
-  valueOf :function
-  ionify  ()
+  valueOf:function
+  ionify()
     { var         my    = this
         ,        via    = my.with
         ,        all    = via.all
+        ,        the    = via.the
         ,       form    = my['*']
         ,       WiTH    = my.WiTH
+        ,      fixed    = my.fixed
         ,     iOnify    = via.the.ionify
       my.sensible.with  =
       my.augment.with   =
       my.connect.with   =
       my.copy.with      =
-      form.with         = {in:via.in, my:my, its:my, all:all, our:iOnify}
+      fixed.with        =
+      form.with         ={in:via.in, my:my, its:my, all:all, our:iOnify}
+      the.tools.fixed   = fixed
       my.WITH.prototype = WiTH
-      WiTH.the = iOnify.spaces      = via.the
+      WiTH.the = iOnify.spaces      = the
       WiTH.all = iOnify.spaces.all  = all
 
-      Object.seal   (WiTH)      //🛡 ensure original .my .its .in .the .all .our
-      Object.freeze (my.WITH)   //🛡 ensure original ionosphere constructor
-      Object.freeze (all.none)  //🛡 ensure original ionosphere.all.none
-      Object.freeze (all.nope)  //🛡 ensure original ionosphere.all.nope
+    //Object.freeze (my)                  //🛡 singleton with@ <= CANT BUT WHY?
+      Object.freeze (my.WITH) /*👇🏾CANT👇🏾*/ //🛡 singleton ionosphere constructor
+      fixed         ([all,WiTH/*,fixed*/])//🛡 singleton ionosphere .all & .the
+      delete my.valueOf <= my
+    },
 
-      delete my.valueOf <= my   //🔂 self-sionify: +with.* +re.* +convention@s
-      iOnify.initiation  = false
+  fixed:function
+  fixed
+    ( next )
+    { Array.isArray (next) || (next = [next])
+      for
+        ( var its
+        ,     FIXED = fixed.with.all.fixed
+        ,     thing = next.length
+        ;     its   = next[--thing] ;
+        )
+        { if(!Object.isExtensible (its)) continue
+
+          for
+            ( var it in its ) //🛡 keep initial its.*
+            { its.hasOwnProperty    (it)  &&
+              Object.defineProperty (its, it, FIXED)
+            }
+        }
     },
 
    '*':function
@@ -233,17 +268,20 @@
       var skip  = sion.its  !== sion.my ? {its:true, my:true} : {}
         ; skip  =(skip.with   = true, skip)
 
-      i.copy ({into:sion, from:more, skip:skip})  //🙇🏾‍♂️ copy its with & keep
-      ion.re.ex.with = temp               //👨🏾‍💻 its original form in re.ex &
-      return true                         //🤲🏾 with@ formation done! 👨🏾‍🏫🎉
+      var wipe = i === ion ? {l3:true} : via.all.none
+
+      i.copy ({into:sion, from:more, wipe:wipe, skip:skip}) //🙇🏾‍♂️ copy with&
+      ion.re && ion.re.ex && (ion.re.ex.with = temp)  //👨🏾‍💻 keep it in re.ex
+      return true                                     //🤲🏾 with@ is formed! 🎉
     },
 
   sensible:function
   sensible ( ion  )
     { if( sensible.found) return sensible.found
-      var via=sensible.with
-      return  ion
-          &&  ion.re.id.domain.name === via.my.re.id.domain.name
+      var via =  sensible.with
+      return     ion
+          &&    (ion.re.id.domain ||    ion.re.id).name
+         === (via.my.re.id.domain || via.my.re.id).name
           && (sensible.found = ion.with.our.ionified)
           ||  via.all.none
     },
@@ -321,7 +359,7 @@
     { var via     =   connect.with
         , i       =   via.its //👨🏾‍🏫 MUST be .its until with@ is ~with.d 🤓
         , all     =  {l1:true, l2:true, l3:true}
-        , groups  =   via.our.spaces
+        , groups  =   via.our.spaces || via.the.ionify.spaces
         , ion     =   which.ion
         , with$   =   which.with
         , adhoc   =   ion.with
@@ -330,7 +368,9 @@
         , its     =   with$.its
         , my      =   with$.my
         , re      =   ion.re  ||  my.re || its.re
-        , domain  =      (re  &&  re.id && re.id.domain.name) || ''
+        , domain  =       re  && (re.id
+                              && (re.id.domain && re.id.domain.name))
+                              ||  ''
 
       ins && i.copy ({from:ins, into:groups, add:all})
 
@@ -376,7 +416,7 @@
         if( these      ===  those)                    continue
         if(!fresh && !wipe [at] && !those)            continue
         if( fresh &&  add [at] === false)             continue
-        if( fresh ){ into [thing]     =   those;      continue}
+        if( fresh ||  wipe[at]) {into[thing] = those; continue}
 
         id =( name.push (thing,':',typeof those)
             , name.join ('')
@@ -387,7 +427,7 @@
         copy.done [id] !==  these  &&
         copy.count      <   upto   &&
        (copy.done [id]  =   these) &&
-        copy({from:those, into:these, upto:upto, add:add, own:own, skip:skip})
+        copy({from:those, into:these, upto:upto, add:add, own:own, wipe:wipe, skip:skip})
         copy.count--
       } copy.count || (copy.done = {})
 

@@ -6,9 +6,9 @@
     , as: {examination:-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , in:  'silicon-valley.california.usa.earth'
-    , on:  -27.201605184
-    , to:  -18.578309102
-    , at:  - 0.032
+    , on:  -2.20160518407
+    , to:  -1.57830928508
+    , at:  -0.033
     , is:  "testing ionify.js: invoked object notation implemented for your js"
     , do:
         [                 're.test@ionify',    're.of.test@ionify',      'with.test@ionify'
@@ -16,7 +16,7 @@
         ,                'get.test@ionify',   'logger.test@ionify',       'use.test@ionify'
         , 'on.ion.punctuation.test@ionify', 'on.emoji.test@ionify', 'on.errors.test@ionify'
         ,               'find.test@ionify',     'link.test@ionify',   /*'on.do.test@ionify'
-        ,*/          'next.id.test@ionify',         're.hi@ionify',     're.hi.test@ionify'
+        ,*/          'next.id.test@ionify',    're.hi.test@ionify'
         ],
       go:
         { meet: 'https://meet.ionify.net/'

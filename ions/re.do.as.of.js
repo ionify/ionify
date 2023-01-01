@@ -4,16 +4,16 @@
     { id:  're.do.as.of@ionify'
     , of: ['core','public','sion','context','api']
     , as: {specification:-0.001, sensation:-0.001, convention:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -17.578309156
-    , at:  - 0.012
+    , by: ['🙇🏾‍♂️🎊 יהוה 🎉🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
+    , on:  {200709.2    : -4} || -2.20070904
+    , to:  {578310033.1 : -8} || -1.57831003308 || -2.20221227308
+    , at:  -0.013
     , is:
-        [ "ionify's re: .do@ .as@ .of@ api convention@ that validates & sets: "
-        , "re.of & corresponding ionosphere groups"
-        , "re.as & ~gets them to enable   the ion's ionosphere-interactions"
-        , "re.do & ~gets them to activate the ion's capabilities."
-        , "interpreting re.do & re.as arrays as relations to ~get sequentially"
+        [ "ionify's re: .do@ .as@ .of@ api conformation@ convention@s"
+        , "creating and-or connecting an ion's re.of-stated ionosphere groups"
+        , "~get.ing re.as relations enabling   the ion's ionosphere-interaction"
+        , "~get.ing re.do relations activating the ion's capabilities"
+        , "interpreting re.do & re.as arrays as ~get.in:sequence relations"
         ],
       go:
         { meet: 'https://meet.ionify.net/'
@@ -26,18 +26,30 @@
               , 'https://github.com/ionify/ionify/blob/public/ions/re.do.test.js'
               , 'https://github.com/ionify/ionify/blob/public/ions/re.as.test.js'
               ]
-        , code: 'https://github.com/ionify/ionify/blob/public/ions/re.of.do.as.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/re.do.as.of.js'
         , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
         , join: 'https://join.ionify.net/'
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "WILL MOVE .resolve() to get@ since it should primarily do resolution"
-        , "WILL MOVE so@re@ here to be re.do & re.as validation@ convention@s."
+        [ "were"
+        , "must"
+        , "will"
+        , "plan"
+        , "want"
+        , "like"
+        , "muse"
         ,
-        [ "LIKE disabling ions' ~do & ~on actions 'til all relations're ~get.d;"
-        , "can remove & keep them & set ~do.after.all that restores them & ~ion"
+        , "were exploring re.to instantiation@s; hebrew++"
+        , "MUST create tests for ions' observation suspension"
+        , "MUST create tests for ions' relations ~get.ing confirmation"
+        , "WILL MOVE .resolve() to get@ since it should primarily do resolution"
+        , "WILL MOVE so@re@ here to be re.do & re.as validation@ convention@s"
+        ,
+        [ "WANT re.do+as: 'relation, ...'=sequential & 'relation ...'=parallel"
+        , "NOTE re.do+as text-parsing logic is in so@re@ionify"
+        , "WILL update codes@readme.md@ionify once ☝🏾 implemented"
         ]
         , "WANT fast⏱ tag & skip of relation groups already in:lined & dom@ined"
         ,
@@ -59,10 +71,7 @@
         , "unless they already are. all groups are name@domain where domain can"
         , "be blank. ~name.search (/@/) ||  (name += domain.full)."
         , "must consider dot.notation nested.group access & naming; .@ how?"
-        ],
-        , "must"
-        , "will"
-        , "plan"
+        ]
         ]
     },
 
@@ -76,14 +85,7 @@
       via.our.acquisition.gots [ion.re.id] = true
       sense.of (ion)
       sense.as (ion)
-      sense.do (ion)
-    },
-
-  valueOf:function
-  ionify ()
-    { var    RE   = this
-    ; RE.do.with  = RE.resolve.with = RE.of.with = RE['*'].with = {its:RE}
-    ; delete RE.valueOf <= RE
+      sense.d0 (ion)
     },
 
   of:function
@@ -118,25 +120,51 @@
 
   as:function
   as( ion )
-    { as.with.its.get ({for:ion, from:ion.re.as})
+    { as.with.its.via ({for:ion, from:ion.re.as})
     },
 
-  do:function
+  d0:function
   d0( ion )
-    { d0.with.its.get ({for:ion, from:ion.re.do})
+    { d0.with.its.via ({for:ion, from:ion.re.do})
     },
 
-  get:function
-  get(relation)
-    { var re          = relation.for.re
-        , domain      = re.id.domain.full
+  via:function
+  via(relation)
+    { var ion         = relation.for
+        , re          = ion.re
+        , id          = re.id
+        , domain      = id.domain.full
         , from        = relation.from
-        , via         = get.with
-        , RE          = via.its
-        , acquisition = via.our.acquisition
+        , through     = via.with
+        , our         = through.our
+        , i           = through.its
+        , suspensions = our.states.suspension
+        , acquisition = our.acquisition
         , how         = acquisition.order [Array.isArray (from)]
-        , ions        = RE.resolve ({get:from, at:domain})
-        ; ions && ions.length && acquisition ({get:ions, from:domain, in:how})
+        , ions        = i.resolve ({get:from, at:domain})
+        ; id          = id.name
+
+      if(!ions.length) return false
+
+      suspensions [id] = ion
+      acquisition({get:ions, from:domain, in:how, then:i.resume(id)})
+    },
+
+  resume :function
+  resume (id)
+    { function resuming (ions)
+        { delete resuming.suspensions [resuming.id]
+        !(ions instanceof Error)
+        ?   resuming.ionify (resuming.ion)
+        :   +{ error:["~get unsuccessful for",resuming.id,"relation@\n  ",ions]
+             , halt :false
+        }    }
+
+      resuming.id           = id
+      resuming.suspensions  = resume.with.our.states.suspension
+      resuming.ion          = resuming.suspensions [id]
+      resuming.ionify       = resume.with.our.tools.sensed
+      return resuming
     },
 
   resolve :function
