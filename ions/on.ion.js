@@ -6,10 +6,10 @@
     , of: ['core','public','conduit','api','launch']
     , as: { observation :-0.001, sensation    :-0.001 }
     , do: { resolution  :-0.001, transcription:-0.001 }
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -2.20070904
-    , to:  -1.57831005508
-    , at:  -0.087
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
+    , on: {200709.2    : -4}
+    , to: {578310184.1 : -8}
+    , at: -0.088
     , is:
         [ "ionify: invoked object notation implemented for you"
         , "enabling the ionosphere: invoked object notation observation sphere"
@@ -154,9 +154,9 @@
         ,  type = thing ===  null ? 'null' : typeof thing
         ,   via = sensible.with
         ,   our = via.our
-        ,  find = our.find || (via.all && via.all.nope) || Object
-        ,    is = our.ionified
-        ;    is = is [type] || is [thing && thing.constructor.name]
+        ,  find = our.find      ||(via.all && via.all.nope) || Object
+        ,    is = our.ionified  ||(via.all && via.all.none)
+        ;    is = is [type]     || is [thing && thing.constructor.name]
 
       return Boolean (is || find ({find:thing, in:within, as:as}))
     },
@@ -326,8 +326,8 @@
       //👨🏾‍💻 & may ~no.on itself which this would undo by post-application save
 
       //👨🏾‍🔬 apply this convention to this sensation sensor before anything else
-      sense.always ({do:action, for:sense})     //👨🏾‍🔬 then apply it to its own
-      sense.always ({do:action, for:sensation}) //👨🏾‍🔬 sensation, then to others
+/*👇🏾*/sense.always ({do:action, for:sensation}) //👨🏾‍🔬 sensation, then to others
+/*👆🏾*/sense.always ({do:action, for:sense})     //👨🏾‍🔬 then apply it to its own
 
       for
         //🙇🏾‍♂️ apply each convention@ to all

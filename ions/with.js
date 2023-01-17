@@ -4,10 +4,10 @@
     { id:  'with@ionify'
     , re:  'with.re@ionify'
     , of: ['core', 'public', 'sion', 'context', 'api']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -2.20070904
-    , to:  -1.57831005508
-    , at:  -0.011
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
+    , on: {200709.2    : -4}
+    , to: {578310184.1 : -8}
+    , at: -0.012
   //, do: {copy:-0.001}
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , is:
@@ -42,7 +42,8 @@
         ,
         [ "KNOW 🙇🏾‍♂️ with.my is an entirely new object with copies of or"
         , "references to with.its' members if declared ion.with.my:{} 🚨"
-        ],
+        ]
+        ,
         [ "MUST 🚨 confirm clearing copy.done only @ the end of its recursion"
         , "WANT 👨🏾‍💻 copy.reset() that clears copy.done"
         , "will 🧹 migrate copy@with@ to own ion publicly shared via tools"
@@ -64,12 +65,8 @@
         , "my.* group."
         , "considering this since with@ currently loads after habitation@ sets"
         , "the pending@on.ion@ value this with@ declaration will likely nullify"
-        ],
-        [ "like 🙇🏾‍♂️ renaming sion.with@ionify <= with@ionify for sion clarity."
-        , "note 👨🏾‍💻 with.js <= with@sion@ionify with in @sion in @ionify."
-        , "like 👨🏾‍💻 ajile.legacy (dot|path).naming sion.with.js & sion/with.js"
-        , "like 👨🏾‍💻 configuration@ specifying name-to-path resolution@s"
-        ],
+        ]
+        ,
         [ "WANT name-to-ion-member resolution for reference-less group sharing"
         , "e.g. with:{our:{thing:'not.evaluated.member@[🙇🏾‍♂️with...|this]'}}? 🤔"
         ,
@@ -98,21 +95,19 @@
         ,
         , "LIKE 🙇🏾‍♂️ with:{...ai@@} indicating ai@path relative to the with! 🤓"
         , "NOTE 🙇🏾‍♂️ ai@:@with, ai@@:@ion, ai@@@:@affiliation:group,domain,etc"
-        ],
+        ]
+        ,
         [ "muse 🤔 re.of.* & with.the.* being sensible acquisition@ indications?"
         , "note domain-less re.as +| re.do can be resolved to ion.re.of groups"
-        ],
+        ]
+        ,
         [ "LIKE 🙇🏾‍♂️ declared ion.with's prototype as sion WITH instance 👨🏾‍💻"
         , "as a more unobtrusive extension of the ion's original .with which is"
         , "aligned with the .with-declaration's intent & design 🎊🙇🏾‍♂️יהוה👨🏾‍💻🎉"
         ],"want 🙇🏾‍♂️ member.with.my:{__proto__:member.with.its} for private .my"
         , "like 🙇🏾‍♂️ with.my declarations being for [private] internal members"
         , "like 🙇🏾‍♂️ with.our declarations being for [private]  domain members"
-        ,,
-        [ "like that unsuccessfully migrated locally defined with.* can be"
-        , "notified about via transcription -- stating that their continued"
-        , "presence via re.ex.with isn't guaranteed, but prefer ☝🏾 extension"
-        ]
+
         , "were ..."
         , "must ..."
         , "will ..."
@@ -251,6 +246,7 @@
         , my    = temp && temp.my
         , our   = temp && temp.our
         , sion  = i.augment (ion)
+        ; i.augment.done.length = 0         //👨🏾‍💻 forget inspected members
 
       if( !temp                             //🙇🏾‍♂️ with@less, or
         || temp             instanceof WITH //👨🏾‍🏫 pre-formed sion with@, or
@@ -292,6 +288,7 @@
 
       var member    , has
         , sion      = void 0
+        , done      = augment.done || (augment.done = [])
         , via       = augment.with
         , me        = via.my
         , WITH      = me.WITH
@@ -300,29 +297,35 @@
 
       for //🙇🏾‍♂️ perform with@ augmentation for all the ion's sensible members🧐
         ( var name in ion)                        //👨🏾‍🏫 inspecting each member
-        { if (name == 'with')                       continue  //👨🏾‍🏫 bar .with
-          if (!ion.hasOwnProperty (name))           continue  //👨🏾‍🏫 & inherited
+        { if( name == 'with')                     continue  //👨🏾‍🏫 except .with
+          if(!ion.hasOwnProperty (name))          continue  //👨🏾‍🏫 & inherited,
 
-          member = ion [name]                                 //👨🏾‍💻 confirm if
+          member = ion [name]                               //👨🏾‍💻 confirm if
 
-          if (!member)                              continue  //👨🏾‍🏫 each will be
-          if (!sensible [typeof member])                      //👨🏾‍🏫 sensed type
-          if (!sensible [member.constructor.name])  continue  //👨🏾‍🏫 sensed Type
-          if (has     =  member.with)                         //👨🏾‍🏫 has a .with
-          if (has   instanceof  WITH)               continue  //👨🏾‍🏫 ≠ sion WITH
+          if(!member)                             continue  //👨🏾‍🏫 each will be
+          if(~    done.indexOf(member))           continue  //👨🏾‍🏫 a newly
+          if(!sensible [typeof member])                     //👨🏾‍🏫 sensed type |
+          if(!sensible [member.constructor.name]) continue  //👨🏾‍🏫 sensed Type &
+          if( has   =   member. with)                       //👨🏾‍🏫 has a .with
+          if( has   instanceof  WITH)             continue  //👨🏾‍🏫 ≠ sion with@
 
           else                            //🙇🏾‍♂️ for a member with temp .with,
-            { sion   = new WITH           //👨🏾‍💻 ensure it'll be a sion with@
+            {//sion = new WITH             //👨🏾‍💻 ensure it'll be a sion with@
+              done.push (member)          //👨🏾‍💻 remember member's inspection
               augment.ed =  true          //👨🏾‍💻 set the augmented state then
-              augment (member)            //👨🏾‍🔬 augment it with its sion with@,
-              augment.ed = false          //👨🏾‍💻 then clear the augmented state!
+              augment   (member)          //👨🏾‍🔬 augment it with its sion with@,
+              augment.ed = false          //👨🏾‍💻 then clear the augmented state.
+            // if((has=member.with) instanceof WITH)
+            //   { me.connect ({ion:ion, with:has})   //👨🏾‍🔬 connect all its collections
+            //   ; continue
+            //   }
             }
 
-          sion || (sion =  new WITH)          //👨🏾‍💻 affirm or make a sion with@
+        /*sion ||*/ (sion =  new WITH)          //👨🏾‍💻 affirm or make a sion with@
           sion.its      = sion.my = ion       //👨🏾‍💻 set with@.s its & my to ion
-          me.connect ({ion:ion, with:sion})   //👨🏾‍🔬 and connect its collections
-          member.with   = sion
-          me.conceal (member)
+          me.connect ({ion:ion, with:sion})   //👨🏾‍🔬 connect all its collections
+          member.with   = sion                //👨🏾‍💻 set sion with@  member.with
+          me.conceal (member)                 //👨🏾‍🔬 set unobtrusive member.with
         }
 
       var adhoc = ion.with                      //🙇🏾‍♂️ maybe an adhoc with@ ion
@@ -333,7 +336,7 @@
         ,   my = adhoc && adhoc.my      //👨🏾‍🏫 and the ion's adhoc with@.s my
         ; sion = new  WITH              //👨🏾‍💻 create a sion with@ for this ion
 
-      if( adhoc  &&                           //🙇🏾‍♂️ it has an adhoc with@ with
+      if( adhoc &&                            //🙇🏾‍♂️ it has an adhoc with@ with
       ( (   my  && my .with) instanceof WITH  //👨🏾‍🏫 sion with@ .my, or a
       ||(  its  && its.with) instanceof WITH  //👨🏾‍🏫 sion with@ .its, so set its
       ) )

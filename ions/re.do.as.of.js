@@ -5,9 +5,9 @@
     , of: ['core','public','sion','context','api']
     , as: {specification:-0.001, sensation:-0.001, convention:-0.001}
     , by: ['🙇🏾‍♂️🎊 יהוה 🎉🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
-    , on:  {200709.2    : -4} || -2.20070904
-    , to:  {578310033.1 : -8} || -1.57831003308 || -2.20221227308
-    , at:  -0.013
+    , on:  {200709.2    : -4}
+    , to:  {578310195.1 : -8}
+    , at:  -0.014
     , is:
         [ "ionify's re: .do@ .as@ .of@ api conformation@ convention@s"
         , "creating and-or connecting an ion's re.of-stated ionosphere groups"
@@ -82,7 +82,7 @@
     { var via   = re.with
         , sense = via.its
 
-      via.our.acquisition.gots [ion.re.id] = true
+    //via.our.acquisition.gots [ion.re.id] = true
       sense.of (ion)
       sense.as (ion)
       sense.d0 (ion)

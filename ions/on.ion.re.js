@@ -4,10 +4,10 @@
     { id:  'on.ion.re@ionify'
     , re:  'on.ion@ionify'
     , as: {'re':-0.001, documentation:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -2.20070904
-    , to:  -1.57830928508
-    , at:  -0.004
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
+    , on: {200709.2    : -4}
+    , to: {578310184.1 : -8}
+    , at: -0.005
     , is:
         [ "ionify's   on.ion@'s re:about module."
         , "ionify's   on.ion@'s actions & information fully described."
@@ -39,6 +39,12 @@
         [ "like having separate on.ion@ & on@ ions & now can via .with.our.* 🤓"
         , "WANT ✨ to enable ~{on:'id@doma.in',do:ion} minimized self-reactions"
         , "MUSE 🤔 configure [en+dis]abled duplicated multi-reaction sensations?"
+        ,
+        [ "KNOW that known-words in-order iteration simplifies with.*"
+        , "collaborations by esuring that with.* is pre-applied for them via"
+        , "with@.s ~on because ~on is ionify's 1st non-convention sensation."
+        , "for example, sensible@on.ion@ wouldn't need its via.all.* failsafes."
+        ]
         ,
         [ "were examining if .sensed() causes ions' lost 'this' reference. i"
         , "sense that's caused by ions' methods being called as standalone"
