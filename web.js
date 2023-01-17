@@ -3,18 +3,18 @@
 { re:
     { id:  'web@ionify'
     , of: ['web','launch']
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -2.20070904
-    , to:  -1.57831005508
-    , at:  -0.100
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on:  {200709.2    : -4}
+    , to:  {578310184.1 : -8}
+    , at:  -0.101
     , do: 'ionosphere webi ions'
     , as: {habitation:true, connection:true}
     , is:
         [ "ionify: invoked object notation implemented for your web"
-        , "an initialization@ of ionify web habitation@s"
-        , "a      habitation@ with web-habitat connection@s & interactions"
-        , "a      connection@ of ~get for web habitat acquisition@"
-        , "get.ing ionify's ~get action@ specification@"
+        , "an initiation@ of  ionify's web habitation@"
+        , "a  habitation@ of  web connection@s & interactions"
+        , "a  connection@ of ~get for web actions & information acquisition@"
+        , "get.ing ionify's  ~get action@ specification@"
         , "get.ing & applying ionify's configuration@"
         ],
       go:
@@ -22,7 +22,7 @@
         , seek: 'https://seek.ionify.net/'
         , deal: 'https://deal.ionify.net/'
         , help: 'https://help.ionify.net/'
-        , test: 'https://github.com/ionify/ionify/blob/public/ions/web/web.test.js'
+      //, test: 'https://github.com/ionify/ionify/blob/public/ions/web/web.test.js'
         , code: 'https://github.com/ionify/ionify/blob/public/web.js'
         , talk: 'https://talk.ionify.net/'
         , plan: 'https://plan.ionify.net/'
@@ -34,8 +34,7 @@
 
         , "WERE 🧹 nullifying .script()'s onload callback once its script loads"
         , "WERE modeling re.as@ specification@s with version@s & re.of@ association@s"
-        , "WERE modeling  initialization@ideas.js & ROLES-&-FLOWS@launch.js"
-        , "WILL implement initialization@ideas.js & ROLES-&-FLOWS@launch.js"
+        , "WERE modeling & implementing initiation & ROLES-&-FLOWS@launch.js"
         , "WANT 👨🏾‍💻 .locate() per launch.js ajile-legacy habitation@ discovery"
         , "WANT .get() batch & setting onload that invokes .then after all load"
         , "MUST 🚨 IMPROVE .jsonxd() to handle {at:'id@js.on'} vs {at:'url'}"
@@ -119,8 +118,7 @@
   queue :function
   queue (ion)
     { var who = ion.re.id.name || ion.re.id
-        , web = queue.with.its
-        , all = web.pending
+        , all = queue.with.its.pending
         ; all[who] =ion
         ; all.push (who)
     },
