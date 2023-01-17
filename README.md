@@ -3,8 +3,7 @@
 **🧬 ion implemented for you**, is a flexible & unobtrusive, natural-language api
 for expressing actions & information via
 [**⚛︎ ion:** invoked object notation](http://ion.ionify.net/).
-it was
-[created](https://origin.ionify.net/)
+it is [produced](https://origin.ionify.net/)
 by
 [**michael 👨🏾‍💻 lee**](https://github.com/iskitz)
 and is maintained by

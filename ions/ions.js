@@ -4,10 +4,10 @@
     { id: 'ions@ionify'
     , of: ['core','settings','launch']
     , as: {configuration:-0.001}
-    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee@ionify.net', 'team✨ionify']
-    , on: -2.20070904
-    , to: -1.57831002208
-    , at: -0.017
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
+    , on: {200709.2    : -4}
+    , to: {578310184.1 : -8}
+    , at: -0.018
     , in:
         [    'queens-county.new-york.usa.earth'
         , 'silicon-valley.california.usa.earth'
@@ -33,13 +33,10 @@
         },
       we:
         [ "WERE defining relations for re.as & re.do application(s)"
-        , "WERE adding anion specificationless relation"
-        , "NEED to integrate paths in resolution flow"
+        , "NEED to integrate locations in ~get:id-resolution flow"
         , "WANT ions@ionify in main directory with habitation@s like web@ionify"
         ,
-        [ "were exploring re.on+to instantiation@s calendarids + timezone + dow"
-        , "LIKE @domain configurations' default calendar = easy instantiation@s"
-        , "LIKE @domain configurations' default timezone = easy instantiation@s"
+        [ "LIKE @domain calendar & timezone instantiation@ configurations"
         , "with", {578309296 : 1035}                        , "instantiation@"
         , "and" , {'@ionify':{calendar:{id:1, timezone:-8}}}, "configuration@"
         , "enabling ionify to interpret it as a pst hebrew instantiation@ even"
@@ -48,15 +45,12 @@
         ]
         , "muse rename groups@ions@ <= relations or relations're a super-group?"
         , "like [¿re.of?] relations being augmented as ions are invoked"
-        , "like relation      <= relations"
-        , "like location      <= paths  ; singular aligns with its relation"
-        , "like transcription <= logging; singular aligns with its relation"
         ]
     },
 
-  attibution:
-    { entities: 'entities@'
-    , products: 'products@'
+  attribution:
+    { producer: 'producer@'
+    , produced: 'produced@'
     },
 
   instantiation :
