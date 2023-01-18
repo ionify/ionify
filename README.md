@@ -250,9 +250,9 @@ such as user actions..., sensor outputs, or messages from other programs/threads
 ### [decoupled observation](https://en.wikipedia.org/wiki/Observer_pattern#Coupling_and_typical_pub-sub_implementations)
 
 **ionify** uses javascript's
-[prototypal ⚘ inheritance](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-objects)
+[prototypal ⚘ inheritance](https://262.ecma-international.org/6.0/#sec-objects)
 &
-[operation ⚙️ overloading](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tonumber)
+[operation ⚙️ overloading](https://262.ecma-international.org/6.0/#sec-tonumber)
 to enable observing objects without direct references. this enables observing json & other
 anonymous & named objects:
 
@@ -294,7 +294,7 @@ i.e. `~/ / + [ ] & { }`, eliminate name collisions by encapsulating their
 
 **ionify** enables individually observing & inspecting multiple identically identified
 **lions**. this capability enables **lions** to simultaneously coexist within the same
-[execution context](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-execution-contexts)
+[execution context](https://262.ecma-international.org/6.0/#sec-execution-contexts)
 without overriding all, or parts, of each other:
 
 ```javascript
