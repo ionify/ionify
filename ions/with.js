@@ -6,8 +6,8 @@
     , of: ['core', 'public', 'sion', 'context', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
     , on: {200709.2    : -4}
-    , to: {578310184.1 : -8}
-    , at: -0.012
+    , to: {578311115.1 : -8}
+    , at: -0.013
   //, do: {copy:-0.001}
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , is:
@@ -36,7 +36,15 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "KNOW 🚨 ~next.id sets ion.with.its to itself when ~next.id.s .with.d"
+        [
+        [ "MUST solve with@ prematurely sets array[member].with.my+its = array"
+        , "post fixed with@-array.with.proposal-infinite-recursion-challenge #19"
+        ,
+        , "LIKE sharing recursor@ionify@ tool but will defer that for now as it"
+        , "should be refined to also support copy@with@.s recall-by-id scenario"
+        ]
+        , "WILL 👨🏾‍💻 WITH.prototype[all,the]={...} so instance.constructor=WITH"
+        , "KNOW 🚨 ~next.id sets ion.with.its to itself when ~next.id.s .with.d"
         , "KNOW .with.* can be exposed if an ion.method shares it as a reaction"
         , "were 🙇🏾‍♂️ renaming with.the.ionify.groups <= with.the.ionify.spaces"
         ,
@@ -117,8 +125,6 @@
         ,
         [ "muse 🤔 should we seal WITH * after * vs before it's sion extension?"
         , "muse 🤔 should WITH apply .augment() as a copy constructor?"
-        , "muse 🤔 WITH:(function WITH(){}()) enables true instanceof WITH?"
-        , "muse 🤔 {WITH:{named-expression}} <= WITH@with.constructor === Object"
         ]
         ]
     },
@@ -205,15 +211,24 @@
       my.copy.with      =
       fixed.with        =
       form.with         ={in:via.in, my:my, its:my, all:all, our:iOnify}
+
       the.tools.fixed   = fixed
       my.WITH.prototype = WiTH
       WiTH.the = iOnify.spaces      = the
       WiTH.all = iOnify.spaces.all  = all
 
+      my.augment.recursor = my.recursor()
+
     //Object.freeze (my)                  //🛡 singleton with@ <= CANT BUT WHY?
       Object.freeze (my.WITH) /*👇🏾CANT👇🏾*/ //🛡 singleton ionosphere constructor
       fixed         ([all,WiTH/*,fixed*/])//🛡 singleton ionosphere .all & .the
       delete my.valueOf <= my
+    },
+
+   '*': function
+  _with_( ion )
+    { var via = _with_.with
+      return via.my.augment (ion)
     },
 
   fixed:function
@@ -236,41 +251,6 @@
         }
     },
 
-   '*':function
-  _with_( ion )
-    { var via   = _with_.with
-        , i     = via.my
-        , WITH  = i.WITH
-        , temp  = ion.with
-        , its   = temp && temp.its
-        , my    = temp && temp.my
-        , our   = temp && temp.our
-        , sion  = i.augment (ion)
-        ; i.augment.done.length = 0         //👨🏾‍💻 forget inspected members
-
-      if( !temp                             //🙇🏾‍♂️ with@less, or
-        || temp             instanceof WITH //👨🏾‍🏫 pre-formed sion with@, or
-        ||(my  && my .with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ or
-        ||(its && its.with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ or
-        ||(our && our.with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ so
-        ) return true                       //🤲🏾 end with@ formation 👨🏾‍🏫🎉
-
-      var more                              //🙇🏾‍♂️ prepare to copy the ion's
-        = { the: temp.the,  in: temp.in     //👨🏾‍💻 .with-stated with@-compatible
-          , all: temp.all, our: our         //👨🏾‍💻 members and each of their
-          , its: its     ,  my: my          //👨🏾‍💻 values.
-          }
-
-      var skip  = sion.its  !== sion.my ? {its:true, my:true} : {}
-        ; skip  =(skip.with   = true, skip)
-
-      var wipe = i === ion ? {l3:true} : via.all.none
-
-      i.copy ({into:sion, from:more, wipe:wipe, skip:skip}) //🙇🏾‍♂️ copy with&
-      ion.re && ion.re.ex && (ion.re.ex.with = temp)  //👨🏾‍💻 keep it in re.ex
-      return true                                     //🤲🏾 with@ is formed! 🎉
-    },
-
   sensible:function
   sensible ( ion  )
     { if( sensible.found) return sensible.found
@@ -282,13 +262,32 @@
           ||  via.all.none
     },
 
+  recursor:function
+  recursor ()
+    { return  { depth: 1
+              , known:[]
+              , knows:function
+                knows ( what )
+                  { var known = this.known
+                    if(~known.indexOf (what)) return true
+                    known.push (what)
+                    this.depth++
+                    return false
+                  },
+                leave:function
+                leave ()
+                  { return  1   <--   this.depth
+                        ||  Boolean ((this.known.length = 0, this.depth = 1))
+                  }
+              }
+    },
+
   augment:function
   augment ( ion )
     { if  (!ion ) return false
 
       var member    , has
         , sion      = void 0
-        , done      = augment.done || (augment.done = [])
         , via       = augment.with
         , me        = via.my
         , WITH      = me.WITH
@@ -303,34 +302,30 @@
           member = ion [name]                               //👨🏾‍💻 confirm if
 
           if(!member)                             continue  //👨🏾‍🏫 each will be
-          if(~    done.indexOf(member))           continue  //👨🏾‍🏫 a newly
           if(!sensible [typeof member])                     //👨🏾‍🏫 sensed type |
           if(!sensible [member.constructor.name]) continue  //👨🏾‍🏫 sensed Type &
-          if( has   =   member. with)                       //👨🏾‍🏫 has a .with
-          if( has   instanceof  WITH)             continue  //👨🏾‍🏫 ≠ sion with@
-
-          else                            //🙇🏾‍♂️ for a member with temp .with,
-            {//sion = new WITH             //👨🏾‍💻 ensure it'll be a sion with@
-              done.push (member)          //👨🏾‍💻 remember member's inspection
-              augment.ed =  true          //👨🏾‍💻 set the augmented state then
-              augment   (member)          //👨🏾‍🔬 augment it with its sion with@,
-              augment.ed = false          //👨🏾‍💻 then clear the augmented state.
-            // if((has=member.with) instanceof WITH)
-            //   { me.connect ({ion:ion, with:has})   //👨🏾‍🔬 connect all its collections
-            //   ; continue
-            //   }
+          if( member.hasOwnProperty ('with'))               //👨🏾‍🏫 has own .with
+          if( has   =   member.with)                        //👨🏾‍🏫 has a .with
+          if( has   instanceof WITH)              continue  //👨🏾‍🏫 not a with@
+          else                                  //🙇🏾‍♂️ a member with temp .with
+          if(!augment.recursor.knows(member))   //👨🏾‍🔬 not recursively inspected
+            {(augment.ed  = true)           &&  //👨🏾‍💻 set augmented state then
+              augment(member)               &&  //👨🏾‍🔬 augment with its with@, &
+              augment.recursor.leave()      &&  //👨🏾‍🔬 update our recursor tool
+             (augment.ed = false)               //👨🏾‍💻 then undo augmented state
+              if (member.with instanceof WITH)    continue  //👨🏾‍🏫 has a with@
             }
 
-        /*sion ||*/ (sion =  new WITH)          //👨🏾‍💻 affirm or make a sion with@
-          sion.its      = sion.my = ion       //👨🏾‍💻 set with@.s its & my to ion
-          me.connect ({ion:ion, with:sion})   //👨🏾‍🔬 connect all its collections
-          member.with   = sion                //👨🏾‍💻 set sion with@  member.with
-          me.conceal (member)                 //👨🏾‍🔬 set unobtrusive member.with
+          sion = new WITH                     //👨🏾‍💻 affirm or make a sion with@
+          sion.its =  sion.my = ion           //👨🏾‍💻 set with@.s its & my to ion
+          me.connect ({ion:ion, with:sion})   //👨🏾‍🔬 and connect its collections
+          member.with = sion
+          me.conceal (member)
         }
 
       var adhoc = ion.with                      //🙇🏾‍♂️ maybe an adhoc with@ ion
       if( adhoc instanceof WITH)  return adhoc  //👨🏾‍🏫 or it's a sion with@ ion
-      if( augment.ed)             return sion   //👨🏾‍🏫 its members with@ is set!
+      if( augment.ed)             return true   //👨🏾‍🏫 its members with@ is set!
 
       var  its = adhoc && adhoc.its     //🙇🏾‍♂️ get the ion's adhoc with@.s its
         ,   my = adhoc && adhoc.my      //👨🏾‍🏫 and the ion's adhoc with@.s my
@@ -382,6 +377,32 @@
                 :   with$.in.domain    =
                     with$.the[domain]  =  groups [domain]
                                       || (groups [domain] = our || {});
+
+      var WITH  = i.WITH
+        ; its   = adhoc && adhoc.its
+        ; my    = adhoc && adhoc.my
+
+      if( !adhoc                            //🙇🏾‍♂️ with@less, or
+        || adhoc            instanceof WITH //👨🏾‍🏫 pre-formed sion with@, or
+        ||(my  && my .with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ or
+        ||(its && its.with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ or
+        ||(our && our.with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ so
+        ) return true                       //🤲🏾 end with@ formation 👨🏾‍🏫🎉
+
+      var more                              //🙇🏾‍♂️ prepare to copy the ion's
+        = { the: adhoc.the,  in: adhoc.in   //👨🏾‍💻 .with-stated with@-compatible
+          , all: adhoc.all, our: our        //👨🏾‍💻 members and each of their
+          , its: its      ,  my: my         //👨🏾‍💻 values.
+          }
+
+      var skip  = with$.its  !== with$.my ? {its:true, my:true} : {}
+        ; skip  =(skip.with   = true, skip)
+
+      var wipe = i === ion ? {l3:true} : via.all.none
+
+      i.copy ({into:with$, from:more, wipe:wipe, skip:skip})  //🙇🏾‍♂️ copy with&
+      ion.re && ion.re.ex && (ion.re.ex.with = adhoc)   //👨🏾‍💻 keep it in re.ex
+      return true                                       //🤲🏾 with@ is formed! 🎉
     },
 
   copy:function

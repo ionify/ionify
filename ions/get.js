@@ -5,9 +5,9 @@
     , of: ['core','public','api','launch']
     , do: { transcription :-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -2.20070904
-    , to:  -1.57831004408
-    , at:  -0.100
+    , on: {200709.2     : -4}
+    , to: {578311093.1  : -8}
+    , at: -0.101
     , as:
         { acquisition :-0.001, sensation    :-0.001, composition   :-0.001
         , convention  :-0.001, specification:-0.001, initialization:-0.001
@@ -34,8 +34,9 @@
         },
       we:
         [ "WILL specify & implement ~get.then.or"
-        , "want to ~get & apply configuration(s) asap; coordinate with on.ions@"
-        , "like re.do.ing all current ~get.s, except re.do.as.of which'll apply"
+        , "WANT ~get to apply configuration(s) asap; coordinate with on.ions@"
+        , "WANT ~get to always set a .then that sets gots@get@=true"
+        , "LIKE re.do.ing all current ~get.s, except re.do.as.of which'll apply"
         ,
         [ "like 🙇🏾‍♂️ & want to confirm jsdelivr combined-files with ~get:[].s"
         , "read 👨🏾‍💻https://github.com/jsdelivr/jsdelivr#combine-multiple-files"

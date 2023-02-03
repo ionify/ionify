@@ -6,9 +6,9 @@
     , do: {transcription:-0.001}
     , as: {convention   :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on: { 2.200709    : -4      }
-    , to: { 1.578309263 : -8.1224 }
-    , at:  -0.065
+    , on: { 200709.2    : -4      }
+    , to: { 578311093.1 : -8.1434 }
+    , at:  -0.066
     , is:
         [
         [ "implementing ionify's ~find.for.as.in.skip name-to-ai-resolution"
@@ -37,7 +37,8 @@
         , team: 'https://team.ionify.net/'
         },
       we:
-        [ "WILL 🙇🏾‍♂️ retire .link() since with@ successfully refined it 🤲🏾"
+        [ "MUST 🤔 handle on:[...] setting ion's members' my+its@with@ to itself"
+        , "WILL 🙇🏾‍♂️ retire .link() since with@ successfully refined it 🤲🏾"
         , "WANT to simplify this ion & separate its actions into their own ions"
         , "WANT to keep these actions domain-private until otherwise needed"
         , "WILL ~find in ion's parent for aliases before searching ion.with.in"

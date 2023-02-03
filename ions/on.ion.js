@@ -8,8 +8,8 @@
     , do: { resolution  :-0.001, transcription:-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
     , on: {200709.2    : -4}
-    , to: {578310184.1 : -8}
-    , at: -0.088
+    , to: {578311115.1 : -8}
+    , at: -0.089
     , is:
         [ "ionify: invoked object notation implemented for you"
         , "enabling the ionosphere: invoked object notation observation sphere"
@@ -325,9 +325,9 @@
       does [sensation.re.id.name || sensation.re.id] = does.push (action) - 1
       //👨🏾‍💻 & may ~no.on itself which this would undo by post-application save
 
-      //👨🏾‍🔬 apply this convention to this sensation sensor before anything else
-/*👇🏾*/sense.always ({do:action, for:sensation}) //👨🏾‍🔬 sensation, then to others
-/*👆🏾*/sense.always ({do:action, for:sense})     //👨🏾‍🔬 then apply it to its own
+      //👨🏾‍🔬 apply the sensation convention to itself before any other ions,
+      sense.always ({do:action, for:sensation}) //👨🏾‍🔬 then apply it to
+      sense.always ({do:action, for:sense})     //👨🏾‍🔬 this ~on sensation
 
       for
         //🙇🏾‍♂️ apply each convention@ to all
