@@ -1,19 +1,49 @@
 ;
 ~
 {'re.test@ionify':
-    { of: ['tests','core','api']
-    , as: ['convention','sensation','sion','foundation','examination']
-    , by: ['mike.👨🏾‍💻.lee', 'team']
-    , on:  -4.200709
-    , to:  -7.20220629
-    , at:  -0.000001
+    { of: ['core', 'sion', 'api', 'tests']
+    , do: {'re@':true, 'on.storie@':true, transcription:true}
+    , as: {examination  :-0.001}
+    , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
+    , on:  -2.20070904
+    , to:  -1.57831003308
+    , at:  -0.008
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
-    , we:
-        [ "must create comprehensive re.* tests to ensure a reliable foundation"
-        , "want aesop's current storie or phrase as aesop.with.own.next"
-        , "have created initial tests with temporary aesop.next implementation"
+    , go:
+        { meet: 'https://meet.ionify.net/'
+        , seek: 'https://seek.ionify.net/'
+        , deal: 'https://deal.ionify.net/'
+        , help: 'https://help.ionify.net/'
+        , test: 'https://github.com/ionify/ionify/blob/public/ions/re.test.js'
+        , code: 'https://github.com/ionify/ionify/blob/public/ions/re.js'
+        , talk: 'https://talk.ionify.net/'
+        , plan: 'https://plan.ionify.net/'
+        , join: 'https://join.ionify.net/'
+        , team: 'https://team.ionify.net/'
+        },
+      we:
+        [ "MUST create comprehensive re.* tests to ensure a reliable foundation"
+        , "MUST create re.* specification@ conformance tests for reliability"
+        , "WILL add test(s) for values of auto-created & corrected re.* members"
+
+        , "were ..."
+        , "must ..."
+        , "want ..."
+        , "like ..."
+        , "muse ..."
+        , "have ..."
+        , "wont ..."
         ]
+    },
+
+  with:
+    { my:
+        { tests:
+            { id:1, re:1, of:1, do:1, as:1, by:1, on:1
+            , to:1, at:1, ax:1, hi:1, is:1, ex:1, go:1
+            },
+        }
     },
 
   do:
@@ -21,17 +51,10 @@
     , "re@ sets: re.core malformed ~{*}"
     ],
 
-  of:
-    { own:
-        { tests:
-            {id:1,im:1,of:1,as:1,by:1,on:1,to:1,at:1,ax:1,is:1,ex:1,go:1}
-        }
-    },
-
  "re@ sets: re.core for anion ~{ }":function
   recore_anion (doing)
-    { var question  = doing [doing.own.next]
-        , tests     = recore_anion.with.of.own.tests
+    { var question  = doing [doing.next]
+        , tests     = recore_anion.with.my.tests
         ; tests.if  = 1
 
       var anion
@@ -72,9 +95,9 @@
   recore_malformation (doing)
     { var malformation = {re:{}}
         ,      testing = []
-        ,     question = doing [doing.own.next]
-        ,        tests = recore_malformation.with.of.own.tests
-        ,        later = recore_malformation.with.testLater
+        ,     question = doing [doing.next]
+        ,        tests = recore_malformation.with.my.tests
+        ,        later = recore_malformation.with.my.testLater
 
       function
       testNow()
@@ -93,11 +116,6 @@
         }
 
       malformation - testing <= /invoke the malformed re & activate its tests/
-    },
-
-  d0:function
-  reexamination()
-    {
     }
 }
 ;
