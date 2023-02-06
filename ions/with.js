@@ -6,8 +6,8 @@
     , of: ['core', 'public', 'sion', 'context', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
     , on: {200709.2    : -4}
-    , to: {578311115.1 : -8}
-    , at: -0.013
+    , to: {578311152.1 : -8}
+    , at: -0.014
   //, do: {copy:-0.001}
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , is:
@@ -40,6 +40,7 @@
         [ "MUST solve with@ prematurely sets array[member].with.my+its = array"
         , "post fixed with@-array.with.proposal-infinite-recursion-challenge #19"
         ,
+        , "LIKE renamed recursion@@ <= recursor@@"
         , "LIKE sharing recursor@ionify@ tool but will defer that for now as it"
         , "should be refined to also support copy@with@.s recall-by-id scenario"
         ]
@@ -205,19 +206,18 @@
         ,       WiTH    = my.WiTH
         ,      fixed    = my.fixed
         ,     iOnify    = via.the.ionify
+        ,    augment    = my.augment
       my.sensible.with  =
-      my.augment.with   =
       my.connect.with   =
       my.copy.with      =
+      augment.with      =
       fixed.with        =
       form.with         ={in:via.in, my:my, its:my, all:all, our:iOnify}
 
-      the.tools.fixed   = fixed
-      my.WITH.prototype = WiTH
-      WiTH.the = iOnify.spaces      = the
-      WiTH.all = iOnify.spaces.all  = all
-
-      my.augment.recursor = my.recursor()
+      the.tools.fixed       = fixed
+      augment.recursor      = my.recursor (augment)
+      my.WITH.prototype.the = WiTH.the = iOnify.spaces      = the
+      my.WITH.prototype.all = WiTH.all = iOnify.spaces.all  = all
 
     //Object.freeze (my)                  //🛡 singleton with@ <= CANT BUT WHY?
       Object.freeze (my.WITH) /*👇🏾CANT👇🏾*/ //🛡 singleton ionosphere constructor
@@ -252,7 +252,7 @@
     },
 
   sensible:function
-  sensible ( ion  )
+  sensible ( ion )
     { if( sensible.found) return sensible.found
       var via =  sensible.with
       return     ion
@@ -263,16 +263,44 @@
     },
 
   recursor:function
-  recursor ()
-    { return  { depth: 1
-              , known:[]
-              , knows:function
-                knows ( what )
+  recursor (routine)
+    { return  { delve : routine
+              , depth : 1
+              , known : []
+            //, later : []
+              , knows :function
+                knows ( which )
                   { var known = this.known
-                    if(~known.indexOf (what)) return true
-                    known.push (what)
-                    this.depth++
+                    if(~known.indexOf (which)) return true
+                    known.push (which)
                     return false
+                  },
+                visit :function
+                visit ( which )
+                  {//if( which )
+                  //return false
+                  //  ||  !this.knows (which)
+                  //  ||  (this.delve.d =  true)
+                  //  &&   this.depth++
+                  //  &&   this.delve (which)
+                  //  &&   this.leave (which)
+                  //  &&  (this.delve.d = false)
+
+                  //for
+                  //  ( var next    = this.known
+                  //  ,     member  =-1
+                  //  ,     last    = next.length
+                  //  ; ++  member != last
+                  //  ; this.visit (next [member])
+                  //  );
+
+                    return !this.knows  (which)
+                        ?  (this.depth++, true)
+                        :   false
+                  },
+                defer :function
+                defer ( which )
+                  { this.knows (which) //|| later.push (which)
                   },
                 leave:function
                 leave ()
@@ -308,8 +336,10 @@
           if( has   =   member.with)                        //👨🏾‍🏫 has a .with
           if( has   instanceof WITH)              continue  //👨🏾‍🏫 not a with@
           else                                  //🙇🏾‍♂️ a member with temp .with
-          if(!augment.recursor.knows(member))   //👨🏾‍🔬 not recursively inspected
-            {(augment.ed  = true)           &&  //👨🏾‍💻 set augmented state then
+          if( augment.recursor.visit(member))   //👨🏾‍🔬 not recursively inspected
+            {//recursor.defer (member)
+             //continue
+             (augment.ed  = true)           &&  //👨🏾‍💻 set augmented state then
               augment(member)               &&  //👨🏾‍🔬 augment with its with@, &
               augment.recursor.leave()      &&  //👨🏾‍🔬 update our recursor tool
              (augment.ed = false)               //👨🏾‍💻 then undo augmented state
@@ -325,7 +355,7 @@
 
       var adhoc = ion.with                      //🙇🏾‍♂️ maybe an adhoc with@ ion
       if( adhoc instanceof WITH)  return adhoc  //👨🏾‍🏫 or it's a sion with@ ion
-      if( augment.ed)             return true   //👨🏾‍🏫 its members with@ is set!
+      if( augment./**/ed)             return true   //👨🏾‍🏫 its members with@ is set!
 
       var  its = adhoc && adhoc.its     //🙇🏾‍♂️ get the ion's adhoc with@.s its
         ,   my = adhoc && adhoc.my      //👨🏾‍🏫 and the ion's adhoc with@.s my
@@ -343,6 +373,7 @@
       me.connect ({ion:ion, with:sion}) //🙇🏾‍♂️ and connect the ion's collections
       ion.with  = sion                  //👨🏾‍💻 then set|replace the ion's with@!
       me.conceal (ion)
+    //augment.recursor.visit()          //👨🏾‍🔬 do deferred depth-last recursions
       return      sion                  //👨🏾‍🔬 ion's with@ augmentation done! ✅
     },
 
