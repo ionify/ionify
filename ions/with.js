@@ -7,8 +7,8 @@
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
     , on: {200709.2    : -4}
     , to: {578311152.1 : -8}
-    , at: -0.014
-  //, do: {copy:-0.001}
+    , at: -0.015
+  //, do: {copy:-0.001, recursion:-0.001}
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , is:
         [ "ionify's .with connection@ convention@"
@@ -40,8 +40,8 @@
         [ "MUST solve with@ prematurely sets array[member].with.my+its = array"
         , "post fixed with@-array.with.proposal-infinite-recursion-challenge #19"
         ,
-        , "LIKE renamed recursion@@ <= recursor@@"
-        , "LIKE sharing recursor@ionify@ tool but will defer that for now as it"
+        , "HAVE renamed recursion@@ <= recursor@@"
+        , "LIKE sharing recursion@ionify@ tool but'll defer that for now as it"
         , "should be refined to also support copy@with@.s recall-by-id scenario"
         ]
         , "WILL 👨🏾‍💻 WITH.prototype[all,the]={...} so instance.constructor=WITH"
@@ -208,6 +208,7 @@
         ,     iOnify    = via.the.ionify
         ,    augment    = my.augment
       my.sensible.with  =
+      my.members.with   =
       my.connect.with   =
       my.copy.with      =
       augment.with      =
@@ -215,7 +216,7 @@
       form.with         ={in:via.in, my:my, its:my, all:all, our:iOnify}
 
       the.tools.fixed       = fixed
-      augment.recursor      = my.recursor (augment)
+      augment.recursion     = my.recursion (augment)
       my.WITH.prototype.the = WiTH.the = iOnify.spaces      = the
       my.WITH.prototype.all = WiTH.all = iOnify.spaces.all  = all
 
@@ -262,8 +263,8 @@
           ||  via.all.none
     },
 
-  recursor:function
-  recursor (routine)
+  recursion:function
+  recursion (routine)
     { return  { delve : routine
               , depth : 1
               , known : []
@@ -310,15 +311,15 @@
               }
     },
 
-  augment:function
-  augment ( ion )
-    { if  (!ion ) return false
+  members:function
+  members ( ion )
+    { if  (!ion ) return
 
-      var member    , has
-        , sion      = void 0
-        , via       = augment.with
+      var has, vith , member
+        , via       = members.with
         , me        = via.my
         , WITH      = me.WITH
+        , recursion = me.augment.recursion
         , sensible  = via.our.ionified
         ; sensible ||(sensible = me.sensible.found || me.sensible (ion))
 
@@ -336,45 +337,57 @@
           if( has   =   member.with)                        //👨🏾‍🏫 has a .with
           if( has   instanceof WITH)              continue  //👨🏾‍🏫 not a with@
           else                                  //🙇🏾‍♂️ a member with temp .with
-          if( augment.recursor.visit(member))   //👨🏾‍🔬 not recursively inspected
-            {//recursor.defer (member)
+          if( recursion.visit (member))         //👨🏾‍🔬 not recursively inspected
+            {//recursion.defer (member)
              //continue
-             (augment.ed  = true)           &&  //👨🏾‍💻 set augmented state then
-              augment(member)               &&  //👨🏾‍🔬 augment with its with@, &
-              augment.recursor.leave()      &&  //👨🏾‍🔬 update our recursor tool
-             (augment.ed = false)               //👨🏾‍💻 then undo augmented state
+             (me.augment.ed  = true)  &&        //👨🏾‍💻 set augmented state then
+              me.augment(member)      &&        //👨🏾‍🔬 augment with its with@, &
+              recursion.leave ()      &&        //👨🏾‍🔬 update our recursion tool
+             (me.augment.ed = false)            //👨🏾‍💻 then undo augmented state
               if (member.with instanceof WITH)    continue  //👨🏾‍🏫 has a with@
             }
 
-          sion = new WITH                     //👨🏾‍💻 affirm or make a sion with@
-          sion.its =  sion.my = ion           //👨🏾‍💻 set with@.s its & my to ion
-          me.connect ({ion:ion, with:sion})   //👨🏾‍🔬 and connect its collections
-          member.with = sion
+          vith        = new WITH              //👨🏾‍💻 affirm or make a sion with@
+          vith.its    = vith.my = ion         //👨🏾‍💻 set with@.s its & my to ion
+          me.connect ({ion:ion, with:vith})   //👨🏾‍🔬 and connect its collections
+          member.with = vith
           me.conceal (member)
         }
+    },
 
-      var adhoc = ion.with                      //🙇🏾‍♂️ maybe an adhoc with@ ion
-      if( adhoc instanceof WITH)  return adhoc  //👨🏾‍🏫 or it's a sion with@ ion
-      if( augment./**/ed)             return true   //👨🏾‍🏫 its members with@ is set!
+  augment:function
+  augment ( ion )
+    { if  (!ion ) return false
 
-      var  its = adhoc && adhoc.its     //🙇🏾‍♂️ get the ion's adhoc with@.s its
-        ,   my = adhoc && adhoc.my      //👨🏾‍🏫 and the ion's adhoc with@.s my
-        ; sion = new  WITH              //👨🏾‍💻 create a sion with@ for this ion
+      var vith
+        , via   = augment.with
+        , me    = via.my
+        , WITH  = me.WITH
 
-      if( adhoc &&                            //🙇🏾‍♂️ it has an adhoc with@ with
-      ( (   my  && my .with) instanceof WITH  //👨🏾‍🏫 sion with@ .my, or a
-      ||(  its  && its.with) instanceof WITH  //👨🏾‍🏫 sion with@ .its, so set its
+      me.members (ion)
+
+      var part = ion.with                   //🙇🏾‍♂️ may have a partial with@ ion
+      if( part instanceof WITH) return part //👨🏾‍🏫 a sion with@ ion = we're done
+      if( augment./**/ed)       return true //👨🏾‍🏫 means members with@ are set!
+
+      var  its = part && part.its       //🙇🏾‍♂️ get the ion's partial with@.s its
+        ,   my = part && part.my        //👨🏾‍🏫 and the ion's partial with@.s my
+        ; vith = new  WITH              //👨🏾‍💻 create a sion with@ for this ion
+
+      if( part &&                           //🙇🏾‍♂️ it has an partial with@ with
+      ( (   my && my .with) instanceof WITH //👨🏾‍🏫 sion with@ .my, or a
+      ||(  its && its.with) instanceof WITH //👨🏾‍🏫 sion with@ .its, so set its
       ) )
-        { sion.its = its || my                //👨🏾‍💻 sion with@.s its to adhoc's
-        ; sion.my  = my  || its               //👨🏾‍💻 sion with@.s my  to adhoc's
+        { vith.its = its || my              //👨🏾‍💻 sion with@.s its to partial's
+        ; vith.my  = my  || its             //👨🏾‍💻 sion with@.s my  to partial's
         } else
-          sion.its = sion.my  = ion           //👨🏾‍💻 with@.s its & my as ion's🤓
+          vith.its = vith.my  = ion         //👨🏾‍💻 with@.s its & my as ion's🤓
 
-      me.connect ({ion:ion, with:sion}) //🙇🏾‍♂️ and connect the ion's collections
-      ion.with  = sion                  //👨🏾‍💻 then set|replace the ion's with@!
+      me.connect ({ion:ion, with:vith}) //🙇🏾‍♂️ and connect the ion's collections
+      ion.with  = vith                  //👨🏾‍💻 then set|replace the ion's with@!
       me.conceal (ion)
-    //augment.recursor.visit()          //👨🏾‍🔬 do deferred depth-last recursions
-      return      sion                  //👨🏾‍🔬 ion's with@ augmentation done! ✅
+    //augment.recursion.visit()         //👨🏾‍🔬 do deferred depth-last recursions
+      return      vith                  //👨🏾‍🔬 ion's with@ augmentation done! ✅
     },
 
   conceal:function
@@ -390,12 +403,12 @@
         , all     =  {l1:true, l2:true, l3:true}
         , groups  =   via.our.spaces || via.the.ionify.spaces
         , ion     =   which.ion
-        , with$   =   which.with
-        , adhoc   =   ion.with
-        , our     =   adhoc && adhoc.our
-        , ins     =   adhoc && adhoc.in
-        , its     =   with$.its
-        , my      =   with$.my
+        , vith    =   which.with
+        , part    =   ion.with
+        , our     =   part && part.our
+        , ins     =   part && part.in
+        , its     =   vith.its
+        , my      =   vith.my
         , re      =   ion.re  ||  my.re || its.re
         , domain  =       re  && (re.id
                               && (re.id.domain && re.id.domain.name))
@@ -403,36 +416,36 @@
 
       ins && i.copy ({from:ins, into:groups, add:all})
 
-      with$.our =   domain  == ''
-                ?   with$.in.domain    =  with$.all
-                :   with$.in.domain    =
-                    with$.the[domain]  =  groups [domain]
+      vith.our  =   domain  == ''
+                ?   vith.in.domain    =  vith.all
+                :   vith.in.domain    =
+                    vith.the[domain]  =  groups [domain]
                                       || (groups [domain] = our || {});
 
       var WITH  = i.WITH
-        ; its   = adhoc && adhoc.its
-        ; my    = adhoc && adhoc.my
+        ; its   = part && part.its
+        ; my    = part && part.my
 
-      if( !adhoc                            //🙇🏾‍♂️ with@less, or
-        || adhoc            instanceof WITH //👨🏾‍🏫 pre-formed sion with@, or
-        ||(my  && my .with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ or
-        ||(its && its.with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ or
-        ||(our && our.with) instanceof WITH //👨🏾‍💻 adhoc vs declared with@ so
+      if( !part                             //🙇🏾‍♂️ with@less, or
+        || part             instanceof WITH //👨🏾‍🏫 pre-formed sion with@, or
+        ||(my  && my .with) instanceof WITH //👨🏾‍💻 partial vs declared with@ or
+        ||(its && its.with) instanceof WITH //👨🏾‍💻 partial vs declared with@ or
+        ||(our && our.with) instanceof WITH //👨🏾‍💻 partial vs declared with@ so
         ) return true                       //🤲🏾 end with@ formation 👨🏾‍🏫🎉
 
       var more                              //🙇🏾‍♂️ prepare to copy the ion's
-        = { the: adhoc.the,  in: adhoc.in   //👨🏾‍💻 .with-stated with@-compatible
-          , all: adhoc.all, our: our        //👨🏾‍💻 members and each of their
+        = { the: part.the ,  in: part.in    //👨🏾‍💻 .with-stated with@-compatible
+          , all: part.all , our: our        //👨🏾‍💻 members and each of their
           , its: its      ,  my: my         //👨🏾‍💻 values.
           }
 
-      var skip  = with$.its  !== with$.my ? {its:true, my:true} : {}
+      var skip  = vith.its  !== vith.my ? {its:true, my:true} : {}
         ; skip  =(skip.with   = true, skip)
 
       var wipe = i === ion ? {l3:true} : via.all.none
 
-      i.copy ({into:with$, from:more, wipe:wipe, skip:skip})  //🙇🏾‍♂️ copy with&
-      ion.re && ion.re.ex && (ion.re.ex.with = adhoc)   //👨🏾‍💻 keep it in re.ex
+      i.copy ({into:vith, from:more, wipe:wipe, skip:skip})   //🙇🏾‍♂️ copy with&
+      ion.re && ion.re.ex && (ion.re.ex.with = part)    //👨🏾‍💻 keep it in re.ex
       return true                                       //🤲🏾 with@ is formed! 🎉
     },
 
