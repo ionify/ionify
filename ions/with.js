@@ -6,8 +6,8 @@
     , of: ['core', 'public', 'sion', 'context', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
     , on: {200709.2    : -4}
-    , to: {578311152.1 : -8}
-    , at: -0.015
+    , to: {578311163.1 : -8}
+    , at: -0.016
   //, do: {copy:-0.001, recursion:-0.001}
     , as: {connection:-0.001, convention:-0.001, sensation:-0.001}
     , is:
@@ -40,7 +40,6 @@
         [ "MUST solve with@ prematurely sets array[member].with.my+its = array"
         , "post fixed with@-array.with.proposal-infinite-recursion-challenge #19"
         ,
-        , "HAVE renamed recursion@@ <= recursor@@"
         , "LIKE sharing recursion@ionify@ tool but'll defer that for now as it"
         , "should be refined to also support copy@with@.s recall-by-id scenario"
         ]
@@ -278,14 +277,14 @@
                   },
                 visit :function
                 visit ( which )
-                  {//if( which )
-                  //return false
-                  //  ||  !this.knows (which)
-                  //  ||  (this.delve.d =  true)
-                  //  &&   this.depth++
-                  //  &&   this.delve (which)
-                  //  &&   this.leave (which)
-                  //  &&  (this.delve.d = false)
+                  { if( which )
+                      return false
+                      ||  !this.knows (which)
+                      &&  (this.delve.d =  true)
+                      &&   this.depth++
+                      &&   this.delve (which)
+                      &&   this.leave (which)
+                      &&  (this.delve.d = false)
 
                   //for
                   //  ( var next    = this.known
@@ -294,10 +293,6 @@
                   //  ; ++  member != last
                   //  ; this.visit (next [member])
                   //  );
-
-                    return !this.knows  (which)
-                        ?  (this.depth++, true)
-                        :   false
                   },
                 defer :function
                 defer ( which )
@@ -326,32 +321,26 @@
       for //🙇🏾‍♂️ perform with@ augmentation for all the ion's sensible members🧐
         ( var name in ion)                        //👨🏾‍🏫 inspecting each member
         { if( name == 'with')                     continue  //👨🏾‍🏫 except .with
-          if(!ion.hasOwnProperty (name))          continue  //👨🏾‍🏫 & inherited,
+          if(!ion.hasOwnProperty (name))          continue  //👨🏾‍🏫 & inherited.
 
-          member = ion [name]                               //👨🏾‍💻 confirm if
+          member = ion [name]                               //👨🏾‍💻 affirm member
 
-          if(!member)                             continue  //👨🏾‍🏫 each will be
+          if(!member)                             continue  //👨🏾‍🏫 exists & is a
           if(!sensible [typeof member])                     //👨🏾‍🏫 sensed type |
           if(!sensible [member.constructor.name]) continue  //👨🏾‍🏫 sensed Type &
           if( member.hasOwnProperty ('with'))               //👨🏾‍🏫 has own .with
-          if( has   =   member.with)                        //👨🏾‍🏫 has a .with
-          if( has   instanceof WITH)              continue  //👨🏾‍🏫 not a with@
-          else                                  //🙇🏾‍♂️ a member with temp .with
-          if( recursion.visit (member))         //👨🏾‍🔬 not recursively inspected
-            {//recursion.defer (member)
-             //continue
-             (me.augment.ed  = true)  &&        //👨🏾‍💻 set augmented state then
-              me.augment(member)      &&        //👨🏾‍🔬 augment with its with@, &
-              recursion.leave ()      &&        //👨🏾‍🔬 update our recursion tool
-             (me.augment.ed = false)            //👨🏾‍💻 then undo augmented state
-              if (member.with instanceof WITH)    continue  //👨🏾‍🏫 has a with@
-            }
+          if( has   =   member.with)                        //👨🏾‍🏫 that exists &
+          if( has   instanceof WITH)              continue  //👨🏾‍🏫 isn't a with@
+          else                                  //🙇🏾‍♂️ member has partial .with
+          if( recursion.visit (member))         //👨🏾‍🔬 so recursively augment it
+          //{ recursion.defer (member);           continue }
+          if( member.with instanceof WITH)        continue  //👨🏾‍🏫 augmentation✅
 
           vith        = new WITH              //👨🏾‍💻 affirm or make a sion with@
           vith.its    = vith.my = ion         //👨🏾‍💻 set with@.s its & my to ion
           me.connect ({ion:ion, with:vith})   //👨🏾‍🔬 and connect its collections
-          member.with = vith
-          me.conceal (member)
+          member.with = vith                  //👨🏾‍💻 set member's own sion with@
+          me.conceal (member)                 //👨🏾‍🔬 set as an unobtrusive with@
         }
     },
 
@@ -368,7 +357,7 @@
 
       var part = ion.with                   //🙇🏾‍♂️ may have a partial with@ ion
       if( part instanceof WITH) return part //👨🏾‍🏫 a sion with@ ion = we're done
-      if( augment./**/ed)       return true //👨🏾‍🏫 means members with@ are set!
+      if( augment./*e*/d)       return true //👨🏾‍🏫 means members with@ are set!
 
       var  its = part && part.its       //🙇🏾‍♂️ get the ion's partial with@.s its
         ,   my = part && part.my        //👨🏾‍🏫 and the ion's partial with@.s my
@@ -384,8 +373,8 @@
           vith.its = vith.my  = ion         //👨🏾‍💻 with@.s its & my as ion's🤓
 
       me.connect ({ion:ion, with:vith}) //🙇🏾‍♂️ and connect the ion's collections
-      ion.with  = vith                  //👨🏾‍💻 then set|replace the ion's with@!
-      me.conceal (ion)
+      ion.with  = vith                  //👨🏾‍💻 then set|replace the ion's with@,
+      me.conceal (ion)                  //👨🏾‍🔬 and set its with@ as unobtrusive
     //augment.recursion.visit()         //👨🏾‍🔬 do deferred depth-last recursions
       return      vith                  //👨🏾‍🔬 ion's with@ augmentation done! ✅
     },
