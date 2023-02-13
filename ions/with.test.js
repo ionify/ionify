@@ -5,9 +5,9 @@
     , of: ['tests','core','api']
     , as: ['examination','convention','sensation','composition']
     , by: ['🙇🏾‍♂️  יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -24.200709
-    , to:  -18.578309204
-    , at:  - 0.03
+    , on: {200709.2    : -4}
+    , to: {578311222.1 : -8}
+    , at: -0.032
     , is: "ionify's with@ api tests"
     , go:
         { meet: 'https://meet.ionify.net/'
@@ -45,19 +45,20 @@
     , "with@ ensures ions' method.with.all & with.all singular shared group"
 
     , "with@ connects sensible members only"
+    , "with@ connects sensible members with non-with@ .with's"
     , "with@ connects withfull ions & withfull members"
 
     , "with@ connects withless ions & withless members"
-    , "with@ connects withless ions & withfull members: adhoc: to self"
-    , "with@ connects withless ions & withfull members: adhoc: to other"
-    , "with@ connects withless ions & withfull members: truly: to self"
-    , "with@ connects withless ions & withfull members: truly: to other"
+    , "with@ connects withless ions & withfull members: part: to self"
+    , "with@ connects withless ions & withfull members: part: to other"
+    , "with@ connects withless ions & withfull members: full: to self"
+    , "with@ connects withless ions & withfull members: full: to other"
 
     , "with@ connects withfull ions & withless members"
-    , "with@ connects withfull ions & withless members: adhoc: to self"
-    , "with@ connects withfull ions & withless members: adhoc: to other"
-    , "with@ connects withfull ions & withless members: truly: to self"
-    , "with@ connects withfull ions & withless members: truly: to other"
+    , "with@ connects withfull ions & withless members: part: to self"
+    , "with@ connects withfull ions & withless members: part: to other"
+    , "with@ connects withfull ions & withless members: full: to self"
+    , "with@ connects withfull ions & withless members: full: to other"
 
     , "with@ connects aeon-invoked, oli-nested, oli-named-actions"
     ],
@@ -84,12 +85,12 @@
        //more ¿for you 😉 to help? do...better
      },
 
-  truly:function
-  truly (ai)
-    { var truth  = truly.with
+  full:function
+  full (ai)
+    { var truth  = full.with
         , TRULY  = truth.constructor
         , _with_ =   ai   &&   ai.with
-        , domain = _with_ && _with_.its.re.id.domain.name || 'all'
+        , domain = _with_ && _with_.its && _with_.its.re.id.domain.name || 'all'
 
       return!!_with_
           &&  _with_ instanceof TRULY
@@ -236,27 +237,103 @@
           , undefined   : false
           }
 
-      var     exam = sensible.with.my
-        , question = doing [doing.next]
-        ,    truly = exam.truly
+      var i         = sensible.with.my
+        , question  = doing [doing.next]
+        , expects   = {ion:ion, has:expected}
+
+      i.report (question, i.expected (expects))
+    },
+
+  expected:function
+  expected (expects)
+    { var     exam = expected.with.my
+        ,     full = exam.full
+        ,      ion = expects.ion
+        ,      has = expects.has
         ,   answer = true
         ,   member
 
       for
-        ( var name in expected)
+        ( var name in has)
         { if(!ion.hasOwnProperty (name)) continue
-        ; member  =   ion   [name]
-        ; answer &&= truly  (member) === expected [name]
+        ; member  =   ion [name]
+        ; answer &&= full (member) === has [name]
         }
 
-      exam.report (question, answer)
+      return answer
+    },
+
+ "with@ connects sensible members with non-with@ .with's":function
+  other (doing)
+    { var ion
+      = { recognition:
+            { with: / /
+            },
+          boolean:
+            { with: true
+            },
+          number:
+            { with: 40/7
+            },
+          null:
+            { with: null
+            },
+          string:
+            { with: "string"
+            },
+          undefined:
+            { with: void 0
+            },
+          function:
+            { with: function(){}
+            },
+          object:
+            { with: {other:"properties"}
+            },
+          aeon:  Array.prototype.with
+            ?     []
+            :     {with:[]}
+            ,
+          bigint:
+            { with: typeof BigInt != 'undefined'
+                  ?   BigInt (571428)
+                  :   571428
+            },
+          symbol:
+            { with: typeof Symbol != 'undefined'
+                  ?   Symbol ('with@ test symbol')
+                  :   'with@ test symbol for symbol-less runtimes'
+            }
+        }
+
+    ~ ion
+
+      var expected
+        = { aeon        : true
+          , null        : true
+          , function    : true
+          , object      : true
+          , undefined   : true
+          , recognition : true
+          , bigint      : false
+          , boolean     : false
+          , number      : false
+          , string      : false
+          , symbol      : false
+          }
+
+      var i         = other.with.my
+        , question  = doing [doing.next]
+        , expects   = {ion:ion, has:expected}
+
+      i.report (question, i.expected (expects))
     },
 
  "with@ connects withless ions & withless members":
  "with@ connects sensible members only",
 
- "with@ connects withless ions & withfull members: adhoc: to self":function
-  adhoc (doing)
+ "with@ connects withless ions & withfull members: part: to self":function
+  part (doing)
     { var ion
       = { aeon        : []
         , function    : function(){}
@@ -272,12 +349,6 @@
 
       ~ ion
 
-      var     exam = adhoc.with.my
-        , question = doing [doing.next]
-        ,    truly = exam.truly
-        ,   answer = true
-        ,   member
-
       var expected
         = { aeon        : true
           , function    : true
@@ -285,14 +356,11 @@
           , recognition : true
           }
 
-      for
-        ( var name in expected)
-        { if(!ion.hasOwnProperty (name)) continue
-        ; member  =   ion   [name]
-        ; answer &&= truly  (member) === expected [name]
-        }
+      var i         = part.with.my
+        , question  = doing [doing.next]
+        , expects   = {ion:ion, has:expected}
 
-      exam.report (question, answer)
+      i.report (question, i.expected (expects))
     },
 
  "with@ connects withfull ions & withfull members":function
@@ -335,7 +403,7 @@
 
       var     exam = withfull.with.my
         , question = doing [doing.next]
-        ,    truly = exam.truly
+        ,     full = exam.full
         ,    found = ion.with
         ,   answer = true
         ,   member
@@ -349,8 +417,8 @@
       for
         ( var name in expected)
         { if(!ion.hasOwnProperty (name)) continue
-        ; member  =   ion   [name]
-        ; answer &&= truly  (member)
+        ; member  =   ion [name]
+        ; answer &&= full (member)
         }
 
       answer  &&= found.my.aeon[0]  === expected.aeon

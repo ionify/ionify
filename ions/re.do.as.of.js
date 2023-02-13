@@ -6,8 +6,8 @@
     , as: {specification:-0.001, sensation:-0.001, convention:-0.001}
     , by: ['🙇🏾‍♂️🎊 יהוה 🎉🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
     , on:  {200709.2    : -4}
-    , to:  {578311115.1 : -8}
-    , at:  -0.015
+    , to:  {578311222.1 : -8}
+    , at:  -0.016
     , is:
         [ "ionify's re: .do@ .as@ .of@ api conformation@ convention@s"
         , "creating and-or connecting an ion's re.of-stated ionosphere groups"
@@ -170,7 +170,7 @@
   resolve :function
   resolve (it)
     { var  via        = resolve.with
-        ,  relations  = via.our.configuration.relations
+        ,  relations  = via.our.configuration.relation
       if( !relations  ) return
 
       var group

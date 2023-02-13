@@ -5,9 +5,9 @@
     , do: {'re@':true, 'on.storie@':true, transcription:true}
     , as: {examination  :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -2.20070904
-    , to:  -1.57831003308
-    , at:  -0.008
+    , on: {200709.2     : -4}
+    , to: {578311185.1  : -8}
+    , at: -0.009
     , ax: "to see what re@ does. thank You 🙇🏾‍♂️🤲🏾 יהוה 🤲🏾👨🏾‍💻"
     , ex: "juss fuh see wah re@ guhn doooo 😅"
     , go:
@@ -26,6 +26,7 @@
         [ "MUST create comprehensive re.* tests to ensure a reliable foundation"
         , "MUST create re.* specification@ conformance tests for reliability"
         , "WILL add test(s) for values of auto-created & corrected re.* members"
+        , "MUST connect ~re.do.as~get.or~on:error to confirm malformed ~re.do.as"
 
         , "were ..."
         , "must ..."
@@ -76,7 +77,7 @@
     },
 
   testLater:function
-  testLater(input)
+  testLater( input )
     { var malformation  = input.malformation
         , test          = input.test
         , question      = input.question
@@ -109,8 +110,7 @@
       testing.push (testNow)
 
       for
-        ( var
-          test in tests)
+        ( var test in tests )
         { malformation.re [test] = 2017 * Math.random()
           testing.push( later ({malformation, test, question}))
         }

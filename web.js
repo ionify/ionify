@@ -5,8 +5,8 @@
     , of: ['web','launch']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾','mike🇬🇾👨🏾‍💻🇺🇸lee','team✨ionify']
     , on:  {200709.2    : -4}
-    , to:  {578310184.1 : -8}
-    , at:  -0.101
+    , to:  {578311185.1 : -8}
+    , at:  -0.102
     , do: 'ionosphere webi ions'
     , as: {habitation:true, connection:true}
     , is:
@@ -50,6 +50,7 @@
 
         , "like fast: document.createDocumentFragment() to batch add ions"
         , "like .script()'s then.and adding to any existing ~*.and action"
+        , "like setting ionify's ions' script.defer based on its habitation@.s"
         ,
         [ "want .via() delegating script, es.module, ajile, amd, umd, commonjs:"
         , "note https://nodejs.org/api/esm.html"
@@ -97,20 +98,20 @@
 
   web :function
   web ()
-    { var web           = this
-      web.get$.URL.with = {its: web.get$}
-      web.via     .with =
-      web.script  .with =
-      web.setup   .with =
-      web.queue   .with = {its: web}
-      Object.prototype.valueOf =web.setup
+    { var i           = web.with && web.with.its || this
+      i.get$.URL.with = {its: i.get$}
+      i.via     .with =
+      i.script  .with =
+      i.setup   .with =
+      i.queue   .with = {its: i}
+      Object.prototype.valueOf= i.setup
 
-      web.queue   (web)
-    //web.watch     ()
-      web.ready     ()
-      web.locate    ()
-      web.script  ({at:'ions@ionify'})
-      web.script  ({at: 'get@ionify'})
+      i.queue   (i)
+    //i.watch   ()
+      i.ready   ()
+      i.locate  ()
+      i.script  ({at:'ions@ionify'})
+      i.script  ({at: 'get@ionify'})
     },
 
   pending:
@@ -146,8 +147,9 @@
         }
 
       if( as.observation )
-        { ion.pending = web.pending
-          ion.queue   = web.queue
+        { ion.pending     =  web.pending
+          ion.queue       =  web.queue
+          ion.queue.with  = {its:ion}
         }
 
       return how
