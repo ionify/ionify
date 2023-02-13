@@ -5,9 +5,9 @@
     , id:  'logger@ionify'
     , of: ['public', 'transcription', 'tools', 'api']
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
-    , on:  -2.20070904
-    , to:  -1.57831005508
-    , at:  -0.054
+    , on: {200709.2    : -4}
+    , to: {578311196.1 : -8}
+    , at: -0.055
     , do: {malfunction:true}
     , as: {sensation:-0.001}
     , in:
@@ -155,7 +155,7 @@
       if('boolean' == typeof message)
       if( toggled  =  (message !=  state))
           {   logging [level]   =  state = logger.state = message
-          ;   message           = (state ? '✅' : '🚫') + ' ~'  + level
+          ;   message           = (state ? '🟢' : '🚫') + ' ~'  + level
           }   else          return false
 
       state
