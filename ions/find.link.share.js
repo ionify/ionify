@@ -7,8 +7,8 @@
     , as: {convention   :-0.001}
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike.🇬🇾👨🏾‍💻🇺🇸.lee', 'team✨ionify']
     , on: { 200709.2    : -4      }
-    , to: { 578311093.1 : -8.1434 }
-    , at:  -0.066
+    , to: { 578311211.1 : -8.2108 }
+    , at:  -0.067
     , is:
         [
         [ "implementing ionify's ~find.for.as.in.skip name-to-ai-resolution"
@@ -163,8 +163,8 @@
           ;   next   = its
         } if (found && (f0r [as] = found)) return true
 
-      //🙇🏾‍♂️ remember the ion's already searched collection@s & as we search,
-      last =  finding.with && finding.with.in.domain  //👨🏾‍🏫 skip them within
+      //🙇🏾‍♂️ remember the already searched ion collection@s & skip them within
+      last =  finding.with && finding.with.in && finding.with.in.domain
       next =  via.the                   //👨🏾‍🏫 the ionosphere's collection@s!
       next && (found = group ({find:term, in:next, skip:last||none}))
       if (found && (f0r [as] = found)) return true

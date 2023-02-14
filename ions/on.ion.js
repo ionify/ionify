@@ -8,8 +8,8 @@
     , do: { resolution  :-0.001, transcription:-0.001 }
     , by: ['🙇🏾‍♂️ יהוה 🤲🏾', 'mike🇬🇾👨🏾‍💻🇺🇸lee', 'team✨ionify']
     , on: {200709.2    : -4}
-    , to: {578311115.1 : -8}
-    , at: -0.089
+    , to: {578311211.1 : -8}
+    , at: -0.090
     , is:
         [ "ionify: invoked object notation implemented for you"
         , "enabling the ionosphere: invoked object notation observation sphere"
@@ -38,37 +38,45 @@
         , team: 'https://team.ionify.net/'
         },
       we:
+        [
         [ "NOTE ✨ many more plans, ideas & issue notes are in on.ion.re@ionify"
+        , "LIKE enacting a best-practice of intentionally keep critically"
+        , "essential & actionable notes in ion@ & others in ion.re@"
         , "WILL 🙇🏾‍♂️ set all ionify sions' re.go.deal: https://deal.ionify.net"
-        , "MADE 🛡 sure no sense@on.ion@ sensation@ observation@ misapplication"
-        ,
-        [ "LIKE enacting a best-practice of intentionally keep critically "
-        + "essential & actionable notes in ion@ & others in ion.re@"
         ]
         , "WERE adding a suspension map to support ~re.do.as relations ~get.ing"
-        , "WERE sharing .coventions() anticipating observation@ application(s)"
-        , "WERE 👨🏾‍💻 migrating on.ionified here & with@ sharing as a public tool"
-        , "WERE 👨🏾‍💻 begining sensible <= on.ionified migration"
-        , "WILL 👨🏾‍💻 replace on@tools@ionify <= on@ionify group sharing"
-        , "WANT 👨🏾‍💻 renamed sensible <= ionified; confirms sensible ion types"
-        , "want 🙇🏾‍♂️ boolean < {sensible:'name', in:object} +find-resolved 🤲🏾"
+        , "WANT ionify@ group inaccessible via ion.valueOf.with:our & in.domain"
         , "want ⏩ to replace group.test() with .hasKnownWord()"
+        ,
+        [ "WERE 👨🏾‍💻 migrating on.ionified here & with@ sharing as a public tool"
+        , "WERE 👨🏾‍💻 beginning sensible <= on.ionified migration"
+        , "WILL 👨🏾‍💻 rename sensible <= ionified; confirms sensible ion types"
+        , "want 🙇🏾‍♂️ boolean < {sensible:'name', in:object} +find-resolved 🤲🏾"
+        , "like + {is:thing, type:'sensible'} <= sensible [typeof todo]"
+        ]
+        ,
+        [ "MADE 🛡 sure no sense@on.ion@ sensation@ observation@ misapplication"
+        , "MUST ensure no /sensed@@/ reaction to new /sensation@s'/ known terms"
+        , "WILL 👨🏾‍💻 replace sense@tools@ionify <= sense@ionify group sharing"
+        , "LIKE 👨🏾‍💻 renamed sense's ionify --> sensed --> on concise callstack"
+        , "want redesigned on:[[]] to reduce manual combinations' specification"
+        , "like setting ion.re.as to its sensed implementation@, e.g. sensation@"
+        , "like ⏩ application@ catalyst re.as.configuration for fast initiation"
+        , "MUSE 🤔 should re.as.sensation:true be set for all sensed sensations?"
+        ]
         ,
         [ "WERE 🙇🏾‍♂️ exploring with-resolution syntax 🤓👨🏾‍💻🤲🏾"
         , "LIKE 🙇🏾‍♂️ with:ai@@ indicating ai@group relative to the with 🤓"
         , "NOTE 🙇🏾‍♂️ ai@:@with, ai@@:@ion, ai@@@:@affiliation:group,domain,etc"
         ]
-        , "MUST ensure no /sensed@@/ reaction to new /sensation@s'/ known terms"
-        , "MUST 🧹 auto-update ionified:observation@ list's deactivated Types"
-        , "WANT ionify@ group inaccessible via ion.valueOf.with:our & in.domain"
+        ,
+        [ "WERE sharing .coventions() anticipating observation@ application(s)"
         , "will make a way to deactivate all observation@s, aka ~on:Type's."
+        , "MUST 🧹 auto-update ionified:observation@ list's deactivated Types"
         , "will create observation@ delegator & have it do prep@sensed@on.ion@"
         , "want .sensible() within a core observation@ delegator vs convention@"
         , "want ionify@ = core observation@ routing to others post-convention@s"
-        , "like setting ion.re.as to its sensed implementation@, e.g. sensation@"
-        , "like ⏩ application@ catalyst re.as.configuration for fast initiation"
-        , "like + {is:thing, type:'sensible'} <= sensible [typeof todo]"
-        , "MUSE 🤔 should re.as.sensation:true be set for all sensed sensations?"
+        ]
         ]
     },
 
@@ -105,13 +113,6 @@
 
   valueOf:function
   ionify ()
-    { this.object ()
-    },
-
-  pending:null,
-
-  object :function
-  object ()
     { var  our
         ,  ionify =   this
         ;  ionify.via.with
@@ -121,20 +122,28 @@
         =  ionify.sensed.with   = ionify.transcribe.with
         = {its: ionify,  the: {}, our: our=ionify.with.our}
 
-     ~/👨🏾‍💻👇🏾remove once with@ name-to-member resolution👍🏾/
-      our.tools.sense   = our.sense   = ionify.sense
-      our.tools.sensed                = ionify.sensed
-      our.tools.conventions           = ionify.conventions
-      ionify.with.the.tools.sensible  = ionify.sensible
+    ~ /👨🏾‍💻👇🏾remove once with@ name-to-member resolution👍🏾/
+        our.tools.sense   = our.sense   = ionify.sense
+        our.tools.sensed                = ionify.sensed
+        our.tools.conventions           = ionify.conventions
+        ionify.with.the.tools.sensible  = ionify.sensible
 
-      delete ionify.valueOf <= ionify <=
-     /accept ions pending  ionification/
+        //👨🏾‍💻 accept habitation@'s queue of ions pending
+        delete ionify.valueOf <= ionify // ionification
+        ionify.object ()
+    },
+
+  pending:null,
+
+  object :function
+  object ()
+    { var ionify = this
 
       //activate👇🏾ionosphere:👇🏾ion👇🏾observation👇🏾sphere
       ionify.sense ({on: Object, Object: ionify.sensed})
       ionify.sense ({on:'on',        on: ionify.sense })
       //note how this 👆🏾 is erased by ☝🏾 exact-named term
-      ionify.sense (ionify)
+      ionify.sense (ionify) // enables sensing ~sensible
 
       for //🙇🏾‍♂️ invoke initiation@.s ~on actions
         ( var next    =     ionify.pending
@@ -325,9 +334,9 @@
       does [sensation.re.id.name || sensation.re.id] = does.push (action) - 1
       //👨🏾‍💻 & may ~no.on itself which this would undo by post-application save
 
-      //👨🏾‍🔬 apply the sensation convention to itself before any other ions,
+      //👨🏾‍🔬 apply the convention@ to its sensation@ before applying elsewhere
       sense.always ({do:action, for:sensation}) //👨🏾‍🔬 then apply it to
-      sense.always ({do:action, for:sense})     //👨🏾‍🔬 this ~on sensation
+      sense.always ({do:action, for:sense})     //👨🏾‍🔬 this observation@
 
       for
         //🙇🏾‍♂️ apply each convention@ to all

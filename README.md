@@ -1,9 +1,9 @@
 # [ionify](http://meet.ionify.net/)
 
-**🧬 ion implemented for you**, is a flexible & unobtrusive, natural-language api
+**🧬 ion implemented for you**, is a flexible & unobtrusive, natural-language api,
 for expressing actions & information via
 [**⚛︎ ion:** invoked object notation](http://ion.ionify.net/).
-it is [produced](https://origin.ionify.net/)
+it's [produced](https://origin.ionify.net/)
 by
 [**michael 👨🏾‍💻 lee**](https://github.com/iskitz)
 and is maintained by
@@ -17,28 +17,28 @@ and is maintained by
 
 ## why
 
-**⚛︎ ion** + **🧬 ionify**, enable expressing actions & information, that humans
+**⚛︎ ion** + **🧬 ionify** enable expressing actions & information that humans
 & software [naturally ❦ understand](https://github.com/ionify/about/blob/public/VISION.md#vision).
 they enable:
 
-+ creating [domain-specific languages](#domain-specific-languages)
++ creating [domain-specific languages](#domain-specific-languages),
 
 + [literate](#literate-programming),
   [modular](#modular-programming),
   [event-driven](#event-driven-programming),
   [meta](https://en.wikipedia.org/wiki/Metaprogramming) &
   [name-collision-free](#name-collision-freedom)
-  expression
+  expression,
 
 + defining, acquiring, [observing](#decoupled-observation) &
   interacting, with highly-[decoupled](#decoupled-observation)
   software-defined [actions & information](https://lingo.ionify.net/)
 
-+ and, more...
++ and, more ...
 
 ## how
 
-**⚛️ ion** + **🧬 ionify**, are enabled by & can be implemented in, languages that support
+**⚛️ ion** + **🧬 ionify** are enabled by & can be implemented in, languages that support
 [operator ⚙️ overloading](https://en.wikipedia.org/wiki/Operator_overloading).
 three we've explored & confirmed capable, are
 [**{✨:javascript}**](https://github.com/ionify/about/blob/public/ions/ion.md#javascript),
@@ -52,9 +52,9 @@ for applications of **ion** & **ionify** 🤲🏾 enjoy 🤲🏾 the following s
 
 ### [domain-specific languages](https://en.wikipedia.org/wiki/Domain-specific_language)
 
-*"...creating a domain-specific language...can be worthwhile if the language allows a
+>creating a domain-specific language ... can be worthwhile if the language allows a
 particular type of problem or solution to be expressed more clearly than an existing
-language would allow..." - wikipedia*
+language would allow - **wikipedia**
 
 **ionify** enables creating language(s) via **ions** that define & map terms &
 phrases to actions:
@@ -109,10 +109,10 @@ phrases to actions:
 
 ### [literate programming](https://en.wikipedia.org/wiki/Literate_programming)
 
-*"...a program is best thought of as a web...of simple parts and simple relations
+>a program is best thought of as a web ... of simple parts and simple relations
 between those parts; the programmer's task is to state those parts and those
-relationships, in whatever order is best for human comprehension" -
-[donald e. knuth](https://en.m.wikipedia.org/wiki/Donald_Knuth)*
+relationships, in whatever order is best for human comprehension -
+[donald e. knuth](https://en.m.wikipedia.org/wiki/Donald_Knuth)
 
 ```javascript
 ~
@@ -194,9 +194,9 @@ of literate programming.
 
 ### [modular programming](https://en.wikipedia.org/wiki/Modular_programming)
 
-*"...a software design technique that emphasizes separating the functionality of a
+>a software design technique that emphasizes separating the functionality of a
 program into independent, interchangeable modules, such that each contains everything
-necessary to execute only one aspect of the desired functionality." - wikipedia*
+necessary to execute only one aspect of the desired functionality - **wikipedia**
 
 ```javascript
 ~
@@ -222,8 +222,8 @@ necessary to execute only one aspect of the desired functionality." - wikipedia*
 
 ### [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)
 
-*"...a programming paradigm in which the flow of the program is determined by events
-such as user actions..., sensor outputs, or messages from other programs/threads." - wikipedia*
+>a programming paradigm in which the flow of the program is determined by events
+such as user actions ..., sensor outputs, or messages from other programs or threads - **wikipedia**
 
 ```javascript
 ~
@@ -280,7 +280,7 @@ anonymous & named objects:
     }
 }
 
-~ /ion can be in its own local, or remote file/
+~ / each ion can be in a local or remote file /
 
 ~ { hi : "i'm an ion!"}  <=  /invoke an object/
 ~ {"hi": "i'm a json!"}  <=  /invoke some json/
@@ -289,12 +289,12 @@ anonymous & named objects:
 ### [name collision freedom](https://en.wikipedia.org/wiki/Name_collision)
 
 [**🦁 lions**: literal ions](https://talk.ionify.net/),
-i.e. `~/ / + [ ] & { }`, eliminate name collisions by encapsulating their
+i.e. `~/ / + [ ] & { }`, eliminate name collisions, by encapsulating their
 [identifiers](https://en.m.wikipedia.org/wiki/Identifier#In_computer_languages).
 
-**ionify** enables individually observing & inspecting multiple identically identified
-**lions**. this capability enables **lions** to simultaneously coexist within the same
-[execution context](https://262.ecma-international.org/6.0/#sec-execution-contexts)
+**ionify** enables individually observing & inspecting, multiple identically identified
+**lions**. this capability enables **lions** to simultaneously coexist, within the same
+[execution context](https://262.ecma-international.org/6.0/#sec-execution-contexts),
 without overriding all, or parts, of each other:
 
 ```javascript
